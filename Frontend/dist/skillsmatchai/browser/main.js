@@ -64,6 +64,7 @@ import {
   FormGroupDirective,
   FormsModule,
   MatFormField,
+  MatHint,
   MatLabel,
   MatSuffix,
   NG_VALUE_ACCESSOR,
@@ -11987,7 +11988,7 @@ var ToastNotificationComponent = class _ToastNotificationComponent {
 })();
 
 // src/app/auth/components/login/login.component.ts
-function LoginComponent_app_loading_spinner_28_Template(rf, ctx) {
+function LoginComponent_app_loading_spinner_32_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "app-loading-spinner", 16);
   }
@@ -11995,7 +11996,7 @@ function LoginComponent_app_loading_spinner_28_Template(rf, ctx) {
     \u0275\u0275property("size", 24);
   }
 }
-function LoginComponent_span_29_Template(rf, ctx) {
+function LoginComponent_span_33_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1, "Login");
@@ -12056,10 +12057,10 @@ var LoginComponent = class _LoginComponent {
   static \u0275fac = function LoginComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _LoginComponent)(\u0275\u0275directiveInject(FormBuilder), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(MatSnackBar));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 30, vars: 7, consts: [[1, "auth-container"], [1, "auth-card"], [1, "header-content"], [1, "app-title"], [3, "ngSubmit", "formGroup"], ["appearance", "outline", 1, "full-width"], ["matInput", "", "formControlName", "email", "type", "email", "required", ""], ["fieldName", "Email", 3, "control"], ["matInput", "", "formControlName", "password", "required", "", 3, "type"], ["fieldName", "Password", 3, "control"], [1, "form-actions"], ["mat-button", "", "type", "button", "routerLink", "../signup", 1, "signup-link"], [1, "highlight"], ["mat-raised-button", "", "color", "primary", "type", "submit", 1, "submit-button", 3, "disabled"], [3, "size", 4, "ngIf"], [4, "ngIf"], [3, "size"]], template: function LoginComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 34, vars: 7, consts: [[1, "auth-container"], [1, "auth-card"], [1, "header-content"], [1, "app-title"], [3, "ngSubmit", "formGroup"], ["appearance", "outline", 1, "full-width"], ["matInput", "", "formControlName", "email", "type", "email", "required", ""], ["fieldName", "Email", 3, "control"], ["matInput", "", "formControlName", "password", "required", "", 3, "type"], ["fieldName", "Password", 3, "control"], [1, "form-actions"], ["mat-button", "", "type", "button", "routerLink", "../signup", 1, "signup-link"], [1, "highlight"], ["mat-raised-button", "", "color", "primary", "type", "submit", 1, "submit-button", 3, "disabled"], [3, "size", 4, "ngIf"], [4, "ngIf"], [3, "size"]], template: function LoginComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "mat-card", 1)(2, "mat-card-header")(3, "div", 2)(4, "h1", 3);
-      \u0275\u0275text(5, "SkillsMatch AI");
+      \u0275\u0275text(5, "SkillMatch AI");
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(6, "mat-card-title");
       \u0275\u0275text(7, "Welcome Back");
@@ -12074,30 +12075,38 @@ var LoginComponent = class _LoginComponent {
       \u0275\u0275elementStart(12, "mat-form-field", 5)(13, "mat-label");
       \u0275\u0275text(14, "Email");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(15, "input", 6)(16, "app-form-validation", 7);
+      \u0275\u0275element(15, "input", 6);
+      \u0275\u0275elementStart(16, "mat-hint");
+      \u0275\u0275text(17, "Try: admin@example.com, jobseeker@example.com, or employer@example.com");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(17, "mat-form-field", 5)(18, "mat-label");
-      \u0275\u0275text(19, "Password");
+      \u0275\u0275element(18, "app-form-validation", 7);
       \u0275\u0275elementEnd();
-      \u0275\u0275element(20, "input", 8)(21, "app-form-validation", 9);
+      \u0275\u0275elementStart(19, "mat-form-field", 5)(20, "mat-label");
+      \u0275\u0275text(21, "Password");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(22, "div", 10)(23, "button", 11);
-      \u0275\u0275text(24, " Don't have an account? ");
-      \u0275\u0275elementStart(25, "span", 12);
-      \u0275\u0275text(26, "Sign Up");
+      \u0275\u0275element(22, "input", 8);
+      \u0275\u0275elementStart(23, "mat-hint");
+      \u0275\u0275text(24, "Any password will work");
+      \u0275\u0275elementEnd();
+      \u0275\u0275element(25, "app-form-validation", 9);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(26, "div", 10)(27, "button", 11);
+      \u0275\u0275text(28, " Don't have an account? ");
+      \u0275\u0275elementStart(29, "span", 12);
+      \u0275\u0275text(30, "Sign Up");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(27, "button", 13);
-      \u0275\u0275template(28, LoginComponent_app_loading_spinner_28_Template, 1, 1, "app-loading-spinner", 14)(29, LoginComponent_span_29_Template, 2, 0, "span", 15);
+      \u0275\u0275elementStart(31, "button", 13);
+      \u0275\u0275template(32, LoginComponent_app_loading_spinner_32_Template, 1, 1, "app-loading-spinner", 14)(33, LoginComponent_span_33_Template, 2, 0, "span", 15);
       \u0275\u0275elementEnd()()()()()();
     }
     if (rf & 2) {
       \u0275\u0275advance(11);
       \u0275\u0275property("formGroup", ctx.loginForm);
-      \u0275\u0275advance(5);
+      \u0275\u0275advance(7);
       \u0275\u0275property("control", ctx.loginForm.get("email"));
       \u0275\u0275advance(4);
       \u0275\u0275property("type", ctx.hidePassword ? "password" : "text");
-      \u0275\u0275advance();
+      \u0275\u0275advance(3);
       \u0275\u0275property("control", ctx.loginForm.get("password"));
       \u0275\u0275advance(6);
       \u0275\u0275property("disabled", !ctx.loginForm.valid || ctx.isLoading);
@@ -12127,6 +12136,7 @@ var LoginComponent = class _LoginComponent {
     MatFormFieldModule,
     MatFormField,
     MatLabel,
+    MatHint,
     MatInputModule,
     MatInput,
     MatButtonModule,

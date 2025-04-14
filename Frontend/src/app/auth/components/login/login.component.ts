@@ -51,7 +51,7 @@ import { ToastNotificationComponent } from '../../../shared/components/toast-not
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Email</mat-label>
               <input matInput formControlName="email" type="email" required />
-
+              <mat-hint>Try: admin&#64;example.com, jobseeker&#64;example.com, or employer&#64;example.com</mat-hint>
               <app-form-validation
                 [control]="loginForm.get('email')"
                 fieldName="Email"
@@ -66,7 +66,7 @@ import { ToastNotificationComponent } from '../../../shared/components/toast-not
                 [type]="hidePassword ? 'password' : 'text'"
                 required
               />
-
+              <mat-hint>Any password will work</mat-hint>
               <app-form-validation
                 [control]="loginForm.get('password')"
                 fieldName="Password"
