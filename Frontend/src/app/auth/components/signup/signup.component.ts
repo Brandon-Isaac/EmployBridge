@@ -54,89 +54,80 @@ import { ToastNotificationComponent } from '../../../shared/components/toast-not
         <mat-card-content>
           <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
             <div class="name-fields">
-              <mat-form-field appearance="outline" class="half-width">
+              <mat-form-field appearance="outline" class="full-width animate-item">
                 <mat-label>First Name</mat-label>
-                <input matInput formControlName="firstName" required />
-                <mat-icon matSuffix class="form-icon">person</mat-icon>
+                <input matInput formControlName="firstName" required placeholder="Enter your first name" />
+                <i class="fas fa-user form-icon" matPrefix></i>
                 <app-form-validation
                   [control]="signupForm.get('firstName')"
-                  fieldName="First name"
+                  fieldName="First Name"
                 ></app-form-validation>
               </mat-form-field>
 
-              <mat-form-field appearance="outline" class="half-width">
+              <mat-form-field appearance="outline" class="full-width animate-item">
                 <mat-label>Last Name</mat-label>
-                <input matInput formControlName="lastName" required />
-                <mat-icon matSuffix class="form-icon">person</mat-icon>
+                <input matInput formControlName="lastName" required placeholder="Enter your last name" />
+                <i class="fas fa-user-circle form-icon" matPrefix></i>
                 <app-form-validation
                   [control]="signupForm.get('lastName')"
-                  fieldName="Last name"
+                  fieldName="Last Name"
                 ></app-form-validation>
               </mat-form-field>
             </div>
 
-            <mat-form-field appearance="outline" class="full-width">
+            <mat-form-field appearance="outline" class="full-width animate-item">
               <mat-label>Email</mat-label>
-              <input matInput formControlName="email" type="email" required />
-              <mat-icon matSuffix class="form-icon">email</mat-icon>
+              <input matInput formControlName="email" type="email" required placeholder="Enter your email" />
+              <i class="fas fa-envelope form-icon" matPrefix></i>
               <app-form-validation
                 [control]="signupForm.get('email')"
                 fieldName="Email"
               ></app-form-validation>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="full-width">
+            <mat-form-field appearance="outline" class="full-width animate-item">
               <mat-label>Password</mat-label>
               <input
                 matInput
                 formControlName="password"
                 [type]="hidePassword ? 'password' : 'text'"
                 required
+                placeholder="Enter your password"
               />
-              <mat-icon
-                matSuffix
-                (click)="hidePassword = !hidePassword"
-                class="form-icon clickable"
-              >
-                {{ hidePassword ? 'visibility_off' : 'visibility' }}
-              </mat-icon>
+              <i class="fas fa-lock form-icon" matPrefix></i>
+              <i class="fas fa-eye form-icon clickable" matSuffix (click)="hidePassword = !hidePassword"></i>
               <app-form-validation
                 [control]="signupForm.get('password')"
                 fieldName="Password"
               ></app-form-validation>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="full-width">
+            <mat-form-field appearance="outline" class="full-width animate-item">
               <mat-label>Confirm Password</mat-label>
               <input
                 matInput
                 formControlName="confirmPassword"
-                [type]="hideConfirmPassword ? 'password' : 'text'"
+                [type]="hidePassword ? 'password' : 'text'"
                 required
+                placeholder="Confirm your password"
               />
-              <mat-icon
-                matSuffix
-                (click)="hideConfirmPassword = !hideConfirmPassword"
-                class="form-icon clickable"
-              >
-                {{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}
-              </mat-icon>
+              <i class="fas fa-lock form-icon" matPrefix></i>
               <app-form-validation
                 [control]="signupForm.get('confirmPassword')"
-                fieldName="Confirm password"
+                fieldName="Confirm Password"
               ></app-form-validation>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="full-width">
+            <mat-form-field appearance="outline" class="full-width animate-item">
               <mat-label>Account Type</mat-label>
-              <mat-select formControlName="accountType" required>
-                <mat-option value="JOB_SEEKER">Job Seeker</mat-option>
-                <mat-option value="EMPLOYER">Employer</mat-option>
+              <mat-select formControlName="accountType" required placeholder="Select account type">
+                <mat-option value="jobseeker">Job Seeker</mat-option>
+                <mat-option value="employer">Employer</mat-option>
               </mat-select>
-              <mat-icon matSuffix class="form-icon">work</mat-icon>
+              <i class="fas fa-briefcase form-icon" matPrefix></i>
               <app-form-validation
                 [control]="signupForm.get('accountType')"
-                fieldName="Account type"
+                fieldName="Account Type"
               ></app-form-validation>
             </mat-form-field>
 
@@ -229,7 +220,7 @@ import { ToastNotificationComponent } from '../../../shared/components/toast-not
       }
 
       .form-icon {
-        color: rgba(0, 0, 0, 0.4);
+        color: rgba(0, 0, 0, 0.6);
         font-size: 20px;
         width: 20px;
         height: 20px;
@@ -295,6 +286,7 @@ import { ToastNotificationComponent } from '../../../shared/components/toast-not
 
         .mat-form-field-label {
           color: #666 !important;
+          opacity: 1 !important;
         }
 
         .mat-form-field.mat-focused .mat-form-field-label {
@@ -305,11 +297,9 @@ import { ToastNotificationComponent } from '../../../shared/components/toast-not
           top: 0 !important;
         }
 
-        .mat-icon {
-          display: flex !important;
-          align-items: center;
-          justify-content: center;
-          line-height: 1;
+        .mat-form-field-prefix {
+          top: 0.25em !important;
+          margin-right: 8px !important;
         }
 
         .mat-form-field:hover {
