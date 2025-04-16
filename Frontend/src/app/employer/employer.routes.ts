@@ -7,7 +7,7 @@ import { ViewCandidatesComponent } from './components/view-candidates/view-candi
 import { AiSearchComponent } from './components/search/ai-search/ai-search.component';
 import { ManageInterviewsComponent } from './components/manage-interviews/manage-interviews.component';
 import { HiringAnalyticsComponent } from './components/analytics/hiring-analytics/hiring-analytics.component';
-import { ReportsComponent } from './components/reports/reports/reports.component';
+// import { ReportsComponent } from './components/reports/reports/reports.component';
 
 export const EMPLOYER_ROUTES: Routes = [
   {
@@ -49,7 +49,7 @@ export const EMPLOYER_ROUTES: Routes = [
       },
       {
         path: 'reports',
-        component: ReportsComponent,
+      //  component: ReportsComponent,
       },
     ],
   },

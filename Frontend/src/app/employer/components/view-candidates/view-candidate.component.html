@@ -1,0 +1,296 @@
+<div class="view-candidates-container">
+    <div class="header-section">
+      <div class="title-section">
+        <h1>Candidate Analytics</h1>
+        <p class="subtitle">Track, analyze, and manage your talent pipeline</p>
+      </div>
+      <div class="metrics-section">
+        <div class="metric-card">
+          <div class="metric-value">{{ candidates.length }}</div>
+          <div class="metric-label">Active Candidates</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ getInterviewingCount() }}</div>
+          <div class="metric-label">Interviews Scheduled</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ getAverageMatchScore() }}%</div>
+          <div class="metric-label">Avg. Match Score</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ getPositionsToFill() }}</div>
+          <div class="metric-label">Positions to Fill</div>
+        </div>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-tab-group>
+      <mat-tab label="Card View">
+        <div class="filters-panel">
+          <div class="search-filter">
+            <mat-form-field appearance="outline">
+              <mat-label>Search Candidates</mat-label>
+              <input matInput placeholder="Name, skills, or location" [(ngModel)]="searchText">
+              <i class="fas fa-search" matSuffix></i>
+            </mat-form-field>
+          </div>
+
+          <div class="filter-controls">
+            <mat-form-field appearance="outline">
+              <mat-label>Skills</mat-label>
+              <mat-select multiple [(ngModel)]="selectedSkills">
+                <mat-option *ngFor="let skill of availableSkills" [value]="skill">
+                  {{ skill }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Experience</mat-label>
+              <mat-select [(ngModel)]="experienceLevel">
+                <mat-option value="">All Levels</mat-option>
+                <mat-option value="entry">Entry Level (0-2 years)</mat-option>
+                <mat-option value="mid">Mid Level (3-5 years)</mat-option>
+                <mat-option value="senior">Senior Level (6+ years)</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Status</mat-label>
+              <mat-select [(ngModel)]="selectedStatus">
+                <mat-option value="">All Statuses</mat-option>
+                <mat-option value="New">New</mat-option>
+                <mat-option value="Reviewed">Reviewed</mat-option>
+                <mat-option value="Interview">Interview Scheduled</mat-option>
+                <mat-option value="Offer">Offer Extended</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" (click)="applyFilters()">
+              <i class="fas fa-filter"></i> Apply Filters
+            </button>
+          </div>
+        </div>
+
+        <div class="candidates-summary">
+          <span class="results-count">Showing {{ filteredCandidates.length }} candidates</span>
+          <div class="sort-controls">
+            <mat-form-field appearance="outline">
+              <mat-label>Sort by</mat-label>
+              <mat-select [(ngModel)]="sortOption" (selectionChange)="sortCandidates()">
+                <mat-option value="matchScore">Match Score (High to Low)</mat-option>
+                <mat-option value="experience">Experience (High to Low)</mat-option>
+                <mat-option value="name">Name (A to Z)</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="candidates-list">
+          <mat-card *ngFor="let candidate of filteredCandidates" class="candidate-card" [ngClass]="'status-' + candidate.status.toLowerCase()">
+            <div class="status-indicator" [matTooltip]="'Status: ' + candidate.status">
+              {{ candidate.status }}
+            </div>
+            
+            <mat-card-header>
+              <div mat-card-avatar class="candidate-avatar">
+                {{ getInitials(candidate.name) }}
+              </div>
+              <mat-card-title>{{ candidate.name }}</mat-card-title>
+              <mat-card-subtitle>{{ candidate.title }}</mat-card-subtitle>
+            </mat-card-header>
+            
+            <mat-card-content>
+              <div class="candidate-analytics">
+                <div class="match-score-indicator">
+                  <div class="score-header">
+                    <span>Match Score</span>
+                    <span class="score-value">{{ candidate.matchScore }}%</span>
+                  </div>
+                  <mat-progress-bar
+                    mode="determinate"
+                    [value]="candidate.matchScore"
+                    [color]="getMatchScoreColor(candidate.matchScore)"
+                  ></mat-progress-bar>
+                </div>
+              </div>
+
+              <div class="candidate-details">
+                <div class="detail-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>{{ candidate.location }}</span>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-briefcase"></i>
+                  <span>{{ candidate.experience }} years experience</span>
+                </div>
+                <div class="detail-item" *ngIf="candidate.education">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>{{ candidate.education }}</span>
+                </div>
+              </div>
+              
+              <div class="skills-section">
+                <mat-chip-set>
+                  <mat-chip *ngFor="let skill of candidate.skills" [highlighted]="isHighlightedSkill(skill)">
+                    {{ skill }}
+                  </mat-chip>
+                </mat-chip-set>
+              </div>
+            </mat-card-content>
+            
+            <mat-divider></mat-divider>
+            
+            <mat-card-actions>
+              <button mat-button color="primary" (click)="viewProfile(candidate)">
+                <i class="fas fa-user"></i> Profile
+              </button>
+              <button mat-button color="accent" (click)="scheduleInterview(candidate)">
+                <i class="fas fa-calendar-alt"></i> Interview
+              </button>
+              <button mat-icon-button [matMenuTriggerFor]="menu">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="downloadResume(candidate)">
+                  <i class="fas fa-download"></i> Download Resume
+                </button>
+                <button mat-menu-item (click)="sendMessage(candidate)">
+                  <i class="fas fa-envelope"></i> Send Message
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item (click)="moveToShortlist(candidate)">
+                  <i class="fas fa-star"></i> Add to Shortlist
+                </button>
+                <button mat-menu-item (click)="rejectCandidate(candidate)" class="reject-action">
+                  <i class="fas fa-times"></i> Reject Candidate
+                </button>
+              </mat-menu>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Table View">
+        <div class="table-container">
+          <table mat-table [dataSource]="filteredCandidates" matSort (matSortChange)="sortTable($event)" class="mat-elevation-z2">
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+              <td mat-cell *matCellDef="let candidate"> {{ candidate.name }} </td>
+            </ng-container>
+
+            <!-- Title Column -->
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+              <td mat-cell *matCellDef="let candidate"> {{ candidate.title }} </td>
+            </ng-container>
+
+            <!-- Location Column -->
+            <ng-container matColumnDef="location">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Location </th>
+              <td mat-cell *matCellDef="let candidate"> {{ candidate.location }} </td>
+            </ng-container>
+
+            <!-- Experience Column -->
+            <ng-container matColumnDef="experience">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Experience </th>
+              <td mat-cell *matCellDef="let candidate"> {{ candidate.experience }} years </td>
+            </ng-container>
+
+            <!-- Skills Column -->
+            <ng-container matColumnDef="skills">
+              <th mat-header-cell *matHeaderCellDef> Key Skills </th>
+              <td mat-cell *matCellDef="let candidate"> 
+                <mat-chip-set>
+                  <mat-chip *ngFor="let skill of candidate.skills.slice(0, 2)" [highlighted]="isHighlightedSkill(skill)">
+                    {{ skill }}
+                  </mat-chip>
+                  <mat-chip *ngIf="candidate.skills.length > 2" color="primary">
+                    +{{ candidate.skills.length - 2 }}
+                  </mat-chip>
+                </mat-chip-set>
+              </td>
+            </ng-container>
+
+            <!-- Match Score Column -->
+            <ng-container matColumnDef="matchScore">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Match Score </th>
+              <td mat-cell *matCellDef="let candidate"> 
+                <div class="table-match-score">
+                  <mat-progress-bar
+                    mode="determinate"
+                    [value]="candidate.matchScore"
+                    [color]="getMatchScoreColor(candidate.matchScore)"
+                  ></mat-progress-bar>
+                  <span>{{ candidate.matchScore }}%</span>
+                </div>
+              </td>
+            </ng-container>
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+              <td mat-cell *matCellDef="let candidate"> 
+                <span class="status-badge" [ngClass]="'status-' + candidate.status.toLowerCase()">
+                  {{ candidate.status }}
+                </span>
+              </td>
+            </ng-container>
+
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let candidate">
+                <button mat-icon-button color="primary" matTooltip="View Profile" (click)="viewProfile(candidate)">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button mat-icon-button color="accent" matTooltip="Schedule Interview" (click)="scheduleInterview(candidate)">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+                <button mat-icon-button [matMenuTriggerFor]="tableMenu">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <mat-menu #tableMenu="matMenu">
+                  <button mat-menu-item (click)="downloadResume(candidate)">
+                    <i class="fas fa-download"></i> Download Resume
+                  </button>
+                  <button mat-menu-item (click)="sendMessage(candidate)">
+                    <i class="fas fa-envelope"></i> Send Message
+                  </button>
+                  <mat-divider></mat-divider>
+                  <button mat-menu-item (click)="moveToShortlist(candidate)">
+                    <i class="fas fa-star"></i> Add to Shortlist
+                  </button>
+                  <button mat-menu-item (click)="rejectCandidate(candidate)" class="reject-action">
+                    <i class="fas fa-times"></i> Reject Candidate
+                  </button>
+                </mat-menu>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Analytics">
+        <div class="analytics-placeholder">
+          <h3>Candidate Analytics Dashboard</h3>
+          <p>Analytics features would display here with charts showing:</p>
+          <ul>
+            <li>Candidate distribution by skill</li>
+            <li>Match score trends</li>
+            <li>Hiring pipeline metrics</li>
+            <li>Time-to-hire analytics</li>
+          </ul>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>

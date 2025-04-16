@@ -1,1 +1,108 @@
-<p>job-templates works!</p>
+<div class="templates-container">
+    <div class="page-header">
+      <div class="header-content">
+        <h1 class="header-title">Job Templates</h1>
+        <p class="header-subtitle">Create and manage reusable job templates for consistent hiring</p>
+      </div>
+      <button mat-raised-button class="new-template-btn" (click)="createNewTemplate()">
+        <i class="fas fa-plus"></i>
+        New Template
+      </button>
+    </div>
+
+    <div class="template-filters">
+      <div class="filter-chips">
+        <mat-chip-set>
+          <mat-chip class="filter-chip active">All Templates</mat-chip>
+          <mat-chip class="filter-chip">Recently Used</mat-chip>
+          <mat-chip class="filter-chip">Engineering</mat-chip>
+          <mat-chip class="filter-chip">Design</mat-chip>
+          <mat-chip class="filter-chip">Marketing</mat-chip>
+        </mat-chip-set>
+      </div>
+      <div class="sort-filter">
+        <button mat-button class="sort-button" [matMenuTriggerFor]="sortMenu">
+          <i class="fas fa-sort"></i>
+          Sort By
+        </button>
+        <mat-menu #sortMenu="matMenu">
+          <button mat-menu-item>Name (A-Z)</button>
+          <button mat-menu-item>Name (Z-A)</button>
+          <button mat-menu-item>Recent First</button>
+          <button mat-menu-item>Oldest First</button>
+        </mat-menu>
+      </div>
+    </div>
+
+    <div class="templates-grid">
+      <mat-card class="template-card" *ngFor="let template of jobTemplates">
+        <div class="card-header-stripe" [ngClass]="getDepartmentClass(template.department)"></div>
+        
+        <mat-card-header>
+          <div class="template-info">
+            <mat-card-title>{{ template.title }}</mat-card-title>
+            <mat-card-subtitle>
+              <i class="fas fa-users department-icon"></i>
+              {{ template.department }}
+            </mat-card-subtitle>
+          </div>
+          <button mat-icon-button [matMenuTriggerFor]="actionMenu" class="more-options-btn" matTooltip="More Options">
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+          <mat-menu #actionMenu="matMenu" class="template-actions-menu">
+            <button mat-menu-item>
+              <i class="fas fa-edit"></i>
+              <span>Edit</span>
+            </button>
+            <button mat-menu-item>
+              <i class="fas fa-copy"></i>
+              <span>Duplicate</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item class="delete-option">
+              <i class="fas fa-trash"></i>
+              <span>Delete</span>
+            </button>
+          </mat-menu>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="job-type-indicator">
+            <mat-chip class="job-type-chip" [ngClass]="getJobTypeClass(template.type)">
+              <i class="fas" [ngClass]="getJobTypeIcon(template.type)"></i>
+              {{ template.type }}
+            </mat-chip>
+          </div>
+
+          <p class="description">{{ template.description }}</p>
+
+          <div class="skills-section">
+            <h4 class="section-title">
+              <i class="fas fa-star section-icon"></i>
+              Required Skills
+            </h4>
+            <mat-chip-set class="skills-chips">
+              <mat-chip *ngFor="let skill of template.skills" class="skill-chip">
+                {{ skill }}
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+        </mat-card-content>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-actions>
+          <div class="card-footer">
+            <span class="last-used">
+              <i class="fas fa-clock timestamp-icon"></i>
+              Last used: {{ formatDate(template.lastUsed) }}
+            </span>
+            <button mat-flat-button class="use-template-btn">
+              <i class="fas fa-file-alt"></i>
+              Use Template
+            </button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
