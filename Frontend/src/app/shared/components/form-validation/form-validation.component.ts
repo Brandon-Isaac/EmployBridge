@@ -26,46 +26,38 @@ import { MatIconModule } from '@angular/material/icon';
       *ngIf="control && control.invalid && (control.dirty || control.touched)"
     >
       <div class="error-message" *ngIf="control.hasError('required')">
-        <mat-icon>error</mat-icon>
         <span>{{ fieldName }} is required</span>
       </div>
       <div class="error-message" *ngIf="control.hasError('email')">
-        <mat-icon>error</mat-icon>
         <span>Please enter a valid email address</span>
       </div>
       <div class="error-message" *ngIf="control.hasError('minlength')">
-        <mat-icon>error</mat-icon>
         <span
           >{{ fieldName }} must be at least
           {{ control.getError('minlength').requiredLength }} characters</span
         >
       </div>
       <div class="error-message" *ngIf="control.hasError('maxlength')">
-        <mat-icon>error</mat-icon>
         <span
           >{{ fieldName }} cannot exceed
           {{ control.getError('maxlength').requiredLength }} characters</span
         >
       </div>
       <div class="error-message" *ngIf="control.hasError('pattern')">
-        <mat-icon>error</mat-icon>
         <span>{{ getPatternErrorMessage() }}</span>
       </div>
       <div class="error-message" *ngIf="control.hasError('min')">
-        <mat-icon>error</mat-icon>
         <span
           >{{ fieldName }} must be at least
           {{ control.getError('min').min }}</span
         >
       </div>
       <div class="error-message" *ngIf="control.hasError('max')">
-        <mat-icon>error</mat-icon>
         <span
           >{{ fieldName }} cannot exceed {{ control.getError('max').max }}</span
         >
       </div>
       <div class="error-message" *ngIf="control.hasError('custom')">
-        <mat-icon>error</mat-icon>
         <span>{{ control.getError('custom') }}</span>
       </div>
     </div>

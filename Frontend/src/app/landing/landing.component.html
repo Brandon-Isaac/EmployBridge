@@ -1,0 +1,56 @@
+<app-header></app-header>
+    
+    <main class="landing-content">
+      <section class="hero-section" @slideIn>
+        <div class="hero-content">
+          <h1>Welcome to SkillsMatch AI</h1>
+          
+          <p class="subtitle typewriter">
+            <span [innerHTML]="typewriterText"></span>
+            <span class="cursor" [ngClass]="{'blink': cursorBlinking}">|</span>
+          </p>
+          
+          <div class="cta-buttons" @fadeIn>
+            <button 
+              mat-raised-button 
+              class="get-started-btn" 
+              routerLink="/auth/signup"
+              [@buttonHover]="getStartedState"
+              (mouseenter)="getStartedState = 'hovered'"
+              (mouseleave)="getStartedState = 'normal'">
+              Get Started
+            </button>
+            <button 
+              mat-button 
+              class="login-btn" 
+              routerLink="/auth/login"
+              [@buttonHover]="loginState"
+              (mouseenter)="loginState = 'hovered'"
+              (mouseleave)="loginState = 'normal'">
+              Already have an account?
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="features-section" @fadeInSequentially>
+        <mat-card 
+          class="feature-card" 
+          *ngFor="let feature of features; let i = index" 
+          (mouseenter)="startSpinFeature(i)"
+          [@spin]="featureSpinStates[i]"
+          (@spin.done)="spinComplete(i)">
+          
+          <div class="feature-number-wrapper">
+            <div class="feature-number">
+              <span>{{i + 1}}</span>
+            </div>
+          </div>
+          
+          <h2>{{feature.title}}</h2>
+          <p>{{feature.description}}</p>
+        </mat-card>
+      </section>
+    </main>
+
+    <app-footer></app-footer>

@@ -10,6 +10,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDividerModule } from '@angular/material/divider';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
@@ -27,43 +28,61 @@ import { AuthService } from '../../../core/services/auth.service';
     MatBadgeModule,
     MatDividerModule,
   ],
+  animations: [
+    trigger('slideInOut', [
+      state('in', style({
+        transform: 'translateX(0)',
+        opacity: 1
+      })),
+      state('out', style({
+        transform: 'translateX(-100%)',
+        opacity: 0
+      })),
+      transition('in => out', animate('300ms ease-out')),
+      transition('out => in', animate('300ms ease-in'))
+    ]),
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('400ms ease-in', style({ opacity: 1 }))
+      ])
+    ]),
+    trigger('slideInFromRight', [
+      transition(':enter', [
+        style({ transform: 'translateX(50px)', opacity: 0 }),
+        animate('400ms ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
+      ])
+    ]),
+    trigger('slideInFromBottom', [
+      transition(':enter', [
+        style({ transform: 'translateY(30px)', opacity: 0 }),
+        animate('500ms ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
+      ])
+    ])
+  ],
   template: `
     <div class="dashboard-container">
-      <mat-toolbar class="toolbar" color="primary">
+      <mat-toolbar class="toolbar" [@fadeIn]>
         <div class="toolbar-left">
           <button mat-icon-button (click)="toggleSidenav()" class="menu-button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-              fill="currentColor"
-              style="display: block;"
-            >
-              <path
-                d="M4 6h16M4 12h16M4 18h16"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-              />
-            </svg>
+            <i class="fas fa-bars"></i>
           </button>
-
-          <span class="app-title">SkillMatch AI</span>
+          <span class="app-title typewriter">SkillMatch AI</span>
         </div>
         <div class="toolbar-right">
           <button
             mat-icon-button
-            [matBadge]="3"
-            matBadgeColor="warn"
+            [matBadge]="notificationCount"
+            matBadgeColor="accent"
             class="notification-button"
+            aria-label="Show notifications"
           >
             <i class="fas fa-bell"></i>
           </button>
-          <button mat-icon-button [matMenuTriggerFor]="userMenu">
+          <button mat-icon-button [matMenuTriggerFor]="userMenu" aria-label="User menu">
             <i class="fas fa-user-circle"></i>
           </button>
-          <mat-menu #userMenu="matMenu">
+          <mat-menu #userMenu="matMenu" class="custom-menu">
             <button mat-menu-item routerLink="profile">
               <i class="fas fa-user"></i>
               <span>My Profile</span>
@@ -88,106 +107,152 @@ import { AuthService } from '../../../core/services/auth.service';
           [opened]="sidenavOpened"
           class="sidenav"
           [fixedInViewport]="mobileView"
+          [@slideInOut]="sidenavState"
         >
+          <div class="sidenav-header">
+            <div class="logo-container">
+              <i class="fas fa-briefcase logo-icon"></i>
+              <span class="logo-text">SkillMatch</span>
+            </div>
+          </div>
+          
           <mat-nav-list>
-            <div class="nav-section">
+            <div class="nav-section" [@fadeIn]>
               <h3 matSubheader>Profile & Portfolio</h3>
               <a
                 mat-list-item
                 routerLink="profile"
                 routerLinkActive="active"
+                class="nav-item"
                 (click)="onNavItemClick()"
               >
+                <i class="fas fa-id-card"></i>
                 <span>Profile Overview</span>
               </a>
               <a
                 mat-list-item
                 routerLink="skills"
                 routerLinkActive="active"
+                class="nav-item"
                 (click)="onNavItemClick()"
               >
+                <i class="fas fa-brain"></i>
                 <span>Skill Management</span>
               </a>
               <a
                 mat-list-item
                 routerLink="portfolio"
                 routerLinkActive="active"
+                class="nav-item"
                 (click)="onNavItemClick()"
               >
+                <i class="fas fa-folder-open"></i>
                 <span>Portfolio</span>
               </a>
               <a
                 mat-list-item
                 routerLink="cv"
                 routerLinkActive="active"
+                class="nav-item"
                 (click)="onNavItemClick()"
               >
+                <i class="fas fa-file-alt"></i>
                 <span>CV Manager</span>
               </a>
             </div>
 
             <mat-divider></mat-divider>
 
-            <div class="nav-section">
+            <div class="nav-section" [@fadeIn]>
               <h3 matSubheader>Job Search</h3>
               <a
                 mat-list-item
                 routerLink="matches"
                 routerLinkActive="active"
+                class="nav-item"
                 (click)="onNavItemClick()"
               >
+                <i class="fas fa-handshake"></i>
                 <span>Job Matches</span>
               </a>
               <a
                 mat-list-item
                 routerLink="applications"
                 routerLinkActive="active"
+                class="nav-item"
                 (click)="onNavItemClick()"
               >
+                <i class="fas fa-paper-plane"></i>
                 <span>Applications</span>
               </a>
               <a
                 mat-list-item
                 routerLink="interviews"
                 routerLinkActive="active"
+                class="nav-item"
                 (click)="onNavItemClick()"
               >
+                <i class="fas fa-comments"></i>
                 <span>Interviews</span>
               </a>
             </div>
 
             <mat-divider></mat-divider>
 
-            <div class="nav-section">
+            <div class="nav-section" [@fadeIn]>
               <h3 matSubheader>Career Development</h3>
               <a
                 mat-list-item
                 routerLink="career-paths"
                 routerLinkActive="active"
+                class="nav-item"
                 (click)="onNavItemClick()"
               >
+                <i class="fas fa-road"></i>
                 <span>Career Paths</span>
+              </a>
+              <a
+                mat-list-item
+                routerLink="learning"
+                routerLinkActive="active"
+                class="nav-item"
+                (click)="onNavItemClick()"
+              >
+                <i class="fas fa-graduation-cap"></i>
+                <span>Learning Resources</span>
               </a>
             </div>
 
             <mat-divider></mat-divider>
 
-            <div class="nav-section">
+            <div class="nav-section" [@fadeIn]>
               <h3 matSubheader>Additional</h3>
               <a
                 mat-list-item
                 routerLink="chatbot"
                 routerLinkActive="active"
+                class="nav-item"
                 (click)="onNavItemClick()"
               >
-                <span>Query Assistant</span>
+                <i class="fas fa-robot"></i>
+                <span>Career Assistant</span>
+              </a>
+              <a
+                mat-list-item
+                routerLink="analytics"
+                routerLinkActive="active"
+                class="nav-item"
+                (click)="onNavItemClick()"
+              >
+                <i class="fas fa-chart-line"></i>
+                <span>Application Analytics</span>
               </a>
             </div>
           </mat-nav-list>
         </mat-sidenav>
 
         <mat-sidenav-content class="content">
-          <div class="content-wrapper">
+          <div class="content-wrapper" [@slideInFromRight]>
             <router-outlet></router-outlet>
           </div>
         </mat-sidenav-content>
@@ -196,17 +261,34 @@ import { AuthService } from '../../../core/services/auth.service';
   `,
   styles: [
     `
+      :host {
+        --primary: #8B5A2B;
+        --primary-light: #A67C52;
+        --primary-dark: #6B4423;
+        --accent: #D2B48C;
+        --accent-light: #E6D2B8;
+        --accent-dark: #9F8A6E;
+        --text-primary: #3E2723;
+        --text-secondary: #5D4037;
+        --background-light: #F5F0E6;
+        --card-bg: #FFFFFF;
+        --success: #4CAF50;
+        --warning: #FFC107;
+      }
+
       .dashboard-container {
         height: 100vh;
         display: flex;
-        flex-direction: column;
+        flex-direction: column; 
       }
 
       .toolbar {
         display: flex;
         justify-content: space-between;
         padding: 0 16px;
-        background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         position: fixed;
         top: 0;
         left: 0;
@@ -232,20 +314,66 @@ import { AuthService } from '../../../core/services/auth.service';
         letter-spacing: 0.5px;
       }
 
+      /* Typewriter animation */
+      .typewriter {
+        overflow: hidden;
+        border-right: 3px solid rgba(255,255,255,0.75);
+        white-space: nowrap;
+        margin: 0;
+        animation: 
+          typing 3.5s steps(30, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: rgba(255,255,255,0.75) }
+      }
+
       .sidenav-container {
         flex: 1;
-        background-color: #f8fafc;
+        background-color: var(--background-light);
         margin-top: 64px; /* Height of toolbar */
       }
 
       .sidenav {
-        width: 250px;
-        background-color: white;
-        border-right: 1px solid #e2e8f0;
+        width: 260px;
+        background-color: var(--card-bg);
+        border-right: 1px solid var(--accent-light);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .sidenav-header {
+        padding: 24px 16px;
+        background-color: var(--primary-dark);
+        color: white;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-icon {
+        font-size: 28px;
+        height: 28px;
+        width: 28px;
+      }
+
+      .logo-text {
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
       }
 
       .content {
-        background-color: #f8fafc;
+        background-color: var(--background-light);
       }
 
       .content-wrapper {
@@ -262,33 +390,64 @@ import { AuthService } from '../../../core/services/auth.service';
         height: 48px;
         margin: 8px 12px;
         border-radius: 8px;
-        color: #4a5568;
+        color: var(--text-secondary);
         font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 12px;
+        transition: all 0.3s ease;
       }
 
       mat-nav-list a.active {
-        background-color: #e3f2fd;
-        color: #1976d2;
+        background-color: var(--accent-light);
+        color: var(--primary);
+        transform: translateX(5px);
+        position: relative;
+      }
+
+      mat-nav-list a.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: var(--primary);
+        border-radius: 0 4px 4px 0;
       }
 
       mat-nav-list a:hover {
-        background-color: #f8fafc;
+        background-color: var(--background-light);
+        transform: translateX(5px);
+      }
+      
+      .nav-item {
+        display: flex;
+        align-items: center;
       }
 
-      mat-nav-list a mat-icon {
+      .nav-item i {
         margin-right: 12px;
-        color: inherit;
+        color: var(--text-secondary);
+        transition: transform 0.3s ease, color 0.3s ease;
+        font-size: 20px;
+        width: 20px;
+        text-align: center;
+      }
+
+      .nav-item.active i {
+        color: var(--primary);
+      }
+
+      .nav-item:hover i {
+        transform: scale(1.1);
+        color: var(--primary-light);
       }
 
       .nav-section {
         padding: 8px 0;
+        transition: opacity 0.5s ease;
       }
 
       h3[matSubheader] {
-        color: #64748b;
+        color: var(--text-secondary);
         font-size: 0.75rem;
         font-weight: 600;
         text-transform: uppercase;
@@ -299,15 +458,59 @@ import { AuthService } from '../../../core/services/auth.service';
 
       mat-divider {
         margin: 8px 0;
+        background-color: var(--accent-light);
+      }
+
+      .toolbar-right i {
+        font-size: 20px;
+        color: white;
       }
 
       .mat-badge-content {
         font-family: 'Inter', sans-serif;
         font-weight: 500;
+        background-color: var(--accent-dark) !important;
       }
-      .menu-button svg {
-        width: 24px;
-        height: 24px;
+
+      /* Custom menu styles */
+      ::ng-deep .custom-menu {
+        background-color: white;
+      }
+
+      ::ng-deep .custom-menu .mat-menu-item:hover {
+        background-color: var(--background-light);
+      }
+
+      ::ng-deep .custom-menu .mat-menu-item i {
+        color: var(--primary);
+        margin-right: 8px;
+      }
+
+      /* Animation for active items */
+      .nav-item.active::after {
+        content: '';
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        box-shadow: 0 0 8px var(--primary-light);
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(139, 90, 43, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(139, 90, 43, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(139, 90, 43, 0);
+        }
       }
 
       /* Mobile Styles */
@@ -343,20 +546,9 @@ import { AuthService } from '../../../core/services/auth.service';
         }
       }
 
-      /* Tablet Styles */
-      @media (min-width: 769px) and (max-width: 1024px) {
-        .sidenav {
-          width: 220px;
-        }
-
-        .content-wrapper {
-          padding: 20px;
-        }
-      }
-
       /* Animation for sidenav */
       .sidenav {
-        transition: width 0.3s ease-in-out;
+        transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
       }
 
       /* Hide menu button on larger screens */
@@ -364,16 +556,6 @@ import { AuthService } from '../../../core/services/auth.service';
         .menu-button {
           display: none;
         }
-      }
-
-      /* Notification badge styles */
-      .notification-button {
-        margin-right: 8px;
-      }
-
-      /* Active route indicator */
-      .active mat-icon {
-        color: #1976d2;
       }
     `,
   ],
@@ -383,6 +565,8 @@ export class JobSeekerDashboardComponent implements OnInit {
   mobileView = false;
   sidenavMode: 'side' | 'over' = 'side';
   sidenavOpened = true;
+  sidenavState = 'in';
+  notificationCount = 3;
 
   constructor(
     private authService: AuthService,
@@ -397,17 +581,31 @@ export class JobSeekerDashboardComponent implements OnInit {
         this.mobileView = result.matches;
         this.sidenavMode = result.matches ? 'over' : 'side';
         this.sidenavOpened = !result.matches;
+        this.sidenavState = this.sidenavOpened ? 'in' : 'out';
         this.cdr.detectChanges();
       });
+
+    // Add delay for initial animations
+    setTimeout(() => {
+      this.sidenavState = 'in';
+    }, 100);
   }
 
   toggleSidenav() {
-    this.sidenav.toggle();
+    this.sidenavOpened = !this.sidenavOpened;
+    this.sidenavState = this.sidenavOpened ? 'in' : 'out';
+    if (this.sidenavMode === 'side') {
+      // Do nothing, state handles it
+    } else {
+      this.sidenav.toggle();
+    }
   }
 
   onNavItemClick() {
     if (this.mobileView) {
       this.sidenav.close();
+      this.sidenavState = 'out';
+      this.sidenavOpened = false;
     }
   }
 

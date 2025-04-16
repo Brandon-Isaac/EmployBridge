@@ -204,8 +204,8 @@ import { NgClass } from '@angular/common';
     }
     
     .signup-btn {
-      background-color: var(--accent);
-      color: white;
+      background-color: var(--background-light);
+      color: black;
       border-radius: 20px;
       padding: 0 1.5rem;
       transition: all 0.3s ease;
@@ -213,6 +213,7 @@ import { NgClass } from '@angular/common';
       
       &:hover {
         background-color: #e83a5f;
+        color:white;
         box-shadow: 0 6px 15px rgba(252, 70, 107, 0.4);
       }
     }

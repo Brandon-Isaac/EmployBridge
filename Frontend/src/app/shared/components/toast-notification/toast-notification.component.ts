@@ -5,7 +5,6 @@ import {
   MAT_SNACK_BAR_DATA,
   MatSnackBarRef,
 } from '@angular/material/snack-bar';
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 export interface ToastData {
@@ -18,10 +17,10 @@ export interface ToastData {
 @Component({
   selector: 'app-toast-notification',
   standalone: true,
-  imports: [CommonModule, MatSnackBarModule, MatIconModule, MatButtonModule],
+  imports: [CommonModule, MatSnackBarModule, MatButtonModule],
   template: `
     <div class="toast-container" [ngClass]="data.type">
-      <mat-icon class="toast-icon">{{ getIcon() }}</mat-icon>
+      <i class="fas toast-icon" [ngClass]="getIcon()"></i>
       <span class="toast-message">{{ data.message }}</span>
       <button
         *ngIf="data.action"
@@ -31,7 +30,7 @@ export interface ToastData {
         {{ data.action }}
       </button>
       <button mat-icon-button (click)="snackBarRef.dismiss()">
-        <mat-icon>close</mat-icon>
+        <i class="fas fa-times"></i>
       </button>
     </div>
   `,
@@ -49,6 +48,7 @@ export interface ToastData {
 
       .toast-icon {
         margin-right: 8px;
+        font-size: 20px;
       }
 
       .toast-message {
@@ -71,6 +71,14 @@ export interface ToastData {
       .info {
         background-color: #2196f3;
       }
+
+      button {
+        color: white;
+      }
+
+      button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
     `,
   ],
 })
@@ -83,15 +91,15 @@ export class ToastNotificationComponent {
   getIcon(): string {
     switch (this.data.type) {
       case 'success':
-        return 'check_circle';
+        return 'fa-check-circle';
       case 'error':
-        return 'error';
+        return 'fa-exclamation-circle';
       case 'warning':
-        return 'warning';
+        return 'fa-exclamation-triangle';
       case 'info':
-        return 'info';
+        return 'fa-info-circle';
       default:
-        return 'info';
+        return 'fa-info-circle';
     }
   }
 }

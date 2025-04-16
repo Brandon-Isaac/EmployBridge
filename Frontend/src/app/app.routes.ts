@@ -10,9 +10,8 @@ import { AdminDashboardComponent } from './admin/components/admin-dashboard/admi
 import { LandingComponent } from './landing/landing.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: LandingComponent,
+  {path:'',
+  component:LandingComponent,
   },
   {
     path: 'auth',
@@ -98,7 +97,7 @@ export const routes: Routes = [
         loadComponent: () =>
           import(
             './job-seeker/components/cv-manager/cv-manager.component'
-          ).then((m) => m.CvManagerComponent),
+          ).then((m) => m.ProfileManagerComponent),
       },
       {
         path: 'chatbot',
@@ -221,8 +220,8 @@ export const routes: Routes = [
     ],
   },
   {
-    path: '',
-    redirectTo: 'auth/login',
+    path: '***',
+    redirectTo: '',
     pathMatch: 'full',
   },
 ];

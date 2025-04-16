@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatBadgeModule } from '@angular/material/badge';
 
 interface JobTemplate {
   id: number;
@@ -24,109 +26,377 @@ interface JobTemplate {
     CommonModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule,
     MatChipsModule,
     MatGridListModule,
     MatMenuModule,
+    MatDividerModule,
+    MatTooltipModule,
+    MatBadgeModule,
   ],
   template: `
     <div class="templates-container">
-      <mat-card class="header-card">
-        <mat-card-header>
-          <mat-card-title>Job Templates</mat-card-title>
-          <mat-card-subtitle
-            >Create and manage reusable job templates</mat-card-subtitle
-          >
-        </mat-card-header>
-        <mat-card-actions align="end">
-          <button mat-raised-button color="primary">New Template</button>
-        </mat-card-actions>
-      </mat-card>
+      <div class="page-header">
+        <div class="header-content">
+          <h1 class="header-title">Job Templates</h1>
+          <p class="header-subtitle">Create and manage reusable job templates for consistent hiring</p>
+        </div>
+        <button mat-raised-button class="new-template-btn" (click)="createNewTemplate()">
+          <i class="fas fa-plus"></i>
+          New Template
+        </button>
+      </div>
 
-      <mat-grid-list cols="2" rowHeight="400px" gutterSize="20px">
-        <mat-grid-tile *ngFor="let template of jobTemplates">
-          <mat-card class="template-card">
-            <mat-card-header>
+      <div class="template-filters">
+        <div class="filter-chips">
+          <mat-chip-set>
+            <mat-chip class="filter-chip active">All Templates</mat-chip>
+            <mat-chip class="filter-chip">Recently Used</mat-chip>
+            <mat-chip class="filter-chip">Engineering</mat-chip>
+            <mat-chip class="filter-chip">Design</mat-chip>
+            <mat-chip class="filter-chip">Marketing</mat-chip>
+          </mat-chip-set>
+        </div>
+        <div class="sort-filter">
+          <button mat-button class="sort-button" [matMenuTriggerFor]="sortMenu">
+            <i class="fas fa-sort"></i>
+            Sort By
+          </button>
+          <mat-menu #sortMenu="matMenu">
+            <button mat-menu-item>Name (A-Z)</button>
+            <button mat-menu-item>Name (Z-A)</button>
+            <button mat-menu-item>Recent First</button>
+            <button mat-menu-item>Oldest First</button>
+          </mat-menu>
+        </div>
+      </div>
+
+      <div class="templates-grid">
+        <mat-card class="template-card" *ngFor="let template of jobTemplates">
+          <div class="card-header-stripe" [ngClass]="getDepartmentClass(template.department)"></div>
+          
+          <mat-card-header>
+            <div class="template-info">
               <mat-card-title>{{ template.title }}</mat-card-title>
-              <mat-card-subtitle>{{ template.department }}</mat-card-subtitle>
-              <button
-                mat-icon-button
-                [matMenuTriggerFor]="menu"
-                class="more-button"
-              >
-                <i class="fas fa-ellipsis-v"></i>
+              <mat-card-subtitle>
+                <i class="fas fa-users department-icon"></i>
+                {{ template.department }}
+              </mat-card-subtitle>
+            </div>
+            <button mat-icon-button [matMenuTriggerFor]="actionMenu" class="more-options-btn" matTooltip="More Options">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <mat-menu #actionMenu="matMenu" class="template-actions-menu">
+              <button mat-menu-item>
+                <i class="fas fa-edit"></i>
+                <span>Edit</span>
               </button>
-              <mat-menu #menu="matMenu">
-                <button mat-menu-item>
-                  <span>Edit</span>
-                </button>
-                <button mat-menu-item>
-                  <span>Duplicate</span>
-                </button>
-                <button mat-menu-item color="warn">
-                  <span>Delete</span>
-                </button>
-              </mat-menu>
-            </mat-card-header>
+              <button mat-menu-item>
+                <i class="fas fa-copy"></i>
+                <span>Duplicate</span>
+              </button>
+              <mat-divider></mat-divider>
+              <button mat-menu-item class="delete-option">
+                <i class="fas fa-trash"></i>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </mat-card-header>
 
-            <mat-card-content>
-              <mat-chip-set>
-                <mat-chip>{{ template.type }}</mat-chip>
+          <mat-card-content>
+            <div class="job-type-indicator">
+              <mat-chip class="job-type-chip" [ngClass]="getJobTypeClass(template.type)">
+                <i class="fas" [ngClass]="getJobTypeIcon(template.type)"></i>
+                {{ template.type }}
+              </mat-chip>
+            </div>
+
+            <p class="description">{{ template.description }}</p>
+
+            <div class="skills-section">
+              <h4 class="section-title">
+                <i class="fas fa-star section-icon"></i>
+                Required Skills
+              </h4>
+              <mat-chip-set class="skills-chips">
+                <mat-chip *ngFor="let skill of template.skills" class="skill-chip">
+                  {{ skill }}
+                </mat-chip>
               </mat-chip-set>
+            </div>
+          </mat-card-content>
 
-              <p class="description">{{ template.description }}</p>
+          <mat-divider></mat-divider>
 
-              <div class="skills-section">
-                <h4>Required Skills</h4>
-                <mat-chip-set>
-                  <mat-chip
-                    *ngFor="let skill of template.skills"
-                    color="primary"
-                    selected
-                  >
-                    {{ skill }}
-                  </mat-chip>
-                </mat-chip-set>
-              </div>
-
-              <p class="last-used">Last used: {{ template.lastUsed }}</p>
-            </mat-card-content>
-
-            <mat-card-actions>
-              <button mat-button color="primary">Use Template</button>
-            </mat-card-actions>
-          </mat-card>
-        </mat-grid-tile>
-      </mat-grid-list>
+          <mat-card-actions>
+            <div class="card-footer">
+              <span class="last-used">
+                <i class="fas fa-clock timestamp-icon"></i>
+                Last used: {{ formatDate(template.lastUsed) }}
+              </span>
+              <button mat-flat-button class="use-template-btn">
+                <i class="fas fa-file-alt"></i>
+                Use Template
+              </button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
   `,
   styles: [
     `
-      .templates-container {
-        padding: 20px;
+      :host {
+        --primary-green: #2e7d32;
+        --light-green: #4caf50;
+        --pale-green: #e8f5e9;
+        --blue-accent: #0288d1;
+        --teal-accent: #009688;
+        --purple-accent: #7b1fa2;
+        --orange-accent: #f57c00;
+        --dark-text: #263238;
+        --medium-text: #546e7a;
+        --light-text: #78909c;
+        --card-bg: #ffffff;
+        --hover-bg: #f5f9f5;
+        --divider: #e0f2f1;
       }
 
-      .header-card {
-        margin-bottom: 20px;
+      .templates-container {
+        padding: 24px;
+        max-width: 1600px;
+        margin: 0 auto;
+        background-color: #f8f9fa;
+        min-height: 100vh;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--divider);
+      }
+
+      .header-title {
+        font-size: 28px;
+        font-weight: 500;
+        color: var(--dark-text);
+        margin: 0 0 8px 0;
+      }
+
+      .header-subtitle {
+        font-size: 16px;
+        color: var(--medium-text);
+        margin: 0;
+      }
+
+      .new-template-btn {
+        background-color: var(--primary-green);
+        color: white;
+        border-radius: 24px;
+        padding: 0 24px;
+        height: 48px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.2s ease;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .new-template-btn:hover {
+        background-color: var(--teal-accent);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .new-template-btn i {
+        margin-right: 8px;
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .template-filters {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .filter-chips {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+      }
+
+      .filter-chip {
+        margin-right: 8px;
+        background-color: #f1f3f4;
+        color: var(--medium-text);
+        font-weight: 500;
+      }
+
+      .filter-chip.active {
+        background-color: var(--pale-green);
+        color: var(--primary-green);
+        border: 1px solid var(--light-green);
+      }
+
+      .sort-button {
+        color: var(--medium-text);
+      }
+
+      .sort-button i {
+        margin-right: 8px;
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .templates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 24px;
       }
 
       .template-card {
-        width: 100%;
-        height: 100%;
-        margin: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
         position: relative;
+        display: flex;
+        flex-direction: column;
       }
 
-      .more-button {
-        position: absolute;
-        top: 8px;
-        right: 8px;
+      .template-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-header-stripe {
+        height: 6px;
+        width: 100%;
+      }
+
+      .card-header-stripe.engineering {
+        background: linear-gradient(90deg, var(--teal-accent), var(--blue-accent));
+      }
+
+      .card-header-stripe.design {
+        background: linear-gradient(90deg, var(--purple-accent), #9c27b0);
+      }
+
+      .card-header-stripe.marketing {
+        background: linear-gradient(90deg, var(--orange-accent), #ff9800);
+      }
+
+      .card-header-stripe.sales {
+        background: linear-gradient(90deg, var(--blue-accent), #03a9f4);
+      }
+
+      mat-card-header {
+        padding: 16px 16px 8px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .template-info {
+        flex: 1;
+      }
+
+      mat-card-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--dark-text);
+        margin-bottom: 4px;
+      }
+
+      mat-card-subtitle {
+        display: flex;
+        align-items: center;
+        color: var(--medium-text);
+        font-size: 14px;
+      }
+
+      .department-icon {
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        opacity: 0.8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .more-options-btn {
+        color: var(--medium-text);
+      }
+
+      .more-options-btn i {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      mat-card-content {
+        padding: 0 16px 16px;
+        flex: 1;
+      }
+
+      .job-type-indicator {
+        margin: 8px 0 16px;
+      }
+
+      .job-type-chip {
+        font-size: 12px;
+        height: 24px;
+        padding: 0 12px;
+      }
+
+      .job-type-chip.full-time {
+        background-color: rgba(46, 125, 50, 0.1);
+        color: var(--primary-green);
+      }
+
+      .job-type-chip.part-time {
+        background-color: rgba(2, 136, 209, 0.1);
+        color: var(--blue-accent);
+      }
+
+      .job-type-chip.contract {
+        background-color: rgba(245, 124, 0, 0.1);
+        color: var(--orange-accent);
+      }
+
+      .job-type-chip i {
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .description {
         margin: 16px 0;
-        color: rgba(0, 0, 0, 0.87);
-        height: 80px;
+        color: var(--dark-text);
+        font-size: 14px;
+        line-height: 1.5;
+        height: 84px;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -135,30 +405,151 @@ interface JobTemplate {
       }
 
       .skills-section {
-        margin: 16px 0;
+        margin: 16px 0 8px;
       }
 
-      .skills-section h4 {
-        margin-bottom: 8px;
-        color: rgba(0, 0, 0, 0.6);
+      .section-title {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--dark-text);
+        margin-bottom: 12px;
       }
 
-      .last-used {
-        margin-top: 16px;
-        color: rgba(0, 0, 0, 0.6);
-        font-size: 0.875rem;
+      .section-icon {
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        color: var(--teal-accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .skills-chips {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .skill-chip {
+        margin: 4px;
+        background-color: rgba(0, 150, 136, 0.1);
+        color: var(--teal-accent);
+        font-size: 12px;
+        height: 24px;
+      }
+
+      mat-divider {
+        margin: 8px 0;
       }
 
       mat-card-actions {
-        padding: 16px;
+        padding: 8px 16px;
       }
 
-      .mat-chip-set {
-        margin-top: 8px;
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
       }
 
-      mat-chip {
-        margin: 4px;
+      .last-used {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: var(--medium-text);
+      }
+
+      .timestamp-icon {
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
+        margin-right: 6px;
+        color: var(--medium-text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .use-template-btn {
+        background-color: transparent;
+        color: var(--teal-accent);
+        font-weight: 500;
+        border: 1px solid var(--teal-accent);
+        transition: all 0.2s ease;
+      }
+
+      .use-template-btn:hover {
+        background-color: rgba(0, 150, 136, 0.1);
+      }
+
+      .use-template-btn i {
+        font-size: 16px;
+        margin-right: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .delete-option {
+        color: #f44336;
+      }
+
+      .template-actions-menu button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .template-actions-menu i {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (max-width: 768px) {
+        .templates-container {
+          padding: 16px;
+        }
+
+        .page-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .new-template-btn {
+          margin-top: 16px;
+          width: 100%;
+        }
+
+        .template-filters {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .filter-chips {
+          margin-bottom: 16px;
+          width: 100%;
+        }
+
+        .sort-filter {
+          width: 100%;
+        }
+
+        .sort-button {
+          width: 100%;
+          justify-content: flex-start;
+        }
+
+        .templates-grid {
+          grid-template-columns: 1fr;
+        }
       }
     `,
   ],
@@ -206,4 +597,39 @@ export class JobTemplatesComponent {
       lastUsed: '2024-02-28',
     },
   ];
+
+  getDepartmentClass(department: string): string {
+    return department.toLowerCase();
+  }
+
+  getJobTypeClass(type: string): string {
+    return type.toLowerCase().replace('-', '');
+  }
+
+  getJobTypeIcon(type: string): string {
+    switch (type.toLowerCase()) {
+      case 'full-time':
+        return 'fa-briefcase';
+      case 'part-time':
+        return 'fa-clock';
+      case 'contract':
+        return 'fa-file-contract';
+      default:
+        return 'fa-briefcase';
+    }
+  }
+
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      month: 'short', 
+      day: 'numeric', 
+      year: 'numeric' 
+    });
+  }
+
+  createNewTemplate(): void {
+    // Implementation would go here
+    console.log('Creating new template');
+  }
 }

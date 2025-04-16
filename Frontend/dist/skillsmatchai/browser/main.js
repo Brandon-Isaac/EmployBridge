@@ -1,13 +1,39 @@
 import {
+  MatToolbar,
+  MatToolbarModule
+} from "./chunk-VVAP3QIX.js";
+import {
+  MatMenu,
+  MatMenuItem,
+  MatMenuModule,
+  MatMenuTrigger
+} from "./chunk-QJ7WF3FG.js";
+import {
+  MatOption,
+  MatPseudoCheckboxModule,
+  MatSelect,
+  MatSelectModule
+} from "./chunk-QZIPTO56.js";
+import {
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterModule,
+  RouterOutlet,
+  provideRouter
+} from "./chunk-XFGBTSAZ.js";
+import {
   MatBadge,
   MatBadgeModule
-} from "./chunk-MMG46DTL.js";
+} from "./chunk-MFJU2DX3.js";
+import {
+  MatDivider,
+  MatDividerModule
+} from "./chunk-3QCHWOEP.js";
 import {
   AUTO_STYLE,
   AnimationGroupPlayer,
   AnimationMetadataType,
-  MatToolbar,
-  MatToolbarModule,
   NoopAnimationPlayer,
   animate,
   query,
@@ -18,47 +44,31 @@ import {
   transition,
   trigger,
   ɵPRE_STYLE
-} from "./chunk-IR6OQL5E.js";
-import {
-  MatMenu,
-  MatMenuItem,
-  MatMenuModule,
-  MatMenuTrigger
-} from "./chunk-5WW65WYF.js";
-import {
-  MatOption,
-  MatPseudoCheckboxModule,
-  MatSelect,
-  MatSelectModule
-} from "./chunk-2VSBSU4O.js";
-import {
-  MatDivider,
-  MatDividerModule
-} from "./chunk-LXRKCGKC.js";
+} from "./chunk-7BNL2RL5.js";
 import {
   Overlay,
   OverlayConfig,
   OverlayModule
-} from "./chunk-LJRDQJQ7.js";
+} from "./chunk-2CZVWUUL.js";
 import "./chunk-PPMKGYHC.js";
 import {
   CdkScrollable,
   CdkScrollableModule,
   ScrollDispatcher,
   ViewportRuler
-} from "./chunk-QHY3LIYG.js";
+} from "./chunk-DG7YLRMC.js";
 import {
   MatInput,
   MatInputModule
-} from "./chunk-NSIWRWDC.js";
-import "./chunk-VLHMKKTI.js";
+} from "./chunk-W7G65VI2.js";
+import "./chunk-R4NVDLOM.js";
 import {
   MatFormFieldModule
-} from "./chunk-R45PVQ3E.js";
+} from "./chunk-B7JQH24K.js";
 import "./chunk-OIZAD6NR.js";
 import {
   SelectionModel
-} from "./chunk-EEGQKQWR.js";
+} from "./chunk-VW3NTET3.js";
 import "./chunk-OIBNGD5S.js";
 import {
   BasePortalOutlet,
@@ -66,18 +76,16 @@ import {
   ComponentPortal,
   PortalModule,
   TemplatePortal
-} from "./chunk-E2EGRSM7.js";
-import "./chunk-6JM4SM7P.js";
+} from "./chunk-XFTMB2RM.js";
+import "./chunk-KCSVOKMR.js";
 import {
   BrowserModule,
   DomRendererFactory2,
   HttpClient,
-  MatIcon,
   MatIconModule,
-  Title,
   bootstrapApplication,
   provideHttpClient
-} from "./chunk-DJQE7C7B.js";
+} from "./chunk-E6YAXSQU.js";
 import {
   DefaultValueAccessor,
   FormBuilder,
@@ -96,56 +104,37 @@ import {
   RequiredValidator,
   Validators,
   ɵNgNoValidate
-} from "./chunk-ZTFMCIUB.js";
+} from "./chunk-255VWD3Z.js";
 import {
   A,
   ANIMATION_MODULE_TYPE,
-  APP_BOOTSTRAP_LISTENER,
-  APP_INITIALIZER,
-  ApplicationRef,
   AsyncPipe,
-  Attribute,
   BehaviorSubject,
   BreakpointObserver,
   CdkObserveContent,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   CommonModule,
-  Compiler,
   Component,
-  ConnectableObservable,
-  Console,
   ContentChild,
   ContentChildren,
   DOCUMENT,
-  DestroyRef,
   Directionality,
   Directive,
-  EMPTY,
   ENTER,
-  ENVIRONMENT_INITIALIZER,
   ESCAPE,
   ElementRef,
-  EmptyError,
-  EnvironmentInjector,
   EventEmitter,
   FocusKeyManager,
   FocusMonitor,
   FocusTrapFactory,
-  HashLocationStrategy,
-  HostBinding,
-  HostListener,
   Inject,
-  InjectFlags,
   Injectable,
   InjectionToken,
   Injector,
   Input,
   InteractivityChecker,
-  LOCATION_INITIALIZED,
   LiveAnnouncer,
-  Location,
-  LocationStrategy,
   MAT_RIPPLE_GLOBAL_OPTIONS,
   MatButton,
   MatButtonModule,
@@ -162,14 +151,10 @@ import {
   NgForOf,
   NgIf,
   NgModule,
-  NgModuleFactory$1,
   NgTemplateOutlet,
   NgZone,
   ObserversModule,
-  Optional,
   Output,
-  PathLocationStrategy,
-  PendingTasksInternal,
   Platform,
   QueryList,
   Renderer2,
@@ -177,74 +162,40 @@ import {
   RippleRenderer,
   RuntimeError,
   SPACE,
-  SkipSelf,
   Subject,
   Subscription,
   TemplateRef,
-  Version,
   ViewChild,
-  ViewContainerRef,
   ViewEncapsulation,
-  ViewportScroller,
   _CdkPrivateStyleLoader,
   _IdGenerator,
   _StructuralStylesLoader,
   __objRest,
-  __spreadProps,
   __spreadValues,
   _getFocusedElementPierceShadowDom,
   afterNextRender,
   afterRender,
-  booleanAttribute,
-  catchError,
   coerceBooleanProperty,
   coerceNumberProperty,
-  combineLatest,
-  concat,
-  concatMap,
-  createEnvironmentInjector,
   debounceTime,
-  defaultIfEmpty,
-  defer,
   delay,
   filter,
-  finalize,
-  first,
   forwardRef,
-  from,
   fromEvent,
   hasModifierKey,
   inject,
-  input,
-  isInjectable,
-  isNgModule,
-  isObservable,
-  isPromise,
-  isStandalone,
-  last,
-  makeEnvironmentProviders,
   map,
   mapTo,
   merge,
-  mergeAll,
-  mergeMap,
   numberAttribute,
   of,
   performanceMarkFeature,
-  pipe,
   provideZoneChangeDetection,
-  refCount,
-  reflectComponentType,
-  runInInjectionContext,
-  scan,
   setClassMetadata,
   startWith,
-  switchMap,
   take,
-  takeLast,
   takeUntil,
   tap,
-  throwError,
   ɵsetClassDebugInfo,
   ɵɵInheritDefinitionFeature,
   ɵɵNgOnChangesFeature,
@@ -268,8 +219,6 @@ import {
   ɵɵgetCurrentView,
   ɵɵgetInheritedFactory,
   ɵɵinject,
-  ɵɵinjectAttribute,
-  ɵɵinvalidFactory,
   ɵɵlistener,
   ɵɵloadQuery,
   ɵɵnamespaceHTML,
@@ -286,7 +235,6 @@ import {
   ɵɵresetView,
   ɵɵrestoreView,
   ɵɵsanitizeHtml,
-  ɵɵsanitizeUrlOrResourceUrl,
   ɵɵstyleProp,
   ɵɵtemplate,
   ɵɵtemplateRefExtractor,
@@ -295,5732 +243,7 @@ import {
   ɵɵtextInterpolate1,
   ɵɵtextInterpolate2,
   ɵɵviewQuery
-} from "./chunk-IAQJIRE2.js";
-
-// node_modules/@angular/router/fesm2022/router-LSBBtrLI.mjs
-var PRIMARY_OUTLET = "primary";
-var RouteTitleKey = /* @__PURE__ */ Symbol("RouteTitle");
-var ParamsAsMap = class {
-  params;
-  constructor(params) {
-    this.params = params || {};
-  }
-  has(name) {
-    return Object.prototype.hasOwnProperty.call(this.params, name);
-  }
-  get(name) {
-    if (this.has(name)) {
-      const v = this.params[name];
-      return Array.isArray(v) ? v[0] : v;
-    }
-    return null;
-  }
-  getAll(name) {
-    if (this.has(name)) {
-      const v = this.params[name];
-      return Array.isArray(v) ? v : [v];
-    }
-    return [];
-  }
-  get keys() {
-    return Object.keys(this.params);
-  }
-};
-function convertToParamMap(params) {
-  return new ParamsAsMap(params);
-}
-function defaultUrlMatcher(segments, segmentGroup, route) {
-  const parts = route.path.split("/");
-  if (parts.length > segments.length) {
-    return null;
-  }
-  if (route.pathMatch === "full" && (segmentGroup.hasChildren() || parts.length < segments.length)) {
-    return null;
-  }
-  const posParams = {};
-  for (let index = 0; index < parts.length; index++) {
-    const part = parts[index];
-    const segment = segments[index];
-    const isParameter = part[0] === ":";
-    if (isParameter) {
-      posParams[part.substring(1)] = segment;
-    } else if (part !== segment.path) {
-      return null;
-    }
-  }
-  return {
-    consumed: segments.slice(0, parts.length),
-    posParams
-  };
-}
-function shallowEqualArrays(a, b) {
-  if (a.length !== b.length) return false;
-  for (let i = 0; i < a.length; ++i) {
-    if (!shallowEqual(a[i], b[i])) return false;
-  }
-  return true;
-}
-function shallowEqual(a, b) {
-  const k1 = a ? getDataKeys(a) : void 0;
-  const k2 = b ? getDataKeys(b) : void 0;
-  if (!k1 || !k2 || k1.length != k2.length) {
-    return false;
-  }
-  let key;
-  for (let i = 0; i < k1.length; i++) {
-    key = k1[i];
-    if (!equalArraysOrString(a[key], b[key])) {
-      return false;
-    }
-  }
-  return true;
-}
-function getDataKeys(obj) {
-  return [...Object.keys(obj), ...Object.getOwnPropertySymbols(obj)];
-}
-function equalArraysOrString(a, b) {
-  if (Array.isArray(a) && Array.isArray(b)) {
-    if (a.length !== b.length) return false;
-    const aSorted = [...a].sort();
-    const bSorted = [...b].sort();
-    return aSorted.every((val, index) => bSorted[index] === val);
-  } else {
-    return a === b;
-  }
-}
-function last2(a) {
-  return a.length > 0 ? a[a.length - 1] : null;
-}
-function wrapIntoObservable(value) {
-  if (isObservable(value)) {
-    return value;
-  }
-  if (isPromise(value)) {
-    return from(Promise.resolve(value));
-  }
-  return of(value);
-}
-var pathCompareMap = {
-  "exact": equalSegmentGroups,
-  "subset": containsSegmentGroup
-};
-var paramCompareMap = {
-  "exact": equalParams,
-  "subset": containsParams,
-  "ignored": () => true
-};
-function containsTree(container, containee, options) {
-  return pathCompareMap[options.paths](container.root, containee.root, options.matrixParams) && paramCompareMap[options.queryParams](container.queryParams, containee.queryParams) && !(options.fragment === "exact" && container.fragment !== containee.fragment);
-}
-function equalParams(container, containee) {
-  return shallowEqual(container, containee);
-}
-function equalSegmentGroups(container, containee, matrixParams) {
-  if (!equalPath(container.segments, containee.segments)) return false;
-  if (!matrixParamsMatch(container.segments, containee.segments, matrixParams)) {
-    return false;
-  }
-  if (container.numberOfChildren !== containee.numberOfChildren) return false;
-  for (const c in containee.children) {
-    if (!container.children[c]) return false;
-    if (!equalSegmentGroups(container.children[c], containee.children[c], matrixParams)) return false;
-  }
-  return true;
-}
-function containsParams(container, containee) {
-  return Object.keys(containee).length <= Object.keys(container).length && Object.keys(containee).every((key) => equalArraysOrString(container[key], containee[key]));
-}
-function containsSegmentGroup(container, containee, matrixParams) {
-  return containsSegmentGroupHelper(container, containee, containee.segments, matrixParams);
-}
-function containsSegmentGroupHelper(container, containee, containeePaths, matrixParams) {
-  if (container.segments.length > containeePaths.length) {
-    const current = container.segments.slice(0, containeePaths.length);
-    if (!equalPath(current, containeePaths)) return false;
-    if (containee.hasChildren()) return false;
-    if (!matrixParamsMatch(current, containeePaths, matrixParams)) return false;
-    return true;
-  } else if (container.segments.length === containeePaths.length) {
-    if (!equalPath(container.segments, containeePaths)) return false;
-    if (!matrixParamsMatch(container.segments, containeePaths, matrixParams)) return false;
-    for (const c in containee.children) {
-      if (!container.children[c]) return false;
-      if (!containsSegmentGroup(container.children[c], containee.children[c], matrixParams)) {
-        return false;
-      }
-    }
-    return true;
-  } else {
-    const current = containeePaths.slice(0, container.segments.length);
-    const next = containeePaths.slice(container.segments.length);
-    if (!equalPath(container.segments, current)) return false;
-    if (!matrixParamsMatch(container.segments, current, matrixParams)) return false;
-    if (!container.children[PRIMARY_OUTLET]) return false;
-    return containsSegmentGroupHelper(container.children[PRIMARY_OUTLET], containee, next, matrixParams);
-  }
-}
-function matrixParamsMatch(containerPaths, containeePaths, options) {
-  return containeePaths.every((containeeSegment, i) => {
-    return paramCompareMap[options](containerPaths[i].parameters, containeeSegment.parameters);
-  });
-}
-var UrlTree = class {
-  root;
-  queryParams;
-  fragment;
-  /** @internal */
-  _queryParamMap;
-  constructor(root = new UrlSegmentGroup([], {}), queryParams = {}, fragment = null) {
-    this.root = root;
-    this.queryParams = queryParams;
-    this.fragment = fragment;
-    if (typeof ngDevMode === "undefined" || ngDevMode) {
-      if (root.segments.length > 0) {
-        throw new RuntimeError(4015, "The root `UrlSegmentGroup` should not contain `segments`. Instead, these segments belong in the `children` so they can be associated with a named outlet.");
-      }
-    }
-  }
-  get queryParamMap() {
-    this._queryParamMap ??= convertToParamMap(this.queryParams);
-    return this._queryParamMap;
-  }
-  /** @docsNotRequired */
-  toString() {
-    return DEFAULT_SERIALIZER.serialize(this);
-  }
-};
-var UrlSegmentGroup = class {
-  segments;
-  children;
-  /** The parent node in the url tree */
-  parent = null;
-  constructor(segments, children) {
-    this.segments = segments;
-    this.children = children;
-    Object.values(children).forEach((v) => v.parent = this);
-  }
-  /** Whether the segment has child segments */
-  hasChildren() {
-    return this.numberOfChildren > 0;
-  }
-  /** Number of child segments */
-  get numberOfChildren() {
-    return Object.keys(this.children).length;
-  }
-  /** @docsNotRequired */
-  toString() {
-    return serializePaths(this);
-  }
-};
-var UrlSegment = class {
-  path;
-  parameters;
-  /** @internal */
-  _parameterMap;
-  constructor(path, parameters) {
-    this.path = path;
-    this.parameters = parameters;
-  }
-  get parameterMap() {
-    this._parameterMap ??= convertToParamMap(this.parameters);
-    return this._parameterMap;
-  }
-  /** @docsNotRequired */
-  toString() {
-    return serializePath(this);
-  }
-};
-function equalSegments(as, bs) {
-  return equalPath(as, bs) && as.every((a, i) => shallowEqual(a.parameters, bs[i].parameters));
-}
-function equalPath(as, bs) {
-  if (as.length !== bs.length) return false;
-  return as.every((a, i) => a.path === bs[i].path);
-}
-function mapChildrenIntoArray(segment, fn) {
-  let res = [];
-  Object.entries(segment.children).forEach(([childOutlet, child]) => {
-    if (childOutlet === PRIMARY_OUTLET) {
-      res = res.concat(fn(child, childOutlet));
-    }
-  });
-  Object.entries(segment.children).forEach(([childOutlet, child]) => {
-    if (childOutlet !== PRIMARY_OUTLET) {
-      res = res.concat(fn(child, childOutlet));
-    }
-  });
-  return res;
-}
-var UrlSerializer = class _UrlSerializer {
-  static \u0275fac = function UrlSerializer_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _UrlSerializer)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _UrlSerializer,
-    factory: () => (() => new DefaultUrlSerializer())(),
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(UrlSerializer, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root",
-      useFactory: () => new DefaultUrlSerializer()
-    }]
-  }], null, null);
-})();
-var DefaultUrlSerializer = class {
-  /** Parses a url into a `UrlTree` */
-  parse(url) {
-    const p = new UrlParser(url);
-    return new UrlTree(p.parseRootSegment(), p.parseQueryParams(), p.parseFragment());
-  }
-  /** Converts a `UrlTree` into a url */
-  serialize(tree2) {
-    const segment = `/${serializeSegment(tree2.root, true)}`;
-    const query2 = serializeQueryParams(tree2.queryParams);
-    const fragment = typeof tree2.fragment === `string` ? `#${encodeUriFragment(tree2.fragment)}` : "";
-    return `${segment}${query2}${fragment}`;
-  }
-};
-var DEFAULT_SERIALIZER = new DefaultUrlSerializer();
-function serializePaths(segment) {
-  return segment.segments.map((p) => serializePath(p)).join("/");
-}
-function serializeSegment(segment, root) {
-  if (!segment.hasChildren()) {
-    return serializePaths(segment);
-  }
-  if (root) {
-    const primary = segment.children[PRIMARY_OUTLET] ? serializeSegment(segment.children[PRIMARY_OUTLET], false) : "";
-    const children = [];
-    Object.entries(segment.children).forEach(([k, v]) => {
-      if (k !== PRIMARY_OUTLET) {
-        children.push(`${k}:${serializeSegment(v, false)}`);
-      }
-    });
-    return children.length > 0 ? `${primary}(${children.join("//")})` : primary;
-  } else {
-    const children = mapChildrenIntoArray(segment, (v, k) => {
-      if (k === PRIMARY_OUTLET) {
-        return [serializeSegment(segment.children[PRIMARY_OUTLET], false)];
-      }
-      return [`${k}:${serializeSegment(v, false)}`];
-    });
-    if (Object.keys(segment.children).length === 1 && segment.children[PRIMARY_OUTLET] != null) {
-      return `${serializePaths(segment)}/${children[0]}`;
-    }
-    return `${serializePaths(segment)}/(${children.join("//")})`;
-  }
-}
-function encodeUriString(s) {
-  return encodeURIComponent(s).replace(/%40/g, "@").replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",");
-}
-function encodeUriQuery(s) {
-  return encodeUriString(s).replace(/%3B/gi, ";");
-}
-function encodeUriFragment(s) {
-  return encodeURI(s);
-}
-function encodeUriSegment(s) {
-  return encodeUriString(s).replace(/\(/g, "%28").replace(/\)/g, "%29").replace(/%26/gi, "&");
-}
-function decode(s) {
-  return decodeURIComponent(s);
-}
-function decodeQuery(s) {
-  return decode(s.replace(/\+/g, "%20"));
-}
-function serializePath(path) {
-  return `${encodeUriSegment(path.path)}${serializeMatrixParams(path.parameters)}`;
-}
-function serializeMatrixParams(params) {
-  return Object.entries(params).map(([key, value]) => `;${encodeUriSegment(key)}=${encodeUriSegment(value)}`).join("");
-}
-function serializeQueryParams(params) {
-  const strParams = Object.entries(params).map(([name, value]) => {
-    return Array.isArray(value) ? value.map((v) => `${encodeUriQuery(name)}=${encodeUriQuery(v)}`).join("&") : `${encodeUriQuery(name)}=${encodeUriQuery(value)}`;
-  }).filter((s) => s);
-  return strParams.length ? `?${strParams.join("&")}` : "";
-}
-var SEGMENT_RE = /^[^\/()?;#]+/;
-function matchSegments(str) {
-  const match2 = str.match(SEGMENT_RE);
-  return match2 ? match2[0] : "";
-}
-var MATRIX_PARAM_SEGMENT_RE = /^[^\/()?;=#]+/;
-function matchMatrixKeySegments(str) {
-  const match2 = str.match(MATRIX_PARAM_SEGMENT_RE);
-  return match2 ? match2[0] : "";
-}
-var QUERY_PARAM_RE = /^[^=?&#]+/;
-function matchQueryParams(str) {
-  const match2 = str.match(QUERY_PARAM_RE);
-  return match2 ? match2[0] : "";
-}
-var QUERY_PARAM_VALUE_RE = /^[^&#]+/;
-function matchUrlQueryParamValue(str) {
-  const match2 = str.match(QUERY_PARAM_VALUE_RE);
-  return match2 ? match2[0] : "";
-}
-var UrlParser = class {
-  url;
-  remaining;
-  constructor(url) {
-    this.url = url;
-    this.remaining = url;
-  }
-  parseRootSegment() {
-    this.consumeOptional("/");
-    if (this.remaining === "" || this.peekStartsWith("?") || this.peekStartsWith("#")) {
-      return new UrlSegmentGroup([], {});
-    }
-    return new UrlSegmentGroup([], this.parseChildren());
-  }
-  parseQueryParams() {
-    const params = {};
-    if (this.consumeOptional("?")) {
-      do {
-        this.parseQueryParam(params);
-      } while (this.consumeOptional("&"));
-    }
-    return params;
-  }
-  parseFragment() {
-    return this.consumeOptional("#") ? decodeURIComponent(this.remaining) : null;
-  }
-  parseChildren() {
-    if (this.remaining === "") {
-      return {};
-    }
-    this.consumeOptional("/");
-    const segments = [];
-    if (!this.peekStartsWith("(")) {
-      segments.push(this.parseSegment());
-    }
-    while (this.peekStartsWith("/") && !this.peekStartsWith("//") && !this.peekStartsWith("/(")) {
-      this.capture("/");
-      segments.push(this.parseSegment());
-    }
-    let children = {};
-    if (this.peekStartsWith("/(")) {
-      this.capture("/");
-      children = this.parseParens(true);
-    }
-    let res = {};
-    if (this.peekStartsWith("(")) {
-      res = this.parseParens(false);
-    }
-    if (segments.length > 0 || Object.keys(children).length > 0) {
-      res[PRIMARY_OUTLET] = new UrlSegmentGroup(segments, children);
-    }
-    return res;
-  }
-  // parse a segment with its matrix parameters
-  // ie `name;k1=v1;k2`
-  parseSegment() {
-    const path = matchSegments(this.remaining);
-    if (path === "" && this.peekStartsWith(";")) {
-      throw new RuntimeError(4009, (typeof ngDevMode === "undefined" || ngDevMode) && `Empty path url segment cannot have parameters: '${this.remaining}'.`);
-    }
-    this.capture(path);
-    return new UrlSegment(decode(path), this.parseMatrixParams());
-  }
-  parseMatrixParams() {
-    const params = {};
-    while (this.consumeOptional(";")) {
-      this.parseParam(params);
-    }
-    return params;
-  }
-  parseParam(params) {
-    const key = matchMatrixKeySegments(this.remaining);
-    if (!key) {
-      return;
-    }
-    this.capture(key);
-    let value = "";
-    if (this.consumeOptional("=")) {
-      const valueMatch = matchSegments(this.remaining);
-      if (valueMatch) {
-        value = valueMatch;
-        this.capture(value);
-      }
-    }
-    params[decode(key)] = decode(value);
-  }
-  // Parse a single query parameter `name[=value]`
-  parseQueryParam(params) {
-    const key = matchQueryParams(this.remaining);
-    if (!key) {
-      return;
-    }
-    this.capture(key);
-    let value = "";
-    if (this.consumeOptional("=")) {
-      const valueMatch = matchUrlQueryParamValue(this.remaining);
-      if (valueMatch) {
-        value = valueMatch;
-        this.capture(value);
-      }
-    }
-    const decodedKey = decodeQuery(key);
-    const decodedVal = decodeQuery(value);
-    if (params.hasOwnProperty(decodedKey)) {
-      let currentVal = params[decodedKey];
-      if (!Array.isArray(currentVal)) {
-        currentVal = [currentVal];
-        params[decodedKey] = currentVal;
-      }
-      currentVal.push(decodedVal);
-    } else {
-      params[decodedKey] = decodedVal;
-    }
-  }
-  // parse `(a/b//outlet_name:c/d)`
-  parseParens(allowPrimary) {
-    const segments = {};
-    this.capture("(");
-    while (!this.consumeOptional(")") && this.remaining.length > 0) {
-      const path = matchSegments(this.remaining);
-      const next = this.remaining[path.length];
-      if (next !== "/" && next !== ")" && next !== ";") {
-        throw new RuntimeError(4010, (typeof ngDevMode === "undefined" || ngDevMode) && `Cannot parse url '${this.url}'`);
-      }
-      let outletName = void 0;
-      if (path.indexOf(":") > -1) {
-        outletName = path.slice(0, path.indexOf(":"));
-        this.capture(outletName);
-        this.capture(":");
-      } else if (allowPrimary) {
-        outletName = PRIMARY_OUTLET;
-      }
-      const children = this.parseChildren();
-      segments[outletName] = Object.keys(children).length === 1 ? children[PRIMARY_OUTLET] : new UrlSegmentGroup([], children);
-      this.consumeOptional("//");
-    }
-    return segments;
-  }
-  peekStartsWith(str) {
-    return this.remaining.startsWith(str);
-  }
-  // Consumes the prefix when it is present and returns whether it has been consumed
-  consumeOptional(str) {
-    if (this.peekStartsWith(str)) {
-      this.remaining = this.remaining.substring(str.length);
-      return true;
-    }
-    return false;
-  }
-  capture(str) {
-    if (!this.consumeOptional(str)) {
-      throw new RuntimeError(4011, (typeof ngDevMode === "undefined" || ngDevMode) && `Expected "${str}".`);
-    }
-  }
-};
-function createRoot(rootCandidate) {
-  return rootCandidate.segments.length > 0 ? new UrlSegmentGroup([], {
-    [PRIMARY_OUTLET]: rootCandidate
-  }) : rootCandidate;
-}
-function squashSegmentGroup(segmentGroup) {
-  const newChildren = {};
-  for (const [childOutlet, child] of Object.entries(segmentGroup.children)) {
-    const childCandidate = squashSegmentGroup(child);
-    if (childOutlet === PRIMARY_OUTLET && childCandidate.segments.length === 0 && childCandidate.hasChildren()) {
-      for (const [grandChildOutlet, grandChild] of Object.entries(childCandidate.children)) {
-        newChildren[grandChildOutlet] = grandChild;
-      }
-    } else if (childCandidate.segments.length > 0 || childCandidate.hasChildren()) {
-      newChildren[childOutlet] = childCandidate;
-    }
-  }
-  const s = new UrlSegmentGroup(segmentGroup.segments, newChildren);
-  return mergeTrivialChildren(s);
-}
-function mergeTrivialChildren(s) {
-  if (s.numberOfChildren === 1 && s.children[PRIMARY_OUTLET]) {
-    const c = s.children[PRIMARY_OUTLET];
-    return new UrlSegmentGroup(s.segments.concat(c.segments), c.children);
-  }
-  return s;
-}
-function isUrlTree(v) {
-  return v instanceof UrlTree;
-}
-function createUrlTreeFromSnapshot(relativeTo, commands, queryParams = null, fragment = null) {
-  const relativeToUrlSegmentGroup = createSegmentGroupFromRoute(relativeTo);
-  return createUrlTreeFromSegmentGroup(relativeToUrlSegmentGroup, commands, queryParams, fragment);
-}
-function createSegmentGroupFromRoute(route) {
-  let targetGroup;
-  function createSegmentGroupFromRouteRecursive(currentRoute) {
-    const childOutlets = {};
-    for (const childSnapshot of currentRoute.children) {
-      const root = createSegmentGroupFromRouteRecursive(childSnapshot);
-      childOutlets[childSnapshot.outlet] = root;
-    }
-    const segmentGroup = new UrlSegmentGroup(currentRoute.url, childOutlets);
-    if (currentRoute === route) {
-      targetGroup = segmentGroup;
-    }
-    return segmentGroup;
-  }
-  const rootCandidate = createSegmentGroupFromRouteRecursive(route.root);
-  const rootSegmentGroup = createRoot(rootCandidate);
-  return targetGroup ?? rootSegmentGroup;
-}
-function createUrlTreeFromSegmentGroup(relativeTo, commands, queryParams, fragment) {
-  let root = relativeTo;
-  while (root.parent) {
-    root = root.parent;
-  }
-  if (commands.length === 0) {
-    return tree(root, root, root, queryParams, fragment);
-  }
-  const nav = computeNavigation(commands);
-  if (nav.toRoot()) {
-    return tree(root, root, new UrlSegmentGroup([], {}), queryParams, fragment);
-  }
-  const position = findStartingPositionForTargetGroup(nav, root, relativeTo);
-  const newSegmentGroup = position.processChildren ? updateSegmentGroupChildren(position.segmentGroup, position.index, nav.commands) : updateSegmentGroup(position.segmentGroup, position.index, nav.commands);
-  return tree(root, position.segmentGroup, newSegmentGroup, queryParams, fragment);
-}
-function isMatrixParams(command) {
-  return typeof command === "object" && command != null && !command.outlets && !command.segmentPath;
-}
-function isCommandWithOutlets(command) {
-  return typeof command === "object" && command != null && command.outlets;
-}
-function tree(oldRoot, oldSegmentGroup, newSegmentGroup, queryParams, fragment) {
-  let qp = {};
-  if (queryParams) {
-    Object.entries(queryParams).forEach(([name, value]) => {
-      qp[name] = Array.isArray(value) ? value.map((v) => `${v}`) : `${value}`;
-    });
-  }
-  let rootCandidate;
-  if (oldRoot === oldSegmentGroup) {
-    rootCandidate = newSegmentGroup;
-  } else {
-    rootCandidate = replaceSegment(oldRoot, oldSegmentGroup, newSegmentGroup);
-  }
-  const newRoot = createRoot(squashSegmentGroup(rootCandidate));
-  return new UrlTree(newRoot, qp, fragment);
-}
-function replaceSegment(current, oldSegment, newSegment) {
-  const children = {};
-  Object.entries(current.children).forEach(([outletName, c]) => {
-    if (c === oldSegment) {
-      children[outletName] = newSegment;
-    } else {
-      children[outletName] = replaceSegment(c, oldSegment, newSegment);
-    }
-  });
-  return new UrlSegmentGroup(current.segments, children);
-}
-var Navigation = class {
-  isAbsolute;
-  numberOfDoubleDots;
-  commands;
-  constructor(isAbsolute, numberOfDoubleDots, commands) {
-    this.isAbsolute = isAbsolute;
-    this.numberOfDoubleDots = numberOfDoubleDots;
-    this.commands = commands;
-    if (isAbsolute && commands.length > 0 && isMatrixParams(commands[0])) {
-      throw new RuntimeError(4003, (typeof ngDevMode === "undefined" || ngDevMode) && "Root segment cannot have matrix parameters");
-    }
-    const cmdWithOutlet = commands.find(isCommandWithOutlets);
-    if (cmdWithOutlet && cmdWithOutlet !== last2(commands)) {
-      throw new RuntimeError(4004, (typeof ngDevMode === "undefined" || ngDevMode) && "{outlets:{}} has to be the last command");
-    }
-  }
-  toRoot() {
-    return this.isAbsolute && this.commands.length === 1 && this.commands[0] == "/";
-  }
-};
-function computeNavigation(commands) {
-  if (typeof commands[0] === "string" && commands.length === 1 && commands[0] === "/") {
-    return new Navigation(true, 0, commands);
-  }
-  let numberOfDoubleDots = 0;
-  let isAbsolute = false;
-  const res = commands.reduce((res2, cmd, cmdIdx) => {
-    if (typeof cmd === "object" && cmd != null) {
-      if (cmd.outlets) {
-        const outlets = {};
-        Object.entries(cmd.outlets).forEach(([name, commands2]) => {
-          outlets[name] = typeof commands2 === "string" ? commands2.split("/") : commands2;
-        });
-        return [...res2, {
-          outlets
-        }];
-      }
-      if (cmd.segmentPath) {
-        return [...res2, cmd.segmentPath];
-      }
-    }
-    if (!(typeof cmd === "string")) {
-      return [...res2, cmd];
-    }
-    if (cmdIdx === 0) {
-      cmd.split("/").forEach((urlPart, partIndex) => {
-        if (partIndex == 0 && urlPart === ".") ;
-        else if (partIndex == 0 && urlPart === "") {
-          isAbsolute = true;
-        } else if (urlPart === "..") {
-          numberOfDoubleDots++;
-        } else if (urlPart != "") {
-          res2.push(urlPart);
-        }
-      });
-      return res2;
-    }
-    return [...res2, cmd];
-  }, []);
-  return new Navigation(isAbsolute, numberOfDoubleDots, res);
-}
-var Position = class {
-  segmentGroup;
-  processChildren;
-  index;
-  constructor(segmentGroup, processChildren, index) {
-    this.segmentGroup = segmentGroup;
-    this.processChildren = processChildren;
-    this.index = index;
-  }
-};
-function findStartingPositionForTargetGroup(nav, root, target) {
-  if (nav.isAbsolute) {
-    return new Position(root, true, 0);
-  }
-  if (!target) {
-    return new Position(root, false, NaN);
-  }
-  if (target.parent === null) {
-    return new Position(target, true, 0);
-  }
-  const modifier = isMatrixParams(nav.commands[0]) ? 0 : 1;
-  const index = target.segments.length - 1 + modifier;
-  return createPositionApplyingDoubleDots(target, index, nav.numberOfDoubleDots);
-}
-function createPositionApplyingDoubleDots(group, index, numberOfDoubleDots) {
-  let g = group;
-  let ci = index;
-  let dd = numberOfDoubleDots;
-  while (dd > ci) {
-    dd -= ci;
-    g = g.parent;
-    if (!g) {
-      throw new RuntimeError(4005, (typeof ngDevMode === "undefined" || ngDevMode) && "Invalid number of '../'");
-    }
-    ci = g.segments.length;
-  }
-  return new Position(g, false, ci - dd);
-}
-function getOutlets(commands) {
-  if (isCommandWithOutlets(commands[0])) {
-    return commands[0].outlets;
-  }
-  return {
-    [PRIMARY_OUTLET]: commands
-  };
-}
-function updateSegmentGroup(segmentGroup, startIndex, commands) {
-  segmentGroup ??= new UrlSegmentGroup([], {});
-  if (segmentGroup.segments.length === 0 && segmentGroup.hasChildren()) {
-    return updateSegmentGroupChildren(segmentGroup, startIndex, commands);
-  }
-  const m = prefixedWith(segmentGroup, startIndex, commands);
-  const slicedCommands = commands.slice(m.commandIndex);
-  if (m.match && m.pathIndex < segmentGroup.segments.length) {
-    const g = new UrlSegmentGroup(segmentGroup.segments.slice(0, m.pathIndex), {});
-    g.children[PRIMARY_OUTLET] = new UrlSegmentGroup(segmentGroup.segments.slice(m.pathIndex), segmentGroup.children);
-    return updateSegmentGroupChildren(g, 0, slicedCommands);
-  } else if (m.match && slicedCommands.length === 0) {
-    return new UrlSegmentGroup(segmentGroup.segments, {});
-  } else if (m.match && !segmentGroup.hasChildren()) {
-    return createNewSegmentGroup(segmentGroup, startIndex, commands);
-  } else if (m.match) {
-    return updateSegmentGroupChildren(segmentGroup, 0, slicedCommands);
-  } else {
-    return createNewSegmentGroup(segmentGroup, startIndex, commands);
-  }
-}
-function updateSegmentGroupChildren(segmentGroup, startIndex, commands) {
-  if (commands.length === 0) {
-    return new UrlSegmentGroup(segmentGroup.segments, {});
-  } else {
-    const outlets = getOutlets(commands);
-    const children = {};
-    if (Object.keys(outlets).some((o) => o !== PRIMARY_OUTLET) && segmentGroup.children[PRIMARY_OUTLET] && segmentGroup.numberOfChildren === 1 && segmentGroup.children[PRIMARY_OUTLET].segments.length === 0) {
-      const childrenOfEmptyChild = updateSegmentGroupChildren(segmentGroup.children[PRIMARY_OUTLET], startIndex, commands);
-      return new UrlSegmentGroup(segmentGroup.segments, childrenOfEmptyChild.children);
-    }
-    Object.entries(outlets).forEach(([outlet, commands2]) => {
-      if (typeof commands2 === "string") {
-        commands2 = [commands2];
-      }
-      if (commands2 !== null) {
-        children[outlet] = updateSegmentGroup(segmentGroup.children[outlet], startIndex, commands2);
-      }
-    });
-    Object.entries(segmentGroup.children).forEach(([childOutlet, child]) => {
-      if (outlets[childOutlet] === void 0) {
-        children[childOutlet] = child;
-      }
-    });
-    return new UrlSegmentGroup(segmentGroup.segments, children);
-  }
-}
-function prefixedWith(segmentGroup, startIndex, commands) {
-  let currentCommandIndex = 0;
-  let currentPathIndex = startIndex;
-  const noMatch2 = {
-    match: false,
-    pathIndex: 0,
-    commandIndex: 0
-  };
-  while (currentPathIndex < segmentGroup.segments.length) {
-    if (currentCommandIndex >= commands.length) return noMatch2;
-    const path = segmentGroup.segments[currentPathIndex];
-    const command = commands[currentCommandIndex];
-    if (isCommandWithOutlets(command)) {
-      break;
-    }
-    const curr = `${command}`;
-    const next = currentCommandIndex < commands.length - 1 ? commands[currentCommandIndex + 1] : null;
-    if (currentPathIndex > 0 && curr === void 0) break;
-    if (curr && next && typeof next === "object" && next.outlets === void 0) {
-      if (!compare(curr, next, path)) return noMatch2;
-      currentCommandIndex += 2;
-    } else {
-      if (!compare(curr, {}, path)) return noMatch2;
-      currentCommandIndex++;
-    }
-    currentPathIndex++;
-  }
-  return {
-    match: true,
-    pathIndex: currentPathIndex,
-    commandIndex: currentCommandIndex
-  };
-}
-function createNewSegmentGroup(segmentGroup, startIndex, commands) {
-  const paths = segmentGroup.segments.slice(0, startIndex);
-  let i = 0;
-  while (i < commands.length) {
-    const command = commands[i];
-    if (isCommandWithOutlets(command)) {
-      const children = createNewSegmentChildren(command.outlets);
-      return new UrlSegmentGroup(paths, children);
-    }
-    if (i === 0 && isMatrixParams(commands[0])) {
-      const p = segmentGroup.segments[startIndex];
-      paths.push(new UrlSegment(p.path, stringify(commands[0])));
-      i++;
-      continue;
-    }
-    const curr = isCommandWithOutlets(command) ? command.outlets[PRIMARY_OUTLET] : `${command}`;
-    const next = i < commands.length - 1 ? commands[i + 1] : null;
-    if (curr && next && isMatrixParams(next)) {
-      paths.push(new UrlSegment(curr, stringify(next)));
-      i += 2;
-    } else {
-      paths.push(new UrlSegment(curr, {}));
-      i++;
-    }
-  }
-  return new UrlSegmentGroup(paths, {});
-}
-function createNewSegmentChildren(outlets) {
-  const children = {};
-  Object.entries(outlets).forEach(([outlet, commands]) => {
-    if (typeof commands === "string") {
-      commands = [commands];
-    }
-    if (commands !== null) {
-      children[outlet] = createNewSegmentGroup(new UrlSegmentGroup([], {}), 0, commands);
-    }
-  });
-  return children;
-}
-function stringify(params) {
-  const res = {};
-  Object.entries(params).forEach(([k, v]) => res[k] = `${v}`);
-  return res;
-}
-function compare(path, params, segment) {
-  return path == segment.path && shallowEqual(params, segment.parameters);
-}
-var IMPERATIVE_NAVIGATION = "imperative";
-var EventType;
-(function(EventType2) {
-  EventType2[EventType2["NavigationStart"] = 0] = "NavigationStart";
-  EventType2[EventType2["NavigationEnd"] = 1] = "NavigationEnd";
-  EventType2[EventType2["NavigationCancel"] = 2] = "NavigationCancel";
-  EventType2[EventType2["NavigationError"] = 3] = "NavigationError";
-  EventType2[EventType2["RoutesRecognized"] = 4] = "RoutesRecognized";
-  EventType2[EventType2["ResolveStart"] = 5] = "ResolveStart";
-  EventType2[EventType2["ResolveEnd"] = 6] = "ResolveEnd";
-  EventType2[EventType2["GuardsCheckStart"] = 7] = "GuardsCheckStart";
-  EventType2[EventType2["GuardsCheckEnd"] = 8] = "GuardsCheckEnd";
-  EventType2[EventType2["RouteConfigLoadStart"] = 9] = "RouteConfigLoadStart";
-  EventType2[EventType2["RouteConfigLoadEnd"] = 10] = "RouteConfigLoadEnd";
-  EventType2[EventType2["ChildActivationStart"] = 11] = "ChildActivationStart";
-  EventType2[EventType2["ChildActivationEnd"] = 12] = "ChildActivationEnd";
-  EventType2[EventType2["ActivationStart"] = 13] = "ActivationStart";
-  EventType2[EventType2["ActivationEnd"] = 14] = "ActivationEnd";
-  EventType2[EventType2["Scroll"] = 15] = "Scroll";
-  EventType2[EventType2["NavigationSkipped"] = 16] = "NavigationSkipped";
-})(EventType || (EventType = {}));
-var RouterEvent = class {
-  id;
-  url;
-  constructor(id, url) {
-    this.id = id;
-    this.url = url;
-  }
-};
-var NavigationStart = class extends RouterEvent {
-  type = EventType.NavigationStart;
-  /**
-   * Identifies the call or event that triggered the navigation.
-   * An `imperative` trigger is a call to `router.navigateByUrl()` or `router.navigate()`.
-   *
-   * @see {@link NavigationEnd}
-   * @see {@link NavigationCancel}
-   * @see {@link NavigationError}
-   */
-  navigationTrigger;
-  /**
-   * The navigation state that was previously supplied to the `pushState` call,
-   * when the navigation is triggered by a `popstate` event. Otherwise null.
-   *
-   * The state object is defined by `NavigationExtras`, and contains any
-   * developer-defined state value, as well as a unique ID that
-   * the router assigns to every router transition/navigation.
-   *
-   * From the perspective of the router, the router never "goes back".
-   * When the user clicks on the back button in the browser,
-   * a new navigation ID is created.
-   *
-   * Use the ID in this previous-state object to differentiate between a newly created
-   * state and one returned to by a `popstate` event, so that you can restore some
-   * remembered state, such as scroll position.
-   *
-   */
-  restoredState;
-  constructor(id, url, navigationTrigger = "imperative", restoredState = null) {
-    super(id, url);
-    this.navigationTrigger = navigationTrigger;
-    this.restoredState = restoredState;
-  }
-  /** @docsNotRequired */
-  toString() {
-    return `NavigationStart(id: ${this.id}, url: '${this.url}')`;
-  }
-};
-var NavigationEnd = class extends RouterEvent {
-  urlAfterRedirects;
-  type = EventType.NavigationEnd;
-  constructor(id, url, urlAfterRedirects) {
-    super(id, url);
-    this.urlAfterRedirects = urlAfterRedirects;
-  }
-  /** @docsNotRequired */
-  toString() {
-    return `NavigationEnd(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}')`;
-  }
-};
-var NavigationCancellationCode;
-(function(NavigationCancellationCode2) {
-  NavigationCancellationCode2[NavigationCancellationCode2["Redirect"] = 0] = "Redirect";
-  NavigationCancellationCode2[NavigationCancellationCode2["SupersededByNewNavigation"] = 1] = "SupersededByNewNavigation";
-  NavigationCancellationCode2[NavigationCancellationCode2["NoDataFromResolver"] = 2] = "NoDataFromResolver";
-  NavigationCancellationCode2[NavigationCancellationCode2["GuardRejected"] = 3] = "GuardRejected";
-})(NavigationCancellationCode || (NavigationCancellationCode = {}));
-var NavigationSkippedCode;
-(function(NavigationSkippedCode2) {
-  NavigationSkippedCode2[NavigationSkippedCode2["IgnoredSameUrlNavigation"] = 0] = "IgnoredSameUrlNavigation";
-  NavigationSkippedCode2[NavigationSkippedCode2["IgnoredByUrlHandlingStrategy"] = 1] = "IgnoredByUrlHandlingStrategy";
-})(NavigationSkippedCode || (NavigationSkippedCode = {}));
-var NavigationCancel = class extends RouterEvent {
-  reason;
-  code;
-  type = EventType.NavigationCancel;
-  constructor(id, url, reason, code) {
-    super(id, url);
-    this.reason = reason;
-    this.code = code;
-  }
-  /** @docsNotRequired */
-  toString() {
-    return `NavigationCancel(id: ${this.id}, url: '${this.url}')`;
-  }
-};
-var NavigationSkipped = class extends RouterEvent {
-  reason;
-  code;
-  type = EventType.NavigationSkipped;
-  constructor(id, url, reason, code) {
-    super(id, url);
-    this.reason = reason;
-    this.code = code;
-  }
-};
-var NavigationError = class extends RouterEvent {
-  error;
-  target;
-  type = EventType.NavigationError;
-  constructor(id, url, error, target) {
-    super(id, url);
-    this.error = error;
-    this.target = target;
-  }
-  /** @docsNotRequired */
-  toString() {
-    return `NavigationError(id: ${this.id}, url: '${this.url}', error: ${this.error})`;
-  }
-};
-var RoutesRecognized = class extends RouterEvent {
-  urlAfterRedirects;
-  state;
-  type = EventType.RoutesRecognized;
-  constructor(id, url, urlAfterRedirects, state2) {
-    super(id, url);
-    this.urlAfterRedirects = urlAfterRedirects;
-    this.state = state2;
-  }
-  /** @docsNotRequired */
-  toString() {
-    return `RoutesRecognized(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
-  }
-};
-var GuardsCheckStart = class extends RouterEvent {
-  urlAfterRedirects;
-  state;
-  type = EventType.GuardsCheckStart;
-  constructor(id, url, urlAfterRedirects, state2) {
-    super(id, url);
-    this.urlAfterRedirects = urlAfterRedirects;
-    this.state = state2;
-  }
-  toString() {
-    return `GuardsCheckStart(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
-  }
-};
-var GuardsCheckEnd = class extends RouterEvent {
-  urlAfterRedirects;
-  state;
-  shouldActivate;
-  type = EventType.GuardsCheckEnd;
-  constructor(id, url, urlAfterRedirects, state2, shouldActivate) {
-    super(id, url);
-    this.urlAfterRedirects = urlAfterRedirects;
-    this.state = state2;
-    this.shouldActivate = shouldActivate;
-  }
-  toString() {
-    return `GuardsCheckEnd(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state}, shouldActivate: ${this.shouldActivate})`;
-  }
-};
-var ResolveStart = class extends RouterEvent {
-  urlAfterRedirects;
-  state;
-  type = EventType.ResolveStart;
-  constructor(id, url, urlAfterRedirects, state2) {
-    super(id, url);
-    this.urlAfterRedirects = urlAfterRedirects;
-    this.state = state2;
-  }
-  toString() {
-    return `ResolveStart(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
-  }
-};
-var ResolveEnd = class extends RouterEvent {
-  urlAfterRedirects;
-  state;
-  type = EventType.ResolveEnd;
-  constructor(id, url, urlAfterRedirects, state2) {
-    super(id, url);
-    this.urlAfterRedirects = urlAfterRedirects;
-    this.state = state2;
-  }
-  toString() {
-    return `ResolveEnd(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
-  }
-};
-var RouteConfigLoadStart = class {
-  route;
-  type = EventType.RouteConfigLoadStart;
-  constructor(route) {
-    this.route = route;
-  }
-  toString() {
-    return `RouteConfigLoadStart(path: ${this.route.path})`;
-  }
-};
-var RouteConfigLoadEnd = class {
-  route;
-  type = EventType.RouteConfigLoadEnd;
-  constructor(route) {
-    this.route = route;
-  }
-  toString() {
-    return `RouteConfigLoadEnd(path: ${this.route.path})`;
-  }
-};
-var ChildActivationStart = class {
-  snapshot;
-  type = EventType.ChildActivationStart;
-  constructor(snapshot) {
-    this.snapshot = snapshot;
-  }
-  toString() {
-    const path = this.snapshot.routeConfig && this.snapshot.routeConfig.path || "";
-    return `ChildActivationStart(path: '${path}')`;
-  }
-};
-var ChildActivationEnd = class {
-  snapshot;
-  type = EventType.ChildActivationEnd;
-  constructor(snapshot) {
-    this.snapshot = snapshot;
-  }
-  toString() {
-    const path = this.snapshot.routeConfig && this.snapshot.routeConfig.path || "";
-    return `ChildActivationEnd(path: '${path}')`;
-  }
-};
-var ActivationStart = class {
-  snapshot;
-  type = EventType.ActivationStart;
-  constructor(snapshot) {
-    this.snapshot = snapshot;
-  }
-  toString() {
-    const path = this.snapshot.routeConfig && this.snapshot.routeConfig.path || "";
-    return `ActivationStart(path: '${path}')`;
-  }
-};
-var ActivationEnd = class {
-  snapshot;
-  type = EventType.ActivationEnd;
-  constructor(snapshot) {
-    this.snapshot = snapshot;
-  }
-  toString() {
-    const path = this.snapshot.routeConfig && this.snapshot.routeConfig.path || "";
-    return `ActivationEnd(path: '${path}')`;
-  }
-};
-var Scroll = class {
-  routerEvent;
-  position;
-  anchor;
-  type = EventType.Scroll;
-  constructor(routerEvent, position, anchor) {
-    this.routerEvent = routerEvent;
-    this.position = position;
-    this.anchor = anchor;
-  }
-  toString() {
-    const pos = this.position ? `${this.position[0]}, ${this.position[1]}` : null;
-    return `Scroll(anchor: '${this.anchor}', position: '${pos}')`;
-  }
-};
-var BeforeActivateRoutes = class {
-};
-var RedirectRequest = class {
-  url;
-  navigationBehaviorOptions;
-  constructor(url, navigationBehaviorOptions) {
-    this.url = url;
-    this.navigationBehaviorOptions = navigationBehaviorOptions;
-  }
-};
-function stringifyEvent(routerEvent) {
-  switch (routerEvent.type) {
-    case EventType.ActivationEnd:
-      return `ActivationEnd(path: '${routerEvent.snapshot.routeConfig?.path || ""}')`;
-    case EventType.ActivationStart:
-      return `ActivationStart(path: '${routerEvent.snapshot.routeConfig?.path || ""}')`;
-    case EventType.ChildActivationEnd:
-      return `ChildActivationEnd(path: '${routerEvent.snapshot.routeConfig?.path || ""}')`;
-    case EventType.ChildActivationStart:
-      return `ChildActivationStart(path: '${routerEvent.snapshot.routeConfig?.path || ""}')`;
-    case EventType.GuardsCheckEnd:
-      return `GuardsCheckEnd(id: ${routerEvent.id}, url: '${routerEvent.url}', urlAfterRedirects: '${routerEvent.urlAfterRedirects}', state: ${routerEvent.state}, shouldActivate: ${routerEvent.shouldActivate})`;
-    case EventType.GuardsCheckStart:
-      return `GuardsCheckStart(id: ${routerEvent.id}, url: '${routerEvent.url}', urlAfterRedirects: '${routerEvent.urlAfterRedirects}', state: ${routerEvent.state})`;
-    case EventType.NavigationCancel:
-      return `NavigationCancel(id: ${routerEvent.id}, url: '${routerEvent.url}')`;
-    case EventType.NavigationSkipped:
-      return `NavigationSkipped(id: ${routerEvent.id}, url: '${routerEvent.url}')`;
-    case EventType.NavigationEnd:
-      return `NavigationEnd(id: ${routerEvent.id}, url: '${routerEvent.url}', urlAfterRedirects: '${routerEvent.urlAfterRedirects}')`;
-    case EventType.NavigationError:
-      return `NavigationError(id: ${routerEvent.id}, url: '${routerEvent.url}', error: ${routerEvent.error})`;
-    case EventType.NavigationStart:
-      return `NavigationStart(id: ${routerEvent.id}, url: '${routerEvent.url}')`;
-    case EventType.ResolveEnd:
-      return `ResolveEnd(id: ${routerEvent.id}, url: '${routerEvent.url}', urlAfterRedirects: '${routerEvent.urlAfterRedirects}', state: ${routerEvent.state})`;
-    case EventType.ResolveStart:
-      return `ResolveStart(id: ${routerEvent.id}, url: '${routerEvent.url}', urlAfterRedirects: '${routerEvent.urlAfterRedirects}', state: ${routerEvent.state})`;
-    case EventType.RouteConfigLoadEnd:
-      return `RouteConfigLoadEnd(path: ${routerEvent.route.path})`;
-    case EventType.RouteConfigLoadStart:
-      return `RouteConfigLoadStart(path: ${routerEvent.route.path})`;
-    case EventType.RoutesRecognized:
-      return `RoutesRecognized(id: ${routerEvent.id}, url: '${routerEvent.url}', urlAfterRedirects: '${routerEvent.urlAfterRedirects}', state: ${routerEvent.state})`;
-    case EventType.Scroll:
-      const pos = routerEvent.position ? `${routerEvent.position[0]}, ${routerEvent.position[1]}` : null;
-      return `Scroll(anchor: '${routerEvent.anchor}', position: '${pos}')`;
-  }
-}
-function getOrCreateRouteInjectorIfNeeded(route, currentInjector) {
-  if (route.providers && !route._injector) {
-    route._injector = createEnvironmentInjector(route.providers, currentInjector, `Route: ${route.path}`);
-  }
-  return route._injector ?? currentInjector;
-}
-function validateConfig(config, parentPath = "", requireStandaloneComponents = false) {
-  for (let i = 0; i < config.length; i++) {
-    const route = config[i];
-    const fullPath = getFullPath(parentPath, route);
-    validateNode(route, fullPath, requireStandaloneComponents);
-  }
-}
-function assertStandalone(fullPath, component) {
-  if (component && isNgModule(component)) {
-    throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}'. You are using 'loadComponent' with a module, but it must be used with standalone components. Use 'loadChildren' instead.`);
-  } else if (component && !isStandalone(component)) {
-    throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}'. The component must be standalone.`);
-  }
-}
-function validateNode(route, fullPath, requireStandaloneComponents) {
-  if (typeof ngDevMode === "undefined" || ngDevMode) {
-    if (!route) {
-      throw new RuntimeError(4014, `
-      Invalid configuration of route '${fullPath}': Encountered undefined route.
-      The reason might be an extra comma.
-
-      Example:
-      const routes: Routes = [
-        { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-        { path: 'dashboard',  component: DashboardComponent },, << two commas
-        { path: 'detail/:id', component: HeroDetailComponent }
-      ];
-    `);
-    }
-    if (Array.isArray(route)) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': Array cannot be specified`);
-    }
-    if (!route.redirectTo && !route.component && !route.loadComponent && !route.children && !route.loadChildren && route.outlet && route.outlet !== PRIMARY_OUTLET) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': a componentless route without children or loadChildren cannot have a named outlet set`);
-    }
-    if (route.redirectTo && route.children) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': redirectTo and children cannot be used together`);
-    }
-    if (route.redirectTo && route.loadChildren) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': redirectTo and loadChildren cannot be used together`);
-    }
-    if (route.children && route.loadChildren) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': children and loadChildren cannot be used together`);
-    }
-    if (route.redirectTo && (route.component || route.loadComponent)) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': redirectTo and component/loadComponent cannot be used together`);
-    }
-    if (route.component && route.loadComponent) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': component and loadComponent cannot be used together`);
-    }
-    if (route.redirectTo && route.canActivate) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': redirectTo and canActivate cannot be used together. Redirects happen before activation so canActivate will never be executed.`);
-    }
-    if (route.path && route.matcher) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': path and matcher cannot be used together`);
-    }
-    if (route.redirectTo === void 0 && !route.component && !route.loadComponent && !route.children && !route.loadChildren) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}'. One of the following must be provided: component, loadComponent, redirectTo, children or loadChildren`);
-    }
-    if (route.path === void 0 && route.matcher === void 0) {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': routes must have either a path or a matcher specified`);
-    }
-    if (typeof route.path === "string" && route.path.charAt(0) === "/") {
-      throw new RuntimeError(4014, `Invalid configuration of route '${fullPath}': path cannot start with a slash`);
-    }
-    if (route.path === "" && route.redirectTo !== void 0 && route.pathMatch === void 0) {
-      const exp = `The default value of 'pathMatch' is 'prefix', but often the intent is to use 'full'.`;
-      throw new RuntimeError(4014, `Invalid configuration of route '{path: "${fullPath}", redirectTo: "${route.redirectTo}"}': please provide 'pathMatch'. ${exp}`);
-    }
-    if (requireStandaloneComponents) {
-      assertStandalone(fullPath, route.component);
-    }
-  }
-  if (route.children) {
-    validateConfig(route.children, fullPath, requireStandaloneComponents);
-  }
-}
-function getFullPath(parentPath, currentRoute) {
-  if (!currentRoute) {
-    return parentPath;
-  }
-  if (!parentPath && !currentRoute.path) {
-    return "";
-  } else if (parentPath && !currentRoute.path) {
-    return `${parentPath}/`;
-  } else if (!parentPath && currentRoute.path) {
-    return currentRoute.path;
-  } else {
-    return `${parentPath}/${currentRoute.path}`;
-  }
-}
-function getOutlet(route) {
-  return route.outlet || PRIMARY_OUTLET;
-}
-function sortByMatchingOutlets(routes2, outletName) {
-  const sortedConfig = routes2.filter((r) => getOutlet(r) === outletName);
-  sortedConfig.push(...routes2.filter((r) => getOutlet(r) !== outletName));
-  return sortedConfig;
-}
-function getClosestRouteInjector(snapshot) {
-  if (!snapshot) return null;
-  if (snapshot.routeConfig?._injector) {
-    return snapshot.routeConfig._injector;
-  }
-  for (let s = snapshot.parent; s; s = s.parent) {
-    const route = s.routeConfig;
-    if (route?._loadedInjector) return route._loadedInjector;
-    if (route?._injector) return route._injector;
-  }
-  return null;
-}
-var OutletContext = class {
-  rootInjector;
-  outlet = null;
-  route = null;
-  children;
-  attachRef = null;
-  get injector() {
-    return getClosestRouteInjector(this.route?.snapshot) ?? this.rootInjector;
-  }
-  constructor(rootInjector) {
-    this.rootInjector = rootInjector;
-    this.children = new ChildrenOutletContexts(this.rootInjector);
-  }
-};
-var ChildrenOutletContexts = class _ChildrenOutletContexts {
-  rootInjector;
-  // contexts for child outlets, by name.
-  contexts = /* @__PURE__ */ new Map();
-  /** @nodoc */
-  constructor(rootInjector) {
-    this.rootInjector = rootInjector;
-  }
-  /** Called when a `RouterOutlet` directive is instantiated */
-  onChildOutletCreated(childName, outlet) {
-    const context = this.getOrCreateContext(childName);
-    context.outlet = outlet;
-    this.contexts.set(childName, context);
-  }
-  /**
-   * Called when a `RouterOutlet` directive is destroyed.
-   * We need to keep the context as the outlet could be destroyed inside a NgIf and might be
-   * re-created later.
-   */
-  onChildOutletDestroyed(childName) {
-    const context = this.getContext(childName);
-    if (context) {
-      context.outlet = null;
-      context.attachRef = null;
-    }
-  }
-  /**
-   * Called when the corresponding route is deactivated during navigation.
-   * Because the component get destroyed, all children outlet are destroyed.
-   */
-  onOutletDeactivated() {
-    const contexts = this.contexts;
-    this.contexts = /* @__PURE__ */ new Map();
-    return contexts;
-  }
-  onOutletReAttached(contexts) {
-    this.contexts = contexts;
-  }
-  getOrCreateContext(childName) {
-    let context = this.getContext(childName);
-    if (!context) {
-      context = new OutletContext(this.rootInjector);
-      this.contexts.set(childName, context);
-    }
-    return context;
-  }
-  getContext(childName) {
-    return this.contexts.get(childName) || null;
-  }
-  static \u0275fac = function ChildrenOutletContexts_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _ChildrenOutletContexts)(\u0275\u0275inject(EnvironmentInjector));
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _ChildrenOutletContexts,
-    factory: _ChildrenOutletContexts.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ChildrenOutletContexts, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [{
-    type: EnvironmentInjector
-  }], null);
-})();
-var Tree = class {
-  /** @internal */
-  _root;
-  constructor(root) {
-    this._root = root;
-  }
-  get root() {
-    return this._root.value;
-  }
-  /**
-   * @internal
-   */
-  parent(t) {
-    const p = this.pathFromRoot(t);
-    return p.length > 1 ? p[p.length - 2] : null;
-  }
-  /**
-   * @internal
-   */
-  children(t) {
-    const n = findNode(t, this._root);
-    return n ? n.children.map((t2) => t2.value) : [];
-  }
-  /**
-   * @internal
-   */
-  firstChild(t) {
-    const n = findNode(t, this._root);
-    return n && n.children.length > 0 ? n.children[0].value : null;
-  }
-  /**
-   * @internal
-   */
-  siblings(t) {
-    const p = findPath(t, this._root);
-    if (p.length < 2) return [];
-    const c = p[p.length - 2].children.map((c2) => c2.value);
-    return c.filter((cc) => cc !== t);
-  }
-  /**
-   * @internal
-   */
-  pathFromRoot(t) {
-    return findPath(t, this._root).map((s) => s.value);
-  }
-};
-function findNode(value, node) {
-  if (value === node.value) return node;
-  for (const child of node.children) {
-    const node2 = findNode(value, child);
-    if (node2) return node2;
-  }
-  return null;
-}
-function findPath(value, node) {
-  if (value === node.value) return [node];
-  for (const child of node.children) {
-    const path = findPath(value, child);
-    if (path.length) {
-      path.unshift(node);
-      return path;
-    }
-  }
-  return [];
-}
-var TreeNode = class {
-  value;
-  children;
-  constructor(value, children) {
-    this.value = value;
-    this.children = children;
-  }
-  toString() {
-    return `TreeNode(${this.value})`;
-  }
-};
-function nodeChildrenAsMap(node) {
-  const map2 = {};
-  if (node) {
-    node.children.forEach((child) => map2[child.value.outlet] = child);
-  }
-  return map2;
-}
-var RouterState = class extends Tree {
-  snapshot;
-  /** @internal */
-  constructor(root, snapshot) {
-    super(root);
-    this.snapshot = snapshot;
-    setRouterState(this, root);
-  }
-  toString() {
-    return this.snapshot.toString();
-  }
-};
-function createEmptyState(rootComponent) {
-  const snapshot = createEmptyStateSnapshot(rootComponent);
-  const emptyUrl = new BehaviorSubject([new UrlSegment("", {})]);
-  const emptyParams = new BehaviorSubject({});
-  const emptyData = new BehaviorSubject({});
-  const emptyQueryParams = new BehaviorSubject({});
-  const fragment = new BehaviorSubject("");
-  const activated = new ActivatedRoute(emptyUrl, emptyParams, emptyQueryParams, fragment, emptyData, PRIMARY_OUTLET, rootComponent, snapshot.root);
-  activated.snapshot = snapshot.root;
-  return new RouterState(new TreeNode(activated, []), snapshot);
-}
-function createEmptyStateSnapshot(rootComponent) {
-  const emptyParams = {};
-  const emptyData = {};
-  const emptyQueryParams = {};
-  const fragment = "";
-  const activated = new ActivatedRouteSnapshot([], emptyParams, emptyQueryParams, fragment, emptyData, PRIMARY_OUTLET, rootComponent, null, {});
-  return new RouterStateSnapshot("", new TreeNode(activated, []));
-}
-var ActivatedRoute = class {
-  urlSubject;
-  paramsSubject;
-  queryParamsSubject;
-  fragmentSubject;
-  dataSubject;
-  outlet;
-  component;
-  /** The current snapshot of this route */
-  snapshot;
-  /** @internal */
-  _futureSnapshot;
-  /** @internal */
-  _routerState;
-  /** @internal */
-  _paramMap;
-  /** @internal */
-  _queryParamMap;
-  /** An Observable of the resolved route title */
-  title;
-  /** An observable of the URL segments matched by this route. */
-  url;
-  /** An observable of the matrix parameters scoped to this route. */
-  params;
-  /** An observable of the query parameters shared by all the routes. */
-  queryParams;
-  /** An observable of the URL fragment shared by all the routes. */
-  fragment;
-  /** An observable of the static and resolved data of this route. */
-  data;
-  /** @internal */
-  constructor(urlSubject, paramsSubject, queryParamsSubject, fragmentSubject, dataSubject, outlet, component, futureSnapshot) {
-    this.urlSubject = urlSubject;
-    this.paramsSubject = paramsSubject;
-    this.queryParamsSubject = queryParamsSubject;
-    this.fragmentSubject = fragmentSubject;
-    this.dataSubject = dataSubject;
-    this.outlet = outlet;
-    this.component = component;
-    this._futureSnapshot = futureSnapshot;
-    this.title = this.dataSubject?.pipe(map((d) => d[RouteTitleKey])) ?? of(void 0);
-    this.url = urlSubject;
-    this.params = paramsSubject;
-    this.queryParams = queryParamsSubject;
-    this.fragment = fragmentSubject;
-    this.data = dataSubject;
-  }
-  /** The configuration used to match this route. */
-  get routeConfig() {
-    return this._futureSnapshot.routeConfig;
-  }
-  /** The root of the router state. */
-  get root() {
-    return this._routerState.root;
-  }
-  /** The parent of this route in the router state tree. */
-  get parent() {
-    return this._routerState.parent(this);
-  }
-  /** The first child of this route in the router state tree. */
-  get firstChild() {
-    return this._routerState.firstChild(this);
-  }
-  /** The children of this route in the router state tree. */
-  get children() {
-    return this._routerState.children(this);
-  }
-  /** The path from the root of the router state tree to this route. */
-  get pathFromRoot() {
-    return this._routerState.pathFromRoot(this);
-  }
-  /**
-   * An Observable that contains a map of the required and optional parameters
-   * specific to the route.
-   * The map supports retrieving single and multiple values from the same parameter.
-   */
-  get paramMap() {
-    this._paramMap ??= this.params.pipe(map((p) => convertToParamMap(p)));
-    return this._paramMap;
-  }
-  /**
-   * An Observable that contains a map of the query parameters available to all routes.
-   * The map supports retrieving single and multiple values from the query parameter.
-   */
-  get queryParamMap() {
-    this._queryParamMap ??= this.queryParams.pipe(map((p) => convertToParamMap(p)));
-    return this._queryParamMap;
-  }
-  toString() {
-    return this.snapshot ? this.snapshot.toString() : `Future(${this._futureSnapshot})`;
-  }
-};
-function getInherited(route, parent, paramsInheritanceStrategy = "emptyOnly") {
-  let inherited;
-  const {
-    routeConfig
-  } = route;
-  if (parent !== null && (paramsInheritanceStrategy === "always" || // inherit parent data if route is empty path
-  routeConfig?.path === "" || // inherit parent data if parent was componentless
-  !parent.component && !parent.routeConfig?.loadComponent)) {
-    inherited = {
-      params: __spreadValues(__spreadValues({}, parent.params), route.params),
-      data: __spreadValues(__spreadValues({}, parent.data), route.data),
-      resolve: __spreadValues(__spreadValues(__spreadValues(__spreadValues({}, route.data), parent.data), routeConfig?.data), route._resolvedData)
-    };
-  } else {
-    inherited = {
-      params: __spreadValues({}, route.params),
-      data: __spreadValues({}, route.data),
-      resolve: __spreadValues(__spreadValues({}, route.data), route._resolvedData ?? {})
-    };
-  }
-  if (routeConfig && hasStaticTitle(routeConfig)) {
-    inherited.resolve[RouteTitleKey] = routeConfig.title;
-  }
-  return inherited;
-}
-var ActivatedRouteSnapshot = class {
-  url;
-  params;
-  queryParams;
-  fragment;
-  data;
-  outlet;
-  component;
-  /** The configuration used to match this route **/
-  routeConfig;
-  /** @internal */
-  _resolve;
-  /** @internal */
-  _resolvedData;
-  /** @internal */
-  _routerState;
-  /** @internal */
-  _paramMap;
-  /** @internal */
-  _queryParamMap;
-  /** The resolved route title */
-  get title() {
-    return this.data?.[RouteTitleKey];
-  }
-  /** @internal */
-  constructor(url, params, queryParams, fragment, data, outlet, component, routeConfig, resolve) {
-    this.url = url;
-    this.params = params;
-    this.queryParams = queryParams;
-    this.fragment = fragment;
-    this.data = data;
-    this.outlet = outlet;
-    this.component = component;
-    this.routeConfig = routeConfig;
-    this._resolve = resolve;
-  }
-  /** The root of the router state */
-  get root() {
-    return this._routerState.root;
-  }
-  /** The parent of this route in the router state tree */
-  get parent() {
-    return this._routerState.parent(this);
-  }
-  /** The first child of this route in the router state tree */
-  get firstChild() {
-    return this._routerState.firstChild(this);
-  }
-  /** The children of this route in the router state tree */
-  get children() {
-    return this._routerState.children(this);
-  }
-  /** The path from the root of the router state tree to this route */
-  get pathFromRoot() {
-    return this._routerState.pathFromRoot(this);
-  }
-  get paramMap() {
-    this._paramMap ??= convertToParamMap(this.params);
-    return this._paramMap;
-  }
-  get queryParamMap() {
-    this._queryParamMap ??= convertToParamMap(this.queryParams);
-    return this._queryParamMap;
-  }
-  toString() {
-    const url = this.url.map((segment) => segment.toString()).join("/");
-    const matched = this.routeConfig ? this.routeConfig.path : "";
-    return `Route(url:'${url}', path:'${matched}')`;
-  }
-};
-var RouterStateSnapshot = class extends Tree {
-  url;
-  /** @internal */
-  constructor(url, root) {
-    super(root);
-    this.url = url;
-    setRouterState(this, root);
-  }
-  toString() {
-    return serializeNode(this._root);
-  }
-};
-function setRouterState(state2, node) {
-  node.value._routerState = state2;
-  node.children.forEach((c) => setRouterState(state2, c));
-}
-function serializeNode(node) {
-  const c = node.children.length > 0 ? ` { ${node.children.map(serializeNode).join(", ")} } ` : "";
-  return `${node.value}${c}`;
-}
-function advanceActivatedRoute(route) {
-  if (route.snapshot) {
-    const currentSnapshot = route.snapshot;
-    const nextSnapshot = route._futureSnapshot;
-    route.snapshot = nextSnapshot;
-    if (!shallowEqual(currentSnapshot.queryParams, nextSnapshot.queryParams)) {
-      route.queryParamsSubject.next(nextSnapshot.queryParams);
-    }
-    if (currentSnapshot.fragment !== nextSnapshot.fragment) {
-      route.fragmentSubject.next(nextSnapshot.fragment);
-    }
-    if (!shallowEqual(currentSnapshot.params, nextSnapshot.params)) {
-      route.paramsSubject.next(nextSnapshot.params);
-    }
-    if (!shallowEqualArrays(currentSnapshot.url, nextSnapshot.url)) {
-      route.urlSubject.next(nextSnapshot.url);
-    }
-    if (!shallowEqual(currentSnapshot.data, nextSnapshot.data)) {
-      route.dataSubject.next(nextSnapshot.data);
-    }
-  } else {
-    route.snapshot = route._futureSnapshot;
-    route.dataSubject.next(route._futureSnapshot.data);
-  }
-}
-function equalParamsAndUrlSegments(a, b) {
-  const equalUrlParams = shallowEqual(a.params, b.params) && equalSegments(a.url, b.url);
-  const parentsMismatch = !a.parent !== !b.parent;
-  return equalUrlParams && !parentsMismatch && (!a.parent || equalParamsAndUrlSegments(a.parent, b.parent));
-}
-function hasStaticTitle(config) {
-  return typeof config.title === "string" || config.title === null;
-}
-var ROUTER_OUTLET_DATA = new InjectionToken(ngDevMode ? "RouterOutlet data" : "");
-var RouterOutlet = class _RouterOutlet {
-  activated = null;
-  /** @internal */
-  get activatedComponentRef() {
-    return this.activated;
-  }
-  _activatedRoute = null;
-  /**
-   * The name of the outlet
-   *
-   */
-  name = PRIMARY_OUTLET;
-  activateEvents = new EventEmitter();
-  deactivateEvents = new EventEmitter();
-  /**
-   * Emits an attached component instance when the `RouteReuseStrategy` instructs to re-attach a
-   * previously detached subtree.
-   **/
-  attachEvents = new EventEmitter();
-  /**
-   * Emits a detached component instance when the `RouteReuseStrategy` instructs to detach the
-   * subtree.
-   */
-  detachEvents = new EventEmitter();
-  /**
-   * Data that will be provided to the child injector through the `ROUTER_OUTLET_DATA` token.
-   *
-   * When unset, the value of the token is `undefined` by default.
-   */
-  routerOutletData = input(void 0);
-  parentContexts = inject(ChildrenOutletContexts);
-  location = inject(ViewContainerRef);
-  changeDetector = inject(ChangeDetectorRef);
-  inputBinder = inject(INPUT_BINDER, {
-    optional: true
-  });
-  /** @nodoc */
-  supportsBindingToComponentInputs = true;
-  /** @nodoc */
-  ngOnChanges(changes) {
-    if (changes["name"]) {
-      const {
-        firstChange,
-        previousValue
-      } = changes["name"];
-      if (firstChange) {
-        return;
-      }
-      if (this.isTrackedInParentContexts(previousValue)) {
-        this.deactivate();
-        this.parentContexts.onChildOutletDestroyed(previousValue);
-      }
-      this.initializeOutletWithName();
-    }
-  }
-  /** @nodoc */
-  ngOnDestroy() {
-    if (this.isTrackedInParentContexts(this.name)) {
-      this.parentContexts.onChildOutletDestroyed(this.name);
-    }
-    this.inputBinder?.unsubscribeFromRouteData(this);
-  }
-  isTrackedInParentContexts(outletName) {
-    return this.parentContexts.getContext(outletName)?.outlet === this;
-  }
-  /** @nodoc */
-  ngOnInit() {
-    this.initializeOutletWithName();
-  }
-  initializeOutletWithName() {
-    this.parentContexts.onChildOutletCreated(this.name, this);
-    if (this.activated) {
-      return;
-    }
-    const context = this.parentContexts.getContext(this.name);
-    if (context?.route) {
-      if (context.attachRef) {
-        this.attach(context.attachRef, context.route);
-      } else {
-        this.activateWith(context.route, context.injector);
-      }
-    }
-  }
-  get isActivated() {
-    return !!this.activated;
-  }
-  /**
-   * @returns The currently activated component instance.
-   * @throws An error if the outlet is not activated.
-   */
-  get component() {
-    if (!this.activated) throw new RuntimeError(4012, (typeof ngDevMode === "undefined" || ngDevMode) && "Outlet is not activated");
-    return this.activated.instance;
-  }
-  get activatedRoute() {
-    if (!this.activated) throw new RuntimeError(4012, (typeof ngDevMode === "undefined" || ngDevMode) && "Outlet is not activated");
-    return this._activatedRoute;
-  }
-  get activatedRouteData() {
-    if (this._activatedRoute) {
-      return this._activatedRoute.snapshot.data;
-    }
-    return {};
-  }
-  /**
-   * Called when the `RouteReuseStrategy` instructs to detach the subtree
-   */
-  detach() {
-    if (!this.activated) throw new RuntimeError(4012, (typeof ngDevMode === "undefined" || ngDevMode) && "Outlet is not activated");
-    this.location.detach();
-    const cmp = this.activated;
-    this.activated = null;
-    this._activatedRoute = null;
-    this.detachEvents.emit(cmp.instance);
-    return cmp;
-  }
-  /**
-   * Called when the `RouteReuseStrategy` instructs to re-attach a previously detached subtree
-   */
-  attach(ref, activatedRoute) {
-    this.activated = ref;
-    this._activatedRoute = activatedRoute;
-    this.location.insert(ref.hostView);
-    this.inputBinder?.bindActivatedRouteToOutletComponent(this);
-    this.attachEvents.emit(ref.instance);
-  }
-  deactivate() {
-    if (this.activated) {
-      const c = this.component;
-      this.activated.destroy();
-      this.activated = null;
-      this._activatedRoute = null;
-      this.deactivateEvents.emit(c);
-    }
-  }
-  activateWith(activatedRoute, environmentInjector) {
-    if (this.isActivated) {
-      throw new RuntimeError(4013, (typeof ngDevMode === "undefined" || ngDevMode) && "Cannot activate an already activated outlet");
-    }
-    this._activatedRoute = activatedRoute;
-    const location = this.location;
-    const snapshot = activatedRoute.snapshot;
-    const component = snapshot.component;
-    const childContexts = this.parentContexts.getOrCreateContext(this.name).children;
-    const injector = new OutletInjector(activatedRoute, childContexts, location.injector, this.routerOutletData);
-    this.activated = location.createComponent(component, {
-      index: location.length,
-      injector,
-      environmentInjector
-    });
-    this.changeDetector.markForCheck();
-    this.inputBinder?.bindActivatedRouteToOutletComponent(this);
-    this.activateEvents.emit(this.activated.instance);
-  }
-  static \u0275fac = function RouterOutlet_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _RouterOutlet)();
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _RouterOutlet,
-    selectors: [["router-outlet"]],
-    inputs: {
-      name: "name",
-      routerOutletData: [1, "routerOutletData"]
-    },
-    outputs: {
-      activateEvents: "activate",
-      deactivateEvents: "deactivate",
-      attachEvents: "attach",
-      detachEvents: "detach"
-    },
-    exportAs: ["outlet"],
-    features: [\u0275\u0275NgOnChangesFeature]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouterOutlet, [{
-    type: Directive,
-    args: [{
-      selector: "router-outlet",
-      exportAs: "outlet"
-    }]
-  }], null, {
-    name: [{
-      type: Input
-    }],
-    activateEvents: [{
-      type: Output,
-      args: ["activate"]
-    }],
-    deactivateEvents: [{
-      type: Output,
-      args: ["deactivate"]
-    }],
-    attachEvents: [{
-      type: Output,
-      args: ["attach"]
-    }],
-    detachEvents: [{
-      type: Output,
-      args: ["detach"]
-    }]
-  });
-})();
-var OutletInjector = class {
-  route;
-  childContexts;
-  parent;
-  outletData;
-  constructor(route, childContexts, parent, outletData) {
-    this.route = route;
-    this.childContexts = childContexts;
-    this.parent = parent;
-    this.outletData = outletData;
-  }
-  get(token, notFoundValue) {
-    if (token === ActivatedRoute) {
-      return this.route;
-    }
-    if (token === ChildrenOutletContexts) {
-      return this.childContexts;
-    }
-    if (token === ROUTER_OUTLET_DATA) {
-      return this.outletData;
-    }
-    return this.parent.get(token, notFoundValue);
-  }
-};
-var INPUT_BINDER = new InjectionToken("");
-var RoutedComponentInputBinder = class _RoutedComponentInputBinder {
-  outletDataSubscriptions = /* @__PURE__ */ new Map();
-  bindActivatedRouteToOutletComponent(outlet) {
-    this.unsubscribeFromRouteData(outlet);
-    this.subscribeToRouteData(outlet);
-  }
-  unsubscribeFromRouteData(outlet) {
-    this.outletDataSubscriptions.get(outlet)?.unsubscribe();
-    this.outletDataSubscriptions.delete(outlet);
-  }
-  subscribeToRouteData(outlet) {
-    const {
-      activatedRoute
-    } = outlet;
-    const dataSubscription = combineLatest([activatedRoute.queryParams, activatedRoute.params, activatedRoute.data]).pipe(switchMap(([queryParams, params, data], index) => {
-      data = __spreadValues(__spreadValues(__spreadValues({}, queryParams), params), data);
-      if (index === 0) {
-        return of(data);
-      }
-      return Promise.resolve(data);
-    })).subscribe((data) => {
-      if (!outlet.isActivated || !outlet.activatedComponentRef || outlet.activatedRoute !== activatedRoute || activatedRoute.component === null) {
-        this.unsubscribeFromRouteData(outlet);
-        return;
-      }
-      const mirror = reflectComponentType(activatedRoute.component);
-      if (!mirror) {
-        this.unsubscribeFromRouteData(outlet);
-        return;
-      }
-      for (const {
-        templateName
-      } of mirror.inputs) {
-        outlet.activatedComponentRef.setInput(templateName, data[templateName]);
-      }
-    });
-    this.outletDataSubscriptions.set(outlet, dataSubscription);
-  }
-  static \u0275fac = function RoutedComponentInputBinder_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _RoutedComponentInputBinder)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _RoutedComponentInputBinder,
-    factory: _RoutedComponentInputBinder.\u0275fac
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RoutedComponentInputBinder, [{
-    type: Injectable
-  }], null, null);
-})();
-function createRouterState(routeReuseStrategy, curr, prevState) {
-  const root = createNode(routeReuseStrategy, curr._root, prevState ? prevState._root : void 0);
-  return new RouterState(root, curr);
-}
-function createNode(routeReuseStrategy, curr, prevState) {
-  if (prevState && routeReuseStrategy.shouldReuseRoute(curr.value, prevState.value.snapshot)) {
-    const value = prevState.value;
-    value._futureSnapshot = curr.value;
-    const children = createOrReuseChildren(routeReuseStrategy, curr, prevState);
-    return new TreeNode(value, children);
-  } else {
-    if (routeReuseStrategy.shouldAttach(curr.value)) {
-      const detachedRouteHandle = routeReuseStrategy.retrieve(curr.value);
-      if (detachedRouteHandle !== null) {
-        const tree2 = detachedRouteHandle.route;
-        tree2.value._futureSnapshot = curr.value;
-        tree2.children = curr.children.map((c) => createNode(routeReuseStrategy, c));
-        return tree2;
-      }
-    }
-    const value = createActivatedRoute(curr.value);
-    const children = curr.children.map((c) => createNode(routeReuseStrategy, c));
-    return new TreeNode(value, children);
-  }
-}
-function createOrReuseChildren(routeReuseStrategy, curr, prevState) {
-  return curr.children.map((child) => {
-    for (const p of prevState.children) {
-      if (routeReuseStrategy.shouldReuseRoute(child.value, p.value.snapshot)) {
-        return createNode(routeReuseStrategy, child, p);
-      }
-    }
-    return createNode(routeReuseStrategy, child);
-  });
-}
-function createActivatedRoute(c) {
-  return new ActivatedRoute(new BehaviorSubject(c.url), new BehaviorSubject(c.params), new BehaviorSubject(c.queryParams), new BehaviorSubject(c.fragment), new BehaviorSubject(c.data), c.outlet, c.component, c);
-}
-var RedirectCommand = class {
-  redirectTo;
-  navigationBehaviorOptions;
-  constructor(redirectTo, navigationBehaviorOptions) {
-    this.redirectTo = redirectTo;
-    this.navigationBehaviorOptions = navigationBehaviorOptions;
-  }
-};
-var NAVIGATION_CANCELING_ERROR = "ngNavigationCancelingError";
-function redirectingNavigationError(urlSerializer, redirect) {
-  const {
-    redirectTo,
-    navigationBehaviorOptions
-  } = isUrlTree(redirect) ? {
-    redirectTo: redirect,
-    navigationBehaviorOptions: void 0
-  } : redirect;
-  const error = navigationCancelingError(ngDevMode && `Redirecting to "${urlSerializer.serialize(redirectTo)}"`, NavigationCancellationCode.Redirect);
-  error.url = redirectTo;
-  error.navigationBehaviorOptions = navigationBehaviorOptions;
-  return error;
-}
-function navigationCancelingError(message, code) {
-  const error = new Error(`NavigationCancelingError: ${message || ""}`);
-  error[NAVIGATION_CANCELING_ERROR] = true;
-  error.cancellationCode = code;
-  return error;
-}
-function isRedirectingNavigationCancelingError(error) {
-  return isNavigationCancelingError(error) && isUrlTree(error.url);
-}
-function isNavigationCancelingError(error) {
-  return !!error && error[NAVIGATION_CANCELING_ERROR];
-}
-var warnedAboutUnsupportedInputBinding = false;
-var activateRoutes = (rootContexts, routeReuseStrategy, forwardEvent, inputBindingEnabled) => map((t) => {
-  new ActivateRoutes(routeReuseStrategy, t.targetRouterState, t.currentRouterState, forwardEvent, inputBindingEnabled).activate(rootContexts);
-  return t;
-});
-var ActivateRoutes = class {
-  routeReuseStrategy;
-  futureState;
-  currState;
-  forwardEvent;
-  inputBindingEnabled;
-  constructor(routeReuseStrategy, futureState, currState, forwardEvent, inputBindingEnabled) {
-    this.routeReuseStrategy = routeReuseStrategy;
-    this.futureState = futureState;
-    this.currState = currState;
-    this.forwardEvent = forwardEvent;
-    this.inputBindingEnabled = inputBindingEnabled;
-  }
-  activate(parentContexts) {
-    const futureRoot = this.futureState._root;
-    const currRoot = this.currState ? this.currState._root : null;
-    this.deactivateChildRoutes(futureRoot, currRoot, parentContexts);
-    advanceActivatedRoute(this.futureState.root);
-    this.activateChildRoutes(futureRoot, currRoot, parentContexts);
-  }
-  // De-activate the child route that are not re-used for the future state
-  deactivateChildRoutes(futureNode, currNode, contexts) {
-    const children = nodeChildrenAsMap(currNode);
-    futureNode.children.forEach((futureChild) => {
-      const childOutletName = futureChild.value.outlet;
-      this.deactivateRoutes(futureChild, children[childOutletName], contexts);
-      delete children[childOutletName];
-    });
-    Object.values(children).forEach((v) => {
-      this.deactivateRouteAndItsChildren(v, contexts);
-    });
-  }
-  deactivateRoutes(futureNode, currNode, parentContext) {
-    const future = futureNode.value;
-    const curr = currNode ? currNode.value : null;
-    if (future === curr) {
-      if (future.component) {
-        const context = parentContext.getContext(future.outlet);
-        if (context) {
-          this.deactivateChildRoutes(futureNode, currNode, context.children);
-        }
-      } else {
-        this.deactivateChildRoutes(futureNode, currNode, parentContext);
-      }
-    } else {
-      if (curr) {
-        this.deactivateRouteAndItsChildren(currNode, parentContext);
-      }
-    }
-  }
-  deactivateRouteAndItsChildren(route, parentContexts) {
-    if (route.value.component && this.routeReuseStrategy.shouldDetach(route.value.snapshot)) {
-      this.detachAndStoreRouteSubtree(route, parentContexts);
-    } else {
-      this.deactivateRouteAndOutlet(route, parentContexts);
-    }
-  }
-  detachAndStoreRouteSubtree(route, parentContexts) {
-    const context = parentContexts.getContext(route.value.outlet);
-    const contexts = context && route.value.component ? context.children : parentContexts;
-    const children = nodeChildrenAsMap(route);
-    for (const treeNode of Object.values(children)) {
-      this.deactivateRouteAndItsChildren(treeNode, contexts);
-    }
-    if (context && context.outlet) {
-      const componentRef = context.outlet.detach();
-      const contexts2 = context.children.onOutletDeactivated();
-      this.routeReuseStrategy.store(route.value.snapshot, {
-        componentRef,
-        route,
-        contexts: contexts2
-      });
-    }
-  }
-  deactivateRouteAndOutlet(route, parentContexts) {
-    const context = parentContexts.getContext(route.value.outlet);
-    const contexts = context && route.value.component ? context.children : parentContexts;
-    const children = nodeChildrenAsMap(route);
-    for (const treeNode of Object.values(children)) {
-      this.deactivateRouteAndItsChildren(treeNode, contexts);
-    }
-    if (context) {
-      if (context.outlet) {
-        context.outlet.deactivate();
-        context.children.onOutletDeactivated();
-      }
-      context.attachRef = null;
-      context.route = null;
-    }
-  }
-  activateChildRoutes(futureNode, currNode, contexts) {
-    const children = nodeChildrenAsMap(currNode);
-    futureNode.children.forEach((c) => {
-      this.activateRoutes(c, children[c.value.outlet], contexts);
-      this.forwardEvent(new ActivationEnd(c.value.snapshot));
-    });
-    if (futureNode.children.length) {
-      this.forwardEvent(new ChildActivationEnd(futureNode.value.snapshot));
-    }
-  }
-  activateRoutes(futureNode, currNode, parentContexts) {
-    const future = futureNode.value;
-    const curr = currNode ? currNode.value : null;
-    advanceActivatedRoute(future);
-    if (future === curr) {
-      if (future.component) {
-        const context = parentContexts.getOrCreateContext(future.outlet);
-        this.activateChildRoutes(futureNode, currNode, context.children);
-      } else {
-        this.activateChildRoutes(futureNode, currNode, parentContexts);
-      }
-    } else {
-      if (future.component) {
-        const context = parentContexts.getOrCreateContext(future.outlet);
-        if (this.routeReuseStrategy.shouldAttach(future.snapshot)) {
-          const stored = this.routeReuseStrategy.retrieve(future.snapshot);
-          this.routeReuseStrategy.store(future.snapshot, null);
-          context.children.onOutletReAttached(stored.contexts);
-          context.attachRef = stored.componentRef;
-          context.route = stored.route.value;
-          if (context.outlet) {
-            context.outlet.attach(stored.componentRef, stored.route.value);
-          }
-          advanceActivatedRoute(stored.route.value);
-          this.activateChildRoutes(futureNode, null, context.children);
-        } else {
-          context.attachRef = null;
-          context.route = future;
-          if (context.outlet) {
-            context.outlet.activateWith(future, context.injector);
-          }
-          this.activateChildRoutes(futureNode, null, context.children);
-        }
-      } else {
-        this.activateChildRoutes(futureNode, null, parentContexts);
-      }
-    }
-    if (typeof ngDevMode === "undefined" || ngDevMode) {
-      const context = parentContexts.getOrCreateContext(future.outlet);
-      const outlet = context.outlet;
-      if (outlet && this.inputBindingEnabled && !outlet.supportsBindingToComponentInputs && !warnedAboutUnsupportedInputBinding) {
-        console.warn(`'withComponentInputBinding' feature is enabled but this application is using an outlet that may not support binding to component inputs.`);
-        warnedAboutUnsupportedInputBinding = true;
-      }
-    }
-  }
-};
-var CanActivate = class {
-  path;
-  route;
-  constructor(path) {
-    this.path = path;
-    this.route = this.path[this.path.length - 1];
-  }
-};
-var CanDeactivate = class {
-  component;
-  route;
-  constructor(component, route) {
-    this.component = component;
-    this.route = route;
-  }
-};
-function getAllRouteGuards(future, curr, parentContexts) {
-  const futureRoot = future._root;
-  const currRoot = curr ? curr._root : null;
-  return getChildRouteGuards(futureRoot, currRoot, parentContexts, [futureRoot.value]);
-}
-function getCanActivateChild(p) {
-  const canActivateChild = p.routeConfig ? p.routeConfig.canActivateChild : null;
-  if (!canActivateChild || canActivateChild.length === 0) return null;
-  return {
-    node: p,
-    guards: canActivateChild
-  };
-}
-function getTokenOrFunctionIdentity(tokenOrFunction, injector) {
-  const NOT_FOUND = Symbol();
-  const result = injector.get(tokenOrFunction, NOT_FOUND);
-  if (result === NOT_FOUND) {
-    if (typeof tokenOrFunction === "function" && !isInjectable(tokenOrFunction)) {
-      return tokenOrFunction;
-    } else {
-      return injector.get(tokenOrFunction);
-    }
-  }
-  return result;
-}
-function getChildRouteGuards(futureNode, currNode, contexts, futurePath, checks = {
-  canDeactivateChecks: [],
-  canActivateChecks: []
-}) {
-  const prevChildren = nodeChildrenAsMap(currNode);
-  futureNode.children.forEach((c) => {
-    getRouteGuards(c, prevChildren[c.value.outlet], contexts, futurePath.concat([c.value]), checks);
-    delete prevChildren[c.value.outlet];
-  });
-  Object.entries(prevChildren).forEach(([k, v]) => deactivateRouteAndItsChildren(v, contexts.getContext(k), checks));
-  return checks;
-}
-function getRouteGuards(futureNode, currNode, parentContexts, futurePath, checks = {
-  canDeactivateChecks: [],
-  canActivateChecks: []
-}) {
-  const future = futureNode.value;
-  const curr = currNode ? currNode.value : null;
-  const context = parentContexts ? parentContexts.getContext(futureNode.value.outlet) : null;
-  if (curr && future.routeConfig === curr.routeConfig) {
-    const shouldRun = shouldRunGuardsAndResolvers(curr, future, future.routeConfig.runGuardsAndResolvers);
-    if (shouldRun) {
-      checks.canActivateChecks.push(new CanActivate(futurePath));
-    } else {
-      future.data = curr.data;
-      future._resolvedData = curr._resolvedData;
-    }
-    if (future.component) {
-      getChildRouteGuards(futureNode, currNode, context ? context.children : null, futurePath, checks);
-    } else {
-      getChildRouteGuards(futureNode, currNode, parentContexts, futurePath, checks);
-    }
-    if (shouldRun && context && context.outlet && context.outlet.isActivated) {
-      checks.canDeactivateChecks.push(new CanDeactivate(context.outlet.component, curr));
-    }
-  } else {
-    if (curr) {
-      deactivateRouteAndItsChildren(currNode, context, checks);
-    }
-    checks.canActivateChecks.push(new CanActivate(futurePath));
-    if (future.component) {
-      getChildRouteGuards(futureNode, null, context ? context.children : null, futurePath, checks);
-    } else {
-      getChildRouteGuards(futureNode, null, parentContexts, futurePath, checks);
-    }
-  }
-  return checks;
-}
-function shouldRunGuardsAndResolvers(curr, future, mode) {
-  if (typeof mode === "function") {
-    return mode(curr, future);
-  }
-  switch (mode) {
-    case "pathParamsChange":
-      return !equalPath(curr.url, future.url);
-    case "pathParamsOrQueryParamsChange":
-      return !equalPath(curr.url, future.url) || !shallowEqual(curr.queryParams, future.queryParams);
-    case "always":
-      return true;
-    case "paramsOrQueryParamsChange":
-      return !equalParamsAndUrlSegments(curr, future) || !shallowEqual(curr.queryParams, future.queryParams);
-    case "paramsChange":
-    default:
-      return !equalParamsAndUrlSegments(curr, future);
-  }
-}
-function deactivateRouteAndItsChildren(route, context, checks) {
-  const children = nodeChildrenAsMap(route);
-  const r = route.value;
-  Object.entries(children).forEach(([childName, node]) => {
-    if (!r.component) {
-      deactivateRouteAndItsChildren(node, context, checks);
-    } else if (context) {
-      deactivateRouteAndItsChildren(node, context.children.getContext(childName), checks);
-    } else {
-      deactivateRouteAndItsChildren(node, null, checks);
-    }
-  });
-  if (!r.component) {
-    checks.canDeactivateChecks.push(new CanDeactivate(null, r));
-  } else if (context && context.outlet && context.outlet.isActivated) {
-    checks.canDeactivateChecks.push(new CanDeactivate(context.outlet.component, r));
-  } else {
-    checks.canDeactivateChecks.push(new CanDeactivate(null, r));
-  }
-}
-function isFunction(v) {
-  return typeof v === "function";
-}
-function isBoolean(v) {
-  return typeof v === "boolean";
-}
-function isCanLoad(guard) {
-  return guard && isFunction(guard.canLoad);
-}
-function isCanActivate(guard) {
-  return guard && isFunction(guard.canActivate);
-}
-function isCanActivateChild(guard) {
-  return guard && isFunction(guard.canActivateChild);
-}
-function isCanDeactivate(guard) {
-  return guard && isFunction(guard.canDeactivate);
-}
-function isCanMatch(guard) {
-  return guard && isFunction(guard.canMatch);
-}
-function isEmptyError(e) {
-  return e instanceof EmptyError || e?.name === "EmptyError";
-}
-var INITIAL_VALUE = /* @__PURE__ */ Symbol("INITIAL_VALUE");
-function prioritizedGuardValue() {
-  return switchMap((obs) => {
-    return combineLatest(obs.map((o) => o.pipe(take(1), startWith(INITIAL_VALUE)))).pipe(map((results) => {
-      for (const result of results) {
-        if (result === true) {
-          continue;
-        } else if (result === INITIAL_VALUE) {
-          return INITIAL_VALUE;
-        } else if (result === false || isRedirect(result)) {
-          return result;
-        }
-      }
-      return true;
-    }), filter((item) => item !== INITIAL_VALUE), take(1));
-  });
-}
-function isRedirect(val) {
-  return isUrlTree(val) || val instanceof RedirectCommand;
-}
-function checkGuards(injector, forwardEvent) {
-  return mergeMap((t) => {
-    const {
-      targetSnapshot,
-      currentSnapshot,
-      guards: {
-        canActivateChecks,
-        canDeactivateChecks
-      }
-    } = t;
-    if (canDeactivateChecks.length === 0 && canActivateChecks.length === 0) {
-      return of(__spreadProps(__spreadValues({}, t), {
-        guardsResult: true
-      }));
-    }
-    return runCanDeactivateChecks(canDeactivateChecks, targetSnapshot, currentSnapshot, injector).pipe(mergeMap((canDeactivate) => {
-      return canDeactivate && isBoolean(canDeactivate) ? runCanActivateChecks(targetSnapshot, canActivateChecks, injector, forwardEvent) : of(canDeactivate);
-    }), map((guardsResult) => __spreadProps(__spreadValues({}, t), {
-      guardsResult
-    })));
-  });
-}
-function runCanDeactivateChecks(checks, futureRSS, currRSS, injector) {
-  return from(checks).pipe(mergeMap((check) => runCanDeactivate(check.component, check.route, currRSS, futureRSS, injector)), first((result) => {
-    return result !== true;
-  }, true));
-}
-function runCanActivateChecks(futureSnapshot, checks, injector, forwardEvent) {
-  return from(checks).pipe(concatMap((check) => {
-    return concat(fireChildActivationStart(check.route.parent, forwardEvent), fireActivationStart(check.route, forwardEvent), runCanActivateChild(futureSnapshot, check.path, injector), runCanActivate(futureSnapshot, check.route, injector));
-  }), first((result) => {
-    return result !== true;
-  }, true));
-}
-function fireActivationStart(snapshot, forwardEvent) {
-  if (snapshot !== null && forwardEvent) {
-    forwardEvent(new ActivationStart(snapshot));
-  }
-  return of(true);
-}
-function fireChildActivationStart(snapshot, forwardEvent) {
-  if (snapshot !== null && forwardEvent) {
-    forwardEvent(new ChildActivationStart(snapshot));
-  }
-  return of(true);
-}
-function runCanActivate(futureRSS, futureARS, injector) {
-  const canActivate = futureARS.routeConfig ? futureARS.routeConfig.canActivate : null;
-  if (!canActivate || canActivate.length === 0) return of(true);
-  const canActivateObservables = canActivate.map((canActivate2) => {
-    return defer(() => {
-      const closestInjector = getClosestRouteInjector(futureARS) ?? injector;
-      const guard = getTokenOrFunctionIdentity(canActivate2, closestInjector);
-      const guardVal = isCanActivate(guard) ? guard.canActivate(futureARS, futureRSS) : runInInjectionContext(closestInjector, () => guard(futureARS, futureRSS));
-      return wrapIntoObservable(guardVal).pipe(first());
-    });
-  });
-  return of(canActivateObservables).pipe(prioritizedGuardValue());
-}
-function runCanActivateChild(futureRSS, path, injector) {
-  const futureARS = path[path.length - 1];
-  const canActivateChildGuards = path.slice(0, path.length - 1).reverse().map((p) => getCanActivateChild(p)).filter((_) => _ !== null);
-  const canActivateChildGuardsMapped = canActivateChildGuards.map((d) => {
-    return defer(() => {
-      const guardsMapped = d.guards.map((canActivateChild) => {
-        const closestInjector = getClosestRouteInjector(d.node) ?? injector;
-        const guard = getTokenOrFunctionIdentity(canActivateChild, closestInjector);
-        const guardVal = isCanActivateChild(guard) ? guard.canActivateChild(futureARS, futureRSS) : runInInjectionContext(closestInjector, () => guard(futureARS, futureRSS));
-        return wrapIntoObservable(guardVal).pipe(first());
-      });
-      return of(guardsMapped).pipe(prioritizedGuardValue());
-    });
-  });
-  return of(canActivateChildGuardsMapped).pipe(prioritizedGuardValue());
-}
-function runCanDeactivate(component, currARS, currRSS, futureRSS, injector) {
-  const canDeactivate = currARS && currARS.routeConfig ? currARS.routeConfig.canDeactivate : null;
-  if (!canDeactivate || canDeactivate.length === 0) return of(true);
-  const canDeactivateObservables = canDeactivate.map((c) => {
-    const closestInjector = getClosestRouteInjector(currARS) ?? injector;
-    const guard = getTokenOrFunctionIdentity(c, closestInjector);
-    const guardVal = isCanDeactivate(guard) ? guard.canDeactivate(component, currARS, currRSS, futureRSS) : runInInjectionContext(closestInjector, () => guard(component, currARS, currRSS, futureRSS));
-    return wrapIntoObservable(guardVal).pipe(first());
-  });
-  return of(canDeactivateObservables).pipe(prioritizedGuardValue());
-}
-function runCanLoadGuards(injector, route, segments, urlSerializer) {
-  const canLoad = route.canLoad;
-  if (canLoad === void 0 || canLoad.length === 0) {
-    return of(true);
-  }
-  const canLoadObservables = canLoad.map((injectionToken) => {
-    const guard = getTokenOrFunctionIdentity(injectionToken, injector);
-    const guardVal = isCanLoad(guard) ? guard.canLoad(route, segments) : runInInjectionContext(injector, () => guard(route, segments));
-    return wrapIntoObservable(guardVal);
-  });
-  return of(canLoadObservables).pipe(prioritizedGuardValue(), redirectIfUrlTree(urlSerializer));
-}
-function redirectIfUrlTree(urlSerializer) {
-  return pipe(tap((result) => {
-    if (typeof result === "boolean") return;
-    throw redirectingNavigationError(urlSerializer, result);
-  }), map((result) => result === true));
-}
-function runCanMatchGuards(injector, route, segments, urlSerializer) {
-  const canMatch = route.canMatch;
-  if (!canMatch || canMatch.length === 0) return of(true);
-  const canMatchObservables = canMatch.map((injectionToken) => {
-    const guard = getTokenOrFunctionIdentity(injectionToken, injector);
-    const guardVal = isCanMatch(guard) ? guard.canMatch(route, segments) : runInInjectionContext(injector, () => guard(route, segments));
-    return wrapIntoObservable(guardVal);
-  });
-  return of(canMatchObservables).pipe(prioritizedGuardValue(), redirectIfUrlTree(urlSerializer));
-}
-var NoMatch = class {
-  segmentGroup;
-  constructor(segmentGroup) {
-    this.segmentGroup = segmentGroup || null;
-  }
-};
-var AbsoluteRedirect = class extends Error {
-  urlTree;
-  constructor(urlTree) {
-    super();
-    this.urlTree = urlTree;
-  }
-};
-function noMatch$1(segmentGroup) {
-  return throwError(new NoMatch(segmentGroup));
-}
-function namedOutletsRedirect(redirectTo) {
-  return throwError(new RuntimeError(4e3, (typeof ngDevMode === "undefined" || ngDevMode) && `Only absolute redirects can have named outlets. redirectTo: '${redirectTo}'`));
-}
-function canLoadFails(route) {
-  return throwError(navigationCancelingError((typeof ngDevMode === "undefined" || ngDevMode) && `Cannot load children because the guard of the route "path: '${route.path}'" returned false`, NavigationCancellationCode.GuardRejected));
-}
-var ApplyRedirects = class {
-  urlSerializer;
-  urlTree;
-  constructor(urlSerializer, urlTree) {
-    this.urlSerializer = urlSerializer;
-    this.urlTree = urlTree;
-  }
-  lineralizeSegments(route, urlTree) {
-    let res = [];
-    let c = urlTree.root;
-    while (true) {
-      res = res.concat(c.segments);
-      if (c.numberOfChildren === 0) {
-        return of(res);
-      }
-      if (c.numberOfChildren > 1 || !c.children[PRIMARY_OUTLET]) {
-        return namedOutletsRedirect(`${route.redirectTo}`);
-      }
-      c = c.children[PRIMARY_OUTLET];
-    }
-  }
-  applyRedirectCommands(segments, redirectTo, posParams, currentSnapshot, injector) {
-    if (typeof redirectTo !== "string") {
-      const redirectToFn = redirectTo;
-      const {
-        queryParams,
-        fragment,
-        routeConfig,
-        url,
-        outlet,
-        params,
-        data,
-        title
-      } = currentSnapshot;
-      const newRedirect = runInInjectionContext(injector, () => redirectToFn({
-        params,
-        data,
-        queryParams,
-        fragment,
-        routeConfig,
-        url,
-        outlet,
-        title
-      }));
-      if (newRedirect instanceof UrlTree) {
-        throw new AbsoluteRedirect(newRedirect);
-      }
-      redirectTo = newRedirect;
-    }
-    const newTree = this.applyRedirectCreateUrlTree(redirectTo, this.urlSerializer.parse(redirectTo), segments, posParams);
-    if (redirectTo[0] === "/") {
-      throw new AbsoluteRedirect(newTree);
-    }
-    return newTree;
-  }
-  applyRedirectCreateUrlTree(redirectTo, urlTree, segments, posParams) {
-    const newRoot = this.createSegmentGroup(redirectTo, urlTree.root, segments, posParams);
-    return new UrlTree(newRoot, this.createQueryParams(urlTree.queryParams, this.urlTree.queryParams), urlTree.fragment);
-  }
-  createQueryParams(redirectToParams, actualParams) {
-    const res = {};
-    Object.entries(redirectToParams).forEach(([k, v]) => {
-      const copySourceValue = typeof v === "string" && v[0] === ":";
-      if (copySourceValue) {
-        const sourceName = v.substring(1);
-        res[k] = actualParams[sourceName];
-      } else {
-        res[k] = v;
-      }
-    });
-    return res;
-  }
-  createSegmentGroup(redirectTo, group, segments, posParams) {
-    const updatedSegments = this.createSegments(redirectTo, group.segments, segments, posParams);
-    let children = {};
-    Object.entries(group.children).forEach(([name, child]) => {
-      children[name] = this.createSegmentGroup(redirectTo, child, segments, posParams);
-    });
-    return new UrlSegmentGroup(updatedSegments, children);
-  }
-  createSegments(redirectTo, redirectToSegments, actualSegments, posParams) {
-    return redirectToSegments.map((s) => s.path[0] === ":" ? this.findPosParam(redirectTo, s, posParams) : this.findOrReturn(s, actualSegments));
-  }
-  findPosParam(redirectTo, redirectToUrlSegment, posParams) {
-    const pos = posParams[redirectToUrlSegment.path.substring(1)];
-    if (!pos) throw new RuntimeError(4001, (typeof ngDevMode === "undefined" || ngDevMode) && `Cannot redirect to '${redirectTo}'. Cannot find '${redirectToUrlSegment.path}'.`);
-    return pos;
-  }
-  findOrReturn(redirectToUrlSegment, actualSegments) {
-    let idx = 0;
-    for (const s of actualSegments) {
-      if (s.path === redirectToUrlSegment.path) {
-        actualSegments.splice(idx);
-        return s;
-      }
-      idx++;
-    }
-    return redirectToUrlSegment;
-  }
-};
-var noMatch = {
-  matched: false,
-  consumedSegments: [],
-  remainingSegments: [],
-  parameters: {},
-  positionalParamSegments: {}
-};
-function matchWithChecks(segmentGroup, route, segments, injector, urlSerializer) {
-  const result = match(segmentGroup, route, segments);
-  if (!result.matched) {
-    return of(result);
-  }
-  injector = getOrCreateRouteInjectorIfNeeded(route, injector);
-  return runCanMatchGuards(injector, route, segments, urlSerializer).pipe(map((v) => v === true ? result : __spreadValues({}, noMatch)));
-}
-function match(segmentGroup, route, segments) {
-  if (route.path === "**") {
-    return createWildcardMatchResult(segments);
-  }
-  if (route.path === "") {
-    if (route.pathMatch === "full" && (segmentGroup.hasChildren() || segments.length > 0)) {
-      return __spreadValues({}, noMatch);
-    }
-    return {
-      matched: true,
-      consumedSegments: [],
-      remainingSegments: segments,
-      parameters: {},
-      positionalParamSegments: {}
-    };
-  }
-  const matcher = route.matcher || defaultUrlMatcher;
-  const res = matcher(segments, segmentGroup, route);
-  if (!res) return __spreadValues({}, noMatch);
-  const posParams = {};
-  Object.entries(res.posParams ?? {}).forEach(([k, v]) => {
-    posParams[k] = v.path;
-  });
-  const parameters = res.consumed.length > 0 ? __spreadValues(__spreadValues({}, posParams), res.consumed[res.consumed.length - 1].parameters) : posParams;
-  return {
-    matched: true,
-    consumedSegments: res.consumed,
-    remainingSegments: segments.slice(res.consumed.length),
-    // TODO(atscott): investigate combining parameters and positionalParamSegments
-    parameters,
-    positionalParamSegments: res.posParams ?? {}
-  };
-}
-function createWildcardMatchResult(segments) {
-  return {
-    matched: true,
-    parameters: segments.length > 0 ? last2(segments).parameters : {},
-    consumedSegments: segments,
-    remainingSegments: [],
-    positionalParamSegments: {}
-  };
-}
-function split(segmentGroup, consumedSegments, slicedSegments, config) {
-  if (slicedSegments.length > 0 && containsEmptyPathMatchesWithNamedOutlets(segmentGroup, slicedSegments, config)) {
-    const s2 = new UrlSegmentGroup(consumedSegments, createChildrenForEmptyPaths(config, new UrlSegmentGroup(slicedSegments, segmentGroup.children)));
-    return {
-      segmentGroup: s2,
-      slicedSegments: []
-    };
-  }
-  if (slicedSegments.length === 0 && containsEmptyPathMatches(segmentGroup, slicedSegments, config)) {
-    const s2 = new UrlSegmentGroup(segmentGroup.segments, addEmptyPathsToChildrenIfNeeded(segmentGroup, slicedSegments, config, segmentGroup.children));
-    return {
-      segmentGroup: s2,
-      slicedSegments
-    };
-  }
-  const s = new UrlSegmentGroup(segmentGroup.segments, segmentGroup.children);
-  return {
-    segmentGroup: s,
-    slicedSegments
-  };
-}
-function addEmptyPathsToChildrenIfNeeded(segmentGroup, slicedSegments, routes2, children) {
-  const res = {};
-  for (const r of routes2) {
-    if (emptyPathMatch(segmentGroup, slicedSegments, r) && !children[getOutlet(r)]) {
-      const s = new UrlSegmentGroup([], {});
-      res[getOutlet(r)] = s;
-    }
-  }
-  return __spreadValues(__spreadValues({}, children), res);
-}
-function createChildrenForEmptyPaths(routes2, primarySegment) {
-  const res = {};
-  res[PRIMARY_OUTLET] = primarySegment;
-  for (const r of routes2) {
-    if (r.path === "" && getOutlet(r) !== PRIMARY_OUTLET) {
-      const s = new UrlSegmentGroup([], {});
-      res[getOutlet(r)] = s;
-    }
-  }
-  return res;
-}
-function containsEmptyPathMatchesWithNamedOutlets(segmentGroup, slicedSegments, routes2) {
-  return routes2.some((r) => emptyPathMatch(segmentGroup, slicedSegments, r) && getOutlet(r) !== PRIMARY_OUTLET);
-}
-function containsEmptyPathMatches(segmentGroup, slicedSegments, routes2) {
-  return routes2.some((r) => emptyPathMatch(segmentGroup, slicedSegments, r));
-}
-function emptyPathMatch(segmentGroup, slicedSegments, r) {
-  if ((segmentGroup.hasChildren() || slicedSegments.length > 0) && r.pathMatch === "full") {
-    return false;
-  }
-  return r.path === "";
-}
-function noLeftoversInUrl(segmentGroup, segments, outlet) {
-  return segments.length === 0 && !segmentGroup.children[outlet];
-}
-var NoLeftoversInUrl = class {
-};
-function recognize$1(injector, configLoader, rootComponentType, config, urlTree, urlSerializer, paramsInheritanceStrategy = "emptyOnly") {
-  return new Recognizer(injector, configLoader, rootComponentType, config, urlTree, paramsInheritanceStrategy, urlSerializer).recognize();
-}
-var MAX_ALLOWED_REDIRECTS = 31;
-var Recognizer = class {
-  injector;
-  configLoader;
-  rootComponentType;
-  config;
-  urlTree;
-  paramsInheritanceStrategy;
-  urlSerializer;
-  applyRedirects;
-  absoluteRedirectCount = 0;
-  allowRedirects = true;
-  constructor(injector, configLoader, rootComponentType, config, urlTree, paramsInheritanceStrategy, urlSerializer) {
-    this.injector = injector;
-    this.configLoader = configLoader;
-    this.rootComponentType = rootComponentType;
-    this.config = config;
-    this.urlTree = urlTree;
-    this.paramsInheritanceStrategy = paramsInheritanceStrategy;
-    this.urlSerializer = urlSerializer;
-    this.applyRedirects = new ApplyRedirects(this.urlSerializer, this.urlTree);
-  }
-  noMatchError(e) {
-    return new RuntimeError(4002, typeof ngDevMode === "undefined" || ngDevMode ? `Cannot match any routes. URL Segment: '${e.segmentGroup}'` : `'${e.segmentGroup}'`);
-  }
-  recognize() {
-    const rootSegmentGroup = split(this.urlTree.root, [], [], this.config).segmentGroup;
-    return this.match(rootSegmentGroup).pipe(map(({
-      children,
-      rootSnapshot
-    }) => {
-      const rootNode = new TreeNode(rootSnapshot, children);
-      const routeState = new RouterStateSnapshot("", rootNode);
-      const tree2 = createUrlTreeFromSnapshot(rootSnapshot, [], this.urlTree.queryParams, this.urlTree.fragment);
-      tree2.queryParams = this.urlTree.queryParams;
-      routeState.url = this.urlSerializer.serialize(tree2);
-      return {
-        state: routeState,
-        tree: tree2
-      };
-    }));
-  }
-  match(rootSegmentGroup) {
-    const rootSnapshot = new ActivatedRouteSnapshot([], Object.freeze({}), Object.freeze(__spreadValues({}, this.urlTree.queryParams)), this.urlTree.fragment, Object.freeze({}), PRIMARY_OUTLET, this.rootComponentType, null, {});
-    return this.processSegmentGroup(this.injector, this.config, rootSegmentGroup, PRIMARY_OUTLET, rootSnapshot).pipe(map((children) => {
-      return {
-        children,
-        rootSnapshot
-      };
-    }), catchError((e) => {
-      if (e instanceof AbsoluteRedirect) {
-        this.urlTree = e.urlTree;
-        return this.match(e.urlTree.root);
-      }
-      if (e instanceof NoMatch) {
-        throw this.noMatchError(e);
-      }
-      throw e;
-    }));
-  }
-  processSegmentGroup(injector, config, segmentGroup, outlet, parentRoute) {
-    if (segmentGroup.segments.length === 0 && segmentGroup.hasChildren()) {
-      return this.processChildren(injector, config, segmentGroup, parentRoute);
-    }
-    return this.processSegment(injector, config, segmentGroup, segmentGroup.segments, outlet, true, parentRoute).pipe(map((child) => child instanceof TreeNode ? [child] : []));
-  }
-  /**
-   * Matches every child outlet in the `segmentGroup` to a `Route` in the config. Returns `null` if
-   * we cannot find a match for _any_ of the children.
-   *
-   * @param config - The `Routes` to match against
-   * @param segmentGroup - The `UrlSegmentGroup` whose children need to be matched against the
-   *     config.
-   */
-  processChildren(injector, config, segmentGroup, parentRoute) {
-    const childOutlets = [];
-    for (const child of Object.keys(segmentGroup.children)) {
-      if (child === "primary") {
-        childOutlets.unshift(child);
-      } else {
-        childOutlets.push(child);
-      }
-    }
-    return from(childOutlets).pipe(concatMap((childOutlet) => {
-      const child = segmentGroup.children[childOutlet];
-      const sortedConfig = sortByMatchingOutlets(config, childOutlet);
-      return this.processSegmentGroup(injector, sortedConfig, child, childOutlet, parentRoute);
-    }), scan((children, outletChildren) => {
-      children.push(...outletChildren);
-      return children;
-    }), defaultIfEmpty(null), last(), mergeMap((children) => {
-      if (children === null) return noMatch$1(segmentGroup);
-      const mergedChildren = mergeEmptyPathMatches(children);
-      if (typeof ngDevMode === "undefined" || ngDevMode) {
-        checkOutletNameUniqueness(mergedChildren);
-      }
-      sortActivatedRouteSnapshots(mergedChildren);
-      return of(mergedChildren);
-    }));
-  }
-  processSegment(injector, routes2, segmentGroup, segments, outlet, allowRedirects, parentRoute) {
-    return from(routes2).pipe(concatMap((r) => {
-      return this.processSegmentAgainstRoute(r._injector ?? injector, routes2, r, segmentGroup, segments, outlet, allowRedirects, parentRoute).pipe(catchError((e) => {
-        if (e instanceof NoMatch) {
-          return of(null);
-        }
-        throw e;
-      }));
-    }), first((x) => !!x), catchError((e) => {
-      if (isEmptyError(e)) {
-        if (noLeftoversInUrl(segmentGroup, segments, outlet)) {
-          return of(new NoLeftoversInUrl());
-        }
-        return noMatch$1(segmentGroup);
-      }
-      throw e;
-    }));
-  }
-  processSegmentAgainstRoute(injector, routes2, route, rawSegment, segments, outlet, allowRedirects, parentRoute) {
-    if (getOutlet(route) !== outlet && (outlet === PRIMARY_OUTLET || !emptyPathMatch(rawSegment, segments, route))) {
-      return noMatch$1(rawSegment);
-    }
-    if (route.redirectTo === void 0) {
-      return this.matchSegmentAgainstRoute(injector, rawSegment, route, segments, outlet, parentRoute);
-    }
-    if (this.allowRedirects && allowRedirects) {
-      return this.expandSegmentAgainstRouteUsingRedirect(injector, rawSegment, routes2, route, segments, outlet, parentRoute);
-    }
-    return noMatch$1(rawSegment);
-  }
-  expandSegmentAgainstRouteUsingRedirect(injector, segmentGroup, routes2, route, segments, outlet, parentRoute) {
-    const {
-      matched,
-      parameters,
-      consumedSegments,
-      positionalParamSegments,
-      remainingSegments
-    } = match(segmentGroup, route, segments);
-    if (!matched) return noMatch$1(segmentGroup);
-    if (typeof route.redirectTo === "string" && route.redirectTo[0] === "/") {
-      this.absoluteRedirectCount++;
-      if (this.absoluteRedirectCount > MAX_ALLOWED_REDIRECTS) {
-        if (ngDevMode) {
-          throw new RuntimeError(4016, `Detected possible infinite redirect when redirecting from '${this.urlTree}' to '${route.redirectTo}'.
-This is currently a dev mode only error but will become a call stack size exceeded error in production in a future major version.`);
-        }
-        this.allowRedirects = false;
-      }
-    }
-    const currentSnapshot = new ActivatedRouteSnapshot(segments, parameters, Object.freeze(__spreadValues({}, this.urlTree.queryParams)), this.urlTree.fragment, getData(route), getOutlet(route), route.component ?? route._loadedComponent ?? null, route, getResolve(route));
-    const inherited = getInherited(currentSnapshot, parentRoute, this.paramsInheritanceStrategy);
-    currentSnapshot.params = Object.freeze(inherited.params);
-    currentSnapshot.data = Object.freeze(inherited.data);
-    const newTree = this.applyRedirects.applyRedirectCommands(consumedSegments, route.redirectTo, positionalParamSegments, currentSnapshot, injector);
-    return this.applyRedirects.lineralizeSegments(route, newTree).pipe(mergeMap((newSegments) => {
-      return this.processSegment(injector, routes2, segmentGroup, newSegments.concat(remainingSegments), outlet, false, parentRoute);
-    }));
-  }
-  matchSegmentAgainstRoute(injector, rawSegment, route, segments, outlet, parentRoute) {
-    const matchResult = matchWithChecks(rawSegment, route, segments, injector, this.urlSerializer);
-    if (route.path === "**") {
-      rawSegment.children = {};
-    }
-    return matchResult.pipe(switchMap((result) => {
-      if (!result.matched) {
-        return noMatch$1(rawSegment);
-      }
-      injector = route._injector ?? injector;
-      return this.getChildConfig(injector, route, segments).pipe(switchMap(({
-        routes: childConfig
-      }) => {
-        const childInjector = route._loadedInjector ?? injector;
-        const {
-          parameters,
-          consumedSegments,
-          remainingSegments
-        } = result;
-        const snapshot = new ActivatedRouteSnapshot(consumedSegments, parameters, Object.freeze(__spreadValues({}, this.urlTree.queryParams)), this.urlTree.fragment, getData(route), getOutlet(route), route.component ?? route._loadedComponent ?? null, route, getResolve(route));
-        const inherited = getInherited(snapshot, parentRoute, this.paramsInheritanceStrategy);
-        snapshot.params = Object.freeze(inherited.params);
-        snapshot.data = Object.freeze(inherited.data);
-        const {
-          segmentGroup,
-          slicedSegments
-        } = split(rawSegment, consumedSegments, remainingSegments, childConfig);
-        if (slicedSegments.length === 0 && segmentGroup.hasChildren()) {
-          return this.processChildren(childInjector, childConfig, segmentGroup, snapshot).pipe(map((children) => {
-            return new TreeNode(snapshot, children);
-          }));
-        }
-        if (childConfig.length === 0 && slicedSegments.length === 0) {
-          return of(new TreeNode(snapshot, []));
-        }
-        const matchedOnOutlet = getOutlet(route) === outlet;
-        return this.processSegment(childInjector, childConfig, segmentGroup, slicedSegments, matchedOnOutlet ? PRIMARY_OUTLET : outlet, true, snapshot).pipe(map((child) => {
-          return new TreeNode(snapshot, child instanceof TreeNode ? [child] : []);
-        }));
-      }));
-    }));
-  }
-  getChildConfig(injector, route, segments) {
-    if (route.children) {
-      return of({
-        routes: route.children,
-        injector
-      });
-    }
-    if (route.loadChildren) {
-      if (route._loadedRoutes !== void 0) {
-        return of({
-          routes: route._loadedRoutes,
-          injector: route._loadedInjector
-        });
-      }
-      return runCanLoadGuards(injector, route, segments, this.urlSerializer).pipe(mergeMap((shouldLoadResult) => {
-        if (shouldLoadResult) {
-          return this.configLoader.loadChildren(injector, route).pipe(tap((cfg) => {
-            route._loadedRoutes = cfg.routes;
-            route._loadedInjector = cfg.injector;
-          }));
-        }
-        return canLoadFails(route);
-      }));
-    }
-    return of({
-      routes: [],
-      injector
-    });
-  }
-};
-function sortActivatedRouteSnapshots(nodes) {
-  nodes.sort((a, b) => {
-    if (a.value.outlet === PRIMARY_OUTLET) return -1;
-    if (b.value.outlet === PRIMARY_OUTLET) return 1;
-    return a.value.outlet.localeCompare(b.value.outlet);
-  });
-}
-function hasEmptyPathConfig(node) {
-  const config = node.value.routeConfig;
-  return config && config.path === "";
-}
-function mergeEmptyPathMatches(nodes) {
-  const result = [];
-  const mergedNodes = /* @__PURE__ */ new Set();
-  for (const node of nodes) {
-    if (!hasEmptyPathConfig(node)) {
-      result.push(node);
-      continue;
-    }
-    const duplicateEmptyPathNode = result.find((resultNode) => node.value.routeConfig === resultNode.value.routeConfig);
-    if (duplicateEmptyPathNode !== void 0) {
-      duplicateEmptyPathNode.children.push(...node.children);
-      mergedNodes.add(duplicateEmptyPathNode);
-    } else {
-      result.push(node);
-    }
-  }
-  for (const mergedNode of mergedNodes) {
-    const mergedChildren = mergeEmptyPathMatches(mergedNode.children);
-    result.push(new TreeNode(mergedNode.value, mergedChildren));
-  }
-  return result.filter((n) => !mergedNodes.has(n));
-}
-function checkOutletNameUniqueness(nodes) {
-  const names = {};
-  nodes.forEach((n) => {
-    const routeWithSameOutletName = names[n.value.outlet];
-    if (routeWithSameOutletName) {
-      const p = routeWithSameOutletName.url.map((s) => s.toString()).join("/");
-      const c = n.value.url.map((s) => s.toString()).join("/");
-      throw new RuntimeError(4006, (typeof ngDevMode === "undefined" || ngDevMode) && `Two segments cannot have the same outlet name: '${p}' and '${c}'.`);
-    }
-    names[n.value.outlet] = n.value;
-  });
-}
-function getData(route) {
-  return route.data || {};
-}
-function getResolve(route) {
-  return route.resolve || {};
-}
-function recognize(injector, configLoader, rootComponentType, config, serializer, paramsInheritanceStrategy) {
-  return mergeMap((t) => recognize$1(injector, configLoader, rootComponentType, config, t.extractedUrl, serializer, paramsInheritanceStrategy).pipe(map(({
-    state: targetSnapshot,
-    tree: urlAfterRedirects
-  }) => {
-    return __spreadProps(__spreadValues({}, t), {
-      targetSnapshot,
-      urlAfterRedirects
-    });
-  })));
-}
-function resolveData(paramsInheritanceStrategy, injector) {
-  return mergeMap((t) => {
-    const {
-      targetSnapshot,
-      guards: {
-        canActivateChecks
-      }
-    } = t;
-    if (!canActivateChecks.length) {
-      return of(t);
-    }
-    const routesWithResolversToRun = new Set(canActivateChecks.map((check) => check.route));
-    const routesNeedingDataUpdates = /* @__PURE__ */ new Set();
-    for (const route of routesWithResolversToRun) {
-      if (routesNeedingDataUpdates.has(route)) {
-        continue;
-      }
-      for (const newRoute of flattenRouteTree(route)) {
-        routesNeedingDataUpdates.add(newRoute);
-      }
-    }
-    let routesProcessed = 0;
-    return from(routesNeedingDataUpdates).pipe(concatMap((route) => {
-      if (routesWithResolversToRun.has(route)) {
-        return runResolve(route, targetSnapshot, paramsInheritanceStrategy, injector);
-      } else {
-        route.data = getInherited(route, route.parent, paramsInheritanceStrategy).resolve;
-        return of(void 0);
-      }
-    }), tap(() => routesProcessed++), takeLast(1), mergeMap((_) => routesProcessed === routesNeedingDataUpdates.size ? of(t) : EMPTY));
-  });
-}
-function flattenRouteTree(route) {
-  const descendants = route.children.map((child) => flattenRouteTree(child)).flat();
-  return [route, ...descendants];
-}
-function runResolve(futureARS, futureRSS, paramsInheritanceStrategy, injector) {
-  const config = futureARS.routeConfig;
-  const resolve = futureARS._resolve;
-  if (config?.title !== void 0 && !hasStaticTitle(config)) {
-    resolve[RouteTitleKey] = config.title;
-  }
-  return resolveNode(resolve, futureARS, futureRSS, injector).pipe(map((resolvedData) => {
-    futureARS._resolvedData = resolvedData;
-    futureARS.data = getInherited(futureARS, futureARS.parent, paramsInheritanceStrategy).resolve;
-    return null;
-  }));
-}
-function resolveNode(resolve, futureARS, futureRSS, injector) {
-  const keys = getDataKeys(resolve);
-  if (keys.length === 0) {
-    return of({});
-  }
-  const data = {};
-  return from(keys).pipe(mergeMap((key) => getResolver(resolve[key], futureARS, futureRSS, injector).pipe(first(), tap((value) => {
-    if (value instanceof RedirectCommand) {
-      throw redirectingNavigationError(new DefaultUrlSerializer(), value);
-    }
-    data[key] = value;
-  }))), takeLast(1), map(() => data), catchError((e) => isEmptyError(e) ? EMPTY : throwError(e)));
-}
-function getResolver(injectionToken, futureARS, futureRSS, injector) {
-  const closestInjector = getClosestRouteInjector(futureARS) ?? injector;
-  const resolver = getTokenOrFunctionIdentity(injectionToken, closestInjector);
-  const resolverValue = resolver.resolve ? resolver.resolve(futureARS, futureRSS) : runInInjectionContext(closestInjector, () => resolver(futureARS, futureRSS));
-  return wrapIntoObservable(resolverValue);
-}
-function switchTap(next) {
-  return switchMap((v) => {
-    const nextResult = next(v);
-    if (nextResult) {
-      return from(nextResult).pipe(map(() => v));
-    }
-    return of(v);
-  });
-}
-var TitleStrategy = class _TitleStrategy {
-  /**
-   * @returns The `title` of the deepest primary route.
-   */
-  buildTitle(snapshot) {
-    let pageTitle;
-    let route = snapshot.root;
-    while (route !== void 0) {
-      pageTitle = this.getResolvedTitleForRoute(route) ?? pageTitle;
-      route = route.children.find((child) => child.outlet === PRIMARY_OUTLET);
-    }
-    return pageTitle;
-  }
-  /**
-   * Given an `ActivatedRouteSnapshot`, returns the final value of the
-   * `Route.title` property, which can either be a static string or a resolved value.
-   */
-  getResolvedTitleForRoute(snapshot) {
-    return snapshot.data[RouteTitleKey];
-  }
-  static \u0275fac = function TitleStrategy_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _TitleStrategy)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _TitleStrategy,
-    factory: () => (() => inject(DefaultTitleStrategy))(),
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(TitleStrategy, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root",
-      useFactory: () => inject(DefaultTitleStrategy)
-    }]
-  }], null, null);
-})();
-var DefaultTitleStrategy = class _DefaultTitleStrategy extends TitleStrategy {
-  title;
-  constructor(title) {
-    super();
-    this.title = title;
-  }
-  /**
-   * Sets the title of the browser to the given value.
-   *
-   * @param title The `pageTitle` from the deepest primary route.
-   */
-  updateTitle(snapshot) {
-    const title = this.buildTitle(snapshot);
-    if (title !== void 0) {
-      this.title.setTitle(title);
-    }
-  }
-  static \u0275fac = function DefaultTitleStrategy_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _DefaultTitleStrategy)(\u0275\u0275inject(Title));
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _DefaultTitleStrategy,
-    factory: _DefaultTitleStrategy.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(DefaultTitleStrategy, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [{
-    type: Title
-  }], null);
-})();
-var ROUTER_CONFIGURATION = new InjectionToken(typeof ngDevMode === "undefined" || ngDevMode ? "router config" : "", {
-  providedIn: "root",
-  factory: () => ({})
-});
-var \u0275EmptyOutletComponent = class _\u0275EmptyOutletComponent {
-  static \u0275fac = function \u0275EmptyOutletComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _\u0275EmptyOutletComponent)();
-  };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
-    type: _\u0275EmptyOutletComponent,
-    selectors: [["ng-component"]],
-    exportAs: ["emptyRouterOutlet"],
-    decls: 1,
-    vars: 0,
-    template: function _EmptyOutletComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275element(0, "router-outlet");
-      }
-    },
-    dependencies: [RouterOutlet],
-    encapsulation: 2
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(\u0275EmptyOutletComponent, [{
-    type: Component,
-    args: [{
-      template: `<router-outlet/>`,
-      imports: [RouterOutlet],
-      // Used to avoid component ID collisions with user code.
-      exportAs: "emptyRouterOutlet"
-    }]
-  }], null, null);
-})();
-function standardizeConfig(r) {
-  const children = r.children && r.children.map(standardizeConfig);
-  const c = children ? __spreadProps(__spreadValues({}, r), {
-    children
-  }) : __spreadValues({}, r);
-  if (!c.component && !c.loadComponent && (children || c.loadChildren) && c.outlet && c.outlet !== PRIMARY_OUTLET) {
-    c.component = \u0275EmptyOutletComponent;
-  }
-  return c;
-}
-var ROUTES = new InjectionToken(ngDevMode ? "ROUTES" : "");
-var RouterConfigLoader = class _RouterConfigLoader {
-  componentLoaders = /* @__PURE__ */ new WeakMap();
-  childrenLoaders = /* @__PURE__ */ new WeakMap();
-  onLoadStartListener;
-  onLoadEndListener;
-  compiler = inject(Compiler);
-  loadComponent(route) {
-    if (this.componentLoaders.get(route)) {
-      return this.componentLoaders.get(route);
-    } else if (route._loadedComponent) {
-      return of(route._loadedComponent);
-    }
-    if (this.onLoadStartListener) {
-      this.onLoadStartListener(route);
-    }
-    const loadRunner = wrapIntoObservable(route.loadComponent()).pipe(map(maybeUnwrapDefaultExport), tap((component) => {
-      if (this.onLoadEndListener) {
-        this.onLoadEndListener(route);
-      }
-      (typeof ngDevMode === "undefined" || ngDevMode) && assertStandalone(route.path ?? "", component);
-      route._loadedComponent = component;
-    }), finalize(() => {
-      this.componentLoaders.delete(route);
-    }));
-    const loader = new ConnectableObservable(loadRunner, () => new Subject()).pipe(refCount());
-    this.componentLoaders.set(route, loader);
-    return loader;
-  }
-  loadChildren(parentInjector, route) {
-    if (this.childrenLoaders.get(route)) {
-      return this.childrenLoaders.get(route);
-    } else if (route._loadedRoutes) {
-      return of({
-        routes: route._loadedRoutes,
-        injector: route._loadedInjector
-      });
-    }
-    if (this.onLoadStartListener) {
-      this.onLoadStartListener(route);
-    }
-    const moduleFactoryOrRoutes$ = loadChildren(route, this.compiler, parentInjector, this.onLoadEndListener);
-    const loadRunner = moduleFactoryOrRoutes$.pipe(finalize(() => {
-      this.childrenLoaders.delete(route);
-    }));
-    const loader = new ConnectableObservable(loadRunner, () => new Subject()).pipe(refCount());
-    this.childrenLoaders.set(route, loader);
-    return loader;
-  }
-  static \u0275fac = function RouterConfigLoader_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _RouterConfigLoader)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _RouterConfigLoader,
-    factory: _RouterConfigLoader.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouterConfigLoader, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-function loadChildren(route, compiler, parentInjector, onLoadEndListener) {
-  return wrapIntoObservable(route.loadChildren()).pipe(map(maybeUnwrapDefaultExport), mergeMap((t) => {
-    if (t instanceof NgModuleFactory$1 || Array.isArray(t)) {
-      return of(t);
-    } else {
-      return from(compiler.compileModuleAsync(t));
-    }
-  }), map((factoryOrRoutes) => {
-    if (onLoadEndListener) {
-      onLoadEndListener(route);
-    }
-    let injector;
-    let rawRoutes;
-    let requireStandaloneComponents = false;
-    if (Array.isArray(factoryOrRoutes)) {
-      rawRoutes = factoryOrRoutes;
-      requireStandaloneComponents = true;
-    } else {
-      injector = factoryOrRoutes.create(parentInjector).injector;
-      rawRoutes = injector.get(ROUTES, [], {
-        optional: true,
-        self: true
-      }).flat();
-    }
-    const routes2 = rawRoutes.map(standardizeConfig);
-    (typeof ngDevMode === "undefined" || ngDevMode) && validateConfig(routes2, route.path, requireStandaloneComponents);
-    return {
-      routes: routes2,
-      injector
-    };
-  }));
-}
-function isWrappedDefaultExport(value) {
-  return value && typeof value === "object" && "default" in value;
-}
-function maybeUnwrapDefaultExport(input2) {
-  return isWrappedDefaultExport(input2) ? input2["default"] : input2;
-}
-var UrlHandlingStrategy = class _UrlHandlingStrategy {
-  static \u0275fac = function UrlHandlingStrategy_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _UrlHandlingStrategy)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _UrlHandlingStrategy,
-    factory: () => (() => inject(DefaultUrlHandlingStrategy))(),
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(UrlHandlingStrategy, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root",
-      useFactory: () => inject(DefaultUrlHandlingStrategy)
-    }]
-  }], null, null);
-})();
-var DefaultUrlHandlingStrategy = class _DefaultUrlHandlingStrategy {
-  shouldProcessUrl(url) {
-    return true;
-  }
-  extract(url) {
-    return url;
-  }
-  merge(newUrlPart, wholeUrl) {
-    return newUrlPart;
-  }
-  static \u0275fac = function DefaultUrlHandlingStrategy_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _DefaultUrlHandlingStrategy)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _DefaultUrlHandlingStrategy,
-    factory: _DefaultUrlHandlingStrategy.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(DefaultUrlHandlingStrategy, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-var CREATE_VIEW_TRANSITION = new InjectionToken(ngDevMode ? "view transition helper" : "");
-var VIEW_TRANSITION_OPTIONS = new InjectionToken(ngDevMode ? "view transition options" : "");
-function createViewTransition(injector, from2, to) {
-  const transitionOptions = injector.get(VIEW_TRANSITION_OPTIONS);
-  const document2 = injector.get(DOCUMENT);
-  return injector.get(NgZone).runOutsideAngular(() => {
-    if (!document2.startViewTransition || transitionOptions.skipNextTransition) {
-      transitionOptions.skipNextTransition = false;
-      return new Promise((resolve) => setTimeout(resolve));
-    }
-    let resolveViewTransitionStarted;
-    const viewTransitionStarted = new Promise((resolve) => {
-      resolveViewTransitionStarted = resolve;
-    });
-    const transition2 = document2.startViewTransition(() => {
-      resolveViewTransitionStarted();
-      return createRenderPromise(injector);
-    });
-    const {
-      onViewTransitionCreated
-    } = transitionOptions;
-    if (onViewTransitionCreated) {
-      runInInjectionContext(injector, () => onViewTransitionCreated({
-        transition: transition2,
-        from: from2,
-        to
-      }));
-    }
-    return viewTransitionStarted;
-  });
-}
-function createRenderPromise(injector) {
-  return new Promise((resolve) => {
-    afterNextRender({
-      read: () => setTimeout(resolve)
-    }, {
-      injector
-    });
-  });
-}
-var NAVIGATION_ERROR_HANDLER = new InjectionToken(typeof ngDevMode === "undefined" || ngDevMode ? "navigation error handler" : "");
-var NavigationTransitions = class _NavigationTransitions {
-  currentNavigation = null;
-  currentTransition = null;
-  lastSuccessfulNavigation = null;
-  /**
-   * These events are used to communicate back to the Router about the state of the transition. The
-   * Router wants to respond to these events in various ways. Because the `NavigationTransition`
-   * class is not public, this event subject is not publicly exposed.
-   */
-  events = new Subject();
-  /**
-   * Used to abort the current transition with an error.
-   */
-  transitionAbortSubject = new Subject();
-  configLoader = inject(RouterConfigLoader);
-  environmentInjector = inject(EnvironmentInjector);
-  destroyRef = inject(DestroyRef);
-  urlSerializer = inject(UrlSerializer);
-  rootContexts = inject(ChildrenOutletContexts);
-  location = inject(Location);
-  inputBindingEnabled = inject(INPUT_BINDER, {
-    optional: true
-  }) !== null;
-  titleStrategy = inject(TitleStrategy);
-  options = inject(ROUTER_CONFIGURATION, {
-    optional: true
-  }) || {};
-  paramsInheritanceStrategy = this.options.paramsInheritanceStrategy || "emptyOnly";
-  urlHandlingStrategy = inject(UrlHandlingStrategy);
-  createViewTransition = inject(CREATE_VIEW_TRANSITION, {
-    optional: true
-  });
-  navigationErrorHandler = inject(NAVIGATION_ERROR_HANDLER, {
-    optional: true
-  });
-  navigationId = 0;
-  get hasRequestedNavigation() {
-    return this.navigationId !== 0;
-  }
-  transitions;
-  /**
-   * Hook that enables you to pause navigation after the preactivation phase.
-   * Used by `RouterModule`.
-   *
-   * @internal
-   */
-  afterPreactivation = () => of(void 0);
-  /** @internal */
-  rootComponentType = null;
-  destroyed = false;
-  constructor() {
-    const onLoadStart = (r) => this.events.next(new RouteConfigLoadStart(r));
-    const onLoadEnd = (r) => this.events.next(new RouteConfigLoadEnd(r));
-    this.configLoader.onLoadEndListener = onLoadEnd;
-    this.configLoader.onLoadStartListener = onLoadStart;
-    this.destroyRef.onDestroy(() => {
-      this.destroyed = true;
-    });
-  }
-  complete() {
-    this.transitions?.complete();
-  }
-  handleNavigationRequest(request) {
-    const id = ++this.navigationId;
-    this.transitions?.next(__spreadProps(__spreadValues({}, request), {
-      extractedUrl: this.urlHandlingStrategy.extract(request.rawUrl),
-      targetSnapshot: null,
-      targetRouterState: null,
-      guards: {
-        canActivateChecks: [],
-        canDeactivateChecks: []
-      },
-      guardsResult: null,
-      id
-    }));
-  }
-  setupNavigations(router) {
-    this.transitions = new BehaviorSubject(null);
-    return this.transitions.pipe(
-      filter((t) => t !== null),
-      // Using switchMap so we cancel executing navigations when a new one comes in
-      switchMap((overallTransitionState) => {
-        let completed = false;
-        let errored = false;
-        return of(overallTransitionState).pipe(
-          switchMap((t) => {
-            if (this.navigationId > overallTransitionState.id) {
-              const cancellationReason = typeof ngDevMode === "undefined" || ngDevMode ? `Navigation ID ${overallTransitionState.id} is not equal to the current navigation id ${this.navigationId}` : "";
-              this.cancelNavigationTransition(overallTransitionState, cancellationReason, NavigationCancellationCode.SupersededByNewNavigation);
-              return EMPTY;
-            }
-            this.currentTransition = overallTransitionState;
-            this.currentNavigation = {
-              id: t.id,
-              initialUrl: t.rawUrl,
-              extractedUrl: t.extractedUrl,
-              targetBrowserUrl: typeof t.extras.browserUrl === "string" ? this.urlSerializer.parse(t.extras.browserUrl) : t.extras.browserUrl,
-              trigger: t.source,
-              extras: t.extras,
-              previousNavigation: !this.lastSuccessfulNavigation ? null : __spreadProps(__spreadValues({}, this.lastSuccessfulNavigation), {
-                previousNavigation: null
-              })
-            };
-            const urlTransition = !router.navigated || this.isUpdatingInternalState() || this.isUpdatedBrowserUrl();
-            const onSameUrlNavigation = t.extras.onSameUrlNavigation ?? router.onSameUrlNavigation;
-            if (!urlTransition && onSameUrlNavigation !== "reload") {
-              const reason = typeof ngDevMode === "undefined" || ngDevMode ? `Navigation to ${t.rawUrl} was ignored because it is the same as the current Router URL.` : "";
-              this.events.next(new NavigationSkipped(t.id, this.urlSerializer.serialize(t.rawUrl), reason, NavigationSkippedCode.IgnoredSameUrlNavigation));
-              t.resolve(false);
-              return EMPTY;
-            }
-            if (this.urlHandlingStrategy.shouldProcessUrl(t.rawUrl)) {
-              return of(t).pipe(
-                // Fire NavigationStart event
-                switchMap((t2) => {
-                  this.events.next(new NavigationStart(t2.id, this.urlSerializer.serialize(t2.extractedUrl), t2.source, t2.restoredState));
-                  if (t2.id !== this.navigationId) {
-                    return EMPTY;
-                  }
-                  return Promise.resolve(t2);
-                }),
-                // Recognize
-                recognize(this.environmentInjector, this.configLoader, this.rootComponentType, router.config, this.urlSerializer, this.paramsInheritanceStrategy),
-                // Update URL if in `eager` update mode
-                tap((t2) => {
-                  overallTransitionState.targetSnapshot = t2.targetSnapshot;
-                  overallTransitionState.urlAfterRedirects = t2.urlAfterRedirects;
-                  this.currentNavigation = __spreadProps(__spreadValues({}, this.currentNavigation), {
-                    finalUrl: t2.urlAfterRedirects
-                  });
-                  const routesRecognized = new RoutesRecognized(t2.id, this.urlSerializer.serialize(t2.extractedUrl), this.urlSerializer.serialize(t2.urlAfterRedirects), t2.targetSnapshot);
-                  this.events.next(routesRecognized);
-                })
-              );
-            } else if (urlTransition && this.urlHandlingStrategy.shouldProcessUrl(t.currentRawUrl)) {
-              const {
-                id,
-                extractedUrl,
-                source,
-                restoredState,
-                extras
-              } = t;
-              const navStart = new NavigationStart(id, this.urlSerializer.serialize(extractedUrl), source, restoredState);
-              this.events.next(navStart);
-              const targetSnapshot = createEmptyState(this.rootComponentType).snapshot;
-              this.currentTransition = overallTransitionState = __spreadProps(__spreadValues({}, t), {
-                targetSnapshot,
-                urlAfterRedirects: extractedUrl,
-                extras: __spreadProps(__spreadValues({}, extras), {
-                  skipLocationChange: false,
-                  replaceUrl: false
-                })
-              });
-              this.currentNavigation.finalUrl = extractedUrl;
-              return of(overallTransitionState);
-            } else {
-              const reason = typeof ngDevMode === "undefined" || ngDevMode ? `Navigation was ignored because the UrlHandlingStrategy indicated neither the current URL ${t.currentRawUrl} nor target URL ${t.rawUrl} should be processed.` : "";
-              this.events.next(new NavigationSkipped(t.id, this.urlSerializer.serialize(t.extractedUrl), reason, NavigationSkippedCode.IgnoredByUrlHandlingStrategy));
-              t.resolve(false);
-              return EMPTY;
-            }
-          }),
-          // --- GUARDS ---
-          tap((t) => {
-            const guardsStart = new GuardsCheckStart(t.id, this.urlSerializer.serialize(t.extractedUrl), this.urlSerializer.serialize(t.urlAfterRedirects), t.targetSnapshot);
-            this.events.next(guardsStart);
-          }),
-          map((t) => {
-            this.currentTransition = overallTransitionState = __spreadProps(__spreadValues({}, t), {
-              guards: getAllRouteGuards(t.targetSnapshot, t.currentSnapshot, this.rootContexts)
-            });
-            return overallTransitionState;
-          }),
-          checkGuards(this.environmentInjector, (evt) => this.events.next(evt)),
-          tap((t) => {
-            overallTransitionState.guardsResult = t.guardsResult;
-            if (t.guardsResult && typeof t.guardsResult !== "boolean") {
-              throw redirectingNavigationError(this.urlSerializer, t.guardsResult);
-            }
-            const guardsEnd = new GuardsCheckEnd(t.id, this.urlSerializer.serialize(t.extractedUrl), this.urlSerializer.serialize(t.urlAfterRedirects), t.targetSnapshot, !!t.guardsResult);
-            this.events.next(guardsEnd);
-          }),
-          filter((t) => {
-            if (!t.guardsResult) {
-              this.cancelNavigationTransition(t, "", NavigationCancellationCode.GuardRejected);
-              return false;
-            }
-            return true;
-          }),
-          // --- RESOLVE ---
-          switchTap((t) => {
-            if (t.guards.canActivateChecks.length === 0) {
-              return void 0;
-            }
-            return of(t).pipe(tap((t2) => {
-              const resolveStart = new ResolveStart(t2.id, this.urlSerializer.serialize(t2.extractedUrl), this.urlSerializer.serialize(t2.urlAfterRedirects), t2.targetSnapshot);
-              this.events.next(resolveStart);
-            }), switchMap((t2) => {
-              let dataResolved = false;
-              return of(t2).pipe(resolveData(this.paramsInheritanceStrategy, this.environmentInjector), tap({
-                next: () => dataResolved = true,
-                complete: () => {
-                  if (!dataResolved) {
-                    this.cancelNavigationTransition(t2, typeof ngDevMode === "undefined" || ngDevMode ? `At least one route resolver didn't emit any value.` : "", NavigationCancellationCode.NoDataFromResolver);
-                  }
-                }
-              }));
-            }), tap((t2) => {
-              const resolveEnd = new ResolveEnd(t2.id, this.urlSerializer.serialize(t2.extractedUrl), this.urlSerializer.serialize(t2.urlAfterRedirects), t2.targetSnapshot);
-              this.events.next(resolveEnd);
-            }));
-          }),
-          // --- LOAD COMPONENTS ---
-          switchTap((t) => {
-            const loadComponents = (route) => {
-              const loaders = [];
-              if (route.routeConfig?.loadComponent && !route.routeConfig._loadedComponent) {
-                loaders.push(this.configLoader.loadComponent(route.routeConfig).pipe(tap((loadedComponent) => {
-                  route.component = loadedComponent;
-                }), map(() => void 0)));
-              }
-              for (const child of route.children) {
-                loaders.push(...loadComponents(child));
-              }
-              return loaders;
-            };
-            return combineLatest(loadComponents(t.targetSnapshot.root)).pipe(defaultIfEmpty(null), take(1));
-          }),
-          switchTap(() => this.afterPreactivation()),
-          switchMap(() => {
-            const {
-              currentSnapshot,
-              targetSnapshot
-            } = overallTransitionState;
-            const viewTransitionStarted = this.createViewTransition?.(this.environmentInjector, currentSnapshot.root, targetSnapshot.root);
-            return viewTransitionStarted ? from(viewTransitionStarted).pipe(map(() => overallTransitionState)) : of(overallTransitionState);
-          }),
-          map((t) => {
-            const targetRouterState = createRouterState(router.routeReuseStrategy, t.targetSnapshot, t.currentRouterState);
-            this.currentTransition = overallTransitionState = __spreadProps(__spreadValues({}, t), {
-              targetRouterState
-            });
-            this.currentNavigation.targetRouterState = targetRouterState;
-            return overallTransitionState;
-          }),
-          tap(() => {
-            this.events.next(new BeforeActivateRoutes());
-          }),
-          activateRoutes(this.rootContexts, router.routeReuseStrategy, (evt) => this.events.next(evt), this.inputBindingEnabled),
-          // Ensure that if some observable used to drive the transition doesn't
-          // complete, the navigation still finalizes This should never happen, but
-          // this is done as a safety measure to avoid surfacing this error (#49567).
-          take(1),
-          tap({
-            next: (t) => {
-              completed = true;
-              this.lastSuccessfulNavigation = this.currentNavigation;
-              this.events.next(new NavigationEnd(t.id, this.urlSerializer.serialize(t.extractedUrl), this.urlSerializer.serialize(t.urlAfterRedirects)));
-              this.titleStrategy?.updateTitle(t.targetRouterState.snapshot);
-              t.resolve(true);
-            },
-            complete: () => {
-              completed = true;
-            }
-          }),
-          // There used to be a lot more logic happening directly within the
-          // transition Observable. Some of this logic has been refactored out to
-          // other places but there may still be errors that happen there. This gives
-          // us a way to cancel the transition from the outside. This may also be
-          // required in the future to support something like the abort signal of the
-          // Navigation API where the navigation gets aborted from outside the
-          // transition.
-          takeUntil(this.transitionAbortSubject.pipe(tap((err) => {
-            throw err;
-          }))),
-          finalize(() => {
-            if (!completed && !errored) {
-              const cancelationReason = typeof ngDevMode === "undefined" || ngDevMode ? `Navigation ID ${overallTransitionState.id} is not equal to the current navigation id ${this.navigationId}` : "";
-              this.cancelNavigationTransition(overallTransitionState, cancelationReason, NavigationCancellationCode.SupersededByNewNavigation);
-            }
-            if (this.currentTransition?.id === overallTransitionState.id) {
-              this.currentNavigation = null;
-              this.currentTransition = null;
-            }
-          }),
-          catchError((e) => {
-            if (this.destroyed) {
-              overallTransitionState.resolve(false);
-              return EMPTY;
-            }
-            errored = true;
-            if (isNavigationCancelingError(e)) {
-              this.events.next(new NavigationCancel(overallTransitionState.id, this.urlSerializer.serialize(overallTransitionState.extractedUrl), e.message, e.cancellationCode));
-              if (!isRedirectingNavigationCancelingError(e)) {
-                overallTransitionState.resolve(false);
-              } else {
-                this.events.next(new RedirectRequest(e.url, e.navigationBehaviorOptions));
-              }
-            } else {
-              const navigationError = new NavigationError(overallTransitionState.id, this.urlSerializer.serialize(overallTransitionState.extractedUrl), e, overallTransitionState.targetSnapshot ?? void 0);
-              try {
-                const navigationErrorHandlerResult = runInInjectionContext(this.environmentInjector, () => this.navigationErrorHandler?.(navigationError));
-                if (navigationErrorHandlerResult instanceof RedirectCommand) {
-                  const {
-                    message,
-                    cancellationCode
-                  } = redirectingNavigationError(this.urlSerializer, navigationErrorHandlerResult);
-                  this.events.next(new NavigationCancel(overallTransitionState.id, this.urlSerializer.serialize(overallTransitionState.extractedUrl), message, cancellationCode));
-                  this.events.next(new RedirectRequest(navigationErrorHandlerResult.redirectTo, navigationErrorHandlerResult.navigationBehaviorOptions));
-                } else {
-                  this.events.next(navigationError);
-                  throw e;
-                }
-              } catch (ee) {
-                if (this.options.resolveNavigationPromiseOnError) {
-                  overallTransitionState.resolve(false);
-                } else {
-                  overallTransitionState.reject(ee);
-                }
-              }
-            }
-            return EMPTY;
-          })
-        );
-      })
-    );
-  }
-  cancelNavigationTransition(t, reason, code) {
-    const navCancel = new NavigationCancel(t.id, this.urlSerializer.serialize(t.extractedUrl), reason, code);
-    this.events.next(navCancel);
-    t.resolve(false);
-  }
-  /**
-   * @returns Whether we're navigating to somewhere that is not what the Router is
-   * currently set to.
-   */
-  isUpdatingInternalState() {
-    return this.currentTransition?.extractedUrl.toString() !== this.currentTransition?.currentUrlTree.toString();
-  }
-  /**
-   * @returns Whether we're updating the browser URL to something new (navigation is going
-   * to somewhere not displayed in the URL bar and we will update the URL
-   * bar if navigation succeeds).
-   */
-  isUpdatedBrowserUrl() {
-    const currentBrowserUrl = this.urlHandlingStrategy.extract(this.urlSerializer.parse(this.location.path(true)));
-    const targetBrowserUrl = this.currentNavigation?.targetBrowserUrl ?? this.currentNavigation?.extractedUrl;
-    return currentBrowserUrl.toString() !== targetBrowserUrl?.toString() && !this.currentNavigation?.extras.skipLocationChange;
-  }
-  static \u0275fac = function NavigationTransitions_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _NavigationTransitions)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _NavigationTransitions,
-    factory: _NavigationTransitions.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NavigationTransitions, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
-})();
-function isBrowserTriggeredNavigation(source) {
-  return source !== IMPERATIVE_NAVIGATION;
-}
-var RouteReuseStrategy = class _RouteReuseStrategy {
-  static \u0275fac = function RouteReuseStrategy_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _RouteReuseStrategy)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _RouteReuseStrategy,
-    factory: () => (() => inject(DefaultRouteReuseStrategy))(),
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouteReuseStrategy, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root",
-      useFactory: () => inject(DefaultRouteReuseStrategy)
-    }]
-  }], null, null);
-})();
-var BaseRouteReuseStrategy = class {
-  /**
-   * Whether the given route should detach for later reuse.
-   * Always returns false for `BaseRouteReuseStrategy`.
-   * */
-  shouldDetach(route) {
-    return false;
-  }
-  /**
-   * A no-op; the route is never stored since this strategy never detaches routes for later re-use.
-   */
-  store(route, detachedTree) {
-  }
-  /** Returns `false`, meaning the route (and its subtree) is never reattached */
-  shouldAttach(route) {
-    return false;
-  }
-  /** Returns `null` because this strategy does not store routes for later re-use. */
-  retrieve(route) {
-    return null;
-  }
-  /**
-   * Determines if a route should be reused.
-   * This strategy returns `true` when the future route config and current route config are
-   * identical.
-   */
-  shouldReuseRoute(future, curr) {
-    return future.routeConfig === curr.routeConfig;
-  }
-};
-var DefaultRouteReuseStrategy = class _DefaultRouteReuseStrategy extends BaseRouteReuseStrategy {
-  static \u0275fac = /* @__PURE__ */ (() => {
-    let \u0275DefaultRouteReuseStrategy_BaseFactory;
-    return function DefaultRouteReuseStrategy_Factory(__ngFactoryType__) {
-      return (\u0275DefaultRouteReuseStrategy_BaseFactory || (\u0275DefaultRouteReuseStrategy_BaseFactory = \u0275\u0275getInheritedFactory(_DefaultRouteReuseStrategy)))(__ngFactoryType__ || _DefaultRouteReuseStrategy);
-    };
-  })();
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _DefaultRouteReuseStrategy,
-    factory: _DefaultRouteReuseStrategy.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(DefaultRouteReuseStrategy, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-var StateManager = class _StateManager {
-  urlSerializer = inject(UrlSerializer);
-  options = inject(ROUTER_CONFIGURATION, {
-    optional: true
-  }) || {};
-  canceledNavigationResolution = this.options.canceledNavigationResolution || "replace";
-  location = inject(Location);
-  urlHandlingStrategy = inject(UrlHandlingStrategy);
-  urlUpdateStrategy = this.options.urlUpdateStrategy || "deferred";
-  currentUrlTree = new UrlTree();
-  /**
-   * Returns the currently activated `UrlTree`.
-   *
-   * This `UrlTree` shows only URLs that the `Router` is configured to handle (through
-   * `UrlHandlingStrategy`).
-   *
-   * The value is set after finding the route config tree to activate but before activating the
-   * route.
-   */
-  getCurrentUrlTree() {
-    return this.currentUrlTree;
-  }
-  rawUrlTree = this.currentUrlTree;
-  /**
-   * Returns a `UrlTree` that is represents what the browser is actually showing.
-   *
-   * In the life of a navigation transition:
-   * 1. When a navigation begins, the raw `UrlTree` is updated to the full URL that's being
-   * navigated to.
-   * 2. During a navigation, redirects are applied, which might only apply to _part_ of the URL (due
-   * to `UrlHandlingStrategy`).
-   * 3. Just before activation, the raw `UrlTree` is updated to include the redirects on top of the
-   * original raw URL.
-   *
-   * Note that this is _only_ here to support `UrlHandlingStrategy.extract` and
-   * `UrlHandlingStrategy.shouldProcessUrl`. Without those APIs, the current `UrlTree` would not
-   * deviated from the raw `UrlTree`.
-   *
-   * For `extract`, a raw `UrlTree` is needed because `extract` may only return part
-   * of the navigation URL. Thus, the current `UrlTree` may only represent _part_ of the browser
-   * URL. When a navigation gets cancelled and the router needs to reset the URL or a new navigation
-   * occurs, it needs to know the _whole_ browser URL, not just the part handled by
-   * `UrlHandlingStrategy`.
-   * For `shouldProcessUrl`, when the return is `false`, the router ignores the navigation but
-   * still updates the raw `UrlTree` with the assumption that the navigation was caused by the
-   * location change listener due to a URL update by the AngularJS router. In this case, the router
-   * still need to know what the browser's URL is for future navigations.
-   */
-  getRawUrlTree() {
-    return this.rawUrlTree;
-  }
-  createBrowserPath({
-    finalUrl,
-    initialUrl,
-    targetBrowserUrl
-  }) {
-    const rawUrl = finalUrl !== void 0 ? this.urlHandlingStrategy.merge(finalUrl, initialUrl) : initialUrl;
-    const url = targetBrowserUrl ?? rawUrl;
-    const path = url instanceof UrlTree ? this.urlSerializer.serialize(url) : url;
-    return path;
-  }
-  commitTransition({
-    targetRouterState,
-    finalUrl,
-    initialUrl
-  }) {
-    if (finalUrl && targetRouterState) {
-      this.currentUrlTree = finalUrl;
-      this.rawUrlTree = this.urlHandlingStrategy.merge(finalUrl, initialUrl);
-      this.routerState = targetRouterState;
-    } else {
-      this.rawUrlTree = initialUrl;
-    }
-  }
-  routerState = createEmptyState(null);
-  /** Returns the current RouterState. */
-  getRouterState() {
-    return this.routerState;
-  }
-  stateMemento = this.createStateMemento();
-  updateStateMemento() {
-    this.stateMemento = this.createStateMemento();
-  }
-  createStateMemento() {
-    return {
-      rawUrlTree: this.rawUrlTree,
-      currentUrlTree: this.currentUrlTree,
-      routerState: this.routerState
-    };
-  }
-  resetInternalState({
-    finalUrl
-  }) {
-    this.routerState = this.stateMemento.routerState;
-    this.currentUrlTree = this.stateMemento.currentUrlTree;
-    this.rawUrlTree = this.urlHandlingStrategy.merge(this.currentUrlTree, finalUrl ?? this.rawUrlTree);
-  }
-  static \u0275fac = function StateManager_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _StateManager)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _StateManager,
-    factory: () => (() => inject(HistoryStateManager))(),
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StateManager, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root",
-      useFactory: () => inject(HistoryStateManager)
-    }]
-  }], null, null);
-})();
-var HistoryStateManager = class _HistoryStateManager extends StateManager {
-  /**
-   * The id of the currently active page in the router.
-   * Updated to the transition's target id on a successful navigation.
-   *
-   * This is used to track what page the router last activated. When an attempted navigation fails,
-   * the router can then use this to compute how to restore the state back to the previously active
-   * page.
-   */
-  currentPageId = 0;
-  lastSuccessfulId = -1;
-  restoredState() {
-    return this.location.getState();
-  }
-  /**
-   * The ɵrouterPageId of whatever page is currently active in the browser history. This is
-   * important for computing the target page id for new navigations because we need to ensure each
-   * page id in the browser history is 1 more than the previous entry.
-   */
-  get browserPageId() {
-    if (this.canceledNavigationResolution !== "computed") {
-      return this.currentPageId;
-    }
-    return this.restoredState()?.\u0275routerPageId ?? this.currentPageId;
-  }
-  registerNonRouterCurrentEntryChangeListener(listener) {
-    return this.location.subscribe((event) => {
-      if (event["type"] === "popstate") {
-        setTimeout(() => {
-          listener(event["url"], event.state, "popstate");
-        });
-      }
-    });
-  }
-  handleRouterEvent(e, currentTransition) {
-    if (e instanceof NavigationStart) {
-      this.updateStateMemento();
-    } else if (e instanceof NavigationSkipped) {
-      this.commitTransition(currentTransition);
-    } else if (e instanceof RoutesRecognized) {
-      if (this.urlUpdateStrategy === "eager") {
-        if (!currentTransition.extras.skipLocationChange) {
-          this.setBrowserUrl(this.createBrowserPath(currentTransition), currentTransition);
-        }
-      }
-    } else if (e instanceof BeforeActivateRoutes) {
-      this.commitTransition(currentTransition);
-      if (this.urlUpdateStrategy === "deferred" && !currentTransition.extras.skipLocationChange) {
-        this.setBrowserUrl(this.createBrowserPath(currentTransition), currentTransition);
-      }
-    } else if (e instanceof NavigationCancel && (e.code === NavigationCancellationCode.GuardRejected || e.code === NavigationCancellationCode.NoDataFromResolver)) {
-      this.restoreHistory(currentTransition);
-    } else if (e instanceof NavigationError) {
-      this.restoreHistory(currentTransition, true);
-    } else if (e instanceof NavigationEnd) {
-      this.lastSuccessfulId = e.id;
-      this.currentPageId = this.browserPageId;
-    }
-  }
-  setBrowserUrl(path, {
-    extras,
-    id
-  }) {
-    const {
-      replaceUrl,
-      state: state2
-    } = extras;
-    if (this.location.isCurrentPathEqualTo(path) || !!replaceUrl) {
-      const currentBrowserPageId = this.browserPageId;
-      const newState = __spreadValues(__spreadValues({}, state2), this.generateNgRouterState(id, currentBrowserPageId));
-      this.location.replaceState(path, "", newState);
-    } else {
-      const newState = __spreadValues(__spreadValues({}, state2), this.generateNgRouterState(id, this.browserPageId + 1));
-      this.location.go(path, "", newState);
-    }
-  }
-  /**
-   * Performs the necessary rollback action to restore the browser URL to the
-   * state before the transition.
-   */
-  restoreHistory(navigation, restoringFromCaughtError = false) {
-    if (this.canceledNavigationResolution === "computed") {
-      const currentBrowserPageId = this.browserPageId;
-      const targetPagePosition = this.currentPageId - currentBrowserPageId;
-      if (targetPagePosition !== 0) {
-        this.location.historyGo(targetPagePosition);
-      } else if (this.getCurrentUrlTree() === navigation.finalUrl && targetPagePosition === 0) {
-        this.resetInternalState(navigation);
-        this.resetUrlToCurrentUrlTree();
-      } else ;
-    } else if (this.canceledNavigationResolution === "replace") {
-      if (restoringFromCaughtError) {
-        this.resetInternalState(navigation);
-      }
-      this.resetUrlToCurrentUrlTree();
-    }
-  }
-  resetUrlToCurrentUrlTree() {
-    this.location.replaceState(this.urlSerializer.serialize(this.getRawUrlTree()), "", this.generateNgRouterState(this.lastSuccessfulId, this.currentPageId));
-  }
-  generateNgRouterState(navigationId, routerPageId) {
-    if (this.canceledNavigationResolution === "computed") {
-      return {
-        navigationId,
-        \u0275routerPageId: routerPageId
-      };
-    }
-    return {
-      navigationId
-    };
-  }
-  static \u0275fac = /* @__PURE__ */ (() => {
-    let \u0275HistoryStateManager_BaseFactory;
-    return function HistoryStateManager_Factory(__ngFactoryType__) {
-      return (\u0275HistoryStateManager_BaseFactory || (\u0275HistoryStateManager_BaseFactory = \u0275\u0275getInheritedFactory(_HistoryStateManager)))(__ngFactoryType__ || _HistoryStateManager);
-    };
-  })();
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _HistoryStateManager,
-    factory: _HistoryStateManager.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HistoryStateManager, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-function afterNextNavigation(router, action) {
-  router.events.pipe(filter((e) => e instanceof NavigationEnd || e instanceof NavigationCancel || e instanceof NavigationError || e instanceof NavigationSkipped), map((e) => {
-    if (e instanceof NavigationEnd || e instanceof NavigationSkipped) {
-      return 0;
-    }
-    const redirecting = e instanceof NavigationCancel ? e.code === NavigationCancellationCode.Redirect || e.code === NavigationCancellationCode.SupersededByNewNavigation : false;
-    return redirecting ? 2 : 1;
-  }), filter(
-    (result) => result !== 2
-    /* NavigationResult.REDIRECTING */
-  ), take(1)).subscribe(() => {
-    action();
-  });
-}
-var exactMatchOptions = {
-  paths: "exact",
-  fragment: "ignored",
-  matrixParams: "ignored",
-  queryParams: "exact"
-};
-var subsetMatchOptions = {
-  paths: "subset",
-  fragment: "ignored",
-  matrixParams: "ignored",
-  queryParams: "subset"
-};
-var Router = class _Router {
-  get currentUrlTree() {
-    return this.stateManager.getCurrentUrlTree();
-  }
-  get rawUrlTree() {
-    return this.stateManager.getRawUrlTree();
-  }
-  disposed = false;
-  nonRouterCurrentEntryChangeSubscription;
-  console = inject(Console);
-  stateManager = inject(StateManager);
-  options = inject(ROUTER_CONFIGURATION, {
-    optional: true
-  }) || {};
-  pendingTasks = inject(PendingTasksInternal);
-  urlUpdateStrategy = this.options.urlUpdateStrategy || "deferred";
-  navigationTransitions = inject(NavigationTransitions);
-  urlSerializer = inject(UrlSerializer);
-  location = inject(Location);
-  urlHandlingStrategy = inject(UrlHandlingStrategy);
-  /**
-   * The private `Subject` type for the public events exposed in the getter. This is used internally
-   * to push events to. The separate field allows us to expose separate types in the public API
-   * (i.e., an Observable rather than the Subject).
-   */
-  _events = new Subject();
-  /**
-   * An event stream for routing events.
-   */
-  get events() {
-    return this._events;
-  }
-  /**
-   * The current state of routing in this NgModule.
-   */
-  get routerState() {
-    return this.stateManager.getRouterState();
-  }
-  /**
-   * True if at least one navigation event has occurred,
-   * false otherwise.
-   */
-  navigated = false;
-  /**
-   * A strategy for re-using routes.
-   *
-   * @deprecated Configure using `providers` instead:
-   *   `{provide: RouteReuseStrategy, useClass: MyStrategy}`.
-   */
-  routeReuseStrategy = inject(RouteReuseStrategy);
-  /**
-   * How to handle a navigation request to the current URL.
-   *
-   *
-   * @deprecated Configure this through `provideRouter` or `RouterModule.forRoot` instead.
-   * @see {@link withRouterConfig}
-   * @see {@link provideRouter}
-   * @see {@link RouterModule}
-   */
-  onSameUrlNavigation = this.options.onSameUrlNavigation || "ignore";
-  config = inject(ROUTES, {
-    optional: true
-  })?.flat() ?? [];
-  /**
-   * Indicates whether the application has opted in to binding Router data to component inputs.
-   *
-   * This option is enabled by the `withComponentInputBinding` feature of `provideRouter` or
-   * `bindToComponentInputs` in the `ExtraOptions` of `RouterModule.forRoot`.
-   */
-  componentInputBindingEnabled = !!inject(INPUT_BINDER, {
-    optional: true
-  });
-  constructor() {
-    this.resetConfig(this.config);
-    this.navigationTransitions.setupNavigations(this).subscribe({
-      error: (e) => {
-        this.console.warn(ngDevMode ? `Unhandled Navigation Error: ${e}` : e);
-      }
-    });
-    this.subscribeToNavigationEvents();
-  }
-  eventsSubscription = new Subscription();
-  subscribeToNavigationEvents() {
-    const subscription = this.navigationTransitions.events.subscribe((e) => {
-      try {
-        const currentTransition = this.navigationTransitions.currentTransition;
-        const currentNavigation = this.navigationTransitions.currentNavigation;
-        if (currentTransition !== null && currentNavigation !== null) {
-          this.stateManager.handleRouterEvent(e, currentNavigation);
-          if (e instanceof NavigationCancel && e.code !== NavigationCancellationCode.Redirect && e.code !== NavigationCancellationCode.SupersededByNewNavigation) {
-            this.navigated = true;
-          } else if (e instanceof NavigationEnd) {
-            this.navigated = true;
-          } else if (e instanceof RedirectRequest) {
-            const opts = e.navigationBehaviorOptions;
-            const mergedTree = this.urlHandlingStrategy.merge(e.url, currentTransition.currentRawUrl);
-            const extras = __spreadValues({
-              browserUrl: currentTransition.extras.browserUrl,
-              info: currentTransition.extras.info,
-              skipLocationChange: currentTransition.extras.skipLocationChange,
-              // The URL is already updated at this point if we have 'eager' URL
-              // updates or if the navigation was triggered by the browser (back
-              // button, URL bar, etc). We want to replace that item in history
-              // if the navigation is rejected.
-              replaceUrl: currentTransition.extras.replaceUrl || this.urlUpdateStrategy === "eager" || isBrowserTriggeredNavigation(currentTransition.source)
-            }, opts);
-            this.scheduleNavigation(mergedTree, IMPERATIVE_NAVIGATION, null, extras, {
-              resolve: currentTransition.resolve,
-              reject: currentTransition.reject,
-              promise: currentTransition.promise
-            });
-          }
-        }
-        if (isPublicRouterEvent(e)) {
-          this._events.next(e);
-        }
-      } catch (e2) {
-        this.navigationTransitions.transitionAbortSubject.next(e2);
-      }
-    });
-    this.eventsSubscription.add(subscription);
-  }
-  /** @internal */
-  resetRootComponentType(rootComponentType) {
-    this.routerState.root.component = rootComponentType;
-    this.navigationTransitions.rootComponentType = rootComponentType;
-  }
-  /**
-   * Sets up the location change listener and performs the initial navigation.
-   */
-  initialNavigation() {
-    this.setUpLocationChangeListener();
-    if (!this.navigationTransitions.hasRequestedNavigation) {
-      this.navigateToSyncWithBrowser(this.location.path(true), IMPERATIVE_NAVIGATION, this.stateManager.restoredState());
-    }
-  }
-  /**
-   * Sets up the location change listener. This listener detects navigations triggered from outside
-   * the Router (the browser back/forward buttons, for example) and schedules a corresponding Router
-   * navigation so that the correct events, guards, etc. are triggered.
-   */
-  setUpLocationChangeListener() {
-    this.nonRouterCurrentEntryChangeSubscription ??= this.stateManager.registerNonRouterCurrentEntryChangeListener((url, state2, source) => {
-      this.navigateToSyncWithBrowser(url, source, state2);
-    });
-  }
-  /**
-   * Schedules a router navigation to synchronize Router state with the browser state.
-   *
-   * This is done as a response to a popstate event and the initial navigation. These
-   * two scenarios represent times when the browser URL/state has been updated and
-   * the Router needs to respond to ensure its internal state matches.
-   */
-  navigateToSyncWithBrowser(url, source, state2) {
-    const extras = {
-      replaceUrl: true
-    };
-    const restoredState = state2?.navigationId ? state2 : null;
-    if (state2) {
-      const stateCopy = __spreadValues({}, state2);
-      delete stateCopy.navigationId;
-      delete stateCopy.\u0275routerPageId;
-      if (Object.keys(stateCopy).length !== 0) {
-        extras.state = stateCopy;
-      }
-    }
-    const urlTree = this.parseUrl(url);
-    this.scheduleNavigation(urlTree, source, restoredState, extras);
-  }
-  /** The current URL. */
-  get url() {
-    return this.serializeUrl(this.currentUrlTree);
-  }
-  /**
-   * Returns the current `Navigation` object when the router is navigating,
-   * and `null` when idle.
-   */
-  getCurrentNavigation() {
-    return this.navigationTransitions.currentNavigation;
-  }
-  /**
-   * The `Navigation` object of the most recent navigation to succeed and `null` if there
-   *     has not been a successful navigation yet.
-   */
-  get lastSuccessfulNavigation() {
-    return this.navigationTransitions.lastSuccessfulNavigation;
-  }
-  /**
-   * Resets the route configuration used for navigation and generating links.
-   *
-   * @param config The route array for the new configuration.
-   *
-   * @usageNotes
-   *
-   * ```ts
-   * router.resetConfig([
-   *  { path: 'team/:id', component: TeamCmp, children: [
-   *    { path: 'simple', component: SimpleCmp },
-   *    { path: 'user/:name', component: UserCmp }
-   *  ]}
-   * ]);
-   * ```
-   */
-  resetConfig(config) {
-    (typeof ngDevMode === "undefined" || ngDevMode) && validateConfig(config);
-    this.config = config.map(standardizeConfig);
-    this.navigated = false;
-  }
-  /** @nodoc */
-  ngOnDestroy() {
-    this.dispose();
-  }
-  /** Disposes of the router. */
-  dispose() {
-    this._events.unsubscribe();
-    this.navigationTransitions.complete();
-    if (this.nonRouterCurrentEntryChangeSubscription) {
-      this.nonRouterCurrentEntryChangeSubscription.unsubscribe();
-      this.nonRouterCurrentEntryChangeSubscription = void 0;
-    }
-    this.disposed = true;
-    this.eventsSubscription.unsubscribe();
-  }
-  /**
-   * Appends URL segments to the current URL tree to create a new URL tree.
-   *
-   * @param commands An array of URL fragments with which to construct the new URL tree.
-   * If the path is static, can be the literal URL string. For a dynamic path, pass an array of path
-   * segments, followed by the parameters for each segment.
-   * The fragments are applied to the current URL tree or the one provided  in the `relativeTo`
-   * property of the options object, if supplied.
-   * @param navigationExtras Options that control the navigation strategy.
-   * @returns The new URL tree.
-   *
-   * @usageNotes
-   *
-   * ```
-   * // create /team/33/user/11
-   * router.createUrlTree(['/team', 33, 'user', 11]);
-   *
-   * // create /team/33;expand=true/user/11
-   * router.createUrlTree(['/team', 33, {expand: true}, 'user', 11]);
-   *
-   * // you can collapse static segments like this (this works only with the first passed-in value):
-   * router.createUrlTree(['/team/33/user', userId]);
-   *
-   * // If the first segment can contain slashes, and you do not want the router to split it,
-   * // you can do the following:
-   * router.createUrlTree([{segmentPath: '/one/two'}]);
-   *
-   * // create /team/33/(user/11//right:chat)
-   * router.createUrlTree(['/team', 33, {outlets: {primary: 'user/11', right: 'chat'}}]);
-   *
-   * // remove the right secondary node
-   * router.createUrlTree(['/team', 33, {outlets: {primary: 'user/11', right: null}}]);
-   *
-   * // assuming the current url is `/team/33/user/11` and the route points to `user/11`
-   *
-   * // navigate to /team/33/user/11/details
-   * router.createUrlTree(['details'], {relativeTo: route});
-   *
-   * // navigate to /team/33/user/22
-   * router.createUrlTree(['../22'], {relativeTo: route});
-   *
-   * // navigate to /team/44/user/22
-   * router.createUrlTree(['../../team/44/user/22'], {relativeTo: route});
-   *
-   * Note that a value of `null` or `undefined` for `relativeTo` indicates that the
-   * tree should be created relative to the root.
-   * ```
-   */
-  createUrlTree(commands, navigationExtras = {}) {
-    const {
-      relativeTo,
-      queryParams,
-      fragment,
-      queryParamsHandling,
-      preserveFragment
-    } = navigationExtras;
-    const f = preserveFragment ? this.currentUrlTree.fragment : fragment;
-    let q = null;
-    switch (queryParamsHandling ?? this.options.defaultQueryParamsHandling) {
-      case "merge":
-        q = __spreadValues(__spreadValues({}, this.currentUrlTree.queryParams), queryParams);
-        break;
-      case "preserve":
-        q = this.currentUrlTree.queryParams;
-        break;
-      default:
-        q = queryParams || null;
-    }
-    if (q !== null) {
-      q = this.removeEmptyProps(q);
-    }
-    let relativeToUrlSegmentGroup;
-    try {
-      const relativeToSnapshot = relativeTo ? relativeTo.snapshot : this.routerState.snapshot.root;
-      relativeToUrlSegmentGroup = createSegmentGroupFromRoute(relativeToSnapshot);
-    } catch (e) {
-      if (typeof commands[0] !== "string" || commands[0][0] !== "/") {
-        commands = [];
-      }
-      relativeToUrlSegmentGroup = this.currentUrlTree.root;
-    }
-    return createUrlTreeFromSegmentGroup(relativeToUrlSegmentGroup, commands, q, f ?? null);
-  }
-  /**
-   * Navigates to a view using an absolute route path.
-   *
-   * @param url An absolute path for a defined route. The function does not apply any delta to the
-   *     current URL.
-   * @param extras An object containing properties that modify the navigation strategy.
-   *
-   * @returns A Promise that resolves to 'true' when navigation succeeds,
-   * to 'false' when navigation fails, or is rejected on error.
-   *
-   * @usageNotes
-   *
-   * The following calls request navigation to an absolute path.
-   *
-   * ```ts
-   * router.navigateByUrl("/team/33/user/11");
-   *
-   * // Navigate without updating the URL
-   * router.navigateByUrl("/team/33/user/11", { skipLocationChange: true });
-   * ```
-   *
-   * @see [Routing and Navigation guide](guide/routing/common-router-tasks)
-   *
-   */
-  navigateByUrl(url, extras = {
-    skipLocationChange: false
-  }) {
-    const urlTree = isUrlTree(url) ? url : this.parseUrl(url);
-    const mergedTree = this.urlHandlingStrategy.merge(urlTree, this.rawUrlTree);
-    return this.scheduleNavigation(mergedTree, IMPERATIVE_NAVIGATION, null, extras);
-  }
-  /**
-   * Navigate based on the provided array of commands and a starting point.
-   * If no starting route is provided, the navigation is absolute.
-   *
-   * @param commands An array of URL fragments with which to construct the target URL.
-   * If the path is static, can be the literal URL string. For a dynamic path, pass an array of path
-   * segments, followed by the parameters for each segment.
-   * The fragments are applied to the current URL or the one provided  in the `relativeTo` property
-   * of the options object, if supplied.
-   * @param extras An options object that determines how the URL should be constructed or
-   *     interpreted.
-   *
-   * @returns A Promise that resolves to `true` when navigation succeeds, or `false` when navigation
-   *     fails. The Promise is rejected when an error occurs if `resolveNavigationPromiseOnError` is
-   * not `true`.
-   *
-   * @usageNotes
-   *
-   * The following calls request navigation to a dynamic route path relative to the current URL.
-   *
-   * ```ts
-   * router.navigate(['team', 33, 'user', 11], {relativeTo: route});
-   *
-   * // Navigate without updating the URL, overriding the default behavior
-   * router.navigate(['team', 33, 'user', 11], {relativeTo: route, skipLocationChange: true});
-   * ```
-   *
-   * @see [Routing and Navigation guide](guide/routing/common-router-tasks)
-   *
-   */
-  navigate(commands, extras = {
-    skipLocationChange: false
-  }) {
-    validateCommands(commands);
-    return this.navigateByUrl(this.createUrlTree(commands, extras), extras);
-  }
-  /** Serializes a `UrlTree` into a string */
-  serializeUrl(url) {
-    return this.urlSerializer.serialize(url);
-  }
-  /** Parses a string into a `UrlTree` */
-  parseUrl(url) {
-    try {
-      return this.urlSerializer.parse(url);
-    } catch {
-      return this.urlSerializer.parse("/");
-    }
-  }
-  isActive(url, matchOptions) {
-    let options;
-    if (matchOptions === true) {
-      options = __spreadValues({}, exactMatchOptions);
-    } else if (matchOptions === false) {
-      options = __spreadValues({}, subsetMatchOptions);
-    } else {
-      options = matchOptions;
-    }
-    if (isUrlTree(url)) {
-      return containsTree(this.currentUrlTree, url, options);
-    }
-    const urlTree = this.parseUrl(url);
-    return containsTree(this.currentUrlTree, urlTree, options);
-  }
-  removeEmptyProps(params) {
-    return Object.entries(params).reduce((result, [key, value]) => {
-      if (value !== null && value !== void 0) {
-        result[key] = value;
-      }
-      return result;
-    }, {});
-  }
-  scheduleNavigation(rawUrl, source, restoredState, extras, priorPromise) {
-    if (this.disposed) {
-      return Promise.resolve(false);
-    }
-    let resolve;
-    let reject;
-    let promise;
-    if (priorPromise) {
-      resolve = priorPromise.resolve;
-      reject = priorPromise.reject;
-      promise = priorPromise.promise;
-    } else {
-      promise = new Promise((res, rej) => {
-        resolve = res;
-        reject = rej;
-      });
-    }
-    const taskId = this.pendingTasks.add();
-    afterNextNavigation(this, () => {
-      queueMicrotask(() => this.pendingTasks.remove(taskId));
-    });
-    this.navigationTransitions.handleNavigationRequest({
-      source,
-      restoredState,
-      currentUrlTree: this.currentUrlTree,
-      currentRawUrl: this.currentUrlTree,
-      rawUrl,
-      extras,
-      resolve,
-      reject,
-      promise,
-      currentSnapshot: this.routerState.snapshot,
-      currentRouterState: this.routerState
-    });
-    return promise.catch((e) => {
-      return Promise.reject(e);
-    });
-  }
-  static \u0275fac = function Router_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _Router)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _Router,
-    factory: _Router.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Router, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [], null);
-})();
-function validateCommands(commands) {
-  for (let i = 0; i < commands.length; i++) {
-    const cmd = commands[i];
-    if (cmd == null) {
-      throw new RuntimeError(4008, (typeof ngDevMode === "undefined" || ngDevMode) && `The requested path contains ${cmd} segment at index ${i}`);
-    }
-  }
-}
-function isPublicRouterEvent(e) {
-  return !(e instanceof BeforeActivateRoutes) && !(e instanceof RedirectRequest);
-}
-
-// node_modules/@angular/router/fesm2022/router_module-C0FJ-J6L.mjs
-var RouterLink = class _RouterLink {
-  router;
-  route;
-  tabIndexAttribute;
-  renderer;
-  el;
-  locationStrategy;
-  /**
-   * Represents an `href` attribute value applied to a host element,
-   * when a host element is `<a>`. For other tags, the value is `null`.
-   */
-  href = null;
-  /**
-   * Represents the `target` attribute on a host element.
-   * This is only used when the host element is an `<a>` tag.
-   */
-  target;
-  /**
-   * Passed to {@link Router#createUrlTree} as part of the
-   * `UrlCreationOptions`.
-   * @see {@link UrlCreationOptions#queryParams}
-   * @see {@link Router#createUrlTree}
-   */
-  queryParams;
-  /**
-   * Passed to {@link Router#createUrlTree} as part of the
-   * `UrlCreationOptions`.
-   * @see {@link UrlCreationOptions#fragment}
-   * @see {@link Router#createUrlTree}
-   */
-  fragment;
-  /**
-   * Passed to {@link Router#createUrlTree} as part of the
-   * `UrlCreationOptions`.
-   * @see {@link UrlCreationOptions#queryParamsHandling}
-   * @see {@link Router#createUrlTree}
-   */
-  queryParamsHandling;
-  /**
-   * Passed to {@link Router#navigateByUrl} as part of the
-   * `NavigationBehaviorOptions`.
-   * @see {@link NavigationBehaviorOptions#state}
-   * @see {@link Router#navigateByUrl}
-   */
-  state;
-  /**
-   * Passed to {@link Router#navigateByUrl} as part of the
-   * `NavigationBehaviorOptions`.
-   * @see {@link NavigationBehaviorOptions#info}
-   * @see {@link Router#navigateByUrl}
-   */
-  info;
-  /**
-   * Passed to {@link Router#createUrlTree} as part of the
-   * `UrlCreationOptions`.
-   * Specify a value here when you do not want to use the default value
-   * for `routerLink`, which is the current activated route.
-   * Note that a value of `undefined` here will use the `routerLink` default.
-   * @see {@link UrlCreationOptions#relativeTo}
-   * @see {@link Router#createUrlTree}
-   */
-  relativeTo;
-  /** Whether a host element is an `<a>` tag. */
-  isAnchorElement;
-  subscription;
-  /** @internal */
-  onChanges = new Subject();
-  constructor(router, route, tabIndexAttribute, renderer, el, locationStrategy) {
-    this.router = router;
-    this.route = route;
-    this.tabIndexAttribute = tabIndexAttribute;
-    this.renderer = renderer;
-    this.el = el;
-    this.locationStrategy = locationStrategy;
-    const tagName = el.nativeElement.tagName?.toLowerCase();
-    this.isAnchorElement = tagName === "a" || tagName === "area";
-    if (this.isAnchorElement) {
-      this.subscription = router.events.subscribe((s) => {
-        if (s instanceof NavigationEnd) {
-          this.updateHref();
-        }
-      });
-    } else {
-      this.setTabIndexIfNotOnNativeEl("0");
-    }
-  }
-  /**
-   * Passed to {@link Router#createUrlTree} as part of the
-   * `UrlCreationOptions`.
-   * @see {@link UrlCreationOptions#preserveFragment}
-   * @see {@link Router#createUrlTree}
-   */
-  preserveFragment = false;
-  /**
-   * Passed to {@link Router#navigateByUrl} as part of the
-   * `NavigationBehaviorOptions`.
-   * @see {@link NavigationBehaviorOptions#skipLocationChange}
-   * @see {@link Router#navigateByUrl}
-   */
-  skipLocationChange = false;
-  /**
-   * Passed to {@link Router#navigateByUrl} as part of the
-   * `NavigationBehaviorOptions`.
-   * @see {@link NavigationBehaviorOptions#replaceUrl}
-   * @see {@link Router#navigateByUrl}
-   */
-  replaceUrl = false;
-  /**
-   * Modifies the tab index if there was not a tabindex attribute on the element during
-   * instantiation.
-   */
-  setTabIndexIfNotOnNativeEl(newTabIndex) {
-    if (this.tabIndexAttribute != null || this.isAnchorElement) {
-      return;
-    }
-    this.applyAttributeValue("tabindex", newTabIndex);
-  }
-  /** @nodoc */
-  // TODO(atscott): Remove changes parameter in major version as a breaking change.
-  ngOnChanges(changes) {
-    if (ngDevMode && isUrlTree(this.routerLinkInput) && (this.fragment !== void 0 || this.queryParams || this.queryParamsHandling || this.preserveFragment || this.relativeTo)) {
-      throw new RuntimeError(4016, "Cannot configure queryParams or fragment when using a UrlTree as the routerLink input value.");
-    }
-    if (this.isAnchorElement) {
-      this.updateHref();
-    }
-    this.onChanges.next(this);
-  }
-  routerLinkInput = null;
-  /**
-   * Commands to pass to {@link Router#createUrlTree} or a `UrlTree`.
-   *   - **array**: commands to pass to {@link Router#createUrlTree}.
-   *   - **string**: shorthand for array of commands with just the string, i.e. `['/route']`
-   *   - **UrlTree**: a `UrlTree` for this link rather than creating one from the commands
-   *     and other inputs that correspond to properties of `UrlCreationOptions`.
-   *   - **null|undefined**: effectively disables the `routerLink`
-   * @see {@link Router#createUrlTree}
-   */
-  set routerLink(commandsOrUrlTree) {
-    if (commandsOrUrlTree == null) {
-      this.routerLinkInput = null;
-      this.setTabIndexIfNotOnNativeEl(null);
-    } else {
-      if (isUrlTree(commandsOrUrlTree)) {
-        this.routerLinkInput = commandsOrUrlTree;
-      } else {
-        this.routerLinkInput = Array.isArray(commandsOrUrlTree) ? commandsOrUrlTree : [commandsOrUrlTree];
-      }
-      this.setTabIndexIfNotOnNativeEl("0");
-    }
-  }
-  /** @nodoc */
-  onClick(button, ctrlKey, shiftKey, altKey, metaKey) {
-    const urlTree = this.urlTree;
-    if (urlTree === null) {
-      return true;
-    }
-    if (this.isAnchorElement) {
-      if (button !== 0 || ctrlKey || shiftKey || altKey || metaKey) {
-        return true;
-      }
-      if (typeof this.target === "string" && this.target != "_self") {
-        return true;
-      }
-    }
-    const extras = {
-      skipLocationChange: this.skipLocationChange,
-      replaceUrl: this.replaceUrl,
-      state: this.state,
-      info: this.info
-    };
-    this.router.navigateByUrl(urlTree, extras);
-    return !this.isAnchorElement;
-  }
-  /** @nodoc */
-  ngOnDestroy() {
-    this.subscription?.unsubscribe();
-  }
-  updateHref() {
-    const urlTree = this.urlTree;
-    this.href = urlTree !== null && this.locationStrategy ? this.locationStrategy?.prepareExternalUrl(this.router.serializeUrl(urlTree)) : null;
-    const sanitizedValue = this.href === null ? null : (
-      // This class represents a directive that can be added to both `<a>` elements,
-      // as well as other elements. As a result, we can't define security context at
-      // compile time. So the security context is deferred to runtime.
-      // The `ɵɵsanitizeUrlOrResourceUrl` selects the necessary sanitizer function
-      // based on the tag and property names. The logic mimics the one from
-      // `packages/compiler/src/schema/dom_security_schema.ts`, which is used at compile time.
-      //
-      // Note: we should investigate whether we can switch to using `@HostBinding('attr.href')`
-      // instead of applying a value via a renderer, after a final merge of the
-      // `RouterLinkWithHref` directive.
-      \u0275\u0275sanitizeUrlOrResourceUrl(this.href, this.el.nativeElement.tagName.toLowerCase(), "href")
-    );
-    this.applyAttributeValue("href", sanitizedValue);
-  }
-  applyAttributeValue(attrName, attrValue) {
-    const renderer = this.renderer;
-    const nativeElement = this.el.nativeElement;
-    if (attrValue !== null) {
-      renderer.setAttribute(nativeElement, attrName, attrValue);
-    } else {
-      renderer.removeAttribute(nativeElement, attrName);
-    }
-  }
-  get urlTree() {
-    if (this.routerLinkInput === null) {
-      return null;
-    } else if (isUrlTree(this.routerLinkInput)) {
-      return this.routerLinkInput;
-    }
-    return this.router.createUrlTree(this.routerLinkInput, {
-      // If the `relativeTo` input is not defined, we want to use `this.route` by default.
-      // Otherwise, we should use the value provided by the user in the input.
-      relativeTo: this.relativeTo !== void 0 ? this.relativeTo : this.route,
-      queryParams: this.queryParams,
-      fragment: this.fragment,
-      queryParamsHandling: this.queryParamsHandling,
-      preserveFragment: this.preserveFragment
-    });
-  }
-  static \u0275fac = function RouterLink_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _RouterLink)(\u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(ActivatedRoute), \u0275\u0275injectAttribute("tabindex"), \u0275\u0275directiveInject(Renderer2), \u0275\u0275directiveInject(ElementRef), \u0275\u0275directiveInject(LocationStrategy));
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _RouterLink,
-    selectors: [["", "routerLink", ""]],
-    hostVars: 1,
-    hostBindings: function RouterLink_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275listener("click", function RouterLink_click_HostBindingHandler($event) {
-          return ctx.onClick($event.button, $event.ctrlKey, $event.shiftKey, $event.altKey, $event.metaKey);
-        });
-      }
-      if (rf & 2) {
-        \u0275\u0275attribute("target", ctx.target);
-      }
-    },
-    inputs: {
-      target: "target",
-      queryParams: "queryParams",
-      fragment: "fragment",
-      queryParamsHandling: "queryParamsHandling",
-      state: "state",
-      info: "info",
-      relativeTo: "relativeTo",
-      preserveFragment: [2, "preserveFragment", "preserveFragment", booleanAttribute],
-      skipLocationChange: [2, "skipLocationChange", "skipLocationChange", booleanAttribute],
-      replaceUrl: [2, "replaceUrl", "replaceUrl", booleanAttribute],
-      routerLink: "routerLink"
-    },
-    features: [\u0275\u0275NgOnChangesFeature]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouterLink, [{
-    type: Directive,
-    args: [{
-      selector: "[routerLink]"
-    }]
-  }], () => [{
-    type: Router
-  }, {
-    type: ActivatedRoute
-  }, {
-    type: void 0,
-    decorators: [{
-      type: Attribute,
-      args: ["tabindex"]
-    }]
-  }, {
-    type: Renderer2
-  }, {
-    type: ElementRef
-  }, {
-    type: LocationStrategy
-  }], {
-    target: [{
-      type: HostBinding,
-      args: ["attr.target"]
-    }, {
-      type: Input
-    }],
-    queryParams: [{
-      type: Input
-    }],
-    fragment: [{
-      type: Input
-    }],
-    queryParamsHandling: [{
-      type: Input
-    }],
-    state: [{
-      type: Input
-    }],
-    info: [{
-      type: Input
-    }],
-    relativeTo: [{
-      type: Input
-    }],
-    preserveFragment: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    skipLocationChange: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    replaceUrl: [{
-      type: Input,
-      args: [{
-        transform: booleanAttribute
-      }]
-    }],
-    routerLink: [{
-      type: Input
-    }],
-    onClick: [{
-      type: HostListener,
-      args: ["click", ["$event.button", "$event.ctrlKey", "$event.shiftKey", "$event.altKey", "$event.metaKey"]]
-    }]
-  });
-})();
-var RouterLinkActive = class _RouterLinkActive {
-  router;
-  element;
-  renderer;
-  cdr;
-  link;
-  links;
-  classes = [];
-  routerEventsSubscription;
-  linkInputChangesSubscription;
-  _isActive = false;
-  get isActive() {
-    return this._isActive;
-  }
-  /**
-   * Options to configure how to determine if the router link is active.
-   *
-   * These options are passed to the `Router.isActive()` function.
-   *
-   * @see {@link Router#isActive}
-   */
-  routerLinkActiveOptions = {
-    exact: false
-  };
-  /**
-   * Aria-current attribute to apply when the router link is active.
-   *
-   * Possible values: `'page'` | `'step'` | `'location'` | `'date'` | `'time'` | `true` | `false`.
-   *
-   * @see {@link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current}
-   */
-  ariaCurrentWhenActive;
-  /**
-   *
-   * You can use the output `isActiveChange` to get notified each time the link becomes
-   * active or inactive.
-   *
-   * Emits:
-   * true  -> Route is active
-   * false -> Route is inactive
-   *
-   * ```html
-   * <a
-   *  routerLink="/user/bob"
-   *  routerLinkActive="active-link"
-   *  (isActiveChange)="this.onRouterLinkActive($event)">Bob</a>
-   * ```
-   */
-  isActiveChange = new EventEmitter();
-  constructor(router, element, renderer, cdr, link) {
-    this.router = router;
-    this.element = element;
-    this.renderer = renderer;
-    this.cdr = cdr;
-    this.link = link;
-    this.routerEventsSubscription = router.events.subscribe((s) => {
-      if (s instanceof NavigationEnd) {
-        this.update();
-      }
-    });
-  }
-  /** @nodoc */
-  ngAfterContentInit() {
-    of(this.links.changes, of(null)).pipe(mergeAll()).subscribe((_) => {
-      this.update();
-      this.subscribeToEachLinkOnChanges();
-    });
-  }
-  subscribeToEachLinkOnChanges() {
-    this.linkInputChangesSubscription?.unsubscribe();
-    const allLinkChanges = [...this.links.toArray(), this.link].filter((link) => !!link).map((link) => link.onChanges);
-    this.linkInputChangesSubscription = from(allLinkChanges).pipe(mergeAll()).subscribe((link) => {
-      if (this._isActive !== this.isLinkActive(this.router)(link)) {
-        this.update();
-      }
-    });
-  }
-  set routerLinkActive(data) {
-    const classes = Array.isArray(data) ? data : data.split(" ");
-    this.classes = classes.filter((c) => !!c);
-  }
-  /** @nodoc */
-  ngOnChanges(changes) {
-    this.update();
-  }
-  /** @nodoc */
-  ngOnDestroy() {
-    this.routerEventsSubscription.unsubscribe();
-    this.linkInputChangesSubscription?.unsubscribe();
-  }
-  update() {
-    if (!this.links || !this.router.navigated) return;
-    queueMicrotask(() => {
-      const hasActiveLinks = this.hasActiveLinks();
-      this.classes.forEach((c) => {
-        if (hasActiveLinks) {
-          this.renderer.addClass(this.element.nativeElement, c);
-        } else {
-          this.renderer.removeClass(this.element.nativeElement, c);
-        }
-      });
-      if (hasActiveLinks && this.ariaCurrentWhenActive !== void 0) {
-        this.renderer.setAttribute(this.element.nativeElement, "aria-current", this.ariaCurrentWhenActive.toString());
-      } else {
-        this.renderer.removeAttribute(this.element.nativeElement, "aria-current");
-      }
-      if (this._isActive !== hasActiveLinks) {
-        this._isActive = hasActiveLinks;
-        this.cdr.markForCheck();
-        this.isActiveChange.emit(hasActiveLinks);
-      }
-    });
-  }
-  isLinkActive(router) {
-    const options = isActiveMatchOptions(this.routerLinkActiveOptions) ? this.routerLinkActiveOptions : (
-      // While the types should disallow `undefined` here, it's possible without strict inputs
-      this.routerLinkActiveOptions.exact || false
-    );
-    return (link) => {
-      const urlTree = link.urlTree;
-      return urlTree ? router.isActive(urlTree, options) : false;
-    };
-  }
-  hasActiveLinks() {
-    const isActiveCheckFn = this.isLinkActive(this.router);
-    return this.link && isActiveCheckFn(this.link) || this.links.some(isActiveCheckFn);
-  }
-  static \u0275fac = function RouterLinkActive_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _RouterLinkActive)(\u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(ElementRef), \u0275\u0275directiveInject(Renderer2), \u0275\u0275directiveInject(ChangeDetectorRef), \u0275\u0275directiveInject(RouterLink, 8));
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _RouterLinkActive,
-    selectors: [["", "routerLinkActive", ""]],
-    contentQueries: function RouterLinkActive_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        \u0275\u0275contentQuery(dirIndex, RouterLink, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.links = _t);
-      }
-    },
-    inputs: {
-      routerLinkActiveOptions: "routerLinkActiveOptions",
-      ariaCurrentWhenActive: "ariaCurrentWhenActive",
-      routerLinkActive: "routerLinkActive"
-    },
-    outputs: {
-      isActiveChange: "isActiveChange"
-    },
-    exportAs: ["routerLinkActive"],
-    features: [\u0275\u0275NgOnChangesFeature]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouterLinkActive, [{
-    type: Directive,
-    args: [{
-      selector: "[routerLinkActive]",
-      exportAs: "routerLinkActive"
-    }]
-  }], () => [{
-    type: Router
-  }, {
-    type: ElementRef
-  }, {
-    type: Renderer2
-  }, {
-    type: ChangeDetectorRef
-  }, {
-    type: RouterLink,
-    decorators: [{
-      type: Optional
-    }]
-  }], {
-    links: [{
-      type: ContentChildren,
-      args: [RouterLink, {
-        descendants: true
-      }]
-    }],
-    routerLinkActiveOptions: [{
-      type: Input
-    }],
-    ariaCurrentWhenActive: [{
-      type: Input
-    }],
-    isActiveChange: [{
-      type: Output
-    }],
-    routerLinkActive: [{
-      type: Input
-    }]
-  });
-})();
-function isActiveMatchOptions(options) {
-  return !!options.paths;
-}
-var PreloadingStrategy = class {
-};
-var PreloadAllModules = class _PreloadAllModules {
-  preload(route, fn) {
-    return fn().pipe(catchError(() => of(null)));
-  }
-  static \u0275fac = function PreloadAllModules_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _PreloadAllModules)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _PreloadAllModules,
-    factory: _PreloadAllModules.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PreloadAllModules, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-var NoPreloading = class _NoPreloading {
-  preload(route, fn) {
-    return of(null);
-  }
-  static \u0275fac = function NoPreloading_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _NoPreloading)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _NoPreloading,
-    factory: _NoPreloading.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NoPreloading, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-var RouterPreloader = class _RouterPreloader {
-  router;
-  injector;
-  preloadingStrategy;
-  loader;
-  subscription;
-  constructor(router, compiler, injector, preloadingStrategy, loader) {
-    this.router = router;
-    this.injector = injector;
-    this.preloadingStrategy = preloadingStrategy;
-    this.loader = loader;
-  }
-  setUpPreloading() {
-    this.subscription = this.router.events.pipe(filter((e) => e instanceof NavigationEnd), concatMap(() => this.preload())).subscribe(() => {
-    });
-  }
-  preload() {
-    return this.processRoutes(this.injector, this.router.config);
-  }
-  /** @nodoc */
-  ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
-  }
-  processRoutes(injector, routes2) {
-    const res = [];
-    for (const route of routes2) {
-      if (route.providers && !route._injector) {
-        route._injector = createEnvironmentInjector(route.providers, injector, `Route: ${route.path}`);
-      }
-      const injectorForCurrentRoute = route._injector ?? injector;
-      const injectorForChildren = route._loadedInjector ?? injectorForCurrentRoute;
-      if (route.loadChildren && !route._loadedRoutes && route.canLoad === void 0 || route.loadComponent && !route._loadedComponent) {
-        res.push(this.preloadConfig(injectorForCurrentRoute, route));
-      }
-      if (route.children || route._loadedRoutes) {
-        res.push(this.processRoutes(injectorForChildren, route.children ?? route._loadedRoutes));
-      }
-    }
-    return from(res).pipe(mergeAll());
-  }
-  preloadConfig(injector, route) {
-    return this.preloadingStrategy.preload(route, () => {
-      let loadedChildren$;
-      if (route.loadChildren && route.canLoad === void 0) {
-        loadedChildren$ = this.loader.loadChildren(injector, route);
-      } else {
-        loadedChildren$ = of(null);
-      }
-      const recursiveLoadChildren$ = loadedChildren$.pipe(mergeMap((config) => {
-        if (config === null) {
-          return of(void 0);
-        }
-        route._loadedRoutes = config.routes;
-        route._loadedInjector = config.injector;
-        return this.processRoutes(config.injector ?? injector, config.routes);
-      }));
-      if (route.loadComponent && !route._loadedComponent) {
-        const loadComponent$ = this.loader.loadComponent(route);
-        return from([recursiveLoadChildren$, loadComponent$]).pipe(mergeAll());
-      } else {
-        return recursiveLoadChildren$;
-      }
-    });
-  }
-  static \u0275fac = function RouterPreloader_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _RouterPreloader)(\u0275\u0275inject(Router), \u0275\u0275inject(Compiler), \u0275\u0275inject(EnvironmentInjector), \u0275\u0275inject(PreloadingStrategy), \u0275\u0275inject(RouterConfigLoader));
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _RouterPreloader,
-    factory: _RouterPreloader.\u0275fac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouterPreloader, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [{
-    type: Router
-  }, {
-    type: Compiler
-  }, {
-    type: EnvironmentInjector
-  }, {
-    type: PreloadingStrategy
-  }, {
-    type: RouterConfigLoader
-  }], null);
-})();
-var ROUTER_SCROLLER = new InjectionToken("");
-var RouterScroller = class _RouterScroller {
-  urlSerializer;
-  transitions;
-  viewportScroller;
-  zone;
-  options;
-  routerEventsSubscription;
-  scrollEventsSubscription;
-  lastId = 0;
-  lastSource = "imperative";
-  restoredId = 0;
-  store = {};
-  /** @nodoc */
-  constructor(urlSerializer, transitions, viewportScroller, zone, options = {}) {
-    this.urlSerializer = urlSerializer;
-    this.transitions = transitions;
-    this.viewportScroller = viewportScroller;
-    this.zone = zone;
-    this.options = options;
-    options.scrollPositionRestoration ||= "disabled";
-    options.anchorScrolling ||= "disabled";
-  }
-  init() {
-    if (this.options.scrollPositionRestoration !== "disabled") {
-      this.viewportScroller.setHistoryScrollRestoration("manual");
-    }
-    this.routerEventsSubscription = this.createScrollEvents();
-    this.scrollEventsSubscription = this.consumeScrollEvents();
-  }
-  createScrollEvents() {
-    return this.transitions.events.subscribe((e) => {
-      if (e instanceof NavigationStart) {
-        this.store[this.lastId] = this.viewportScroller.getScrollPosition();
-        this.lastSource = e.navigationTrigger;
-        this.restoredId = e.restoredState ? e.restoredState.navigationId : 0;
-      } else if (e instanceof NavigationEnd) {
-        this.lastId = e.id;
-        this.scheduleScrollEvent(e, this.urlSerializer.parse(e.urlAfterRedirects).fragment);
-      } else if (e instanceof NavigationSkipped && e.code === NavigationSkippedCode.IgnoredSameUrlNavigation) {
-        this.lastSource = void 0;
-        this.restoredId = 0;
-        this.scheduleScrollEvent(e, this.urlSerializer.parse(e.url).fragment);
-      }
-    });
-  }
-  consumeScrollEvents() {
-    return this.transitions.events.subscribe((e) => {
-      if (!(e instanceof Scroll)) return;
-      if (e.position) {
-        if (this.options.scrollPositionRestoration === "top") {
-          this.viewportScroller.scrollToPosition([0, 0]);
-        } else if (this.options.scrollPositionRestoration === "enabled") {
-          this.viewportScroller.scrollToPosition(e.position);
-        }
-      } else {
-        if (e.anchor && this.options.anchorScrolling === "enabled") {
-          this.viewportScroller.scrollToAnchor(e.anchor);
-        } else if (this.options.scrollPositionRestoration !== "disabled") {
-          this.viewportScroller.scrollToPosition([0, 0]);
-        }
-      }
-    });
-  }
-  scheduleScrollEvent(routerEvent, anchor) {
-    this.zone.runOutsideAngular(() => {
-      setTimeout(() => {
-        this.zone.run(() => {
-          this.transitions.events.next(new Scroll(routerEvent, this.lastSource === "popstate" ? this.store[this.restoredId] : null, anchor));
-        });
-      }, 0);
-    });
-  }
-  /** @nodoc */
-  ngOnDestroy() {
-    this.routerEventsSubscription?.unsubscribe();
-    this.scrollEventsSubscription?.unsubscribe();
-  }
-  static \u0275fac = function RouterScroller_Factory(__ngFactoryType__) {
-    \u0275\u0275invalidFactory();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
-    token: _RouterScroller,
-    factory: _RouterScroller.\u0275fac
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouterScroller, [{
-    type: Injectable
-  }], () => [{
-    type: UrlSerializer
-  }, {
-    type: NavigationTransitions
-  }, {
-    type: ViewportScroller
-  }, {
-    type: NgZone
-  }, {
-    type: void 0
-  }], null);
-})();
-function provideRouter(routes2, ...features) {
-  return makeEnvironmentProviders([{
-    provide: ROUTES,
-    multi: true,
-    useValue: routes2
-  }, typeof ngDevMode === "undefined" || ngDevMode ? {
-    provide: ROUTER_IS_PROVIDED,
-    useValue: true
-  } : [], {
-    provide: ActivatedRoute,
-    useFactory: rootRoute,
-    deps: [Router]
-  }, {
-    provide: APP_BOOTSTRAP_LISTENER,
-    multi: true,
-    useFactory: getBootstrapListener
-  }, features.map((feature) => feature.\u0275providers)]);
-}
-function rootRoute(router) {
-  return router.routerState.root;
-}
-function routerFeature(kind, providers) {
-  return {
-    \u0275kind: kind,
-    \u0275providers: providers
-  };
-}
-var ROUTER_IS_PROVIDED = new InjectionToken("", {
-  providedIn: "root",
-  factory: () => false
-});
-function getBootstrapListener() {
-  const injector = inject(Injector);
-  return (bootstrappedComponentRef) => {
-    const ref = injector.get(ApplicationRef);
-    if (bootstrappedComponentRef !== ref.components[0]) {
-      return;
-    }
-    const router = injector.get(Router);
-    const bootstrapDone = injector.get(BOOTSTRAP_DONE);
-    if (injector.get(INITIAL_NAVIGATION) === 1) {
-      router.initialNavigation();
-    }
-    injector.get(ROUTER_PRELOADER, null, InjectFlags.Optional)?.setUpPreloading();
-    injector.get(ROUTER_SCROLLER, null, InjectFlags.Optional)?.init();
-    router.resetRootComponentType(ref.componentTypes[0]);
-    if (!bootstrapDone.closed) {
-      bootstrapDone.next();
-      bootstrapDone.complete();
-      bootstrapDone.unsubscribe();
-    }
-  };
-}
-var BOOTSTRAP_DONE = new InjectionToken(typeof ngDevMode === "undefined" || ngDevMode ? "bootstrap done indicator" : "", {
-  factory: () => {
-    return new Subject();
-  }
-});
-var INITIAL_NAVIGATION = new InjectionToken(typeof ngDevMode === "undefined" || ngDevMode ? "initial navigation" : "", {
-  providedIn: "root",
-  factory: () => 1
-  /* InitialNavigation.EnabledNonBlocking */
-});
-function withEnabledBlockingInitialNavigation() {
-  const providers = [{
-    provide: INITIAL_NAVIGATION,
-    useValue: 0
-    /* InitialNavigation.EnabledBlocking */
-  }, {
-    provide: APP_INITIALIZER,
-    multi: true,
-    deps: [Injector],
-    useFactory: (injector) => {
-      const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve());
-      return () => {
-        return locationInitialized.then(() => {
-          return new Promise((resolve) => {
-            const router = injector.get(Router);
-            const bootstrapDone = injector.get(BOOTSTRAP_DONE);
-            afterNextNavigation(router, () => {
-              resolve(true);
-            });
-            injector.get(NavigationTransitions).afterPreactivation = () => {
-              resolve(true);
-              return bootstrapDone.closed ? of(void 0) : bootstrapDone;
-            };
-            router.initialNavigation();
-          });
-        });
-      };
-    }
-  }];
-  return routerFeature(2, providers);
-}
-function withDisabledInitialNavigation() {
-  const providers = [{
-    provide: APP_INITIALIZER,
-    multi: true,
-    useFactory: () => {
-      const router = inject(Router);
-      return () => {
-        router.setUpLocationChangeListener();
-      };
-    }
-  }, {
-    provide: INITIAL_NAVIGATION,
-    useValue: 2
-    /* InitialNavigation.Disabled */
-  }];
-  return routerFeature(3, providers);
-}
-function withDebugTracing() {
-  let providers = [];
-  if (typeof ngDevMode === "undefined" || ngDevMode) {
-    providers = [{
-      provide: ENVIRONMENT_INITIALIZER,
-      multi: true,
-      useFactory: () => {
-        const router = inject(Router);
-        return () => router.events.subscribe((e) => {
-          console.group?.(`Router Event: ${e.constructor.name}`);
-          console.log(stringifyEvent(e));
-          console.log(e);
-          console.groupEnd?.();
-        });
-      }
-    }];
-  } else {
-    providers = [];
-  }
-  return routerFeature(1, providers);
-}
-var ROUTER_PRELOADER = new InjectionToken(typeof ngDevMode === "undefined" || ngDevMode ? "router preloader" : "");
-function withPreloading(preloadingStrategy) {
-  const providers = [{
-    provide: ROUTER_PRELOADER,
-    useExisting: RouterPreloader
-  }, {
-    provide: PreloadingStrategy,
-    useExisting: preloadingStrategy
-  }];
-  return routerFeature(0, providers);
-}
-function withComponentInputBinding() {
-  const providers = [RoutedComponentInputBinder, {
-    provide: INPUT_BINDER,
-    useExisting: RoutedComponentInputBinder
-  }];
-  return routerFeature(8, providers);
-}
-function withViewTransitions(options) {
-  const providers = [{
-    provide: CREATE_VIEW_TRANSITION,
-    useValue: createViewTransition
-  }, {
-    provide: VIEW_TRANSITION_OPTIONS,
-    useValue: __spreadValues({
-      skipNextTransition: !!options?.skipInitialTransition
-    }, options)
-  }];
-  return routerFeature(9, providers);
-}
-var ROUTER_DIRECTIVES = [RouterOutlet, RouterLink, RouterLinkActive, \u0275EmptyOutletComponent];
-var ROUTER_FORROOT_GUARD = new InjectionToken(typeof ngDevMode === "undefined" || ngDevMode ? "router duplicate forRoot guard" : "");
-var ROUTER_PROVIDERS = [
-  Location,
-  {
-    provide: UrlSerializer,
-    useClass: DefaultUrlSerializer
-  },
-  Router,
-  ChildrenOutletContexts,
-  {
-    provide: ActivatedRoute,
-    useFactory: rootRoute,
-    deps: [Router]
-  },
-  RouterConfigLoader,
-  // Only used to warn when `provideRoutes` is used without `RouterModule` or `provideRouter`. Can
-  // be removed when `provideRoutes` is removed.
-  typeof ngDevMode === "undefined" || ngDevMode ? {
-    provide: ROUTER_IS_PROVIDED,
-    useValue: true
-  } : []
-];
-var RouterModule = class _RouterModule {
-  constructor() {
-    if (typeof ngDevMode === "undefined" || ngDevMode) {
-      inject(ROUTER_FORROOT_GUARD, {
-        optional: true
-      });
-    }
-  }
-  /**
-   * Creates and configures a module with all the router providers and directives.
-   * Optionally sets up an application listener to perform an initial navigation.
-   *
-   * When registering the NgModule at the root, import as follows:
-   *
-   * ```ts
-   * @NgModule({
-   *   imports: [RouterModule.forRoot(ROUTES)]
-   * })
-   * class MyNgModule {}
-   * ```
-   *
-   * @param routes An array of `Route` objects that define the navigation paths for the application.
-   * @param config An `ExtraOptions` configuration object that controls how navigation is performed.
-   * @return The new `NgModule`.
-   *
-   */
-  static forRoot(routes2, config) {
-    return {
-      ngModule: _RouterModule,
-      providers: [ROUTER_PROVIDERS, typeof ngDevMode === "undefined" || ngDevMode ? config?.enableTracing ? withDebugTracing().\u0275providers : [] : [], {
-        provide: ROUTES,
-        multi: true,
-        useValue: routes2
-      }, typeof ngDevMode === "undefined" || ngDevMode ? {
-        provide: ROUTER_FORROOT_GUARD,
-        useFactory: provideForRootGuard,
-        deps: [[Router, new Optional(), new SkipSelf()]]
-      } : [], config?.errorHandler ? {
-        provide: NAVIGATION_ERROR_HANDLER,
-        useValue: config.errorHandler
-      } : [], {
-        provide: ROUTER_CONFIGURATION,
-        useValue: config ? config : {}
-      }, config?.useHash ? provideHashLocationStrategy() : providePathLocationStrategy(), provideRouterScroller(), config?.preloadingStrategy ? withPreloading(config.preloadingStrategy).\u0275providers : [], config?.initialNavigation ? provideInitialNavigation(config) : [], config?.bindToComponentInputs ? withComponentInputBinding().\u0275providers : [], config?.enableViewTransitions ? withViewTransitions().\u0275providers : [], provideRouterInitializer()]
-    };
-  }
-  /**
-   * Creates a module with all the router directives and a provider registering routes,
-   * without creating a new Router service.
-   * When registering for submodules and lazy-loaded submodules, create the NgModule as follows:
-   *
-   * ```ts
-   * @NgModule({
-   *   imports: [RouterModule.forChild(ROUTES)]
-   * })
-   * class MyNgModule {}
-   * ```
-   *
-   * @param routes An array of `Route` objects that define the navigation paths for the submodule.
-   * @return The new NgModule.
-   *
-   */
-  static forChild(routes2) {
-    return {
-      ngModule: _RouterModule,
-      providers: [{
-        provide: ROUTES,
-        multi: true,
-        useValue: routes2
-      }]
-    };
-  }
-  static \u0275fac = function RouterModule_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _RouterModule)();
-  };
-  static \u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
-    type: _RouterModule
-  });
-  static \u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({});
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouterModule, [{
-    type: NgModule,
-    args: [{
-      imports: ROUTER_DIRECTIVES,
-      exports: ROUTER_DIRECTIVES
-    }]
-  }], () => [], null);
-})();
-function provideRouterScroller() {
-  return {
-    provide: ROUTER_SCROLLER,
-    useFactory: () => {
-      const viewportScroller = inject(ViewportScroller);
-      const zone = inject(NgZone);
-      const config = inject(ROUTER_CONFIGURATION);
-      const transitions = inject(NavigationTransitions);
-      const urlSerializer = inject(UrlSerializer);
-      if (config.scrollOffset) {
-        viewportScroller.setOffset(config.scrollOffset);
-      }
-      return new RouterScroller(urlSerializer, transitions, viewportScroller, zone, config);
-    }
-  };
-}
-function provideHashLocationStrategy() {
-  return {
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  };
-}
-function providePathLocationStrategy() {
-  return {
-    provide: LocationStrategy,
-    useClass: PathLocationStrategy
-  };
-}
-function provideForRootGuard(router) {
-  if (router) {
-    throw new RuntimeError(4007, `The Router was provided more than once. This can happen if 'forRoot' is used outside of the root injector. Lazy loaded modules should use RouterModule.forChild() instead.`);
-  }
-  return "guarded";
-}
-function provideInitialNavigation(config) {
-  return [config.initialNavigation === "disabled" ? withDisabledInitialNavigation().\u0275providers : [], config.initialNavigation === "enabledBlocking" ? withEnabledBlockingInitialNavigation().\u0275providers : []];
-}
-var ROUTER_INITIALIZER = new InjectionToken(typeof ngDevMode === "undefined" || ngDevMode ? "Router Initializer" : "");
-function provideRouterInitializer() {
-  return [
-    // ROUTER_INITIALIZER token should be removed. It's public API but shouldn't be. We can just
-    // have `getBootstrapListener` directly attached to APP_BOOTSTRAP_LISTENER.
-    {
-      provide: ROUTER_INITIALIZER,
-      useFactory: getBootstrapListener
-    },
-    {
-      provide: APP_BOOTSTRAP_LISTENER,
-      multi: true,
-      useExisting: ROUTER_INITIALIZER
-    }
-  ];
-}
-
-// node_modules/@angular/router/fesm2022/router.mjs
-var VERSION = new Version("19.2.5");
+} from "./chunk-NJVFXHEQ.js";
 
 // node_modules/@angular/animations/fesm2022/util-DIamNgWY.mjs
 var LINE_START = "\n - ";
@@ -6393,9 +616,9 @@ var PARAM_REGEX = /* @__PURE__ */ new RegExp(`${SUBSTITUTION_EXPR_START}\\s*(.+?
 function extractStyleParams(value) {
   let params = [];
   if (typeof value === "string") {
-    let match2;
-    while (match2 = PARAM_REGEX.exec(value)) {
-      params.push(match2[1]);
+    let match;
+    while (match = PARAM_REGEX.exec(value)) {
+      params.push(match[1]);
     }
     PARAM_REGEX.lastIndex = 0;
   }
@@ -6414,11 +637,11 @@ function interpolateParams(value, params, errors) {
   return str == original ? value : str;
 }
 var DASH_CASE_REGEXP = /-+([a-z0-9])/g;
-function dashCaseToCamelCase(input2) {
-  return input2.replace(DASH_CASE_REGEXP, (...m) => m[1].toUpperCase());
+function dashCaseToCamelCase(input) {
+  return input.replace(DASH_CASE_REGEXP, (...m) => m[1].toUpperCase());
 }
-function camelCaseToDashCase(input2) {
-  return input2.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+function camelCaseToDashCase(input) {
+  return input.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 }
 function allowPreviousPlayerStylesMerge(duration, delay2) {
   return duration === 0 || delay2 === 0;
@@ -6594,14 +817,14 @@ function parseInnerTransitionStr(eventStr, expressions, errors) {
     }
     eventStr = result;
   }
-  const match2 = eventStr.match(/^(\*|[-\w]+)\s*(<?[=-]>)\s*(\*|[-\w]+)$/);
-  if (match2 == null || match2.length < 4) {
+  const match = eventStr.match(/^(\*|[-\w]+)\s*(<?[=-]>)\s*(\*|[-\w]+)$/);
+  if (match == null || match.length < 4) {
     errors.push(invalidExpression(eventStr));
     return expressions;
   }
-  const fromState = match2[1];
-  const separator = match2[2];
-  const toState = match2[3];
+  const fromState = match[1];
+  const separator = match[2];
+  const toState = match[3];
   expressions.push(makeLambdaFromStates(fromState, toState));
   const isFullAnyStateExpr = fromState == ANY_STATE && toState == ANY_STATE;
   if (separator[0] == "<" && !isFullAnyStateExpr) {
@@ -7012,7 +1235,7 @@ function normalizeSelector(selector) {
   if (hasAmpersand) {
     selector = selector.replace(SELF_TOKEN_REGEX, "");
   }
-  selector = selector.replace(/@\*/g, NG_TRIGGER_SELECTOR).replace(/@\w+/g, (match2) => NG_TRIGGER_SELECTOR + "-" + match2.slice(1)).replace(/:animating/g, NG_ANIMATING_SELECTOR);
+  selector = selector.replace(/@\*/g, NG_TRIGGER_SELECTOR).replace(/@\w+/g, (match) => NG_TRIGGER_SELECTOR + "-" + match.slice(1)).replace(/:animating/g, NG_ANIMATING_SELECTOR);
   return [selector, hasAmpersand];
 }
 function normalizeParams(obj) {
@@ -7601,12 +1824,12 @@ var TimelineBuilder = class _TimelineBuilder {
     }
     this._currentEmptyStepKeyframe = this._currentKeyframe;
   }
-  setStyles(input2, easing, errors, options) {
+  setStyles(input, easing, errors, options) {
     if (easing) {
       this._previousKeyframe.set("easing", easing);
     }
     const params = options && options.params || {};
-    const styles = flattenStyles(input2, this._globalTimelineStyles);
+    const styles = flattenStyles(input, this._globalTimelineStyles);
     for (let [prop, value] of styles) {
       const val = interpolateParams(value, params, errors);
       this._pendingStyles.set(prop, val);
@@ -7742,10 +1965,10 @@ function roundOffset(offset, decimalPoints = 3) {
   const mult = Math.pow(10, decimalPoints - 1);
   return Math.round(offset * mult) / mult;
 }
-function flattenStyles(input2, allStyles) {
+function flattenStyles(input, allStyles) {
   const styles = /* @__PURE__ */ new Map();
   let allProperties;
-  input2.forEach((token) => {
+  input.forEach((token) => {
     if (token === "*") {
       allProperties ??= allStyles.keys();
       for (let prop of allProperties) {
@@ -8129,13 +2352,13 @@ var StateValue = class {
   get params() {
     return this.options.params;
   }
-  constructor(input2, namespaceId = "") {
+  constructor(input, namespaceId = "") {
     this.namespaceId = namespaceId;
-    const isObj = input2 && input2.hasOwnProperty("value");
-    const value = isObj ? input2["value"] : input2;
+    const isObj = input && input.hasOwnProperty("value");
+    const value = isObj ? input["value"] : input;
     this.value = normalizeTriggerValue(value);
     if (isObj) {
-      const _a = input2, {
+      const _a = input, {
         value: value2
       } = _a, options = __objRest(_a, [
         "value"
@@ -10287,123 +4510,99 @@ var RoleGuard = class _RoleGuard {
 // src/app/shared/components/form-validation/form-validation.component.ts
 function FormValidationComponent_div_0_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 3)(1, "mat-icon");
-    \u0275\u0275text(2, "error");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
+    \u0275\u0275elementStart(0, "div", 3)(1, "span");
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(2);
     \u0275\u0275textInterpolate1("", ctx_r0.fieldName, " is required");
   }
 }
 function FormValidationComponent_div_0_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 3)(1, "mat-icon");
-    \u0275\u0275text(2, "error");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4, "Please enter a valid email address");
+    \u0275\u0275elementStart(0, "div", 3)(1, "span");
+    \u0275\u0275text(2, "Please enter a valid email address");
     \u0275\u0275elementEnd()();
   }
 }
 function FormValidationComponent_div_0_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 3)(1, "mat-icon");
-    \u0275\u0275text(2, "error");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
+    \u0275\u0275elementStart(0, "div", 3)(1, "span");
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(2);
     \u0275\u0275textInterpolate2("", ctx_r0.fieldName, " must be at least ", ctx_r0.control.getError("minlength").requiredLength, " characters");
   }
 }
 function FormValidationComponent_div_0_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 3)(1, "mat-icon");
-    \u0275\u0275text(2, "error");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
+    \u0275\u0275elementStart(0, "div", 3)(1, "span");
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(2);
     \u0275\u0275textInterpolate2("", ctx_r0.fieldName, " cannot exceed ", ctx_r0.control.getError("maxlength").requiredLength, " characters");
   }
 }
 function FormValidationComponent_div_0_div_5_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 3)(1, "mat-icon");
-    \u0275\u0275text(2, "error");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
+    \u0275\u0275elementStart(0, "div", 3)(1, "span");
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx_r0.getPatternErrorMessage());
   }
 }
 function FormValidationComponent_div_0_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 3)(1, "mat-icon");
-    \u0275\u0275text(2, "error");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
+    \u0275\u0275elementStart(0, "div", 3)(1, "span");
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(2);
     \u0275\u0275textInterpolate2("", ctx_r0.fieldName, " must be at least ", ctx_r0.control.getError("min").min, "");
   }
 }
 function FormValidationComponent_div_0_div_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 3)(1, "mat-icon");
-    \u0275\u0275text(2, "error");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
+    \u0275\u0275elementStart(0, "div", 3)(1, "span");
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(2);
     \u0275\u0275textInterpolate2("", ctx_r0.fieldName, " cannot exceed ", ctx_r0.control.getError("max").max, "");
   }
 }
 function FormValidationComponent_div_0_div_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 3)(1, "mat-icon");
-    \u0275\u0275text(2, "error");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
+    \u0275\u0275elementStart(0, "div", 3)(1, "span");
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(4);
+    \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx_r0.control.getError("custom"));
   }
 }
 function FormValidationComponent_div_0_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 1);
-    \u0275\u0275template(1, FormValidationComponent_div_0_div_1_Template, 5, 1, "div", 2)(2, FormValidationComponent_div_0_div_2_Template, 5, 0, "div", 2)(3, FormValidationComponent_div_0_div_3_Template, 5, 2, "div", 2)(4, FormValidationComponent_div_0_div_4_Template, 5, 2, "div", 2)(5, FormValidationComponent_div_0_div_5_Template, 5, 1, "div", 2)(6, FormValidationComponent_div_0_div_6_Template, 5, 2, "div", 2)(7, FormValidationComponent_div_0_div_7_Template, 5, 2, "div", 2)(8, FormValidationComponent_div_0_div_8_Template, 5, 1, "div", 2);
+    \u0275\u0275template(1, FormValidationComponent_div_0_div_1_Template, 3, 1, "div", 2)(2, FormValidationComponent_div_0_div_2_Template, 3, 0, "div", 2)(3, FormValidationComponent_div_0_div_3_Template, 3, 2, "div", 2)(4, FormValidationComponent_div_0_div_4_Template, 3, 2, "div", 2)(5, FormValidationComponent_div_0_div_5_Template, 3, 1, "div", 2)(6, FormValidationComponent_div_0_div_6_Template, 3, 2, "div", 2)(7, FormValidationComponent_div_0_div_7_Template, 3, 2, "div", 2)(8, FormValidationComponent_div_0_div_8_Template, 3, 1, "div", 2);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -10459,12 +4658,11 @@ var FormValidationComponent = class _FormValidationComponent {
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule,
-    MatIcon
+    MatIconModule
   ], styles: ["\n\n.validation-messages[_ngcontent-%COMP%] {\n  margin-top: 4px;\n}\n.error-message[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  color: #f44336;\n  font-size: 12px;\n  margin-top: 4px;\n}\n.error-message[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 16px;\n  width: 16px;\n  height: 16px;\n  margin-right: 4px;\n}\n/*# sourceMappingURL=form-validation.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FormValidationComponent, { className: "FormValidationComponent", filePath: "src/app/shared/components/form-validation/form-validation.component.ts", lineNumber: 96 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FormValidationComponent, { className: "FormValidationComponent", filePath: "src/app/shared/components/form-validation/form-validation.component.ts", lineNumber: 88 });
 })();
 
 // node_modules/@angular/material/fesm2022/progress-spinner.mjs
@@ -11679,11 +5877,11 @@ var MatSnackBarModule = class _MatSnackBarModule {
 })();
 
 // src/app/shared/components/toast-notification/toast-notification.component.ts
-function ToastNotificationComponent_button_5_Template(rf, ctx) {
+function ToastNotificationComponent_button_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 5);
-    \u0275\u0275listener("click", function ToastNotificationComponent_button_5_Template_button_click_0_listener() {
+    \u0275\u0275elementStart(0, "button", 6);
+    \u0275\u0275listener("click", function ToastNotificationComponent_button_4_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.snackBarRef.dismissWithAction());
@@ -11707,54 +5905,52 @@ var ToastNotificationComponent = class _ToastNotificationComponent {
   getIcon() {
     switch (this.data.type) {
       case "success":
-        return "check_circle";
+        return "fa-check-circle";
       case "error":
-        return "error";
+        return "fa-exclamation-circle";
       case "warning":
-        return "warning";
+        return "fa-exclamation-triangle";
       case "info":
-        return "info";
+        return "fa-info-circle";
       default:
-        return "info";
+        return "fa-info-circle";
     }
   }
   static \u0275fac = function ToastNotificationComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ToastNotificationComponent)(\u0275\u0275directiveInject(MAT_SNACK_BAR_DATA), \u0275\u0275directiveInject(MatSnackBarRef));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ToastNotificationComponent, selectors: [["app-toast-notification"]], decls: 9, vars: 4, consts: [[1, "toast-container", 3, "ngClass"], [1, "toast-icon"], [1, "toast-message"], ["mat-button", "", 3, "click", 4, "ngIf"], ["mat-icon-button", "", 3, "click"], ["mat-button", "", 3, "click"]], template: function ToastNotificationComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ToastNotificationComponent, selectors: [["app-toast-notification"]], decls: 7, vars: 4, consts: [[1, "toast-container", 3, "ngClass"], [1, "fas", "toast-icon", 3, "ngClass"], [1, "toast-message"], ["mat-button", "", 3, "click", 4, "ngIf"], ["mat-icon-button", "", 3, "click"], [1, "fas", "fa-times"], ["mat-button", "", 3, "click"]], template: function ToastNotificationComponent_Template(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275elementStart(0, "div", 0)(1, "mat-icon", 1);
-      \u0275\u0275text(2);
+      \u0275\u0275elementStart(0, "div", 0);
+      \u0275\u0275element(1, "i", 1);
+      \u0275\u0275elementStart(2, "span", 2);
+      \u0275\u0275text(3);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(3, "span", 2);
-      \u0275\u0275text(4);
-      \u0275\u0275elementEnd();
-      \u0275\u0275template(5, ToastNotificationComponent_button_5_Template, 2, 1, "button", 3);
-      \u0275\u0275elementStart(6, "button", 4);
-      \u0275\u0275listener("click", function ToastNotificationComponent_Template_button_click_6_listener() {
+      \u0275\u0275template(4, ToastNotificationComponent_button_4_Template, 2, 1, "button", 3);
+      \u0275\u0275elementStart(5, "button", 4);
+      \u0275\u0275listener("click", function ToastNotificationComponent_Template_button_click_5_listener() {
         return ctx.snackBarRef.dismiss();
       });
-      \u0275\u0275elementStart(7, "mat-icon");
-      \u0275\u0275text(8, "close");
-      \u0275\u0275elementEnd()()();
+      \u0275\u0275element(6, "i", 5);
+      \u0275\u0275elementEnd()();
     }
     if (rf & 2) {
       \u0275\u0275property("ngClass", ctx.data.type);
-      \u0275\u0275advance(2);
-      \u0275\u0275textInterpolate(ctx.getIcon());
+      \u0275\u0275advance();
+      \u0275\u0275property("ngClass", ctx.getIcon());
       \u0275\u0275advance(2);
       \u0275\u0275textInterpolate(ctx.data.message);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.data.action);
     }
-  }, dependencies: [CommonModule, NgClass, NgIf, MatSnackBarModule, MatIconModule, MatIcon, MatButtonModule, MatButton, MatIconButton], styles: ["\n\n.toast-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  padding: 14px 16px;\n  border-radius: 4px;\n  color: white;\n  min-width: 288px;\n  max-width: 568px;\n}\n.toast-icon[_ngcontent-%COMP%] {\n  margin-right: 8px;\n}\n.toast-message[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-right: 8px;\n}\n.success[_ngcontent-%COMP%] {\n  background-color: #4caf50;\n}\n.error[_ngcontent-%COMP%] {\n  background-color: #f44336;\n}\n.warning[_ngcontent-%COMP%] {\n  background-color: #ff9800;\n}\n.info[_ngcontent-%COMP%] {\n  background-color: #2196f3;\n}\n/*# sourceMappingURL=toast-notification.component.css.map */"] });
+  }, dependencies: [CommonModule, NgClass, NgIf, MatSnackBarModule, MatButtonModule, MatButton, MatIconButton], styles: ["\n\n.toast-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  padding: 14px 16px;\n  border-radius: 4px;\n  color: white;\n  min-width: 288px;\n  max-width: 568px;\n}\n.toast-icon[_ngcontent-%COMP%] {\n  margin-right: 8px;\n  font-size: 20px;\n}\n.toast-message[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-right: 8px;\n}\n.success[_ngcontent-%COMP%] {\n  background-color: #4caf50;\n}\n.error[_ngcontent-%COMP%] {\n  background-color: #f44336;\n}\n.warning[_ngcontent-%COMP%] {\n  background-color: #ff9800;\n}\n.info[_ngcontent-%COMP%] {\n  background-color: #2196f3;\n}\nbutton[_ngcontent-%COMP%] {\n  color: white;\n}\nbutton[_ngcontent-%COMP%]:hover {\n  background-color: rgba(255, 255, 255, 0.1);\n}\n/*# sourceMappingURL=toast-notification.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ToastNotificationComponent, { className: "ToastNotificationComponent", filePath: "src/app/shared/components/toast-notification/toast-notification.component.ts", lineNumber: 77 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ToastNotificationComponent, { className: "ToastNotificationComponent", filePath: "src/app/shared/components/toast-notification/toast-notification.component.ts", lineNumber: 85 });
 })();
 
 // src/app/auth/components/login/login.component.ts
-function LoginComponent_app_loading_spinner_51_Template(rf, ctx) {
+function LoginComponent_app_loading_spinner_52_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "app-loading-spinner", 35);
   }
@@ -11762,14 +5958,14 @@ function LoginComponent_app_loading_spinner_51_Template(rf, ctx) {
     \u0275\u0275property("size", 24);
   }
 }
-function LoginComponent_span_52_Template(rf, ctx) {
+function LoginComponent_span_53_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 36);
     \u0275\u0275text(1, "Login");
     \u0275\u0275elementEnd();
   }
 }
-function LoginComponent_i_53_Template(rf, ctx) {
+function LoginComponent_i_54_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "i", 37);
   }
@@ -11835,7 +6031,7 @@ var LoginComponent = class _LoginComponent {
   static \u0275fac = function LoginComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _LoginComponent)(\u0275\u0275directiveInject(FormBuilder), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(MatSnackBar));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 54, vars: 11, consts: [[1, "auth-container"], [1, "auth-background"], [1, "shape", "shape1"], [1, "shape", "shape2"], [1, "shape", "shape3"], [1, "auth-card"], [1, "card-content-wrapper"], [1, "header-content"], [1, "app-title-container", "animate-item"], [1, "logo-icon"], ["width", "28", "height", "28", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z", "stroke", "currentColor", "stroke-width", "2"], ["d", "M12 17L12 11", "stroke", "currentColor", "stroke-width", "2", "stroke-linecap", "round"], ["cx", "12", "cy", "8", "r", "1", "fill", "currentColor"], [1, "app-title"], [1, "animate-item"], [3, "ngSubmit", "formGroup"], ["appearance", "outline", 1, "full-width", "animate-item"], ["matInput", "", "formControlName", "email", "type", "email", "required", "", "placeholder", "Enter your email"], ["matPrefix", "", 1, "fas", "fa-envelope", "form-icon"], ["fieldName", "Email", 3, "control"], ["matInput", "", "formControlName", "password", "required", "", "placeholder", "Enter your password", 3, "type"], ["matPrefix", "", 1, "fas", "fa-lock", "form-icon"], ["matSuffix", "", 1, "fas", "fa-eye", "form-icon", "clickable", 3, "click"], ["fieldName", "Password", 3, "control"], [1, "form-links", "animate-item"], ["routerLink", "/auth/forgot-password", 1, "forgot-password"], [1, "form-actions", "animate-item"], ["mat-button", "", "type", "button", "routerLink", "../signup", 1, "signup-link", 3, "mouseenter", "mouseleave"], [1, "highlight"], [1, "login-text", 3, "mouseenter", "mouseleave", "click"], [1, "button-content"], [3, "size", 4, "ngIf"], ["class", "clickable-text", 4, "ngIf"], ["class", "fas fa-arrow-right login-icon", 3, "animate", 4, "ngIf"], [3, "size"], [1, "clickable-text"], [1, "fas", "fa-arrow-right", "login-icon"]], template: function LoginComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 55, vars: 11, consts: [[1, "auth-container"], [1, "auth-background"], [1, "shape", "shape1"], [1, "shape", "shape2"], [1, "shape", "shape3"], [1, "auth-card"], [1, "card-content-wrapper"], [1, "header-content"], [1, "app-title-container", "animate-item"], [1, "logo-icon"], ["width", "28", "height", "28", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z", "stroke", "currentColor", "stroke-width", "2"], ["d", "M12 17L12 11", "stroke", "currentColor", "stroke-width", "2", "stroke-linecap", "round"], ["cx", "12", "cy", "8", "r", "1", "fill", "currentColor"], [1, "app-title"], [1, "animate-item"], [3, "ngSubmit", "formGroup"], ["appearance", "outline", 1, "full-width", "animate-item"], ["matInput", "", "formControlName", "email", "type", "email", "required", "", "placeholder", "Enter your email"], ["matPrefix", "", 1, "fas", "fa-envelope", "form-icon"], ["fieldName", "Email", 3, "control"], ["matInput", "", "formControlName", "password", "required", "", "placeholder", "Enter your password", 3, "type"], ["matPrefix", "", 1, "fas", "fa-lock", "form-icon"], ["matSuffix", "", 1, "fas", "fa-eye", "form-icon", "clickable", 3, "click"], ["fieldName", "Password", 3, "control"], [1, "form-links", "animate-item"], ["routerLink", "/auth/forgot-password", 1, "forgot-password"], [1, "form-actions", "animate-item"], ["routerLink", "../signup", 1, "signup-link", 3, "mouseenter", "mouseleave"], [1, "highlight"], [1, "login-text", 3, "mouseenter", "mouseleave", "click"], [1, "button-content"], [3, "size", 4, "ngIf"], ["class", "clickable-text", 4, "ngIf"], ["class", "fas fa-arrow-right login-icon", 3, "animate", 4, "ngIf"], [3, "size"], [1, "clickable-text"], [1, "fas", "fa-arrow-right", "login-icon"]], template: function LoginComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1);
       \u0275\u0275element(2, "div", 2)(3, "div", 3)(4, "div", 4);
@@ -11864,50 +6060,50 @@ var LoginComponent = class _LoginComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275element(26, "input", 18)(27, "i", 19);
       \u0275\u0275elementStart(28, "mat-hint");
-      \u0275\u0275text(29, "Try: admin@example.com, jobseeker@example.com, employer@example.com");
+      \u0275\u0275text(29, "Try: admin@example.com, jobseeker@example.com or employer@example.com");
       \u0275\u0275elementEnd();
       \u0275\u0275element(30, "app-form-validation", 20);
       \u0275\u0275elementEnd();
-      \u0275\u0275element(31, "br");
-      \u0275\u0275elementStart(32, "mat-form-field", 17)(33, "mat-label");
-      \u0275\u0275text(34, "Password");
+      \u0275\u0275element(31, "br")(32, "br");
+      \u0275\u0275elementStart(33, "mat-form-field", 17)(34, "mat-label");
+      \u0275\u0275text(35, "Password");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(35, "input", 21)(36, "i", 22);
-      \u0275\u0275elementStart(37, "i", 23);
-      \u0275\u0275listener("click", function LoginComponent_Template_i_click_37_listener() {
+      \u0275\u0275element(36, "input", 21)(37, "i", 22);
+      \u0275\u0275elementStart(38, "i", 23);
+      \u0275\u0275listener("click", function LoginComponent_Template_i_click_38_listener() {
         return ctx.hidePassword = !ctx.hidePassword;
       });
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(38, "mat-hint");
-      \u0275\u0275text(39, "Any password will work");
+      \u0275\u0275elementStart(39, "mat-hint");
+      \u0275\u0275text(40, "Any password will work");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(40, "app-form-validation", 24);
+      \u0275\u0275element(41, "app-form-validation", 24);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(41, "div", 25)(42, "a", 26);
-      \u0275\u0275text(43, "Forgot password?");
+      \u0275\u0275elementStart(42, "div", 25)(43, "a", 26);
+      \u0275\u0275text(44, "Forgot password?");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(44, "div", 27)(45, "button", 28);
-      \u0275\u0275listener("mouseenter", function LoginComponent_Template_button_mouseenter_45_listener() {
+      \u0275\u0275elementStart(45, "div", 27)(46, "span", 28);
+      \u0275\u0275listener("mouseenter", function LoginComponent_Template_span_mouseenter_46_listener() {
         return ctx.signupState = "hovered";
-      })("mouseleave", function LoginComponent_Template_button_mouseleave_45_listener() {
+      })("mouseleave", function LoginComponent_Template_span_mouseleave_46_listener() {
         return ctx.signupState = "normal";
       });
-      \u0275\u0275text(46, " Don't have an account? ");
-      \u0275\u0275elementStart(47, "span", 29);
-      \u0275\u0275text(48, "Sign Up");
+      \u0275\u0275text(47, " Don't have an account? ");
+      \u0275\u0275elementStart(48, "span", 29);
+      \u0275\u0275text(49, "Sign Up");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(49, "div", 30);
-      \u0275\u0275listener("mouseenter", function LoginComponent_Template_div_mouseenter_49_listener() {
+      \u0275\u0275elementStart(50, "div", 30);
+      \u0275\u0275listener("mouseenter", function LoginComponent_Template_div_mouseenter_50_listener() {
         ctx.loginState = "hovered";
         return ctx.loginButtonHover = true;
-      })("mouseleave", function LoginComponent_Template_div_mouseleave_49_listener() {
+      })("mouseleave", function LoginComponent_Template_div_mouseleave_50_listener() {
         ctx.loginState = "normal";
         return ctx.loginButtonHover = false;
-      })("click", function LoginComponent_Template_div_click_49_listener() {
+      })("click", function LoginComponent_Template_div_click_50_listener() {
         return ctx.onSubmit();
       });
-      \u0275\u0275elementStart(50, "div", 31);
-      \u0275\u0275template(51, LoginComponent_app_loading_spinner_51_Template, 1, 1, "app-loading-spinner", 32)(52, LoginComponent_span_52_Template, 2, 0, "span", 33)(53, LoginComponent_i_53_Template, 1, 2, "i", 34);
+      \u0275\u0275elementStart(51, "div", 31);
+      \u0275\u0275template(52, LoginComponent_app_loading_spinner_52_Template, 1, 1, "app-loading-spinner", 32)(53, LoginComponent_span_53_Template, 2, 0, "span", 33)(54, LoginComponent_i_54_Template, 1, 2, "i", 34);
       \u0275\u0275elementEnd()()()()()()()();
     }
     if (rf & 2) {
@@ -11919,7 +6115,7 @@ var LoginComponent = class _LoginComponent {
       \u0275\u0275property("formGroup", ctx.loginForm);
       \u0275\u0275advance(8);
       \u0275\u0275property("control", ctx.loginForm.get("email"));
-      \u0275\u0275advance(5);
+      \u0275\u0275advance(6);
       \u0275\u0275property("type", ctx.hidePassword ? "password" : "text");
       \u0275\u0275advance(5);
       \u0275\u0275property("control", ctx.loginForm.get("password"));
@@ -11961,13 +6157,12 @@ var LoginComponent = class _LoginComponent {
     MatInputModule,
     MatInput,
     MatButtonModule,
-    MatButton,
     MatIconModule,
     RouterModule,
     RouterLink,
     FormValidationComponent,
     LoadingSpinnerComponent
-  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --accent-light: #ff9a9e;\n  --text-primary: #333;\n  --text-secondary: #666;\n  --background-light: #f5f7fa;\n  --card-bg: #ffffff;\n  --success: #00c853;\n  --warning: #ffd600;\n}\n.auth-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-light) 0%,\n      var(--primary-dark) 100%);\n  position: relative;\n  overflow: hidden;\n}\n.auth-background[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 0;\n}\n.shape[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.05);\n  animation: _ngcontent-%COMP%_float 15s infinite;\n  -webkit-backdrop-filter: blur(5px);\n  backdrop-filter: blur(5px);\n}\n.shape1[_ngcontent-%COMP%] {\n  width: 500px;\n  height: 500px;\n  top: -250px;\n  right: -100px;\n  animation-delay: 0s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(255, 255, 255, 0.03),\n      rgba(142, 148, 251, 0.08));\n}\n.shape2[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 400px;\n  bottom: -150px;\n  left: -100px;\n  animation-delay: 3s;\n  animation-duration: 18s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(142, 148, 251, 0.06),\n      rgba(255, 255, 255, 0.04));\n}\n.shape3[_ngcontent-%COMP%] {\n  width: 300px;\n  height: 300px;\n  bottom: 30%;\n  right: 20%;\n  animation-delay: 5s;\n  animation-duration: 20s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(252, 70, 107, 0.04),\n      rgba(255, 255, 255, 0.03));\n}\n@keyframes _ngcontent-%COMP%_float {\n  0% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n  25% {\n    transform: translate(5%, 5%) rotate(5deg);\n  }\n  50% {\n    transform: translate(0%, 8%) rotate(0deg);\n  }\n  75% {\n    transform: translate(-5%, 3%) rotate(-5deg);\n  }\n  100% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n}\n.auth-card[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 450px;\n  border-radius: 20px;\n  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);\n  background: rgba(255, 255, 255, 0.95);\n  -webkit-backdrop-filter: blur(10px);\n  backdrop-filter: blur(10px);\n  position: relative;\n  z-index: 10;\n  overflow: hidden;\n  border: 1px solid rgba(255, 255, 255, 0.2);\n}\n.card-content-wrapper[_ngcontent-%COMP%] {\n  padding: 40px;\n}\n.auth-card[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--accent));\n  z-index: 5;\n}\n.header-content[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 24px;\n  width: 100%;\n}\n.app-title-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  margin-bottom: 24px;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 700;\n  color: var(--primary);\n  margin: 0;\n  letter-spacing: -0.5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary),\n      var(--accent));\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\nmat-card-title[_ngcontent-%COMP%] {\n  font-size: 1.7rem;\n  font-weight: 600;\n  color: var(--text-primary);\n  margin-bottom: 8px;\n}\nmat-card-subtitle[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 1.1rem;\n  margin-bottom: 16px;\n}\n.full-width[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 20px;\n}\n.form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.4);\n  margin-right: 8px;\n  transition: all 0.3s ease;\n}\n.clickable[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n.clickable[_ngcontent-%COMP%]:hover {\n  color: var(--primary);\n  transform: scale(1.1);\n}\n.form-links[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: flex-end;\n  margin-bottom: 24px;\n}\n.forgot-password[_ngcontent-%COMP%] {\n  color: var(--primary);\n  text-decoration: none;\n  font-size: 0.9rem;\n  font-weight: 500;\n  transition: all 0.3s ease;\n}\n.forgot-password[_ngcontent-%COMP%]:hover {\n  color: var(--accent);\n  text-decoration: underline;\n}\n.form-actions[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 32px;\n}\n.signup-link[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-weight: 400;\n  transition: all 0.3s ease;\n}\n.signup-link[_ngcontent-%COMP%]   .highlight[_ngcontent-%COMP%] {\n  color: var(--primary);\n  font-weight: 500;\n  transition: all 0.3s ease;\n}\n.signup-link[_ngcontent-%COMP%]:hover   .highlight[_ngcontent-%COMP%] {\n  color: var(--accent);\n  text-decoration: underline;\n}\n.submit-button[_ngcontent-%COMP%] {\n  min-width: 120px;\n  padding: 8px 24px;\n  font-weight: 500;\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary),\n      var(--primary-dark));\n  border-radius: 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 4px 12px rgba(78, 84, 200, 0.3);\n}\n.submit-button[_ngcontent-%COMP%]:not([disabled]):hover {\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary-light),\n      var(--primary));\n  box-shadow: 0 6px 16px rgba(78, 84, 200, 0.4);\n}\n.submit-button[disabled][_ngcontent-%COMP%] {\n  background: #ccc;\n}\n.login-text[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 120px;\n  padding: 8px 24px;\n  font-weight: 500;\n  color: white;\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary),\n      var(--primary-dark));\n  border-radius: 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 4px 12px rgba(78, 84, 200, 0.3);\n  cursor: pointer;\n}\n.login-text[_ngcontent-%COMP%]:hover {\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary-light),\n      var(--primary));\n  box-shadow: 0 6px 16px rgba(78, 84, 200, 0.4);\n}\n.login-text[_ngcontent-%COMP%]   .clickable-text[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n.button-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n}\n.login-icon[_ngcontent-%COMP%] {\n  transition: all 0.3s ease;\n}\n.login-icon.animate[_ngcontent-%COMP%] {\n  transform: translateX(3px);\n}\n:is()   .mat-form-field-outline[_ngcontent-%COMP%] {\n  color: #e0e0e0 !important;\n}\n:is()   .mat-form-field-outline-thick[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--text-secondary) !important;\n  opacity: 1 !important;\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-suffix[_ngcontent-%COMP%] {\n  top: 0 !important;\n}\n:is()   .mat-form-field-prefix[_ngcontent-%COMP%] {\n  top: 0.25em !important;\n  margin-right: 8px !important;\n}\n:is()   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .mat-form-field-outline[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .form-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n@media (max-width: 600px) {\n  .card-content-wrapper[_ngcontent-%COMP%] {\n    padding: 30px 20px;\n  }\n  .form-actions[_ngcontent-%COMP%] {\n    flex-direction: column;\n    gap: 16px;\n  }\n  .submit-button[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.75rem;\n  }\n  mat-card-title[_ngcontent-%COMP%] {\n    font-size: 1.4rem;\n  }\n  mat-card-subtitle[_ngcontent-%COMP%] {\n    font-size: 1rem;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */'], data: { animation: [
+  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --accent-light: #ff9a9e;\n  --text-primary: #333;\n  --text-secondary: #666;\n  --background-light: #f5f7fa;\n  --card-bg: #ffffff;\n  --success: #00c853;\n  --warning: #ffd600;\n}\n.auth-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-light) 0%,\n      var(--primary-dark) 100%);\n  position: relative;\n  overflow: hidden;\n}\n.auth-background[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 0;\n}\n.shape[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.05);\n  animation: _ngcontent-%COMP%_float 15s infinite;\n  -webkit-backdrop-filter: blur(5px);\n  backdrop-filter: blur(5px);\n}\n.shape1[_ngcontent-%COMP%] {\n  width: 500px;\n  height: 500px;\n  top: -250px;\n  right: -100px;\n  animation-delay: 0s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(255, 255, 255, 0.03),\n      rgba(142, 148, 251, 0.08));\n}\n.shape2[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 400px;\n  bottom: -150px;\n  left: -100px;\n  animation-delay: 3s;\n  animation-duration: 18s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(142, 148, 251, 0.06),\n      rgba(255, 255, 255, 0.04));\n}\n.shape3[_ngcontent-%COMP%] {\n  width: 300px;\n  height: 300px;\n  bottom: 30%;\n  right: 20%;\n  animation-delay: 5s;\n  animation-duration: 20s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(252, 70, 107, 0.04),\n      rgba(255, 255, 255, 0.03));\n}\n@keyframes _ngcontent-%COMP%_float {\n  0% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n  25% {\n    transform: translate(5%, 5%) rotate(5deg);\n  }\n  50% {\n    transform: translate(0%, 8%) rotate(0deg);\n  }\n  75% {\n    transform: translate(-5%, 3%) rotate(-5deg);\n  }\n  100% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n}\n.auth-card[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 450px;\n  border-radius: 20px;\n  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);\n  background: rgba(255, 255, 255, 0.95);\n  -webkit-backdrop-filter: blur(10px);\n  backdrop-filter: blur(10px);\n  position: relative;\n  z-index: 10;\n  overflow: hidden;\n  border: 1px solid rgba(255, 255, 255, 0.2);\n}\n.card-content-wrapper[_ngcontent-%COMP%] {\n  padding: 40px;\n}\n.auth-card[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--accent));\n  z-index: 5;\n}\n.header-content[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 24px;\n  width: 100%;\n}\n.app-title-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  margin-bottom: 24px;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 700;\n  color: var(--primary);\n  margin: 0;\n  letter-spacing: -0.5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary),\n      var(--accent));\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\nmat-card-title[_ngcontent-%COMP%] {\n  font-size: 1.7rem;\n  font-weight: 600;\n  color: var(--text-primary);\n  margin-bottom: 8px;\n}\nmat-card-subtitle[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 1.1rem;\n  margin-bottom: 16px;\n}\n.full-width[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 20px;\n}\n.form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.4);\n  margin-right: 8px;\n  transition: all 0.3s ease;\n}\n.clickable[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n.clickable[_ngcontent-%COMP%]:hover {\n  color: var(--primary);\n  transform: scale(1.1);\n}\n.form-links[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: flex-end;\n  margin-bottom: 24px;\n}\n.forgot-password[_ngcontent-%COMP%] {\n  color: var(--primary);\n  text-decoration: none;\n  font-size: 0.9rem;\n  font-weight: 500;\n  transition: all 0.3s ease;\n}\n.forgot-password[_ngcontent-%COMP%]:hover {\n  color: var(--accent);\n  text-decoration: underline;\n}\n.form-actions[_ngcontent-%COMP%] {\n  gap: 16px;\n}\n.signup-link[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-weight: 400;\n  transition: all 0.3s ease;\n}\n.signup-link[_ngcontent-%COMP%]   .highlight[_ngcontent-%COMP%] {\n  color: var(--primary);\n  font-weight: 500;\n  transition: all 0.3s ease;\n}\n.signup-link[_ngcontent-%COMP%]:hover   .highlight[_ngcontent-%COMP%] {\n  color: var(--accent);\n  text-decoration: underline;\n}\n.submit-button[_ngcontent-%COMP%] {\n  min-width: 120px;\n  padding: 8px 24px;\n  font-weight: 500;\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary),\n      var(--primary-dark));\n  border-radius: 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 4px 12px rgba(78, 84, 200, 0.3);\n}\n.submit-button[_ngcontent-%COMP%]:not([disabled]):hover {\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary-light),\n      var(--primary));\n  box-shadow: 0 6px 16px rgba(78, 84, 200, 0.4);\n}\n.submit-button[disabled][_ngcontent-%COMP%] {\n  background: #ccc;\n}\n.login-text[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 120px;\n  padding: 8px 24px;\n  font-weight: 500;\n  color: white;\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary),\n      var(--primary-dark));\n  border-radius: 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 4px 12px rgba(78, 84, 200, 0.3);\n  cursor: pointer;\n}\n.login-text[_ngcontent-%COMP%]:hover {\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary-light),\n      var(--primary));\n  box-shadow: 0 6px 16px rgba(78, 84, 200, 0.4);\n}\n.login-text[_ngcontent-%COMP%]   .clickable-text[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n.button-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n}\n.login-icon[_ngcontent-%COMP%] {\n  transition: all 0.3s ease;\n}\n:is()   .mat-form-field-outline[_ngcontent-%COMP%] {\n  color: #e0e0e0 !important;\n}\n:is()   .mat-form-field-outline-thick[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--text-secondary) !important;\n  opacity: 1 !important;\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-suffix[_ngcontent-%COMP%] {\n  top: 0 !important;\n}\n:is()   .mat-form-field-prefix[_ngcontent-%COMP%] {\n  top: 0.25em !important;\n  margin-right: 8px !important;\n}\n:is()   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .mat-form-field-outline[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .form-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n@media (max-width: 600px) {\n  .card-content-wrapper[_ngcontent-%COMP%] {\n    padding: 30px 20px;\n  }\n  .form-actions[_ngcontent-%COMP%] {\n    gap: 16px;\n  }\n  .submit-button[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.75rem;\n  }\n  mat-card-title[_ngcontent-%COMP%] {\n    font-size: 1.4rem;\n  }\n  mat-card-subtitle[_ngcontent-%COMP%] {\n    font-size: 1rem;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */'], data: { animation: [
     trigger("cardAnimation", [
       transition(":enter", [
         style({ transform: "translateY(50px)", opacity: 0 }),
@@ -12004,7 +6199,7 @@ var LoginComponent = class _LoginComponent {
   ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent", filePath: "src/app/auth/components/login/login.component.ts", lineNumber: 539 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent", filePath: "src/app/auth/components/login/login.component.ts", lineNumber: 78 });
 })();
 
 // src/app/auth/components/signup/signup.component.ts
@@ -15362,6 +9557,8 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
   mobileView = false;
   sidenavMode = "side";
   sidenavOpened = true;
+  sidenavState = "in";
+  notificationCount = 3;
   constructor(authService, breakpointObserver, cdr) {
     this.authService = authService;
     this.breakpointObserver = breakpointObserver;
@@ -15372,15 +9569,26 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
       this.mobileView = result.matches;
       this.sidenavMode = result.matches ? "over" : "side";
       this.sidenavOpened = !result.matches;
+      this.sidenavState = this.sidenavOpened ? "in" : "out";
       this.cdr.detectChanges();
     });
+    setTimeout(() => {
+      this.sidenavState = "in";
+    }, 100);
   }
   toggleSidenav() {
-    this.sidenav.toggle();
+    this.sidenavOpened = !this.sidenavOpened;
+    this.sidenavState = this.sidenavOpened ? "in" : "out";
+    if (this.sidenavMode === "side") {
+    } else {
+      this.sidenav.toggle();
+    }
   }
   onNavItemClick() {
     if (this.mobileView) {
       this.sidenav.close();
+      this.sidenavState = "out";
+      this.sidenavOpened = false;
     }
   }
   logout() {
@@ -15397,7 +9605,7 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
       let _t;
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.sidenav = _t.first);
     }
-  }, decls: 77, vars: 5, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], ["color", "primary", 1, "toolbar"], [1, "toolbar-left"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], ["xmlns", "http://www.w3.org/2000/svg", "height", "24", "viewBox", "0 0 24 24", "width", "24", "fill", "currentColor", 2, "display", "block"], ["d", "M4 6h16M4 12h16M4 18h16", "stroke", "currentColor", "stroke-width", "2", "fill", "none"], [1, "app-title"], [1, "toolbar-right"], ["mat-icon-button", "", "matBadgeColor", "warn", 1, "notification-button", 3, "matBadge"], [1, "fas", "fa-bell"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], [1, "fas", "fa-user-circle"], ["mat-menu-item", "", "routerLink", "profile"], [1, "fas", "fa-user"], ["mat-menu-item", "", "routerLink", "settings"], [1, "fas", "fa-cog"], ["mat-menu-item", "", 3, "click"], [1, "fas", "fa-sign-out-alt"], [1, "sidenav-container"], [1, "sidenav", 3, "mode", "opened", "fixedInViewport"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "profile", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "skills", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "portfolio", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "cv", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "matches", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "applications", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "interviews", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "career-paths", "routerLinkActive", "active", 3, "click"], ["mat-list-item", "", "routerLink", "chatbot", "routerLinkActive", "active", 3, "click"], [1, "content"], [1, "content-wrapper"]], template: function JobSeekerDashboardComponent_Template(rf, ctx) {
+  }, decls: 98, vars: 12, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], [1, "toolbar"], [1, "toolbar-left"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], [1, "fas", "fa-bars"], [1, "app-title", "typewriter"], [1, "toolbar-right"], ["mat-icon-button", "", "matBadgeColor", "accent", "aria-label", "Show notifications", 1, "notification-button", 3, "matBadge"], [1, "fas", "fa-bell"], ["mat-icon-button", "", "aria-label", "User menu", 3, "matMenuTriggerFor"], [1, "fas", "fa-user-circle"], [1, "custom-menu"], ["mat-menu-item", "", "routerLink", "profile"], [1, "fas", "fa-user"], ["mat-menu-item", "", "routerLink", "settings"], [1, "fas", "fa-cog"], ["mat-menu-item", "", 3, "click"], [1, "fas", "fa-sign-out-alt"], [1, "sidenav-container"], [1, "sidenav", 3, "mode", "opened", "fixedInViewport"], [1, "sidenav-header"], [1, "logo-container"], [1, "fas", "fa-briefcase", "logo-icon"], [1, "logo-text"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "profile", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-id-card"], ["mat-list-item", "", "routerLink", "skills", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-brain"], ["mat-list-item", "", "routerLink", "portfolio", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-folder-open"], ["mat-list-item", "", "routerLink", "cv", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-file-alt"], ["mat-list-item", "", "routerLink", "matches", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-handshake"], ["mat-list-item", "", "routerLink", "applications", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-paper-plane"], ["mat-list-item", "", "routerLink", "interviews", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-comments"], ["mat-list-item", "", "routerLink", "career-paths", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-road"], ["mat-list-item", "", "routerLink", "learning", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-graduation-cap"], ["mat-list-item", "", "routerLink", "chatbot", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-robot"], ["mat-list-item", "", "routerLink", "analytics", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-chart-line"], [1, "content"], [1, "content-wrapper"]], template: function JobSeekerDashboardComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 2)(1, "mat-toolbar", 3)(2, "div", 4)(3, "button", 5);
@@ -15405,139 +9613,180 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.toggleSidenav());
       });
-      \u0275\u0275namespaceSVG();
-      \u0275\u0275elementStart(4, "svg", 6);
-      \u0275\u0275element(5, "path", 7);
-      \u0275\u0275elementEnd()();
-      \u0275\u0275namespaceHTML();
-      \u0275\u0275elementStart(6, "span", 8);
-      \u0275\u0275text(7, "SkillMatch AI");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(8, "div", 9)(9, "button", 10);
-      \u0275\u0275element(10, "i", 11);
+      \u0275\u0275element(4, "i", 6);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(11, "button", 12);
-      \u0275\u0275element(12, "i", 13);
+      \u0275\u0275elementStart(5, "span", 7);
+      \u0275\u0275text(6, "SkillMatch AI");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(7, "div", 8)(8, "button", 9);
+      \u0275\u0275element(9, "i", 10);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(13, "mat-menu", null, 0)(15, "button", 14);
-      \u0275\u0275element(16, "i", 15);
-      \u0275\u0275elementStart(17, "span");
-      \u0275\u0275text(18, "My Profile");
+      \u0275\u0275elementStart(10, "button", 11);
+      \u0275\u0275element(11, "i", 12);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(12, "mat-menu", 13, 0)(14, "button", 14);
+      \u0275\u0275element(15, "i", 15);
+      \u0275\u0275elementStart(16, "span");
+      \u0275\u0275text(17, "My Profile");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(19, "button", 16);
-      \u0275\u0275element(20, "i", 17);
-      \u0275\u0275elementStart(21, "span");
-      \u0275\u0275text(22, "Settings");
+      \u0275\u0275elementStart(18, "button", 16);
+      \u0275\u0275element(19, "i", 17);
+      \u0275\u0275elementStart(20, "span");
+      \u0275\u0275text(21, "Settings");
       \u0275\u0275elementEnd()();
-      \u0275\u0275element(23, "mat-divider");
-      \u0275\u0275elementStart(24, "button", 18);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_button_click_24_listener() {
+      \u0275\u0275element(22, "mat-divider");
+      \u0275\u0275elementStart(23, "button", 18);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_button_click_23_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.logout());
       });
-      \u0275\u0275element(25, "i", 19);
-      \u0275\u0275elementStart(26, "span");
-      \u0275\u0275text(27, "Logout");
+      \u0275\u0275element(24, "i", 19);
+      \u0275\u0275elementStart(25, "span");
+      \u0275\u0275text(26, "Logout");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(28, "mat-sidenav-container", 20)(29, "mat-sidenav", 21, 1)(31, "mat-nav-list")(32, "div", 22)(33, "h3", 23);
-      \u0275\u0275text(34, "Profile & Portfolio");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(35, "a", 24);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_35_listener() {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.onNavItemClick());
-      });
-      \u0275\u0275elementStart(36, "span");
-      \u0275\u0275text(37, "Profile Overview");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(38, "a", 25);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_38_listener() {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.onNavItemClick());
-      });
-      \u0275\u0275elementStart(39, "span");
-      \u0275\u0275text(40, "Skill Management");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(41, "a", 26);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_41_listener() {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.onNavItemClick());
-      });
-      \u0275\u0275elementStart(42, "span");
-      \u0275\u0275text(43, "Portfolio");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(44, "a", 27);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_44_listener() {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.onNavItemClick());
-      });
-      \u0275\u0275elementStart(45, "span");
-      \u0275\u0275text(46, "CV Manager");
+      \u0275\u0275elementStart(27, "mat-sidenav-container", 20)(28, "mat-sidenav", 21, 1)(30, "div", 22)(31, "div", 23);
+      \u0275\u0275element(32, "i", 24);
+      \u0275\u0275elementStart(33, "span", 25);
+      \u0275\u0275text(34, "SkillMatch");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275element(47, "mat-divider");
-      \u0275\u0275elementStart(48, "div", 22)(49, "h3", 23);
-      \u0275\u0275text(50, "Job Search");
+      \u0275\u0275elementStart(35, "mat-nav-list")(36, "div", 26)(37, "h3", 27);
+      \u0275\u0275text(38, "Profile & Portfolio");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(51, "a", 28);
+      \u0275\u0275elementStart(39, "a", 28);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_39_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.onNavItemClick());
+      });
+      \u0275\u0275element(40, "i", 29);
+      \u0275\u0275elementStart(41, "span");
+      \u0275\u0275text(42, "Profile Overview");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(43, "a", 30);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_43_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.onNavItemClick());
+      });
+      \u0275\u0275element(44, "i", 31);
+      \u0275\u0275elementStart(45, "span");
+      \u0275\u0275text(46, "Skill Management");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(47, "a", 32);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_47_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.onNavItemClick());
+      });
+      \u0275\u0275element(48, "i", 33);
+      \u0275\u0275elementStart(49, "span");
+      \u0275\u0275text(50, "Portfolio");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(51, "a", 34);
       \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_51_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275elementStart(52, "span");
-      \u0275\u0275text(53, "Job Matches");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(54, "a", 29);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_54_listener() {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.onNavItemClick());
-      });
-      \u0275\u0275elementStart(55, "span");
-      \u0275\u0275text(56, "Applications");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(57, "a", 30);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_57_listener() {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.onNavItemClick());
-      });
-      \u0275\u0275elementStart(58, "span");
-      \u0275\u0275text(59, "Interviews");
+      \u0275\u0275element(52, "i", 35);
+      \u0275\u0275elementStart(53, "span");
+      \u0275\u0275text(54, "CV Manager");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275element(60, "mat-divider");
-      \u0275\u0275elementStart(61, "div", 22)(62, "h3", 23);
-      \u0275\u0275text(63, "Career Development");
+      \u0275\u0275element(55, "mat-divider");
+      \u0275\u0275elementStart(56, "div", 26)(57, "h3", 27);
+      \u0275\u0275text(58, "Job Search");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(64, "a", 31);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_64_listener() {
+      \u0275\u0275elementStart(59, "a", 36);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_59_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
+      \u0275\u0275element(60, "i", 37);
+      \u0275\u0275elementStart(61, "span");
+      \u0275\u0275text(62, "Job Matches");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(63, "a", 38);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_63_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.onNavItemClick());
+      });
+      \u0275\u0275element(64, "i", 39);
       \u0275\u0275elementStart(65, "span");
-      \u0275\u0275text(66, "Career Paths");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275element(67, "mat-divider");
-      \u0275\u0275elementStart(68, "div", 22)(69, "h3", 23);
-      \u0275\u0275text(70, "Additional");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(71, "a", 32);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_71_listener() {
+      \u0275\u0275text(66, "Applications");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(67, "a", 40);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_67_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275elementStart(72, "span");
-      \u0275\u0275text(73, "Query Assistant");
+      \u0275\u0275element(68, "i", 41);
+      \u0275\u0275elementStart(69, "span");
+      \u0275\u0275text(70, "Interviews");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275element(71, "mat-divider");
+      \u0275\u0275elementStart(72, "div", 26)(73, "h3", 27);
+      \u0275\u0275text(74, "Career Development");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(75, "a", 42);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_75_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.onNavItemClick());
+      });
+      \u0275\u0275element(76, "i", 43);
+      \u0275\u0275elementStart(77, "span");
+      \u0275\u0275text(78, "Career Paths");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(79, "a", 44);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_79_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.onNavItemClick());
+      });
+      \u0275\u0275element(80, "i", 45);
+      \u0275\u0275elementStart(81, "span");
+      \u0275\u0275text(82, "Learning Resources");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275element(83, "mat-divider");
+      \u0275\u0275elementStart(84, "div", 26)(85, "h3", 27);
+      \u0275\u0275text(86, "Additional");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(87, "a", 46);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_87_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.onNavItemClick());
+      });
+      \u0275\u0275element(88, "i", 47);
+      \u0275\u0275elementStart(89, "span");
+      \u0275\u0275text(90, "Career Assistant");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(91, "a", 48);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_91_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.onNavItemClick());
+      });
+      \u0275\u0275element(92, "i", 49);
+      \u0275\u0275elementStart(93, "span");
+      \u0275\u0275text(94, "Application Analytics");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(74, "mat-sidenav-content", 33)(75, "div", 34);
-      \u0275\u0275element(76, "router-outlet");
+      \u0275\u0275elementStart(95, "mat-sidenav-content", 50)(96, "div", 51);
+      \u0275\u0275element(97, "router-outlet");
       \u0275\u0275elementEnd()()()();
     }
     if (rf & 2) {
-      const userMenu_r2 = \u0275\u0275reference(14);
-      \u0275\u0275advance(9);
-      \u0275\u0275property("matBadge", 3);
+      const userMenu_r2 = \u0275\u0275reference(13);
+      \u0275\u0275advance();
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(7);
+      \u0275\u0275property("matBadge", ctx.notificationCount);
       \u0275\u0275advance(2);
       \u0275\u0275property("matMenuTriggerFor", userMenu_r2);
       \u0275\u0275advance(18);
-      \u0275\u0275property("mode", ctx.sidenavMode)("opened", ctx.sidenavOpened)("fixedInViewport", ctx.mobileView);
+      \u0275\u0275property("mode", ctx.sidenavMode)("opened", ctx.sidenavOpened)("fixedInViewport", ctx.mobileView)("@slideInOut", ctx.sidenavState);
+      \u0275\u0275advance(8);
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(20);
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(16);
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(12);
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(12);
+      \u0275\u0275property("@slideInFromRight", void 0);
     }
   }, dependencies: [
     CommonModule,
@@ -15566,10 +9815,41 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
     MatBadgeModule,
     MatBadge,
     MatDividerModule
-  ], styles: ['\n\n.dashboard-container[_ngcontent-%COMP%] {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n}\n.toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0 16px;\n  background:\n    linear-gradient(\n      135deg,\n      #1976d2 0%,\n      #2196f3 100%);\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 1000;\n}\n.toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n}\n.sidenav-container[_ngcontent-%COMP%] {\n  flex: 1;\n  background-color: #f8fafc;\n  margin-top: 64px;\n}\n.sidenav[_ngcontent-%COMP%] {\n  width: 250px;\n  background-color: white;\n  border-right: 1px solid #e2e8f0;\n}\n.content[_ngcontent-%COMP%] {\n  background-color: #f8fafc;\n}\n.content-wrapper[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\nmat-nav-list[_ngcontent-%COMP%] {\n  padding-top: 16px;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  height: 48px;\n  margin: 8px 12px;\n  border-radius: 8px;\n  color: #4a5568;\n  font-weight: 500;\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%] {\n  background-color: #e3f2fd;\n  color: #1976d2;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  background-color: #f8fafc;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  margin-right: 12px;\n  color: inherit;\n}\n.nav-section[_ngcontent-%COMP%] {\n  padding: 8px 0;\n}\nh3[matSubheader][_ngcontent-%COMP%] {\n  color: #64748b;\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  padding: 16px 24px 8px;\n  margin: 0;\n}\nmat-divider[_ngcontent-%COMP%] {\n  margin: 8px 0;\n}\n.mat-badge-content[_ngcontent-%COMP%] {\n  font-family: "Inter", sans-serif;\n  font-weight: 500;\n}\n.menu-button[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 24px;\n}\n@media (max-width: 768px) {\n  .toolbar[_ngcontent-%COMP%] {\n    padding: 0 8px;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.1rem;\n  }\n  .sidenav[_ngcontent-%COMP%] {\n    width: 85%;\n    max-width: 300px;\n  }\n  .content-wrapper[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .sidenav-container[_ngcontent-%COMP%] {\n    margin-top: 56px;\n  }\n  mat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n    margin: 4px 8px;\n    height: 44px;\n  }\n  h3[matSubheader][_ngcontent-%COMP%] {\n    padding: 12px 16px 6px;\n  }\n}\n@media (min-width: 769px) and (max-width: 1024px) {\n  .sidenav[_ngcontent-%COMP%] {\n    width: 220px;\n  }\n  .content-wrapper[_ngcontent-%COMP%] {\n    padding: 20px;\n  }\n}\n.sidenav[_ngcontent-%COMP%] {\n  transition: width 0.3s ease-in-out;\n}\n@media (min-width: 1025px) {\n  .menu-button[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.notification-button[_ngcontent-%COMP%] {\n  margin-right: 8px;\n}\n.active[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  color: #1976d2;\n}\n/*# sourceMappingURL=job-seeker-dashboard.component.css.map */'] });
+  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #8B5A2B;\n  --primary-light: #A67C52;\n  --primary-dark: #6B4423;\n  --accent: #D2B48C;\n  --accent-light: #E6D2B8;\n  --accent-dark: #9F8A6E;\n  --text-primary: #3E2723;\n  --text-secondary: #5D4037;\n  --background-light: #F5F0E6;\n  --card-bg: #FFFFFF;\n  --success: #4CAF50;\n  --warning: #FFC107;\n}\n.dashboard-container[_ngcontent-%COMP%] {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n}\n.toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0 16px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary) 0%,\n      var(--primary-dark) 100%);\n  color: white;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 1000;\n}\n.toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n}\n.typewriter[_ngcontent-%COMP%] {\n  overflow: hidden;\n  border-right: 3px solid rgba(255, 255, 255, 0.75);\n  white-space: nowrap;\n  margin: 0;\n  animation: _ngcontent-%COMP%_typing 3.5s steps(30, end), _ngcontent-%COMP%_blink-caret 0.75s step-end infinite;\n}\n@keyframes _ngcontent-%COMP%_typing {\n  from {\n    width: 0;\n  }\n  to {\n    width: 100%;\n  }\n}\n@keyframes _ngcontent-%COMP%_blink-caret {\n  from, to {\n    border-color: transparent;\n  }\n  50% {\n    border-color: rgba(255, 255, 255, 0.75);\n  }\n}\n.sidenav-container[_ngcontent-%COMP%] {\n  flex: 1;\n  background-color: var(--background-light);\n  margin-top: 64px;\n}\n.sidenav[_ngcontent-%COMP%] {\n  width: 260px;\n  background-color: var(--card-bg);\n  border-right: 1px solid var(--accent-light);\n  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);\n}\n.sidenav-header[_ngcontent-%COMP%] {\n  padding: 24px 16px;\n  background-color: var(--primary-dark);\n  color: white;\n}\n.logo-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  font-size: 28px;\n  height: 28px;\n  width: 28px;\n}\n.logo-text[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n}\n.content[_ngcontent-%COMP%] {\n  background-color: var(--background-light);\n}\n.content-wrapper[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\nmat-nav-list[_ngcontent-%COMP%] {\n  padding-top: 16px;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  height: 48px;\n  margin: 8px 12px;\n  border-radius: 8px;\n  color: var(--text-secondary);\n  font-weight: 500;\n  transition: all 0.3s ease;\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%] {\n  background-color: var(--accent-light);\n  color: var(--primary);\n  transform: translateX(5px);\n  position: relative;\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  left: 0;\n  top: 0;\n  height: 100%;\n  width: 4px;\n  background: var(--primary);\n  border-radius: 0 4px 4px 0;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  background-color: var(--background-light);\n  transform: translateX(5px);\n}\n.nav-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n.nav-item[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  margin-right: 12px;\n  color: var(--text-secondary);\n  transition: transform 0.3s ease, color 0.3s ease;\n  font-size: 20px;\n  width: 20px;\n  text-align: center;\n}\n.nav-item.active[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n.nav-item[_ngcontent-%COMP%]:hover   i[_ngcontent-%COMP%] {\n  transform: scale(1.1);\n  color: var(--primary-light);\n}\n.nav-section[_ngcontent-%COMP%] {\n  padding: 8px 0;\n  transition: opacity 0.5s ease;\n}\nh3[matSubheader][_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  padding: 16px 24px 8px;\n  margin: 0;\n}\nmat-divider[_ngcontent-%COMP%] {\n  margin: 8px 0;\n  background-color: var(--accent-light);\n}\n.toolbar-right[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  font-size: 20px;\n  color: white;\n}\n.mat-badge-content[_ngcontent-%COMP%] {\n  font-family: "Inter", sans-serif;\n  font-weight: 500;\n  background-color: var(--accent-dark) !important;\n}\n  .custom-menu {\n  background-color: white;\n}\n  .custom-menu .mat-menu-item:hover {\n  background-color: var(--background-light);\n}\n  .custom-menu .mat-menu-item i {\n  color: var(--primary);\n  margin-right: 8px;\n}\n.nav-item.active[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  right: 16px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background-color: var(--primary);\n  box-shadow: 0 0 8px var(--primary-light);\n  animation: _ngcontent-%COMP%_pulse 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse {\n  0% {\n    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0.7);\n  }\n  70% {\n    box-shadow: 0 0 0 10px rgba(139, 90, 43, 0);\n  }\n  100% {\n    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0);\n  }\n}\n@media (max-width: 768px) {\n  .toolbar[_ngcontent-%COMP%] {\n    padding: 0 8px;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.1rem;\n  }\n  .sidenav[_ngcontent-%COMP%] {\n    width: 85%;\n    max-width: 300px;\n  }\n  .content-wrapper[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .sidenav-container[_ngcontent-%COMP%] {\n    margin-top: 56px;\n  }\n  mat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n    margin: 4px 8px;\n    height: 44px;\n  }\n  h3[matSubheader][_ngcontent-%COMP%] {\n    padding: 12px 16px 6px;\n  }\n}\n.sidenav[_ngcontent-%COMP%] {\n  transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;\n}\n@media (min-width: 1025px) {\n  .menu-button[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n/*# sourceMappingURL=job-seeker-dashboard.component.css.map */'], data: { animation: [
+    trigger("slideInOut", [
+      state("in", style({
+        transform: "translateX(0)",
+        opacity: 1
+      })),
+      state("out", style({
+        transform: "translateX(-100%)",
+        opacity: 0
+      })),
+      transition("in => out", animate("300ms ease-out")),
+      transition("out => in", animate("300ms ease-in"))
+    ]),
+    trigger("fadeIn", [
+      transition(":enter", [
+        style({ opacity: 0 }),
+        animate("400ms ease-in", style({ opacity: 1 }))
+      ])
+    ]),
+    trigger("slideInFromRight", [
+      transition(":enter", [
+        style({ transform: "translateX(50px)", opacity: 0 }),
+        animate("400ms ease-out", style({ transform: "translateX(0)", opacity: 1 }))
+      ])
+    ]),
+    trigger("slideInFromBottom", [
+      transition(":enter", [
+        style({ transform: "translateY(30px)", opacity: 0 }),
+        animate("500ms ease-out", style({ transform: "translateY(0)", opacity: 1 }))
+      ])
+    ])
+  ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JobSeekerDashboardComponent, { className: "JobSeekerDashboardComponent", filePath: "src/app/job-seeker/components/job-seeker-dashboard/job-seeker-dashboard.component.ts", lineNumber: 381 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JobSeekerDashboardComponent, { className: "JobSeekerDashboardComponent", filePath: "src/app/job-seeker/components/job-seeker-dashboard/job-seeker-dashboard.component.ts", lineNumber: 563 });
 })();
 
 // src/app/employer/components/employer-dashboard/employer-dashboard.component.ts
@@ -15577,10 +9857,16 @@ var EmployerDashboardComponent = class _EmployerDashboardComponent {
   authService;
   breakpointObserver;
   isHandset$;
+  sidenavOpened = true;
+  sidenavState = "in";
   constructor(authService, breakpointObserver) {
     this.authService = authService;
     this.breakpointObserver = breakpointObserver;
     this.isHandset$ = this.breakpointObserver.observe("(max-width: 768px)").pipe(map((result) => result.matches));
+  }
+  toggleSidenav() {
+    this.sidenavOpened = !this.sidenavOpened;
+    this.sidenavState = this.sidenavOpened ? "in" : "out";
   }
   logout() {
     this.authService.logout();
@@ -15588,86 +9874,122 @@ var EmployerDashboardComponent = class _EmployerDashboardComponent {
   static \u0275fac = function EmployerDashboardComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _EmployerDashboardComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(BreakpointObserver));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _EmployerDashboardComponent, selectors: [["app-employer-dashboard"]], decls: 56, vars: 10, consts: [["userMenu", "matMenu"], ["drawer", ""], [1, "dashboard-container"], ["color", "primary", 1, "toolbar"], [1, "toolbar-left"], ["mat-button", "", 1, "menu-button", 3, "click"], [1, "app-title"], [1, "toolbar-right"], ["mat-button", "", 1, "profile-button", 3, "matMenuTriggerFor"], [1, "fas", "fa-user-circle"], ["mat-menu-item", "", "routerLink", "/company/profile"], ["mat-menu-item", "", "routerLink", "/company/settings"], ["mat-menu-item", "", 3, "click"], [1, "sidenav-container"], ["fixedInViewport", "", 1, "sidenav", 3, "mode", "opened"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "listings", "routerLinkActive", "active"], ["mat-list-item", "", "routerLink", "post-job", "routerLinkActive", "active"], ["mat-list-item", "", "routerLink", "templates", "routerLinkActive", "active"], ["mat-list-item", "", "routerLink", "candidates", "routerLinkActive", "active"], ["mat-list-item", "", "routerLink", "search", "routerLinkActive", "active"], ["mat-list-item", "", "routerLink", "interviews", "routerLinkActive", "active"], ["mat-list-item", "", "routerLink", "analytics", "routerLinkActive", "active"], [1, "content"]], template: function EmployerDashboardComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _EmployerDashboardComponent, selectors: [["app-employer-dashboard"]], decls: 83, vars: 16, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], [1, "toolbar"], [1, "toolbar-left"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], [1, "fas", "fa-bars"], [1, "app-title"], [1, "fas", "fa-briefcase", "logo-icon"], [1, "app-name"], [1, "toolbar-right"], ["mat-button", "", 1, "profile-button", 3, "matMenuTriggerFor"], [1, "fas", "fa-user-circle", "profile-icon"], [1, "custom-menu"], ["mat-menu-item", "", "routerLink", "/company/profile"], [1, "fas", "fa-building"], ["mat-menu-item", "", "routerLink", "/company/settings"], [1, "fas", "fa-cog"], ["mat-menu-item", "", 3, "click"], [1, "fas", "fa-sign-out-alt"], [1, "sidenav-container"], ["fixedInViewport", "", 1, "sidenav", 3, "mode", "opened"], [1, "sidenav-header"], [1, "logo-container"], [1, "logo-text"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "listings", "routerLinkActive", "active"], [1, "fas", "fa-list-alt"], ["mat-list-item", "", "routerLink", "post-job", "routerLinkActive", "active"], [1, "fas", "fa-plus-square"], ["mat-list-item", "", "routerLink", "templates", "routerLinkActive", "active"], [1, "fas", "fa-file-alt"], ["mat-list-item", "", "routerLink", "candidates", "routerLinkActive", "active"], [1, "fas", "fa-users"], ["mat-list-item", "", "routerLink", "search", "routerLinkActive", "active"], [1, "fas", "fa-search"], ["mat-list-item", "", "routerLink", "interviews", "routerLinkActive", "active"], [1, "fas", "fa-calendar-alt"], ["mat-list-item", "", "routerLink", "analytics", "routerLinkActive", "active"], [1, "fas", "fa-chart-line"], [1, "content"]], template: function EmployerDashboardComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 2)(1, "mat-toolbar", 3)(2, "div", 4)(3, "button", 5);
       \u0275\u0275listener("click", function EmployerDashboardComponent_Template_button_click_3_listener() {
         \u0275\u0275restoreView(_r1);
-        const drawer_r2 = \u0275\u0275reference(23);
-        return \u0275\u0275resetView(drawer_r2.toggle());
+        return \u0275\u0275resetView(ctx.toggleSidenav());
       });
-      \u0275\u0275text(4, " Menu ");
+      \u0275\u0275element(4, "i", 6);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(5, "span", 6);
-      \u0275\u0275text(6, "SkillMatch AI");
+      \u0275\u0275elementStart(5, "span", 7);
+      \u0275\u0275element(6, "i", 8);
+      \u0275\u0275elementStart(7, "span", 9);
+      \u0275\u0275text(8, "SkillMatch AI");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275elementStart(9, "div", 10)(10, "button", 11);
+      \u0275\u0275element(11, "i", 12);
+      \u0275\u0275elementStart(12, "span");
+      \u0275\u0275text(13, "Company Profile");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(7, "div", 7)(8, "button", 8);
-      \u0275\u0275element(9, "i", 9);
-      \u0275\u0275elementStart(10, "span");
-      \u0275\u0275text(11, "company profile");
+      \u0275\u0275elementStart(14, "mat-menu", 13, 0)(16, "button", 14);
+      \u0275\u0275element(17, "i", 15);
+      \u0275\u0275elementStart(18, "span");
+      \u0275\u0275text(19, "Company Profile");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(12, "mat-menu", null, 0)(14, "button", 10);
-      \u0275\u0275text(15, " Company Profile ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(16, "button", 11);
-      \u0275\u0275text(17, " Settings ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275element(18, "mat-divider");
-      \u0275\u0275elementStart(19, "button", 12);
-      \u0275\u0275listener("click", function EmployerDashboardComponent_Template_button_click_19_listener() {
+      \u0275\u0275elementStart(20, "button", 16);
+      \u0275\u0275element(21, "i", 17);
+      \u0275\u0275elementStart(22, "span");
+      \u0275\u0275text(23, "Settings");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275element(24, "mat-divider");
+      \u0275\u0275elementStart(25, "button", 18);
+      \u0275\u0275listener("click", function EmployerDashboardComponent_Template_button_click_25_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.logout());
       });
-      \u0275\u0275text(20, "Logout");
-      \u0275\u0275elementEnd()()()();
-      \u0275\u0275elementStart(21, "mat-sidenav-container", 13)(22, "mat-sidenav", 14, 1);
-      \u0275\u0275pipe(24, "async");
-      \u0275\u0275pipe(25, "async");
-      \u0275\u0275pipe(26, "async");
-      \u0275\u0275elementStart(27, "mat-nav-list")(28, "div", 15)(29, "h3", 16);
-      \u0275\u0275text(30, "JOB MANAGEMENT");
+      \u0275\u0275element(26, "i", 19);
+      \u0275\u0275elementStart(27, "span");
+      \u0275\u0275text(28, "Logout");
+      \u0275\u0275elementEnd()()()()();
+      \u0275\u0275elementStart(29, "mat-sidenav-container", 20)(30, "mat-sidenav", 21, 1);
+      \u0275\u0275pipe(32, "async");
+      \u0275\u0275pipe(33, "async");
+      \u0275\u0275pipe(34, "async");
+      \u0275\u0275elementStart(35, "div", 22)(36, "div", 23);
+      \u0275\u0275element(37, "i", 8);
+      \u0275\u0275elementStart(38, "span", 24);
+      \u0275\u0275text(39, "Employer Portal");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275elementStart(40, "mat-nav-list")(41, "div", 25)(42, "h3", 26);
+      \u0275\u0275text(43, "JOB MANAGEMENT");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(31, "a", 17);
-      \u0275\u0275text(32, " Active Listings ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(33, "a", 18);
-      \u0275\u0275text(34, " Post New Job ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(35, "a", 19);
-      \u0275\u0275text(36, " Job Templates ");
+      \u0275\u0275elementStart(44, "a", 27);
+      \u0275\u0275element(45, "i", 28);
+      \u0275\u0275elementStart(46, "span");
+      \u0275\u0275text(47, "Active Listings");
       \u0275\u0275elementEnd()();
-      \u0275\u0275element(37, "mat-divider");
-      \u0275\u0275elementStart(38, "div", 15)(39, "h3", 16);
-      \u0275\u0275text(40, "TALENT ACQUISITION");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(41, "a", 20);
-      \u0275\u0275text(42, " Candidate Pool ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(43, "a", 21);
-      \u0275\u0275text(44, " AI Search ");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(45, "a", 22);
-      \u0275\u0275text(46, " Interview Schedule ");
+      \u0275\u0275elementStart(48, "a", 29);
+      \u0275\u0275element(49, "i", 30);
+      \u0275\u0275elementStart(50, "span");
+      \u0275\u0275text(51, "Post New Job");
       \u0275\u0275elementEnd()();
-      \u0275\u0275element(47, "mat-divider");
-      \u0275\u0275elementStart(48, "div", 15)(49, "h3", 16);
-      \u0275\u0275text(50, "INSIGHTS");
+      \u0275\u0275elementStart(52, "a", 31);
+      \u0275\u0275element(53, "i", 32);
+      \u0275\u0275elementStart(54, "span");
+      \u0275\u0275text(55, "Job Templates");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275element(56, "mat-divider");
+      \u0275\u0275elementStart(57, "div", 25)(58, "h3", 26);
+      \u0275\u0275text(59, "TALENT ACQUISITION");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(51, "a", 23);
-      \u0275\u0275text(52, " Hiring Analytics ");
-      \u0275\u0275elementEnd()()()();
-      \u0275\u0275elementStart(53, "mat-sidenav-content")(54, "div", 24);
-      \u0275\u0275element(55, "router-outlet");
+      \u0275\u0275elementStart(60, "a", 33);
+      \u0275\u0275element(61, "i", 34);
+      \u0275\u0275elementStart(62, "span");
+      \u0275\u0275text(63, "Candidate Pool");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(64, "a", 35);
+      \u0275\u0275element(65, "i", 36);
+      \u0275\u0275elementStart(66, "span");
+      \u0275\u0275text(67, "AI Search");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(68, "a", 37);
+      \u0275\u0275element(69, "i", 38);
+      \u0275\u0275elementStart(70, "span");
+      \u0275\u0275text(71, "Interview Schedule");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275element(72, "mat-divider");
+      \u0275\u0275elementStart(73, "div", 25)(74, "h3", 26);
+      \u0275\u0275text(75, "INSIGHTS");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(76, "a", 39);
+      \u0275\u0275element(77, "i", 40);
+      \u0275\u0275elementStart(78, "span");
+      \u0275\u0275text(79, "Hiring Analytics");
+      \u0275\u0275elementEnd()()()()();
+      \u0275\u0275elementStart(80, "mat-sidenav-content")(81, "div", 41);
+      \u0275\u0275element(82, "router-outlet");
       \u0275\u0275elementEnd()()()();
     }
     if (rf & 2) {
-      const userMenu_r3 = \u0275\u0275reference(13);
+      const userMenu_r2 = \u0275\u0275reference(15);
+      \u0275\u0275advance();
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(9);
+      \u0275\u0275property("matMenuTriggerFor", userMenu_r2);
+      \u0275\u0275advance(20);
+      \u0275\u0275property("@slideInOut", ctx.sidenavState)("mode", \u0275\u0275pipeBind1(32, 10, ctx.isHandset$) ? "over" : "side")("opened", !\u0275\u0275pipeBind1(33, 12, ctx.isHandset$) || ctx.sidenavOpened);
+      \u0275\u0275attribute("role", \u0275\u0275pipeBind1(34, 14, ctx.isHandset$) ? "dialog" : "navigation");
+      \u0275\u0275advance(11);
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(16);
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(16);
+      \u0275\u0275property("@fadeIn", void 0);
       \u0275\u0275advance(8);
-      \u0275\u0275property("matMenuTriggerFor", userMenu_r3);
-      \u0275\u0275advance(14);
-      \u0275\u0275property("mode", \u0275\u0275pipeBind1(24, 4, ctx.isHandset$) ? "over" : "side")("opened", \u0275\u0275pipeBind1(25, 6, ctx.isHandset$) === false);
-      \u0275\u0275attribute("role", \u0275\u0275pipeBind1(26, 8, ctx.isHandset$) ? "dialog" : "navigation");
+      \u0275\u0275property("@fadeIn", void 0);
     }
   }, dependencies: [
     CommonModule,
@@ -15689,16 +10011,36 @@ var EmployerDashboardComponent = class _EmployerDashboardComponent {
     MatDivider,
     MatButtonModule,
     MatButton,
+    MatIconButton,
     MatMenuModule,
     MatMenu,
     MatMenuItem,
     MatMenuTrigger,
     MatBadgeModule,
     MatDividerModule
-  ], styles: ["\n\n.dashboard-container[_ngcontent-%COMP%] {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n}\n.toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0 16px;\n  background: #2196f3;\n}\n.toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 24px;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  font-weight: 500;\n}\n.menu-button[_ngcontent-%COMP%] {\n  font-weight: 400;\n}\n.profile-button[_ngcontent-%COMP%] {\n  font-weight: 400;\n}\n.sidenav-container[_ngcontent-%COMP%] {\n  flex: 1;\n  background-color: #ffffff;\n}\n.sidenav[_ngcontent-%COMP%] {\n  width: 250px;\n  background-color: #f5f5f5;\n  border-right: none;\n}\n.nav-section[_ngcontent-%COMP%] {\n  padding: 8px 0;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  height: 40px;\n  margin: 4px 8px;\n  color: #424242;\n  font-weight: 400;\n  font-size: 0.9rem;\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%] {\n  background-color: #e3f2fd;\n  color: #1976d2;\n  font-weight: 500;\n}\nh3[matSubheader][_ngcontent-%COMP%] {\n  color: #757575;\n  font-size: 0.75rem;\n  font-weight: 500;\n  padding: 16px 16px 8px;\n  margin: 0;\n}\nmat-divider[_ngcontent-%COMP%] {\n  margin: 8px 0;\n  border-color: #e0e0e0;\n}\n.content[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n@media (max-width: 768px) {\n  .sidenav[_ngcontent-%COMP%] {\n    width: 240px;\n  }\n  .content[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n}\n/*# sourceMappingURL=employer-dashboard.component.css.map */"] });
+  ], styles: ["\n\n[_nghost-%COMP%] {\n  --primary-color: rgba(102, 187, 106, 0.95);\n  --primary-dark: rgba(56, 142, 60, 0.95);\n  --primary-light: rgba(200, 230, 201, 0.7);\n  --accent-color: #4caf50;\n  --text-primary: #2e7d32;\n  --text-secondary: #455a64;\n  --background-light: rgba(245, 245, 245, 0.95);\n  --card-bg: rgba(255, 255, 255, 0.98);\n  --active-bg: rgba(200, 230, 201, 0.5);\n  --hover-opacity: 0.08;\n}\n.dashboard-container[_ngcontent-%COMP%] {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--background-light);\n}\n.toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0 16px;\n  background: var(--primary-color);\n  color: white;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\n  -webkit-backdrop-filter: blur(5px);\n  backdrop-filter: blur(5px);\n  z-index: 2;\n}\n.toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n.app-title[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-size: 1.25rem;\n  font-weight: 500;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  font-size: 28px;\n  width: 28px;\n  height: 28px;\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.app-name[_ngcontent-%COMP%] {\n  letter-spacing: 0.5px;\n}\n.menu-button[_ngcontent-%COMP%] {\n  color: white;\n  transition: transform 0.3s ease;\n}\n.menu-button[_ngcontent-%COMP%]:hover {\n  transform: scale(1.1);\n}\n.profile-button[_ngcontent-%COMP%] {\n  color: white;\n  font-weight: 400;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 0 12px;\n  transition: background-color 0.3s ease;\n  border-radius: 20px;\n}\n.profile-button[_ngcontent-%COMP%]:hover {\n  background-color: rgba(255, 255, 255, 0.1);\n}\n.profile-icon[_ngcontent-%COMP%] {\n  font-size: 24px;\n  width: 24px;\n  height: 24px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.sidenav-container[_ngcontent-%COMP%] {\n  flex: 1;\n  background-color: transparent;\n}\n.sidenav[_ngcontent-%COMP%] {\n  width: 280px;\n  background-color: var(--card-bg);\n  border-right: none;\n  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);\n  -webkit-backdrop-filter: blur(5px);\n  backdrop-filter: blur(5px);\n}\n.sidenav-header[_ngcontent-%COMP%] {\n  padding: 24px 16px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-color) 0%,\n      var(--primary-dark) 100%);\n  color: white;\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.logo-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.logo-text[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n}\n.nav-section[_ngcontent-%COMP%] {\n  padding: 8px 0;\n}\nmat-nav-list[_ngcontent-%COMP%] {\n  padding-top: 8px;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  height: 48px;\n  margin: 4px 12px;\n  border-radius: 8px;\n  color: var(--text-secondary);\n  font-weight: 400;\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 0 16px;\n  transition: all 0.3s ease;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 24px;\n  width: 24px;\n  height: 24px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  white-space: nowrap;\n  flex: 1;\n  font-size: 0.95rem;\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%] {\n  background-color: var(--active-bg);\n  color: var(--text-primary);\n  font-weight: 500;\n  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  color: var(--text-primary);\n  transform: scale(1.1);\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover:not(.active) {\n  background-color: rgba(0, 0, 0, var(--hover-opacity));\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover   i[_ngcontent-%COMP%] {\n  transform: translateX(2px);\n}\nh3[matSubheader][_ngcontent-%COMP%] {\n  color: var(--text-primary);\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  padding: 16px 24px 8px;\n  margin: 0;\n  opacity: 0.8;\n}\nmat-divider[_ngcontent-%COMP%] {\n  margin: 8px 16px;\n  border-color: rgba(0, 0, 0, 0.05);\n}\n.content[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n  min-height: calc(100vh - 64px);\n}\n  .custom-menu {\n  background-color: var(--card-bg);\n  border-radius: 8px;\n  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);\n  -webkit-backdrop-filter: blur(10px);\n  backdrop-filter: blur(10px);\n}\n  .custom-menu .mat-menu-item {\n  height: 48px;\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 0 16px;\n  transition: all 0.2s ease;\n}\n  .custom-menu .mat-menu-item i {\n  color: var(--text-primary);\n  font-size: 22px;\n  width: 22px;\n  height: 22px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n  .custom-menu .mat-menu-item:hover {\n  background-color: rgba(0, 0, 0, var(--hover-opacity));\n}\n@media (max-width: 768px) {\n  .sidenav[_ngcontent-%COMP%] {\n    width: 260px;\n  }\n  .content[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .app-name[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.active-indicator[_ngcontent-%COMP%] {\n  position: absolute;\n  right: 16px;\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background-color: var(--accent-color);\n  box-shadow: 0 0 8px var(--accent-color);\n}\n/*# sourceMappingURL=employer-dashboard.component.css.map */"], data: { animation: [
+    trigger("slideInOut", [
+      state("in", style({
+        transform: "translateX(0)",
+        opacity: 1
+      })),
+      state("out", style({
+        transform: "translateX(-100%)",
+        opacity: 0
+      })),
+      transition("in => out", animate("300ms ease-out")),
+      transition("out => in", animate("300ms ease-in"))
+    ]),
+    trigger("fadeIn", [
+      transition(":enter", [
+        style({ opacity: 0 }),
+        animate("400ms ease-in", style({ opacity: 1 }))
+      ])
+    ])
+  ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(EmployerDashboardComponent, { className: "EmployerDashboardComponent", filePath: "src/app/employer/components/employer-dashboard/employer-dashboard.component.ts", lineNumber: 225 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(EmployerDashboardComponent, { className: "EmployerDashboardComponent", filePath: "src/app/employer/components/employer-dashboard/employer-dashboard.component.ts", lineNumber: 435 });
 })();
 
 // src/app/admin/components/admin-dashboard/admin-dashboard.component.ts
@@ -16000,7 +10342,7 @@ var HeaderComponent = class _HeaderComponent {
       \u0275\u0275advance(4);
       \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c13, ctx.mobileMenuOpen));
     }
-  }, dependencies: [RouterModule, RouterLink, MatButtonModule, MatButton, MatToolbarModule, MatToolbar, NgClass], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --text-light: #ffffff;\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 2rem;\n  height: 70px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-dark),\n      var(--primary));\n  color: var(--text-light);\n  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);\n  position: sticky;\n  top: 0;\n  z-index: 1000;\n}\n.logo[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  cursor: pointer;\n  transition: all 0.3s ease;\n  position: relative;\n}\n.logo[_ngcontent-%COMP%]:hover {\n  transform: scale(1.05);\n}\n.logo.pulse[_ngcontent-%COMP%]   .logo-icon[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_pulse-animation 1s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-animation {\n  0% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.1);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: var(--text-light);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.logo[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 1.5rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n  background:\n    linear-gradient(\n      90deg,\n      #ffffff,\n      #f0f0f0);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.nav-links[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1.5rem;\n}\n@media (max-width: 768px) {\n  .nav-links[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.nav-link[_ngcontent-%COMP%] {\n  color: var(--text-light);\n  text-decoration: none;\n  font-weight: 500;\n  position: relative;\n  padding: 5px 0;\n  opacity: 0.9;\n  transition: all 0.3s ease;\n}\n.nav-link[_ngcontent-%COMP%]:hover {\n  opacity: 1;\n}\n.nav-link[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  width: 0;\n  height: 2px;\n  bottom: 0;\n  left: 0;\n  background-color: var(--accent);\n  transition: width 0.3s ease;\n}\n.nav-link[_ngcontent-%COMP%]:hover::after {\n  width: 100%;\n}\n.nav-buttons[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1rem;\n}\n@media (max-width: 768px) {\n  .nav-buttons[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.login-btn[_ngcontent-%COMP%] {\n  color: var(--text-light);\n  border: 1px solid rgba(255, 255, 255, 0.3);\n  border-radius: 20px;\n  padding: 0 1.5rem;\n  transition: all 0.3s ease;\n}\n.login-btn[_ngcontent-%COMP%]:hover {\n  background-color: rgba(255, 255, 255, 0.1);\n  border-color: rgba(255, 255, 255, 0.5);\n}\n.signup-btn[_ngcontent-%COMP%] {\n  background-color: var(--accent);\n  color: white;\n  border-radius: 20px;\n  padding: 0 1.5rem;\n  transition: all 0.3s ease;\n  box-shadow: 0 4px 12px rgba(252, 70, 107, 0.3);\n}\n.signup-btn[_ngcontent-%COMP%]:hover {\n  background-color: #e83a5f;\n  box-shadow: 0 6px 15px rgba(252, 70, 107, 0.4);\n}\n.mobile-menu-btn[_ngcontent-%COMP%] {\n  display: none;\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 10px;\n  z-index: 1100;\n}\n@media (max-width: 768px) {\n  .mobile-menu-btn[_ngcontent-%COMP%] {\n    display: block;\n  }\n}\n.menu-icon[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 18px;\n  position: relative;\n  transform: rotate(0deg);\n  transition: 0.5s ease-in-out;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: block;\n  position: absolute;\n  height: 2px;\n  width: 100%;\n  background: white;\n  border-radius: 9px;\n  opacity: 1;\n  left: 0;\n  transform: rotate(0deg);\n  transition: 0.25s ease-in-out;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(1) {\n  top: 0px;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2) {\n  top: 8px;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3) {\n  top: 16px;\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(1) {\n  top: 8px;\n  transform: rotate(135deg);\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2) {\n  opacity: 0;\n  left: -60px;\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3) {\n  top: 8px;\n  transform: rotate(-135deg);\n}\n.mobile-menu[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 70px;\n  right: -100%;\n  width: 100%;\n  height: calc(100vh - 70px);\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-dark),\n      var(--primary));\n  padding: 2rem;\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n  transition: right 0.3s ease;\n  z-index: 1000;\n}\n.mobile-menu.open[_ngcontent-%COMP%] {\n  right: 0;\n}\n.mobile-nav-link[_ngcontent-%COMP%] {\n  color: white;\n  text-decoration: none;\n  font-size: 1.2rem;\n  padding: 0.5rem 0;\n  border-bottom: 1px solid rgba(255, 255, 255, 0.1);\n  transition: all 0.3s ease;\n}\n.mobile-nav-link.highlight[_ngcontent-%COMP%] {\n  color: var(--accent);\n  font-weight: 600;\n}\n.mobile-nav-link[_ngcontent-%COMP%]:hover {\n  padding-left: 10px;\n  opacity: 0.9;\n}\n/*# sourceMappingURL=header.component.css.map */'], data: { animation: [
+  }, dependencies: [RouterModule, RouterLink, MatButtonModule, MatButton, MatToolbarModule, MatToolbar, NgClass], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --text-light: #ffffff;\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 2rem;\n  height: 70px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-dark),\n      var(--primary));\n  color: var(--text-light);\n  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);\n  position: sticky;\n  top: 0;\n  z-index: 1000;\n}\n.logo[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  cursor: pointer;\n  transition: all 0.3s ease;\n  position: relative;\n}\n.logo[_ngcontent-%COMP%]:hover {\n  transform: scale(1.05);\n}\n.logo.pulse[_ngcontent-%COMP%]   .logo-icon[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_pulse-animation 1s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-animation {\n  0% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.1);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: var(--text-light);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.logo[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 1.5rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n  background:\n    linear-gradient(\n      90deg,\n      #ffffff,\n      #f0f0f0);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.nav-links[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1.5rem;\n}\n@media (max-width: 768px) {\n  .nav-links[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.nav-link[_ngcontent-%COMP%] {\n  color: var(--text-light);\n  text-decoration: none;\n  font-weight: 500;\n  position: relative;\n  padding: 5px 0;\n  opacity: 0.9;\n  transition: all 0.3s ease;\n}\n.nav-link[_ngcontent-%COMP%]:hover {\n  opacity: 1;\n}\n.nav-link[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  width: 0;\n  height: 2px;\n  bottom: 0;\n  left: 0;\n  background-color: var(--accent);\n  transition: width 0.3s ease;\n}\n.nav-link[_ngcontent-%COMP%]:hover::after {\n  width: 100%;\n}\n.nav-buttons[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1rem;\n}\n@media (max-width: 768px) {\n  .nav-buttons[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.login-btn[_ngcontent-%COMP%] {\n  color: var(--text-light);\n  border: 1px solid rgba(255, 255, 255, 0.3);\n  border-radius: 20px;\n  padding: 0 1.5rem;\n  transition: all 0.3s ease;\n}\n.login-btn[_ngcontent-%COMP%]:hover {\n  background-color: rgba(255, 255, 255, 0.1);\n  border-color: rgba(255, 255, 255, 0.5);\n}\n.signup-btn[_ngcontent-%COMP%] {\n  background-color: var(--background-light);\n  color: black;\n  border-radius: 20px;\n  padding: 0 1.5rem;\n  transition: all 0.3s ease;\n  box-shadow: 0 4px 12px rgba(252, 70, 107, 0.3);\n}\n.signup-btn[_ngcontent-%COMP%]:hover {\n  background-color: #e83a5f;\n  color: white;\n  box-shadow: 0 6px 15px rgba(252, 70, 107, 0.4);\n}\n.mobile-menu-btn[_ngcontent-%COMP%] {\n  display: none;\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 10px;\n  z-index: 1100;\n}\n@media (max-width: 768px) {\n  .mobile-menu-btn[_ngcontent-%COMP%] {\n    display: block;\n  }\n}\n.menu-icon[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 18px;\n  position: relative;\n  transform: rotate(0deg);\n  transition: 0.5s ease-in-out;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: block;\n  position: absolute;\n  height: 2px;\n  width: 100%;\n  background: white;\n  border-radius: 9px;\n  opacity: 1;\n  left: 0;\n  transform: rotate(0deg);\n  transition: 0.25s ease-in-out;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(1) {\n  top: 0px;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2) {\n  top: 8px;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3) {\n  top: 16px;\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(1) {\n  top: 8px;\n  transform: rotate(135deg);\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2) {\n  opacity: 0;\n  left: -60px;\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3) {\n  top: 8px;\n  transform: rotate(-135deg);\n}\n.mobile-menu[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 70px;\n  right: -100%;\n  width: 100%;\n  height: calc(100vh - 70px);\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-dark),\n      var(--primary));\n  padding: 2rem;\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n  transition: right 0.3s ease;\n  z-index: 1000;\n}\n.mobile-menu.open[_ngcontent-%COMP%] {\n  right: 0;\n}\n.mobile-nav-link[_ngcontent-%COMP%] {\n  color: white;\n  text-decoration: none;\n  font-size: 1.2rem;\n  padding: 0.5rem 0;\n  border-bottom: 1px solid rgba(255, 255, 255, 0.1);\n  transition: all 0.3s ease;\n}\n.mobile-nav-link.highlight[_ngcontent-%COMP%] {\n  color: var(--accent);\n  font-weight: 600;\n}\n.mobile-nav-link[_ngcontent-%COMP%]:hover {\n  padding-left: 10px;\n  opacity: 0.9;\n}\n/*# sourceMappingURL=header.component.css.map */'], data: { animation: [
     trigger("fadeInDown", [
       transition(":enter", [
         style({ transform: "translateY(-20px)", opacity: 0 }),
@@ -16019,7 +10361,7 @@ var HeaderComponent = class _HeaderComponent {
   ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/shared/components/header/header.component.ts", lineNumber: 323 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/shared/components/header/header.component.ts", lineNumber: 324 });
 })();
 
 // src/app/shared/components/footer/footer.component.ts
@@ -16295,7 +10637,7 @@ var LandingComponent = class _LandingComponent {
     FooterComponent,
     NgForOf,
     NgClass
-  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --accent-transparent: rgba(252, 70, 107, 0.2);\n  --text-primary: #333;\n  --text-secondary: #666;\n  --background-light: #f5f7fa;\n  --card-bg: #ffffff;\n  --success: #00c853;\n  --warning: #ffd600;\n}\n.landing-content[_ngcontent-%COMP%] {\n  min-height: calc(100vh - 128px);\n  padding: 2rem;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-light) 0%,\n      var(--primary-dark) 100%);\n  overflow-x: hidden;\n}\n.hero-section[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 6rem 2rem 4rem;\n  max-width: 800px;\n  margin: 0 auto;\n  position: relative;\n}\n.hero-section[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 3.5rem;\n  margin-bottom: 1.5rem;\n  color: #fff;\n  font-weight: 700;\n  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.subtitle[_ngcontent-%COMP%] {\n  font-size: 1.4rem;\n  color: #fff;\n  margin-bottom: 2.5rem;\n  min-height: 2em;\n  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);\n}\n.cursor[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 2px;\n  margin-left: 2px;\n  color: #fff;\n}\n.cursor.blink[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_blink 1s infinite;\n}\n@keyframes _ngcontent-%COMP%_blink {\n  0%, 100% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0;\n  }\n}\n.cta-buttons[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1.5rem;\n  justify-content: center;\n  margin-top: 3rem;\n}\n.get-started-btn[_ngcontent-%COMP%] {\n  background-color: var(--accent);\n  color: white;\n  padding: 0.75rem 2rem;\n  font-size: 1.1rem;\n  font-weight: 600;\n  border-radius: 30px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  box-shadow: 0 4px 12px rgba(252, 70, 107, 0.4);\n  transition: all 0.3s ease;\n}\n.login-btn[_ngcontent-%COMP%] {\n  color: white;\n  font-weight: 500;\n  border: 2px solid rgba(255, 255, 255, 0.6);\n  border-radius: 30px;\n  padding: 0.75rem 1.5rem;\n  transition: all 0.3s ease;\n}\n.features-section[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));\n  gap: 2.5rem;\n  max-width: 1200px;\n  margin: 6rem auto 4rem;\n  padding: 0 2rem;\n}\n.feature-card[_ngcontent-%COMP%] {\n  padding: 3rem 2rem 2rem;\n  text-align: center;\n  border-radius: 16px;\n  background-color: var(--card-bg);\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);\n  position: relative;\n  overflow: hidden;\n  transition: transform 0.4s ease, box-shadow 0.4s ease;\n}\n.feature-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-10px);\n  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);\n}\n.feature-card[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--accent));\n}\n.feature-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  color: var(--primary-dark);\n  margin: 2.5rem 0 1.5rem;\n  font-weight: 600;\n  font-size: 1.5rem;\n}\n.feature-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  line-height: 1.7;\n  font-size: 1.05rem;\n}\n.feature-number-wrapper[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -20px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n.feature-number[_ngcontent-%COMP%] {\n  width: 60px;\n  height: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  background: var(--primary-blue);\n  color: var(--text-light);\n  font-size: 1.5rem;\n  font-weight: 700;\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\n  position: relative;\n  z-index: 10;\n}\n.feature-number[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  background: transparent;\n  border: 2px solid var(--primary-blue);\n  z-index: 9;\n  opacity: 0.3;\n  animation: _ngcontent-%COMP%_pulse 2s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse {\n  0% {\n    transform: scale(0.95);\n    opacity: 0.3;\n  }\n  50% {\n    transform: scale(1.05);\n    opacity: 0.1;\n  }\n  100% {\n    transform: scale(0.95);\n    opacity: 0.3;\n  }\n}\n@media (max-width: 768px) {\n  .hero-section[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n    font-size: 2.5rem;\n  }\n  .subtitle[_ngcontent-%COMP%] {\n    font-size: 1.2rem;\n  }\n  .features-section[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .cta-buttons[_ngcontent-%COMP%] {\n    flex-direction: column;\n    gap: 1rem;\n    width: 100%;\n    max-width: 300px;\n    margin: 2rem auto 0;\n  }\n  .get-started-btn[_ngcontent-%COMP%], \n   .login-btn[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n}\n/*# sourceMappingURL=landing.component.css.map */'], data: { animation: [
+  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --accent-transparent: rgba(252, 70, 107, 0.2);\n  --text-primary: #333;\n  --text-secondary: #666;\n  --background-light: #f5f7fa;\n  --card-bg: #ffffff;\n  --success: #00c853;\n  --warning: #ffd600;\n}\n.landing-content[_ngcontent-%COMP%] {\n  min-height: calc(100vh - 128px);\n  padding: 2rem;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-light) 0%,\n      var(--primary-dark) 100%);\n  overflow-x: hidden;\n}\n.hero-section[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 6rem 2rem 4rem;\n  max-width: 800px;\n  margin: 0 auto;\n  position: relative;\n}\n.hero-section[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 3.5rem;\n  margin-bottom: 1.5rem;\n  color: #fff;\n  font-weight: 700;\n  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.subtitle[_ngcontent-%COMP%] {\n  font-size: 1.4rem;\n  color: #fff;\n  margin-bottom: 2.5rem;\n  min-height: 2em;\n  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);\n}\n.cursor[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 2px;\n  margin-left: 2px;\n  color: #fff;\n}\n.cursor.blink[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_blink 1s infinite;\n}\n@keyframes _ngcontent-%COMP%_blink {\n  0%, 100% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0;\n  }\n}\n.cta-buttons[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1.5rem;\n  justify-content: center;\n  margin-top: 3rem;\n}\n.get-started-btn[_ngcontent-%COMP%] {\n  background-color: var(--background-light);\n  color: black;\n  padding: 0.75rem 2rem;\n  font-size: 1.1rem;\n  font-weight: 600;\n  border-radius: 30px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  box-shadow: 0 4px 12px rgba(252, 70, 107, 0.4);\n  transition: all 0.3s ease;\n}\n.get-started-btn[_ngcontent-%COMP%]:hover {\n  background-color: var(--accent);\n  color: white;\n}\n.login-btn[_ngcontent-%COMP%] {\n  color: white;\n  font-weight: 500;\n  border: 2px solid rgba(255, 255, 255, 0.6);\n  border-radius: 30px;\n  padding: 0.75rem 1.5rem;\n  transition: all 0.3s ease;\n}\n.features-section[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));\n  gap: 2.5rem;\n  max-width: 1200px;\n  margin: 6rem auto 4rem;\n  padding: 0 2rem;\n}\n.feature-card[_ngcontent-%COMP%] {\n  padding: 3rem 2rem 2rem;\n  text-align: center;\n  border-radius: 16px;\n  background-color: var(--card-bg);\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);\n  position: relative;\n  transition: transform 0.4s ease, box-shadow 0.4s ease;\n}\n.feature-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-10px);\n  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);\n}\n.feature-card[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--accent));\n}\n.feature-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  color: var(--primary-dark);\n  margin: 2.5rem 0 1.5rem;\n  font-weight: 600;\n  font-size: 1.5rem;\n}\n.feature-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  line-height: 1.7;\n  font-size: 1.05rem;\n}\n.feature-number-wrapper[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -20px;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 20;\n}\n.feature-number[_ngcontent-%COMP%] {\n  width: 60px;\n  height: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary) 0%,\n      var(--accent) 100%);\n  color: white;\n  font-size: 1.5rem;\n  font-weight: 700;\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\n  position: relative;\n  z-index: 10;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.feature-number[_ngcontent-%COMP%]:hover {\n  transform: scale(1.1);\n  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);\n}\n.feature-number[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  width: 70px;\n  height: 70px;\n  border-radius: 50%;\n  background: transparent;\n  border: 2px solid var(--primary);\n  z-index: 9;\n  opacity: 0.3;\n  animation: _ngcontent-%COMP%_pulse 2s infinite;\n}\n.feature-card[_ngcontent-%COMP%]:nth-child(1)   .feature-number[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #4e54c8 0%,\n      #8f94fb 100%);\n}\n.feature-card[_ngcontent-%COMP%]:nth-child(2)   .feature-number[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #fc466b 0%,\n      #ff9a9e 100%);\n}\n.feature-card[_ngcontent-%COMP%]:nth-child(3)   .feature-number[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #4caf50 0%,\n      #81c784 100%);\n}\n.feature-card[_ngcontent-%COMP%]:nth-child(1)   .feature-number[_ngcontent-%COMP%]::after {\n  border-color: #4e54c8;\n}\n.feature-card[_ngcontent-%COMP%]:nth-child(2)   .feature-number[_ngcontent-%COMP%]::after {\n  border-color: #fc466b;\n}\n.feature-card[_ngcontent-%COMP%]:nth-child(3)   .feature-number[_ngcontent-%COMP%]::after {\n  border-color: #4caf50;\n}\n@keyframes _ngcontent-%COMP%_pulse {\n  0% {\n    transform: scale(0.95);\n    opacity: 0.3;\n  }\n  50% {\n    transform: scale(1.05);\n    opacity: 0.1;\n  }\n  100% {\n    transform: scale(0.95);\n    opacity: 0.3;\n  }\n}\n@media (max-width: 768px) {\n  .hero-section[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n    font-size: 2.5rem;\n  }\n  .subtitle[_ngcontent-%COMP%] {\n    font-size: 1.2rem;\n  }\n  .features-section[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .cta-buttons[_ngcontent-%COMP%] {\n    flex-direction: column;\n    gap: 1rem;\n    width: 100%;\n    max-width: 300px;\n    margin: 2rem auto 0;\n  }\n  .get-started-btn[_ngcontent-%COMP%], \n   .login-btn[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n}\n/*# sourceMappingURL=landing.component.css.map */'], data: { animation: [
     trigger("slideIn", [
       transition("void => *", [
         style({ transform: "translateY(50px)", opacity: 0 }),
@@ -16340,7 +10682,7 @@ var LandingComponent = class _LandingComponent {
   ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LandingComponent, { className: "LandingComponent", filePath: "src/app/landing/landing.component.ts", lineNumber: 341 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LandingComponent, { className: "LandingComponent", filePath: "src/app/landing/landing.component.ts", lineNumber: 68 });
 })();
 
 // src/app/app.routes.ts
@@ -16380,39 +10722,39 @@ var routes = [
       },
       {
         path: "skills",
-        loadComponent: () => import("./chunk-CZJVJPKQ.js").then((m) => m.SkillManagementComponent)
+        loadComponent: () => import("./chunk-KGGRYPIM.js").then((m) => m.SkillManagementComponent)
       },
       {
         path: "interviews",
-        loadComponent: () => import("./chunk-FCQSXVCS.js").then((m) => m.InterviewsComponent)
+        loadComponent: () => import("./chunk-BWODUUIN.js").then((m) => m.InterviewsComponent)
       },
       {
         path: "career-paths",
-        loadComponent: () => import("./chunk-P5XTV252.js").then((m) => m.CareerPathsComponent)
+        loadComponent: () => import("./chunk-ZJXECHIM.js").then((m) => m.CareerPathsComponent)
       },
       {
         path: "profile",
-        loadComponent: () => import("./chunk-SEUFJT6V.js").then((m) => m.ProfileComponent)
+        loadComponent: () => import("./chunk-PEP4DFMV.js").then((m) => m.ProfileComponent)
       },
       {
         path: "matches",
-        loadComponent: () => import("./chunk-PIT7XAXY.js").then((m) => m.JobMatchesComponent)
+        loadComponent: () => import("./chunk-VAIV22YG.js").then((m) => m.JobMatchesComponent)
       },
       {
         path: "applications",
-        loadComponent: () => import("./chunk-YZUJXRUZ.js").then((m) => m.ApplicationsComponent)
+        loadComponent: () => import("./chunk-MBVU3TRZ.js").then((m) => m.ApplicationsComponent)
       },
       {
         path: "portfolio",
-        loadComponent: () => import("./chunk-X62CH4ZO.js").then((m) => m.PortfolioComponent)
+        loadComponent: () => import("./chunk-IOARIIFV.js").then((m) => m.PortfolioComponent)
       },
       {
         path: "cv",
-        loadComponent: () => import("./chunk-2LPC2TYY.js").then((m) => m.CvManagerComponent)
+        loadComponent: () => import("./chunk-JFJVRPGI.js").then((m) => m.ProfileManagerComponent)
       },
       {
         path: "chatbot",
-        loadComponent: () => import("./chunk-AKWIAVMC.js").then((m) => m.ChatbotComponent)
+        loadComponent: () => import("./chunk-AT56D3ES.js").then((m) => m.ChatbotComponent)
       }
     ]
   },
@@ -16429,31 +10771,31 @@ var routes = [
       },
       {
         path: "listings",
-        loadComponent: () => import("./chunk-VI6WA7C3.js").then((m) => m.ActiveListingsComponent)
+        loadComponent: () => import("./chunk-NPCRHQNN.js").then((m) => m.ActiveListingsComponent)
       },
       {
         path: "post-job",
-        loadComponent: () => import("./chunk-LM5U4JTW.js").then((m) => m.PostJobComponent)
+        loadComponent: () => import("./chunk-WTSX2PPR.js").then((m) => m.PostJobComponent)
       },
       {
         path: "templates",
-        loadComponent: () => import("./chunk-4IUHUG3T.js").then((m) => m.JobTemplatesComponent)
+        loadComponent: () => import("./chunk-DNXRABM7.js").then((m) => m.JobTemplatesComponent)
       },
       {
         path: "candidates",
-        loadComponent: () => import("./chunk-4ORCHNXY.js").then((m) => m.ViewCandidatesComponent)
+        loadComponent: () => import("./chunk-OPIY4PYZ.js").then((m) => m.ViewCandidatesComponent)
       },
       {
         path: "search",
-        loadComponent: () => import("./chunk-UCUX5XLI.js").then((m) => m.AiSearchComponent)
+        loadComponent: () => import("./chunk-XEFXYSOX.js").then((m) => m.AiSearchComponent)
       },
       {
         path: "interviews",
-        loadComponent: () => import("./chunk-PJ5KWJP4.js").then((m) => m.ManageInterviewsComponent)
+        loadComponent: () => import("./chunk-PO2DCIZE.js").then((m) => m.ManageInterviewsComponent)
       },
       {
         path: "analytics",
-        loadComponent: () => import("./chunk-YD4MWQ2O.js").then((m) => m.HiringAnalyticsComponent)
+        loadComponent: () => import("./chunk-CV7IZOY2.js").then((m) => m.HiringAnalyticsComponent)
       }
     ]
   },
@@ -16470,29 +10812,29 @@ var routes = [
       },
       {
         path: "users",
-        loadComponent: () => import("./chunk-Q4PHGGFI.js").then((m) => m.UserManagementComponent)
+        loadComponent: () => import("./chunk-45JFIRWW.js").then((m) => m.UserManagementComponent)
       },
       {
         path: "monitoring",
-        loadComponent: () => import("./chunk-OFPMPQVX.js").then((m) => m.SystemMonitoringComponent)
+        loadComponent: () => import("./chunk-A35GWYOB.js").then((m) => m.SystemMonitoringComponent)
       },
       {
         path: "ai-models",
-        loadComponent: () => import("./chunk-JZ6URDDB.js").then((m) => m.AIModelManagementComponent)
+        loadComponent: () => import("./chunk-SG6DVRTD.js").then((m) => m.AIModelManagementComponent)
       },
       {
         path: "analytics",
-        loadComponent: () => import("./chunk-SQFBSUMB.js").then((m) => m.PlatformAnalyticsComponent)
+        loadComponent: () => import("./chunk-2V2P4LJQ.js").then((m) => m.PlatformAnalyticsComponent)
       },
       {
         path: "accuracy-metrics",
-        loadComponent: () => import("./chunk-3RLOVKW5.js").then((m) => m.AccuracyMetricsComponent)
+        loadComponent: () => import("./chunk-2DI7ABGS.js").then((m) => m.AccuracyMetricsComponent)
       }
     ]
   },
   {
-    path: "",
-    redirectTo: "auth/login",
+    path: "***",
+    redirectTo: "",
     pathMatch: "full"
   }
 ];
@@ -16528,27 +10870,6 @@ var AppComponent = class _AppComponent {
 // src/main.ts
 bootstrapApplication(AppComponent, appConfig).catch((err) => console.error(err));
 /*! Bundled license information:
-
-@angular/router/fesm2022/router-LSBBtrLI.mjs:
-  (**
-   * @license Angular v19.2.5
-   * (c) 2010-2025 Google LLC. https://angular.io/
-   * License: MIT
-   *)
-
-@angular/router/fesm2022/router_module-C0FJ-J6L.mjs:
-  (**
-   * @license Angular v19.2.5
-   * (c) 2010-2025 Google LLC. https://angular.io/
-   * License: MIT
-   *)
-
-@angular/router/fesm2022/router.mjs:
-  (**
-   * @license Angular v19.2.5
-   * (c) 2010-2025 Google LLC. https://angular.io/
-   * License: MIT
-   *)
 
 @angular/animations/fesm2022/util-DIamNgWY.mjs:
   (**

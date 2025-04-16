@@ -8,7 +8,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { JobMatchesComponent } from './components/job-matches/job-matches.component';
 import { ApplicationsComponent } from './components/applications/applications.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { CvManagerComponent } from './components/cv-manager/cv-manager.component';
+import { ProfileManagerComponent } from './components/cv-manager/cv-manager.component';
 
 export const JOB_SEEKER_ROUTES: Routes = [
   {
@@ -54,7 +54,7 @@ export const JOB_SEEKER_ROUTES: Routes = [
       },
       {
         path: 'cv',
-        component: CvManagerComponent,
+        component: ProfileManagerComponent,
       },
     ],
   },
