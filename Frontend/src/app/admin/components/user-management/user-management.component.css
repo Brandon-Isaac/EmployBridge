@@ -1,0 +1,231 @@
+:host {
+    --primary: #4e54c8;
+    --primary-light: #8f94fb;
+    --primary-dark: #363795;
+    --accent: #4caf50;
+    --accent-light: #81c784;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --background-light: #f5f7fa;
+    --card-bg: #ffffff;
+    --success: #00c853;
+    --warning: #ffd600;
+    --danger: #f44336;
+  }
+
+  .user-management-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background-color: var(--background-light);
+  }
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 24px;
+  }
+
+  .toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .app-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .content-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .users-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .header-row {
+    background-color: var(--primary);
+    height: 56px;
+  }
+
+  .header-row th {
+    color: white;
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  .users-table mat-row {
+    transition: all 0.3s ease;
+    height: 60px;
+  }
+
+  .users-table mat-row:hover {
+    background-color: rgba(79, 84, 200, 0.05);
+    transform: translateX(2px);
+  }
+
+  .active-row {
+    border-left: 4px solid var(--accent);
+  }
+
+  .inactive-row {
+    border-left: 4px solid var(--warning);
+  }
+
+  .suspended-row {
+    border-left: 4px solid var(--danger);
+  }
+
+  .users-table mat-cell {
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+  }
+
+  .users-table mat-cell i {
+    margin-right: 8px;
+    color: var(--primary-light);
+  }
+
+  .email-cell {
+    font-weight: 500;
+  }
+
+  .role-chip, .status-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 16px;
+  }
+
+  .role-chip.job_seeker {
+    background-color: #e3f2fd;
+    color: #1976d2;
+  }
+
+  .role-chip.employer {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .role-chip.admin {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+  }
+
+  .status-chip.active {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .status-chip.inactive {
+    background-color: #fff8e1;
+    color: #ff8f00;
+  }
+
+  .status-chip.suspended {
+    background-color: #ffebee;
+    color: #c62828;
+  }
+
+  .action-button {
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+  }
+
+  .action-button:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+  }
+
+  .user-menu {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .user-menu .mat-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+  }
+
+  .user-menu .mat-menu-item i {
+    width: 20px;
+    text-align: center;
+  }
+
+  .delete-action {
+    color: var(--danger);
+  }
+
+  @media (max-width: 768px) {
+    .user-management-container {
+      padding: 16px;
+    }
+
+    .users-table {
+      min-width: 600px;
+    }
+
+    .toolbar {
+      flex-direction: column;
+      height: auto;
+      padding: 12px;
+    }
+
+    .toolbar-left, .toolbar-right {
+      width: 100%;
+      justify-content: center;
+      margin: 4px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .user-management-container {
+      padding: 8px;
+    }
+
+    .content-card {
+      border-radius: 0;
+    }
+
+    .users-table mat-cell {
+      padding: 8px 12px;
+      font-size: 0.75rem;
+    }
+
+    .users-table mat-cell i {
+      margin-right: 4px;
+    }
+
+    .role-chip, .status-chip {
+      font-size: 0.65rem;
+      padding: 2px 8px;
+    }
+  }

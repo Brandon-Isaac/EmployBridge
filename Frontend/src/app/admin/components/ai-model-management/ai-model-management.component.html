@@ -1,0 +1,131 @@
+<div class="ai-model-management-container" [@fadeIn]>
+    <mat-toolbar class="toolbar">
+      <div class="toolbar-left">
+        <span class="app-title">AI Model Management</span>
+      </div>
+      <div class="toolbar-right">
+        <button mat-raised-button color="primary" (click)="createModel()">
+          <i class="fas fa-plus"></i>
+          <span>New Model</span>
+        </button>
+      </div>
+    </mat-toolbar>
+
+    <div class="model-list">
+      <mat-card 
+        *ngFor="let model of models" 
+        class="model-card mat-elevation-z4"
+        [@slideInFromRight]
+        [@cardHover]="cardState[model.id]"
+        (mouseenter)="cardState[model.id] = 'hovered'"
+        (mouseleave)="cardState[model.id] = 'normal'"
+      >
+        <mat-card-header>
+          <div class="model-header">
+            <div class="model-title">
+              <mat-card-title>
+                <i class="fas" 
+                  [class.fa-robot]="model.type === 'Recommendation'"
+                  [class.fa-brain]="model.type === 'NLP'"
+                  [class.fa-chart-line]="model.type === 'Analytics'"></i>
+                {{ model.name }}
+              </mat-card-title>
+              <mat-card-subtitle>
+                <mat-chip class="type-chip" [ngClass]="model.type.toLowerCase()">
+                  {{ model.type }}
+                </mat-chip>
+              </mat-card-subtitle>
+            </div>
+            <div class="model-status-badge">
+              <mat-chip class="status-chip" [ngClass]="model.status.toLowerCase()">
+                <i class="fas" 
+                  [class.fa-check-circle]="model.status === 'Active'"
+                  [class.fa-spinner]="model.status === 'Training'"
+                  [class.fa-pause-circle]="model.status === 'Inactive'"
+                  [class.fa-exclamation-circle]="model.status === 'Error'"></i>
+                {{ model.status }}
+              </mat-chip>
+            </div>
+          </div>
+        </mat-card-header>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-content>
+          <div class="model-progress">
+            <div class="progress-info">
+              <span>Training Progress</span>
+              <span>{{ model.trainingProgress }}%</span>
+            </div>
+            <mat-progress-bar
+              mode="determinate"
+              [value]="model.trainingProgress"
+              [color]="getProgressColor(model)"
+            ></mat-progress-bar>
+          </div>
+
+          <div class="model-metrics">
+            <div class="metric">
+              <div class="metric-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <div class="metric-value">
+                <span class="metric-label">Accuracy</span>
+                <span class="metric-number">{{ model.accuracy }}%</span>
+              </div>
+            </div>
+            <div class="metric">
+              <div class="metric-icon">
+                <i class="fas fa-crosshairs"></i>
+              </div>
+              <div class="metric-value">
+                <span class="metric-label">Precision</span>
+                <span class="metric-number">{{ model.precision }}%</span>
+              </div>
+            </div>
+            <div class="metric">
+              <div class="metric-icon">
+                <i class="fas fa-undo"></i>
+              </div>
+              <div class="metric-value">
+                <span class="metric-label">Recall</span>
+                <span class="metric-number">{{ model.recall }}%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="model-features">
+            <h4>Features</h4>
+            <mat-chip-set>
+              <mat-chip *ngFor="let feature of model.features" class="feature-chip">
+                <i class="fas fa-tag"></i>
+                {{ feature }}
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+
+          <div class="last-updated">
+            <i class="fas fa-clock"></i>
+            Last updated: {{ model.lastUpdated | date: 'medium' }}
+          </div>
+        </mat-card-content>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-actions>
+          <button mat-button color="primary" (click)="retrainModel(model)">
+            <i class="fas fa-sync-alt"></i>
+            <span>Retrain</span>
+          </button>
+          <button mat-button color="accent" (click)="deployModel(model)" [disabled]="model.status !== 'Active'">
+            <i class="fas fa-rocket"></i>
+            <span>Deploy</span>
+          </button>
+          <button mat-button color="warn" (click)="deleteModel(model)">
+            <i class="fas fa-trash"></i>
+            <span>Delete</span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>

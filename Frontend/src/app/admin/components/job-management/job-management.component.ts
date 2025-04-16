@@ -50,108 +50,8 @@ interface Job {
     MatDialogModule,
     MatDividerModule
   ],
-  template: `
-    <div class="dialog-container">
-      <h2 mat-dialog-title>{{ data.isEdit ? 'Edit Job' : 'Add New Job' }}</h2>
-      <mat-divider></mat-divider>
-      
-      <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
-        <div mat-dialog-content>
-          <div class="form-grid">
-            <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Job Title</mat-label>
-              <input matInput formControlName="title" placeholder="Enter job title">
-              <mat-error *ngIf="jobForm.get('title')?.hasError('required')">
-                Job title is required
-              </mat-error>
-            </mat-form-field>
-            
-            <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Company</mat-label>
-              <input matInput formControlName="company" placeholder="Enter company name">
-              <mat-error *ngIf="jobForm.get('company')?.hasError('required')">
-                Company is required
-              </mat-error>
-            </mat-form-field>
-            
-            <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Location</mat-label>
-              <input matInput formControlName="location" placeholder="Enter job location">
-              <mat-error *ngIf="jobForm.get('location')?.hasError('required')">
-                Location is required
-              </mat-error>
-            </mat-form-field>
-            
-            <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Status</mat-label>
-              <mat-select formControlName="status">
-                <mat-option value="active">Active</mat-option>
-                <mat-option value="inactive">Inactive</mat-option>
-              </mat-select>
-            </mat-form-field>
-            
-            <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Salary Range</mat-label>
-              <input matInput formControlName="salary" placeholder="e.g. $60,000 - $80,000">
-            </mat-form-field>
-            
-            <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Job Type</mat-label>
-              <mat-select formControlName="jobType">
-                <mat-option value="Full-time">Full-time</mat-option>
-                <mat-option value="Part-time">Part-time</mat-option>
-                <mat-option value="Contract">Contract</mat-option>
-                <mat-option value="Internship">Internship</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-        </div>
-        
-        <div mat-dialog-actions class="dialog-actions">
-          <button mat-button mat-dialog-close type="button">Cancel</button>
-          <button mat-raised-button color="primary" type="submit" [disabled]="jobForm.invalid">
-            {{ data.isEdit ? 'Update Job' : 'Add Job' }}
-          </button>
-        </div>
-      </form>
-    </div>
-  `,
-  styles: [`
-    .dialog-container {
-      padding: 0 16px;
-      max-width: 600px;
-    }
-    
-    h2 {
-      margin-bottom: 16px;
-      color: var(--primary);
-      font-weight: 600;
-    }
-    
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 16px;
-      margin-top: 16px;
-    }
-    
-    @media (max-width: 768px) {
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    .dialog-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 16px;
-      padding: 16px 0;
-    }
-    
-    mat-form-field {
-      width: 100%;
-    }
-  `]
+  template: `./job-management.component.html`,
+  styleUrl: `./job-management.component.css `
 })
 export class JobDialogComponent {
   jobForm: FormGroup;
@@ -183,9 +83,9 @@ export class JobDialogComponent {
       this.dialogRef.close(this.jobForm.value);
     }
   }
-}
-
-@Component({
+  }
+  
+  @Component({
   selector: 'app-job-management',
   standalone: true,
   imports: [
@@ -309,13 +209,13 @@ export class JobDialogComponent {
                 <div class="job-type" *ngIf="job.jobType">{{ job.jobType }}</div>
               </td>
             </ng-container>
-
+  
             <!-- Company Column -->
             <ng-container matColumnDef="company">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Company</th>
               <td mat-cell *matCellDef="let job">{{ job.company }}</td>
             </ng-container>
-
+  
             <!-- Location Column -->
             <ng-container matColumnDef="location">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Location</th>
@@ -349,7 +249,7 @@ export class JobDialogComponent {
                 </span>
               </td>
             </ng-container>
-
+  
             <!-- Status Column -->
             <ng-container matColumnDef="status">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
@@ -360,7 +260,7 @@ export class JobDialogComponent {
                 </span>
               </td>
             </ng-container>
-
+  
             <!-- Actions Column -->
             <ng-container matColumnDef="actions">
               <th mat-header-cell *matHeaderCellDef>Actions</th>
@@ -378,7 +278,7 @@ export class JobDialogComponent {
                 </div>
               </td>
             </ng-container>
-
+  
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
             <tr 
               mat-row 
@@ -698,8 +598,7 @@ export class JobDialogComponent {
       border-radius: 0 0 12px 12px;
       overflow: hidden;
       background-color: var(--background-light);
-    }
-  `]
+    }`]
 })
 export class JobManagementComponent implements OnInit {
   displayedColumns: string[] = ['title', 'company', 'location', 'salary', 'postedDate', 'applicants', 'status', 'actions'];

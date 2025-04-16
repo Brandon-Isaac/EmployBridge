@@ -1,0 +1,230 @@
+:host {
+    --primary: #4e54c8;
+    --primary-light: #8f94fb;
+    --primary-dark: #363795;
+    --accent: #4caf50;
+    --accent-light: #81c784;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --background-light: #f5f7fa;
+    --card-bg: #ffffff;
+    --success: #00c853;
+    --warning: #ffd600;
+    --danger: #f44336;
+  }
+
+  .platform-analytics-container {
+    padding: 24px;
+    background-color: var(--background-light);
+    min-height: 100%;
+  }
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 24px;
+  }
+
+  .toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .app-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .time-range-selector {
+    width: 160px;
+  }
+
+  .time-range-selector .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  .time-range-selector .mat-form-field-underline {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .time-range-selector .mat-select-value {
+    color: white;
+  }
+
+  .time-range-selector .mat-select-arrow {
+    color: white;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .metric-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .metric-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .metric-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+  }
+
+  .metric-icon i {
+    font-size: 18px;
+  }
+
+  .metric-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .metric-info p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .metric-value-container {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+
+  .metric-value .unit {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: normal;
+  }
+
+  .metric-change {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    margin-top: 8px;
+  }
+
+  .metric-change i {
+    font-size: 14px;
+  }
+
+  .trend-up {
+    color: var(--success);
+  }
+
+  .trend-down {
+    color: var(--danger);
+  }
+
+  .trend-stable {
+    color: var(--warning);
+  }
+
+  .metric-progress {
+    padding: 0 16px 16px;
+  }
+
+  mat-progress-bar {
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .progress-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+  }
+
+  mat-card-actions button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+  }
+
+  .actions-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  @media (max-width: 768px) {
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .toolbar {
+      flex-direction: column;
+      height: auto;
+      padding: 12px;
+    }
+
+    .toolbar-left, .toolbar-right {
+      width: 100%;
+      justify-content: center;
+      margin: 4px 0;
+    }
+
+    .toolbar-right {
+      margin-top: 8px;
+    }
+
+    .actions-footer {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .platform-analytics-container {
+      padding: 16px 8px;
+    }
+
+    .metric-card {
+      border-radius: 0;
+    }
+  }

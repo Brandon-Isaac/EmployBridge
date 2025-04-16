@@ -1,0 +1,112 @@
+<div class="platform-analytics-container" [@fadeIn]>
+    <mat-toolbar class="toolbar">
+      <div class="toolbar-left">
+        <span class="app-title">
+          <i class="fas fa-chart-line"></i>
+          Platform Analytics Dashboard
+        </span>
+      </div>
+      <div class="toolbar-right">
+        <mat-form-field class="time-range-selector">
+          <mat-label>Time Range</mat-label>
+          <mat-select [(value)]="selectedTimeRange">
+            <mat-option *ngFor="let range of timeRanges" [value]="range.value">
+              <i class="fas fa-calendar-alt"></i>
+              {{ range.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button [matMenuTriggerFor]="viewMenu">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <mat-menu #viewMenu="matMenu">
+          <button mat-menu-item (click)="changeView('grid')">
+            <i class="fas fa-th-large"></i>
+            Grid View
+          </button>
+          <button mat-menu-item (click)="changeView('list')">
+            <i class="fas fa-list"></i>
+            List View
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+
+    <div class="metrics-grid">
+      <mat-card 
+        *ngFor="let metric of metrics" 
+        class="metric-card"
+        [@cardHover]="cardState[metric.id]"
+        (mouseenter)="cardState[metric.id] = 'hovered'"
+        (mouseleave)="cardState[metric.id] = 'normal'"
+      >
+        <mat-card-header>
+          <div class="metric-header">
+            <div class="metric-icon" [ngStyle]="{ 'background-color': metric.color + '20' }">
+              <i class="fas" [ngClass]="metric.icon" [style.color]="metric.color"></i>
+            </div>
+            <div class="metric-info">
+              <h3>{{ metric.name }}</h3>
+              <p>
+                <i class="fas fa-clock"></i>
+                Last {{ selectedTimeRange | timeRangeToText }}
+              </p>
+            </div>
+          </div>
+        </mat-card-header>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-content>
+          <div class="metric-value-container">
+            <div class="metric-value">
+              {{ metric.value | number }} <span class="unit">{{ metric.unit }}</span>
+            </div>
+            <div class="metric-change" [ngClass]="'trend-' + metric.trend">
+              <i class="fas" 
+                [class.fa-arrow-up]="metric.trend === 'up'"
+                [class.fa-arrow-down]="metric.trend === 'down'"
+                [class.fa-minus]="metric.trend === 'stable'"></i>
+              {{ metric.change }}% change
+            </div>
+          </div>
+
+          <div *ngIf="metric.target" class="metric-progress">
+            <mat-progress-bar
+              mode="determinate"
+              [value]="(metric.value / metric.target) * 100"
+              [color]="metric.value >= metric.target ? 'primary' : 'accent'"
+            ></mat-progress-bar>
+            <div class="progress-label" *ngIf="metric.target">
+              <i class="fas fa-bullseye"></i>
+              Target: {{ metric.target | number }} {{ metric.unit }}
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-divider></mat-divider>
+
+        <mat-card-actions>
+          <button mat-button color="primary" (click)="viewDetails(metric)">
+            <i class="fas fa-chart-line"></i>
+            Details
+          </button>
+          <button mat-button (click)="comparePeriods(metric)">
+            <i class="fas fa-not-equal"></i>
+            Compare
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="actions-footer">
+      <button mat-stroked-button (click)="exportData()">
+        <i class="fas fa-file-export"></i>
+        Export Data
+      </button>
+      <button mat-raised-button color="primary" (click)="refreshData()">
+        <i class="fas fa-sync-alt"></i>
+        Refresh Data
+      </button>
+    </div>
+  </div>
