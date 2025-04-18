@@ -22,7 +22,7 @@ jobs:
       working-directory: ./Frontend
 
     - name: Build Angular app
-      run: npm run build --configuration production
+      run: npm run watch
       working-directory: ./Frontend
 
     - name: Configure AWS credentials
