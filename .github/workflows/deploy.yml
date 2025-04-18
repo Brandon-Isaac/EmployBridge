@@ -1,8 +1,9 @@
 name: Deploy Angular to AWS
 
 on:
+  workflow-dispatch:
   push:
-    branches: [ main ] # Change to your production branch
+    branches: [ master ] # Change to your production branch
 
 jobs:
   deploy:
