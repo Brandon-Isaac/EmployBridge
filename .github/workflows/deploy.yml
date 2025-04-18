@@ -16,6 +16,9 @@ jobs:
       with:
         node-version: 18 # Match your Angular version requirements
 
+    - name: Initializing package.json
+      run: npm init -y
+
     - name: Install dependencies
       run: npm i
 
