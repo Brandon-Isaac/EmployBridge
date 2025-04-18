@@ -23,6 +23,7 @@ jobs:
 
     - name: Build Angular app
       run: npm run build --configuration production
+      working-directory: ./Frontend
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
