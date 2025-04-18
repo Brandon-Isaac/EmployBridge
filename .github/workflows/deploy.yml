@@ -20,7 +20,7 @@ jobs:
       run: npm ci
 
     - name: Build Angular app
-      run: npm run build --configuration production
+      run: npm run build --configuration development
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
