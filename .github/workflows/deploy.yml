@@ -19,7 +19,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: testing
+    # environment: testing
 
     steps:
       # ✅ Step 1: Checkout your code
@@ -88,6 +88,9 @@ jobs:
           dist-folder: ./dist/jobplex/browser
           bucket-region: us-east-1
 
-      # ✅ Step 5: Show the deployed URL
+           # ✅ Step 5: Show the deployed URL
       - name: Output URL
-        run: echo "Live URL: ${{ steps.deploy.outputs.website-url }}"
+        env:
+          WEBSITE_URL: ${{ steps.deploy.outputs.website-url }}
+        run: |
+          echo "Live URL: $WEBSITE_URL"
