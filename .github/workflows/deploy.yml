@@ -42,7 +42,7 @@ jobs:
       # ✅ Step 4: Build Angular app
       - name: Build Code
         run: |
-          cd frontend 
+          cd Frontend 
           npm run build
 
       # ✅ Step 5: Upload build artifacts for deployment
@@ -50,7 +50,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-files
-          path: frontend/dist
+          path: Frontend/dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -84,9 +84,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
-          bucket: jobplex-frontend
+          bucket: skillsprofessionalai.com
           dist-folder: ./dist/jobplex/browser
-          bucket-region: us-east-1
+          bucket-region: us-east-2
 
            # ✅ Step 5: Show the deployed URL
       - name: Output URL
