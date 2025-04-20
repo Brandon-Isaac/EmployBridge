@@ -1,43 +1,93 @@
-name: Deploy Angular to AWS
+name: Events Demo 1
 
+# 🟢 Trigger ONLY when frontend changes (avoids unnecessary S3 usage)
 on:
   push:
-    branches: [ master ] # Change to your production branch
+    branches:
+      - main
+    paths:
+      - 'frontend/**'        # only trigger on frontend file changes
+      - '.github/workflows/**' # allow updates to workflow file
+  pull_request:
+    types:
+      - opened
+  workflow_dispatch:
+
+env:
+  MyPAss: 1234
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    environment: testing
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      # ✅ Step 1: Checkout your code
+      - name: Get Code
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18 # Match your Angular version requirements
+      # ✅ Step 2: Cache node_modules to speed up build time
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
 
-    - name: Install dependencies
-      run: npm ci
-      working-directory: ./Frontend
+      # ✅ Step 3: Install frontend dependencies
+      - name: Install dependencies
+        run: |
+          cd frontend 
+          npm install
 
-    - name: Build Angular app
-      run: npm run watch
-      working-directory: ./Frontend
+      # ✅ Step 4: Build Angular app
+      - name: Build Code
+        run: |
+          cd frontend 
+          npm run build
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
+      # ✅ Step 5: Upload build artifacts for deployment
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-files
+          path: frontend/dist
 
-    - name: Deploy to S3
-      run: |
-        aws s3 sync dist/skillsmatchai/ s3://${{ secrets.AWS_S3_BUCKET }} \
-          --delete \
-          --cache-control "public, max-age=31536000, immutable"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
 
-        # Special handling for index.html (no caching)
-        aws s3 cp dist/skillsmatchai/index.html s3://${{ secrets.AWS_S3_BUCKET }}/index.html \
-          --cache-control "no-cache, no-store, must-revalidate"
+    steps:
+      # ✅ Step 1: Checkout code
+      - name: Get Code
+        uses: actions/checkout@v4
+
+      # ✅ Step 2: Download build artifacts from previous job
+      - name: Get Build files
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-files
+          path: ./dist
+
+      # ✅ Step 3: Log directory structure for debugging
+      - name: Output Contents
+        run: |
+          echo "Root directory:"
+          ls -la
+          echo "Dist directory:"
+          ls -la ./dist
+
+      # ✅ Step 4: Deploy to S3 (only when frontend changes)
+      - name: Deploy
+        id: deploy
+        uses: ./.github/actions
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        with:
+          bucket: jobplex-frontend
+          dist-folder: ./dist/jobplex/browser
+          bucket-region: us-east-1
+
+      # ✅ Step 5: Show the deployed URL
+      - name: Output URL
+        run: echo "Live URL: ${{ steps.deploy.outputs.website-url }}"

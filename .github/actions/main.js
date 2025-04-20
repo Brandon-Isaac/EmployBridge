@@ -1,40 +1,27 @@
-const core = require('@actions/core'); // input and output
-const exec = require('@actions/exec'); // executing commands
+const core = require('@actions/core') // input and output 
+const exec= require('@actions/exec') // uloading to S3
 
-async function run() {
-    try {
-        // Get inputs
-        const token = core.getInput('vercel-token', { required: true });
-        const projectPath = core.getInput('project-path', { required: true });
 
-        // Set Vercel token as an environment variable
-        process.env.VERCEL_TOKEN = token;
 
-        // Deploy to Vercel
-        await exec.exec(`npx vercel --cwd ${projectPath} --prod --token ${token}`);
+function run(){
+// Get inputs
 
-        // Get the deployment URL
-        let deploymentUrl = '';
-        const options = {
-            listeners: {
-                stdout: (data) => {
-                    deploymentUrl += data.toString();
-                },
-            },
-        };
+const bucket =core.getInput('bucket', {required:true});
+const bucketRegion =core.getInput('bucket-region', {required:true});
+const distFolder =core.getInput('dist-folder', {required:true});
+//Upload files to S3
 
-        await exec.exec(`npx vercel --cwd ${projectPath} --prod --token ${token}`, [], options);
+const s3URI= `s3://${bucket}`
+exec.exec(`aws s3 sync ${distFolder} ${s3URI} --region ${bucketRegion}`)
+// `aws s3 sync folder1 s3://dktcohort --region us-east-1`
 
-        // Extract the deployment URL from the output
-        const urlMatch = deploymentUrl.match(/https?:\/\/[^\s]+/);
-        if (urlMatch) {
-            core.setOutput('website-url', urlMatch[0]);
-        } else {
-            throw new Error('Failed to extract deployment URL');
-        }
-    } catch (error) {
-        core.setFailed(error.message);
-    }
+
+
+//Get URl
+const websiteUrl= `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`
+// http://jobplex-frontend.s3-website-us-east-1.amazonaws.com
+core.setOutput('website-url',websiteUrl)
+
 }
 
-run();
+run()

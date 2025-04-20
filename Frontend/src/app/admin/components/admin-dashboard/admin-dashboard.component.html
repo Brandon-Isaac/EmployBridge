@@ -62,6 +62,26 @@
           <mat-divider></mat-divider>
 
           <div class="nav-section" [@fadeIn]>
+            <h3 matSubheader>Job Management</h3>
+            <a mat-list-item routerLink="jobs" routerLinkActive="active" class="nav-item">
+              <i class="fas fa-briefcase"></i>
+              <span>Job Listings</span>
+            </a>
+
+            <a
+              mat-list-item
+              routerLink="skills"
+              routerLinkActive="active"
+              class="nav-item"
+            >
+              <i class="fas fa-tags"></i>
+              <span>Skills Management</span>
+            </a>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <div class="nav-section" [@fadeIn]>
             <h3 matSubheader>AI Management</h3>
             <a mat-list-item routerLink="ai-models" routerLinkActive="active" class="nav-item">
               <i class="fas fa-robot"></i>

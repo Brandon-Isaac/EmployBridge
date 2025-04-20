@@ -1,0 +1,54 @@
+.dialog-container {
+  padding: 20px;
+  min-width: 400px;
+  max-width: 600px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.description-field {
+  min-height: 100px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dialog-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+.dialog-subtitle {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dialog-container {
+    min-width: 280px;
+  }
+} 
