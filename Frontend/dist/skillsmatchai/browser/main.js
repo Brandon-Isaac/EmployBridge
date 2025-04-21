@@ -1,19 +1,34 @@
 import {
   MatToolbar,
   MatToolbarModule
-} from "./chunk-VVAP3QIX.js";
+} from "./chunk-EYAAGD6F.js";
 import {
   MatMenu,
   MatMenuItem,
   MatMenuModule,
   MatMenuTrigger
-} from "./chunk-QJ7WF3FG.js";
+} from "./chunk-BYBXKYVJ.js";
 import {
   MatOption,
-  MatPseudoCheckboxModule,
   MatSelect,
   MatSelectModule
-} from "./chunk-QZIPTO56.js";
+} from "./chunk-3JPVUUIX.js";
+import {
+  MatInput,
+  MatInputModule
+} from "./chunk-3DCVMGSB.js";
+import "./chunk-VAADXG4L.js";
+import {
+  MatFormFieldModule
+} from "./chunk-GPGOCT2X.js";
+import {
+  MatListItem,
+  MatListModule,
+  MatListSubheaderCssMatStyler,
+  MatNavList
+} from "./chunk-UJ4FTC47.js";
+import "./chunk-56ZLA7LI.js";
+import "./chunk-YKUVITQE.js";
 import {
   Router,
   RouterLink,
@@ -21,15 +36,7 @@ import {
   RouterModule,
   RouterOutlet,
   provideRouter
-} from "./chunk-XFGBTSAZ.js";
-import {
-  MatBadge,
-  MatBadgeModule
-} from "./chunk-MFJU2DX3.js";
-import {
-  MatDivider,
-  MatDividerModule
-} from "./chunk-3QCHWOEP.js";
+} from "./chunk-GQ322XUA.js";
 import {
   AUTO_STYLE,
   AnimationGroupPlayer,
@@ -44,74 +51,72 @@ import {
   transition,
   trigger,
   ɵPRE_STYLE
-} from "./chunk-7BNL2RL5.js";
+} from "./chunk-DCF6DFJ3.js";
+import {
+  MatBadge,
+  MatBadgeModule
+} from "./chunk-6X7YSIAV.js";
 import {
   Overlay,
   OverlayConfig,
   OverlayModule
-} from "./chunk-2CZVWUUL.js";
-import "./chunk-PPMKGYHC.js";
-import {
-  CdkScrollable,
-  CdkScrollableModule,
-  ScrollDispatcher,
-  ViewportRuler
-} from "./chunk-DG7YLRMC.js";
-import {
-  MatInput,
-  MatInputModule
-} from "./chunk-W7G65VI2.js";
-import "./chunk-R4NVDLOM.js";
-import {
-  MatFormFieldModule
-} from "./chunk-B7JQH24K.js";
-import "./chunk-OIZAD6NR.js";
-import {
-  SelectionModel
-} from "./chunk-VW3NTET3.js";
+} from "./chunk-F5FUW2P7.js";
 import "./chunk-OIBNGD5S.js";
+import "./chunk-PPMKGYHC.js";
 import {
   BasePortalOutlet,
   CdkPortalOutlet,
   ComponentPortal,
   PortalModule,
   TemplatePortal
-} from "./chunk-XFTMB2RM.js";
-import "./chunk-KCSVOKMR.js";
+} from "./chunk-BZ6GK7LR.js";
+import {
+  CdkScrollable,
+  CdkScrollableModule,
+  ScrollDispatcher,
+  ViewportRuler
+} from "./chunk-JCHFAW36.js";
+import {
+  MatDivider,
+  MatDividerModule
+} from "./chunk-TQP5GNH5.js";
+import "./chunk-OIZAD6NR.js";
+import "./chunk-M6GHQMYD.js";
 import {
   BrowserModule,
   DomRendererFactory2,
   HttpClient,
+  MatIcon,
   MatIconModule,
   bootstrapApplication,
   provideHttpClient
-} from "./chunk-E6YAXSQU.js";
+} from "./chunk-MI43YKTU.js";
+import {
+  MatError,
+  MatFormField,
+  MatLabel,
+  MatPrefix,
+  MatSuffix
+} from "./chunk-2LWENGE2.js";
 import {
   DefaultValueAccessor,
   FormBuilder,
   FormControlName,
   FormGroupDirective,
   FormsModule,
-  MatFormField,
-  MatHint,
-  MatLabel,
-  MatPrefix,
-  MatSuffix,
-  NG_VALUE_ACCESSOR,
   NgControlStatus,
   NgControlStatusGroup,
   ReactiveFormsModule,
   RequiredValidator,
   Validators,
   ɵNgNoValidate
-} from "./chunk-255VWD3Z.js";
+} from "./chunk-LSJFNPXS.js";
+import "./chunk-SZS4RJEH.js";
 import {
-  A,
   ANIMATION_MODULE_TYPE,
   AsyncPipe,
   BehaviorSubject,
   BreakpointObserver,
-  CdkObserveContent,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   CommonModule,
@@ -121,11 +126,9 @@ import {
   DOCUMENT,
   Directionality,
   Directive,
-  ENTER,
   ESCAPE,
   ElementRef,
   EventEmitter,
-  FocusKeyManager,
   FocusMonitor,
   FocusTrapFactory,
   Inject,
@@ -135,7 +138,6 @@ import {
   Input,
   InteractivityChecker,
   LiveAnnouncer,
-  MAT_RIPPLE_GLOBAL_OPTIONS,
   MatButton,
   MatButtonModule,
   MatCard,
@@ -146,33 +148,25 @@ import {
   MatCardTitle,
   MatCommonModule,
   MatIconButton,
-  MatRippleModule,
   NgClass,
   NgForOf,
   NgIf,
   NgModule,
   NgTemplateOutlet,
   NgZone,
-  ObserversModule,
   Output,
   Platform,
   QueryList,
   Renderer2,
   RendererFactory2,
-  RippleRenderer,
   RuntimeError,
-  SPACE,
   Subject,
-  Subscription,
   TemplateRef,
   ViewChild,
   ViewEncapsulation,
-  _CdkPrivateStyleLoader,
   _IdGenerator,
-  _StructuralStylesLoader,
   __objRest,
   __spreadValues,
-  _getFocusedElementPierceShadowDom,
   afterNextRender,
   afterRender,
   coerceBooleanProperty,
@@ -180,7 +174,6 @@ import {
   debounceTime,
   delay,
   filter,
-  forwardRef,
   fromEvent,
   hasModifierKey,
   inject,
@@ -198,7 +191,6 @@ import {
   tap,
   ɵsetClassDebugInfo,
   ɵɵInheritDefinitionFeature,
-  ɵɵNgOnChangesFeature,
   ɵɵProvidersFeature,
   ɵɵadvance,
   ɵɵattribute,
@@ -243,7 +235,7 @@ import {
   ɵɵtextInterpolate1,
   ɵɵtextInterpolate2,
   ɵɵviewQuery
-} from "./chunk-NJVFXHEQ.js";
+} from "./chunk-UOKCMW7L.js";
 
 // node_modules/@angular/animations/fesm2022/util-DIamNgWY.mjs
 var LINE_START = "\n - ";
@@ -5950,28 +5942,15 @@ var ToastNotificationComponent = class _ToastNotificationComponent {
 })();
 
 // src/app/auth/components/login/login.component.ts
-function LoginComponent_app_loading_spinner_52_Template(rf, ctx) {
+function LoginComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "app-loading-spinner", 35);
-  }
-  if (rf & 2) {
-    \u0275\u0275property("size", 24);
-  }
-}
-function LoginComponent_span_53_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 36);
-    \u0275\u0275text(1, "Login");
+    \u0275\u0275elementStart(0, "div", 35);
+    \u0275\u0275element(1, "app-loading-spinner", 36);
     \u0275\u0275elementEnd();
   }
-}
-function LoginComponent_i_54_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275element(0, "i", 37);
-  }
   if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275classProp("animate", ctx_r0.loginButtonHover);
+    \u0275\u0275advance();
+    \u0275\u0275property("size", 48);
   }
 }
 var LoginComponent = class _LoginComponent {
@@ -5996,6 +5975,9 @@ var LoginComponent = class _LoginComponent {
     });
   }
   onSubmit() {
+    Object.keys(this.loginForm.controls).forEach((key) => {
+      this.loginForm.get(key)?.markAsTouched();
+    });
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       this.isLoading = true;
@@ -6015,120 +5997,117 @@ var LoginComponent = class _LoginComponent {
           }
         },
         error: (error) => {
+          setTimeout(() => {
+            this.isLoading = false;
+            console.error("Login failed:", error);
+            this.snackBar.openFromComponent(ToastNotificationComponent, {
+              data: {
+                message: "Login failed. Please check your credentials and try again.",
+                type: "error",
+                duration: 5e3
+              }
+            });
+          }, 3e3);
+        },
+        complete: () => {
           this.isLoading = false;
-          console.error("Login failed:", error);
-          this.snackBar.openFromComponent(ToastNotificationComponent, {
-            data: {
-              message: "Login failed. Please try again later.",
-              type: "error",
-              duration: 5e3
-            }
-          });
         }
       });
+    } else {
+      this.isLoading = false;
     }
   }
   static \u0275fac = function LoginComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _LoginComponent)(\u0275\u0275directiveInject(FormBuilder), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(MatSnackBar));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 55, vars: 11, consts: [[1, "auth-container"], [1, "auth-background"], [1, "shape", "shape1"], [1, "shape", "shape2"], [1, "shape", "shape3"], [1, "auth-card"], [1, "card-content-wrapper"], [1, "header-content"], [1, "app-title-container", "animate-item"], [1, "logo-icon"], ["width", "28", "height", "28", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z", "stroke", "currentColor", "stroke-width", "2"], ["d", "M12 17L12 11", "stroke", "currentColor", "stroke-width", "2", "stroke-linecap", "round"], ["cx", "12", "cy", "8", "r", "1", "fill", "currentColor"], [1, "app-title"], [1, "animate-item"], [3, "ngSubmit", "formGroup"], ["appearance", "outline", 1, "full-width", "animate-item"], ["matInput", "", "formControlName", "email", "type", "email", "required", "", "placeholder", "Enter your email"], ["matPrefix", "", 1, "fas", "fa-envelope", "form-icon"], ["fieldName", "Email", 3, "control"], ["matInput", "", "formControlName", "password", "required", "", "placeholder", "Enter your password", 3, "type"], ["matPrefix", "", 1, "fas", "fa-lock", "form-icon"], ["matSuffix", "", 1, "fas", "fa-eye", "form-icon", "clickable", 3, "click"], ["fieldName", "Password", 3, "control"], [1, "form-links", "animate-item"], ["routerLink", "/auth/forgot-password", 1, "forgot-password"], [1, "form-actions", "animate-item"], ["routerLink", "../signup", 1, "signup-link", 3, "mouseenter", "mouseleave"], [1, "highlight"], [1, "login-text", 3, "mouseenter", "mouseleave", "click"], [1, "button-content"], [3, "size", 4, "ngIf"], ["class", "clickable-text", 4, "ngIf"], ["class", "fas fa-arrow-right login-icon", 3, "animate", 4, "ngIf"], [3, "size"], [1, "clickable-text"], [1, "fas", "fa-arrow-right", "login-icon"]], template: function LoginComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 50, vars: 12, consts: [[1, "auth-container"], ["class", "loading-overlay", 4, "ngIf"], [1, "auth-background"], [1, "shape", "shape1"], [1, "shape", "shape2"], [1, "shape", "shape3"], [1, "auth-card"], [1, "card-content-wrapper"], [1, "header-content"], [1, "app-title-container", "animate-item"], [1, "logo-icon"], ["width", "32", "height", "32", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z", "stroke", "currentColor", "stroke-width", "2"], ["d", "M12 17L12 11", "stroke", "currentColor", "stroke-width", "2", "stroke-linecap", "round"], ["cx", "12", "cy", "8", "r", "1", "fill", "currentColor"], [1, "app-title"], [1, "animate-item"], [3, "ngSubmit", "keyup.enter", "formGroup"], ["appearance", "outline", 1, "full-width", "animate-item"], ["matInput", "", "formControlName", "email", "type", "email", "required", "", "placeholder", "Enter your email"], ["matPrefix", "", 1, "fas", "fa-envelope", "form-icon"], ["fieldName", "Email", 3, "control"], ["matInput", "", "formControlName", "password", "required", "", "placeholder", "Enter your password", 3, "type"], ["matPrefix", "", 1, "fas", "fa-lock", "form-icon"], ["matSuffix", "", 1, "fas", "fa-eye", "form-icon", "clickable", 3, "click"], ["fieldName", "Password", 3, "control"], [1, "form-links", "animate-item"], ["routerLink", "/auth/forgot-password", 1, "forgot-password"], [1, "form-actions", "animate-item"], [1, "signup-text"], ["routerLink", "../signup", 1, "signup-link"], [1, "login-text", 3, "mouseenter", "mouseleave", "click"], [1, "button-content"], [1, "clickable-text"], [1, "fas", "fa-arrow-right", "login-icon"], [1, "loading-overlay"], [3, "size"]], template: function LoginComponent_Template(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275elementStart(0, "div", 0)(1, "div", 1);
-      \u0275\u0275element(2, "div", 2)(3, "div", 3)(4, "div", 4);
+      \u0275\u0275elementStart(0, "div", 0);
+      \u0275\u0275template(1, LoginComponent_div_1_Template, 2, 1, "div", 1);
+      \u0275\u0275elementStart(2, "div", 2);
+      \u0275\u0275element(3, "div", 3)(4, "div", 4)(5, "div", 5);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(5, "mat-card", 5)(6, "div", 6)(7, "mat-card-header")(8, "div", 7)(9, "div", 8)(10, "div", 9);
+      \u0275\u0275elementStart(6, "mat-card", 6)(7, "div", 7)(8, "mat-card-header")(9, "div", 8)(10, "div", 9)(11, "div", 10);
       \u0275\u0275namespaceSVG();
-      \u0275\u0275elementStart(11, "svg", 10);
-      \u0275\u0275element(12, "path", 11)(13, "path", 12)(14, "circle", 13);
+      \u0275\u0275elementStart(12, "svg", 11);
+      \u0275\u0275element(13, "path", 12)(14, "path", 13)(15, "circle", 14);
       \u0275\u0275elementEnd()();
       \u0275\u0275namespaceHTML();
-      \u0275\u0275elementStart(15, "h1", 14);
-      \u0275\u0275text(16, "SkillsMatch AI");
+      \u0275\u0275elementStart(16, "h1", 15);
+      \u0275\u0275text(17, "Employbridge AI");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(17, "mat-card-title", 15);
-      \u0275\u0275text(18, "Welcome Back");
+      \u0275\u0275elementStart(18, "mat-card-title", 16);
+      \u0275\u0275text(19, "Welcome Back");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(19, "mat-card-subtitle", 15);
-      \u0275\u0275text(20, "Sign in to your account");
+      \u0275\u0275elementStart(20, "mat-card-subtitle", 16);
+      \u0275\u0275text(21, "Sign in to your account");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(21, "mat-card-content")(22, "form", 16);
-      \u0275\u0275listener("ngSubmit", function LoginComponent_Template_form_ngSubmit_22_listener() {
+      \u0275\u0275elementStart(22, "mat-card-content")(23, "form", 17);
+      \u0275\u0275listener("ngSubmit", function LoginComponent_Template_form_ngSubmit_23_listener() {
+        return ctx.onSubmit();
+      })("keyup.enter", function LoginComponent_Template_form_keyup_enter_23_listener() {
         return ctx.onSubmit();
       });
-      \u0275\u0275elementStart(23, "mat-form-field", 17)(24, "mat-label");
-      \u0275\u0275text(25, "Email");
+      \u0275\u0275elementStart(24, "mat-form-field", 18)(25, "mat-label");
+      \u0275\u0275text(26, "Email");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(26, "input", 18)(27, "i", 19);
-      \u0275\u0275elementStart(28, "mat-hint");
-      \u0275\u0275text(29, "Try: admin@example.com, jobseeker@example.com or employer@example.com");
+      \u0275\u0275element(27, "input", 19)(28, "i", 20)(29, "app-form-validation", 21);
       \u0275\u0275elementEnd();
-      \u0275\u0275element(30, "app-form-validation", 20);
+      \u0275\u0275elementStart(30, "mat-form-field", 18)(31, "mat-label");
+      \u0275\u0275text(32, "Password");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(31, "br")(32, "br");
-      \u0275\u0275elementStart(33, "mat-form-field", 17)(34, "mat-label");
-      \u0275\u0275text(35, "Password");
-      \u0275\u0275elementEnd();
-      \u0275\u0275element(36, "input", 21)(37, "i", 22);
-      \u0275\u0275elementStart(38, "i", 23);
-      \u0275\u0275listener("click", function LoginComponent_Template_i_click_38_listener() {
+      \u0275\u0275element(33, "input", 22)(34, "i", 23);
+      \u0275\u0275elementStart(35, "i", 24);
+      \u0275\u0275listener("click", function LoginComponent_Template_i_click_35_listener() {
         return ctx.hidePassword = !ctx.hidePassword;
       });
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(39, "mat-hint");
-      \u0275\u0275text(40, "Any password will work");
+      \u0275\u0275element(36, "app-form-validation", 25);
       \u0275\u0275elementEnd();
-      \u0275\u0275element(41, "app-form-validation", 24);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(42, "div", 25)(43, "a", 26);
-      \u0275\u0275text(44, "Forgot password?");
+      \u0275\u0275elementStart(37, "div", 26)(38, "a", 27);
+      \u0275\u0275text(39, "Forgot password?");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(45, "div", 27)(46, "span", 28);
-      \u0275\u0275listener("mouseenter", function LoginComponent_Template_span_mouseenter_46_listener() {
-        return ctx.signupState = "hovered";
-      })("mouseleave", function LoginComponent_Template_span_mouseleave_46_listener() {
-        return ctx.signupState = "normal";
-      });
-      \u0275\u0275text(47, " Don't have an account? ");
-      \u0275\u0275elementStart(48, "span", 29);
-      \u0275\u0275text(49, "Sign Up");
+      \u0275\u0275elementStart(40, "div", 28)(41, "div", 29);
+      \u0275\u0275text(42, " Don't have an account? ");
+      \u0275\u0275elementStart(43, "a", 30);
+      \u0275\u0275text(44, "Sign Up");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(50, "div", 30);
-      \u0275\u0275listener("mouseenter", function LoginComponent_Template_div_mouseenter_50_listener() {
+      \u0275\u0275elementStart(45, "div", 31);
+      \u0275\u0275listener("mouseenter", function LoginComponent_Template_div_mouseenter_45_listener() {
         ctx.loginState = "hovered";
         return ctx.loginButtonHover = true;
-      })("mouseleave", function LoginComponent_Template_div_mouseleave_50_listener() {
+      })("mouseleave", function LoginComponent_Template_div_mouseleave_45_listener() {
         ctx.loginState = "normal";
         return ctx.loginButtonHover = false;
-      })("click", function LoginComponent_Template_div_click_50_listener() {
+      })("click", function LoginComponent_Template_div_click_45_listener() {
         return ctx.onSubmit();
       });
-      \u0275\u0275elementStart(51, "div", 31);
-      \u0275\u0275template(52, LoginComponent_app_loading_spinner_52_Template, 1, 1, "app-loading-spinner", 32)(53, LoginComponent_span_53_Template, 2, 0, "span", 33)(54, LoginComponent_i_54_Template, 1, 2, "i", 34);
+      \u0275\u0275elementStart(46, "div", 32)(47, "span", 33);
+      \u0275\u0275text(48, "Login");
+      \u0275\u0275elementEnd();
+      \u0275\u0275element(49, "i", 34);
       \u0275\u0275elementEnd()()()()()()()();
     }
     if (rf & 2) {
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.isLoading);
       \u0275\u0275advance(5);
+      \u0275\u0275classProp("blurred", ctx.isLoading);
       \u0275\u0275property("@cardAnimation", void 0);
       \u0275\u0275advance(16);
       \u0275\u0275property("@formElements", void 0);
       \u0275\u0275advance();
       \u0275\u0275property("formGroup", ctx.loginForm);
-      \u0275\u0275advance(8);
-      \u0275\u0275property("control", ctx.loginForm.get("email"));
       \u0275\u0275advance(6);
-      \u0275\u0275property("type", ctx.hidePassword ? "password" : "text");
-      \u0275\u0275advance(5);
-      \u0275\u0275property("control", ctx.loginForm.get("password"));
-      \u0275\u0275advance(5);
-      \u0275\u0275property("@buttonHover", ctx.signupState);
+      \u0275\u0275property("control", ctx.loginForm.get("email"));
       \u0275\u0275advance(4);
+      \u0275\u0275property("type", ctx.hidePassword ? "password" : "text");
+      \u0275\u0275advance(3);
+      \u0275\u0275property("control", ctx.loginForm.get("password"));
+      \u0275\u0275advance(9);
       \u0275\u0275property("@buttonHover", ctx.loginState);
-      \u0275\u0275advance(2);
-      \u0275\u0275property("ngIf", ctx.isLoading);
-      \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !ctx.isLoading);
-      \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !ctx.isLoading);
+      \u0275\u0275advance(4);
+      \u0275\u0275classProp("animate", ctx.loginButtonHover);
     }
   }, dependencies: [
     CommonModule,
@@ -6151,7 +6130,6 @@ var LoginComponent = class _LoginComponent {
     MatFormFieldModule,
     MatFormField,
     MatLabel,
-    MatHint,
     MatPrefix,
     MatSuffix,
     MatInputModule,
@@ -6162,7 +6140,7 @@ var LoginComponent = class _LoginComponent {
     RouterLink,
     FormValidationComponent,
     LoadingSpinnerComponent
-  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --accent-light: #ff9a9e;\n  --text-primary: #333;\n  --text-secondary: #666;\n  --background-light: #f5f7fa;\n  --card-bg: #ffffff;\n  --success: #00c853;\n  --warning: #ffd600;\n}\n.auth-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-light) 0%,\n      var(--primary-dark) 100%);\n  position: relative;\n  overflow: hidden;\n}\n.auth-background[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 0;\n}\n.shape[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.05);\n  animation: _ngcontent-%COMP%_float 15s infinite;\n  -webkit-backdrop-filter: blur(5px);\n  backdrop-filter: blur(5px);\n}\n.shape1[_ngcontent-%COMP%] {\n  width: 500px;\n  height: 500px;\n  top: -250px;\n  right: -100px;\n  animation-delay: 0s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(255, 255, 255, 0.03),\n      rgba(142, 148, 251, 0.08));\n}\n.shape2[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 400px;\n  bottom: -150px;\n  left: -100px;\n  animation-delay: 3s;\n  animation-duration: 18s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(142, 148, 251, 0.06),\n      rgba(255, 255, 255, 0.04));\n}\n.shape3[_ngcontent-%COMP%] {\n  width: 300px;\n  height: 300px;\n  bottom: 30%;\n  right: 20%;\n  animation-delay: 5s;\n  animation-duration: 20s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(252, 70, 107, 0.04),\n      rgba(255, 255, 255, 0.03));\n}\n@keyframes _ngcontent-%COMP%_float {\n  0% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n  25% {\n    transform: translate(5%, 5%) rotate(5deg);\n  }\n  50% {\n    transform: translate(0%, 8%) rotate(0deg);\n  }\n  75% {\n    transform: translate(-5%, 3%) rotate(-5deg);\n  }\n  100% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n}\n.auth-card[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 450px;\n  border-radius: 20px;\n  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);\n  background: rgba(255, 255, 255, 0.95);\n  -webkit-backdrop-filter: blur(10px);\n  backdrop-filter: blur(10px);\n  position: relative;\n  z-index: 10;\n  overflow: hidden;\n  border: 1px solid rgba(255, 255, 255, 0.2);\n}\n.card-content-wrapper[_ngcontent-%COMP%] {\n  padding: 40px;\n}\n.auth-card[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--accent));\n  z-index: 5;\n}\n.header-content[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 24px;\n  width: 100%;\n}\n.app-title-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  margin-bottom: 24px;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 700;\n  color: var(--primary);\n  margin: 0;\n  letter-spacing: -0.5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary),\n      var(--accent));\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\nmat-card-title[_ngcontent-%COMP%] {\n  font-size: 1.7rem;\n  font-weight: 600;\n  color: var(--text-primary);\n  margin-bottom: 8px;\n}\nmat-card-subtitle[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 1.1rem;\n  margin-bottom: 16px;\n}\n.full-width[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 20px;\n}\n.form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.4);\n  margin-right: 8px;\n  transition: all 0.3s ease;\n}\n.clickable[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n.clickable[_ngcontent-%COMP%]:hover {\n  color: var(--primary);\n  transform: scale(1.1);\n}\n.form-links[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: flex-end;\n  margin-bottom: 24px;\n}\n.forgot-password[_ngcontent-%COMP%] {\n  color: var(--primary);\n  text-decoration: none;\n  font-size: 0.9rem;\n  font-weight: 500;\n  transition: all 0.3s ease;\n}\n.forgot-password[_ngcontent-%COMP%]:hover {\n  color: var(--accent);\n  text-decoration: underline;\n}\n.form-actions[_ngcontent-%COMP%] {\n  gap: 16px;\n}\n.signup-link[_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-weight: 400;\n  transition: all 0.3s ease;\n}\n.signup-link[_ngcontent-%COMP%]   .highlight[_ngcontent-%COMP%] {\n  color: var(--primary);\n  font-weight: 500;\n  transition: all 0.3s ease;\n}\n.signup-link[_ngcontent-%COMP%]:hover   .highlight[_ngcontent-%COMP%] {\n  color: var(--accent);\n  text-decoration: underline;\n}\n.submit-button[_ngcontent-%COMP%] {\n  min-width: 120px;\n  padding: 8px 24px;\n  font-weight: 500;\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary),\n      var(--primary-dark));\n  border-radius: 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 4px 12px rgba(78, 84, 200, 0.3);\n}\n.submit-button[_ngcontent-%COMP%]:not([disabled]):hover {\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary-light),\n      var(--primary));\n  box-shadow: 0 6px 16px rgba(78, 84, 200, 0.4);\n}\n.submit-button[disabled][_ngcontent-%COMP%] {\n  background: #ccc;\n}\n.login-text[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 120px;\n  padding: 8px 24px;\n  font-weight: 500;\n  color: white;\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary),\n      var(--primary-dark));\n  border-radius: 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 4px 12px rgba(78, 84, 200, 0.3);\n  cursor: pointer;\n}\n.login-text[_ngcontent-%COMP%]:hover {\n  background:\n    linear-gradient(\n      45deg,\n      var(--primary-light),\n      var(--primary));\n  box-shadow: 0 6px 16px rgba(78, 84, 200, 0.4);\n}\n.login-text[_ngcontent-%COMP%]   .clickable-text[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n.button-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n}\n.login-icon[_ngcontent-%COMP%] {\n  transition: all 0.3s ease;\n}\n:is()   .mat-form-field-outline[_ngcontent-%COMP%] {\n  color: #e0e0e0 !important;\n}\n:is()   .mat-form-field-outline-thick[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--text-secondary) !important;\n  opacity: 1 !important;\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-suffix[_ngcontent-%COMP%] {\n  top: 0 !important;\n}\n:is()   .mat-form-field-prefix[_ngcontent-%COMP%] {\n  top: 0.25em !important;\n  margin-right: 8px !important;\n}\n:is()   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .mat-form-field-outline[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .form-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n@media (max-width: 600px) {\n  .card-content-wrapper[_ngcontent-%COMP%] {\n    padding: 30px 20px;\n  }\n  .form-actions[_ngcontent-%COMP%] {\n    gap: 16px;\n  }\n  .submit-button[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.75rem;\n  }\n  mat-card-title[_ngcontent-%COMP%] {\n    font-size: 1.4rem;\n  }\n  mat-card-subtitle[_ngcontent-%COMP%] {\n    font-size: 1rem;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */'], data: { animation: [
+  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --accent-light: #ff9a9e;\n  --text-primary: #333;\n  --text-secondary: #666;\n  --background-light: #f5f7fa;\n  --card-bg: #ffffff;\n  --success: #00c853;\n  --warning: #ffd600;\n}\n.auth-container[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 50%,\n      #ff6b6b 100%);\n  overflow: hidden;\n}\n.login-container[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 450px;\n  padding: 1rem;\n}\n.auth-background[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 0;\n}\n.shape[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.05);\n  animation: _ngcontent-%COMP%_float 15s infinite;\n  -webkit-backdrop-filter: blur(5px);\n  backdrop-filter: blur(5px);\n}\n.shape1[_ngcontent-%COMP%] {\n  width: 500px;\n  height: 500px;\n  top: -250px;\n  right: -100px;\n  animation-delay: 0s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(255, 255, 255, 0.03),\n      rgba(142, 148, 251, 0.08));\n}\n.shape2[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 400px;\n  bottom: -150px;\n  left: -100px;\n  animation-delay: 3s;\n  animation-duration: 18s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(142, 148, 251, 0.06),\n      rgba(255, 255, 255, 0.04));\n}\n.shape3[_ngcontent-%COMP%] {\n  width: 300px;\n  height: 300px;\n  bottom: 30%;\n  right: 20%;\n  animation-delay: 5s;\n  animation-duration: 20s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(252, 70, 107, 0.04),\n      rgba(255, 255, 255, 0.03));\n}\n@keyframes _ngcontent-%COMP%_float {\n  0% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n  25% {\n    transform: translate(5%, 5%) rotate(5deg);\n  }\n  50% {\n    transform: translate(0%, 8%) rotate(0deg);\n  }\n  75% {\n    transform: translate(-5%, 3%) rotate(-5deg);\n  }\n  100% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n}\n.login-card[_ngcontent-%COMP%] {\n  background: white;\n  border-radius: 16px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);\n  padding: 2rem;\n  width: 100%;\n  max-height: 90vh;\n  transition: all 0.3s ease;\n  position: relative;\n  overflow-y: auto;\n}\n.auth-card.blurred[_ngcontent-%COMP%] {\n  filter: blur(2px);\n  pointer-events: none;\n}\n.card-content-wrapper[_ngcontent-%COMP%] {\n  padding: 1.5rem;\n}\n.auth-card[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--accent));\n  z-index: 5;\n}\n.header-content[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 24px;\n}\n.app-title-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  margin-bottom: 1rem;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: #3498db;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 700;\n  background:\n    linear-gradient(\n      135deg,\n      #4e54c8 0%,\n      #8f94fb 50%,\n      #fc466b 100%);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  margin: 0;\n  letter-spacing: -0.5px;\n  position: relative;\n}\n.app-title[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  bottom: -4px;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background:\n    linear-gradient(\n      90deg,\n      transparent,\n      #4e54c8,\n      transparent);\n}\nmat-card-title[_ngcontent-%COMP%] {\n  font-size: 1.5rem;\n  font-weight: 600;\n  background:\n    linear-gradient(\n      135deg,\n      #4e54c8 0%,\n      #8f94fb 50%,\n      #fc466b 100%);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  margin-bottom: 8px;\n  position: relative;\n}\nmat-card-title[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  bottom: -4px;\n  left: 25%;\n  width: 50%;\n  height: 1px;\n  background:\n    linear-gradient(\n      90deg,\n      transparent,\n      #4e54c8,\n      transparent);\n}\nmat-card-subtitle[_ngcontent-%COMP%] {\n  color: #4e54c8;\n  font-size: 1rem;\n  margin-top: 8px;\n}\n.form-field[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 0.5rem;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-wrapper {\n  padding-bottom: 0;\n  margin-bottom: 0.25rem;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-flex {\n  padding: 0.5em 0 0 0;\n  min-height: 48px;\n  align-items: center;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-infix {\n  padding: 0.5em 0;\n  border-top: 0.84375em solid transparent;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-label {\n  margin-left: 0.75em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-prefix {\n  margin-right: 0.5em;\n  top: 0.25em;\n  padding-left: 1em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-suffix {\n  margin-left: 0.5em;\n  top: 0.25em;\n  padding-right: 1em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-input-element {\n  padding: 0 0.5em;\n}\n.form-field[_ngcontent-%COMP%]     .form-icon {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n  line-height: 1;\n}\n.full-width[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 16px;\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-outline {\n  top: 0;\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-outline-start, \n.full-width[_ngcontent-%COMP%]     .mat-form-field-outline-end {\n  border-radius: 4px;\n}\n.full-width[_ngcontent-%COMP%]     .form-icon {\n  color: rgba(0, 0, 0, 0.54);\n  font-size: 1.2em;\n  margin-top: 0.2em;\n  transition: color 0.3s ease;\n}\n.full-width[_ngcontent-%COMP%]     .form-icon.clickable {\n  cursor: pointer;\n}\n.full-width[_ngcontent-%COMP%]     .form-icon.clickable:hover {\n  color: #3498db;\n}\n.form-links[_ngcontent-%COMP%] {\n  text-align: right;\n  margin-top: 1rem;\n}\n.forgot-password[_ngcontent-%COMP%] {\n  color: #3498db;\n  text-decoration: none;\n  font-size: 0.9rem;\n  transition: color 0.3s ease;\n}\n.forgot-password[_ngcontent-%COMP%]:hover {\n  color: #2980b9;\n  text-decoration: underline;\n}\n.form-actions[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n  margin-top: 1.5rem;\n}\n.signup-text[_ngcontent-%COMP%] {\n  color: #7f8c8d;\n  font-size: 0.9rem;\n  text-align: center;\n}\n.signup-link[_ngcontent-%COMP%] {\n  color: #3498db;\n  text-decoration: none;\n  font-weight: 500;\n  transition: color 0.3s ease;\n}\n.signup-link[_ngcontent-%COMP%]:hover {\n  color: #2980b9;\n  text-decoration: underline;\n}\n.login-text[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 300px;\n  height: 48px;\n  background: #3498db;\n  color: white;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.login-text[_ngcontent-%COMP%]:hover {\n  background: #2980b9;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);\n}\n.button-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.clickable-text[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  font-weight: 500;\n}\n.login-icon[_ngcontent-%COMP%] {\n  transition: transform 0.3s ease;\n}\n.login-icon.animate[_ngcontent-%COMP%] {\n  transform: translateX(4px);\n}\n:is()   .mat-form-field-outline[_ngcontent-%COMP%] {\n  color: #e0e0e0 !important;\n}\n:is()   .mat-form-field-outline-thick[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--text-secondary) !important;\n  opacity: 1 !important;\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-suffix[_ngcontent-%COMP%] {\n  top: 0 !important;\n}\n:is()   .mat-form-field-prefix[_ngcontent-%COMP%] {\n  top: 0.25em !important;\n  margin-right: 8px !important;\n}\n:is()   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .mat-form-field-outline[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .form-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n@media (max-width: 600px) {\n  .login-container[_ngcontent-%COMP%] {\n    padding: 0.5rem;\n    max-width: 400px;\n  }\n  .login-card[_ngcontent-%COMP%] {\n    padding: 1.5rem;\n    max-height: 95vh;\n  }\n  .card-content-wrapper[_ngcontent-%COMP%] {\n    padding: 1rem;\n  }\n  .form-field[_ngcontent-%COMP%]     .mat-form-field-flex {\n    min-height: 42px;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.75rem;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */'], data: { animation: [
     trigger("cardAnimation", [
       transition(":enter", [
         style({ transform: "translateY(50px)", opacity: 0 }),
@@ -6203,19 +6181,87 @@ var LoginComponent = class _LoginComponent {
 })();
 
 // src/app/auth/components/signup/signup.component.ts
-function SignupComponent_app_loading_spinner_60_Template(rf, ctx) {
+function SignupComponent_div_5_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "app-loading-spinner", 33);
+    \u0275\u0275elementStart(0, "div", 35);
+    \u0275\u0275element(1, "app-loading-spinner", 36);
+    \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    \u0275\u0275property("size", 24);
+    \u0275\u0275advance();
+    \u0275\u0275property("size", 48);
   }
 }
-function SignupComponent_span_61_Template(rf, ctx) {
+function SignupComponent_mat_error_29_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span");
-    \u0275\u0275text(1, "Sign Up");
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " First name is required ");
     \u0275\u0275elementEnd();
+  }
+}
+function SignupComponent_mat_error_34_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Last name is required ");
+    \u0275\u0275elementEnd();
+  }
+}
+function SignupComponent_mat_error_39_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Email is required ");
+    \u0275\u0275elementEnd();
+  }
+}
+function SignupComponent_mat_error_40_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Please enter a valid email ");
+    \u0275\u0275elementEnd();
+  }
+}
+function SignupComponent_mat_error_47_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Password is required ");
+    \u0275\u0275elementEnd();
+  }
+}
+function SignupComponent_mat_error_48_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Password must be at least 8 characters ");
+    \u0275\u0275elementEnd();
+  }
+}
+function SignupComponent_mat_error_55_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Passwords do not match ");
+    \u0275\u0275elementEnd();
+  }
+}
+function SignupComponent_mat_error_64_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Please select an account type ");
+    \u0275\u0275elementEnd();
+  }
+}
+function SignupComponent_div_71_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 37)(1, "mat-icon", 38);
+    \u0275\u0275text(2, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "span");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275property("@fadeIn", void 0);
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate(ctx_r0.errorMessage);
   }
 }
 var SignupComponent = class _SignupComponent {
@@ -6226,6 +6272,11 @@ var SignupComponent = class _SignupComponent {
   hidePassword = true;
   hideConfirmPassword = true;
   isLoading = false;
+  loginState = "normal";
+  signupState = "normal";
+  signupButtonHover = false;
+  showError = false;
+  errorMessage = "";
   constructor(fb, router, snackBar) {
     this.fb = fb;
     this.router = router;
@@ -6241,161 +6292,202 @@ var SignupComponent = class _SignupComponent {
       validators: this.passwordMatchValidator
     });
   }
+  ngOnInit() {
+  }
   passwordMatchValidator(form) {
     const password = form.get("password")?.value;
     const confirmPassword = form.get("confirmPassword")?.value;
     return password === confirmPassword ? null : { passwordMismatch: true };
   }
   onSubmit() {
+    Object.keys(this.signupForm.controls).forEach((key) => {
+      this.signupForm.get(key)?.markAsTouched();
+    });
     if (this.signupForm.valid) {
       this.isLoading = true;
+      this.showError = false;
       setTimeout(() => {
         this.isLoading = false;
-        this.snackBar.openFromComponent(ToastNotificationComponent, {
-          data: {
-            message: "Account created successfully!",
-            type: "success",
-            duration: 5e3
-          }
-        });
-        this.router.navigate(["../login"]);
+        this.showError = true;
+        this.errorMessage = "Invalid credentials. Please check your details and try again.";
+        setTimeout(() => {
+          this.showError = false;
+        }, 5e3);
       }, 2e3);
+    } else {
+      this.isLoading = false;
+      this.showError = true;
+      this.errorMessage = "Please fill in all required fields correctly.";
+      setTimeout(() => {
+        this.showError = false;
+      }, 5e3);
     }
   }
   static \u0275fac = function SignupComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _SignupComponent)(\u0275\u0275directiveInject(FormBuilder), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(MatSnackBar));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SignupComponent, selectors: [["app-signup"]], decls: 62, vars: 12, consts: [[1, "auth-container"], [1, "auth-card"], [1, "header-content"], [1, "app-title"], [3, "ngSubmit", "formGroup"], [1, "name-fields"], ["appearance", "outline", 1, "full-width", "animate-item"], ["matInput", "", "formControlName", "firstName", "required", "", "placeholder", "Enter your first name"], ["matPrefix", "", 1, "fas", "fa-user", "form-icon"], ["fieldName", "First Name", 3, "control"], ["matInput", "", "formControlName", "lastName", "required", "", "placeholder", "Enter your last name"], ["matPrefix", "", 1, "fas", "fa-user-circle", "form-icon"], ["fieldName", "Last Name", 3, "control"], ["matInput", "", "formControlName", "email", "type", "email", "required", "", "placeholder", "Enter your email"], ["matPrefix", "", 1, "fas", "fa-envelope", "form-icon"], ["fieldName", "Email", 3, "control"], ["matInput", "", "formControlName", "password", "required", "", "placeholder", "Enter your password", 3, "type"], ["matPrefix", "", 1, "fas", "fa-lock", "form-icon"], ["matSuffix", "", 1, "fas", "fa-eye", "form-icon", "clickable", 3, "click"], ["fieldName", "Password", 3, "control"], ["matInput", "", "formControlName", "confirmPassword", "required", "", "placeholder", "Confirm your password", 3, "type"], ["fieldName", "Confirm Password", 3, "control"], ["formControlName", "accountType", "required", "", "placeholder", "Select account type"], ["value", "jobseeker"], ["value", "employer"], ["matPrefix", "", 1, "fas", "fa-briefcase", "form-icon"], ["fieldName", "Account Type", 3, "control"], [1, "form-actions"], ["mat-button", "", "type", "button", "routerLink", "../login", 1, "login-link"], [1, "highlight"], ["mat-raised-button", "", "color", "primary", "type", "submit", 1, "submit-button", 3, "disabled"], [3, "size", 4, "ngIf"], [4, "ngIf"], [3, "size"]], template: function SignupComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SignupComponent, selectors: [["app-signup"]], decls: 72, vars: 20, consts: [[1, "signup-container"], [1, "auth-background"], [1, "shape", "shape1"], [1, "shape", "shape2"], [1, "shape", "shape3"], ["class", "loading-overlay", 4, "ngIf"], [1, "signup-card"], [1, "card-content-wrapper"], [1, "header-content"], [1, "app-title-container", "animate-item"], [1, "logo-icon"], ["width", "32", "height", "32", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z", "stroke", "currentColor", "stroke-width", "2"], ["d", "M12 17L12 11", "stroke", "currentColor", "stroke-width", "2", "stroke-linecap", "round"], ["cx", "12", "cy", "8", "r", "1", "fill", "currentColor"], [1, "app-title"], [1, "animate-item"], [1, "signup-form", 3, "ngSubmit", "formGroup"], [1, "form-row"], ["appearance", "outline", 1, "form-field"], ["matInput", "", "formControlName", "firstName", "required", ""], [4, "ngIf"], ["matInput", "", "formControlName", "lastName", "required", ""], ["matInput", "", "formControlName", "email", "type", "email", "required", ""], ["matInput", "", "formControlName", "password", "required", "", 3, "type"], ["matPrefix", "", 1, "fas", "fa-lock", "form-icon"], ["matSuffix", "", 1, "fas", "fa-eye", "form-icon", "clickable", 3, "click"], ["matInput", "", "formControlName", "confirmPassword", "required", "", 3, "type"], ["formControlName", "accountType", "required", ""], ["value", "job-seeker"], ["value", "employer"], ["mat-raised-button", "", "color", "primary", "type", "submit", 1, "submit-button", 3, "mouseenter", "mouseleave", "disabled"], [1, "login-link"], ["routerLink", "/auth/login", 1, "link"], ["class", "error-message", 4, "ngIf"], [1, "loading-overlay"], [3, "size"], [1, "error-message"], [1, "error-icon"]], template: function SignupComponent_Template(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275elementStart(0, "div", 0)(1, "mat-card", 1)(2, "mat-card-header")(3, "div", 2)(4, "h1", 3);
-      \u0275\u0275text(5, "SkillsMatch AI");
+      \u0275\u0275elementStart(0, "div", 0)(1, "div", 1);
+      \u0275\u0275element(2, "div", 2)(3, "div", 3)(4, "div", 4);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(6, "mat-card-title");
-      \u0275\u0275text(7, "Create an Account");
+      \u0275\u0275template(5, SignupComponent_div_5_Template, 2, 1, "div", 5);
+      \u0275\u0275elementStart(6, "div", 6)(7, "div", 7)(8, "mat-card-header")(9, "div", 8)(10, "div", 9)(11, "div", 10);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(12, "svg", 11);
+      \u0275\u0275element(13, "path", 12)(14, "path", 13)(15, "circle", 14);
+      \u0275\u0275elementEnd()();
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275elementStart(16, "h1", 15);
+      \u0275\u0275text(17, "Employbridge AI");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(18, "mat-card-title", 16);
+      \u0275\u0275text(19, "Create Account");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(8, "mat-card-subtitle");
-      \u0275\u0275text(9, "Join our professional community");
+      \u0275\u0275elementStart(20, "mat-card-subtitle", 16);
+      \u0275\u0275text(21, "Join our community and start your journey");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(10, "mat-card-content")(11, "form", 4);
-      \u0275\u0275listener("ngSubmit", function SignupComponent_Template_form_ngSubmit_11_listener() {
+      \u0275\u0275elementStart(22, "mat-card-content")(23, "form", 17);
+      \u0275\u0275listener("ngSubmit", function SignupComponent_Template_form_ngSubmit_23_listener() {
         return ctx.onSubmit();
       });
-      \u0275\u0275elementStart(12, "div", 5)(13, "mat-form-field", 6)(14, "mat-label");
-      \u0275\u0275text(15, "First Name");
+      \u0275\u0275elementStart(24, "div", 18)(25, "mat-form-field", 19)(26, "mat-label");
+      \u0275\u0275text(27, "First Name");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(16, "input", 7)(17, "i", 8)(18, "app-form-validation", 9);
+      \u0275\u0275element(28, "input", 20);
+      \u0275\u0275template(29, SignupComponent_mat_error_29_Template, 2, 0, "mat-error", 21);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(19, "mat-form-field", 6)(20, "mat-label");
-      \u0275\u0275text(21, "Last Name");
+      \u0275\u0275elementStart(30, "mat-form-field", 19)(31, "mat-label");
+      \u0275\u0275text(32, "Last Name");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(22, "input", 10)(23, "i", 11)(24, "app-form-validation", 12);
+      \u0275\u0275element(33, "input", 22);
+      \u0275\u0275template(34, SignupComponent_mat_error_34_Template, 2, 0, "mat-error", 21);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(25, "mat-form-field", 6)(26, "mat-label");
-      \u0275\u0275text(27, "Email");
+      \u0275\u0275elementStart(35, "mat-form-field", 19)(36, "mat-label");
+      \u0275\u0275text(37, "Email");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(28, "input", 13)(29, "i", 14)(30, "app-form-validation", 15);
+      \u0275\u0275element(38, "input", 23);
+      \u0275\u0275template(39, SignupComponent_mat_error_39_Template, 2, 0, "mat-error", 21)(40, SignupComponent_mat_error_40_Template, 2, 0, "mat-error", 21);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(31, "mat-form-field", 6)(32, "mat-label");
-      \u0275\u0275text(33, "Password");
+      \u0275\u0275elementStart(41, "mat-form-field", 19)(42, "mat-label");
+      \u0275\u0275text(43, "Password");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(34, "input", 16)(35, "i", 17);
-      \u0275\u0275elementStart(36, "i", 18);
-      \u0275\u0275listener("click", function SignupComponent_Template_i_click_36_listener() {
+      \u0275\u0275element(44, "input", 24)(45, "i", 25);
+      \u0275\u0275elementStart(46, "i", 26);
+      \u0275\u0275listener("click", function SignupComponent_Template_i_click_46_listener() {
         return ctx.hidePassword = !ctx.hidePassword;
       });
       \u0275\u0275elementEnd();
-      \u0275\u0275element(37, "app-form-validation", 19);
+      \u0275\u0275template(47, SignupComponent_mat_error_47_Template, 2, 0, "mat-error", 21)(48, SignupComponent_mat_error_48_Template, 2, 0, "mat-error", 21);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(38, "mat-form-field", 6)(39, "mat-label");
-      \u0275\u0275text(40, "Confirm Password");
+      \u0275\u0275elementStart(49, "mat-form-field", 19)(50, "mat-label");
+      \u0275\u0275text(51, "Confirm Password");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(41, "input", 20)(42, "i", 17)(43, "app-form-validation", 21);
+      \u0275\u0275element(52, "input", 27)(53, "i", 25);
+      \u0275\u0275elementStart(54, "i", 26);
+      \u0275\u0275listener("click", function SignupComponent_Template_i_click_54_listener() {
+        return ctx.hidePassword = !ctx.hidePassword;
+      });
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(44, "mat-form-field", 6)(45, "mat-label");
-      \u0275\u0275text(46, "Account Type");
+      \u0275\u0275template(55, SignupComponent_mat_error_55_Template, 2, 0, "mat-error", 21);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(47, "mat-select", 22)(48, "mat-option", 23);
-      \u0275\u0275text(49, "Job Seeker");
+      \u0275\u0275elementStart(56, "mat-form-field", 19)(57, "mat-label");
+      \u0275\u0275text(58, "Account Type");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(50, "mat-option", 24);
-      \u0275\u0275text(51, "Employer");
+      \u0275\u0275elementStart(59, "mat-select", 28)(60, "mat-option", 29);
+      \u0275\u0275text(61, "Job Seeker");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(62, "mat-option", 30);
+      \u0275\u0275text(63, "Employer");
       \u0275\u0275elementEnd()();
-      \u0275\u0275element(52, "i", 25)(53, "app-form-validation", 26);
+      \u0275\u0275template(64, SignupComponent_mat_error_64_Template, 2, 0, "mat-error", 21);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(54, "div", 27)(55, "button", 28);
-      \u0275\u0275text(56, " Already have an account? ");
-      \u0275\u0275elementStart(57, "span", 29);
-      \u0275\u0275text(58, "Login");
+      \u0275\u0275elementStart(65, "button", 31);
+      \u0275\u0275listener("mouseenter", function SignupComponent_Template_button_mouseenter_65_listener() {
+        return ctx.signupButtonHover = true;
+      })("mouseleave", function SignupComponent_Template_button_mouseleave_65_listener() {
+        return ctx.signupButtonHover = false;
+      });
+      \u0275\u0275text(66, " Sign Up ");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(59, "button", 30);
-      \u0275\u0275template(60, SignupComponent_app_loading_spinner_60_Template, 1, 1, "app-loading-spinner", 31)(61, SignupComponent_span_61_Template, 2, 0, "span", 32);
-      \u0275\u0275elementEnd()()()()()();
+      \u0275\u0275elementStart(67, "div", 32);
+      \u0275\u0275text(68, " Already have an account? ");
+      \u0275\u0275elementStart(69, "a", 33);
+      \u0275\u0275text(70, "Log in");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275template(71, SignupComponent_div_71_Template, 5, 2, "div", 34);
+      \u0275\u0275elementEnd()()()();
     }
     if (rf & 2) {
-      \u0275\u0275advance(11);
+      let tmp_5_0;
+      let tmp_6_0;
+      let tmp_7_0;
+      let tmp_8_0;
+      let tmp_10_0;
+      let tmp_11_0;
+      let tmp_14_0;
+      \u0275\u0275property("@cardAnimation", void 0);
+      \u0275\u0275advance(5);
+      \u0275\u0275property("ngIf", ctx.isLoading);
+      \u0275\u0275advance();
+      \u0275\u0275classProp("blurred", ctx.isLoading);
+      \u0275\u0275advance(16);
+      \u0275\u0275property("@formElements", void 0);
+      \u0275\u0275advance();
       \u0275\u0275property("formGroup", ctx.signupForm);
-      \u0275\u0275advance(7);
-      \u0275\u0275property("control", ctx.signupForm.get("firstName"));
       \u0275\u0275advance(6);
-      \u0275\u0275property("control", ctx.signupForm.get("lastName"));
-      \u0275\u0275advance(6);
-      \u0275\u0275property("control", ctx.signupForm.get("email"));
+      \u0275\u0275property("ngIf", (tmp_5_0 = ctx.signupForm.get("firstName")) == null ? null : tmp_5_0.hasError("required"));
+      \u0275\u0275advance(5);
+      \u0275\u0275property("ngIf", (tmp_6_0 = ctx.signupForm.get("lastName")) == null ? null : tmp_6_0.hasError("required"));
+      \u0275\u0275advance(5);
+      \u0275\u0275property("ngIf", (tmp_7_0 = ctx.signupForm.get("email")) == null ? null : tmp_7_0.hasError("required"));
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", (tmp_8_0 = ctx.signupForm.get("email")) == null ? null : tmp_8_0.hasError("email"));
       \u0275\u0275advance(4);
       \u0275\u0275property("type", ctx.hidePassword ? "password" : "text");
       \u0275\u0275advance(3);
-      \u0275\u0275property("control", ctx.signupForm.get("password"));
+      \u0275\u0275property("ngIf", (tmp_10_0 = ctx.signupForm.get("password")) == null ? null : tmp_10_0.hasError("required"));
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", (tmp_11_0 = ctx.signupForm.get("password")) == null ? null : tmp_11_0.hasError("minlength"));
       \u0275\u0275advance(4);
       \u0275\u0275property("type", ctx.hidePassword ? "password" : "text");
+      \u0275\u0275advance(3);
+      \u0275\u0275property("ngIf", ctx.signupForm.hasError("mismatch"));
+      \u0275\u0275advance(9);
+      \u0275\u0275property("ngIf", (tmp_14_0 = ctx.signupForm.get("accountType")) == null ? null : tmp_14_0.hasError("required"));
+      \u0275\u0275advance();
+      \u0275\u0275property("disabled", ctx.signupForm.invalid || ctx.isLoading)("@buttonHover", ctx.signupButtonHover ? "hovered" : "normal");
       \u0275\u0275advance(2);
-      \u0275\u0275property("control", ctx.signupForm.get("confirmPassword"));
-      \u0275\u0275advance(10);
-      \u0275\u0275property("control", ctx.signupForm.get("accountType"));
-      \u0275\u0275advance(6);
-      \u0275\u0275property("disabled", !ctx.signupForm.valid || ctx.isLoading);
-      \u0275\u0275advance();
-      \u0275\u0275property("ngIf", ctx.isLoading);
-      \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !ctx.isLoading);
+      \u0275\u0275property("@formElements", void 0);
+      \u0275\u0275advance(4);
+      \u0275\u0275property("ngIf", ctx.showError);
     }
-  }, dependencies: [
-    CommonModule,
-    NgIf,
-    FormsModule,
-    \u0275NgNoValidate,
-    DefaultValueAccessor,
-    NgControlStatus,
-    NgControlStatusGroup,
-    RequiredValidator,
-    ReactiveFormsModule,
-    FormGroupDirective,
-    FormControlName,
-    MatCardModule,
-    MatCard,
-    MatCardContent,
-    MatCardHeader,
-    MatCardSubtitle,
-    MatCardTitle,
-    MatFormFieldModule,
-    MatFormField,
-    MatLabel,
-    MatPrefix,
-    MatSuffix,
-    MatInputModule,
-    MatInput,
-    MatButtonModule,
-    MatButton,
-    MatIconModule,
-    MatSelectModule,
-    MatSelect,
-    MatOption,
-    RouterModule,
-    RouterLink,
-    FormValidationComponent,
-    LoadingSpinnerComponent
-  ], styles: ["\n\n.auth-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      #1a237e 0%,\n      #0d47a1 100%);\n}\n.auth-card[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 450px;\n  padding: 32px;\n  border-radius: 16px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);\n  background: rgba(255, 255, 255, 0.95);\n}\n.header-content[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 24px;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 700;\n  color: #1a237e;\n  margin: 0 0 16px 0;\n  letter-spacing: -0.5px;\n}\nmat-card-title[_ngcontent-%COMP%] {\n  font-size: 1.5rem;\n  font-weight: 600;\n  color: #333;\n  margin-bottom: 8px;\n}\nmat-card-subtitle[_ngcontent-%COMP%] {\n  color: #666;\n  font-size: 1rem;\n}\n.name-fields[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  margin-bottom: 16px;\n}\n.half-width[_ngcontent-%COMP%] {\n  flex: 1;\n}\n.full-width[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 16px;\n}\n.form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n}\n.clickable[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n.clickable[_ngcontent-%COMP%]:hover {\n  color: #1a237e;\n  transform: scale(1.1);\n}\n.form-actions[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 24px;\n}\n.login-link[_ngcontent-%COMP%] {\n  color: #666;\n}\n.login-link[_ngcontent-%COMP%]   .highlight[_ngcontent-%COMP%] {\n  color: #1a237e;\n  font-weight: 500;\n}\n.login-link[_ngcontent-%COMP%]:hover   .highlight[_ngcontent-%COMP%] {\n  text-decoration: underline;\n}\n.submit-button[_ngcontent-%COMP%] {\n  min-width: 120px;\n  padding: 8px 24px;\n  font-weight: 500;\n  background:\n    linear-gradient(\n      45deg,\n      #1a237e,\n      #0d47a1);\n  transition: all 0.3s ease;\n}\n.submit-button[_ngcontent-%COMP%]:not([disabled]):hover {\n  transform: translateY(-1px);\n  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.2);\n}\n.submit-button[disabled][_ngcontent-%COMP%] {\n  background: #ccc;\n}\n:is()   .mat-form-field-outline[_ngcontent-%COMP%] {\n  color: #ddd !important;\n}\n:is()   .mat-form-field-outline-thick[_ngcontent-%COMP%] {\n  color: #1a237e !important;\n}\n:is()   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: #666 !important;\n  opacity: 1 !important;\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: #1a237e !important;\n}\n:is()   .mat-form-field-suffix[_ngcontent-%COMP%] {\n  top: 0 !important;\n}\n:is()   .mat-form-field-prefix[_ngcontent-%COMP%] {\n  top: 0.25em !important;\n  margin-right: 8px !important;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .mat-form-field-outline[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .form-icon[_ngcontent-%COMP%] {\n  color: #1a237e;\n}\n:is()   .mat-select-value[_ngcontent-%COMP%] {\n  color: #333;\n}\n:is()   .mat-select-arrow[_ngcontent-%COMP%] {\n  color: #666;\n}\n@media (max-width: 600px) {\n  .auth-card[_ngcontent-%COMP%] {\n    padding: 24px;\n  }\n  .name-fields[_ngcontent-%COMP%] {\n    flex-direction: column;\n    gap: 0;\n  }\n  .form-actions[_ngcontent-%COMP%] {\n    flex-direction: column;\n    gap: 16px;\n  }\n  .submit-button[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.75rem;\n  }\n}\n/*# sourceMappingURL=signup.component.css.map */"] });
+  }, dependencies: [CommonModule, NgIf, FormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, RequiredValidator, ReactiveFormsModule, FormGroupDirective, FormControlName, MatCardModule, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle, MatFormFieldModule, MatFormField, MatLabel, MatError, MatPrefix, MatSuffix, MatInputModule, MatInput, MatButtonModule, MatButton, MatIconModule, MatIcon, MatSelectModule, MatSelect, MatOption, RouterModule, RouterLink, LoadingSpinnerComponent], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --accent-light: #ff9a9e;\n  --text-primary: #333;\n  --text-secondary: #666;\n  --background-light: #f5f7fa;\n  --card-bg: #ffffff;\n  --success: #00c853;\n  --warning: #ffd600;\n}\n.signup-container[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 50%,\n      #ff6b6b 100%);\n  overflow: hidden;\n}\n.auth-background[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 0;\n}\n.shape[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.05);\n  animation: _ngcontent-%COMP%_float 15s infinite;\n  -webkit-backdrop-filter: blur(5px);\n  backdrop-filter: blur(5px);\n}\n.shape1[_ngcontent-%COMP%] {\n  width: 500px;\n  height: 500px;\n  top: -250px;\n  right: -100px;\n  animation-delay: 0s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(255, 255, 255, 0.03),\n      rgba(142, 148, 251, 0.08));\n}\n.shape2[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 400px;\n  bottom: -150px;\n  left: -100px;\n  animation-delay: 3s;\n  animation-duration: 18s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(142, 148, 251, 0.06),\n      rgba(255, 255, 255, 0.04));\n}\n.shape3[_ngcontent-%COMP%] {\n  width: 300px;\n  height: 300px;\n  bottom: 30%;\n  right: 20%;\n  animation-delay: 5s;\n  animation-duration: 20s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(252, 70, 107, 0.04),\n      rgba(255, 255, 255, 0.03));\n}\n@keyframes _ngcontent-%COMP%_float {\n  0% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n  25% {\n    transform: translate(5%, 5%) rotate(5deg);\n  }\n  50% {\n    transform: translate(0%, 8%) rotate(0deg);\n  }\n  75% {\n    transform: translate(-5%, 3%) rotate(-5deg);\n  }\n  100% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n}\n.loading-overlay[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: rgba(255, 255, 255, 0.8);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 1000;\n}\n.signup-card[_ngcontent-%COMP%] {\n  background: white;\n  border-radius: 16px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);\n  padding: 2rem;\n  width: 100%;\n  max-width: 600px;\n  max-height: 90vh;\n  transition: all 0.3s ease;\n  position: relative;\n  overflow-y: auto;\n}\n.signup-card.blurred[_ngcontent-%COMP%] {\n  filter: blur(2px);\n  pointer-events: none;\n}\n.signup-card[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--accent));\n  z-index: 5;\n}\n.signup-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-5px);\n}\n.signup-header[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 2rem;\n}\n.signup-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 600;\n  color: #2c3e50;\n  margin-bottom: 0.5rem;\n}\n.signup-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #7f8c8d;\n  font-size: 1rem;\n}\n.signup-form[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n}\n.form-row[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 1rem;\n}\n.form-field[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 0.5rem;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-wrapper {\n  padding-bottom: 0;\n  margin-bottom: 0.5rem;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-flex {\n  padding: 0.5em 0.75em 0 0.75em;\n  min-height: 48px;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-infix {\n  padding: 0.5em 0;\n  border-top: 0.84375em solid transparent;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-label {\n  margin-left: 0.5em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-prefix {\n  margin-right: 0.5em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-suffix {\n  margin-left: 0.5em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-outline {\n  top: 0;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-outline-start, \n.form-field[_ngcontent-%COMP%]     .mat-form-field-outline-end {\n  border-radius: 4px;\n}\n.form-field[_ngcontent-%COMP%]     .form-icon {\n  color: rgba(0, 0, 0, 0.54);\n  font-size: 1.2em;\n  margin-top: 0.2em;\n  transition: color 0.3s ease;\n}\n.form-field[_ngcontent-%COMP%]     .form-icon.clickable {\n  cursor: pointer;\n}\n.form-field[_ngcontent-%COMP%]     .form-icon.clickable:hover {\n  color: #3498db;\n}\n.submit-button[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 48px;\n  font-size: 1rem;\n  font-weight: 500;\n  margin-top: 1rem;\n  transition: all 0.3s ease;\n  border-radius: 8px;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.submit-button[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n}\n.submit-button[_ngcontent-%COMP%]:disabled {\n  opacity: 0.7;\n  transform: none;\n  box-shadow: none;\n}\n.login-link[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-top: 1.5rem;\n  color: #7f8c8d;\n  font-size: 0.9rem;\n}\n.login-link[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%] {\n  color: #3498db;\n  text-decoration: none;\n  font-weight: 500;\n  transition: color 0.3s ease;\n}\n.login-link[_ngcontent-%COMP%]   .link[_ngcontent-%COMP%]:hover {\n  color: #2980b9;\n  text-decoration: underline;\n}\n[_nghost-%COMP%] {\n  display: block;\n}\n@media (max-width: 600px) {\n  .signup-container[_ngcontent-%COMP%] {\n    padding: 1rem;\n  }\n  .signup-card[_ngcontent-%COMP%] {\n    padding: 1.5rem;\n    max-height: 95vh;\n  }\n  .form-row[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .form-field[_ngcontent-%COMP%]     .mat-form-field-flex {\n    min-height: 42px;\n  }\n}\n.card-content-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n}\n.header-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.5rem;\n  margin-bottom: 1rem;\n}\n.app-title-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  margin-bottom: 1rem;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 40px;\n  height: 40px;\n  color: var(--primary);\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 1.5rem;\n  font-weight: 600;\n  background:\n    linear-gradient(\n      135deg,\n      #4e54c8 0%,\n      #8f94fb 50%,\n      #fc466b 100%);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  margin: 0;\n  position: relative;\n}\n.app-title[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  bottom: -4px;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background:\n    linear-gradient(\n      90deg,\n      transparent,\n      #4e54c8,\n      transparent);\n}\nmat-card-title[_ngcontent-%COMP%] {\n  font-size: 1.75rem;\n  font-weight: 600;\n  background:\n    linear-gradient(\n      135deg,\n      #4e54c8 0%,\n      #8f94fb 50%,\n      #fc466b 100%);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  margin: 0;\n  text-align: center;\n  position: relative;\n}\nmat-card-title[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  bottom: -4px;\n  left: 25%;\n  width: 50%;\n  height: 1px;\n  background:\n    linear-gradient(\n      90deg,\n      transparent,\n      #4e54c8,\n      transparent);\n}\nmat-card-subtitle[_ngcontent-%COMP%] {\n  color: #4e54c8;\n  font-size: 1rem;\n  margin: 8px 0 0;\n  text-align: center;\n}\n.animate-item[_ngcontent-%COMP%] {\n  opacity: 0;\n  transform: translateY(20px);\n  animation: _ngcontent-%COMP%_fadeInUp 0.5s ease forwards;\n}\n@keyframes _ngcontent-%COMP%_fadeInUp {\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.error-message[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  margin-top: 1rem;\n  padding: 1rem;\n  background-color: #ffebee;\n  border-radius: 8px;\n  color: #d32f2f;\n  animation: _ngcontent-%COMP%_fadeIn 0.3s ease-in-out;\n}\n.error-icon[_ngcontent-%COMP%] {\n  color: #d32f2f;\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n}\n@keyframes _ngcontent-%COMP%_fadeIn {\n  from {\n    opacity: 0;\n    transform: translateY(-10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n/*# sourceMappingURL=signup.component.css.map */'], data: { animation: [
+    trigger("cardAnimation", [
+      transition(":enter", [
+        style({ opacity: 0, transform: "translateY(20px)" }),
+        animate("0.5s ease-out", style({ opacity: 1, transform: "translateY(0)" }))
+      ])
+    ]),
+    trigger("formElements", [
+      transition(":enter", [
+        style({ opacity: 0 }),
+        animate("0.3s 0.2s ease-out", style({ opacity: 1 }))
+      ])
+    ]),
+    trigger("buttonHover", [
+      state("normal", style({
+        transform: "scale(1)"
+      })),
+      state("hovered", style({
+        transform: "scale(1.05)"
+      })),
+      transition("normal <=> hovered", animate("0.2s ease-in-out"))
+    ])
+  ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SignupComponent, { className: "SignupComponent", filePath: "src/app/auth/components/signup/signup.component.ts", lineNumber: 355 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SignupComponent, { className: "SignupComponent", filePath: "src/app/auth/components/signup/signup.component.ts", lineNumber: 66 });
 })();
 
 // node_modules/@angular/material/fesm2022/sidenav.mjs
@@ -7721,1848 +7813,24 @@ var MatSidenavModule = class _MatSidenavModule {
   }], null, null);
 })();
 
-// node_modules/@angular/material/fesm2022/list.mjs
-var _c05 = ["*"];
-var _c12 = '.mdc-list{margin:0;padding:8px 0;list-style-type:none}.mdc-list:focus{outline:none}.mdc-list-item{display:flex;position:relative;justify-content:flex-start;overflow:hidden;padding:0;align-items:stretch;cursor:pointer;padding-left:16px;padding-right:16px;background-color:var(--mdc-list-list-item-container-color, transparent);border-radius:var(--mdc-list-list-item-container-shape, var(--mat-sys-corner-none))}.mdc-list-item.mdc-list-item--selected{background-color:var(--mdc-list-list-item-selected-container-color)}.mdc-list-item:focus{outline:0}.mdc-list-item.mdc-list-item--disabled{cursor:auto}.mdc-list-item.mdc-list-item--with-one-line{height:var(--mdc-list-list-item-one-line-container-height, 48px)}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__start{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-two-lines{height:var(--mdc-list-list-item-two-line-container-height, 64px)}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-three-lines{height:var(--mdc-list-list-item-three-line-container-height, 88px)}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--selected::before,.mdc-list-item.mdc-list-item--selected:focus::before,.mdc-list-item:not(.mdc-list-item--selected):focus::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;content:"";pointer-events:none}a.mdc-list-item{color:inherit;text-decoration:none}.mdc-list-item__start{fill:currentColor;flex-shrink:0;pointer-events:none}.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-leading-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-leading-icon-size, 24px);height:var(--mdc-list-list-item-leading-icon-size, 24px);margin-left:16px;margin-right:32px}[dir=rtl] .mdc-list-item--with-leading-icon .mdc-list-item__start{margin-left:32px;margin-right:16px}.mdc-list-item--with-leading-icon:hover .mdc-list-item__start{color:var(--mdc-list-list-item-hover-leading-icon-color)}.mdc-list-item--with-leading-avatar .mdc-list-item__start{width:var(--mdc-list-list-item-leading-avatar-size, 40px);height:var(--mdc-list-list-item-leading-avatar-size, 40px);margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item--with-leading-avatar .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-avatar .mdc-list-item__start{margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item__end{flex-shrink:0;pointer-events:none}.mdc-list-item--with-trailing-meta .mdc-list-item__end{font-family:var(--mdc-list-list-item-trailing-supporting-text-font, var(--mat-sys-label-small-font));line-height:var(--mdc-list-list-item-trailing-supporting-text-line-height, var(--mat-sys-label-small-line-height));font-size:var(--mdc-list-list-item-trailing-supporting-text-size, var(--mat-sys-label-small-size));font-weight:var(--mdc-list-list-item-trailing-supporting-text-weight, var(--mat-sys-label-small-weight));letter-spacing:var(--mdc-list-list-item-trailing-supporting-text-tracking, var(--mat-sys-label-small-tracking))}.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-trailing-icon-size, 24px);height:var(--mdc-list-list-item-trailing-icon-size, 24px)}.mdc-list-item--with-trailing-icon:hover .mdc-list-item__end{color:var(--mdc-list-list-item-hover-trailing-icon-color)}.mdc-list-item.mdc-list-item--with-trailing-meta .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-supporting-text-color, var(--mat-sys-on-surface-variant))}.mdc-list-item--selected.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-selected-trailing-icon-color, var(--mat-sys-primary))}.mdc-list-item__content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;align-self:center;flex:1;pointer-events:none}.mdc-list-item--with-two-lines .mdc-list-item__content,.mdc-list-item--with-three-lines .mdc-list-item__content{align-self:stretch}.mdc-list-item__primary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:var(--mdc-list-list-item-label-text-color, var(--mat-sys-on-surface));font-family:var(--mdc-list-list-item-label-text-font, var(--mat-sys-body-large-font));line-height:var(--mdc-list-list-item-label-text-line-height, var(--mat-sys-body-large-line-height));font-size:var(--mdc-list-list-item-label-text-size, var(--mat-sys-body-large-size));font-weight:var(--mdc-list-list-item-label-text-weight, var(--mat-sys-body-large-weight));letter-spacing:var(--mdc-list-list-item-label-text-tracking, var(--mat-sys-body-large-tracking))}.mdc-list-item:hover .mdc-list-item__primary-text{color:var(--mdc-list-list-item-hover-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:focus .mdc-list-item__primary-text{color:var(--mdc-list-list-item-focus-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-three-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item__secondary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;margin-top:0;color:var(--mdc-list-list-item-supporting-text-color, var(--mat-sys-on-surface-variant));font-family:var(--mdc-list-list-item-supporting-text-font, var(--mat-sys-body-medium-font));line-height:var(--mdc-list-list-item-supporting-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mdc-list-list-item-supporting-text-size, var(--mat-sys-body-medium-size));font-weight:var(--mdc-list-list-item-supporting-text-weight, var(--mat-sys-body-medium-weight));letter-spacing:var(--mdc-list-list-item-supporting-text-tracking, var(--mat-sys-body-medium-tracking))}.mdc-list-item__secondary-text::before{display:inline-block;width:0;height:20px;content:"";vertical-align:0}.mdc-list-item--with-three-lines .mdc-list-item__secondary-text{white-space:normal;line-height:20px}.mdc-list-item--with-overline .mdc-list-item__secondary-text{white-space:nowrap;line-height:auto}.mdc-list-item--with-leading-radio.mdc-list-item,.mdc-list-item--with-leading-checkbox.mdc-list-item,.mdc-list-item--with-leading-icon.mdc-list-item,.mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:0;padding-right:16px}[dir=rtl] .mdc-list-item--with-leading-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-checkbox.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:16px;padding-right:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end{display:block;margin-top:0;line-height:normal}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-trailing-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-icon.mdc-list-item{padding-left:0;padding-right:0}.mdc-list-item--with-trailing-icon .mdc-list-item__end{margin-left:16px;margin-right:16px}.mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-meta .mdc-list-item__end{-webkit-user-select:none;user-select:none;margin-left:28px;margin-right:16px}[dir=rtl] .mdc-list-item--with-trailing-meta .mdc-list-item__end{margin-left:16px;margin-right:28px}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end{display:block;line-height:normal;align-self:flex-start;margin-top:0}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end::before,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio .mdc-list-item__start,.mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:8px;margin-right:24px}[dir=rtl] .mdc-list-item--with-leading-radio .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:24px;margin-right:8px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__start,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:8px}.mdc-list-item--with-trailing-radio.mdc-list-item,.mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-left:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-right:0}.mdc-list-item--with-trailing-radio .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:24px;margin-right:8px}[dir=rtl] .mdc-list-item--with-trailing-radio .mdc-list-item__end,[dir=rtl] .mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:8px;margin-right:24px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:8px}.mdc-list-group__subheader{margin:.75rem 16px}.mdc-list-item--disabled .mdc-list-item__start,.mdc-list-item--disabled .mdc-list-item__content,.mdc-list-item--disabled .mdc-list-item__end{opacity:1}.mdc-list-item--disabled .mdc-list-item__primary-text,.mdc-list-item--disabled .mdc-list-item__secondary-text{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--disabled.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-disabled-leading-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-leading-icon-opacity, 0.38)}.mdc-list-item--disabled.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-disabled-trailing-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-trailing-icon-opacity, 0.38)}.mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing,[dir=rtl] .mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing{padding-left:0;padding-right:0}.mdc-list-item.mdc-list-item--disabled .mdc-list-item__primary-text{color:var(--mdc-list-list-item-disabled-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:hover::before{background-color:var(--mdc-list-list-item-hover-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mdc-list-item.mdc-list-item--disabled::before{background-color:var(--mdc-list-list-item-disabled-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item:focus::before{background-color:var(--mdc-list-list-item-focus-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item--disabled .mdc-radio,.mdc-list-item--disabled .mdc-checkbox{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--with-leading-avatar .mat-mdc-list-item-avatar{border-radius:var(--mdc-list-list-item-leading-avatar-shape, var(--mat-sys-corner-full));background-color:var(--mdc-list-list-item-leading-avatar-color, var(--mat-sys-primary-container))}.mat-mdc-list-item-icon{font-size:var(--mdc-list-list-item-leading-icon-size, 24px)}@media(forced-colors: active){a.mdc-list-item--activated::after{content:"";position:absolute;top:50%;right:16px;transform:translateY(-50%);width:10px;height:0;border-bottom:solid 10px;border-radius:10px}a.mdc-list-item--activated [dir=rtl]::after{right:auto;left:16px}}.mat-mdc-list-base{display:block}.mat-mdc-list-base .mdc-list-item__start,.mat-mdc-list-base .mdc-list-item__end,.mat-mdc-list-base .mdc-list-item__content{pointer-events:auto}.mat-mdc-list-item,.mat-mdc-list-option{width:100%;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-list-item:not(.mat-mdc-list-item-interactive),.mat-mdc-list-option:not(.mat-mdc-list-item-interactive){cursor:default}.mat-mdc-list-item .mat-divider-inset,.mat-mdc-list-option .mat-divider-inset{position:absolute;left:0;right:0;bottom:0}.mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,.mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-left:72px}[dir=rtl] .mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,[dir=rtl] .mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-right:72px}.mat-mdc-list-item-interactive::before{top:0;left:0;right:0;bottom:0;position:absolute;content:"";opacity:0;pointer-events:none;border-radius:inherit}.mat-mdc-list-item>.mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}.mat-mdc-list-item:focus>.mat-focus-indicator::before{content:""}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-line.mdc-list-item__secondary-text{white-space:nowrap;line-height:normal}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-unscoped-content.mdc-list-item__secondary-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}mat-action-list button{background:none;color:inherit;border:none;font:inherit;outline:inherit;-webkit-tap-highlight-color:rgba(0,0,0,0);text-align:start}mat-action-list button::-moz-focus-inner{border:0}.mdc-list-item--with-leading-icon .mdc-list-item__start{margin-inline-start:var(--mat-list-list-item-leading-icon-start-space, 16px);margin-inline-end:var(--mat-list-list-item-leading-icon-end-space, 16px)}.mat-mdc-nav-list .mat-mdc-list-item{border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full));--mat-focus-indicator-border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full))}.mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated{background-color:var(--mat-list-active-indicator-color, var(--mat-sys-secondary-container))}';
-var _c22 = ["unscopedContent"];
-var _c32 = ["text"];
-var _c42 = [[["", "matListItemAvatar", ""], ["", "matListItemIcon", ""]], [["", "matListItemTitle", ""]], [["", "matListItemLine", ""]], "*", [["", "matListItemMeta", ""]], [["mat-divider"]]];
-var _c52 = ["[matListItemAvatar],[matListItemIcon]", "[matListItemTitle]", "[matListItemLine]", "*", "[matListItemMeta]", "mat-divider"];
-var _c62 = [[["", "matListItemTitle", ""]], [["", "matListItemLine", ""]], "*", [["mat-divider"]], [["", "matListItemAvatar", ""], ["", "matListItemIcon", ""]]];
-var _c7 = ["[matListItemTitle]", "[matListItemLine]", "*", "mat-divider", "[matListItemAvatar],[matListItemIcon]"];
-function MatListOption_ng_template_0_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275projection(0, 4);
-  }
-}
-function MatListOption_ng_template_2_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 11);
-    \u0275\u0275element(1, "input", 12);
-    \u0275\u0275elementStart(2, "div", 13);
-    \u0275\u0275namespaceSVG();
-    \u0275\u0275elementStart(3, "svg", 14);
-    \u0275\u0275element(4, "path", 15);
-    \u0275\u0275elementEnd();
-    \u0275\u0275namespaceHTML();
-    \u0275\u0275element(5, "div", 16);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275classProp("mdc-checkbox--disabled", ctx_r1.disabled);
-    \u0275\u0275advance();
-    \u0275\u0275property("checked", ctx_r1.selected)("disabled", ctx_r1.disabled);
-  }
-}
-function MatListOption_ng_template_4_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 17);
-    \u0275\u0275element(1, "input", 18);
-    \u0275\u0275elementStart(2, "div", 19);
-    \u0275\u0275element(3, "div", 20)(4, "div", 21);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275classProp("mdc-radio--disabled", ctx_r1.disabled);
-    \u0275\u0275advance();
-    \u0275\u0275property("checked", ctx_r1.selected)("disabled", ctx_r1.disabled);
-  }
-}
-function MatListOption_Conditional_6_ng_template_1_Template(rf, ctx) {
-}
-function MatListOption_Conditional_6_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 4);
-    \u0275\u0275template(1, MatListOption_Conditional_6_ng_template_1_Template, 0, 0, "ng-template", 6);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    \u0275\u0275nextContext();
-    const checkbox_r3 = \u0275\u0275reference(3);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", checkbox_r3);
-  }
-}
-function MatListOption_Conditional_7_ng_template_1_Template(rf, ctx) {
-}
-function MatListOption_Conditional_7_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 5);
-    \u0275\u0275template(1, MatListOption_Conditional_7_ng_template_1_Template, 0, 0, "ng-template", 6);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    \u0275\u0275nextContext();
-    const radio_r4 = \u0275\u0275reference(5);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", radio_r4);
-  }
-}
-function MatListOption_Conditional_8_ng_template_0_Template(rf, ctx) {
-}
-function MatListOption_Conditional_8_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275template(0, MatListOption_Conditional_8_ng_template_0_Template, 0, 0, "ng-template", 6);
-  }
-  if (rf & 2) {
-    \u0275\u0275nextContext();
-    const icons_r5 = \u0275\u0275reference(1);
-    \u0275\u0275property("ngTemplateOutlet", icons_r5);
-  }
-}
-function MatListOption_Conditional_15_ng_template_1_Template(rf, ctx) {
-}
-function MatListOption_Conditional_15_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 9);
-    \u0275\u0275template(1, MatListOption_Conditional_15_ng_template_1_Template, 0, 0, "ng-template", 6);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    \u0275\u0275nextContext();
-    const checkbox_r3 = \u0275\u0275reference(3);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", checkbox_r3);
-  }
-}
-function MatListOption_Conditional_16_ng_template_1_Template(rf, ctx) {
-}
-function MatListOption_Conditional_16_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 9);
-    \u0275\u0275template(1, MatListOption_Conditional_16_ng_template_1_Template, 0, 0, "ng-template", 6);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    \u0275\u0275nextContext();
-    const radio_r4 = \u0275\u0275reference(5);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", radio_r4);
-  }
-}
-function MatListOption_Conditional_17_ng_template_0_Template(rf, ctx) {
-}
-function MatListOption_Conditional_17_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275template(0, MatListOption_Conditional_17_ng_template_0_Template, 0, 0, "ng-template", 6);
-  }
-  if (rf & 2) {
-    \u0275\u0275nextContext();
-    const icons_r5 = \u0275\u0275reference(1);
-    \u0275\u0275property("ngTemplateOutlet", icons_r5);
-  }
-}
-var LIST_OPTION = new InjectionToken("ListOption");
-var MatListItemTitle = class _MatListItemTitle {
-  _elementRef = inject(ElementRef);
-  constructor() {
-  }
-  static \u0275fac = function MatListItemTitle_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatListItemTitle)();
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _MatListItemTitle,
-    selectors: [["", "matListItemTitle", ""]],
-    hostAttrs: [1, "mat-mdc-list-item-title", "mdc-list-item__primary-text"]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListItemTitle, [{
-    type: Directive,
-    args: [{
-      selector: "[matListItemTitle]",
-      host: {
-        "class": "mat-mdc-list-item-title mdc-list-item__primary-text"
-      }
-    }]
-  }], () => [], null);
-})();
-var MatListItemLine = class _MatListItemLine {
-  _elementRef = inject(ElementRef);
-  constructor() {
-  }
-  static \u0275fac = function MatListItemLine_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatListItemLine)();
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _MatListItemLine,
-    selectors: [["", "matListItemLine", ""]],
-    hostAttrs: [1, "mat-mdc-list-item-line", "mdc-list-item__secondary-text"]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListItemLine, [{
-    type: Directive,
-    args: [{
-      selector: "[matListItemLine]",
-      host: {
-        "class": "mat-mdc-list-item-line mdc-list-item__secondary-text"
-      }
-    }]
-  }], () => [], null);
-})();
-var MatListItemMeta = class _MatListItemMeta {
-  static \u0275fac = function MatListItemMeta_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatListItemMeta)();
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _MatListItemMeta,
-    selectors: [["", "matListItemMeta", ""]],
-    hostAttrs: [1, "mat-mdc-list-item-meta", "mdc-list-item__end"]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListItemMeta, [{
-    type: Directive,
-    args: [{
-      selector: "[matListItemMeta]",
-      host: {
-        "class": "mat-mdc-list-item-meta mdc-list-item__end"
-      }
-    }]
-  }], null, null);
-})();
-var _MatListItemGraphicBase = class __MatListItemGraphicBase {
-  _listOption = inject(LIST_OPTION, {
-    optional: true
-  });
-  constructor() {
-  }
-  _isAlignedAtStart() {
-    return !this._listOption || this._listOption?._getTogglePosition() === "after";
-  }
-  static \u0275fac = function _MatListItemGraphicBase_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || __MatListItemGraphicBase)();
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: __MatListItemGraphicBase,
-    hostVars: 4,
-    hostBindings: function _MatListItemGraphicBase_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        \u0275\u0275classProp("mdc-list-item__start", ctx._isAlignedAtStart())("mdc-list-item__end", !ctx._isAlignedAtStart());
-      }
-    }
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_MatListItemGraphicBase, [{
-    type: Directive,
-    args: [{
-      host: {
-        // MDC uses intuitively named classes `.mdc-list-item__start` and `.mat-list-item__end` to
-        // position content such as icons or checkboxes/radios that comes either before or after the
-        // text content respectively. This directive detects the placement of the checkbox/radio and
-        // applies the correct MDC class to position the icon/avatar on the opposite side.
-        "[class.mdc-list-item__start]": "_isAlignedAtStart()",
-        "[class.mdc-list-item__end]": "!_isAlignedAtStart()"
-      }
-    }]
-  }], () => [], null);
-})();
-var MatListItemAvatar = class _MatListItemAvatar extends _MatListItemGraphicBase {
-  static \u0275fac = /* @__PURE__ */ (() => {
-    let \u0275MatListItemAvatar_BaseFactory;
-    return function MatListItemAvatar_Factory(__ngFactoryType__) {
-      return (\u0275MatListItemAvatar_BaseFactory || (\u0275MatListItemAvatar_BaseFactory = \u0275\u0275getInheritedFactory(_MatListItemAvatar)))(__ngFactoryType__ || _MatListItemAvatar);
-    };
-  })();
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _MatListItemAvatar,
-    selectors: [["", "matListItemAvatar", ""]],
-    hostAttrs: [1, "mat-mdc-list-item-avatar"],
-    features: [\u0275\u0275InheritDefinitionFeature]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListItemAvatar, [{
-    type: Directive,
-    args: [{
-      selector: "[matListItemAvatar]",
-      host: {
-        "class": "mat-mdc-list-item-avatar"
-      }
-    }]
-  }], null, null);
-})();
-var MatListItemIcon = class _MatListItemIcon extends _MatListItemGraphicBase {
-  static \u0275fac = /* @__PURE__ */ (() => {
-    let \u0275MatListItemIcon_BaseFactory;
-    return function MatListItemIcon_Factory(__ngFactoryType__) {
-      return (\u0275MatListItemIcon_BaseFactory || (\u0275MatListItemIcon_BaseFactory = \u0275\u0275getInheritedFactory(_MatListItemIcon)))(__ngFactoryType__ || _MatListItemIcon);
-    };
-  })();
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _MatListItemIcon,
-    selectors: [["", "matListItemIcon", ""]],
-    hostAttrs: [1, "mat-mdc-list-item-icon"],
-    features: [\u0275\u0275InheritDefinitionFeature]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListItemIcon, [{
-    type: Directive,
-    args: [{
-      selector: "[matListItemIcon]",
-      host: {
-        "class": "mat-mdc-list-item-icon"
-      }
-    }]
-  }], null, null);
-})();
-var MAT_LIST_CONFIG = new InjectionToken("MAT_LIST_CONFIG");
-var MatListBase = class _MatListBase {
-  _isNonInteractive = true;
-  /** Whether ripples for all list items is disabled. */
-  get disableRipple() {
-    return this._disableRipple;
-  }
-  set disableRipple(value) {
-    this._disableRipple = coerceBooleanProperty(value);
-  }
-  _disableRipple = false;
-  /**
-   * Whether the entire list is disabled. When disabled, the list itself and each of its list items
-   * are disabled.
-   */
-  get disabled() {
-    return this._disabled;
-  }
-  set disabled(value) {
-    this._disabled = coerceBooleanProperty(value);
-  }
-  _disabled = false;
-  _defaultOptions = inject(MAT_LIST_CONFIG, {
-    optional: true
-  });
-  static \u0275fac = function MatListBase_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatListBase)();
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _MatListBase,
-    hostVars: 1,
-    hostBindings: function MatListBase_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        \u0275\u0275attribute("aria-disabled", ctx.disabled);
-      }
-    },
-    inputs: {
-      disableRipple: "disableRipple",
-      disabled: "disabled"
-    }
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListBase, [{
-    type: Directive,
-    args: [{
-      host: {
-        "[attr.aria-disabled]": "disabled"
-      }
-    }]
-  }], null, {
-    disableRipple: [{
-      type: Input
-    }],
-    disabled: [{
-      type: Input
-    }]
-  });
-})();
-var MatListItemBase = class _MatListItemBase {
-  _elementRef = inject(ElementRef);
-  _ngZone = inject(NgZone);
-  _listBase = inject(MatListBase, {
-    optional: true
-  });
-  _platform = inject(Platform);
-  /** Host element for the list item. */
-  _hostElement;
-  /** indicate whether the host element is a button or not */
-  _isButtonElement;
-  /** Whether animations are disabled. */
-  _noopAnimations;
-  _avatars;
-  _icons;
-  /**
-   * The number of lines this list item should reserve space for. If not specified,
-   * lines are inferred based on the projected content.
-   *
-   * Explicitly specifying the number of lines is useful if you want to acquire additional
-   * space and enable the wrapping of text. The unscoped text content of a list item will
-   * always be able to take up the remaining space of the item, unless it represents the title.
-   *
-   * A maximum of three lines is supported as per the Material Design specification.
-   */
-  set lines(lines) {
-    this._explicitLines = coerceNumberProperty(lines, null);
-    this._updateItemLines(false);
-  }
-  _explicitLines = null;
-  /** Whether ripples for list items are disabled. */
-  get disableRipple() {
-    return this.disabled || this._disableRipple || this._noopAnimations || !!this._listBase?.disableRipple;
-  }
-  set disableRipple(value) {
-    this._disableRipple = coerceBooleanProperty(value);
-  }
-  _disableRipple = false;
-  /** Whether the list-item is disabled. */
-  get disabled() {
-    return this._disabled || !!this._listBase?.disabled;
-  }
-  set disabled(value) {
-    this._disabled = coerceBooleanProperty(value);
-  }
-  _disabled = false;
-  _subscriptions = new Subscription();
-  _rippleRenderer = null;
-  /** Whether the list item has unscoped text content. */
-  _hasUnscopedTextContent = false;
-  /**
-   * Implemented as part of `RippleTarget`.
-   * @docs-private
-   */
-  rippleConfig;
-  /**
-   * Implemented as part of `RippleTarget`.
-   * @docs-private
-   */
-  get rippleDisabled() {
-    return this.disableRipple || !!this.rippleConfig.disabled;
-  }
-  constructor() {
-    inject(_CdkPrivateStyleLoader).load(_StructuralStylesLoader);
-    const globalRippleOptions = inject(MAT_RIPPLE_GLOBAL_OPTIONS, {
-      optional: true
-    });
-    const animationMode = inject(ANIMATION_MODULE_TYPE, {
-      optional: true
-    });
-    this.rippleConfig = globalRippleOptions || {};
-    this._hostElement = this._elementRef.nativeElement;
-    this._isButtonElement = this._hostElement.nodeName.toLowerCase() === "button";
-    this._noopAnimations = animationMode === "NoopAnimations";
-    if (this._listBase && !this._listBase._isNonInteractive) {
-      this._initInteractiveListItem();
-    }
-    if (this._isButtonElement && !this._hostElement.hasAttribute("type")) {
-      this._hostElement.setAttribute("type", "button");
-    }
-  }
-  ngAfterViewInit() {
-    this._monitorProjectedLinesAndTitle();
-    this._updateItemLines(true);
-  }
-  ngOnDestroy() {
-    this._subscriptions.unsubscribe();
-    if (this._rippleRenderer !== null) {
-      this._rippleRenderer._removeTriggerEvents();
-    }
-  }
-  /** Whether the list item has icons or avatars. */
-  _hasIconOrAvatar() {
-    return !!(this._avatars.length || this._icons.length);
-  }
-  _initInteractiveListItem() {
-    this._hostElement.classList.add("mat-mdc-list-item-interactive");
-    this._rippleRenderer = new RippleRenderer(this, this._ngZone, this._hostElement, this._platform, inject(Injector));
-    this._rippleRenderer.setupTriggerEvents(this._hostElement);
-  }
-  /**
-   * Subscribes to changes in the projected title and lines. Triggers a
-   * item lines update whenever a change occurs.
-   */
-  _monitorProjectedLinesAndTitle() {
-    this._ngZone.runOutsideAngular(() => {
-      this._subscriptions.add(merge(this._lines.changes, this._titles.changes).subscribe(() => this._updateItemLines(false)));
-    });
-  }
-  /**
-   * Updates the lines of the list item. Based on the projected user content and optional
-   * explicit lines setting, the visual appearance of the list item is determined.
-   *
-   * This method should be invoked whenever the projected user content changes, or
-   * when the explicit lines have been updated.
-   *
-   * @param recheckUnscopedContent Whether the projected unscoped content should be re-checked.
-   *   The unscoped content is not re-checked for every update as it is a rather expensive check
-   *   for content that is expected to not change very often.
-   */
-  _updateItemLines(recheckUnscopedContent) {
-    if (!this._lines || !this._titles || !this._unscopedContent) {
-      return;
-    }
-    if (recheckUnscopedContent) {
-      this._checkDomForUnscopedTextContent();
-    }
-    if (typeof ngDevMode === "undefined" || ngDevMode) {
-      sanityCheckListItemContent(this);
-    }
-    const numberOfLines = this._explicitLines ?? this._inferLinesFromContent();
-    const unscopedContentEl = this._unscopedContent.nativeElement;
-    this._hostElement.classList.toggle("mat-mdc-list-item-single-line", numberOfLines <= 1);
-    this._hostElement.classList.toggle("mdc-list-item--with-one-line", numberOfLines <= 1);
-    this._hostElement.classList.toggle("mdc-list-item--with-two-lines", numberOfLines === 2);
-    this._hostElement.classList.toggle("mdc-list-item--with-three-lines", numberOfLines === 3);
-    if (this._hasUnscopedTextContent) {
-      const treatAsTitle = this._titles.length === 0 && numberOfLines === 1;
-      unscopedContentEl.classList.toggle("mdc-list-item__primary-text", treatAsTitle);
-      unscopedContentEl.classList.toggle("mdc-list-item__secondary-text", !treatAsTitle);
-    } else {
-      unscopedContentEl.classList.remove("mdc-list-item__primary-text");
-      unscopedContentEl.classList.remove("mdc-list-item__secondary-text");
-    }
-  }
-  /**
-   * Infers the number of lines based on the projected user content. This is useful
-   * if no explicit number of lines has been specified on the list item.
-   *
-   * The number of lines is inferred based on whether there is a title, the number of
-   * additional lines (secondary/tertiary). An additional line is acquired if there is
-   * unscoped text content.
-   */
-  _inferLinesFromContent() {
-    let numOfLines = this._titles.length + this._lines.length;
-    if (this._hasUnscopedTextContent) {
-      numOfLines += 1;
-    }
-    return numOfLines;
-  }
-  /** Checks whether the list item has unscoped text content. */
-  _checkDomForUnscopedTextContent() {
-    this._hasUnscopedTextContent = Array.from(this._unscopedContent.nativeElement.childNodes).filter((node) => node.nodeType !== node.COMMENT_NODE).some((node) => !!(node.textContent && node.textContent.trim()));
-  }
-  static \u0275fac = function MatListItemBase_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatListItemBase)();
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _MatListItemBase,
-    contentQueries: function MatListItemBase_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        \u0275\u0275contentQuery(dirIndex, MatListItemAvatar, 4);
-        \u0275\u0275contentQuery(dirIndex, MatListItemIcon, 4);
-      }
-      if (rf & 2) {
-        let _t;
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._avatars = _t);
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._icons = _t);
-      }
-    },
-    hostVars: 4,
-    hostBindings: function MatListItemBase_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        \u0275\u0275attribute("aria-disabled", ctx.disabled)("disabled", ctx._isButtonElement && ctx.disabled || null);
-        \u0275\u0275classProp("mdc-list-item--disabled", ctx.disabled);
-      }
-    },
-    inputs: {
-      lines: "lines",
-      disableRipple: "disableRipple",
-      disabled: "disabled"
-    }
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListItemBase, [{
-    type: Directive,
-    args: [{
-      host: {
-        "[class.mdc-list-item--disabled]": "disabled",
-        "[attr.aria-disabled]": "disabled",
-        "[attr.disabled]": "(_isButtonElement && disabled) || null"
-      }
-    }]
-  }], () => [], {
-    _avatars: [{
-      type: ContentChildren,
-      args: [MatListItemAvatar, {
-        descendants: false
-      }]
-    }],
-    _icons: [{
-      type: ContentChildren,
-      args: [MatListItemIcon, {
-        descendants: false
-      }]
-    }],
-    lines: [{
-      type: Input
-    }],
-    disableRipple: [{
-      type: Input
-    }],
-    disabled: [{
-      type: Input
-    }]
-  });
-})();
-function sanityCheckListItemContent(item) {
-  const numTitles = item._titles.length;
-  const numLines = item._lines.length;
-  if (numTitles > 1) {
-    console.warn("A list item cannot have multiple titles.");
-  }
-  if (numTitles === 0 && numLines > 0) {
-    console.warn("A list item line can only be used if there is a list item title.");
-  }
-  if (numTitles === 0 && item._hasUnscopedTextContent && item._explicitLines !== null && item._explicitLines > 1) {
-    console.warn("A list item cannot have wrapping content without a title.");
-  }
-  if (numLines > 2 || numLines === 2 && item._hasUnscopedTextContent) {
-    console.warn("A list item can have at maximum three lines.");
-  }
-}
-var MatActionList = class _MatActionList extends MatListBase {
-  // An navigation list is considered interactive, but does not extend the interactive list
-  // base class. We do this because as per MDC, items of interactive lists are only reachable
-  // through keyboard shortcuts. We want all items for the navigation list to be reachable
-  // through tab key as we do not intend to provide any special accessibility treatment. The
-  // accessibility treatment depends on how the end-user will interact with it.
-  _isNonInteractive = false;
-  static \u0275fac = /* @__PURE__ */ (() => {
-    let \u0275MatActionList_BaseFactory;
-    return function MatActionList_Factory(__ngFactoryType__) {
-      return (\u0275MatActionList_BaseFactory || (\u0275MatActionList_BaseFactory = \u0275\u0275getInheritedFactory(_MatActionList)))(__ngFactoryType__ || _MatActionList);
-    };
-  })();
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
-    type: _MatActionList,
-    selectors: [["mat-action-list"]],
-    hostAttrs: ["role", "group", 1, "mat-mdc-action-list", "mat-mdc-list-base", "mdc-list"],
-    exportAs: ["matActionList"],
-    features: [\u0275\u0275ProvidersFeature([{
-      provide: MatListBase,
-      useExisting: _MatActionList
-    }]), \u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c05,
-    decls: 1,
-    vars: 0,
-    template: function MatActionList_Template(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275projectionDef();
-        \u0275\u0275projection(0);
-      }
-    },
-    styles: ['.mdc-list{margin:0;padding:8px 0;list-style-type:none}.mdc-list:focus{outline:none}.mdc-list-item{display:flex;position:relative;justify-content:flex-start;overflow:hidden;padding:0;align-items:stretch;cursor:pointer;padding-left:16px;padding-right:16px;background-color:var(--mdc-list-list-item-container-color, transparent);border-radius:var(--mdc-list-list-item-container-shape, var(--mat-sys-corner-none))}.mdc-list-item.mdc-list-item--selected{background-color:var(--mdc-list-list-item-selected-container-color)}.mdc-list-item:focus{outline:0}.mdc-list-item.mdc-list-item--disabled{cursor:auto}.mdc-list-item.mdc-list-item--with-one-line{height:var(--mdc-list-list-item-one-line-container-height, 48px)}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__start{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-two-lines{height:var(--mdc-list-list-item-two-line-container-height, 64px)}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-three-lines{height:var(--mdc-list-list-item-three-line-container-height, 88px)}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--selected::before,.mdc-list-item.mdc-list-item--selected:focus::before,.mdc-list-item:not(.mdc-list-item--selected):focus::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;content:"";pointer-events:none}a.mdc-list-item{color:inherit;text-decoration:none}.mdc-list-item__start{fill:currentColor;flex-shrink:0;pointer-events:none}.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-leading-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-leading-icon-size, 24px);height:var(--mdc-list-list-item-leading-icon-size, 24px);margin-left:16px;margin-right:32px}[dir=rtl] .mdc-list-item--with-leading-icon .mdc-list-item__start{margin-left:32px;margin-right:16px}.mdc-list-item--with-leading-icon:hover .mdc-list-item__start{color:var(--mdc-list-list-item-hover-leading-icon-color)}.mdc-list-item--with-leading-avatar .mdc-list-item__start{width:var(--mdc-list-list-item-leading-avatar-size, 40px);height:var(--mdc-list-list-item-leading-avatar-size, 40px);margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item--with-leading-avatar .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-avatar .mdc-list-item__start{margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item__end{flex-shrink:0;pointer-events:none}.mdc-list-item--with-trailing-meta .mdc-list-item__end{font-family:var(--mdc-list-list-item-trailing-supporting-text-font, var(--mat-sys-label-small-font));line-height:var(--mdc-list-list-item-trailing-supporting-text-line-height, var(--mat-sys-label-small-line-height));font-size:var(--mdc-list-list-item-trailing-supporting-text-size, var(--mat-sys-label-small-size));font-weight:var(--mdc-list-list-item-trailing-supporting-text-weight, var(--mat-sys-label-small-weight));letter-spacing:var(--mdc-list-list-item-trailing-supporting-text-tracking, var(--mat-sys-label-small-tracking))}.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-trailing-icon-size, 24px);height:var(--mdc-list-list-item-trailing-icon-size, 24px)}.mdc-list-item--with-trailing-icon:hover .mdc-list-item__end{color:var(--mdc-list-list-item-hover-trailing-icon-color)}.mdc-list-item.mdc-list-item--with-trailing-meta .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-supporting-text-color, var(--mat-sys-on-surface-variant))}.mdc-list-item--selected.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-selected-trailing-icon-color, var(--mat-sys-primary))}.mdc-list-item__content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;align-self:center;flex:1;pointer-events:none}.mdc-list-item--with-two-lines .mdc-list-item__content,.mdc-list-item--with-three-lines .mdc-list-item__content{align-self:stretch}.mdc-list-item__primary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:var(--mdc-list-list-item-label-text-color, var(--mat-sys-on-surface));font-family:var(--mdc-list-list-item-label-text-font, var(--mat-sys-body-large-font));line-height:var(--mdc-list-list-item-label-text-line-height, var(--mat-sys-body-large-line-height));font-size:var(--mdc-list-list-item-label-text-size, var(--mat-sys-body-large-size));font-weight:var(--mdc-list-list-item-label-text-weight, var(--mat-sys-body-large-weight));letter-spacing:var(--mdc-list-list-item-label-text-tracking, var(--mat-sys-body-large-tracking))}.mdc-list-item:hover .mdc-list-item__primary-text{color:var(--mdc-list-list-item-hover-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:focus .mdc-list-item__primary-text{color:var(--mdc-list-list-item-focus-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-three-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item__secondary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;margin-top:0;color:var(--mdc-list-list-item-supporting-text-color, var(--mat-sys-on-surface-variant));font-family:var(--mdc-list-list-item-supporting-text-font, var(--mat-sys-body-medium-font));line-height:var(--mdc-list-list-item-supporting-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mdc-list-list-item-supporting-text-size, var(--mat-sys-body-medium-size));font-weight:var(--mdc-list-list-item-supporting-text-weight, var(--mat-sys-body-medium-weight));letter-spacing:var(--mdc-list-list-item-supporting-text-tracking, var(--mat-sys-body-medium-tracking))}.mdc-list-item__secondary-text::before{display:inline-block;width:0;height:20px;content:"";vertical-align:0}.mdc-list-item--with-three-lines .mdc-list-item__secondary-text{white-space:normal;line-height:20px}.mdc-list-item--with-overline .mdc-list-item__secondary-text{white-space:nowrap;line-height:auto}.mdc-list-item--with-leading-radio.mdc-list-item,.mdc-list-item--with-leading-checkbox.mdc-list-item,.mdc-list-item--with-leading-icon.mdc-list-item,.mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:0;padding-right:16px}[dir=rtl] .mdc-list-item--with-leading-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-checkbox.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:16px;padding-right:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end{display:block;margin-top:0;line-height:normal}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-trailing-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-icon.mdc-list-item{padding-left:0;padding-right:0}.mdc-list-item--with-trailing-icon .mdc-list-item__end{margin-left:16px;margin-right:16px}.mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-meta .mdc-list-item__end{-webkit-user-select:none;user-select:none;margin-left:28px;margin-right:16px}[dir=rtl] .mdc-list-item--with-trailing-meta .mdc-list-item__end{margin-left:16px;margin-right:28px}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end{display:block;line-height:normal;align-self:flex-start;margin-top:0}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end::before,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio .mdc-list-item__start,.mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:8px;margin-right:24px}[dir=rtl] .mdc-list-item--with-leading-radio .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:24px;margin-right:8px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__start,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:8px}.mdc-list-item--with-trailing-radio.mdc-list-item,.mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-left:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-right:0}.mdc-list-item--with-trailing-radio .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:24px;margin-right:8px}[dir=rtl] .mdc-list-item--with-trailing-radio .mdc-list-item__end,[dir=rtl] .mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:8px;margin-right:24px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:8px}.mdc-list-group__subheader{margin:.75rem 16px}.mdc-list-item--disabled .mdc-list-item__start,.mdc-list-item--disabled .mdc-list-item__content,.mdc-list-item--disabled .mdc-list-item__end{opacity:1}.mdc-list-item--disabled .mdc-list-item__primary-text,.mdc-list-item--disabled .mdc-list-item__secondary-text{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--disabled.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-disabled-leading-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-leading-icon-opacity, 0.38)}.mdc-list-item--disabled.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-disabled-trailing-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-trailing-icon-opacity, 0.38)}.mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing,[dir=rtl] .mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing{padding-left:0;padding-right:0}.mdc-list-item.mdc-list-item--disabled .mdc-list-item__primary-text{color:var(--mdc-list-list-item-disabled-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:hover::before{background-color:var(--mdc-list-list-item-hover-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mdc-list-item.mdc-list-item--disabled::before{background-color:var(--mdc-list-list-item-disabled-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item:focus::before{background-color:var(--mdc-list-list-item-focus-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item--disabled .mdc-radio,.mdc-list-item--disabled .mdc-checkbox{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--with-leading-avatar .mat-mdc-list-item-avatar{border-radius:var(--mdc-list-list-item-leading-avatar-shape, var(--mat-sys-corner-full));background-color:var(--mdc-list-list-item-leading-avatar-color, var(--mat-sys-primary-container))}.mat-mdc-list-item-icon{font-size:var(--mdc-list-list-item-leading-icon-size, 24px)}@media(forced-colors: active){a.mdc-list-item--activated::after{content:"";position:absolute;top:50%;right:16px;transform:translateY(-50%);width:10px;height:0;border-bottom:solid 10px;border-radius:10px}a.mdc-list-item--activated [dir=rtl]::after{right:auto;left:16px}}.mat-mdc-list-base{display:block}.mat-mdc-list-base .mdc-list-item__start,.mat-mdc-list-base .mdc-list-item__end,.mat-mdc-list-base .mdc-list-item__content{pointer-events:auto}.mat-mdc-list-item,.mat-mdc-list-option{width:100%;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-list-item:not(.mat-mdc-list-item-interactive),.mat-mdc-list-option:not(.mat-mdc-list-item-interactive){cursor:default}.mat-mdc-list-item .mat-divider-inset,.mat-mdc-list-option .mat-divider-inset{position:absolute;left:0;right:0;bottom:0}.mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,.mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-left:72px}[dir=rtl] .mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,[dir=rtl] .mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-right:72px}.mat-mdc-list-item-interactive::before{top:0;left:0;right:0;bottom:0;position:absolute;content:"";opacity:0;pointer-events:none;border-radius:inherit}.mat-mdc-list-item>.mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}.mat-mdc-list-item:focus>.mat-focus-indicator::before{content:""}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-line.mdc-list-item__secondary-text{white-space:nowrap;line-height:normal}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-unscoped-content.mdc-list-item__secondary-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}mat-action-list button{background:none;color:inherit;border:none;font:inherit;outline:inherit;-webkit-tap-highlight-color:rgba(0,0,0,0);text-align:start}mat-action-list button::-moz-focus-inner{border:0}.mdc-list-item--with-leading-icon .mdc-list-item__start{margin-inline-start:var(--mat-list-list-item-leading-icon-start-space, 16px);margin-inline-end:var(--mat-list-list-item-leading-icon-end-space, 16px)}.mat-mdc-nav-list .mat-mdc-list-item{border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full));--mat-focus-indicator-border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full))}.mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated{background-color:var(--mat-list-active-indicator-color, var(--mat-sys-secondary-container))}'],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatActionList, [{
-    type: Component,
-    args: [{
-      selector: "mat-action-list",
-      exportAs: "matActionList",
-      template: "<ng-content></ng-content>",
-      host: {
-        "class": "mat-mdc-action-list mat-mdc-list-base mdc-list",
-        "role": "group"
-      },
-      encapsulation: ViewEncapsulation.None,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      providers: [{
-        provide: MatListBase,
-        useExisting: MatActionList
-      }],
-      styles: ['.mdc-list{margin:0;padding:8px 0;list-style-type:none}.mdc-list:focus{outline:none}.mdc-list-item{display:flex;position:relative;justify-content:flex-start;overflow:hidden;padding:0;align-items:stretch;cursor:pointer;padding-left:16px;padding-right:16px;background-color:var(--mdc-list-list-item-container-color, transparent);border-radius:var(--mdc-list-list-item-container-shape, var(--mat-sys-corner-none))}.mdc-list-item.mdc-list-item--selected{background-color:var(--mdc-list-list-item-selected-container-color)}.mdc-list-item:focus{outline:0}.mdc-list-item.mdc-list-item--disabled{cursor:auto}.mdc-list-item.mdc-list-item--with-one-line{height:var(--mdc-list-list-item-one-line-container-height, 48px)}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__start{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-two-lines{height:var(--mdc-list-list-item-two-line-container-height, 64px)}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-three-lines{height:var(--mdc-list-list-item-three-line-container-height, 88px)}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--selected::before,.mdc-list-item.mdc-list-item--selected:focus::before,.mdc-list-item:not(.mdc-list-item--selected):focus::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;content:"";pointer-events:none}a.mdc-list-item{color:inherit;text-decoration:none}.mdc-list-item__start{fill:currentColor;flex-shrink:0;pointer-events:none}.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-leading-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-leading-icon-size, 24px);height:var(--mdc-list-list-item-leading-icon-size, 24px);margin-left:16px;margin-right:32px}[dir=rtl] .mdc-list-item--with-leading-icon .mdc-list-item__start{margin-left:32px;margin-right:16px}.mdc-list-item--with-leading-icon:hover .mdc-list-item__start{color:var(--mdc-list-list-item-hover-leading-icon-color)}.mdc-list-item--with-leading-avatar .mdc-list-item__start{width:var(--mdc-list-list-item-leading-avatar-size, 40px);height:var(--mdc-list-list-item-leading-avatar-size, 40px);margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item--with-leading-avatar .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-avatar .mdc-list-item__start{margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item__end{flex-shrink:0;pointer-events:none}.mdc-list-item--with-trailing-meta .mdc-list-item__end{font-family:var(--mdc-list-list-item-trailing-supporting-text-font, var(--mat-sys-label-small-font));line-height:var(--mdc-list-list-item-trailing-supporting-text-line-height, var(--mat-sys-label-small-line-height));font-size:var(--mdc-list-list-item-trailing-supporting-text-size, var(--mat-sys-label-small-size));font-weight:var(--mdc-list-list-item-trailing-supporting-text-weight, var(--mat-sys-label-small-weight));letter-spacing:var(--mdc-list-list-item-trailing-supporting-text-tracking, var(--mat-sys-label-small-tracking))}.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-trailing-icon-size, 24px);height:var(--mdc-list-list-item-trailing-icon-size, 24px)}.mdc-list-item--with-trailing-icon:hover .mdc-list-item__end{color:var(--mdc-list-list-item-hover-trailing-icon-color)}.mdc-list-item.mdc-list-item--with-trailing-meta .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-supporting-text-color, var(--mat-sys-on-surface-variant))}.mdc-list-item--selected.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-selected-trailing-icon-color, var(--mat-sys-primary))}.mdc-list-item__content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;align-self:center;flex:1;pointer-events:none}.mdc-list-item--with-two-lines .mdc-list-item__content,.mdc-list-item--with-three-lines .mdc-list-item__content{align-self:stretch}.mdc-list-item__primary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:var(--mdc-list-list-item-label-text-color, var(--mat-sys-on-surface));font-family:var(--mdc-list-list-item-label-text-font, var(--mat-sys-body-large-font));line-height:var(--mdc-list-list-item-label-text-line-height, var(--mat-sys-body-large-line-height));font-size:var(--mdc-list-list-item-label-text-size, var(--mat-sys-body-large-size));font-weight:var(--mdc-list-list-item-label-text-weight, var(--mat-sys-body-large-weight));letter-spacing:var(--mdc-list-list-item-label-text-tracking, var(--mat-sys-body-large-tracking))}.mdc-list-item:hover .mdc-list-item__primary-text{color:var(--mdc-list-list-item-hover-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:focus .mdc-list-item__primary-text{color:var(--mdc-list-list-item-focus-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-three-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item__secondary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;margin-top:0;color:var(--mdc-list-list-item-supporting-text-color, var(--mat-sys-on-surface-variant));font-family:var(--mdc-list-list-item-supporting-text-font, var(--mat-sys-body-medium-font));line-height:var(--mdc-list-list-item-supporting-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mdc-list-list-item-supporting-text-size, var(--mat-sys-body-medium-size));font-weight:var(--mdc-list-list-item-supporting-text-weight, var(--mat-sys-body-medium-weight));letter-spacing:var(--mdc-list-list-item-supporting-text-tracking, var(--mat-sys-body-medium-tracking))}.mdc-list-item__secondary-text::before{display:inline-block;width:0;height:20px;content:"";vertical-align:0}.mdc-list-item--with-three-lines .mdc-list-item__secondary-text{white-space:normal;line-height:20px}.mdc-list-item--with-overline .mdc-list-item__secondary-text{white-space:nowrap;line-height:auto}.mdc-list-item--with-leading-radio.mdc-list-item,.mdc-list-item--with-leading-checkbox.mdc-list-item,.mdc-list-item--with-leading-icon.mdc-list-item,.mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:0;padding-right:16px}[dir=rtl] .mdc-list-item--with-leading-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-checkbox.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:16px;padding-right:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end{display:block;margin-top:0;line-height:normal}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-trailing-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-icon.mdc-list-item{padding-left:0;padding-right:0}.mdc-list-item--with-trailing-icon .mdc-list-item__end{margin-left:16px;margin-right:16px}.mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-meta .mdc-list-item__end{-webkit-user-select:none;user-select:none;margin-left:28px;margin-right:16px}[dir=rtl] .mdc-list-item--with-trailing-meta .mdc-list-item__end{margin-left:16px;margin-right:28px}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end{display:block;line-height:normal;align-self:flex-start;margin-top:0}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end::before,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio .mdc-list-item__start,.mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:8px;margin-right:24px}[dir=rtl] .mdc-list-item--with-leading-radio .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:24px;margin-right:8px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__start,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:8px}.mdc-list-item--with-trailing-radio.mdc-list-item,.mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-left:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-right:0}.mdc-list-item--with-trailing-radio .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:24px;margin-right:8px}[dir=rtl] .mdc-list-item--with-trailing-radio .mdc-list-item__end,[dir=rtl] .mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:8px;margin-right:24px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:8px}.mdc-list-group__subheader{margin:.75rem 16px}.mdc-list-item--disabled .mdc-list-item__start,.mdc-list-item--disabled .mdc-list-item__content,.mdc-list-item--disabled .mdc-list-item__end{opacity:1}.mdc-list-item--disabled .mdc-list-item__primary-text,.mdc-list-item--disabled .mdc-list-item__secondary-text{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--disabled.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-disabled-leading-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-leading-icon-opacity, 0.38)}.mdc-list-item--disabled.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-disabled-trailing-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-trailing-icon-opacity, 0.38)}.mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing,[dir=rtl] .mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing{padding-left:0;padding-right:0}.mdc-list-item.mdc-list-item--disabled .mdc-list-item__primary-text{color:var(--mdc-list-list-item-disabled-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:hover::before{background-color:var(--mdc-list-list-item-hover-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mdc-list-item.mdc-list-item--disabled::before{background-color:var(--mdc-list-list-item-disabled-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item:focus::before{background-color:var(--mdc-list-list-item-focus-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item--disabled .mdc-radio,.mdc-list-item--disabled .mdc-checkbox{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--with-leading-avatar .mat-mdc-list-item-avatar{border-radius:var(--mdc-list-list-item-leading-avatar-shape, var(--mat-sys-corner-full));background-color:var(--mdc-list-list-item-leading-avatar-color, var(--mat-sys-primary-container))}.mat-mdc-list-item-icon{font-size:var(--mdc-list-list-item-leading-icon-size, 24px)}@media(forced-colors: active){a.mdc-list-item--activated::after{content:"";position:absolute;top:50%;right:16px;transform:translateY(-50%);width:10px;height:0;border-bottom:solid 10px;border-radius:10px}a.mdc-list-item--activated [dir=rtl]::after{right:auto;left:16px}}.mat-mdc-list-base{display:block}.mat-mdc-list-base .mdc-list-item__start,.mat-mdc-list-base .mdc-list-item__end,.mat-mdc-list-base .mdc-list-item__content{pointer-events:auto}.mat-mdc-list-item,.mat-mdc-list-option{width:100%;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-list-item:not(.mat-mdc-list-item-interactive),.mat-mdc-list-option:not(.mat-mdc-list-item-interactive){cursor:default}.mat-mdc-list-item .mat-divider-inset,.mat-mdc-list-option .mat-divider-inset{position:absolute;left:0;right:0;bottom:0}.mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,.mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-left:72px}[dir=rtl] .mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,[dir=rtl] .mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-right:72px}.mat-mdc-list-item-interactive::before{top:0;left:0;right:0;bottom:0;position:absolute;content:"";opacity:0;pointer-events:none;border-radius:inherit}.mat-mdc-list-item>.mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}.mat-mdc-list-item:focus>.mat-focus-indicator::before{content:""}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-line.mdc-list-item__secondary-text{white-space:nowrap;line-height:normal}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-unscoped-content.mdc-list-item__secondary-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}mat-action-list button{background:none;color:inherit;border:none;font:inherit;outline:inherit;-webkit-tap-highlight-color:rgba(0,0,0,0);text-align:start}mat-action-list button::-moz-focus-inner{border:0}.mdc-list-item--with-leading-icon .mdc-list-item__start{margin-inline-start:var(--mat-list-list-item-leading-icon-start-space, 16px);margin-inline-end:var(--mat-list-list-item-leading-icon-end-space, 16px)}.mat-mdc-nav-list .mat-mdc-list-item{border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full));--mat-focus-indicator-border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full))}.mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated{background-color:var(--mat-list-active-indicator-color, var(--mat-sys-secondary-container))}']
-    }]
-  }], null, null);
-})();
-var MAT_LIST = new InjectionToken("MatList");
-var MatList = class _MatList extends MatListBase {
-  static \u0275fac = /* @__PURE__ */ (() => {
-    let \u0275MatList_BaseFactory;
-    return function MatList_Factory(__ngFactoryType__) {
-      return (\u0275MatList_BaseFactory || (\u0275MatList_BaseFactory = \u0275\u0275getInheritedFactory(_MatList)))(__ngFactoryType__ || _MatList);
-    };
-  })();
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
-    type: _MatList,
-    selectors: [["mat-list"]],
-    hostAttrs: [1, "mat-mdc-list", "mat-mdc-list-base", "mdc-list"],
-    exportAs: ["matList"],
-    features: [\u0275\u0275ProvidersFeature([{
-      provide: MatListBase,
-      useExisting: _MatList
-    }]), \u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c05,
-    decls: 1,
-    vars: 0,
-    template: function MatList_Template(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275projectionDef();
-        \u0275\u0275projection(0);
-      }
-    },
-    styles: [_c12],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatList, [{
-    type: Component,
-    args: [{
-      selector: "mat-list",
-      exportAs: "matList",
-      template: "<ng-content></ng-content>",
-      host: {
-        "class": "mat-mdc-list mat-mdc-list-base mdc-list"
-      },
-      encapsulation: ViewEncapsulation.None,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      providers: [{
-        provide: MatListBase,
-        useExisting: MatList
-      }],
-      styles: ['.mdc-list{margin:0;padding:8px 0;list-style-type:none}.mdc-list:focus{outline:none}.mdc-list-item{display:flex;position:relative;justify-content:flex-start;overflow:hidden;padding:0;align-items:stretch;cursor:pointer;padding-left:16px;padding-right:16px;background-color:var(--mdc-list-list-item-container-color, transparent);border-radius:var(--mdc-list-list-item-container-shape, var(--mat-sys-corner-none))}.mdc-list-item.mdc-list-item--selected{background-color:var(--mdc-list-list-item-selected-container-color)}.mdc-list-item:focus{outline:0}.mdc-list-item.mdc-list-item--disabled{cursor:auto}.mdc-list-item.mdc-list-item--with-one-line{height:var(--mdc-list-list-item-one-line-container-height, 48px)}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__start{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-two-lines{height:var(--mdc-list-list-item-two-line-container-height, 64px)}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-three-lines{height:var(--mdc-list-list-item-three-line-container-height, 88px)}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--selected::before,.mdc-list-item.mdc-list-item--selected:focus::before,.mdc-list-item:not(.mdc-list-item--selected):focus::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;content:"";pointer-events:none}a.mdc-list-item{color:inherit;text-decoration:none}.mdc-list-item__start{fill:currentColor;flex-shrink:0;pointer-events:none}.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-leading-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-leading-icon-size, 24px);height:var(--mdc-list-list-item-leading-icon-size, 24px);margin-left:16px;margin-right:32px}[dir=rtl] .mdc-list-item--with-leading-icon .mdc-list-item__start{margin-left:32px;margin-right:16px}.mdc-list-item--with-leading-icon:hover .mdc-list-item__start{color:var(--mdc-list-list-item-hover-leading-icon-color)}.mdc-list-item--with-leading-avatar .mdc-list-item__start{width:var(--mdc-list-list-item-leading-avatar-size, 40px);height:var(--mdc-list-list-item-leading-avatar-size, 40px);margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item--with-leading-avatar .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-avatar .mdc-list-item__start{margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item__end{flex-shrink:0;pointer-events:none}.mdc-list-item--with-trailing-meta .mdc-list-item__end{font-family:var(--mdc-list-list-item-trailing-supporting-text-font, var(--mat-sys-label-small-font));line-height:var(--mdc-list-list-item-trailing-supporting-text-line-height, var(--mat-sys-label-small-line-height));font-size:var(--mdc-list-list-item-trailing-supporting-text-size, var(--mat-sys-label-small-size));font-weight:var(--mdc-list-list-item-trailing-supporting-text-weight, var(--mat-sys-label-small-weight));letter-spacing:var(--mdc-list-list-item-trailing-supporting-text-tracking, var(--mat-sys-label-small-tracking))}.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-trailing-icon-size, 24px);height:var(--mdc-list-list-item-trailing-icon-size, 24px)}.mdc-list-item--with-trailing-icon:hover .mdc-list-item__end{color:var(--mdc-list-list-item-hover-trailing-icon-color)}.mdc-list-item.mdc-list-item--with-trailing-meta .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-supporting-text-color, var(--mat-sys-on-surface-variant))}.mdc-list-item--selected.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-selected-trailing-icon-color, var(--mat-sys-primary))}.mdc-list-item__content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;align-self:center;flex:1;pointer-events:none}.mdc-list-item--with-two-lines .mdc-list-item__content,.mdc-list-item--with-three-lines .mdc-list-item__content{align-self:stretch}.mdc-list-item__primary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:var(--mdc-list-list-item-label-text-color, var(--mat-sys-on-surface));font-family:var(--mdc-list-list-item-label-text-font, var(--mat-sys-body-large-font));line-height:var(--mdc-list-list-item-label-text-line-height, var(--mat-sys-body-large-line-height));font-size:var(--mdc-list-list-item-label-text-size, var(--mat-sys-body-large-size));font-weight:var(--mdc-list-list-item-label-text-weight, var(--mat-sys-body-large-weight));letter-spacing:var(--mdc-list-list-item-label-text-tracking, var(--mat-sys-body-large-tracking))}.mdc-list-item:hover .mdc-list-item__primary-text{color:var(--mdc-list-list-item-hover-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:focus .mdc-list-item__primary-text{color:var(--mdc-list-list-item-focus-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-three-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item__secondary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;margin-top:0;color:var(--mdc-list-list-item-supporting-text-color, var(--mat-sys-on-surface-variant));font-family:var(--mdc-list-list-item-supporting-text-font, var(--mat-sys-body-medium-font));line-height:var(--mdc-list-list-item-supporting-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mdc-list-list-item-supporting-text-size, var(--mat-sys-body-medium-size));font-weight:var(--mdc-list-list-item-supporting-text-weight, var(--mat-sys-body-medium-weight));letter-spacing:var(--mdc-list-list-item-supporting-text-tracking, var(--mat-sys-body-medium-tracking))}.mdc-list-item__secondary-text::before{display:inline-block;width:0;height:20px;content:"";vertical-align:0}.mdc-list-item--with-three-lines .mdc-list-item__secondary-text{white-space:normal;line-height:20px}.mdc-list-item--with-overline .mdc-list-item__secondary-text{white-space:nowrap;line-height:auto}.mdc-list-item--with-leading-radio.mdc-list-item,.mdc-list-item--with-leading-checkbox.mdc-list-item,.mdc-list-item--with-leading-icon.mdc-list-item,.mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:0;padding-right:16px}[dir=rtl] .mdc-list-item--with-leading-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-checkbox.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:16px;padding-right:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end{display:block;margin-top:0;line-height:normal}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-trailing-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-icon.mdc-list-item{padding-left:0;padding-right:0}.mdc-list-item--with-trailing-icon .mdc-list-item__end{margin-left:16px;margin-right:16px}.mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-meta .mdc-list-item__end{-webkit-user-select:none;user-select:none;margin-left:28px;margin-right:16px}[dir=rtl] .mdc-list-item--with-trailing-meta .mdc-list-item__end{margin-left:16px;margin-right:28px}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end{display:block;line-height:normal;align-self:flex-start;margin-top:0}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end::before,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio .mdc-list-item__start,.mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:8px;margin-right:24px}[dir=rtl] .mdc-list-item--with-leading-radio .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:24px;margin-right:8px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__start,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:8px}.mdc-list-item--with-trailing-radio.mdc-list-item,.mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-left:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-right:0}.mdc-list-item--with-trailing-radio .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:24px;margin-right:8px}[dir=rtl] .mdc-list-item--with-trailing-radio .mdc-list-item__end,[dir=rtl] .mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:8px;margin-right:24px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:8px}.mdc-list-group__subheader{margin:.75rem 16px}.mdc-list-item--disabled .mdc-list-item__start,.mdc-list-item--disabled .mdc-list-item__content,.mdc-list-item--disabled .mdc-list-item__end{opacity:1}.mdc-list-item--disabled .mdc-list-item__primary-text,.mdc-list-item--disabled .mdc-list-item__secondary-text{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--disabled.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-disabled-leading-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-leading-icon-opacity, 0.38)}.mdc-list-item--disabled.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-disabled-trailing-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-trailing-icon-opacity, 0.38)}.mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing,[dir=rtl] .mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing{padding-left:0;padding-right:0}.mdc-list-item.mdc-list-item--disabled .mdc-list-item__primary-text{color:var(--mdc-list-list-item-disabled-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:hover::before{background-color:var(--mdc-list-list-item-hover-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mdc-list-item.mdc-list-item--disabled::before{background-color:var(--mdc-list-list-item-disabled-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item:focus::before{background-color:var(--mdc-list-list-item-focus-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item--disabled .mdc-radio,.mdc-list-item--disabled .mdc-checkbox{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--with-leading-avatar .mat-mdc-list-item-avatar{border-radius:var(--mdc-list-list-item-leading-avatar-shape, var(--mat-sys-corner-full));background-color:var(--mdc-list-list-item-leading-avatar-color, var(--mat-sys-primary-container))}.mat-mdc-list-item-icon{font-size:var(--mdc-list-list-item-leading-icon-size, 24px)}@media(forced-colors: active){a.mdc-list-item--activated::after{content:"";position:absolute;top:50%;right:16px;transform:translateY(-50%);width:10px;height:0;border-bottom:solid 10px;border-radius:10px}a.mdc-list-item--activated [dir=rtl]::after{right:auto;left:16px}}.mat-mdc-list-base{display:block}.mat-mdc-list-base .mdc-list-item__start,.mat-mdc-list-base .mdc-list-item__end,.mat-mdc-list-base .mdc-list-item__content{pointer-events:auto}.mat-mdc-list-item,.mat-mdc-list-option{width:100%;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-list-item:not(.mat-mdc-list-item-interactive),.mat-mdc-list-option:not(.mat-mdc-list-item-interactive){cursor:default}.mat-mdc-list-item .mat-divider-inset,.mat-mdc-list-option .mat-divider-inset{position:absolute;left:0;right:0;bottom:0}.mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,.mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-left:72px}[dir=rtl] .mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,[dir=rtl] .mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-right:72px}.mat-mdc-list-item-interactive::before{top:0;left:0;right:0;bottom:0;position:absolute;content:"";opacity:0;pointer-events:none;border-radius:inherit}.mat-mdc-list-item>.mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}.mat-mdc-list-item:focus>.mat-focus-indicator::before{content:""}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-line.mdc-list-item__secondary-text{white-space:nowrap;line-height:normal}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-unscoped-content.mdc-list-item__secondary-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}mat-action-list button{background:none;color:inherit;border:none;font:inherit;outline:inherit;-webkit-tap-highlight-color:rgba(0,0,0,0);text-align:start}mat-action-list button::-moz-focus-inner{border:0}.mdc-list-item--with-leading-icon .mdc-list-item__start{margin-inline-start:var(--mat-list-list-item-leading-icon-start-space, 16px);margin-inline-end:var(--mat-list-list-item-leading-icon-end-space, 16px)}.mat-mdc-nav-list .mat-mdc-list-item{border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full));--mat-focus-indicator-border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full))}.mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated{background-color:var(--mat-list-active-indicator-color, var(--mat-sys-secondary-container))}']
-    }]
-  }], null, null);
-})();
-var MatListItem = class _MatListItem extends MatListItemBase {
-  _lines;
-  _titles;
-  _meta;
-  _unscopedContent;
-  _itemText;
-  /** Indicates whether an item in a `<mat-nav-list>` is the currently active page. */
-  get activated() {
-    return this._activated;
-  }
-  set activated(activated) {
-    this._activated = coerceBooleanProperty(activated);
-  }
-  _activated = false;
-  /**
-   * Determine the value of `aria-current`. Return 'page' if this item is an activated anchor tag.
-   * Otherwise, return `null`. This method is safe to use with server-side rendering.
-   */
-  _getAriaCurrent() {
-    return this._hostElement.nodeName === "A" && this._activated ? "page" : null;
-  }
-  _hasBothLeadingAndTrailing() {
-    return this._meta.length !== 0 && (this._avatars.length !== 0 || this._icons.length !== 0);
-  }
-  static \u0275fac = /* @__PURE__ */ (() => {
-    let \u0275MatListItem_BaseFactory;
-    return function MatListItem_Factory(__ngFactoryType__) {
-      return (\u0275MatListItem_BaseFactory || (\u0275MatListItem_BaseFactory = \u0275\u0275getInheritedFactory(_MatListItem)))(__ngFactoryType__ || _MatListItem);
-    };
-  })();
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
-    type: _MatListItem,
-    selectors: [["mat-list-item"], ["a", "mat-list-item", ""], ["button", "mat-list-item", ""]],
-    contentQueries: function MatListItem_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        \u0275\u0275contentQuery(dirIndex, MatListItemLine, 5);
-        \u0275\u0275contentQuery(dirIndex, MatListItemTitle, 5);
-        \u0275\u0275contentQuery(dirIndex, MatListItemMeta, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._lines = _t);
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._titles = _t);
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._meta = _t);
-      }
-    },
-    viewQuery: function MatListItem_Query(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275viewQuery(_c22, 5);
-        \u0275\u0275viewQuery(_c32, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._unscopedContent = _t.first);
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._itemText = _t.first);
-      }
-    },
-    hostAttrs: [1, "mat-mdc-list-item", "mdc-list-item"],
-    hostVars: 13,
-    hostBindings: function MatListItem_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        \u0275\u0275attribute("aria-current", ctx._getAriaCurrent());
-        \u0275\u0275classProp("mdc-list-item--activated", ctx.activated)("mdc-list-item--with-leading-avatar", ctx._avatars.length !== 0)("mdc-list-item--with-leading-icon", ctx._icons.length !== 0)("mdc-list-item--with-trailing-meta", ctx._meta.length !== 0)("mat-mdc-list-item-both-leading-and-trailing", ctx._hasBothLeadingAndTrailing())("_mat-animation-noopable", ctx._noopAnimations);
-      }
-    },
-    inputs: {
-      activated: "activated"
-    },
-    exportAs: ["matListItem"],
-    features: [\u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c52,
-    decls: 10,
-    vars: 0,
-    consts: [["unscopedContent", ""], [1, "mdc-list-item__content"], [1, "mat-mdc-list-item-unscoped-content", 3, "cdkObserveContent"], [1, "mat-focus-indicator"]],
-    template: function MatListItem_Template(rf, ctx) {
-      if (rf & 1) {
-        const _r1 = \u0275\u0275getCurrentView();
-        \u0275\u0275projectionDef(_c42);
-        \u0275\u0275projection(0);
-        \u0275\u0275elementStart(1, "span", 1);
-        \u0275\u0275projection(2, 1);
-        \u0275\u0275projection(3, 2);
-        \u0275\u0275elementStart(4, "span", 2, 0);
-        \u0275\u0275listener("cdkObserveContent", function MatListItem_Template_span_cdkObserveContent_4_listener() {
-          \u0275\u0275restoreView(_r1);
-          return \u0275\u0275resetView(ctx._updateItemLines(true));
-        });
-        \u0275\u0275projection(6, 3);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275projection(7, 4);
-        \u0275\u0275projection(8, 5);
-        \u0275\u0275element(9, "div", 3);
-      }
-    },
-    dependencies: [CdkObserveContent],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListItem, [{
-    type: Component,
-    args: [{
-      selector: "mat-list-item, a[mat-list-item], button[mat-list-item]",
-      exportAs: "matListItem",
-      host: {
-        "class": "mat-mdc-list-item mdc-list-item",
-        "[class.mdc-list-item--activated]": "activated",
-        "[class.mdc-list-item--with-leading-avatar]": "_avatars.length !== 0",
-        "[class.mdc-list-item--with-leading-icon]": "_icons.length !== 0",
-        "[class.mdc-list-item--with-trailing-meta]": "_meta.length !== 0",
-        // Utility class that makes it easier to target the case where there's both a leading
-        // and a trailing icon. Avoids having to write out all the combinations.
-        "[class.mat-mdc-list-item-both-leading-and-trailing]": "_hasBothLeadingAndTrailing()",
-        "[class._mat-animation-noopable]": "_noopAnimations",
-        "[attr.aria-current]": "_getAriaCurrent()"
-      },
-      encapsulation: ViewEncapsulation.None,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      imports: [CdkObserveContent],
-      template: '<ng-content select="[matListItemAvatar],[matListItemIcon]"></ng-content>\n\n<span class="mdc-list-item__content">\n  <ng-content select="[matListItemTitle]"></ng-content>\n  <ng-content select="[matListItemLine]"></ng-content>\n  <span #unscopedContent class="mat-mdc-list-item-unscoped-content"\n        (cdkObserveContent)="_updateItemLines(true)">\n    <ng-content></ng-content>\n  </span>\n</span>\n\n<ng-content select="[matListItemMeta]"></ng-content>\n\n<ng-content select="mat-divider"></ng-content>\n\n<!--\n  Strong focus indicator element. MDC uses the `::before` pseudo element for the default\n  focus/hover/selected state, so we need a separate element.\n-->\n<div class="mat-focus-indicator"></div>\n'
-    }]
-  }], null, {
-    _lines: [{
-      type: ContentChildren,
-      args: [MatListItemLine, {
-        descendants: true
-      }]
-    }],
-    _titles: [{
-      type: ContentChildren,
-      args: [MatListItemTitle, {
-        descendants: true
-      }]
-    }],
-    _meta: [{
-      type: ContentChildren,
-      args: [MatListItemMeta, {
-        descendants: true
-      }]
-    }],
-    _unscopedContent: [{
-      type: ViewChild,
-      args: ["unscopedContent"]
-    }],
-    _itemText: [{
-      type: ViewChild,
-      args: ["text"]
-    }],
-    activated: [{
-      type: Input
-    }]
-  });
-})();
-var SELECTION_LIST = new InjectionToken("SelectionList");
-var MatListOption = class _MatListOption extends MatListItemBase {
-  _selectionList = inject(SELECTION_LIST);
-  _changeDetectorRef = inject(ChangeDetectorRef);
-  _lines;
-  _titles;
-  _unscopedContent;
-  /**
-   * Emits when the selected state of the option has changed.
-   * Use to facilitate two-data binding to the `selected` property.
-   * @docs-private
-   */
-  selectedChange = new EventEmitter();
-  /** Whether the label should appear before or after the checkbox/radio. Defaults to 'after' */
-  togglePosition = "after";
-  /**
-   * Whether the label should appear before or after the checkbox/radio. Defaults to 'after'
-   *
-   * @deprecated Use `togglePosition` instead.
-   * @breaking-change 17.0.0
-   */
-  get checkboxPosition() {
-    return this.togglePosition;
-  }
-  set checkboxPosition(value) {
-    this.togglePosition = value;
-  }
-  /**
-   * Theme color of the list option. This sets the color of the checkbox/radio.
-   * This API is supported in M2 themes only, it has no effect in M3 themes. For color customization
-   * in M3, see https://material.angular.io/components/list/styling.
-   *
-   * For information on applying color variants in M3, see
-   * https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
-   */
-  get color() {
-    return this._color || this._selectionList.color;
-  }
-  set color(newValue) {
-    this._color = newValue;
-  }
-  _color;
-  /** Value of the option */
-  get value() {
-    return this._value;
-  }
-  set value(newValue) {
-    if (this.selected && newValue !== this.value && this._inputsInitialized) {
-      this.selected = false;
-    }
-    this._value = newValue;
-  }
-  _value;
-  /** Whether the option is selected. */
-  get selected() {
-    return this._selectionList.selectedOptions.isSelected(this);
-  }
-  set selected(value) {
-    const isSelected = coerceBooleanProperty(value);
-    if (isSelected !== this._selected) {
-      this._setSelected(isSelected);
-      if (isSelected || this._selectionList.multiple) {
-        this._selectionList._reportValueChange();
-      }
-    }
-  }
-  _selected = false;
-  /**
-   * This is set to true after the first OnChanges cycle so we don't
-   * clear the value of `selected` in the first cycle.
-   */
-  _inputsInitialized = false;
-  ngOnInit() {
-    const list = this._selectionList;
-    if (list._value && list._value.some((value) => list.compareWith(this._value, value))) {
-      this._setSelected(true);
-    }
-    const wasSelected = this._selected;
-    Promise.resolve().then(() => {
-      if (this._selected || wasSelected) {
-        this.selected = true;
-        this._changeDetectorRef.markForCheck();
-      }
-    });
-    this._inputsInitialized = true;
-  }
-  ngOnDestroy() {
-    super.ngOnDestroy();
-    if (this.selected) {
-      Promise.resolve().then(() => {
-        this.selected = false;
-      });
-    }
-  }
-  /** Toggles the selection state of the option. */
-  toggle() {
-    this.selected = !this.selected;
-  }
-  /** Allows for programmatic focusing of the option. */
-  focus() {
-    this._hostElement.focus();
-  }
-  /** Gets the text label of the list option. Used for the typeahead functionality in the list. */
-  getLabel() {
-    const titleElement = this._titles?.get(0)?._elementRef.nativeElement;
-    const labelEl = titleElement || this._unscopedContent?.nativeElement;
-    return labelEl?.textContent || "";
-  }
-  /** Whether a checkbox is shown at the given position. */
-  _hasCheckboxAt(position) {
-    return this._selectionList.multiple && this._getTogglePosition() === position;
-  }
-  /** Where a radio indicator is shown at the given position. */
-  _hasRadioAt(position) {
-    return !this._selectionList.multiple && this._getTogglePosition() === position && !this._selectionList.hideSingleSelectionIndicator;
-  }
-  /** Whether icons or avatars are shown at the given position. */
-  _hasIconsOrAvatarsAt(position) {
-    return this._hasProjected("icons", position) || this._hasProjected("avatars", position);
-  }
-  /** Gets whether the given type of element is projected at the specified position. */
-  _hasProjected(type, position) {
-    return this._getTogglePosition() !== position && (type === "avatars" ? this._avatars.length !== 0 : this._icons.length !== 0);
-  }
-  _handleBlur() {
-    this._selectionList._onTouched();
-  }
-  /** Gets the current position of the checkbox/radio. */
-  _getTogglePosition() {
-    return this.togglePosition || "after";
-  }
-  /**
-   * Sets the selected state of the option.
-   * @returns Whether the value has changed.
-   */
-  _setSelected(selected) {
-    if (selected === this._selected) {
-      return false;
-    }
-    this._selected = selected;
-    if (selected) {
-      this._selectionList.selectedOptions.select(this);
-    } else {
-      this._selectionList.selectedOptions.deselect(this);
-    }
-    this.selectedChange.emit(selected);
-    this._changeDetectorRef.markForCheck();
-    return true;
-  }
-  /**
-   * Notifies Angular that the option needs to be checked in the next change detection run.
-   * Mainly used to trigger an update of the list option if the disabled state of the selection
-   * list changed.
-   */
-  _markForCheck() {
-    this._changeDetectorRef.markForCheck();
-  }
-  /** Toggles the option's value based on a user interaction. */
-  _toggleOnInteraction() {
-    if (!this.disabled) {
-      if (this._selectionList.multiple) {
-        this.selected = !this.selected;
-        this._selectionList._emitChangeEvent([this]);
-      } else if (!this.selected) {
-        this.selected = true;
-        this._selectionList._emitChangeEvent([this]);
-      }
-    }
-  }
-  /** Sets the tabindex of the list option. */
-  _setTabindex(value) {
-    this._hostElement.setAttribute("tabindex", value + "");
-  }
-  _hasBothLeadingAndTrailing() {
-    const hasLeading = this._hasProjected("avatars", "before") || this._hasProjected("icons", "before") || this._hasCheckboxAt("before") || this._hasRadioAt("before");
-    const hasTrailing = this._hasProjected("icons", "after") || this._hasProjected("avatars", "after") || this._hasCheckboxAt("after") || this._hasRadioAt("after");
-    return hasLeading && hasTrailing;
-  }
-  static \u0275fac = /* @__PURE__ */ (() => {
-    let \u0275MatListOption_BaseFactory;
-    return function MatListOption_Factory(__ngFactoryType__) {
-      return (\u0275MatListOption_BaseFactory || (\u0275MatListOption_BaseFactory = \u0275\u0275getInheritedFactory(_MatListOption)))(__ngFactoryType__ || _MatListOption);
-    };
-  })();
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
-    type: _MatListOption,
-    selectors: [["mat-list-option"]],
-    contentQueries: function MatListOption_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        \u0275\u0275contentQuery(dirIndex, MatListItemLine, 5);
-        \u0275\u0275contentQuery(dirIndex, MatListItemTitle, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._lines = _t);
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._titles = _t);
-      }
-    },
-    viewQuery: function MatListOption_Query(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275viewQuery(_c22, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._unscopedContent = _t.first);
-      }
-    },
-    hostAttrs: ["role", "option", 1, "mat-mdc-list-item", "mat-mdc-list-option", "mdc-list-item"],
-    hostVars: 27,
-    hostBindings: function MatListOption_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275listener("blur", function MatListOption_blur_HostBindingHandler() {
-          return ctx._handleBlur();
-        })("click", function MatListOption_click_HostBindingHandler() {
-          return ctx._toggleOnInteraction();
-        });
-      }
-      if (rf & 2) {
-        \u0275\u0275attribute("aria-selected", ctx.selected);
-        \u0275\u0275classProp("mdc-list-item--selected", ctx.selected && !ctx._selectionList.multiple && ctx._selectionList.hideSingleSelectionIndicator)("mdc-list-item--with-leading-avatar", ctx._hasProjected("avatars", "before"))("mdc-list-item--with-leading-icon", ctx._hasProjected("icons", "before"))("mdc-list-item--with-trailing-icon", ctx._hasProjected("icons", "after"))("mat-mdc-list-option-with-trailing-avatar", ctx._hasProjected("avatars", "after"))("mdc-list-item--with-leading-checkbox", ctx._hasCheckboxAt("before"))("mdc-list-item--with-trailing-checkbox", ctx._hasCheckboxAt("after"))("mdc-list-item--with-leading-radio", ctx._hasRadioAt("before"))("mdc-list-item--with-trailing-radio", ctx._hasRadioAt("after"))("mat-mdc-list-item-both-leading-and-trailing", ctx._hasBothLeadingAndTrailing())("mat-accent", ctx.color !== "primary" && ctx.color !== "warn")("mat-warn", ctx.color === "warn")("_mat-animation-noopable", ctx._noopAnimations);
-      }
-    },
-    inputs: {
-      togglePosition: "togglePosition",
-      checkboxPosition: "checkboxPosition",
-      color: "color",
-      value: "value",
-      selected: "selected"
-    },
-    outputs: {
-      selectedChange: "selectedChange"
-    },
-    exportAs: ["matListOption"],
-    features: [\u0275\u0275ProvidersFeature([{
-      provide: MatListItemBase,
-      useExisting: _MatListOption
-    }, {
-      provide: LIST_OPTION,
-      useExisting: _MatListOption
-    }]), \u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c7,
-    decls: 20,
-    vars: 4,
-    consts: [["icons", ""], ["checkbox", ""], ["radio", ""], ["unscopedContent", ""], [1, "mdc-list-item__start", "mat-mdc-list-option-checkbox-before"], [1, "mdc-list-item__start", "mat-mdc-list-option-radio-before"], [3, "ngTemplateOutlet"], [1, "mdc-list-item__content"], [1, "mat-mdc-list-item-unscoped-content", 3, "cdkObserveContent"], [1, "mdc-list-item__end"], [1, "mat-focus-indicator"], [1, "mdc-checkbox"], ["type", "checkbox", 1, "mdc-checkbox__native-control", 3, "checked", "disabled"], [1, "mdc-checkbox__background"], ["viewBox", "0 0 24 24", "aria-hidden", "true", 1, "mdc-checkbox__checkmark"], ["fill", "none", "d", "M1.73,12.91 8.1,19.28 22.79,4.59", 1, "mdc-checkbox__checkmark-path"], [1, "mdc-checkbox__mixedmark"], [1, "mdc-radio"], ["type", "radio", 1, "mdc-radio__native-control", 3, "checked", "disabled"], [1, "mdc-radio__background"], [1, "mdc-radio__outer-circle"], [1, "mdc-radio__inner-circle"]],
-    template: function MatListOption_Template(rf, ctx) {
-      if (rf & 1) {
-        const _r1 = \u0275\u0275getCurrentView();
-        \u0275\u0275projectionDef(_c62);
-        \u0275\u0275template(0, MatListOption_ng_template_0_Template, 1, 0, "ng-template", null, 0, \u0275\u0275templateRefExtractor)(2, MatListOption_ng_template_2_Template, 6, 4, "ng-template", null, 1, \u0275\u0275templateRefExtractor)(4, MatListOption_ng_template_4_Template, 5, 4, "ng-template", null, 2, \u0275\u0275templateRefExtractor)(6, MatListOption_Conditional_6_Template, 2, 1, "span", 4)(7, MatListOption_Conditional_7_Template, 2, 1, "span", 5)(8, MatListOption_Conditional_8_Template, 1, 1, null, 6);
-        \u0275\u0275elementStart(9, "span", 7);
-        \u0275\u0275projection(10);
-        \u0275\u0275projection(11, 1);
-        \u0275\u0275elementStart(12, "span", 8, 3);
-        \u0275\u0275listener("cdkObserveContent", function MatListOption_Template_span_cdkObserveContent_12_listener() {
-          \u0275\u0275restoreView(_r1);
-          return \u0275\u0275resetView(ctx._updateItemLines(true));
-        });
-        \u0275\u0275projection(14, 2);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275template(15, MatListOption_Conditional_15_Template, 2, 1, "span", 9)(16, MatListOption_Conditional_16_Template, 2, 1, "span", 9)(17, MatListOption_Conditional_17_Template, 1, 1, null, 6);
-        \u0275\u0275projection(18, 3);
-        \u0275\u0275element(19, "div", 10);
-      }
-      if (rf & 2) {
-        \u0275\u0275advance(6);
-        \u0275\u0275conditional(ctx._hasCheckboxAt("before") ? 6 : ctx._hasRadioAt("before") ? 7 : -1);
-        \u0275\u0275advance(2);
-        \u0275\u0275conditional(ctx._hasIconsOrAvatarsAt("before") ? 8 : -1);
-        \u0275\u0275advance(7);
-        \u0275\u0275conditional(ctx._hasCheckboxAt("after") ? 15 : ctx._hasRadioAt("after") ? 16 : -1);
-        \u0275\u0275advance(2);
-        \u0275\u0275conditional(ctx._hasIconsOrAvatarsAt("after") ? 17 : -1);
-      }
-    },
-    dependencies: [NgTemplateOutlet, CdkObserveContent],
-    styles: ['.mat-mdc-list-option-with-trailing-avatar.mdc-list-item,[dir=rtl] .mat-mdc-list-option-with-trailing-avatar.mdc-list-item{padding-left:0;padding-right:0}.mat-mdc-list-option-with-trailing-avatar .mdc-list-item__end{margin-left:16px;margin-right:16px;width:40px;height:40px}.mat-mdc-list-option-with-trailing-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mat-mdc-list-option-with-trailing-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mat-mdc-list-option-with-trailing-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mat-mdc-list-option-with-trailing-avatar .mdc-list-item__end{border-radius:50%}.mat-mdc-list-option .mdc-checkbox{display:inline-block;position:relative;flex:0 0 18px;box-sizing:content-box;width:18px;height:18px;line-height:0;white-space:nowrap;cursor:pointer;vertical-align:bottom;padding:calc((var(--mdc-checkbox-state-layer-size, 40px) - 18px)/2);margin:calc((var(--mdc-checkbox-state-layer-size, 40px) - var(--mdc-checkbox-state-layer-size, 40px))/2)}.mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control{position:absolute;margin:0;padding:0;opacity:0;cursor:inherit;z-index:1;width:var(--mdc-checkbox-state-layer-size, 40px);height:var(--mdc-checkbox-state-layer-size, 40px);top:calc((var(--mdc-checkbox-state-layer-size, 40px) - var(--mdc-checkbox-state-layer-size, 40px))/2);right:calc((var(--mdc-checkbox-state-layer-size, 40px) - var(--mdc-checkbox-state-layer-size, 40px))/2);left:calc((var(--mdc-checkbox-state-layer-size, 40px) - var(--mdc-checkbox-state-layer-size, 40px))/2)}.mat-mdc-list-option .mdc-checkbox--disabled{cursor:default;pointer-events:none}@media(forced-colors: active){.mat-mdc-list-option .mdc-checkbox--disabled{opacity:.5}}.mat-mdc-list-option .mdc-checkbox__background{display:inline-flex;position:absolute;align-items:center;justify-content:center;box-sizing:border-box;width:18px;height:18px;border:2px solid currentColor;border-radius:2px;background-color:rgba(0,0,0,0);pointer-events:none;will-change:background-color,border-color;transition:background-color 90ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms cubic-bezier(0.4, 0, 0.6, 1);-webkit-print-color-adjust:exact;color-adjust:exact;border-color:var(--mdc-checkbox-unselected-icon-color, var(--mat-sys-on-surface-variant));top:calc((var(--mdc-checkbox-state-layer-size, 40px) - 18px)/2);left:calc((var(--mdc-checkbox-state-layer-size, 40px) - 18px)/2)}.mat-mdc-list-option .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background{border-color:var(--mdc-checkbox-selected-icon-color, var(--mat-sys-primary));background-color:var(--mdc-checkbox-selected-icon-color, var(--mat-sys-primary))}.mat-mdc-list-option .mdc-checkbox--disabled .mdc-checkbox__background{border-color:var(--mdc-checkbox-disabled-unselected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-list-option .mdc-checkbox__native-control:disabled:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:disabled:indeterminate~.mdc-checkbox__background{background-color:var(--mdc-checkbox-disabled-selected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:rgba(0,0,0,0)}.mat-mdc-list-option .mdc-checkbox:hover>.mdc-checkbox__native-control:not(:checked)~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox:hover>.mdc-checkbox__native-control:not(:indeterminate)~.mdc-checkbox__background{border-color:var(--mdc-checkbox-unselected-hover-icon-color, var(--mat-sys-on-surface));background-color:rgba(0,0,0,0)}.mat-mdc-list-option .mdc-checkbox:hover>.mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox:hover>.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{border-color:var(--mdc-checkbox-selected-hover-icon-color, var(--mat-sys-primary));background-color:var(--mdc-checkbox-selected-hover-icon-color, var(--mat-sys-primary))}.mat-mdc-list-option .mdc-checkbox__native-control:focus:focus:not(:checked)~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:focus:focus:not(:indeterminate)~.mdc-checkbox__background{border-color:var(--mdc-checkbox-unselected-focus-icon-color, var(--mat-sys-on-surface))}.mat-mdc-list-option .mdc-checkbox__native-control:focus:focus:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:focus:focus:indeterminate~.mdc-checkbox__background{border-color:var(--mdc-checkbox-selected-focus-icon-color, var(--mat-sys-primary));background-color:var(--mdc-checkbox-selected-focus-icon-color, var(--mat-sys-primary))}.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox:hover>.mdc-checkbox__native-control~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox .mdc-checkbox__native-control:focus~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__background{border-color:var(--mdc-checkbox-disabled-unselected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{background-color:var(--mdc-checkbox-disabled-selected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:rgba(0,0,0,0)}.mat-mdc-list-option .mdc-checkbox__checkmark{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;opacity:0;transition:opacity 180ms cubic-bezier(0.4, 0, 0.6, 1);color:var(--mdc-checkbox-selected-checkmark-color, var(--mat-sys-on-primary))}@media(forced-colors: active){.mat-mdc-list-option .mdc-checkbox__checkmark{color:CanvasText}}.mat-mdc-list-option .mdc-checkbox--disabled .mdc-checkbox__checkmark,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__checkmark{color:var(--mdc-checkbox-disabled-selected-checkmark-color, var(--mat-sys-surface))}@media(forced-colors: active){.mat-mdc-list-option .mdc-checkbox--disabled .mdc-checkbox__checkmark,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__checkmark{color:CanvasText}}.mat-mdc-list-option .mdc-checkbox__checkmark-path{transition:stroke-dashoffset 180ms cubic-bezier(0.4, 0, 0.6, 1);stroke:currentColor;stroke-width:3.12px;stroke-dashoffset:29.7833385;stroke-dasharray:29.7833385}.mat-mdc-list-option .mdc-checkbox__mixedmark{width:100%;height:0;transform:scaleX(0) rotate(0deg);border-width:1px;border-style:solid;opacity:0;transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1);border-color:var(--mdc-checkbox-selected-checkmark-color, var(--mat-sys-on-primary))}@media(forced-colors: active){.mat-mdc-list-option .mdc-checkbox__mixedmark{margin:0 1px}}.mat-mdc-list-option .mdc-checkbox--disabled .mdc-checkbox__mixedmark,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__mixedmark{border-color:var(--mdc-checkbox-disabled-selected-checkmark-color, var(--mat-sys-surface))}.mat-mdc-list-option .mdc-checkbox--anim-unchecked-checked .mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--anim-checked-unchecked .mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__background{animation-duration:180ms;animation-timing-function:linear}.mat-mdc-list-option .mdc-checkbox--anim-unchecked-checked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-unchecked-checked-checkmark-path 180ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-unchecked-indeterminate-mixedmark 90ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-checked-unchecked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-checked-unchecked-checkmark-path 90ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__checkmark{animation:mdc-checkbox-checked-indeterminate-checkmark 90ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-checked-indeterminate-mixedmark 90ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__checkmark{animation:mdc-checkbox-indeterminate-checked-checkmark 500ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-checked-mixedmark 500ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-unchecked-mixedmark 300ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{transition:border-color 90ms cubic-bezier(0, 0, 0.2, 1),background-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option .mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mat-mdc-list-option .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path{stroke-dashoffset:0}.mat-mdc-list-option .mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__checkmark{transition:opacity 180ms cubic-bezier(0, 0, 0.2, 1),transform 180ms cubic-bezier(0, 0, 0.2, 1);opacity:1}.mat-mdc-list-option .mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__mixedmark{transform:scaleX(1) rotate(-45deg)}.mat-mdc-list-option .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__checkmark{transform:rotate(45deg);opacity:0;transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-list-option .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__mixedmark{transform:scaleX(1) rotate(0deg);opacity:1}@keyframes mdc-checkbox-unchecked-checked-checkmark-path{0%,50%{stroke-dashoffset:29.7833385}50%{animation-timing-function:cubic-bezier(0, 0, 0.2, 1)}100%{stroke-dashoffset:0}}@keyframes mdc-checkbox-unchecked-indeterminate-mixedmark{0%,68.2%{transform:scaleX(0)}68.2%{animation-timing-function:cubic-bezier(0, 0, 0, 1)}100%{transform:scaleX(1)}}@keyframes mdc-checkbox-checked-unchecked-checkmark-path{from{animation-timing-function:cubic-bezier(0.4, 0, 1, 1);opacity:1;stroke-dashoffset:0}to{opacity:0;stroke-dashoffset:-29.7833385}}@keyframes mdc-checkbox-checked-indeterminate-checkmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(45deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-checked-checkmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(45deg);opacity:0}to{transform:rotate(360deg);opacity:1}}@keyframes mdc-checkbox-checked-indeterminate-mixedmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 1);transform:rotate(-45deg);opacity:0}to{transform:rotate(0deg);opacity:1}}@keyframes mdc-checkbox-indeterminate-checked-mixedmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(315deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-unchecked-mixedmark{0%{animation-timing-function:linear;transform:scaleX(1);opacity:1}32.8%,100%{transform:scaleX(0);opacity:0}}.mat-mdc-list-option .mdc-radio{display:inline-block;position:relative;flex:0 0 auto;box-sizing:content-box;width:20px;height:20px;cursor:pointer;will-change:opacity,transform,border-color,color;padding:calc((var(--mdc-radio-state-layer-size, 40px) - 20px)/2)}.mat-mdc-list-option .mdc-radio__background{display:inline-block;position:relative;box-sizing:border-box;width:20px;height:20px}.mat-mdc-list-option .mdc-radio__background::before{position:absolute;transform:scale(0, 0);border-radius:50%;opacity:0;pointer-events:none;content:"";transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1);width:var(--mdc-radio-state-layer-size, 40px);height:var(--mdc-radio-state-layer-size, 40px);top:calc(-1*(var(--mdc-radio-state-layer-size, 40px) - 20px)/2);left:calc(-1*(var(--mdc-radio-state-layer-size, 40px) - 20px)/2)}.mat-mdc-list-option .mdc-radio__outer-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;border-width:2px;border-style:solid;border-radius:50%;transition:border-color 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-list-option .mdc-radio__inner-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;transform:scale(0, 0);border-width:10px;border-style:solid;border-radius:50%;transition:transform 90ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-list-option .mdc-radio__native-control{position:absolute;margin:0;padding:0;opacity:0;top:0;right:0;left:0;cursor:inherit;z-index:1;width:var(--mdc-radio-state-layer-size, 40px);height:var(--mdc-radio-state-layer-size, 40px)}.mat-mdc-list-option .mdc-radio__native-control:checked+.mdc-radio__background,.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background{transition:opacity 90ms cubic-bezier(0, 0, 0.2, 1),transform 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option .mdc-radio__native-control:checked+.mdc-radio__background>.mdc-radio__outer-circle,.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background>.mdc-radio__outer-circle{transition:border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option .mdc-radio__native-control:checked+.mdc-radio__background>.mdc-radio__inner-circle,.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background>.mdc-radio__inner-circle{transition:transform 90ms cubic-bezier(0, 0, 0.2, 1),border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option .mdc-radio__native-control:disabled:not(:checked)+.mdc-radio__background>.mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-unselected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-unselected-icon-opacity, 0.38)}.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background{cursor:default}.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background>.mdc-radio__inner-circle,.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background>.mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-selected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-selected-icon-opacity, 0.38)}.mat-mdc-list-option .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background>.mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-icon-color, var(--mat-sys-on-surface-variant))}.mat-mdc-list-option .mdc-radio__native-control:enabled:checked+.mdc-radio__background>.mdc-radio__outer-circle,.mat-mdc-list-option .mdc-radio__native-control:enabled:checked+.mdc-radio__background>.mdc-radio__inner-circle{border-color:var(--mdc-radio-selected-icon-color, var(--mat-sys-primary))}.mat-mdc-list-option .mdc-radio__native-control:checked+.mdc-radio__background>.mdc-radio__inner-circle{transform:scale(0.5);transition:transform 90ms cubic-bezier(0, 0, 0.2, 1),border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option._mat-animation-noopable .mdc-radio__background::before,.mat-mdc-list-option._mat-animation-noopable .mdc-radio__outer-circle,.mat-mdc-list-option._mat-animation-noopable .mdc-radio__inner-circle{transition:none !important}.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mat-mdc-checkbox-touch-target,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__native-control,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__ripple,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mat-mdc-checkbox-ripple::before,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__background,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__mixedmark,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mat-mdc-checkbox-touch-target,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__native-control,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__ripple,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mat-mdc-checkbox-ripple::before,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__background,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__mixedmark{transition:none !important;animation:none !important}.mat-mdc-list-option .mdc-checkbox__native-control,.mat-mdc-list-option .mdc-radio__native-control{display:none}@media(forced-colors: active){.mat-mdc-list-option.mdc-list-item--selected::after{content:"";position:absolute;top:50%;right:16px;transform:translateY(-50%);width:10px;height:0;border-bottom:solid 10px;border-radius:10px}.mat-mdc-list-option.mdc-list-item--selected [dir=rtl]::after{right:auto;left:16px}}'],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListOption, [{
-    type: Component,
-    args: [{
-      selector: "mat-list-option",
-      exportAs: "matListOption",
-      host: {
-        "class": "mat-mdc-list-item mat-mdc-list-option mdc-list-item",
-        "role": "option",
-        // As per MDC, only list items without checkbox or radio indicator should receive the
-        // `--selected` class.
-        "[class.mdc-list-item--selected]": "selected && !_selectionList.multiple && _selectionList.hideSingleSelectionIndicator",
-        // Based on the checkbox/radio position and whether there are icons or avatars, we apply MDC's
-        // list-item `--leading` and `--trailing` classes.
-        "[class.mdc-list-item--with-leading-avatar]": '_hasProjected("avatars", "before")',
-        "[class.mdc-list-item--with-leading-icon]": '_hasProjected("icons", "before")',
-        "[class.mdc-list-item--with-trailing-icon]": '_hasProjected("icons", "after")',
-        "[class.mat-mdc-list-option-with-trailing-avatar]": '_hasProjected("avatars", "after")',
-        // Based on the checkbox/radio position, we apply the `--leading` or `--trailing` MDC classes
-        // which ensure that the checkbox/radio is positioned correctly within the list item.
-        "[class.mdc-list-item--with-leading-checkbox]": '_hasCheckboxAt("before")',
-        "[class.mdc-list-item--with-trailing-checkbox]": '_hasCheckboxAt("after")',
-        "[class.mdc-list-item--with-leading-radio]": '_hasRadioAt("before")',
-        "[class.mdc-list-item--with-trailing-radio]": '_hasRadioAt("after")',
-        // Utility class that makes it easier to target the case where there's both a leading
-        // and a trailing icon. Avoids having to write out all the combinations.
-        "[class.mat-mdc-list-item-both-leading-and-trailing]": "_hasBothLeadingAndTrailing()",
-        "[class.mat-accent]": 'color !== "primary" && color !== "warn"',
-        "[class.mat-warn]": 'color === "warn"',
-        "[class._mat-animation-noopable]": "_noopAnimations",
-        "[attr.aria-selected]": "selected",
-        "(blur)": "_handleBlur()",
-        "(click)": "_toggleOnInteraction()"
-      },
-      encapsulation: ViewEncapsulation.None,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      providers: [{
-        provide: MatListItemBase,
-        useExisting: MatListOption
-      }, {
-        provide: LIST_OPTION,
-        useExisting: MatListOption
-      }],
-      imports: [NgTemplateOutlet, CdkObserveContent],
-      template: `<!--
-  Save icons and the pseudo checkbox/radio so that they can be re-used in the template without
-  duplication. Also content can only be injected once so we need to extract icons/avatars
-  into a template since we use it in multiple places.
--->
-<ng-template #icons>
-  <ng-content select="[matListItemAvatar],[matListItemIcon]">
-  </ng-content>
-</ng-template>
-
-<ng-template #checkbox>
-  <div class="mdc-checkbox" [class.mdc-checkbox--disabled]="disabled">
-    <input type="checkbox" class="mdc-checkbox__native-control"
-           [checked]="selected" [disabled]="disabled"/>
-    <div class="mdc-checkbox__background">
-      <svg class="mdc-checkbox__checkmark"
-           viewBox="0 0 24 24"
-           aria-hidden="true">
-        <path class="mdc-checkbox__checkmark-path"
-              fill="none"
-              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-      </svg>
-      <div class="mdc-checkbox__mixedmark"></div>
-    </div>
-  </div>
-</ng-template>
-
-<ng-template #radio>
-  <div class="mdc-radio" [class.mdc-radio--disabled]="disabled">
-    <input type="radio" class="mdc-radio__native-control"
-           [checked]="selected" [disabled]="disabled"/>
-    <div class="mdc-radio__background">
-      <div class="mdc-radio__outer-circle"></div>
-      <div class="mdc-radio__inner-circle"></div>
-    </div>
-  </div>
-</ng-template>
-
-@if (_hasCheckboxAt('before')) {
-  <!-- Container for the checkbox at start. -->
-  <span class="mdc-list-item__start mat-mdc-list-option-checkbox-before">
-    <ng-template [ngTemplateOutlet]="checkbox"></ng-template>
-  </span>
-} @else if (_hasRadioAt('before')) {
-  <!-- Container for the radio at the start. -->
-  <span class="mdc-list-item__start mat-mdc-list-option-radio-before">
-    <ng-template [ngTemplateOutlet]="radio"></ng-template>
-  </span>
-}
-<!-- Conditionally renders icons/avatars before the list item text. -->
-@if (_hasIconsOrAvatarsAt('before')) {
-  <ng-template [ngTemplateOutlet]="icons"></ng-template>
-}
-
-<!-- Text -->
-<span class="mdc-list-item__content">
-  <ng-content select="[matListItemTitle]"></ng-content>
-  <ng-content select="[matListItemLine]"></ng-content>
-  <span #unscopedContent class="mat-mdc-list-item-unscoped-content"
-        (cdkObserveContent)="_updateItemLines(true)">
-    <ng-content></ng-content>
-  </span>
-</span>
-
-@if (_hasCheckboxAt('after')) {
-  <!-- Container for the checkbox at the end. -->
-  <span class="mdc-list-item__end">
-    <ng-template [ngTemplateOutlet]="checkbox"></ng-template>
-  </span>
-} @else if (_hasRadioAt('after')) {
-  <!-- Container for the radio at the end. -->
-  <span class="mdc-list-item__end">
-    <ng-template [ngTemplateOutlet]="radio"></ng-template>
-  </span>
-}
-
-<!-- Conditionally renders icons/avatars after the list item text. -->
-@if (_hasIconsOrAvatarsAt('after')) {
-  <ng-template [ngTemplateOutlet]="icons"></ng-template>
-}
-
-<!-- Divider -->
-<ng-content select="mat-divider"></ng-content>
-
-<!--
-  Strong focus indicator element. MDC uses the \`::before\` pseudo element for the default
-  focus/hover/selected state, so we need a separate element.
--->
-<div class="mat-focus-indicator"></div>
-`,
-      styles: ['.mat-mdc-list-option-with-trailing-avatar.mdc-list-item,[dir=rtl] .mat-mdc-list-option-with-trailing-avatar.mdc-list-item{padding-left:0;padding-right:0}.mat-mdc-list-option-with-trailing-avatar .mdc-list-item__end{margin-left:16px;margin-right:16px;width:40px;height:40px}.mat-mdc-list-option-with-trailing-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mat-mdc-list-option-with-trailing-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mat-mdc-list-option-with-trailing-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mat-mdc-list-option-with-trailing-avatar .mdc-list-item__end{border-radius:50%}.mat-mdc-list-option .mdc-checkbox{display:inline-block;position:relative;flex:0 0 18px;box-sizing:content-box;width:18px;height:18px;line-height:0;white-space:nowrap;cursor:pointer;vertical-align:bottom;padding:calc((var(--mdc-checkbox-state-layer-size, 40px) - 18px)/2);margin:calc((var(--mdc-checkbox-state-layer-size, 40px) - var(--mdc-checkbox-state-layer-size, 40px))/2)}.mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control{position:absolute;margin:0;padding:0;opacity:0;cursor:inherit;z-index:1;width:var(--mdc-checkbox-state-layer-size, 40px);height:var(--mdc-checkbox-state-layer-size, 40px);top:calc((var(--mdc-checkbox-state-layer-size, 40px) - var(--mdc-checkbox-state-layer-size, 40px))/2);right:calc((var(--mdc-checkbox-state-layer-size, 40px) - var(--mdc-checkbox-state-layer-size, 40px))/2);left:calc((var(--mdc-checkbox-state-layer-size, 40px) - var(--mdc-checkbox-state-layer-size, 40px))/2)}.mat-mdc-list-option .mdc-checkbox--disabled{cursor:default;pointer-events:none}@media(forced-colors: active){.mat-mdc-list-option .mdc-checkbox--disabled{opacity:.5}}.mat-mdc-list-option .mdc-checkbox__background{display:inline-flex;position:absolute;align-items:center;justify-content:center;box-sizing:border-box;width:18px;height:18px;border:2px solid currentColor;border-radius:2px;background-color:rgba(0,0,0,0);pointer-events:none;will-change:background-color,border-color;transition:background-color 90ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms cubic-bezier(0.4, 0, 0.6, 1);-webkit-print-color-adjust:exact;color-adjust:exact;border-color:var(--mdc-checkbox-unselected-icon-color, var(--mat-sys-on-surface-variant));top:calc((var(--mdc-checkbox-state-layer-size, 40px) - 18px)/2);left:calc((var(--mdc-checkbox-state-layer-size, 40px) - 18px)/2)}.mat-mdc-list-option .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background{border-color:var(--mdc-checkbox-selected-icon-color, var(--mat-sys-primary));background-color:var(--mdc-checkbox-selected-icon-color, var(--mat-sys-primary))}.mat-mdc-list-option .mdc-checkbox--disabled .mdc-checkbox__background{border-color:var(--mdc-checkbox-disabled-unselected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-list-option .mdc-checkbox__native-control:disabled:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:disabled:indeterminate~.mdc-checkbox__background{background-color:var(--mdc-checkbox-disabled-selected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:rgba(0,0,0,0)}.mat-mdc-list-option .mdc-checkbox:hover>.mdc-checkbox__native-control:not(:checked)~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox:hover>.mdc-checkbox__native-control:not(:indeterminate)~.mdc-checkbox__background{border-color:var(--mdc-checkbox-unselected-hover-icon-color, var(--mat-sys-on-surface));background-color:rgba(0,0,0,0)}.mat-mdc-list-option .mdc-checkbox:hover>.mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox:hover>.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{border-color:var(--mdc-checkbox-selected-hover-icon-color, var(--mat-sys-primary));background-color:var(--mdc-checkbox-selected-hover-icon-color, var(--mat-sys-primary))}.mat-mdc-list-option .mdc-checkbox__native-control:focus:focus:not(:checked)~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:focus:focus:not(:indeterminate)~.mdc-checkbox__background{border-color:var(--mdc-checkbox-unselected-focus-icon-color, var(--mat-sys-on-surface))}.mat-mdc-list-option .mdc-checkbox__native-control:focus:focus:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:focus:focus:indeterminate~.mdc-checkbox__background{border-color:var(--mdc-checkbox-selected-focus-icon-color, var(--mat-sys-primary));background-color:var(--mdc-checkbox-selected-focus-icon-color, var(--mat-sys-primary))}.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox:hover>.mdc-checkbox__native-control~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox .mdc-checkbox__native-control:focus~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__background{border-color:var(--mdc-checkbox-disabled-unselected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{background-color:var(--mdc-checkbox-disabled-selected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:rgba(0,0,0,0)}.mat-mdc-list-option .mdc-checkbox__checkmark{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;opacity:0;transition:opacity 180ms cubic-bezier(0.4, 0, 0.6, 1);color:var(--mdc-checkbox-selected-checkmark-color, var(--mat-sys-on-primary))}@media(forced-colors: active){.mat-mdc-list-option .mdc-checkbox__checkmark{color:CanvasText}}.mat-mdc-list-option .mdc-checkbox--disabled .mdc-checkbox__checkmark,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__checkmark{color:var(--mdc-checkbox-disabled-selected-checkmark-color, var(--mat-sys-surface))}@media(forced-colors: active){.mat-mdc-list-option .mdc-checkbox--disabled .mdc-checkbox__checkmark,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__checkmark{color:CanvasText}}.mat-mdc-list-option .mdc-checkbox__checkmark-path{transition:stroke-dashoffset 180ms cubic-bezier(0.4, 0, 0.6, 1);stroke:currentColor;stroke-width:3.12px;stroke-dashoffset:29.7833385;stroke-dasharray:29.7833385}.mat-mdc-list-option .mdc-checkbox__mixedmark{width:100%;height:0;transform:scaleX(0) rotate(0deg);border-width:1px;border-style:solid;opacity:0;transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1);border-color:var(--mdc-checkbox-selected-checkmark-color, var(--mat-sys-on-primary))}@media(forced-colors: active){.mat-mdc-list-option .mdc-checkbox__mixedmark{margin:0 1px}}.mat-mdc-list-option .mdc-checkbox--disabled .mdc-checkbox__mixedmark,.mat-mdc-list-option .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__mixedmark{border-color:var(--mdc-checkbox-disabled-selected-checkmark-color, var(--mat-sys-surface))}.mat-mdc-list-option .mdc-checkbox--anim-unchecked-checked .mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--anim-checked-unchecked .mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__background{animation-duration:180ms;animation-timing-function:linear}.mat-mdc-list-option .mdc-checkbox--anim-unchecked-checked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-unchecked-checked-checkmark-path 180ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-unchecked-indeterminate-mixedmark 90ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-checked-unchecked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-checked-unchecked-checkmark-path 90ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__checkmark{animation:mdc-checkbox-checked-indeterminate-checkmark 90ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-checked-indeterminate-mixedmark 90ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__checkmark{animation:mdc-checkbox-indeterminate-checked-checkmark 500ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-checked-mixedmark 500ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-unchecked-mixedmark 300ms linear;transition:none}.mat-mdc-list-option .mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mat-mdc-list-option .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{transition:border-color 90ms cubic-bezier(0, 0, 0.2, 1),background-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option .mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mat-mdc-list-option .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path{stroke-dashoffset:0}.mat-mdc-list-option .mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__checkmark{transition:opacity 180ms cubic-bezier(0, 0, 0.2, 1),transform 180ms cubic-bezier(0, 0, 0.2, 1);opacity:1}.mat-mdc-list-option .mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__mixedmark{transform:scaleX(1) rotate(-45deg)}.mat-mdc-list-option .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__checkmark{transform:rotate(45deg);opacity:0;transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-list-option .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__mixedmark{transform:scaleX(1) rotate(0deg);opacity:1}@keyframes mdc-checkbox-unchecked-checked-checkmark-path{0%,50%{stroke-dashoffset:29.7833385}50%{animation-timing-function:cubic-bezier(0, 0, 0.2, 1)}100%{stroke-dashoffset:0}}@keyframes mdc-checkbox-unchecked-indeterminate-mixedmark{0%,68.2%{transform:scaleX(0)}68.2%{animation-timing-function:cubic-bezier(0, 0, 0, 1)}100%{transform:scaleX(1)}}@keyframes mdc-checkbox-checked-unchecked-checkmark-path{from{animation-timing-function:cubic-bezier(0.4, 0, 1, 1);opacity:1;stroke-dashoffset:0}to{opacity:0;stroke-dashoffset:-29.7833385}}@keyframes mdc-checkbox-checked-indeterminate-checkmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(45deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-checked-checkmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(45deg);opacity:0}to{transform:rotate(360deg);opacity:1}}@keyframes mdc-checkbox-checked-indeterminate-mixedmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 1);transform:rotate(-45deg);opacity:0}to{transform:rotate(0deg);opacity:1}}@keyframes mdc-checkbox-indeterminate-checked-mixedmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(315deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-unchecked-mixedmark{0%{animation-timing-function:linear;transform:scaleX(1);opacity:1}32.8%,100%{transform:scaleX(0);opacity:0}}.mat-mdc-list-option .mdc-radio{display:inline-block;position:relative;flex:0 0 auto;box-sizing:content-box;width:20px;height:20px;cursor:pointer;will-change:opacity,transform,border-color,color;padding:calc((var(--mdc-radio-state-layer-size, 40px) - 20px)/2)}.mat-mdc-list-option .mdc-radio__background{display:inline-block;position:relative;box-sizing:border-box;width:20px;height:20px}.mat-mdc-list-option .mdc-radio__background::before{position:absolute;transform:scale(0, 0);border-radius:50%;opacity:0;pointer-events:none;content:"";transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1);width:var(--mdc-radio-state-layer-size, 40px);height:var(--mdc-radio-state-layer-size, 40px);top:calc(-1*(var(--mdc-radio-state-layer-size, 40px) - 20px)/2);left:calc(-1*(var(--mdc-radio-state-layer-size, 40px) - 20px)/2)}.mat-mdc-list-option .mdc-radio__outer-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;border-width:2px;border-style:solid;border-radius:50%;transition:border-color 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-list-option .mdc-radio__inner-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;transform:scale(0, 0);border-width:10px;border-style:solid;border-radius:50%;transition:transform 90ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-list-option .mdc-radio__native-control{position:absolute;margin:0;padding:0;opacity:0;top:0;right:0;left:0;cursor:inherit;z-index:1;width:var(--mdc-radio-state-layer-size, 40px);height:var(--mdc-radio-state-layer-size, 40px)}.mat-mdc-list-option .mdc-radio__native-control:checked+.mdc-radio__background,.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background{transition:opacity 90ms cubic-bezier(0, 0, 0.2, 1),transform 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option .mdc-radio__native-control:checked+.mdc-radio__background>.mdc-radio__outer-circle,.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background>.mdc-radio__outer-circle{transition:border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option .mdc-radio__native-control:checked+.mdc-radio__background>.mdc-radio__inner-circle,.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background>.mdc-radio__inner-circle{transition:transform 90ms cubic-bezier(0, 0, 0.2, 1),border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option .mdc-radio__native-control:disabled:not(:checked)+.mdc-radio__background>.mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-unselected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-unselected-icon-opacity, 0.38)}.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background{cursor:default}.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background>.mdc-radio__inner-circle,.mat-mdc-list-option .mdc-radio__native-control:disabled+.mdc-radio__background>.mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-selected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-selected-icon-opacity, 0.38)}.mat-mdc-list-option .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background>.mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-icon-color, var(--mat-sys-on-surface-variant))}.mat-mdc-list-option .mdc-radio__native-control:enabled:checked+.mdc-radio__background>.mdc-radio__outer-circle,.mat-mdc-list-option .mdc-radio__native-control:enabled:checked+.mdc-radio__background>.mdc-radio__inner-circle{border-color:var(--mdc-radio-selected-icon-color, var(--mat-sys-primary))}.mat-mdc-list-option .mdc-radio__native-control:checked+.mdc-radio__background>.mdc-radio__inner-circle{transform:scale(0.5);transition:transform 90ms cubic-bezier(0, 0, 0.2, 1),border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-list-option._mat-animation-noopable .mdc-radio__background::before,.mat-mdc-list-option._mat-animation-noopable .mdc-radio__outer-circle,.mat-mdc-list-option._mat-animation-noopable .mdc-radio__inner-circle{transition:none !important}.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mat-mdc-checkbox-touch-target,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__native-control,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__ripple,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mat-mdc-checkbox-ripple::before,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__background,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__start>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__mixedmark,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mat-mdc-checkbox-touch-target,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__native-control,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__ripple,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mat-mdc-checkbox-ripple::before,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__background,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mat-mdc-list-option._mat-animation-noopable>.mdc-list-item__end>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__mixedmark{transition:none !important;animation:none !important}.mat-mdc-list-option .mdc-checkbox__native-control,.mat-mdc-list-option .mdc-radio__native-control{display:none}@media(forced-colors: active){.mat-mdc-list-option.mdc-list-item--selected::after{content:"";position:absolute;top:50%;right:16px;transform:translateY(-50%);width:10px;height:0;border-bottom:solid 10px;border-radius:10px}.mat-mdc-list-option.mdc-list-item--selected [dir=rtl]::after{right:auto;left:16px}}']
-    }]
-  }], null, {
-    _lines: [{
-      type: ContentChildren,
-      args: [MatListItemLine, {
-        descendants: true
-      }]
-    }],
-    _titles: [{
-      type: ContentChildren,
-      args: [MatListItemTitle, {
-        descendants: true
-      }]
-    }],
-    _unscopedContent: [{
-      type: ViewChild,
-      args: ["unscopedContent"]
-    }],
-    selectedChange: [{
-      type: Output
-    }],
-    togglePosition: [{
-      type: Input
-    }],
-    checkboxPosition: [{
-      type: Input
-    }],
-    color: [{
-      type: Input
-    }],
-    value: [{
-      type: Input
-    }],
-    selected: [{
-      type: Input
-    }]
-  });
-})();
-var MatListSubheaderCssMatStyler = class _MatListSubheaderCssMatStyler {
-  static \u0275fac = function MatListSubheaderCssMatStyler_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatListSubheaderCssMatStyler)();
-  };
-  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-    type: _MatListSubheaderCssMatStyler,
-    selectors: [["", "mat-subheader", ""], ["", "matSubheader", ""]],
-    hostAttrs: [1, "mat-mdc-subheader", "mdc-list-group__subheader"]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListSubheaderCssMatStyler, [{
-    type: Directive,
-    args: [{
-      selector: "[mat-subheader], [matSubheader]",
-      // TODO(mmalerba): MDC's subheader font looks identical to the list item font, figure out why and
-      //  make a change in one of the repos to visually distinguish.
-      host: {
-        "class": "mat-mdc-subheader mdc-list-group__subheader"
-      }
-    }]
-  }], null, null);
-})();
-var MAT_NAV_LIST = new InjectionToken("MatNavList");
-var MatNavList = class _MatNavList extends MatListBase {
-  // An navigation list is considered interactive, but does not extend the interactive list
-  // base class. We do this because as per MDC, items of interactive lists are only reachable
-  // through keyboard shortcuts. We want all items for the navigation list to be reachable
-  // through tab key as we do not intend to provide any special accessibility treatment. The
-  // accessibility treatment depends on how the end-user will interact with it.
-  _isNonInteractive = false;
-  static \u0275fac = /* @__PURE__ */ (() => {
-    let \u0275MatNavList_BaseFactory;
-    return function MatNavList_Factory(__ngFactoryType__) {
-      return (\u0275MatNavList_BaseFactory || (\u0275MatNavList_BaseFactory = \u0275\u0275getInheritedFactory(_MatNavList)))(__ngFactoryType__ || _MatNavList);
-    };
-  })();
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
-    type: _MatNavList,
-    selectors: [["mat-nav-list"]],
-    hostAttrs: ["role", "navigation", 1, "mat-mdc-nav-list", "mat-mdc-list-base", "mdc-list"],
-    exportAs: ["matNavList"],
-    features: [\u0275\u0275ProvidersFeature([{
-      provide: MatListBase,
-      useExisting: _MatNavList
-    }]), \u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c05,
-    decls: 1,
-    vars: 0,
-    template: function MatNavList_Template(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275projectionDef();
-        \u0275\u0275projection(0);
-      }
-    },
-    styles: [_c12],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatNavList, [{
-    type: Component,
-    args: [{
-      selector: "mat-nav-list",
-      exportAs: "matNavList",
-      template: "<ng-content></ng-content>",
-      host: {
-        "class": "mat-mdc-nav-list mat-mdc-list-base mdc-list",
-        "role": "navigation"
-      },
-      encapsulation: ViewEncapsulation.None,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      providers: [{
-        provide: MatListBase,
-        useExisting: MatNavList
-      }],
-      styles: ['.mdc-list{margin:0;padding:8px 0;list-style-type:none}.mdc-list:focus{outline:none}.mdc-list-item{display:flex;position:relative;justify-content:flex-start;overflow:hidden;padding:0;align-items:stretch;cursor:pointer;padding-left:16px;padding-right:16px;background-color:var(--mdc-list-list-item-container-color, transparent);border-radius:var(--mdc-list-list-item-container-shape, var(--mat-sys-corner-none))}.mdc-list-item.mdc-list-item--selected{background-color:var(--mdc-list-list-item-selected-container-color)}.mdc-list-item:focus{outline:0}.mdc-list-item.mdc-list-item--disabled{cursor:auto}.mdc-list-item.mdc-list-item--with-one-line{height:var(--mdc-list-list-item-one-line-container-height, 48px)}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__start{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-two-lines{height:var(--mdc-list-list-item-two-line-container-height, 64px)}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-three-lines{height:var(--mdc-list-list-item-three-line-container-height, 88px)}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--selected::before,.mdc-list-item.mdc-list-item--selected:focus::before,.mdc-list-item:not(.mdc-list-item--selected):focus::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;content:"";pointer-events:none}a.mdc-list-item{color:inherit;text-decoration:none}.mdc-list-item__start{fill:currentColor;flex-shrink:0;pointer-events:none}.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-leading-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-leading-icon-size, 24px);height:var(--mdc-list-list-item-leading-icon-size, 24px);margin-left:16px;margin-right:32px}[dir=rtl] .mdc-list-item--with-leading-icon .mdc-list-item__start{margin-left:32px;margin-right:16px}.mdc-list-item--with-leading-icon:hover .mdc-list-item__start{color:var(--mdc-list-list-item-hover-leading-icon-color)}.mdc-list-item--with-leading-avatar .mdc-list-item__start{width:var(--mdc-list-list-item-leading-avatar-size, 40px);height:var(--mdc-list-list-item-leading-avatar-size, 40px);margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item--with-leading-avatar .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-avatar .mdc-list-item__start{margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item__end{flex-shrink:0;pointer-events:none}.mdc-list-item--with-trailing-meta .mdc-list-item__end{font-family:var(--mdc-list-list-item-trailing-supporting-text-font, var(--mat-sys-label-small-font));line-height:var(--mdc-list-list-item-trailing-supporting-text-line-height, var(--mat-sys-label-small-line-height));font-size:var(--mdc-list-list-item-trailing-supporting-text-size, var(--mat-sys-label-small-size));font-weight:var(--mdc-list-list-item-trailing-supporting-text-weight, var(--mat-sys-label-small-weight));letter-spacing:var(--mdc-list-list-item-trailing-supporting-text-tracking, var(--mat-sys-label-small-tracking))}.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-trailing-icon-size, 24px);height:var(--mdc-list-list-item-trailing-icon-size, 24px)}.mdc-list-item--with-trailing-icon:hover .mdc-list-item__end{color:var(--mdc-list-list-item-hover-trailing-icon-color)}.mdc-list-item.mdc-list-item--with-trailing-meta .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-supporting-text-color, var(--mat-sys-on-surface-variant))}.mdc-list-item--selected.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-selected-trailing-icon-color, var(--mat-sys-primary))}.mdc-list-item__content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;align-self:center;flex:1;pointer-events:none}.mdc-list-item--with-two-lines .mdc-list-item__content,.mdc-list-item--with-three-lines .mdc-list-item__content{align-self:stretch}.mdc-list-item__primary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:var(--mdc-list-list-item-label-text-color, var(--mat-sys-on-surface));font-family:var(--mdc-list-list-item-label-text-font, var(--mat-sys-body-large-font));line-height:var(--mdc-list-list-item-label-text-line-height, var(--mat-sys-body-large-line-height));font-size:var(--mdc-list-list-item-label-text-size, var(--mat-sys-body-large-size));font-weight:var(--mdc-list-list-item-label-text-weight, var(--mat-sys-body-large-weight));letter-spacing:var(--mdc-list-list-item-label-text-tracking, var(--mat-sys-body-large-tracking))}.mdc-list-item:hover .mdc-list-item__primary-text{color:var(--mdc-list-list-item-hover-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:focus .mdc-list-item__primary-text{color:var(--mdc-list-list-item-focus-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-three-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item__secondary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;margin-top:0;color:var(--mdc-list-list-item-supporting-text-color, var(--mat-sys-on-surface-variant));font-family:var(--mdc-list-list-item-supporting-text-font, var(--mat-sys-body-medium-font));line-height:var(--mdc-list-list-item-supporting-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mdc-list-list-item-supporting-text-size, var(--mat-sys-body-medium-size));font-weight:var(--mdc-list-list-item-supporting-text-weight, var(--mat-sys-body-medium-weight));letter-spacing:var(--mdc-list-list-item-supporting-text-tracking, var(--mat-sys-body-medium-tracking))}.mdc-list-item__secondary-text::before{display:inline-block;width:0;height:20px;content:"";vertical-align:0}.mdc-list-item--with-three-lines .mdc-list-item__secondary-text{white-space:normal;line-height:20px}.mdc-list-item--with-overline .mdc-list-item__secondary-text{white-space:nowrap;line-height:auto}.mdc-list-item--with-leading-radio.mdc-list-item,.mdc-list-item--with-leading-checkbox.mdc-list-item,.mdc-list-item--with-leading-icon.mdc-list-item,.mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:0;padding-right:16px}[dir=rtl] .mdc-list-item--with-leading-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-checkbox.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:16px;padding-right:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end{display:block;margin-top:0;line-height:normal}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-trailing-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-icon.mdc-list-item{padding-left:0;padding-right:0}.mdc-list-item--with-trailing-icon .mdc-list-item__end{margin-left:16px;margin-right:16px}.mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-meta .mdc-list-item__end{-webkit-user-select:none;user-select:none;margin-left:28px;margin-right:16px}[dir=rtl] .mdc-list-item--with-trailing-meta .mdc-list-item__end{margin-left:16px;margin-right:28px}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end{display:block;line-height:normal;align-self:flex-start;margin-top:0}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end::before,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio .mdc-list-item__start,.mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:8px;margin-right:24px}[dir=rtl] .mdc-list-item--with-leading-radio .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:24px;margin-right:8px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__start,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:8px}.mdc-list-item--with-trailing-radio.mdc-list-item,.mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-left:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-right:0}.mdc-list-item--with-trailing-radio .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:24px;margin-right:8px}[dir=rtl] .mdc-list-item--with-trailing-radio .mdc-list-item__end,[dir=rtl] .mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:8px;margin-right:24px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:8px}.mdc-list-group__subheader{margin:.75rem 16px}.mdc-list-item--disabled .mdc-list-item__start,.mdc-list-item--disabled .mdc-list-item__content,.mdc-list-item--disabled .mdc-list-item__end{opacity:1}.mdc-list-item--disabled .mdc-list-item__primary-text,.mdc-list-item--disabled .mdc-list-item__secondary-text{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--disabled.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-disabled-leading-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-leading-icon-opacity, 0.38)}.mdc-list-item--disabled.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-disabled-trailing-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-trailing-icon-opacity, 0.38)}.mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing,[dir=rtl] .mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing{padding-left:0;padding-right:0}.mdc-list-item.mdc-list-item--disabled .mdc-list-item__primary-text{color:var(--mdc-list-list-item-disabled-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:hover::before{background-color:var(--mdc-list-list-item-hover-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mdc-list-item.mdc-list-item--disabled::before{background-color:var(--mdc-list-list-item-disabled-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item:focus::before{background-color:var(--mdc-list-list-item-focus-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item--disabled .mdc-radio,.mdc-list-item--disabled .mdc-checkbox{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--with-leading-avatar .mat-mdc-list-item-avatar{border-radius:var(--mdc-list-list-item-leading-avatar-shape, var(--mat-sys-corner-full));background-color:var(--mdc-list-list-item-leading-avatar-color, var(--mat-sys-primary-container))}.mat-mdc-list-item-icon{font-size:var(--mdc-list-list-item-leading-icon-size, 24px)}@media(forced-colors: active){a.mdc-list-item--activated::after{content:"";position:absolute;top:50%;right:16px;transform:translateY(-50%);width:10px;height:0;border-bottom:solid 10px;border-radius:10px}a.mdc-list-item--activated [dir=rtl]::after{right:auto;left:16px}}.mat-mdc-list-base{display:block}.mat-mdc-list-base .mdc-list-item__start,.mat-mdc-list-base .mdc-list-item__end,.mat-mdc-list-base .mdc-list-item__content{pointer-events:auto}.mat-mdc-list-item,.mat-mdc-list-option{width:100%;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-list-item:not(.mat-mdc-list-item-interactive),.mat-mdc-list-option:not(.mat-mdc-list-item-interactive){cursor:default}.mat-mdc-list-item .mat-divider-inset,.mat-mdc-list-option .mat-divider-inset{position:absolute;left:0;right:0;bottom:0}.mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,.mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-left:72px}[dir=rtl] .mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,[dir=rtl] .mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-right:72px}.mat-mdc-list-item-interactive::before{top:0;left:0;right:0;bottom:0;position:absolute;content:"";opacity:0;pointer-events:none;border-radius:inherit}.mat-mdc-list-item>.mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}.mat-mdc-list-item:focus>.mat-focus-indicator::before{content:""}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-line.mdc-list-item__secondary-text{white-space:nowrap;line-height:normal}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-unscoped-content.mdc-list-item__secondary-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}mat-action-list button{background:none;color:inherit;border:none;font:inherit;outline:inherit;-webkit-tap-highlight-color:rgba(0,0,0,0);text-align:start}mat-action-list button::-moz-focus-inner{border:0}.mdc-list-item--with-leading-icon .mdc-list-item__start{margin-inline-start:var(--mat-list-list-item-leading-icon-start-space, 16px);margin-inline-end:var(--mat-list-list-item-leading-icon-end-space, 16px)}.mat-mdc-nav-list .mat-mdc-list-item{border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full));--mat-focus-indicator-border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full))}.mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated{background-color:var(--mat-list-active-indicator-color, var(--mat-sys-secondary-container))}']
-    }]
-  }], null, null);
-})();
-var MAT_SELECTION_LIST_VALUE_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => MatSelectionList),
-  multi: true
-};
-var MatSelectionListChange = class {
-  source;
-  options;
-  constructor(source, options) {
-    this.source = source;
-    this.options = options;
-  }
-};
-var MatSelectionList = class _MatSelectionList extends MatListBase {
-  _element = inject(ElementRef);
-  _ngZone = inject(NgZone);
-  _renderer = inject(Renderer2);
-  _initialized = false;
-  _keyManager;
-  _listenerCleanups;
-  /** Emits when the list has been destroyed. */
-  _destroyed = new Subject();
-  /** Whether the list has been destroyed. */
-  _isDestroyed;
-  /** View to model callback that should be called whenever the selected options change. */
-  _onChange = (_) => {
-  };
-  _items;
-  /** Emits a change event whenever the selected state of an option changes. */
-  selectionChange = new EventEmitter();
-  /**
-   * Theme color of the selection list. This sets the checkbox color for all
-   * list options. This API is supported in M2 themes only, it has no effect in
-   * M3 themes. For color customization in M3, see https://material.angular.io/components/list/styling.
-   *
-   * For information on applying color variants in M3, see
-   * https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
-   */
-  color = "accent";
-  /**
-   * Function used for comparing an option against the selected value when determining which
-   * options should appear as selected. The first argument is the value of an options. The second
-   * one is a value from the selected value. A boolean must be returned.
-   */
-  compareWith = (a1, a2) => a1 === a2;
-  /** Whether selection is limited to one or multiple items (default multiple). */
-  get multiple() {
-    return this._multiple;
-  }
-  set multiple(value) {
-    const newValue = coerceBooleanProperty(value);
-    if (newValue !== this._multiple) {
-      if ((typeof ngDevMode === "undefined" || ngDevMode) && this._initialized) {
-        throw new Error("Cannot change `multiple` mode of mat-selection-list after initialization.");
-      }
-      this._multiple = newValue;
-      this.selectedOptions = new SelectionModel(this._multiple, this.selectedOptions.selected);
-    }
-  }
-  _multiple = true;
-  /** Whether radio indicator for all list items is hidden. */
-  get hideSingleSelectionIndicator() {
-    return this._hideSingleSelectionIndicator;
-  }
-  set hideSingleSelectionIndicator(value) {
-    this._hideSingleSelectionIndicator = coerceBooleanProperty(value);
-  }
-  _hideSingleSelectionIndicator = this._defaultOptions?.hideSingleSelectionIndicator ?? false;
-  /** The currently selected options. */
-  selectedOptions = new SelectionModel(this._multiple);
-  /** Keeps track of the currently-selected value. */
-  _value;
-  /** View to model callback that should be called if the list or its options lost focus. */
-  _onTouched = () => {
-  };
-  _changeDetectorRef = inject(ChangeDetectorRef);
-  constructor() {
-    super();
-    this._isNonInteractive = false;
-  }
-  ngAfterViewInit() {
-    this._initialized = true;
-    this._setupRovingTabindex();
-    this._ngZone.runOutsideAngular(() => {
-      this._listenerCleanups = [this._renderer.listen(this._element.nativeElement, "focusin", this._handleFocusin), this._renderer.listen(this._element.nativeElement, "focusout", this._handleFocusout)];
-    });
-    if (this._value) {
-      this._setOptionsFromValues(this._value);
-    }
-    this._watchForSelectionChange();
-  }
-  ngOnChanges(changes) {
-    const disabledChanges = changes["disabled"];
-    const disableRippleChanges = changes["disableRipple"];
-    const hideSingleSelectionIndicatorChanges = changes["hideSingleSelectionIndicator"];
-    if (disableRippleChanges && !disableRippleChanges.firstChange || disabledChanges && !disabledChanges.firstChange || hideSingleSelectionIndicatorChanges && !hideSingleSelectionIndicatorChanges.firstChange) {
-      this._markOptionsForCheck();
-    }
-  }
-  ngOnDestroy() {
-    this._keyManager?.destroy();
-    this._listenerCleanups?.forEach((current) => current());
-    this._destroyed.next();
-    this._destroyed.complete();
-    this._isDestroyed = true;
-  }
-  /** Focuses the selection list. */
-  focus(options) {
-    this._element.nativeElement.focus(options);
-  }
-  /** Selects all of the options. Returns the options that changed as a result. */
-  selectAll() {
-    return this._setAllOptionsSelected(true);
-  }
-  /** Deselects all of the options. Returns the options that changed as a result. */
-  deselectAll() {
-    return this._setAllOptionsSelected(false);
-  }
-  /** Reports a value change to the ControlValueAccessor */
-  _reportValueChange() {
-    if (this.options && !this._isDestroyed) {
-      const value = this._getSelectedOptionValues();
-      this._onChange(value);
-      this._value = value;
-    }
-  }
-  /** Emits a change event if the selected state of an option changed. */
-  _emitChangeEvent(options) {
-    this.selectionChange.emit(new MatSelectionListChange(this, options));
-  }
-  /** Implemented as part of ControlValueAccessor. */
-  writeValue(values) {
-    this._value = values;
-    if (this.options) {
-      this._setOptionsFromValues(values || []);
-    }
-  }
-  /** Implemented as a part of ControlValueAccessor. */
-  setDisabledState(isDisabled) {
-    this.disabled = isDisabled;
-    this._changeDetectorRef.markForCheck();
-    this._markOptionsForCheck();
-  }
-  /**
-   * Whether the *entire* selection list is disabled. When true, each list item is also disabled
-   * and each list item is removed from the tab order (has tabindex="-1").
-   */
-  get disabled() {
-    return this._selectionListDisabled;
-  }
-  set disabled(value) {
-    this._selectionListDisabled = coerceBooleanProperty(value);
-    if (this._selectionListDisabled) {
-      this._keyManager?.setActiveItem(-1);
-    }
-  }
-  _selectionListDisabled = false;
-  /** Implemented as part of ControlValueAccessor. */
-  registerOnChange(fn) {
-    this._onChange = fn;
-  }
-  /** Implemented as part of ControlValueAccessor. */
-  registerOnTouched(fn) {
-    this._onTouched = fn;
-  }
-  /** Watches for changes in the selected state of the options and updates the list accordingly. */
-  _watchForSelectionChange() {
-    this.selectedOptions.changed.pipe(takeUntil(this._destroyed)).subscribe((event) => {
-      for (let item of event.added) {
-        item.selected = true;
-      }
-      for (let item of event.removed) {
-        item.selected = false;
-      }
-      if (!this._containsFocus()) {
-        this._resetActiveOption();
-      }
-    });
-  }
-  /** Sets the selected options based on the specified values. */
-  _setOptionsFromValues(values) {
-    this.options.forEach((option) => option._setSelected(false));
-    values.forEach((value) => {
-      const correspondingOption = this.options.find((option) => {
-        return option.selected ? false : this.compareWith(option.value, value);
-      });
-      if (correspondingOption) {
-        correspondingOption._setSelected(true);
-      }
-    });
-  }
-  /** Returns the values of the selected options. */
-  _getSelectedOptionValues() {
-    return this.options.filter((option) => option.selected).map((option) => option.value);
-  }
-  /** Marks all the options to be checked in the next change detection run. */
-  _markOptionsForCheck() {
-    if (this.options) {
-      this.options.forEach((option) => option._markForCheck());
-    }
-  }
-  /**
-   * Sets the selected state on all of the options
-   * and emits an event if anything changed.
-   */
-  _setAllOptionsSelected(isSelected, skipDisabled) {
-    const changedOptions = [];
-    this.options.forEach((option) => {
-      if ((!skipDisabled || !option.disabled) && option._setSelected(isSelected)) {
-        changedOptions.push(option);
-      }
-    });
-    if (changedOptions.length) {
-      this._reportValueChange();
-    }
-    return changedOptions;
-  }
-  // Note: This getter exists for backwards compatibility. The `_items` query list
-  // cannot be named `options` as it will be picked up by the interactive list base.
-  /** The option components contained within this selection-list. */
-  get options() {
-    return this._items;
-  }
-  /** Handles keydown events within the list. */
-  _handleKeydown(event) {
-    const activeItem = this._keyManager.activeItem;
-    if ((event.keyCode === ENTER || event.keyCode === SPACE) && !this._keyManager.isTyping() && activeItem && !activeItem.disabled) {
-      event.preventDefault();
-      activeItem._toggleOnInteraction();
-    } else if (event.keyCode === A && this.multiple && !this._keyManager.isTyping() && hasModifierKey(event, "ctrlKey", "metaKey")) {
-      const shouldSelect = this.options.some((option) => !option.disabled && !option.selected);
-      event.preventDefault();
-      this._emitChangeEvent(this._setAllOptionsSelected(shouldSelect, true));
-    } else {
-      this._keyManager.onKeydown(event);
-    }
-  }
-  /** Handles focusout events within the list. */
-  _handleFocusout = () => {
-    setTimeout(() => {
-      if (!this._containsFocus()) {
-        this._resetActiveOption();
-      }
-    });
-  };
-  /** Handles focusin events within the list. */
-  _handleFocusin = (event) => {
-    if (this.disabled) {
-      return;
-    }
-    const activeIndex = this._items.toArray().findIndex((item) => item._elementRef.nativeElement.contains(event.target));
-    if (activeIndex > -1) {
-      this._setActiveOption(activeIndex);
-    } else {
-      this._resetActiveOption();
-    }
-  };
-  /**
-   * Sets up the logic for maintaining the roving tabindex.
-   *
-   * `skipPredicate` determines if key manager should avoid putting a given list item in the tab
-   * index. Allow disabled list items to receive focus to align with WAI ARIA recommendation.
-   * Normally WAI ARIA's instructions are to exclude disabled items from the tab order, but it
-   * makes a few exceptions for compound widgets.
-   *
-   * From [Developing a Keyboard Interface](
-   * https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/):
-   *   "For the following composite widget elements, keep them focusable when disabled: Options in a
-   *   Listbox..."
-   */
-  _setupRovingTabindex() {
-    this._keyManager = new FocusKeyManager(this._items).withHomeAndEnd().withTypeAhead().withWrap().skipPredicate(() => this.disabled);
-    this._resetActiveOption();
-    this._keyManager.change.subscribe((activeItemIndex) => this._setActiveOption(activeItemIndex));
-    this._items.changes.pipe(takeUntil(this._destroyed)).subscribe(() => {
-      const activeItem = this._keyManager.activeItem;
-      if (!activeItem || this._items.toArray().indexOf(activeItem) === -1) {
-        this._resetActiveOption();
-      }
-    });
-  }
-  /**
-   * Sets an option as active.
-   * @param index Index of the active option. If set to -1, no option will be active.
-   */
-  _setActiveOption(index) {
-    this._items.forEach((item, itemIndex) => item._setTabindex(itemIndex === index ? 0 : -1));
-    this._keyManager.updateActiveItem(index);
-  }
-  /**
-   * Resets the active option. When the list is disabled, remove all options from to the tab order.
-   * Otherwise, focus the first selected option.
-   */
-  _resetActiveOption() {
-    if (this.disabled) {
-      this._setActiveOption(-1);
-      return;
-    }
-    const activeItem = this._items.find((item) => item.selected && !item.disabled) || this._items.first;
-    this._setActiveOption(activeItem ? this._items.toArray().indexOf(activeItem) : -1);
-  }
-  /** Returns whether the focus is currently within the list. */
-  _containsFocus() {
-    const activeElement = _getFocusedElementPierceShadowDom();
-    return activeElement && this._element.nativeElement.contains(activeElement);
-  }
-  static \u0275fac = function MatSelectionList_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatSelectionList)();
-  };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
-    type: _MatSelectionList,
-    selectors: [["mat-selection-list"]],
-    contentQueries: function MatSelectionList_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        \u0275\u0275contentQuery(dirIndex, MatListOption, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._items = _t);
-      }
-    },
-    hostAttrs: ["role", "listbox", 1, "mat-mdc-selection-list", "mat-mdc-list-base", "mdc-list"],
-    hostVars: 1,
-    hostBindings: function MatSelectionList_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275listener("keydown", function MatSelectionList_keydown_HostBindingHandler($event) {
-          return ctx._handleKeydown($event);
-        });
-      }
-      if (rf & 2) {
-        \u0275\u0275attribute("aria-multiselectable", ctx.multiple);
-      }
-    },
-    inputs: {
-      color: "color",
-      compareWith: "compareWith",
-      multiple: "multiple",
-      hideSingleSelectionIndicator: "hideSingleSelectionIndicator",
-      disabled: "disabled"
-    },
-    outputs: {
-      selectionChange: "selectionChange"
-    },
-    exportAs: ["matSelectionList"],
-    features: [\u0275\u0275ProvidersFeature([MAT_SELECTION_LIST_VALUE_ACCESSOR, {
-      provide: MatListBase,
-      useExisting: _MatSelectionList
-    }, {
-      provide: SELECTION_LIST,
-      useExisting: _MatSelectionList
-    }]), \u0275\u0275InheritDefinitionFeature, \u0275\u0275NgOnChangesFeature],
-    ngContentSelectors: _c05,
-    decls: 1,
-    vars: 0,
-    template: function MatSelectionList_Template(rf, ctx) {
-      if (rf & 1) {
-        \u0275\u0275projectionDef();
-        \u0275\u0275projection(0);
-      }
-    },
-    styles: [_c12],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSelectionList, [{
-    type: Component,
-    args: [{
-      selector: "mat-selection-list",
-      exportAs: "matSelectionList",
-      host: {
-        "class": "mat-mdc-selection-list mat-mdc-list-base mdc-list",
-        "role": "listbox",
-        "[attr.aria-multiselectable]": "multiple",
-        "(keydown)": "_handleKeydown($event)"
-      },
-      template: "<ng-content></ng-content>",
-      encapsulation: ViewEncapsulation.None,
-      providers: [MAT_SELECTION_LIST_VALUE_ACCESSOR, {
-        provide: MatListBase,
-        useExisting: MatSelectionList
-      }, {
-        provide: SELECTION_LIST,
-        useExisting: MatSelectionList
-      }],
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      styles: ['.mdc-list{margin:0;padding:8px 0;list-style-type:none}.mdc-list:focus{outline:none}.mdc-list-item{display:flex;position:relative;justify-content:flex-start;overflow:hidden;padding:0;align-items:stretch;cursor:pointer;padding-left:16px;padding-right:16px;background-color:var(--mdc-list-list-item-container-color, transparent);border-radius:var(--mdc-list-list-item-container-shape, var(--mat-sys-corner-none))}.mdc-list-item.mdc-list-item--selected{background-color:var(--mdc-list-list-item-selected-container-color)}.mdc-list-item:focus{outline:0}.mdc-list-item.mdc-list-item--disabled{cursor:auto}.mdc-list-item.mdc-list-item--with-one-line{height:var(--mdc-list-list-item-one-line-container-height, 48px)}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__start{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-one-line .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-two-lines{height:var(--mdc-list-list-item-two-line-container-height, 64px)}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__end{align-self:center;margin-top:0}.mdc-list-item.mdc-list-item--with-three-lines{height:var(--mdc-list-list-item-three-line-container-height, 88px)}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__start{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:16px}.mdc-list-item.mdc-list-item--selected::before,.mdc-list-item.mdc-list-item--selected:focus::before,.mdc-list-item:not(.mdc-list-item--selected):focus::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;content:"";pointer-events:none}a.mdc-list-item{color:inherit;text-decoration:none}.mdc-list-item__start{fill:currentColor;flex-shrink:0;pointer-events:none}.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-leading-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-leading-icon-size, 24px);height:var(--mdc-list-list-item-leading-icon-size, 24px);margin-left:16px;margin-right:32px}[dir=rtl] .mdc-list-item--with-leading-icon .mdc-list-item__start{margin-left:32px;margin-right:16px}.mdc-list-item--with-leading-icon:hover .mdc-list-item__start{color:var(--mdc-list-list-item-hover-leading-icon-color)}.mdc-list-item--with-leading-avatar .mdc-list-item__start{width:var(--mdc-list-list-item-leading-avatar-size, 40px);height:var(--mdc-list-list-item-leading-avatar-size, 40px);margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item--with-leading-avatar .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-avatar .mdc-list-item__start{margin-left:16px;margin-right:16px;border-radius:50%}.mdc-list-item__end{flex-shrink:0;pointer-events:none}.mdc-list-item--with-trailing-meta .mdc-list-item__end{font-family:var(--mdc-list-list-item-trailing-supporting-text-font, var(--mat-sys-label-small-font));line-height:var(--mdc-list-list-item-trailing-supporting-text-line-height, var(--mat-sys-label-small-line-height));font-size:var(--mdc-list-list-item-trailing-supporting-text-size, var(--mat-sys-label-small-size));font-weight:var(--mdc-list-list-item-trailing-supporting-text-weight, var(--mat-sys-label-small-weight));letter-spacing:var(--mdc-list-list-item-trailing-supporting-text-tracking, var(--mat-sys-label-small-tracking))}.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-icon-color, var(--mat-sys-on-surface-variant));width:var(--mdc-list-list-item-trailing-icon-size, 24px);height:var(--mdc-list-list-item-trailing-icon-size, 24px)}.mdc-list-item--with-trailing-icon:hover .mdc-list-item__end{color:var(--mdc-list-list-item-hover-trailing-icon-color)}.mdc-list-item.mdc-list-item--with-trailing-meta .mdc-list-item__end{color:var(--mdc-list-list-item-trailing-supporting-text-color, var(--mat-sys-on-surface-variant))}.mdc-list-item--selected.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-selected-trailing-icon-color, var(--mat-sys-primary))}.mdc-list-item__content{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;align-self:center;flex:1;pointer-events:none}.mdc-list-item--with-two-lines .mdc-list-item__content,.mdc-list-item--with-three-lines .mdc-list-item__content{align-self:stretch}.mdc-list-item__primary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:var(--mdc-list-list-item-label-text-color, var(--mat-sys-on-surface));font-family:var(--mdc-list-list-item-label-text-font, var(--mat-sys-body-large-font));line-height:var(--mdc-list-list-item-label-text-line-height, var(--mat-sys-body-large-line-height));font-size:var(--mdc-list-list-item-label-text-size, var(--mat-sys-body-large-size));font-weight:var(--mdc-list-list-item-label-text-weight, var(--mat-sys-body-large-weight));letter-spacing:var(--mdc-list-list-item-label-text-tracking, var(--mat-sys-body-large-tracking))}.mdc-list-item:hover .mdc-list-item__primary-text{color:var(--mdc-list-list-item-hover-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:focus .mdc-list-item__primary-text{color:var(--mdc-list-list-item-focus-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-three-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-three-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item__secondary-text{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:block;margin-top:0;color:var(--mdc-list-list-item-supporting-text-color, var(--mat-sys-on-surface-variant));font-family:var(--mdc-list-list-item-supporting-text-font, var(--mat-sys-body-medium-font));line-height:var(--mdc-list-list-item-supporting-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mdc-list-list-item-supporting-text-size, var(--mat-sys-body-medium-size));font-weight:var(--mdc-list-list-item-supporting-text-weight, var(--mat-sys-body-medium-weight));letter-spacing:var(--mdc-list-list-item-supporting-text-tracking, var(--mat-sys-body-medium-tracking))}.mdc-list-item__secondary-text::before{display:inline-block;width:0;height:20px;content:"";vertical-align:0}.mdc-list-item--with-three-lines .mdc-list-item__secondary-text{white-space:normal;line-height:20px}.mdc-list-item--with-overline .mdc-list-item__secondary-text{white-space:nowrap;line-height:auto}.mdc-list-item--with-leading-radio.mdc-list-item,.mdc-list-item--with-leading-checkbox.mdc-list-item,.mdc-list-item--with-leading-icon.mdc-list-item,.mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:0;padding-right:16px}[dir=rtl] .mdc-list-item--with-leading-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-checkbox.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-leading-avatar.mdc-list-item{padding-left:16px;padding-right:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text{display:block;margin-top:0;line-height:normal;margin-bottom:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines .mdc-list-item__primary-text::after{display:inline-block;width:0;height:20px;content:"";vertical-align:-20px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end{display:block;margin-top:0;line-height:normal}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before,.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines.mdc-list-item--with-trailing-meta .mdc-list-item__end::before{display:inline-block;width:0;height:32px;content:"";vertical-align:0}.mdc-list-item--with-trailing-icon.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-icon.mdc-list-item{padding-left:0;padding-right:0}.mdc-list-item--with-trailing-icon .mdc-list-item__end{margin-left:16px;margin-right:16px}.mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-meta.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-meta .mdc-list-item__end{-webkit-user-select:none;user-select:none;margin-left:28px;margin-right:16px}[dir=rtl] .mdc-list-item--with-trailing-meta .mdc-list-item__end{margin-left:16px;margin-right:28px}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end{display:block;line-height:normal;align-self:flex-start;margin-top:0}.mdc-list-item--with-trailing-meta.mdc-list-item--with-three-lines .mdc-list-item__end::before,.mdc-list-item--with-trailing-meta.mdc-list-item--with-two-lines .mdc-list-item__end::before{display:inline-block;width:0;height:28px;content:"";vertical-align:0}.mdc-list-item--with-leading-radio .mdc-list-item__start,.mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:8px;margin-right:24px}[dir=rtl] .mdc-list-item--with-leading-radio .mdc-list-item__start,[dir=rtl] .mdc-list-item--with-leading-checkbox .mdc-list-item__start{margin-left:24px;margin-right:8px}.mdc-list-item--with-leading-radio.mdc-list-item--with-two-lines .mdc-list-item__start,.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines .mdc-list-item__start{align-self:flex-start;margin-top:8px}.mdc-list-item--with-trailing-radio.mdc-list-item,.mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:16px;padding-right:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item{padding-left:0;padding-right:16px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-left:0}[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-radio.mdc-list-item--with-leading-avatar,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-icon,[dir=rtl] .mdc-list-item--with-trailing-checkbox.mdc-list-item--with-leading-avatar{padding-right:0}.mdc-list-item--with-trailing-radio .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:24px;margin-right:8px}[dir=rtl] .mdc-list-item--with-trailing-radio .mdc-list-item__end,[dir=rtl] .mdc-list-item--with-trailing-checkbox .mdc-list-item__end{margin-left:8px;margin-right:24px}.mdc-list-item--with-trailing-radio.mdc-list-item--with-three-lines .mdc-list-item__end,.mdc-list-item--with-trailing-checkbox.mdc-list-item--with-three-lines .mdc-list-item__end{align-self:flex-start;margin-top:8px}.mdc-list-group__subheader{margin:.75rem 16px}.mdc-list-item--disabled .mdc-list-item__start,.mdc-list-item--disabled .mdc-list-item__content,.mdc-list-item--disabled .mdc-list-item__end{opacity:1}.mdc-list-item--disabled .mdc-list-item__primary-text,.mdc-list-item--disabled .mdc-list-item__secondary-text{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--disabled.mdc-list-item--with-leading-icon .mdc-list-item__start{color:var(--mdc-list-list-item-disabled-leading-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-leading-icon-opacity, 0.38)}.mdc-list-item--disabled.mdc-list-item--with-trailing-icon .mdc-list-item__end{color:var(--mdc-list-list-item-disabled-trailing-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-trailing-icon-opacity, 0.38)}.mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing,[dir=rtl] .mat-mdc-list-item.mat-mdc-list-item-both-leading-and-trailing{padding-left:0;padding-right:0}.mdc-list-item.mdc-list-item--disabled .mdc-list-item__primary-text{color:var(--mdc-list-list-item-disabled-label-text-color, var(--mat-sys-on-surface))}.mdc-list-item:hover::before{background-color:var(--mdc-list-list-item-hover-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mdc-list-item.mdc-list-item--disabled::before{background-color:var(--mdc-list-list-item-disabled-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-disabled-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item:focus::before{background-color:var(--mdc-list-list-item-focus-state-layer-color, var(--mat-sys-on-surface));opacity:var(--mdc-list-list-item-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mdc-list-item--disabled .mdc-radio,.mdc-list-item--disabled .mdc-checkbox{opacity:var(--mdc-list-list-item-disabled-label-text-opacity, 0.3)}.mdc-list-item--with-leading-avatar .mat-mdc-list-item-avatar{border-radius:var(--mdc-list-list-item-leading-avatar-shape, var(--mat-sys-corner-full));background-color:var(--mdc-list-list-item-leading-avatar-color, var(--mat-sys-primary-container))}.mat-mdc-list-item-icon{font-size:var(--mdc-list-list-item-leading-icon-size, 24px)}@media(forced-colors: active){a.mdc-list-item--activated::after{content:"";position:absolute;top:50%;right:16px;transform:translateY(-50%);width:10px;height:0;border-bottom:solid 10px;border-radius:10px}a.mdc-list-item--activated [dir=rtl]::after{right:auto;left:16px}}.mat-mdc-list-base{display:block}.mat-mdc-list-base .mdc-list-item__start,.mat-mdc-list-base .mdc-list-item__end,.mat-mdc-list-base .mdc-list-item__content{pointer-events:auto}.mat-mdc-list-item,.mat-mdc-list-option{width:100%;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-list-item:not(.mat-mdc-list-item-interactive),.mat-mdc-list-option:not(.mat-mdc-list-item-interactive){cursor:default}.mat-mdc-list-item .mat-divider-inset,.mat-mdc-list-option .mat-divider-inset{position:absolute;left:0;right:0;bottom:0}.mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,.mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-left:72px}[dir=rtl] .mat-mdc-list-item .mat-mdc-list-item-avatar~.mat-divider-inset,[dir=rtl] .mat-mdc-list-option .mat-mdc-list-item-avatar~.mat-divider-inset{margin-right:72px}.mat-mdc-list-item-interactive::before{top:0;left:0;right:0;bottom:0;position:absolute;content:"";opacity:0;pointer-events:none;border-radius:inherit}.mat-mdc-list-item>.mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}.mat-mdc-list-item:focus>.mat-focus-indicator::before{content:""}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-line.mdc-list-item__secondary-text{white-space:nowrap;line-height:normal}.mat-mdc-list-item.mdc-list-item--with-three-lines .mat-mdc-list-item-unscoped-content.mdc-list-item__secondary-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}mat-action-list button{background:none;color:inherit;border:none;font:inherit;outline:inherit;-webkit-tap-highlight-color:rgba(0,0,0,0);text-align:start}mat-action-list button::-moz-focus-inner{border:0}.mdc-list-item--with-leading-icon .mdc-list-item__start{margin-inline-start:var(--mat-list-list-item-leading-icon-start-space, 16px);margin-inline-end:var(--mat-list-list-item-leading-icon-end-space, 16px)}.mat-mdc-nav-list .mat-mdc-list-item{border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full));--mat-focus-indicator-border-radius:var(--mat-list-active-indicator-shape, var(--mat-sys-corner-full))}.mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated{background-color:var(--mat-list-active-indicator-color, var(--mat-sys-secondary-container))}']
-    }]
-  }], () => [], {
-    _items: [{
-      type: ContentChildren,
-      args: [MatListOption, {
-        descendants: true
-      }]
-    }],
-    selectionChange: [{
-      type: Output
-    }],
-    color: [{
-      type: Input
-    }],
-    compareWith: [{
-      type: Input
-    }],
-    multiple: [{
-      type: Input
-    }],
-    hideSingleSelectionIndicator: [{
-      type: Input
-    }],
-    disabled: [{
-      type: Input
-    }]
-  });
-})();
-var MatListModule = class _MatListModule {
-  static \u0275fac = function MatListModule_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatListModule)();
-  };
-  static \u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
-    type: _MatListModule
-  });
-  static \u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({
-    imports: [ObserversModule, MatCommonModule, MatRippleModule, MatPseudoCheckboxModule, MatDividerModule]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatListModule, [{
-    type: NgModule,
-    args: [{
-      imports: [ObserversModule, MatCommonModule, MatRippleModule, MatPseudoCheckboxModule, MatList, MatActionList, MatNavList, MatSelectionList, MatListItem, MatListOption, MatListSubheaderCssMatStyler, MatListItemAvatar, MatListItemIcon, MatListItemLine, MatListItemTitle, MatListItemMeta],
-      exports: [MatList, MatActionList, MatNavList, MatSelectionList, MatListItem, MatListOption, MatListItemAvatar, MatListItemIcon, MatListSubheaderCssMatStyler, MatDividerModule, MatListItemLine, MatListItemTitle, MatListItemMeta]
-    }]
-  }], null, null);
-})();
-
 // src/app/job-seeker/components/job-seeker-dashboard/job-seeker-dashboard.component.ts
-var _c06 = ["sidenav"];
+var _c05 = ["sidenav"];
 var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
   authService;
   breakpointObserver;
   cdr;
+  router;
   sidenav;
   mobileView = false;
   sidenavMode = "side";
   sidenavOpened = true;
   sidenavState = "in";
   notificationCount = 3;
-  constructor(authService, breakpointObserver, cdr) {
+  constructor(authService, breakpointObserver, cdr, router) {
     this.authService = authService;
     this.breakpointObserver = breakpointObserver;
     this.cdr = cdr;
+    this.router = router;
   }
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small]).subscribe((result) => {
@@ -9593,19 +7861,20 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
   }
   logout() {
     this.authService.logout();
+    this.router.navigate(["/auth/login"]);
   }
   static \u0275fac = function JobSeekerDashboardComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _JobSeekerDashboardComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(BreakpointObserver), \u0275\u0275directiveInject(ChangeDetectorRef));
+    return new (__ngFactoryType__ || _JobSeekerDashboardComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(BreakpointObserver), \u0275\u0275directiveInject(ChangeDetectorRef), \u0275\u0275directiveInject(Router));
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _JobSeekerDashboardComponent, selectors: [["app-job-seeker-dashboard"]], viewQuery: function JobSeekerDashboardComponent_Query(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275viewQuery(_c06, 5);
+      \u0275\u0275viewQuery(_c05, 5);
     }
     if (rf & 2) {
       let _t;
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.sidenav = _t.first);
     }
-  }, decls: 98, vars: 12, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], [1, "toolbar"], [1, "toolbar-left"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], [1, "fas", "fa-bars"], [1, "app-title", "typewriter"], [1, "toolbar-right"], ["mat-icon-button", "", "matBadgeColor", "accent", "aria-label", "Show notifications", 1, "notification-button", 3, "matBadge"], [1, "fas", "fa-bell"], ["mat-icon-button", "", "aria-label", "User menu", 3, "matMenuTriggerFor"], [1, "fas", "fa-user-circle"], [1, "custom-menu"], ["mat-menu-item", "", "routerLink", "profile"], [1, "fas", "fa-user"], ["mat-menu-item", "", "routerLink", "settings"], [1, "fas", "fa-cog"], ["mat-menu-item", "", 3, "click"], [1, "fas", "fa-sign-out-alt"], [1, "sidenav-container"], [1, "sidenav", 3, "mode", "opened", "fixedInViewport"], [1, "sidenav-header"], [1, "logo-container"], [1, "fas", "fa-briefcase", "logo-icon"], [1, "logo-text"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "profile", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-id-card"], ["mat-list-item", "", "routerLink", "skills", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-brain"], ["mat-list-item", "", "routerLink", "portfolio", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-folder-open"], ["mat-list-item", "", "routerLink", "cv", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-file-alt"], ["mat-list-item", "", "routerLink", "matches", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-handshake"], ["mat-list-item", "", "routerLink", "applications", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-paper-plane"], ["mat-list-item", "", "routerLink", "interviews", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-comments"], ["mat-list-item", "", "routerLink", "career-paths", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-road"], ["mat-list-item", "", "routerLink", "learning", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-graduation-cap"], ["mat-list-item", "", "routerLink", "chatbot", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-robot"], ["mat-list-item", "", "routerLink", "analytics", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-chart-line"], [1, "content"], [1, "content-wrapper"]], template: function JobSeekerDashboardComponent_Template(rf, ctx) {
+  }, decls: 93, vars: 12, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], [1, "toolbar"], [1, "toolbar-left"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], [1, "fas", "fa-bars"], [1, "app-title", "typewriter"], [1, "toolbar-right"], ["mat-icon-button", "", "matBadgeColor", "accent", "aria-label", "Show notifications", 1, "notification-button", 3, "matBadge"], [1, "fas", "fa-bell"], ["mat-icon-button", "", "aria-label", "User menu", 3, "matMenuTriggerFor"], [1, "fas", "fa-user-circle"], [1, "custom-menu"], ["mat-menu-item", "", "routerLink", "profile"], [1, "fas", "fa-user"], ["mat-menu-item", "", "routerLink", "settings"], [1, "fas", "fa-cog"], ["mat-menu-item", "", 3, "click"], [1, "fas", "fa-sign-out-alt"], [1, "sidenav-container"], [1, "sidenav", 3, "mode", "opened", "fixedInViewport"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "profile", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-id-card"], ["mat-list-item", "", "routerLink", "skills", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-brain"], ["mat-list-item", "", "routerLink", "portfolio", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-folder-open"], ["mat-list-item", "", "routerLink", "cv", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-file-alt"], ["mat-list-item", "", "routerLink", "job-search", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-search"], ["mat-list-item", "", "routerLink", "matches", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-handshake"], ["mat-list-item", "", "routerLink", "applications", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-paper-plane"], ["mat-list-item", "", "routerLink", "interviews", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-comments"], ["mat-list-item", "", "routerLink", "career-paths", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-road"], ["mat-list-item", "", "routerLink", "learning", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-graduation-cap"], ["mat-list-item", "", "routerLink", "chatbot", "routerLinkActive", "active", 1, "nav-item", 3, "click"], [1, "fas", "fa-robot"], [1, "content"], [1, "content-wrapper"]], template: function JobSeekerDashboardComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 2)(1, "mat-toolbar", 3)(2, "div", 4)(3, "button", 5);
@@ -9616,7 +7885,7 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
       \u0275\u0275element(4, "i", 6);
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(5, "span", 7);
-      \u0275\u0275text(6, "SkillMatch AI");
+      \u0275\u0275text(6, "Employbridge AI");
       \u0275\u0275elementEnd()();
       \u0275\u0275elementStart(7, "div", 8)(8, "button", 9);
       \u0275\u0275element(9, "i", 10);
@@ -9644,127 +7913,122 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
       \u0275\u0275elementStart(25, "span");
       \u0275\u0275text(26, "Logout");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(27, "mat-sidenav-container", 20)(28, "mat-sidenav", 21, 1)(30, "div", 22)(31, "div", 23);
-      \u0275\u0275element(32, "i", 24);
-      \u0275\u0275elementStart(33, "span", 25);
-      \u0275\u0275text(34, "SkillMatch");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(35, "mat-nav-list")(36, "div", 26)(37, "h3", 27);
-      \u0275\u0275text(38, "Profile & Portfolio");
+      \u0275\u0275elementStart(27, "mat-sidenav-container", 20)(28, "mat-sidenav", 21, 1)(30, "mat-nav-list")(31, "div", 22)(32, "h3", 23);
+      \u0275\u0275text(33, "Profile & Portfolio");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(39, "a", 28);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_39_listener() {
+      \u0275\u0275elementStart(34, "a", 24);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_34_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(40, "i", 29);
-      \u0275\u0275elementStart(41, "span");
-      \u0275\u0275text(42, "Profile Overview");
+      \u0275\u0275element(35, "i", 25);
+      \u0275\u0275elementStart(36, "span");
+      \u0275\u0275text(37, "Profile Overview");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(43, "a", 30);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_43_listener() {
+      \u0275\u0275elementStart(38, "a", 26);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_38_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(44, "i", 31);
-      \u0275\u0275elementStart(45, "span");
-      \u0275\u0275text(46, "Skill Management");
+      \u0275\u0275element(39, "i", 27);
+      \u0275\u0275elementStart(40, "span");
+      \u0275\u0275text(41, "Skill Management");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(47, "a", 32);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_47_listener() {
+      \u0275\u0275elementStart(42, "a", 28);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_42_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(48, "i", 33);
-      \u0275\u0275elementStart(49, "span");
-      \u0275\u0275text(50, "Portfolio");
+      \u0275\u0275element(43, "i", 29);
+      \u0275\u0275elementStart(44, "span");
+      \u0275\u0275text(45, "Portfolio");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(51, "a", 34);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_51_listener() {
+      \u0275\u0275elementStart(46, "a", 30);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_46_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(52, "i", 35);
-      \u0275\u0275elementStart(53, "span");
-      \u0275\u0275text(54, "CV Manager");
+      \u0275\u0275element(47, "i", 31);
+      \u0275\u0275elementStart(48, "span");
+      \u0275\u0275text(49, "CV Manager");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275element(55, "mat-divider");
-      \u0275\u0275elementStart(56, "div", 26)(57, "h3", 27);
-      \u0275\u0275text(58, "Job Search");
+      \u0275\u0275element(50, "mat-divider");
+      \u0275\u0275elementStart(51, "div", 22)(52, "h3", 23);
+      \u0275\u0275text(53, "Job Search");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(59, "a", 36);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_59_listener() {
+      \u0275\u0275elementStart(54, "a", 32);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_54_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(60, "i", 37);
-      \u0275\u0275elementStart(61, "span");
-      \u0275\u0275text(62, "Job Matches");
+      \u0275\u0275element(55, "i", 33);
+      \u0275\u0275elementStart(56, "span");
+      \u0275\u0275text(57, "Job Search");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(63, "a", 38);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_63_listener() {
+      \u0275\u0275elementStart(58, "a", 34);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_58_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(64, "i", 39);
-      \u0275\u0275elementStart(65, "span");
-      \u0275\u0275text(66, "Applications");
+      \u0275\u0275element(59, "i", 35);
+      \u0275\u0275elementStart(60, "span");
+      \u0275\u0275text(61, "Job Matches");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(67, "a", 40);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_67_listener() {
+      \u0275\u0275elementStart(62, "a", 36);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_62_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(68, "i", 41);
-      \u0275\u0275elementStart(69, "span");
-      \u0275\u0275text(70, "Interviews");
+      \u0275\u0275element(63, "i", 37);
+      \u0275\u0275elementStart(64, "span");
+      \u0275\u0275text(65, "Applications");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(66, "a", 38);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_66_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.onNavItemClick());
+      });
+      \u0275\u0275element(67, "i", 39);
+      \u0275\u0275elementStart(68, "span");
+      \u0275\u0275text(69, "Interviews");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275element(71, "mat-divider");
-      \u0275\u0275elementStart(72, "div", 26)(73, "h3", 27);
-      \u0275\u0275text(74, "Career Development");
+      \u0275\u0275element(70, "mat-divider");
+      \u0275\u0275elementStart(71, "div", 22)(72, "h3", 23);
+      \u0275\u0275text(73, "Career Development");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(75, "a", 42);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_75_listener() {
+      \u0275\u0275elementStart(74, "a", 40);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_74_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(76, "i", 43);
-      \u0275\u0275elementStart(77, "span");
-      \u0275\u0275text(78, "Career Paths");
+      \u0275\u0275element(75, "i", 41);
+      \u0275\u0275elementStart(76, "span");
+      \u0275\u0275text(77, "Career Paths");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(79, "a", 44);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_79_listener() {
+      \u0275\u0275elementStart(78, "a", 42);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_78_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(80, "i", 45);
-      \u0275\u0275elementStart(81, "span");
-      \u0275\u0275text(82, "Learning Resources");
+      \u0275\u0275element(79, "i", 43);
+      \u0275\u0275elementStart(80, "span");
+      \u0275\u0275text(81, "Learning Resources");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275element(83, "mat-divider");
-      \u0275\u0275elementStart(84, "div", 26)(85, "h3", 27);
-      \u0275\u0275text(86, "Additional");
+      \u0275\u0275element(82, "mat-divider");
+      \u0275\u0275elementStart(83, "div", 22)(84, "h3", 23);
+      \u0275\u0275text(85, "AI Tools");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(87, "a", 46);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_87_listener() {
+      \u0275\u0275elementStart(86, "a", 44);
+      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_86_listener() {
         \u0275\u0275restoreView(_r1);
         return \u0275\u0275resetView(ctx.onNavItemClick());
       });
-      \u0275\u0275element(88, "i", 47);
-      \u0275\u0275elementStart(89, "span");
-      \u0275\u0275text(90, "Career Assistant");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(91, "a", 48);
-      \u0275\u0275listener("click", function JobSeekerDashboardComponent_Template_a_click_91_listener() {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.onNavItemClick());
-      });
-      \u0275\u0275element(92, "i", 49);
-      \u0275\u0275elementStart(93, "span");
-      \u0275\u0275text(94, "Application Analytics");
+      \u0275\u0275element(87, "i", 45);
+      \u0275\u0275elementStart(88, "span");
+      \u0275\u0275text(89, "Career Assistant");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(95, "mat-sidenav-content", 50)(96, "div", 51);
-      \u0275\u0275element(97, "router-outlet");
+      \u0275\u0275elementStart(90, "mat-sidenav-content", 46)(91, "div", 47);
+      \u0275\u0275element(92, "router-outlet");
       \u0275\u0275elementEnd()()()();
     }
     if (rf & 2) {
@@ -9777,15 +8041,15 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
       \u0275\u0275property("matMenuTriggerFor", userMenu_r2);
       \u0275\u0275advance(18);
       \u0275\u0275property("mode", ctx.sidenavMode)("opened", ctx.sidenavOpened)("fixedInViewport", ctx.mobileView)("@slideInOut", ctx.sidenavState);
-      \u0275\u0275advance(8);
+      \u0275\u0275advance(3);
       \u0275\u0275property("@fadeIn", void 0);
       \u0275\u0275advance(20);
       \u0275\u0275property("@fadeIn", void 0);
-      \u0275\u0275advance(16);
+      \u0275\u0275advance(20);
       \u0275\u0275property("@fadeIn", void 0);
       \u0275\u0275advance(12);
       \u0275\u0275property("@fadeIn", void 0);
-      \u0275\u0275advance(12);
+      \u0275\u0275advance(8);
       \u0275\u0275property("@slideInFromRight", void 0);
     }
   }, dependencies: [
@@ -9815,7 +8079,7 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
     MatBadgeModule,
     MatBadge,
     MatDividerModule
-  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #8B5A2B;\n  --primary-light: #A67C52;\n  --primary-dark: #6B4423;\n  --accent: #D2B48C;\n  --accent-light: #E6D2B8;\n  --accent-dark: #9F8A6E;\n  --text-primary: #3E2723;\n  --text-secondary: #5D4037;\n  --background-light: #F5F0E6;\n  --card-bg: #FFFFFF;\n  --success: #4CAF50;\n  --warning: #FFC107;\n}\n.dashboard-container[_ngcontent-%COMP%] {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n}\n.toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0 16px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary) 0%,\n      var(--primary-dark) 100%);\n  color: white;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 1000;\n}\n.toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n}\n.typewriter[_ngcontent-%COMP%] {\n  overflow: hidden;\n  border-right: 3px solid rgba(255, 255, 255, 0.75);\n  white-space: nowrap;\n  margin: 0;\n  animation: _ngcontent-%COMP%_typing 3.5s steps(30, end), _ngcontent-%COMP%_blink-caret 0.75s step-end infinite;\n}\n@keyframes _ngcontent-%COMP%_typing {\n  from {\n    width: 0;\n  }\n  to {\n    width: 100%;\n  }\n}\n@keyframes _ngcontent-%COMP%_blink-caret {\n  from, to {\n    border-color: transparent;\n  }\n  50% {\n    border-color: rgba(255, 255, 255, 0.75);\n  }\n}\n.sidenav-container[_ngcontent-%COMP%] {\n  flex: 1;\n  background-color: var(--background-light);\n  margin-top: 64px;\n}\n.sidenav[_ngcontent-%COMP%] {\n  width: 260px;\n  background-color: var(--card-bg);\n  border-right: 1px solid var(--accent-light);\n  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);\n}\n.sidenav-header[_ngcontent-%COMP%] {\n  padding: 24px 16px;\n  background-color: var(--primary-dark);\n  color: white;\n}\n.logo-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  font-size: 28px;\n  height: 28px;\n  width: 28px;\n}\n.logo-text[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n}\n.content[_ngcontent-%COMP%] {\n  background-color: var(--background-light);\n}\n.content-wrapper[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\nmat-nav-list[_ngcontent-%COMP%] {\n  padding-top: 16px;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  height: 48px;\n  margin: 8px 12px;\n  border-radius: 8px;\n  color: var(--text-secondary);\n  font-weight: 500;\n  transition: all 0.3s ease;\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%] {\n  background-color: var(--accent-light);\n  color: var(--primary);\n  transform: translateX(5px);\n  position: relative;\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  left: 0;\n  top: 0;\n  height: 100%;\n  width: 4px;\n  background: var(--primary);\n  border-radius: 0 4px 4px 0;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  background-color: var(--background-light);\n  transform: translateX(5px);\n}\n.nav-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n.nav-item[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  margin-right: 12px;\n  color: var(--text-secondary);\n  transition: transform 0.3s ease, color 0.3s ease;\n  font-size: 20px;\n  width: 20px;\n  text-align: center;\n}\n.nav-item.active[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n.nav-item[_ngcontent-%COMP%]:hover   i[_ngcontent-%COMP%] {\n  transform: scale(1.1);\n  color: var(--primary-light);\n}\n.nav-section[_ngcontent-%COMP%] {\n  padding: 8px 0;\n  transition: opacity 0.5s ease;\n}\nh3[matSubheader][_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  padding: 16px 24px 8px;\n  margin: 0;\n}\nmat-divider[_ngcontent-%COMP%] {\n  margin: 8px 0;\n  background-color: var(--accent-light);\n}\n.toolbar-right[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  font-size: 20px;\n  color: white;\n}\n.mat-badge-content[_ngcontent-%COMP%] {\n  font-family: "Inter", sans-serif;\n  font-weight: 500;\n  background-color: var(--accent-dark) !important;\n}\n  .custom-menu {\n  background-color: white;\n}\n  .custom-menu .mat-menu-item:hover {\n  background-color: var(--background-light);\n}\n  .custom-menu .mat-menu-item i {\n  color: var(--primary);\n  margin-right: 8px;\n}\n.nav-item.active[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  right: 16px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background-color: var(--primary);\n  box-shadow: 0 0 8px var(--primary-light);\n  animation: _ngcontent-%COMP%_pulse 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse {\n  0% {\n    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0.7);\n  }\n  70% {\n    box-shadow: 0 0 0 10px rgba(139, 90, 43, 0);\n  }\n  100% {\n    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0);\n  }\n}\n@media (max-width: 768px) {\n  .toolbar[_ngcontent-%COMP%] {\n    padding: 0 8px;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.1rem;\n  }\n  .sidenav[_ngcontent-%COMP%] {\n    width: 85%;\n    max-width: 300px;\n  }\n  .content-wrapper[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .sidenav-container[_ngcontent-%COMP%] {\n    margin-top: 56px;\n  }\n  mat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n    margin: 4px 8px;\n    height: 44px;\n  }\n  h3[matSubheader][_ngcontent-%COMP%] {\n    padding: 12px 16px 6px;\n  }\n}\n.sidenav[_ngcontent-%COMP%] {\n  transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;\n}\n@media (min-width: 1025px) {\n  .menu-button[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n/*# sourceMappingURL=job-seeker-dashboard.component.css.map */'], data: { animation: [
+  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #8B5A2B;\n  --primary-light: #A67C52;\n  --primary-dark: #6B4423;\n  --accent: #D2B48C;\n  --accent-light: #E6D2B8;\n  --accent-dark: #9F8A6E;\n  --text-primary: #3E2723;\n  --text-secondary: #5D4037;\n  --background-light: #F5F0E6;\n  --card-bg: #FFFFFF;\n  --success: #4CAF50;\n  --warning: #FFC107;\n}\n.dashboard-container[_ngcontent-%COMP%] {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n}\n.toolbar[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0 16px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary) 0%,\n      var(--primary-dark) 100%);\n  color: white;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 1000;\n}\n.toolbar-left[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.toolbar-right[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n}\n.typewriter[_ngcontent-%COMP%] {\n  overflow: hidden;\n  border-right: 3px solid rgba(255, 255, 255, 0.75);\n  white-space: nowrap;\n  margin: 0;\n  animation: _ngcontent-%COMP%_typing 3.5s steps(30, end), _ngcontent-%COMP%_blink-caret 0.75s step-end infinite;\n}\n@keyframes _ngcontent-%COMP%_typing {\n  from {\n    width: 0;\n  }\n  to {\n    width: 100%;\n  }\n}\n@keyframes _ngcontent-%COMP%_blink-caret {\n  from, to {\n    border-color: transparent;\n  }\n  50% {\n    border-color: rgba(255, 255, 255, 0.75);\n  }\n}\n.sidenav-container[_ngcontent-%COMP%] {\n  flex: 1;\n  background-color: var(--background-light);\n  margin-top: 64px;\n}\n.sidenav[_ngcontent-%COMP%] {\n  width: 260px;\n  background-color: var(--card-bg);\n  border-right: 1px solid var(--accent-light);\n  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);\n}\n.sidenav-header[_ngcontent-%COMP%] {\n  padding: 24px 16px;\n  background-color: var(--primary-dark);\n  color: white;\n}\n.logo-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  font-size: 28px;\n  height: 28px;\n  width: 28px;\n}\n.logo-text[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n}\n.content[_ngcontent-%COMP%] {\n  background-color: var(--background-light);\n  transition: margin-left 0.3s ease;\n}\n.content-wrapper[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n  transition: max-width 0.3s ease;\n}\n.sidenav-container[_ngcontent-%COMP%]:not(.mat-drawer-opened)   .content[_ngcontent-%COMP%] {\n  margin-left: 0;\n}\n.sidenav-container[_ngcontent-%COMP%]:not(.mat-drawer-opened)   .content-wrapper[_ngcontent-%COMP%] {\n  max-width: 1400px;\n}\n.sidenav-container.mat-drawer-opened[_ngcontent-%COMP%]   .content[_ngcontent-%COMP%] {\n  margin-left: 260px;\n}\n.sidenav-container.mat-drawer-opened[_ngcontent-%COMP%]   .content-wrapper[_ngcontent-%COMP%] {\n  max-width: 1200px;\n}\nmat-nav-list[_ngcontent-%COMP%] {\n  padding-top: 16px;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  height: 48px;\n  margin: 8px 12px;\n  border-radius: 8px;\n  color: var(--text-secondary);\n  font-weight: 500;\n  transition: all 0.3s ease;\n  display: flex;\n  align-items: center;\n  padding: 0 16px;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  margin-right: 16px;\n  font-size: 20px;\n  width: 20px;\n  text-align: center;\n  color: var(--text-secondary);\n  transition: transform 0.3s ease, color 0.3s ease;\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-left: 8px;\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%] {\n  background-color: var(--accent-light);\n  color: var(--primary);\n  transform: translateX(5px);\n  position: relative;\n}\nmat-nav-list[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  background-color: var(--background-light);\n  transform: translateX(5px);\n}\nmat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover   i[_ngcontent-%COMP%] {\n  transform: scale(1.1);\n  color: var(--primary-light);\n}\n.nav-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n.nav-item[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  margin-right: 12px;\n  color: var(--text-secondary);\n  transition: transform 0.3s ease, color 0.3s ease;\n  font-size: 20px;\n  width: 20px;\n  text-align: center;\n}\n.nav-item.active[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n.nav-item[_ngcontent-%COMP%]:hover   i[_ngcontent-%COMP%] {\n  transform: scale(1.1);\n  color: var(--primary-light);\n}\n.nav-section[_ngcontent-%COMP%] {\n  padding: 8px 0;\n  transition: opacity 0.5s ease;\n}\nh3[matSubheader][_ngcontent-%COMP%] {\n  color: var(--text-secondary);\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  padding: 16px 24px 8px;\n  margin: 0;\n}\nmat-divider[_ngcontent-%COMP%] {\n  margin: 8px 0;\n  background-color: var(--accent-light);\n}\n.toolbar-right[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  font-size: 20px;\n  color: white;\n}\n.mat-badge-content[_ngcontent-%COMP%] {\n  font-family: "Inter", sans-serif;\n  font-weight: 500;\n  background-color: var(--accent-dark) !important;\n}\n  .custom-menu {\n  background-color: white;\n}\n  .custom-menu .mat-menu-item:hover {\n  background-color: var(--background-light);\n}\n  .custom-menu .mat-menu-item i {\n  color: var(--primary);\n  margin-right: 8px;\n}\n.nav-item.active[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  right: 16px;\n  top: 50%;\n  transform: translateY(-50%);\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  background-color: var(--primary);\n  box-shadow: 0 0 8px var(--primary-light);\n  animation: _ngcontent-%COMP%_pulse 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse {\n  0% {\n    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0.7);\n  }\n  70% {\n    box-shadow: 0 0 0 10px rgba(139, 90, 43, 0);\n  }\n  100% {\n    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0);\n  }\n}\n@media (max-width: 768px) {\n  .toolbar[_ngcontent-%COMP%] {\n    padding: 0 8px;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.1rem;\n  }\n  .sidenav[_ngcontent-%COMP%] {\n    width: 85%;\n    max-width: 300px;\n  }\n  .content-wrapper[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .sidenav-container[_ngcontent-%COMP%] {\n    margin-top: 56px;\n  }\n  mat-nav-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n    margin: 4px 8px;\n    height: 44px;\n  }\n  h3[matSubheader][_ngcontent-%COMP%] {\n    padding: 12px 16px 6px;\n  }\n}\n.sidenav[_ngcontent-%COMP%] {\n  transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;\n}\n@media (min-width: 1025px) {\n  .menu-button[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.menu-button[_ngcontent-%COMP%] {\n  margin-right: 8px;\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.menu-button[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n}\n  .mdc-list-item__content {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n/*# sourceMappingURL=job-seeker-dashboard.component.css.map */'], data: { animation: [
     trigger("slideInOut", [
       state("in", style({
         transform: "translateX(0)",
@@ -9849,7 +8113,7 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
   ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JobSeekerDashboardComponent, { className: "JobSeekerDashboardComponent", filePath: "src/app/job-seeker/components/job-seeker-dashboard/job-seeker-dashboard.component.ts", lineNumber: 563 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JobSeekerDashboardComponent, { className: "JobSeekerDashboardComponent", filePath: "src/app/job-seeker/components/job-seeker-dashboard/job-seeker-dashboard.component.ts", lineNumber: 611 });
 })();
 
 // src/app/employer/components/employer-dashboard/employer-dashboard.component.ts
@@ -9874,7 +8138,7 @@ var EmployerDashboardComponent = class _EmployerDashboardComponent {
   static \u0275fac = function EmployerDashboardComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _EmployerDashboardComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(BreakpointObserver));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _EmployerDashboardComponent, selectors: [["app-employer-dashboard"]], decls: 83, vars: 16, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], [1, "toolbar"], [1, "toolbar-left"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], [1, "fas", "fa-bars"], [1, "app-title"], [1, "fas", "fa-briefcase", "logo-icon"], [1, "app-name"], [1, "toolbar-right"], ["mat-button", "", 1, "profile-button", 3, "matMenuTriggerFor"], [1, "fas", "fa-user-circle", "profile-icon"], [1, "custom-menu"], ["mat-menu-item", "", "routerLink", "/company/profile"], [1, "fas", "fa-building"], ["mat-menu-item", "", "routerLink", "/company/settings"], [1, "fas", "fa-cog"], ["mat-menu-item", "", 3, "click"], [1, "fas", "fa-sign-out-alt"], [1, "sidenav-container"], ["fixedInViewport", "", 1, "sidenav", 3, "mode", "opened"], [1, "sidenav-header"], [1, "logo-container"], [1, "logo-text"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "listings", "routerLinkActive", "active"], [1, "fas", "fa-list-alt"], ["mat-list-item", "", "routerLink", "post-job", "routerLinkActive", "active"], [1, "fas", "fa-plus-square"], ["mat-list-item", "", "routerLink", "templates", "routerLinkActive", "active"], [1, "fas", "fa-file-alt"], ["mat-list-item", "", "routerLink", "candidates", "routerLinkActive", "active"], [1, "fas", "fa-users"], ["mat-list-item", "", "routerLink", "search", "routerLinkActive", "active"], [1, "fas", "fa-search"], ["mat-list-item", "", "routerLink", "interviews", "routerLinkActive", "active"], [1, "fas", "fa-calendar-alt"], ["mat-list-item", "", "routerLink", "analytics", "routerLinkActive", "active"], [1, "fas", "fa-chart-line"], [1, "content"]], template: function EmployerDashboardComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _EmployerDashboardComponent, selectors: [["app-employer-dashboard"]], decls: 91, vars: 17, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], [1, "toolbar"], [1, "toolbar-left"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], [1, "fas", "fa-bars"], [1, "app-title"], [1, "fas", "fa-briefcase", "logo-icon"], [1, "app-name"], [1, "toolbar-right"], ["mat-button", "", 1, "profile-button", 3, "matMenuTriggerFor"], [1, "fas", "fa-user-circle", "profile-icon"], [1, "custom-menu"], ["mat-menu-item", "", "routerLink", "/company/profile"], [1, "fas", "fa-building"], ["mat-menu-item", "", "routerLink", "/company/settings"], [1, "fas", "fa-cog"], ["mat-menu-item", "", 3, "click"], [1, "fas", "fa-sign-out-alt"], [1, "sidenav-container"], ["fixedInViewport", "", 1, "sidenav", 3, "mode", "opened"], [1, "sidenav-header"], [1, "logo-container"], [1, "logo-text"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "listings", "routerLinkActive", "active"], [1, "fas", "fa-list-alt"], ["mat-list-item", "", "routerLink", "post-job", "routerLinkActive", "active"], [1, "fas", "fa-plus-square"], ["mat-list-item", "", "routerLink", "templates", "routerLinkActive", "active"], [1, "fas", "fa-file-alt"], ["mat-list-item", "", "routerLink", "candidates", "routerLinkActive", "active"], [1, "fas", "fa-users"], ["mat-list-item", "", "routerLink", "search", "routerLinkActive", "active"], [1, "fas", "fa-search"], ["mat-list-item", "", "routerLink", "interviews", "routerLinkActive", "active"], [1, "fas", "fa-calendar-alt"], ["mat-list-item", "", "routerLink", "analytics", "routerLinkActive", "active"], [1, "fas", "fa-chart-line"], ["mat-list-item", "", "routerLink", "profile", "routerLinkActive", "active"], [1, "content"]], template: function EmployerDashboardComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 2)(1, "mat-toolbar", 3)(2, "div", 4)(3, "button", 5);
@@ -9887,7 +8151,7 @@ var EmployerDashboardComponent = class _EmployerDashboardComponent {
       \u0275\u0275elementStart(5, "span", 7);
       \u0275\u0275element(6, "i", 8);
       \u0275\u0275elementStart(7, "span", 9);
-      \u0275\u0275text(8, "SkillMatch AI");
+      \u0275\u0275text(8, "Employbridge AI");
       \u0275\u0275elementEnd()()();
       \u0275\u0275elementStart(9, "div", 10)(10, "button", 11);
       \u0275\u0275element(11, "i", 12);
@@ -9968,9 +8232,18 @@ var EmployerDashboardComponent = class _EmployerDashboardComponent {
       \u0275\u0275element(77, "i", 40);
       \u0275\u0275elementStart(78, "span");
       \u0275\u0275text(79, "Hiring Analytics");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275element(80, "mat-divider");
+      \u0275\u0275elementStart(81, "div", 25)(82, "h3", 26);
+      \u0275\u0275text(83, "COMPANY");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(84, "a", 41);
+      \u0275\u0275element(85, "i", 15);
+      \u0275\u0275elementStart(86, "span");
+      \u0275\u0275text(87, "Company Profile");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(80, "mat-sidenav-content")(81, "div", 41);
-      \u0275\u0275element(82, "router-outlet");
+      \u0275\u0275elementStart(88, "mat-sidenav-content")(89, "div", 42);
+      \u0275\u0275element(90, "router-outlet");
       \u0275\u0275elementEnd()()()();
     }
     if (rf & 2) {
@@ -9980,13 +8253,15 @@ var EmployerDashboardComponent = class _EmployerDashboardComponent {
       \u0275\u0275advance(9);
       \u0275\u0275property("matMenuTriggerFor", userMenu_r2);
       \u0275\u0275advance(20);
-      \u0275\u0275property("@slideInOut", ctx.sidenavState)("mode", \u0275\u0275pipeBind1(32, 10, ctx.isHandset$) ? "over" : "side")("opened", !\u0275\u0275pipeBind1(33, 12, ctx.isHandset$) || ctx.sidenavOpened);
-      \u0275\u0275attribute("role", \u0275\u0275pipeBind1(34, 14, ctx.isHandset$) ? "dialog" : "navigation");
+      \u0275\u0275property("@slideInOut", ctx.sidenavState)("mode", \u0275\u0275pipeBind1(32, 11, ctx.isHandset$) ? "over" : "side")("opened", !\u0275\u0275pipeBind1(33, 13, ctx.isHandset$) || ctx.sidenavOpened);
+      \u0275\u0275attribute("role", \u0275\u0275pipeBind1(34, 15, ctx.isHandset$) ? "dialog" : "navigation");
       \u0275\u0275advance(11);
       \u0275\u0275property("@fadeIn", void 0);
       \u0275\u0275advance(16);
       \u0275\u0275property("@fadeIn", void 0);
       \u0275\u0275advance(16);
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(8);
       \u0275\u0275property("@fadeIn", void 0);
       \u0275\u0275advance(8);
       \u0275\u0275property("@fadeIn", void 0);
@@ -10040,11 +8315,11 @@ var EmployerDashboardComponent = class _EmployerDashboardComponent {
   ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(EmployerDashboardComponent, { className: "EmployerDashboardComponent", filePath: "src/app/employer/components/employer-dashboard/employer-dashboard.component.ts", lineNumber: 435 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(EmployerDashboardComponent, { className: "EmployerDashboardComponent", filePath: "src/app/employer/components/employer-dashboard/employer-dashboard.component.ts", lineNumber: 55 });
 })();
 
 // src/app/admin/components/admin-dashboard/admin-dashboard.component.ts
-var _c07 = ["sidenav"];
+var _c06 = ["sidenav"];
 var AdminDashboardComponent = class _AdminDashboardComponent {
   authService;
   sidenav;
@@ -10070,13 +8345,13 @@ var AdminDashboardComponent = class _AdminDashboardComponent {
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AdminDashboardComponent, selectors: [["app-admin-dashboard"]], viewQuery: function AdminDashboardComponent_Query(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275viewQuery(_c07, 5);
+      \u0275\u0275viewQuery(_c06, 5);
     }
     if (rf & 2) {
       let _t;
       \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.sidenav = _t.first);
     }
-  }, decls: 78, vars: 10, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], [1, "toolbar"], [1, "toolbar-left"], ["mat-icon-button", "", 3, "click"], [1, "fas", "fa-bars"], [1, "app-title", "typewriter"], [1, "toolbar-right"], ["mat-icon-button", "", "matBadgeColor", "accent", 3, "matBadge"], [1, "fas", "fa-bell"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], [1, "fas", "fa-cog"], [1, "custom-menu"], ["mat-menu-item", "", "routerLink", "profile"], [1, "fas", "fa-user"], ["mat-menu-item", "", "routerLink", "settings"], ["mat-menu-item", "", 3, "click"], [1, "fas", "fa-sign-out-alt"], [1, "sidenav-container"], ["mode", "side", 1, "sidenav", 3, "opened"], [1, "sidenav-header"], [1, "logo-container"], [1, "fas", "fa-robot", "logo-icon"], [1, "logo-text"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "users", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-users"], ["mat-list-item", "", "routerLink", "permissions", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-shield-alt"], ["mat-list-item", "", "routerLink", "ai-models", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-robot"], ["mat-list-item", "", "routerLink", "accuracy-metrics", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-chart-line"], ["mat-list-item", "", "routerLink", "monitoring", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-heartbeat"], ["mat-list-item", "", "routerLink", "analytics", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-chart-bar"], [1, "content"], [1, "content-wrapper"]], template: function AdminDashboardComponent_Template(rf, ctx) {
+  }, decls: 90, vars: 11, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], [1, "toolbar"], [1, "toolbar-left"], ["mat-icon-button", "", 3, "click"], [1, "fas", "fa-bars"], [1, "app-title", "typewriter"], [1, "toolbar-right"], ["mat-icon-button", "", "matBadgeColor", "accent", 3, "matBadge"], [1, "fas", "fa-bell"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], [1, "fas", "fa-cog"], [1, "custom-menu"], ["mat-menu-item", "", "routerLink", "profile"], [1, "fas", "fa-user"], ["mat-menu-item", "", "routerLink", "settings"], ["mat-menu-item", "", 3, "click"], [1, "fas", "fa-sign-out-alt"], [1, "sidenav-container"], ["mode", "side", 1, "sidenav", 3, "opened"], [1, "sidenav-header"], [1, "logo-container"], [1, "fas", "fa-robot", "logo-icon"], [1, "logo-text"], [1, "nav-section"], ["matSubheader", ""], ["mat-list-item", "", "routerLink", "users", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-users"], ["mat-list-item", "", "routerLink", "permissions", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-shield-alt"], ["mat-list-item", "", "routerLink", "jobs", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-briefcase"], ["mat-list-item", "", "routerLink", "skills", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-tags"], ["mat-list-item", "", "routerLink", "ai-models", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-robot"], ["mat-list-item", "", "routerLink", "accuracy-metrics", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-chart-line"], ["mat-list-item", "", "routerLink", "monitoring", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-heartbeat"], ["mat-list-item", "", "routerLink", "analytics", "routerLinkActive", "active", 1, "nav-item"], [1, "fas", "fa-chart-bar"], [1, "content"], [1, "content-wrapper"]], template: function AdminDashboardComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 2)(1, "mat-toolbar", 3)(2, "div", 4)(3, "button", 5);
@@ -10087,7 +8362,7 @@ var AdminDashboardComponent = class _AdminDashboardComponent {
       \u0275\u0275element(4, "i", 6);
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(5, "span", 7);
-      \u0275\u0275text(6, "SkillMatch AI");
+      \u0275\u0275text(6, "Employbridge AI");
       \u0275\u0275elementEnd()();
       \u0275\u0275elementStart(7, "div", 8)(8, "button", 9);
       \u0275\u0275element(9, "i", 10);
@@ -10118,7 +8393,7 @@ var AdminDashboardComponent = class _AdminDashboardComponent {
       \u0275\u0275elementStart(27, "mat-sidenav-container", 19)(28, "mat-sidenav", 20, 1)(30, "div", 21)(31, "div", 22);
       \u0275\u0275element(32, "i", 23);
       \u0275\u0275elementStart(33, "span", 24);
-      \u0275\u0275text(34, "SkillMatch");
+      \u0275\u0275text(34, "Employbridge");
       \u0275\u0275elementEnd()()();
       \u0275\u0275elementStart(35, "mat-nav-list")(36, "div", 25)(37, "h3", 26);
       \u0275\u0275text(38, "User Management");
@@ -10135,38 +8410,52 @@ var AdminDashboardComponent = class _AdminDashboardComponent {
       \u0275\u0275elementEnd()()();
       \u0275\u0275element(47, "mat-divider");
       \u0275\u0275elementStart(48, "div", 25)(49, "h3", 26);
-      \u0275\u0275text(50, "AI Management");
+      \u0275\u0275text(50, "Job Management");
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(51, "a", 31);
       \u0275\u0275element(52, "i", 32);
       \u0275\u0275elementStart(53, "span");
-      \u0275\u0275text(54, "AI Models");
+      \u0275\u0275text(54, "Job Listings");
       \u0275\u0275elementEnd()();
       \u0275\u0275elementStart(55, "a", 33);
       \u0275\u0275element(56, "i", 34);
       \u0275\u0275elementStart(57, "span");
-      \u0275\u0275text(58, "Accuracy Metrics");
+      \u0275\u0275text(58, "Skills Management");
       \u0275\u0275elementEnd()()();
       \u0275\u0275element(59, "mat-divider");
       \u0275\u0275elementStart(60, "div", 25)(61, "h3", 26);
-      \u0275\u0275text(62, "System");
+      \u0275\u0275text(62, "AI Management");
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(63, "a", 35);
       \u0275\u0275element(64, "i", 36);
       \u0275\u0275elementStart(65, "span");
-      \u0275\u0275text(66, "System Health");
+      \u0275\u0275text(66, "AI Models");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(67, "a", 37);
+      \u0275\u0275element(68, "i", 38);
+      \u0275\u0275elementStart(69, "span");
+      \u0275\u0275text(70, "Accuracy Metrics");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275element(67, "mat-divider");
-      \u0275\u0275elementStart(68, "div", 25)(69, "h3", 26);
-      \u0275\u0275text(70, "Analytics");
+      \u0275\u0275element(71, "mat-divider");
+      \u0275\u0275elementStart(72, "div", 25)(73, "h3", 26);
+      \u0275\u0275text(74, "System");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(71, "a", 37);
-      \u0275\u0275element(72, "i", 38);
-      \u0275\u0275elementStart(73, "span");
-      \u0275\u0275text(74, "Platform Analytics");
+      \u0275\u0275elementStart(75, "a", 39);
+      \u0275\u0275element(76, "i", 40);
+      \u0275\u0275elementStart(77, "span");
+      \u0275\u0275text(78, "System Health");
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275element(79, "mat-divider");
+      \u0275\u0275elementStart(80, "div", 25)(81, "h3", 26);
+      \u0275\u0275text(82, "Analytics");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(83, "a", 41);
+      \u0275\u0275element(84, "i", 42);
+      \u0275\u0275elementStart(85, "span");
+      \u0275\u0275text(86, "Platform Analytics");
       \u0275\u0275elementEnd()()()()();
-      \u0275\u0275elementStart(75, "mat-sidenav-content", 39)(76, "div", 40);
-      \u0275\u0275element(77, "router-outlet");
+      \u0275\u0275elementStart(87, "mat-sidenav-content", 43)(88, "div", 44);
+      \u0275\u0275element(89, "router-outlet");
       \u0275\u0275elementEnd()()()();
     }
     if (rf & 2) {
@@ -10180,6 +8469,8 @@ var AdminDashboardComponent = class _AdminDashboardComponent {
       \u0275\u0275advance(18);
       \u0275\u0275property("opened", ctx.sidenavOpened)("@slideInOut", ctx.sidenavState);
       \u0275\u0275advance(8);
+      \u0275\u0275property("@fadeIn", void 0);
+      \u0275\u0275advance(12);
       \u0275\u0275property("@fadeIn", void 0);
       \u0275\u0275advance(12);
       \u0275\u0275property("@fadeIn", void 0);
@@ -10245,123 +8536,260 @@ var AdminDashboardComponent = class _AdminDashboardComponent {
   ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdminDashboardComponent, { className: "AdminDashboardComponent", filePath: "src/app/admin/components/admin-dashboard/admin-dashboard.component.ts", lineNumber: 431 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdminDashboardComponent, { className: "AdminDashboardComponent", filePath: "src/app/admin/components/admin-dashboard/admin-dashboard.component.ts", lineNumber: 59 });
 })();
 
 // src/app/shared/components/header/header.component.ts
-var _c08 = (a0) => ({ "pulse": a0 });
-var _c13 = (a0) => ({ "open": a0 });
+var _c07 = (a0) => ({ "pulse": a0 });
+var _c12 = (a0) => ({ "open": a0 });
+function HeaderComponent_div_17_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "div", 22);
+  }
+  if (rf & 2) {
+    \u0275\u0275property("@underline", void 0);
+  }
+}
+function HeaderComponent_div_21_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "div", 22);
+  }
+  if (rf & 2) {
+    \u0275\u0275property("@underline", void 0);
+  }
+}
+function HeaderComponent_div_25_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "div", 22);
+  }
+  if (rf & 2) {
+    \u0275\u0275property("@underline", void 0);
+  }
+}
+function HeaderComponent_div_29_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "div", 22);
+  }
+  if (rf & 2) {
+    \u0275\u0275property("@underline", void 0);
+  }
+}
+function HeaderComponent_div_40_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 23)(1, "div", 24)(2, "a", 25);
+    \u0275\u0275listener("click", function HeaderComponent_div_40_Template_a_click_2_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.toggleMobileMenu());
+    });
+    \u0275\u0275text(3, "Features");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "a", 26);
+    \u0275\u0275listener("click", function HeaderComponent_div_40_Template_a_click_4_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.toggleMobileMenu());
+    });
+    \u0275\u0275text(5, "Pricing");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "a", 27);
+    \u0275\u0275listener("click", function HeaderComponent_div_40_Template_a_click_6_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.toggleMobileMenu());
+    });
+    \u0275\u0275text(7, "About Us");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "a", 28);
+    \u0275\u0275listener("click", function HeaderComponent_div_40_Template_a_click_8_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.toggleMobileMenu());
+    });
+    \u0275\u0275text(9, "Blog");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "div", 29)(11, "button", 30);
+    \u0275\u0275listener("click", function HeaderComponent_div_40_Template_button_click_11_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.toggleMobileMenu());
+    });
+    \u0275\u0275text(12, "Login");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "button", 31);
+    \u0275\u0275listener("click", function HeaderComponent_div_40_Template_button_click_13_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.toggleMobileMenu());
+    });
+    \u0275\u0275text(14, "Get Started");
+    \u0275\u0275elementEnd()()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(2, _c12, ctx_r1.mobileMenuOpen))("@fadeInDown", void 0);
+  }
+}
 var HeaderComponent = class _HeaderComponent {
   loginState = "normal";
   signupState = "normal";
   logoPulsing = false;
   mobileMenuOpen = false;
+  activeLink = "";
   constructor() {
     setTimeout(() => {
       this.logoPulsing = true;
       setTimeout(() => {
         this.logoPulsing = false;
-      }, 3e3);
+      }, 4500);
     }, 3e3);
   }
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
+    if (this.mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
   }
   static \u0275fac = function HeaderComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HeaderComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], decls: 37, vars: 12, consts: [[1, "header"], ["routerLink", "/", 1, "logo", 3, "ngClass"], [1, "logo-icon"], ["width", "28", "height", "28", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z", "stroke", "currentColor", "stroke-width", "2"], ["d", "M12 17L12 11", "stroke", "currentColor", "stroke-width", "2", "stroke-linecap", "round"], ["cx", "12", "cy", "8", "r", "1", "fill", "currentColor"], [1, "nav-links"], ["routerLink", "/features", 1, "nav-link"], ["routerLink", "/pricing", 1, "nav-link"], ["routerLink", "/about", 1, "nav-link"], [1, "nav-buttons"], ["mat-button", "", "routerLink", "/auth/login", 1, "login-btn", 3, "mouseenter", "mouseleave"], ["mat-raised-button", "", "routerLink", "/auth/signup", 1, "signup-btn", 3, "mouseenter", "mouseleave"], [1, "mobile-menu-btn", 3, "click"], [1, "menu-icon", 3, "ngClass"], [1, "mobile-menu", 3, "ngClass"], ["routerLink", "/features", 1, "mobile-nav-link"], ["routerLink", "/pricing", 1, "mobile-nav-link"], ["routerLink", "/about", 1, "mobile-nav-link"], ["routerLink", "/auth/login", 1, "mobile-nav-link"], ["routerLink", "/auth/signup", 1, "mobile-nav-link", "highlight"]], template: function HeaderComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], decls: 41, vars: 14, consts: [[1, "header"], [1, "logo-container"], ["routerLink", "/", 1, "logo", 3, "ngClass"], [1, "logo-icon"], ["width", "32", "height", "32", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z", "stroke", "currentColor", "stroke-width", "1.5"], ["d", "M12 16V12", "stroke", "currentColor", "stroke-width", "1.5", "stroke-linecap", "round"], ["d", "M12 8H12.01", "stroke", "currentColor", "stroke-width", "1.5", "stroke-linecap", "round"], [1, "logo-text"], [1, "logo-subtitle"], [1, "nav-links"], ["routerLink", "/features", 1, "nav-link", 3, "mouseenter", "mouseleave"], ["class", "underline", 4, "ngIf"], ["routerLink", "/pricing", 1, "nav-link", 3, "mouseenter", "mouseleave"], ["routerLink", "/about", 1, "nav-link", 3, "mouseenter", "mouseleave"], ["routerLink", "/blog", 1, "nav-link", 3, "mouseenter", "mouseleave"], [1, "nav-buttons"], ["mat-button", "", "routerLink", "/auth/login", 1, "login-btn", 3, "mouseenter", "mouseleave"], ["mat-raised-button", "", "routerLink", "/auth/signup", 1, "signup-btn", 3, "mouseenter", "mouseleave"], ["aria-label", "Menu", 1, "mobile-menu-btn", 3, "click"], [1, "menu-icon", 3, "ngClass"], ["class", "mobile-menu", 3, "ngClass", 4, "ngIf"], [1, "underline"], [1, "mobile-menu", 3, "ngClass"], [1, "mobile-menu-content"], ["routerLink", "/features", 1, "mobile-nav-link", 3, "click"], ["routerLink", "/pricing", 1, "mobile-nav-link", 3, "click"], ["routerLink", "/about", 1, "mobile-nav-link", 3, "click"], ["routerLink", "/blog", 1, "mobile-nav-link", 3, "click"], [1, "mobile-menu-buttons"], ["mat-button", "", "routerLink", "/auth/login", 1, "mobile-login-btn", 3, "click"], ["mat-raised-button", "", "routerLink", "/auth/signup", 1, "mobile-signup-btn", 3, "click"]], template: function HeaderComponent_Template(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275elementStart(0, "mat-toolbar", 0)(1, "div", 1)(2, "div", 2);
+      \u0275\u0275elementStart(0, "mat-toolbar", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3);
       \u0275\u0275namespaceSVG();
-      \u0275\u0275elementStart(3, "svg", 3);
-      \u0275\u0275element(4, "path", 4)(5, "path", 5)(6, "circle", 6);
+      \u0275\u0275elementStart(4, "svg", 4);
+      \u0275\u0275element(5, "path", 5)(6, "path", 6)(7, "path", 7);
       \u0275\u0275elementEnd()();
       \u0275\u0275namespaceHTML();
-      \u0275\u0275elementStart(7, "h1");
-      \u0275\u0275text(8, "SkillsMatch AI");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(9, "div", 7)(10, "a", 8);
-      \u0275\u0275text(11, "Features");
+      \u0275\u0275elementStart(8, "div", 8)(9, "h1");
+      \u0275\u0275text(10, "Employbridge AI");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(12, "a", 9);
-      \u0275\u0275text(13, "Pricing");
+      \u0275\u0275elementStart(11, "div", 9);
+      \u0275\u0275text(12, "by TechSolutions");
+      \u0275\u0275elementEnd()()()();
+      \u0275\u0275elementStart(13, "div", 10)(14, "a", 11);
+      \u0275\u0275listener("mouseenter", function HeaderComponent_Template_a_mouseenter_14_listener() {
+        return ctx.activeLink = "features";
+      })("mouseleave", function HeaderComponent_Template_a_mouseleave_14_listener() {
+        return ctx.activeLink = "";
+      });
+      \u0275\u0275elementStart(15, "span");
+      \u0275\u0275text(16, "Features");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(14, "a", 10);
-      \u0275\u0275text(15, "About Us");
+      \u0275\u0275template(17, HeaderComponent_div_17_Template, 1, 1, "div", 12);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(18, "a", 13);
+      \u0275\u0275listener("mouseenter", function HeaderComponent_Template_a_mouseenter_18_listener() {
+        return ctx.activeLink = "pricing";
+      })("mouseleave", function HeaderComponent_Template_a_mouseleave_18_listener() {
+        return ctx.activeLink = "";
+      });
+      \u0275\u0275elementStart(19, "span");
+      \u0275\u0275text(20, "Pricing");
+      \u0275\u0275elementEnd();
+      \u0275\u0275template(21, HeaderComponent_div_21_Template, 1, 1, "div", 12);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(22, "a", 14);
+      \u0275\u0275listener("mouseenter", function HeaderComponent_Template_a_mouseenter_22_listener() {
+        return ctx.activeLink = "about";
+      })("mouseleave", function HeaderComponent_Template_a_mouseleave_22_listener() {
+        return ctx.activeLink = "";
+      });
+      \u0275\u0275elementStart(23, "span");
+      \u0275\u0275text(24, "About Us");
+      \u0275\u0275elementEnd();
+      \u0275\u0275template(25, HeaderComponent_div_25_Template, 1, 1, "div", 12);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(26, "a", 15);
+      \u0275\u0275listener("mouseenter", function HeaderComponent_Template_a_mouseenter_26_listener() {
+        return ctx.activeLink = "blog";
+      })("mouseleave", function HeaderComponent_Template_a_mouseleave_26_listener() {
+        return ctx.activeLink = "";
+      });
+      \u0275\u0275elementStart(27, "span");
+      \u0275\u0275text(28, "Blog");
+      \u0275\u0275elementEnd();
+      \u0275\u0275template(29, HeaderComponent_div_29_Template, 1, 1, "div", 12);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(16, "div", 11)(17, "button", 12);
-      \u0275\u0275listener("mouseenter", function HeaderComponent_Template_button_mouseenter_17_listener() {
-        return ctx.loginState = "hovered";
-      })("mouseleave", function HeaderComponent_Template_button_mouseleave_17_listener() {
+      \u0275\u0275elementStart(30, "div", 16)(31, "button", 17);
+      \u0275\u0275listener("mouseenter", function HeaderComponent_Template_button_mouseenter_31_listener() {
+        ctx.loginState = "hovered";
+        return ctx.activeLink = "";
+      })("mouseleave", function HeaderComponent_Template_button_mouseleave_31_listener() {
         return ctx.loginState = "normal";
       });
-      \u0275\u0275text(18, " Login ");
+      \u0275\u0275text(32, " Login ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(19, "button", 13);
-      \u0275\u0275listener("mouseenter", function HeaderComponent_Template_button_mouseenter_19_listener() {
-        return ctx.signupState = "hovered";
-      })("mouseleave", function HeaderComponent_Template_button_mouseleave_19_listener() {
+      \u0275\u0275elementStart(33, "button", 18);
+      \u0275\u0275listener("mouseenter", function HeaderComponent_Template_button_mouseenter_33_listener() {
+        ctx.signupState = "hovered";
+        return ctx.activeLink = "";
+      })("mouseleave", function HeaderComponent_Template_button_mouseleave_33_listener() {
         return ctx.signupState = "normal";
       });
-      \u0275\u0275text(20, " Sign Up ");
+      \u0275\u0275text(34, " Get Started ");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(21, "button", 14);
-      \u0275\u0275listener("click", function HeaderComponent_Template_button_click_21_listener() {
+      \u0275\u0275elementStart(35, "button", 19);
+      \u0275\u0275listener("click", function HeaderComponent_Template_button_click_35_listener() {
         return ctx.toggleMobileMenu();
       });
-      \u0275\u0275elementStart(22, "div", 15);
-      \u0275\u0275element(23, "span")(24, "span")(25, "span");
+      \u0275\u0275elementStart(36, "div", 20);
+      \u0275\u0275element(37, "span")(38, "span")(39, "span");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(26, "div", 16)(27, "a", 17);
-      \u0275\u0275text(28, "Features");
+      \u0275\u0275template(40, HeaderComponent_div_40_Template, 15, 4, "div", 21);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(29, "a", 18);
-      \u0275\u0275text(30, "Pricing");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(31, "a", 19);
-      \u0275\u0275text(32, "About Us");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(33, "a", 20);
-      \u0275\u0275text(34, "Login");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(35, "a", 21);
-      \u0275\u0275text(36, "Sign Up");
-      \u0275\u0275elementEnd()()();
     }
     if (rf & 2) {
       \u0275\u0275property("@fadeInDown", void 0);
-      \u0275\u0275advance();
-      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c08, ctx.logoPulsing));
-      \u0275\u0275advance(16);
+      \u0275\u0275advance(2);
+      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c07, ctx.logoPulsing));
+      \u0275\u0275advance(15);
+      \u0275\u0275property("ngIf", ctx.activeLink === "features");
+      \u0275\u0275advance(4);
+      \u0275\u0275property("ngIf", ctx.activeLink === "pricing");
+      \u0275\u0275advance(4);
+      \u0275\u0275property("ngIf", ctx.activeLink === "about");
+      \u0275\u0275advance(4);
+      \u0275\u0275property("ngIf", ctx.activeLink === "blog");
+      \u0275\u0275advance(2);
       \u0275\u0275property("@buttonHover", ctx.loginState);
       \u0275\u0275advance(2);
       \u0275\u0275property("@buttonHover", ctx.signupState);
       \u0275\u0275advance(3);
-      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c13, ctx.mobileMenuOpen));
+      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c12, ctx.mobileMenuOpen));
       \u0275\u0275advance(4);
-      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c13, ctx.mobileMenuOpen));
+      \u0275\u0275property("ngIf", ctx.mobileMenuOpen);
     }
-  }, dependencies: [RouterModule, RouterLink, MatButtonModule, MatButton, MatToolbarModule, MatToolbar, NgClass], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --text-light: #ffffff;\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 2rem;\n  height: 70px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-dark),\n      var(--primary));\n  color: var(--text-light);\n  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);\n  position: sticky;\n  top: 0;\n  z-index: 1000;\n}\n.logo[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  cursor: pointer;\n  transition: all 0.3s ease;\n  position: relative;\n}\n.logo[_ngcontent-%COMP%]:hover {\n  transform: scale(1.05);\n}\n.logo.pulse[_ngcontent-%COMP%]   .logo-icon[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_pulse-animation 1s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-animation {\n  0% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.1);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: var(--text-light);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.logo[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 1.5rem;\n  font-weight: 600;\n  letter-spacing: 0.5px;\n  background:\n    linear-gradient(\n      90deg,\n      #ffffff,\n      #f0f0f0);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.nav-links[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1.5rem;\n}\n@media (max-width: 768px) {\n  .nav-links[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.nav-link[_ngcontent-%COMP%] {\n  color: var(--text-light);\n  text-decoration: none;\n  font-weight: 500;\n  position: relative;\n  padding: 5px 0;\n  opacity: 0.9;\n  transition: all 0.3s ease;\n}\n.nav-link[_ngcontent-%COMP%]:hover {\n  opacity: 1;\n}\n.nav-link[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  width: 0;\n  height: 2px;\n  bottom: 0;\n  left: 0;\n  background-color: var(--accent);\n  transition: width 0.3s ease;\n}\n.nav-link[_ngcontent-%COMP%]:hover::after {\n  width: 100%;\n}\n.nav-buttons[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1rem;\n}\n@media (max-width: 768px) {\n  .nav-buttons[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.login-btn[_ngcontent-%COMP%] {\n  color: var(--text-light);\n  border: 1px solid rgba(255, 255, 255, 0.3);\n  border-radius: 20px;\n  padding: 0 1.5rem;\n  transition: all 0.3s ease;\n}\n.login-btn[_ngcontent-%COMP%]:hover {\n  background-color: rgba(255, 255, 255, 0.1);\n  border-color: rgba(255, 255, 255, 0.5);\n}\n.signup-btn[_ngcontent-%COMP%] {\n  background-color: var(--background-light);\n  color: black;\n  border-radius: 20px;\n  padding: 0 1.5rem;\n  transition: all 0.3s ease;\n  box-shadow: 0 4px 12px rgba(252, 70, 107, 0.3);\n}\n.signup-btn[_ngcontent-%COMP%]:hover {\n  background-color: #e83a5f;\n  color: white;\n  box-shadow: 0 6px 15px rgba(252, 70, 107, 0.4);\n}\n.mobile-menu-btn[_ngcontent-%COMP%] {\n  display: none;\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 10px;\n  z-index: 1100;\n}\n@media (max-width: 768px) {\n  .mobile-menu-btn[_ngcontent-%COMP%] {\n    display: block;\n  }\n}\n.menu-icon[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 18px;\n  position: relative;\n  transform: rotate(0deg);\n  transition: 0.5s ease-in-out;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: block;\n  position: absolute;\n  height: 2px;\n  width: 100%;\n  background: white;\n  border-radius: 9px;\n  opacity: 1;\n  left: 0;\n  transform: rotate(0deg);\n  transition: 0.25s ease-in-out;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(1) {\n  top: 0px;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2) {\n  top: 8px;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3) {\n  top: 16px;\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(1) {\n  top: 8px;\n  transform: rotate(135deg);\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2) {\n  opacity: 0;\n  left: -60px;\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3) {\n  top: 8px;\n  transform: rotate(-135deg);\n}\n.mobile-menu[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 70px;\n  right: -100%;\n  width: 100%;\n  height: calc(100vh - 70px);\n  background:\n    linear-gradient(\n      135deg,\n      var(--primary-dark),\n      var(--primary));\n  padding: 2rem;\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n  transition: right 0.3s ease;\n  z-index: 1000;\n}\n.mobile-menu.open[_ngcontent-%COMP%] {\n  right: 0;\n}\n.mobile-nav-link[_ngcontent-%COMP%] {\n  color: white;\n  text-decoration: none;\n  font-size: 1.2rem;\n  padding: 0.5rem 0;\n  border-bottom: 1px solid rgba(255, 255, 255, 0.1);\n  transition: all 0.3s ease;\n}\n.mobile-nav-link.highlight[_ngcontent-%COMP%] {\n  color: var(--accent);\n  font-weight: 600;\n}\n.mobile-nav-link[_ngcontent-%COMP%]:hover {\n  padding-left: 10px;\n  opacity: 0.9;\n}\n/*# sourceMappingURL=header.component.css.map */'], data: { animation: [
+  }, dependencies: [RouterModule, RouterLink, MatButtonModule, MatButton, MatToolbarModule, MatToolbar, NgClass, NgIf], styles: ["\n\n[_nghost-%COMP%] {\n  --primary: #2563eb;\n  --primary-light: #3b82f6;\n  --primary-dark: #1d4ed8;\n  --accent: #ec4899;\n  --accent-light: #f472b6;\n  --text-light: #ffffff;\n  --text-dark: #1f2937;\n  --gray-light: #f3f4f6;\n  --gray-dark: #6b7280;\n  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);\n  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);\n  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);\n  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\n  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);\n  --shadow-accent: 0 0 0 3px rgba(236, 72, 153, 0.3);\n  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 5%;\n  height: 80px;\n  background-color: rgba(255, 255, 255, 0.95);\n  color: var(--text-dark);\n  box-shadow: var(--shadow-sm);\n  position: sticky;\n  top: 0;\n  z-index: 50;\n  backdrop-filter: blur(8px);\n  -webkit-backdrop-filter: blur(8px);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.05);\n}\n.logo-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  height: 100%;\n}\n.logo[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  cursor: pointer;\n  transition: var(--transition);\n  height: 100%;\n  padding: 0 8px;\n  border-radius: 8px;\n}\n.logo[_ngcontent-%COMP%]:hover {\n  background-color: rgba(0, 0, 0, 0.02);\n}\n.logo.pulse[_ngcontent-%COMP%]   .logo-icon[_ngcontent-%COMP%] {\n  animation: _ngcontent-%COMP%_pulse-animation 1.5s infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-animation {\n  0% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.1);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 40px;\n  height: 40px;\n  background-color: rgba(37, 99, 235, 0.1);\n  border-radius: 50%;\n  padding: 8px;\n  transition: var(--transition);\n}\n.logo-text[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  line-height: 1.2;\n}\n.logo[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 1.4rem;\n  font-weight: 700;\n  color: var(--text-dark);\n  letter-spacing: -0.5px;\n}\n.logo-subtitle[_ngcontent-%COMP%] {\n  font-size: 0.7rem;\n  color: var(--gray-dark);\n  font-weight: 500;\n  letter-spacing: 0.2px;\n}\n.nav-links[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 2rem;\n  margin-left: 2rem;\n}\n@media (max-width: 1024px) {\n  .nav-links[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.nav-link[_ngcontent-%COMP%] {\n  color: var(--text-dark);\n  text-decoration: none;\n  font-weight: 500;\n  position: relative;\n  padding: 8px 0;\n  opacity: 0.9;\n  transition: var(--transition);\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.nav-link[_ngcontent-%COMP%]:hover {\n  color: var(--primary);\n  opacity: 1;\n}\n.nav-link[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  z-index: 1;\n}\n.underline[_ngcontent-%COMP%] {\n  height: 2px;\n  background-color: var(--accent);\n  margin-top: 2px;\n  border-radius: 2px;\n}\n.nav-buttons[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1rem;\n  align-items: center;\n}\n@media (max-width: 1024px) {\n  .nav-buttons[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n.login-btn[_ngcontent-%COMP%] {\n  color: var(--text-dark);\n  border-radius: 8px;\n  padding: 0 1.25rem;\n  height: 40px;\n  font-weight: 500;\n  transition: var(--transition);\n}\n.login-btn[_ngcontent-%COMP%]:hover {\n  color: var(--primary);\n  background-color: rgba(0, 0, 0, 0.02);\n}\n.signup-btn[_ngcontent-%COMP%] {\n  background-color: var(--primary);\n  color: white;\n  border-radius: 8px;\n  padding: 0 1.5rem;\n  height: 40px;\n  font-weight: 500;\n  transition: var(--transition);\n  letter-spacing: 0.2px;\n}\n.signup-btn[_ngcontent-%COMP%]:hover {\n  background-color: var(--primary-dark);\n  color: white;\n}\n.mobile-menu-btn[_ngcontent-%COMP%] {\n  display: none;\n  background: none;\n  border: none;\n  cursor: pointer;\n  padding: 8px;\n  z-index: 60;\n  color: var(--text-dark);\n}\n@media (max-width: 1024px) {\n  .mobile-menu-btn[_ngcontent-%COMP%] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n}\n.menu-icon[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 18px;\n  position: relative;\n  transform: rotate(0deg);\n  transition: 0.3s ease-in-out;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  display: block;\n  position: absolute;\n  height: 2px;\n  width: 100%;\n  background: currentColor;\n  border-radius: 2px;\n  opacity: 1;\n  left: 0;\n  transform: rotate(0deg);\n  transition: 0.2s ease-in-out;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(1) {\n  top: 0px;\n  width: 100%;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2) {\n  top: 8px;\n  width: 80%;\n}\n.menu-icon[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3) {\n  top: 16px;\n  width: 60%;\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(1) {\n  top: 8px;\n  transform: rotate(45deg);\n  width: 100%;\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(2) {\n  opacity: 0;\n}\n.menu-icon.open[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]:nth-child(3) {\n  top: 8px;\n  transform: rotate(-45deg);\n  width: 100%;\n}\n.mobile-menu[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 80px;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: rgba(255, 255, 255, 0.98);\n  backdrop-filter: blur(12px);\n  -webkit-backdrop-filter: blur(12px);\n  z-index: 40;\n  overflow-y: auto;\n  transform: translateX(100%);\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  display: flex;\n  flex-direction: column;\n  padding: 1rem 5% 2rem;\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n.mobile-menu.open[_ngcontent-%COMP%] {\n  transform: translateX(0);\n}\n.mobile-menu-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n  padding-top: 1rem;\n}\n.mobile-nav-link[_ngcontent-%COMP%] {\n  color: var(--text-dark);\n  text-decoration: none;\n  font-size: 1.1rem;\n  padding: 1rem 0.75rem;\n  border-radius: 8px;\n  transition: var(--transition);\n  font-weight: 500;\n}\n.mobile-nav-link[_ngcontent-%COMP%]:hover {\n  background-color: rgba(0, 0, 0, 0.03);\n  color: var(--primary);\n}\n.mobile-menu-buttons[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1rem;\n  margin-top: 1.5rem;\n  padding-top: 1.5rem;\n  border-top: 1px solid rgba(0, 0, 0, 0.05);\n}\n.mobile-login-btn[_ngcontent-%COMP%] {\n  flex: 1;\n  color: var(--text-dark);\n  font-weight: 500;\n  height: 48px;\n}\n.mobile-signup-btn[_ngcontent-%COMP%] {\n  flex: 1;\n  background-color: var(--primary);\n  color: white;\n  font-weight: 500;\n  height: 48px;\n}\n.mobile-signup-btn[_ngcontent-%COMP%]:hover {\n  background-color: var(--primary-dark);\n}\n/*# sourceMappingURL=header.component.css.map */"], data: { animation: [
     trigger("fadeInDown", [
       transition(":enter", [
         style({ transform: "translateY(-20px)", opacity: 0 }),
-        animate("0.4s ease-out", style({ transform: "translateY(0)", opacity: 1 }))
+        animate("0.4s cubic-bezier(0.16, 1, 0.3, 1)", style({ transform: "translateY(0)", opacity: 1 }))
       ])
     ]),
     trigger("buttonHover", [
       state("normal", style({
-        transform: "scale(1)"
+        transform: "scale(1)",
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
       })),
       state("hovered", style({
-        transform: "scale(1.05)"
+        transform: "scale(1.05)",
+        boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)"
       })),
-      transition("normal <=> hovered", animate("0.2s ease-in-out"))
+      transition("normal <=> hovered", animate("0.2s cubic-bezier(0.4, 0, 0.2, 1)"))
+    ]),
+    trigger("underline", [
+      state("void", style({ width: 0 })),
+      state("*", style({ width: "100%" })),
+      transition("* <=> *", animate("0.3s ease"))
     ])
   ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/shared/components/header/header.component.ts", lineNumber: 324 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/shared/components/header/header.component.ts", lineNumber: 442 });
 })();
 
 // src/app/shared/components/footer/footer.component.ts
@@ -10378,7 +8806,7 @@ var FooterComponent = class _FooterComponent {
       \u0275\u0275elementEnd();
       \u0275\u0275namespaceHTML();
       \u0275\u0275elementStart(9, "span");
-      \u0275\u0275text(10, "SkillsMatch AI");
+      \u0275\u0275text(10, "Employbridge AI");
       \u0275\u0275elementEnd()();
       \u0275\u0275elementStart(11, "p", 9);
       \u0275\u0275text(12, "Connecting talent with opportunity through AI");
@@ -10456,7 +8884,7 @@ var FooterComponent = class _FooterComponent {
       \u0275\u0275elementEnd()()();
       \u0275\u0275namespaceHTML();
       \u0275\u0275elementStart(68, "div", 39);
-      \u0275\u0275text(69, " \xA9 2024 SkillsMatch AI. All rights reserved. ");
+      \u0275\u0275text(69, " \xA9 2024 Employbridge AI. All rights reserved. ");
       \u0275\u0275elementEnd()()()();
     }
     if (rf & 2) {
@@ -10476,11 +8904,11 @@ var FooterComponent = class _FooterComponent {
 })();
 
 // src/app/landing/landing.component.ts
-var _c09 = (a0) => ({ "blink": a0 });
+var _c08 = (a0) => ({ "blink": a0 });
 function LandingComponent_mat_card_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "mat-card", 11);
+    \u0275\u0275elementStart(0, "mat-card", 12);
     \u0275\u0275listener("mouseenter", function LandingComponent_mat_card_16_Template_mat_card_mouseenter_0_listener() {
       const i_r2 = \u0275\u0275restoreView(_r1).index;
       const ctx_r2 = \u0275\u0275nextContext();
@@ -10490,13 +8918,13 @@ function LandingComponent_mat_card_16_Template(rf, ctx) {
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.spinComplete(i_r2));
     });
-    \u0275\u0275elementStart(1, "div", 12)(2, "div", 13)(3, "span");
+    \u0275\u0275elementStart(1, "div", 13)(2, "div", 14)(3, "span");
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(5, "h2");
+    \u0275\u0275elementStart(5, "h2", 3);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "p");
+    \u0275\u0275elementStart(7, "p", 3);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd()();
   }
@@ -10576,18 +9004,18 @@ var LandingComponent = class _LandingComponent {
   static \u0275fac = function LandingComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _LandingComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LandingComponent, selectors: [["app-landing"]], decls: 18, vars: 10, consts: [[1, "landing-content"], [1, "hero-section"], [1, "hero-content"], [1, "subtitle", "typewriter"], [3, "innerHTML"], [1, "cursor", 3, "ngClass"], [1, "cta-buttons"], ["mat-raised-button", "", "routerLink", "/auth/signup", 1, "get-started-btn", 3, "mouseenter", "mouseleave"], ["mat-button", "", "routerLink", "/auth/login", 1, "login-btn", 3, "mouseenter", "mouseleave"], [1, "features-section"], ["class", "feature-card", 3, "mouseenter", 4, "ngFor", "ngForOf"], [1, "feature-card", 3, "mouseenter"], [1, "feature-number-wrapper"], [1, "feature-number"]], template: function LandingComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LandingComponent, selectors: [["app-landing"]], decls: 18, vars: 10, consts: [[1, "landing-content", 2, "background-color", "black", "color", "gold"], [1, "hero-section"], [1, "hero-content"], [2, "color", "gold"], [1, "subtitle", "typewriter", 2, "color", "gold"], [3, "innerHTML"], [1, "cursor", 2, "color", "gold", 3, "ngClass"], [1, "cta-buttons"], ["mat-raised-button", "", "routerLink", "/auth/signup", 1, "get-started-btn", 2, "background-color", "gold", "color", "black", 3, "mouseenter", "mouseleave"], ["mat-button", "", "routerLink", "/auth/login", 1, "login-btn", 2, "color", "gold", 3, "mouseenter", "mouseleave"], [1, "features-section"], ["class", "feature-card", "style", "background-color: black; color: gold; border: 1px solid gold;", 3, "mouseenter", 4, "ngFor", "ngForOf"], [1, "feature-card", 2, "background-color", "black", "color", "gold", "border", "1px solid gold", 3, "mouseenter"], [1, "feature-number-wrapper"], [1, "feature-number", 2, "background-color", "gold", "color", "black"]], template: function LandingComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275element(0, "app-header");
-      \u0275\u0275elementStart(1, "main", 0)(2, "section", 1)(3, "div", 2)(4, "h1");
-      \u0275\u0275text(5, "Welcome to SkillsMatch AI");
+      \u0275\u0275elementStart(1, "main", 0)(2, "section", 1)(3, "div", 2)(4, "h1", 3);
+      \u0275\u0275text(5, "Welcome to EmployBridge AI");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(6, "p", 3);
-      \u0275\u0275element(7, "span", 4);
-      \u0275\u0275elementStart(8, "span", 5);
+      \u0275\u0275elementStart(6, "p", 4);
+      \u0275\u0275element(7, "span", 5);
+      \u0275\u0275elementStart(8, "span", 6);
       \u0275\u0275text(9, "|");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(10, "div", 6)(11, "button", 7);
+      \u0275\u0275elementStart(10, "div", 7)(11, "button", 8);
       \u0275\u0275listener("mouseenter", function LandingComponent_Template_button_mouseenter_11_listener() {
         return ctx.getStartedState = "hovered";
       })("mouseleave", function LandingComponent_Template_button_mouseleave_11_listener() {
@@ -10595,7 +9023,7 @@ var LandingComponent = class _LandingComponent {
       });
       \u0275\u0275text(12, " Get Started ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(13, "button", 8);
+      \u0275\u0275elementStart(13, "button", 9);
       \u0275\u0275listener("mouseenter", function LandingComponent_Template_button_mouseenter_13_listener() {
         return ctx.loginState = "hovered";
       })("mouseleave", function LandingComponent_Template_button_mouseleave_13_listener() {
@@ -10603,8 +9031,8 @@ var LandingComponent = class _LandingComponent {
       });
       \u0275\u0275text(14, " Already have an account? ");
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275elementStart(15, "section", 9);
-      \u0275\u0275template(16, LandingComponent_mat_card_16_Template, 9, 4, "mat-card", 10);
+      \u0275\u0275elementStart(15, "section", 10);
+      \u0275\u0275template(16, LandingComponent_mat_card_16_Template, 9, 4, "mat-card", 11);
       \u0275\u0275elementEnd()();
       \u0275\u0275element(17, "app-footer");
     }
@@ -10614,7 +9042,7 @@ var LandingComponent = class _LandingComponent {
       \u0275\u0275advance(5);
       \u0275\u0275property("innerHTML", ctx.typewriterText, \u0275\u0275sanitizeHtml);
       \u0275\u0275advance();
-      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c09, ctx.cursorBlinking));
+      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c08, ctx.cursorBlinking));
       \u0275\u0275advance(2);
       \u0275\u0275property("@fadeIn", void 0);
       \u0275\u0275advance();
@@ -10722,39 +9150,47 @@ var routes = [
       },
       {
         path: "skills",
-        loadComponent: () => import("./chunk-KGGRYPIM.js").then((m) => m.SkillManagementComponent)
+        loadComponent: () => import("./chunk-3IEUSDZ3.js").then((m) => m.SkillManagementComponent)
+      },
+      {
+        path: "job-search",
+        loadComponent: () => import("./chunk-NGKN5OKA.js").then((m) => m.JobSearchComponent)
       },
       {
         path: "interviews",
-        loadComponent: () => import("./chunk-BWODUUIN.js").then((m) => m.InterviewsComponent)
+        loadComponent: () => import("./chunk-7A4EWZCM.js").then((m) => m.InterviewsComponent)
       },
       {
         path: "career-paths",
-        loadComponent: () => import("./chunk-ZJXECHIM.js").then((m) => m.CareerPathsComponent)
+        loadComponent: () => import("./chunk-3X5I3HSC.js").then((m) => m.CareerPathsComponent)
+      },
+      {
+        path: "learning",
+        loadComponent: () => import("./chunk-ZGOIR7EW.js").then((m) => m.LearningResourcesComponent)
       },
       {
         path: "profile",
-        loadComponent: () => import("./chunk-PEP4DFMV.js").then((m) => m.ProfileComponent)
+        loadComponent: () => import("./chunk-B2FRIHII.js").then((m) => m.ProfileComponent)
       },
       {
         path: "matches",
-        loadComponent: () => import("./chunk-VAIV22YG.js").then((m) => m.JobMatchesComponent)
+        loadComponent: () => import("./chunk-67LLSM2I.js").then((m) => m.JobMatchesComponent)
       },
       {
         path: "applications",
-        loadComponent: () => import("./chunk-MBVU3TRZ.js").then((m) => m.ApplicationsComponent)
+        loadComponent: () => import("./chunk-5I4NYFYT.js").then((m) => m.ApplicationsComponent)
       },
       {
         path: "portfolio",
-        loadComponent: () => import("./chunk-IOARIIFV.js").then((m) => m.PortfolioComponent)
+        loadComponent: () => import("./chunk-MEWND6RG.js").then((m) => m.PortfolioComponent)
       },
       {
         path: "cv",
-        loadComponent: () => import("./chunk-JFJVRPGI.js").then((m) => m.ProfileManagerComponent)
+        loadComponent: () => import("./chunk-MEW25ZD7.js").then((m) => m.ProfileManagerComponent)
       },
       {
         path: "chatbot",
-        loadComponent: () => import("./chunk-AT56D3ES.js").then((m) => m.ChatbotComponent)
+        loadComponent: () => import("./chunk-LEM7XPYR.js").then((m) => m.ChatbotComponent)
       }
     ]
   },
@@ -10771,31 +9207,35 @@ var routes = [
       },
       {
         path: "listings",
-        loadComponent: () => import("./chunk-NPCRHQNN.js").then((m) => m.ActiveListingsComponent)
+        loadComponent: () => import("./chunk-5CYJEQWK.js").then((m) => m.ActiveListingsComponent)
       },
       {
         path: "post-job",
-        loadComponent: () => import("./chunk-WTSX2PPR.js").then((m) => m.PostJobComponent)
+        loadComponent: () => import("./chunk-DMCDNNQC.js").then((m) => m.PostJobComponent)
       },
       {
         path: "templates",
-        loadComponent: () => import("./chunk-DNXRABM7.js").then((m) => m.JobTemplatesComponent)
+        loadComponent: () => import("./chunk-DCMDZL34.js").then((m) => m.JobTemplatesComponent)
       },
       {
         path: "candidates",
-        loadComponent: () => import("./chunk-OPIY4PYZ.js").then((m) => m.ViewCandidatesComponent)
+        loadComponent: () => import("./chunk-HHEGC3MS.js").then((m) => m.ViewCandidatesComponent)
       },
       {
         path: "search",
-        loadComponent: () => import("./chunk-XEFXYSOX.js").then((m) => m.AiSearchComponent)
+        loadComponent: () => import("./chunk-D2I2VJED.js").then((m) => m.AiSearchComponent)
       },
       {
         path: "interviews",
-        loadComponent: () => import("./chunk-PO2DCIZE.js").then((m) => m.ManageInterviewsComponent)
+        loadComponent: () => import("./chunk-3PAMRFEV.js").then((m) => m.ManageInterviewsComponent)
       },
       {
         path: "analytics",
-        loadComponent: () => import("./chunk-CV7IZOY2.js").then((m) => m.HiringAnalyticsComponent)
+        loadComponent: () => import("./chunk-JH3IAZXF.js").then((m) => m.HiringAnalyticsComponent)
+      },
+      {
+        path: "profile",
+        loadComponent: () => import("./chunk-2ELVHHVC.js").then((m) => m.CompanyProfileComponent)
       }
     ]
   },
@@ -10812,23 +9252,23 @@ var routes = [
       },
       {
         path: "users",
-        loadComponent: () => import("./chunk-45JFIRWW.js").then((m) => m.UserManagementComponent)
+        loadComponent: () => import("./chunk-ISBPKSUE.js").then((m) => m.UserManagementComponent)
       },
       {
         path: "monitoring",
-        loadComponent: () => import("./chunk-A35GWYOB.js").then((m) => m.SystemMonitoringComponent)
+        loadComponent: () => import("./chunk-ACJ6SAJN.js").then((m) => m.SystemMonitoringComponent)
       },
       {
         path: "ai-models",
-        loadComponent: () => import("./chunk-SG6DVRTD.js").then((m) => m.AIModelManagementComponent)
+        loadComponent: () => import("./chunk-3TOOGFVY.js").then((m) => m.AIModelManagementComponent)
       },
       {
         path: "analytics",
-        loadComponent: () => import("./chunk-2V2P4LJQ.js").then((m) => m.PlatformAnalyticsComponent)
+        loadComponent: () => import("./chunk-WAQUISGR.js").then((m) => m.PlatformAnalyticsComponent)
       },
       {
         path: "accuracy-metrics",
-        loadComponent: () => import("./chunk-2DI7ABGS.js").then((m) => m.AccuracyMetricsComponent)
+        loadComponent: () => import("./chunk-FJ27ZMJ5.js").then((m) => m.AccuracyMetricsComponent)
       }
     ]
   },
@@ -10851,7 +9291,7 @@ var appConfig = {
 
 // src/app/app.component.ts
 var AppComponent = class _AppComponent {
-  title = "skillsmatchai";
+  title = "employbridgeai";
   static \u0275fac = function AppComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _AppComponent)();
   };

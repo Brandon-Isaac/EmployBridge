@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "sources": ["angular:styles/component:css;bc3460f48a10ddf337fb257034fbc79e6132697a4ca1a46d2f532b88cdd67cb6;C:/Users/Datch/Desktop/skillsmatchai/Frontend/src/app/shared/components/loading-spinner/loading-spinner.component.ts"],
+  "sources": ["angular:styles/component:css;bc3460f48a10ddf337fb257034fbc79e6132697a4ca1a46d2f532b88cdd67cb6;C:/Users/Datch/Desktop/employbridgeai/Frontend/src/app/shared/components/loading-spinner/loading-spinner.component.ts"],
   "sourcesContent": ["\n      .loading-container {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        padding: 20px;\n      }\n\n      .full-screen {\n        position: fixed;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        background-color: rgba(255, 255, 255, 0.8);\n        z-index: 1000;\n      }\n\n      .loading-message {\n        margin-top: 16px;\n        font-size: 14px;\n        color: #666;\n      }\n    "],
   "mappings": ";AACM,CAAC;AACC,WAAS;AACT,kBAAgB;AAChB,eAAa;AACb,mBAAiB;AACjB,WAAS;AACX;AAEA,CAAC;AACC,YAAU;AACV,OAAK;AACL,QAAM;AACN,SAAO;AACP,UAAQ;AACR,oBAAkB,KAAK,GAAG,EAAE,GAAG,EAAE,GAAG,EAAE;AACtC,WAAS;AACX;AAEA,CAAC;AACC,cAAY;AACZ,aAAW;AACX,SAAO;AACT;",
   "names": []

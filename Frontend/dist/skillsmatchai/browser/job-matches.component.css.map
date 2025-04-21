@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "sources": ["angular:styles/component:css;38a1369f99a80adf0955408258d322e1a3ec6f31ec89484ccddfb8d9dff7d65a;C:/Users/Datch/Desktop/skillsmatchai/Frontend/src/app/job-seeker/components/job-matches/job-matches.component.ts"],
+  "sources": ["angular:styles/component:css;38a1369f99a80adf0955408258d322e1a3ec6f31ec89484ccddfb8d9dff7d65a;C:/Users/Datch/Desktop/employbridgeai/Frontend/src/app/job-seeker/components/job-matches/job-matches.component.ts"],
   "sourcesContent": ["\n      .job-matches-container {\n        padding: 20px;\n      }\n\n      .job-list {\n        display: grid;\n        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n        gap: 20px;\n        margin-top: 20px;\n      }\n\n      .job-card {\n        height: 100%;\n      }\n\n      .match-score {\n        margin: 10px 0;\n      }\n\n      .skills {\n        margin: 10px 0;\n      }\n\n      .posted-date {\n        color: #666;\n        font-size: 0.9em;\n        margin-top: 10px;\n      }\n\n      mat-card-actions {\n        display: flex;\n        justify-content: space-between;\n        padding: 16px;\n      }\n    "],
   "mappings": ";AACM,CAAC;AACC,WAAS;AACX;AAEA,CAAC;AACC,WAAS;AACT,yBAAuB,OAAO,SAAS,EAAE,OAAO,KAAK,EAAE;AACvD,OAAK;AACL,cAAY;AACd;AAEA,CAAC;AACC,UAAQ;AACV;AAEA,CAAC;AACC,UAAQ,KAAK;AACf;AAEA,CAAC;AACC,UAAQ,KAAK;AACf;AAEA,CAAC;AACC,SAAO;AACP,aAAW;AACX,cAAY;AACd;AAEA;AACE,WAAS;AACT,mBAAiB;AACjB,WAAS;AACX;",
   "names": []
