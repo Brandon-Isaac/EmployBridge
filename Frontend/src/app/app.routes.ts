@@ -50,6 +50,13 @@ export const routes: Routes = [
           ).then((m) => m.SkillManagementComponent),
       },
       {
+        path: 'job-search',
+        loadComponent: () =>
+          import(
+            './job-seeker/components/job-search/job-search.component'
+          ).then((m) => m.JobSearchComponent),
+      },
+      {
         path: 'interviews',
         loadComponent: () =>
           import(
@@ -63,7 +70,13 @@ export const routes: Routes = [
             './job-seeker/components/career-paths/career-paths.component'
           ).then((m) => m.CareerPathsComponent),
       },
-
+      {
+        path: 'learning',
+        loadComponent: () =>
+          import(
+            './job-seeker/components/learning/learning-resources.component'
+          ).then((m) => m.LearningResourcesComponent),
+      },
       {
         path: 'profile',
         loadComponent: () =>

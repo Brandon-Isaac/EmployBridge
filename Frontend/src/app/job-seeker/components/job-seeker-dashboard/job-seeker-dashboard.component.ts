@@ -160,6 +160,16 @@ import { AuthService } from '../../../core/services/auth.service';
               <h3 matSubheader>Job Search</h3>
               <a
                 mat-list-item
+                routerLink="job-search"
+                routerLinkActive="active"
+                class="nav-item"
+                (click)="onNavItemClick()"
+              >
+                <i class="fas fa-search"></i>
+                <span>Job Search</span>
+              </a>
+              <a
+                mat-list-item
                 routerLink="matches"
                 routerLinkActive="active"
                 class="nav-item"
@@ -219,7 +229,7 @@ import { AuthService } from '../../../core/services/auth.service';
             <mat-divider></mat-divider>
 
             <div class="nav-section" [@fadeIn]>
-              <h3 matSubheader>Additional</h3>
+              <h3 matSubheader>AI Tools</h3>
               <a
                 mat-list-item
                 routerLink="chatbot"
@@ -229,16 +239,6 @@ import { AuthService } from '../../../core/services/auth.service';
               >
                 <i class="fas fa-robot"></i>
                 <span>Career Assistant</span>
-              </a>
-              <a
-                mat-list-item
-                routerLink="analytics"
-                routerLinkActive="active"
-                class="nav-item"
-                (click)="onNavItemClick()"
-              >
-                <i class="fas fa-chart-line"></i>
-                <span>Application Analytics</span>
               </a>
             </div>
           </mat-nav-list>

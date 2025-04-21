@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 interface LearningResource {
@@ -20,7 +19,6 @@ interface LearningResource {
     CommonModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule,
     MatListModule
   ],
   template: `
@@ -32,20 +30,33 @@ interface LearningResource {
         </mat-card-header>
         
         <mat-card-content>
-          <mat-list>
-            <mat-list-item *ngFor="let resource of resources">
-              <div matListItemTitle>{{ resource.title }}</div>
-              <div matListItemLine>{{ resource.description }}</div>
-              <div matListItemMeta>
-                <span class="resource-type">{{ resource.type }}</span>
-                <span class="resource-duration">{{ resource.duration }}</span>
-                <span class="resource-level">{{ resource.level }}</span>
+          <div class="resources-list">
+            <mat-card class="resource-card" *ngFor="let resource of resources">
+              <div class="resource-content">
+                <div class="resource-main">
+                  <div class="resource-title">{{ resource.title }}</div>
+                  <div class="resource-description">{{ resource.description }}</div>
+                </div>
+                <div class="resource-details">
+                  <div class="resource-type">
+                    <i class="fas fa-{{ resource.type === 'course' ? 'book' : resource.type === 'article' ? 'file-alt' : 'video' }}"></i>
+                    {{ resource.type }}
+                  </div>
+                  <div class="resource-duration">
+                    <i class="fas fa-clock"></i>
+                    {{ resource.duration }}
+                  </div>
+                  <div class="resource-level">
+                    <i class="fas fa-signal"></i>
+                    {{ resource.level }}
+                  </div>
+                </div>
+                <button mat-icon-button color="primary">
+                  <i class="fas fa-play-circle"></i>
+                </button>
               </div>
-              <button mat-icon-button color="primary">
-                <mat-icon>play_circle</mat-icon>
-              </button>
-            </mat-list-item>
-          </mat-list>
+            </mat-card>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
@@ -57,21 +68,68 @@ interface LearningResource {
       margin: 0 auto;
     }
 
-    mat-list-item {
-      height: auto !important;
-      padding: 16px 0;
+    .resources-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .resource-card {
+      margin: 8px 0;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .resource-content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .resource-main {
+      flex: 1;
+    }
+
+    .resource-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .resource-description {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .resource-details {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 300px;
     }
 
     .resource-type,
     .resource-duration,
     .resource-level {
-      margin-right: 16px;
       font-size: 12px;
       color: #666;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
     mat-icon-button {
       margin-left: auto;
+    }
+
+    i {
+      font-size: 14px;
     }
   `]
 })

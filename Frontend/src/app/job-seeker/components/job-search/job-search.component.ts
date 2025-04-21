@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { MatChipsModule } from '@angular/material/chips';
-import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-job-search',
@@ -15,157 +14,203 @@ import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
   imports: [
     CommonModule,
     MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
     MatButtonModule,
-    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatSelectModule,
-    MatChipsModule,
-    ReactiveFormsModule
+    MatIconModule,
+    FormsModule
   ],
   template: `
-    <div class="search-container">
+    <div class="job-search-container">
       <mat-card>
         <mat-card-header>
           <mat-card-title>Job Search</mat-card-title>
-          <mat-card-subtitle>Find your next opportunity</mat-card-subtitle>
+          <mat-card-subtitle>Find your next career opportunity</mat-card-subtitle>
         </mat-card-header>
-        
+
         <mat-card-content>
-          <form [formGroup]="searchForm" class="search-form">
-            <div class="search-row">
-              <mat-form-field appearance="outline" class="search-field">
-                <mat-label>Keywords</mat-label>
-                <input matInput formControlName="keywords" placeholder="Job title, skills, or company">
-                <mat-icon matSuffix>search</mat-icon>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline" class="search-field">
-                <mat-label>Location</mat-label>
-                <input matInput formControlName="location" placeholder="City, state, or remote">
-                <mat-icon matSuffix>location_on</mat-icon>
-              </mat-form-field>
-            </div>
-
-            <div class="filters-row">
-              <mat-form-field appearance="outline">
-                <mat-label>Job Type</mat-label>
-                <mat-select formControlName="jobType" multiple>
-                  <mat-option value="full-time">Full-time</mat-option>
-                  <mat-option value="part-time">Part-time</mat-option>
-                  <mat-option value="contract">Contract</mat-option>
-                  <mat-option value="internship">Internship</mat-option>
-                </mat-select>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Experience Level</mat-label>
-                <mat-select formControlName="experience">
-                  <mat-option value="entry">Entry Level</mat-option>
-                  <mat-option value="mid">Mid Level</mat-option>
-                  <mat-option value="senior">Senior Level</mat-option>
-                  <mat-option value="executive">Executive</mat-option>
-                </mat-select>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Salary Range</mat-label>
-                <mat-select formControlName="salary">
-                  <mat-option value="0-50k">$0 - $50,000</mat-option>
-                  <mat-option value="50k-100k">$50,000 - $100,000</mat-option>
-                  <mat-option value="100k-150k">$100,000 - $150,000</mat-option>
-                  <mat-option value="150k+">$150,000+</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-
-            <div class="search-actions">
-              <button mat-raised-button color="primary" (click)="search()">
-                <mat-icon>search</mat-icon>
-                Search Jobs
+          <div class="search-filters">
+            <mat-form-field appearance="outline" class="search-field">
+              <mat-label>Search Jobs</mat-label>
+              <input matInput placeholder="Job title, keywords, or company">
+              <button mat-icon-button matSuffix>
+                <i class="fas fa-search"></i>
               </button>
-              <button mat-stroked-button (click)="clearFilters()">
-                <mat-icon>clear</mat-icon>
-                Clear Filters
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="location-field">
+              <mat-label>Location</mat-label>
+              <input matInput placeholder="City, state, or remote">
+              <button mat-icon-button matSuffix>
+                <i class="fas fa-map-marker-alt"></i>
               </button>
-            </div>
-          </form>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="job-type-field">
+              <mat-label>Job Type</mat-label>
+              <mat-select>
+                <mat-option value="full-time">Full Time</mat-option>
+                <mat-option value="part-time">Part Time</mat-option>
+                <mat-option value="contract">Contract</mat-option>
+                <mat-option value="internship">Internship</mat-option>
+                <mat-option value="remote">Remote</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="search-results">
+            <mat-card class="job-card" *ngFor="let job of sampleJobs">
+              <div class="job-header">
+                <div class="job-title">{{ job.title }}</div>
+                <div class="job-company">{{ job.company }}</div>
+              </div>
+              <div class="job-details">
+                <div class="job-location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  {{ job.location }}
+                </div>
+                <div class="job-type">
+                  <i class="fas fa-briefcase"></i>
+                  {{ job.type }}
+                </div>
+                <div class="job-salary">
+                  <i class="fas fa-dollar-sign"></i>
+                  {{ job.salary }}
+                </div>
+              </div>
+              <div class="job-description">{{ job.description }}</div>
+              <div class="job-actions">
+                <button mat-button color="primary">
+                  <i class="fas fa-eye"></i>
+                  View Details
+                </button>
+                <button mat-button color="accent">
+                  <i class="fas fa-paper-plane"></i>
+                  Apply Now
+                </button>
+              </div>
+            </mat-card>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
   `,
   styles: [`
-    .search-container {
+    .job-search-container {
       padding: 20px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .search-form {
+    .search-filters {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .search-row {
-      display: flex;
-      gap: 20px;
-    }
-
-    .search-field {
-      flex: 1;
-    }
-
-    .filters-row {
-      display: flex;
-      gap: 20px;
+      gap: 16px;
+      margin-bottom: 24px;
       flex-wrap: wrap;
     }
 
-    .filters-row mat-form-field {
+    .search-field {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .location-field,
+    .job-type-field {
       flex: 1;
       min-width: 200px;
     }
 
-    .search-actions {
+    .search-results {
       display: flex;
-      gap: 10px;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .job-card {
+      margin-bottom: 16px;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .job-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-header {
+      margin-bottom: 12px;
+    }
+
+    .job-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #1976d2;
+    }
+
+    .job-company {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .job-details {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .job-location,
+    .job-type,
+    .job-salary {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .job-description {
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .job-actions {
+      display: flex;
+      gap: 8px;
       justify-content: flex-end;
     }
 
-    .search-actions button mat-icon {
-      margin-right: 8px;
-    }
-
-    @media (max-width: 768px) {
-      .search-row {
-        flex-direction: column;
-      }
+    i {
+      font-size: 16px;
+      margin-right: 4px;
     }
   `]
 })
 export class JobSearchComponent {
-  searchForm: FormGroup;
-
-  constructor(private fb: FormBuilder) {
-    this.searchForm = this.fb.group({
-      keywords: [''],
-      location: [''],
-      jobType: [[]],
-      experience: [''],
-      salary: ['']
-    });
-  }
-
-  search(): void {
-    if (this.searchForm.valid) {
-      console.log('Searching with filters:', this.searchForm.value);
-      // Implement search logic here
+  sampleJobs = [
+    {
+      title: 'Senior Frontend Developer',
+      company: 'TechCorp Inc.',
+      location: 'Remote',
+      type: 'Full Time',
+      salary: '$120,000 - $150,000',
+      description: 'We are looking for an experienced Frontend Developer to join our team...'
+    },
+    {
+      title: 'Backend Engineer',
+      company: 'DataSystems Ltd.',
+      location: 'New York, NY',
+      type: 'Full Time',
+      salary: '$130,000 - $160,000',
+      description: 'Join our backend team to build scalable and efficient systems...'
+    },
+    {
+      title: 'UI/UX Designer',
+      company: 'CreativeMinds',
+      location: 'San Francisco, CA',
+      type: 'Contract',
+      salary: '$90,000 - $110,000',
+      description: 'Looking for a creative UI/UX designer to enhance our product experience...'
     }
-  }
-
-  clearFilters(): void {
-    this.searchForm.reset();
-  }
+  ];
 } 

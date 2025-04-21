@@ -98,11 +98,11 @@ interface Milestone {
                 color="primary"
               ></mat-progress-bar>
               <div class="progress-controls">
-                <button mat-mini-button (click)="adjustProgress(path, -5)">
-                  -5%
+                <button mat-mini-button (click)="adjustProgress(path, -5)" matTooltip="Decrease by 5%" class="decrease-btn">
+                  <i class="fas fa-minus"></i>
                 </button>
-                <button mat-mini-button (click)="adjustProgress(path, 5)">
-                  +5%
+                <button mat-mini-button (click)="adjustProgress(path, 5)" matTooltip="Increase by 5%" class="increase-btn">
+                  <i class="fas fa-plus"></i>
                 </button>
               </div>
             </div>
@@ -231,8 +231,60 @@ interface Milestone {
 
       .progress-controls {
         display: flex;
-        gap: 10px;
-        margin-top: 8px;
+        gap: 12px;
+        margin-top: 12px;
+        justify-content: center;
+      }
+
+      .progress-controls button {
+        min-width: 40px;
+        height: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: none;
+        cursor: pointer;
+      }
+
+      .progress-controls i {
+        font-size: 16px;
+        transition: transform 0.3s ease;
+      }
+
+      .decrease-btn {
+        background-color: #ff6b6b;
+        color: white;
+      }
+
+      .decrease-btn:hover {
+        background-color: #ff5252;
+        transform: scale(1.05);
+      }
+
+      .decrease-btn:hover i {
+        transform: scale(0.9);
+      }
+
+      .increase-btn {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      .increase-btn:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+      }
+
+      .increase-btn:hover i {
+        transform: scale(1.1);
+      }
+
+      .progress-controls button:active {
+        transform: scale(0.95);
       }
 
       .required-skills,

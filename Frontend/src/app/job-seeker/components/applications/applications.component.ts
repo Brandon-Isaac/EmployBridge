@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -24,7 +23,6 @@ interface Application {
     CommonModule,
     MatTableModule,
     MatButtonModule,
-    MatIconModule,
     MatChipsModule,
     MatCardModule,
     MatTooltipModule,
@@ -87,7 +85,7 @@ interface Application {
               <th mat-header-cell *matHeaderCellDef>Applied</th>
               <td mat-cell *matCellDef="let application">
                 <div class="date-container">
-                  <mat-icon class="date-icon">event</mat-icon>
+                  <i class="fas fa-calendar-alt date-icon"></i>
                   <span>{{ application.appliedDate | date : 'mediumDate' }}</span>
                 </div>
               </td>
@@ -118,7 +116,7 @@ interface Application {
                     matTooltip="View Details"
                     (click)="viewDetails(application)"
                   >
-                    <mat-icon>visibility</mat-icon>
+                    <i class="fas fa-eye"></i>
                   </button>
 
                   <button
@@ -127,7 +125,7 @@ interface Application {
                     matTooltip="Withdraw"
                     (click)="withdrawApplication(application)"
                   >
-                    <mat-icon>delete</mat-icon>
+                    <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>
               </td>
