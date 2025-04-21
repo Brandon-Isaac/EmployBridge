@@ -406,6 +406,23 @@ import { AuthService } from '../../../core/services/auth.service';
         color: var(--text-secondary);
         font-weight: 500;
         transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+      }
+
+      mat-nav-list a i {
+        margin-right: 16px;
+        font-size: 20px;
+        width: 20px;
+        text-align: center;
+        color: var(--text-secondary);
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      mat-nav-list a span {
+        flex: 1;
+        margin-left: 8px;
       }
 
       mat-nav-list a.active {
@@ -415,20 +432,18 @@ import { AuthService } from '../../../core/services/auth.service';
         position: relative;
       }
 
-      mat-nav-list a.active::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 4px;
-        background: var(--primary);
-        border-radius: 0 4px 4px 0;
+      mat-nav-list a.active i {
+        color: var(--primary);
       }
 
       mat-nav-list a:hover {
         background-color: var(--background-light);
         transform: translateX(5px);
+      }
+
+      mat-nav-list a:hover i {
+        transform: scale(1.1);
+        color: var(--primary-light);
       }
       
       .nav-item {
@@ -583,6 +598,12 @@ import { AuthService } from '../../../core/services/auth.service';
         font-size: 20px;
         width: 20px;
         height: 20px;
+      }
+
+      ::ng-deep .mdc-list-item__content {
+        display: flex;
+        align-items: center;
+        gap: 16px;
       }
     `,
   ],

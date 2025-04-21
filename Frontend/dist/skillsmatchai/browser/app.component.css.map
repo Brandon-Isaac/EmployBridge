@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;44100e1a6df7228798de09621150199e163d4b940363e8a5c83bd601e64765ed;C:/Users/Datch/Desktop/skillsmatchai/Frontend/src/app/app.component.ts"],
-  "sourcesContent": ["\n      .app-container {\n        min-height: 100vh;\n        display: flex;\n        flex-direction: column;\n      }\n    "],
-  "mappings": ";AACM,CAAC;AACC,cAAY;AACZ,WAAS;AACT,kBAAgB;AAClB;",
-  "names": []
-}

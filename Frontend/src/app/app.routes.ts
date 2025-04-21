@@ -181,6 +181,13 @@ export const routes: Routes = [
             './employer/components/analytics/hiring-analytics/hiring-analytics.component'
           ).then((m) => m.HiringAnalyticsComponent),
       },
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('./employer/components/company-profile/company-profile.component').then(
+            (m) => m.CompanyProfileComponent
+          ),
+      },
     ],
   },
   {
