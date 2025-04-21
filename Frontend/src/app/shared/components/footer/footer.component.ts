@@ -26,7 +26,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
                 <path d="M12 17L12 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 <circle cx="12" cy="8" r="1" fill="currentColor"/>
               </svg>
-              <span>SkillsMatch AI</span>
+              <span>Employbridge AI</span>
             </div>
             <p class="footer-tagline">Connecting talent with opportunity through AI</p>
           </div>
@@ -91,7 +91,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
           </div>
           
           <div class="copyright">
-            © 2024 SkillsMatch AI. All rights reserved.
+            © 2024 Employbridge AI. All rights reserved.
           </div>
         </div>
       </div>

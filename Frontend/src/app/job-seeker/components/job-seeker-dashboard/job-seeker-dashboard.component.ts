@@ -1,6 +1,6 @@
 import { Component, ViewChild, ChangeDetectorRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { MatSidenavModule, MatSidenav } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
@@ -67,7 +67,7 @@ import { AuthService } from '../../../core/services/auth.service';
           <button mat-icon-button (click)="toggleSidenav()" class="menu-button">
             <i class="fas fa-bars"></i>
           </button>
-          <span class="app-title typewriter">SkillMatch AI</span>
+          <span class="app-title typewriter">Employbridge AI</span>
         </div>
         <div class="toolbar-right">
           <button
@@ -109,13 +109,6 @@ import { AuthService } from '../../../core/services/auth.service';
           [fixedInViewport]="mobileView"
           [@slideInOut]="sidenavState"
         >
-          <div class="sidenav-header">
-            <div class="logo-container">
-              <i class="fas fa-briefcase logo-icon"></i>
-              <span class="logo-text">SkillMatch</span>
-            </div>
-          </div>
-          
           <mat-nav-list>
             <div class="nav-section" [@fadeIn]>
               <h3 matSubheader>Profile & Portfolio</h3>
@@ -374,12 +367,32 @@ import { AuthService } from '../../../core/services/auth.service';
 
       .content {
         background-color: var(--background-light);
+        transition: margin-left 0.3s ease;
       }
 
       .content-wrapper {
         padding: 24px;
         max-width: 1200px;
         margin: 0 auto;
+        transition: max-width 0.3s ease;
+      }
+
+      /* When sidenav is closed */
+      .sidenav-container:not(.mat-drawer-opened) .content {
+        margin-left: 0;
+      }
+
+      .sidenav-container:not(.mat-drawer-opened) .content-wrapper {
+        max-width: 1400px;
+      }
+
+      /* When sidenav is open */
+      .sidenav-container.mat-drawer-opened .content {
+        margin-left: 260px;
+      }
+
+      .sidenav-container.mat-drawer-opened .content-wrapper {
+        max-width: 1200px;
       }
 
       mat-nav-list {
@@ -557,6 +570,20 @@ import { AuthService } from '../../../core/services/auth.service';
           display: none;
         }
       }
+
+      .menu-button {
+        margin-right: 8px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu-button i {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
     `,
   ],
 })
@@ -571,7 +598,8 @@ export class JobSeekerDashboardComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private breakpointObserver: BreakpointObserver,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -611,5 +639,6 @@ export class JobSeekerDashboardComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+    this.router.navigate(['/auth/login']);
   }
 }

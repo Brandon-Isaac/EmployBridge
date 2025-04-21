@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
-import { NgFor, NgClass } from '@angular/common';
+import { NgFor, NgIf,NgClass } from '@angular/common';
 import { trigger, state, style, animate, transition, stagger, query } from '@angular/animations';
 
 @Component({

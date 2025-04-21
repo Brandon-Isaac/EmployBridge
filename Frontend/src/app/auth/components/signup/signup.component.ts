@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormsModule,
@@ -15,9 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 // Shared Components
-import { FormValidationComponent } from '../../../shared/components/form-validation/form-validation.component';
 import { LoadingSpinnerComponent } from '../../../shared/components/loading-spinner/loading-spinner.component';
 import { ToastNotificationComponent } from '../../../shared/components/toast-notification/toast-notification.component';
 
@@ -35,17 +35,44 @@ import { ToastNotificationComponent } from '../../../shared/components/toast-not
     MatIconModule,
     MatSelectModule,
     RouterModule,
-    FormValidationComponent,
     LoadingSpinnerComponent,
   ],
   templateUrl: `./signup.component.html`,
-  styleUrl:`./signup.component.css`,      
+  styleUrls: ['./signup.component.css'],
+  animations: [
+    trigger('cardAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(20px)' }),
+        animate('0.5s ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ]),
+    trigger('formElements', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.3s 0.2s ease-out', style({ opacity: 1 }))
+      ])
+    ]),
+    trigger('buttonHover', [
+      state('normal', style({
+        transform: 'scale(1)'
+      })),
+      state('hovered', style({
+        transform: 'scale(1.05)'
+      })),
+      transition('normal <=> hovered', animate('0.2s ease-in-out'))
+    ])
+  ]
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   hidePassword = true;
   hideConfirmPassword = true;
   isLoading = false;
+  loginState = 'normal';
+  signupState = 'normal';
+  signupButtonHover = false;
+  showError = false;
+  errorMessage = '';
 
   constructor(
     private fb: FormBuilder,
@@ -67,6 +94,8 @@ export class SignupComponent {
     );
   }
 
+  ngOnInit(): void {}
+
   passwordMatchValidator(form: FormGroup) {
     const password = form.get('password')?.value;
     const confirmPassword = form.get('confirmPassword')?.value;
@@ -74,21 +103,35 @@ export class SignupComponent {
   }
 
   onSubmit() {
+    // Mark all fields as touched to show validation errors
+    Object.keys(this.signupForm.controls).forEach(key => {
+      this.signupForm.get(key)?.markAsTouched();
+    });
+
     if (this.signupForm.valid) {
       this.isLoading = true;
-
+      this.showError = false;
+      
       // Simulate API call
       setTimeout(() => {
         this.isLoading = false;
-        this.snackBar.openFromComponent(ToastNotificationComponent, {
-          data: {
-            message: 'Account created successfully!',
-            type: 'success',
-            duration: 5000,
-          },
-        });
-        this.router.navigate(['../login']);
+        this.showError = true;
+        this.errorMessage = 'Invalid credentials. Please check your details and try again.';
+        
+        // Hide error after 5 seconds
+        setTimeout(() => {
+          this.showError = false;
+        }, 5000);
       }, 2000);
+    } else {
+      this.isLoading = false;
+      this.showError = true;
+      this.errorMessage = 'Please fill in all required fields correctly.';
+      
+      // Hide error after 5 seconds
+      setTimeout(() => {
+        this.showError = false;
+      }, 5000);
     }
   }
 }

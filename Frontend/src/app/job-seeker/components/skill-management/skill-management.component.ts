@@ -135,12 +135,11 @@ interface SkillCategory {
                   <div class="skill-info">
                     <div class="skill-name">
                       {{ jobSkill.skill.name }}
-                      <mat-icon
+                      <i
                         *ngIf="jobSkill.isVerified"
                         matTooltip="Verified Skill"
-                        class="verified-icon"
-                        >verified</mat-icon
-                      >
+                        class="verified-icon fas fa-check-circle"
+                      ></i>
                     </div>
                     <div class="skill-meta">
                       {{ jobSkill.yearsOfExperience }} years · Last used
@@ -169,7 +168,7 @@ interface SkillCategory {
                     class="endorsements"
                     [matTooltip]="getEndorsementTooltip(jobSkill)"
                   >
-                    <mat-icon>recommend</mat-icon>
+                    <i class="fas fa-thumbs-up"></i>
                     {{ jobSkill.endorsements.length }} endorsements
                   </span>
                   <span class="skill-actions">
@@ -179,11 +178,11 @@ interface SkillCategory {
                       *ngIf="!jobSkill.isVerified"
                       (click)="startSkillAssessment(jobSkill)"
                     >
-                      <mat-icon>assessment</mat-icon>
+                      <i class="fas fa-clipboard-check"></i>
                       Verify Skill
                     </button>
                     <button mat-button (click)="updateSkill(jobSkill)">
-                      <mat-icon>edit</mat-icon>
+                      <i class="fas fa-edit"></i>
                       Update
                     </button>
                     <button
@@ -191,7 +190,7 @@ interface SkillCategory {
                       color="warn"
                       (click)="removeSkill(jobSkill)"
                     >
-                      <mat-icon>delete</mat-icon>
+                      <i class="fas fa-trash-alt"></i>
                     </button>
                   </span>
                 </div>

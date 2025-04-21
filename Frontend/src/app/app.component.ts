@@ -22,5 +22,5 @@ import { CommonModule } from '@angular/common';
   ],
 })
 export class AppComponent {
-  title = 'skillsmatchai';
+  title = 'employbridgeai';
 }

@@ -72,8 +72,8 @@ import { trigger, state, style, animate, transition, query, stagger } from '@ang
       transition('normal <=> hovered', animate('0.2s ease-in-out'))
     ])
   ],
-  templateUrl: `./login.component.html`,
-  styleUrl: `./login.component.css`,
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -96,9 +96,15 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
+    // Mark all fields as touched to show validation errors
+    Object.keys(this.loginForm.controls).forEach(key => {
+      this.loginForm.get(key)?.markAsTouched();
+    });
+
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       this.isLoading = true;
+      
       this.authService.login(email, password).subscribe({
         next: (user) => {
           this.isLoading = false;
@@ -115,17 +121,25 @@ export class LoginComponent {
           }
         },
         error: (error) => {
-          this.isLoading = false;
-          console.error('Login failed:', error);
-          this.snackBar.openFromComponent(ToastNotificationComponent, {
-            data: {
-              message: 'Login failed. Please try again later.',
-              type: 'error',
-              duration: 5000,
-            },
-          });
+          // Add 3 second delay before stopping the loading spinner
+          setTimeout(() => {
+            this.isLoading = false;
+            console.error('Login failed:', error);
+            this.snackBar.openFromComponent(ToastNotificationComponent, {
+              data: {
+                message: 'Login failed. Please check your credentials and try again.',
+                type: 'error',
+                duration: 5000,
+              },
+            });
+          }, 3000);
         },
+        complete: () => {
+          this.isLoading = false;
+        }
       });
+    } else {
+      this.isLoading = false;
     }
   }
 }
