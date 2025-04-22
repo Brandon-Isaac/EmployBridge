@@ -1,5 +1,6 @@
 import { createConnection } from 'typeorm';
 import dotenv from 'dotenv';
+import path from 'path';
 
 dotenv.config();
 
@@ -10,7 +11,7 @@ export const initializeDatabase = async () => {
       port: process.env.DB_PORT,
       username: process.env.DB_USERNAME,
       database: process.env.DB_NAME,
-      ssl: process.env.NODE_ENV === 'production'
+      ssl: true
     });
 
     const connection = await createConnection({
@@ -20,16 +21,20 @@ export const initializeDatabase = async () => {
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [__dirname + '/../entities/*.entity.ts'],
+      entities: [path.join(__dirname, '../entities/*.entity{.ts,.js}')],
       synchronize: process.env.NODE_ENV !== 'production',
-      ssl: process.env.NODE_ENV === 'production' ? {
+      ssl: {
         rejectUnauthorized: false
-      } : false,
+      },
       logging: true,
       extra: {
-        connectionTimeoutMillis: 5000,
-        query_timeout: 5000,
-        statement_timeout: 5000
+        ssl: {
+          rejectUnauthorized: false
+        },
+        connectionTimeoutMillis: 10000,
+        query_timeout: 10000,
+        statement_timeout: 10000,
+        idle_in_transaction_session_timeout: 10000
       }
     });
 
@@ -41,7 +46,9 @@ export const initializeDatabase = async () => {
       code: error.code,
       host: process.env.DB_HOST,
       port: process.env.DB_PORT,
-      database: process.env.DB_NAME
+      database: process.env.DB_NAME,
+      username: process.env.DB_USERNAME,
+      ssl: true
     });
     throw error;
   }

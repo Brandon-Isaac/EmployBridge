@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: employbridge-backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_HOST=database-1.cl68qygeke0e.eu-north-1.rds.amazonaws.com
+      - DB_PORT=5432
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=Killerfrost2030.
+      - DB_NAME=postgres
+      - JWT_SECRET=your-super-secret-key-change-this-in-production
+      - JWT_EXPIRES_IN=24h
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge 

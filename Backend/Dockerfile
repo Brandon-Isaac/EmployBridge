@@ -1,42 +1,21 @@
-# Build stage
-FROM node:20-alpine AS builder
+# Use Node.js LTS version
+FROM node:18-alpine
 
-WORKDIR /app
+# Create app directory
+WORKDIR /usr/src/app
 
-# Copy package files
+# Install app dependencies
 COPY package*.json ./
+RUN npm install
 
-# Install dependencies
-RUN npm ci
-
-# Copy source code
+# Bundle app source
 COPY . .
 
-# Build TypeScript code
+# Build TypeScript
 RUN npm run build
 
-# Production stage
-FROM node:20-alpine
-
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install production dependencies only
-RUN npm ci --only=production
-
-# Copy built files from builder stage
-COPY --from=builder /app/dist ./dist
-
-# Copy .env file
-COPY .env ./
-
-# Expose the port the app runs on
+# Expose port 3000
 EXPOSE 3000
 
-# Set environment variables
-ENV NODE_ENV=production
-
 # Start the application
-CMD ["node", "dist/server.js"]
+CMD ["npm", "start"]
