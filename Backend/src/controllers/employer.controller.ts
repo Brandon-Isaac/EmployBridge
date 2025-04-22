@@ -12,6 +12,15 @@ export class EmployerController {
     return getRepository(Employer);
   }
 
+  private setAuthCookie(res: Response, token: string) {
+    res.cookie('auth_token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    });
+  }
+
   register = asyncHandler(async (req: AuthRequest, res: Response) => {
     const { firstName, lastName, email, password, position, department } = req.body;
 
@@ -45,14 +54,16 @@ export class EmployerController {
 
     // Generate JWT token
     const token = jwt.sign(
-      { id: employer.id, email: employer.email },
+      { id: employer.id, email: employer.email, role: 'EMPLOYER' },
       process.env.JWT_SECRET || 'your-secret-key',
       { expiresIn: '24h' }
     );
 
+    // Set auth cookie
+    this.setAuthCookie(res, token);
+
     return res.status(201).json({
       message: 'Employer registered successfully',
-      token,
       employer: {
         id: employer.id,
         firstName: employer.firstName,
@@ -81,14 +92,16 @@ export class EmployerController {
 
     // Generate JWT token
     const token = jwt.sign(
-      { id: employer.id, email: employer.email },
+      { id: employer.id, email: employer.email, role: 'EMPLOYER' },
       process.env.JWT_SECRET || 'your-secret-key',
       { expiresIn: '24h' }
     );
 
+    // Set auth cookie
+    this.setAuthCookie(res, token);
+
     return res.json({
       message: 'Login successful',
-      token,
       employer: {
         id: employer.id,
         firstName: employer.firstName,
@@ -143,11 +156,11 @@ export class EmployerController {
     }
 
     // Update fields
-    employer.firstName = firstName || employer.firstName;
-    employer.lastName = lastName || employer.lastName;
-    employer.phone = phone || employer.phone;
-    employer.position = position || employer.position;
-    employer.department = department || employer.department;
+    if (firstName !== undefined) employer.firstName = firstName;
+    if (lastName !== undefined) employer.lastName = lastName;
+    if (phone !== undefined) employer.phone = phone;
+    if (position !== undefined) employer.position = position;
+    if (department !== undefined) employer.department = department;
 
     // Validate entity
     const errors = await validate(employer);
@@ -197,5 +210,10 @@ export class EmployerController {
     await this.employerRepository.save(employer);
 
     return res.json({ message: 'Password changed successfully' });
+  });
+
+  logout = asyncHandler(async (_req: AuthRequest, res: Response) => {
+    res.clearCookie('auth_token');
+    return res.json({ message: 'Logged out successfully' });
   });
 } 

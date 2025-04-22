@@ -51,7 +51,7 @@ export class JobSeeker {
   @OneToMany(() => JobApplication, application => application.jobSeeker)
   applications: JobApplication[];
 
-  @ManyToMany(() => Skill)
+  @ManyToMany(() => Skill, skill => skill.jobSeekers)
   @JoinTable({
     name: 'job_seeker_skills',
     joinColumn: { name: 'jobSeekerId', referencedColumnName: 'id' },

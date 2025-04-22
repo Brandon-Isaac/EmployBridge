@@ -5,8 +5,15 @@ import { authMiddleware } from '../middleware/auth.middleware';
 const router = Router();
 const adminController = new AdminController();
 
-// Apply auth middleware to all admin routes
+// Public routes
+router.post('/register', adminController.register);
+router.post('/login', adminController.login);
+
+// Protected routes
 router.use(authMiddleware);
+
+// Auth routes
+router.post('/logout', adminController.logout);
 
 // User Management
 router.get('/job-seekers', adminController.getJobSeekers);

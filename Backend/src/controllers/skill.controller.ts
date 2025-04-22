@@ -17,6 +17,12 @@ export class SkillController {
 
     const { name, category, description } = req.body;
 
+    // Check if skill already exists
+    const existingSkill = await this.skillRepository.findOne({ where: { name } });
+    if (existingSkill) {
+      return res.status(400).json({ message: 'Skill already exists' });
+    }
+
     const skill = this.skillRepository.create({
       name,
       category,
@@ -38,7 +44,8 @@ export class SkillController {
 
   getSkills = asyncHandler(async (_req: AuthRequest, res: Response) => {
     const skills = await this.skillRepository.find({
-      relations: ['jobSeekers']
+      where: { isActive: true },
+      select: ['id', 'name', 'category', 'description']
     });
 
     return res.json({ skills });
@@ -47,8 +54,8 @@ export class SkillController {
   getSkill = asyncHandler(async (req: AuthRequest, res: Response) => {
     const { id } = req.params;
     const skill = await this.skillRepository.findOne({
-      where: { id },
-      relations: ['jobSeekers']
+      where: { id, isActive: true },
+      select: ['id', 'name', 'category', 'description']
     });
 
     if (!skill) {
@@ -66,10 +73,18 @@ export class SkillController {
     const { id } = req.params;
     const { name, category, description } = req.body;
 
-    const skill = await this.skillRepository.findOne({ where: { id } });
+    const skill = await this.skillRepository.findOne({ where: { id, isActive: true } });
 
     if (!skill) {
       return res.status(404).json({ message: 'Skill not found' });
+    }
+
+    // If name is being updated, check if new name already exists
+    if (name && name !== skill.name) {
+      const existingSkill = await this.skillRepository.findOne({ where: { name } });
+      if (existingSkill) {
+        return res.status(400).json({ message: 'Skill with this name already exists' });
+      }
     }
 
     skill.name = name || skill.name;
@@ -95,13 +110,15 @@ export class SkillController {
     }
 
     const { id } = req.params;
-    const skill = await this.skillRepository.findOne({ where: { id } });
+    const skill = await this.skillRepository.findOne({ where: { id, isActive: true } });
 
     if (!skill) {
       return res.status(404).json({ message: 'Skill not found' });
     }
 
-    await this.skillRepository.remove(skill);
+    // Soft delete by setting isActive to false instead of removing
+    skill.isActive = false;
+    await this.skillRepository.save(skill);
 
     return res.json({ message: 'Skill deleted successfully' });
   });
@@ -110,17 +127,19 @@ export class SkillController {
   searchSkills = asyncHandler(async (req: AuthRequest, res: Response) => {
     const { name, category } = req.query;
 
-    const query = this.skillRepository.createQueryBuilder('skill');
+    const query = this.skillRepository.createQueryBuilder('skill')
+      .where('skill.isActive = :isActive', { isActive: true });
 
     if (name) {
       query.andWhere('LOWER(skill.name) LIKE LOWER(:name)', { name: `%${name}%` });
     }
 
     if (category) {
-      query.andWhere('LOWER(skill.category) LIKE LOWER(:category)', { category: `%${category}%` });
+      query.andWhere('skill.category = :category', { category });
     }
 
-    const skills = await query.getMany();
+    const skills = await query.select(['skill.id', 'skill.name', 'skill.category', 'skill.description'])
+      .getMany();
 
     return res.json({ skills });
   });

@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../../../core/services/auth.service';
 import { FormValidationComponent } from '../../../shared/components/form-validation/form-validation.component';
@@ -33,6 +34,7 @@ import { UserRole } from '../../../core/models/user-role.enum';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatSelectModule,
     RouterModule,
     FormValidationComponent,
     LoadingSpinnerComponent,
@@ -93,7 +95,7 @@ export class LoginComponent {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      accountType: ['', Validators.required],
+      userType: ['', Validators.required],
     });
   }
 
@@ -110,6 +112,20 @@ export class LoginComponent {
       this.authService.login(email, password).subscribe({
         next: (user) => {
           this.isLoading = false;
+          
+          // Validate user type matches role
+          if ((this.loginForm.get('userType')?.value === 'employer' && user.role !== UserRole.EMPLOYER) ||
+              (this.loginForm.get('userType')?.value === 'job-seeker' && user.role !== UserRole.JOB_SEEKER)) {
+            this.snackBar.openFromComponent(ToastNotificationComponent, {
+              data: {
+                message: 'Selected user type does not match account type.',
+                type: 'error',
+                duration: 5000,
+              },
+            });
+            return;
+          }
+
           switch (user.role) {
             case 'JOB_SEEKER':
               this.router.navigate(['/job-seeker']);
@@ -123,25 +139,24 @@ export class LoginComponent {
           }
         },
         error: (error) => {
-          // Add 3 second delay before stopping the loading spinner
-          setTimeout(() => {
-            this.isLoading = false;
-            console.error('Login failed:', error);
-            this.snackBar.openFromComponent(ToastNotificationComponent, {
-              data: {
-                message: 'Login failed. Please check your credentials and try again.',
-                type: 'error',
-                duration: 5000,
-              },
-            });
-          }, 3000);
-        },
-        complete: () => {
           this.isLoading = false;
+          this.snackBar.openFromComponent(ToastNotificationComponent, {
+            data: {
+              message: error.message || 'Login failed. Please check your credentials and try again.',
+              type: 'error',
+              duration: 5000,
+            },
+          });
         }
       });
     } else {
-      this.isLoading = false;
+      this.snackBar.openFromComponent(ToastNotificationComponent, {
+        data: {
+          message: 'Please fill in all required fields correctly.',
+          type: 'error',
+          duration: 5000,
+        },
+      });
     }
   }
 }

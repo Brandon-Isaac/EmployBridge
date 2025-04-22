@@ -12,6 +12,15 @@ export class JobSeekerController {
     return getRepository(JobSeeker);
   }
 
+  private setAuthCookie(res: Response, token: string) {
+    res.cookie('auth_token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    });
+  }
+
   register = asyncHandler(async (req: AuthRequest, res: Response) => {
     const { firstName, lastName, email, password } = req.body;
 
@@ -48,9 +57,11 @@ export class JobSeekerController {
       { expiresIn: '24h' }
     );
 
+    // Set auth cookie
+    this.setAuthCookie(res, token);
+
     return res.status(201).json({
       message: 'Job seeker registered successfully',
-      token,
       jobSeeker: {
         id: jobSeeker.id,
         firstName: jobSeeker.firstName,
@@ -82,9 +93,11 @@ export class JobSeekerController {
       { expiresIn: '24h' }
     );
 
+    // Set auth cookie
+    this.setAuthCookie(res, token);
+
     return res.json({
       message: 'Login successful',
-      token,
       jobSeeker: {
         id: jobSeeker.id,
         firstName: jobSeeker.firstName,
@@ -92,6 +105,11 @@ export class JobSeekerController {
         email: jobSeeker.email,
       },
     });
+  });
+
+  logout = asyncHandler(async (_req: AuthRequest, res: Response) => {
+    res.clearCookie('auth_token');
+    return res.json({ message: 'Logged out successfully' });
   });
 
   getProfile = asyncHandler(async (req: AuthRequest, res: Response) => {

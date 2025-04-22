@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
 import { JobApplication } from './job-application.entity';
 import { Employer } from './employer.entity';
+import { Skill } from './skill.entity';
 
 export enum JobType {
   FULL_TIME = 'full-time',
@@ -23,7 +24,7 @@ export class Job {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => Employer, employer => employer.jobPostings)
+  @ManyToOne(() => Employer, employer => employer.jobs)
   employer: Employer;
 
   @Column()
@@ -53,11 +54,21 @@ export class Job {
   @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
   salaryMax: number;
 
-  @Column({ type: 'text', array: true, default: [] })
-  requiredSkills: string[];
+  @ManyToMany(() => Skill, skill => skill.requiredInJobs)
+  @JoinTable({
+    name: 'job_required_skills',
+    joinColumn: { name: 'jobId', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'skillId', referencedColumnName: 'id' }
+  })
+  requiredSkills: Skill[];
 
-  @Column({ type: 'text', array: true, default: [] })
-  preferredSkills: string[];
+  @ManyToMany(() => Skill, skill => skill.preferredInJobs)
+  @JoinTable({
+    name: 'job_preferred_skills',
+    joinColumn: { name: 'jobId', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'skillId', referencedColumnName: 'id' }
+  })
+  preferredSkills: Skill[];
 
   @Column({ type: 'jsonb', nullable: true })
   benefits: {

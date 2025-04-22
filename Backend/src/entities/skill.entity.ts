@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, CreateDateColumn, UpdateDateColumn, JoinTable } from 'typeorm';
 import { Job } from './job.entity';
 import { JobSeeker } from './job-seeker.entity';
 import { CV } from './cv.entity';
@@ -40,6 +40,11 @@ export class Skill {
   preferredInJobs: Job[];
 
   @ManyToMany(() => JobSeeker, jobSeeker => jobSeeker.skills)
+  @JoinTable({
+    name: 'job_seeker_skills',
+    joinColumn: { name: 'skillId', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'jobSeekerId', referencedColumnName: 'id' }
+  })
   jobSeekers: JobSeeker[];
 
   @ManyToMany(() => PortfolioItem, (portfolioItem: PortfolioItem) => portfolioItem.skills)

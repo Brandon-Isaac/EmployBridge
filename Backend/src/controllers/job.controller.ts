@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
-import { Job } from '../entities/job.entity';
+import { Job, JobType, ExperienceLevel } from '../entities/job.entity';
+import { Skill } from '../entities/skill.entity';
+import { Employer } from '../entities/employer.entity';
 import { validate } from 'class-validator';
 import { asyncHandler } from '../middleware/async-handler';
 import { AuthRequest } from '../types/auth-request.interface';
@@ -11,8 +13,8 @@ export class JobController {
   }
 
   createJob = asyncHandler(async (req: AuthRequest, res: Response) => {
-    if (!req.user) {
-      return res.status(401).json({ message: 'Unauthorized' });
+    if (!req.user || !(req.user instanceof Employer)) {
+      return res.status(401).json({ message: 'Unauthorized - Only employers can create jobs' });
     }
 
     const {
@@ -30,43 +32,90 @@ export class JobController {
       expiresAt
     } = req.body;
 
-    const job = this.jobRepository.create({
+    // Get skill repositories
+    const skillRepository = getRepository(Skill);
+
+    // Fetch required skills
+    const requiredSkillsEntities = await skillRepository.findByIds(requiredSkills || []);
+
+    // Fetch preferred skills
+    const preferredSkillsEntities = await skillRepository.findByIds(preferredSkills || []);
+
+    const jobData: Partial<Job> = {
       title,
       description,
-      type,
-      experienceLevel,
+      type: type as JobType,
+      experienceLevel: experienceLevel as ExperienceLevel,
       location,
-      salaryMin,
-      salaryMax,
-      requiredSkills,
-      preferredSkills,
-      benefits,
-      questions,
-      expiresAt,
+      salaryMin: salaryMin ? Number(salaryMin) : undefined,
+      salaryMax: salaryMax ? Number(salaryMax) : undefined,
+      requiredSkills: requiredSkillsEntities,
+      preferredSkills: preferredSkillsEntities,
+      benefits: benefits ? benefits.map((benefit: string) => ({
+        name: benefit,
+        description: ''
+      })) : undefined,
+      questions: questions ? questions.map((question: string) => ({
+        id: Math.random().toString(36).substr(2, 9),
+        question,
+        required: true
+      })) : undefined,
+      expiresAt: expiresAt ? new Date(expiresAt) : undefined,
       employer: req.user
-    });
+    };
+
+    const job = this.jobRepository.create(jobData);
 
     const errors = await validate(job);
     if (errors.length > 0) {
       return res.status(400).json({ errors });
     }
 
-    await this.jobRepository.save(job);
+    const savedJob = await this.jobRepository.save(job);
 
+    // Return a clean response without sensitive data
     return res.status(201).json({
       message: 'Job created successfully',
-      job
+      job: {
+        id: savedJob.id,
+        title: savedJob.title,
+        description: savedJob.description,
+        type: savedJob.type,
+        experienceLevel: savedJob.experienceLevel,
+        location: savedJob.location,
+        salaryMin: savedJob.salaryMin,
+        salaryMax: savedJob.salaryMax,
+        benefits: savedJob.benefits,
+        questions: savedJob.questions,
+        requiredSkills: savedJob.requiredSkills?.map(skill => ({
+          id: skill.id,
+          name: skill.name,
+          category: skill.category
+        })) || [],
+        preferredSkills: savedJob.preferredSkills?.map(skill => ({
+          id: skill.id,
+          name: skill.name,
+          category: skill.category
+        })) || [],
+        expiresAt: savedJob.expiresAt,
+        isActive: savedJob.isActive,
+        createdAt: savedJob.createdAt,
+        updatedAt: savedJob.updatedAt
+      }
     });
   });
 
   getJobs = asyncHandler(async (req: AuthRequest, res: Response) => {
-    if (!req.user) {
-      return res.status(401).json({ message: 'Unauthorized' });
+    if (!req.user || !(req.user instanceof Employer)) {
+      return res.status(401).json({ message: 'Unauthorized - Only employers can view their jobs' });
     }
 
     const jobs = await this.jobRepository.find({
       where: { employer: { id: req.user.id } },
-      relations: ['applications']
+      relations: ['applications', 'requiredSkills', 'preferredSkills'],
+      order: {
+        createdAt: 'DESC'
+      }
     });
 
     return res.json({ jobs });

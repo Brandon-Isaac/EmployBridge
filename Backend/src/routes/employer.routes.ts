@@ -10,8 +10,10 @@ router.post('/register', employerController.register);
 router.post('/login', employerController.login);
 
 // Protected routes
-router.get('/profile', authMiddleware, employerController.getProfile);
-router.put('/profile', authMiddleware, employerController.updateProfile);
-router.put('/change-password', authMiddleware, employerController.changePassword);
+router.use(authMiddleware);
+router.post('/logout', employerController.logout);
+router.get('/profile', employerController.getProfile);
+router.put('/profile', employerController.updateProfile);
+router.put('/change-password', employerController.changePassword);
 
 export default router; 

@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 import { JobPosting } from './job-posting.entity';
 import { Company } from './company.entity';
+import { Job } from './job.entity';
 
 @Entity('employers')
 export class Employer {
@@ -51,6 +52,9 @@ export class Employer {
 
   @OneToMany(() => JobPosting, jobPosting => jobPosting.employer)
   jobPostings: JobPosting[];
+
+  @OneToMany(() => Job, job => job.employer)
+  jobs: Job[];
 
   @OneToMany(() => Company, company => company.employer)
   companies: Company[];

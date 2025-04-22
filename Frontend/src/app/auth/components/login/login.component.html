@@ -60,14 +60,15 @@
           <div class="form-links animate-item">
             <a class="forgot-password" routerLink="/auth/forgot-password">Forgot password?</a>
           </div>
-          <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Account Type</mat-label>
-            <mat-select formControlName="accountType" required>
-              <mat-option value="job-seeker" [text-color='brown']>Job Seeker</mat-option>
-              <mat-option value="employer"[text-color ='green']>Employer</mat-option>
+
+          <mat-form-field appearance="outline" class="full-width animate-item">
+            <mat-label>User Type</mat-label>
+            <mat-select formControlName="userType" required>
+              <mat-option value="job-seeker" [ngStyle]="{'color': 'brown'}">Job Seeker</mat-option>
+              <mat-option value="employer" [ngStyle]="{'color': 'green'}">Employer</mat-option>
             </mat-select>
-            <mat-error *ngIf="signupForm.get('accountType')?.hasError('required')">
-              Please select an account type
+            <mat-error *ngIf="loginForm.get('userType')?.hasError('required')">
+              Please select a user type
             </mat-error>
           </mat-form-field>
 
