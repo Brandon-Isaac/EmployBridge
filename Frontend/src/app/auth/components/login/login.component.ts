@@ -19,6 +19,7 @@ import { FormValidationComponent } from '../../../shared/components/form-validat
 import { LoadingSpinnerComponent } from '../../../shared/components/loading-spinner/loading-spinner.component';
 import { ToastNotificationComponent } from '../../../shared/components/toast-notification/toast-notification.component';
 import { trigger, state, style, animate, transition, query, stagger } from '@angular/animations';
+import { UserRole } from '../../../core/models/user-role.enum';
 
 @Component({
   selector: 'app-login',
@@ -92,6 +93,7 @@ export class LoginComponent {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+      accountType: ['', Validators.required],
     });
   }
 

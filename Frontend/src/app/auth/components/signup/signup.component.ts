@@ -117,6 +117,13 @@ export class SignupComponent implements OnInit {
         this.isLoading = false;
         this.showError = true;
         this.errorMessage = 'Invalid credentials. Please check your details and try again.';
+        this.snackBar.openFromComponent(ToastNotificationComponent, {
+          data: {
+            message: this.errorMessage,
+            type: 'error',
+            duration: 5000,
+          },
+        });
         
         // Hide error after 5 seconds
         setTimeout(() => {
