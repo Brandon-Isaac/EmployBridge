@@ -152,6 +152,7 @@ import {
   NgForOf,
   NgIf,
   NgModule,
+  NgStyle,
   NgTemplateOutlet,
   NgZone,
   Output,
@@ -221,6 +222,7 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵproperty,
+  ɵɵpureFunction0,
   ɵɵpureFunction1,
   ɵɵqueryRefresh,
   ɵɵreference,
@@ -5942,15 +5944,24 @@ var ToastNotificationComponent = class _ToastNotificationComponent {
 })();
 
 // src/app/auth/components/login/login.component.ts
+var _c04 = () => ({ "color": "brown" });
+var _c1 = () => ({ "color": "green" });
 function LoginComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 35);
-    \u0275\u0275element(1, "app-loading-spinner", 36);
+    \u0275\u0275elementStart(0, "div", 39);
+    \u0275\u0275element(1, "app-loading-spinner", 40);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     \u0275\u0275advance();
     \u0275\u0275property("size", 48);
+  }
+}
+function LoginComponent_mat_error_48_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Please select a user type ");
+    \u0275\u0275elementEnd();
   }
 }
 var LoginComponent = class _LoginComponent {
@@ -5971,7 +5982,8 @@ var LoginComponent = class _LoginComponent {
     this.snackBar = snackBar;
     this.loginForm = this.fb.group({
       email: ["", [Validators.required, Validators.email]],
-      password: ["", Validators.required]
+      password: ["", Validators.required],
+      userType: ["", Validators.required]
     });
   }
   onSubmit() {
@@ -5984,6 +5996,16 @@ var LoginComponent = class _LoginComponent {
       this.authService.login(email, password).subscribe({
         next: (user) => {
           this.isLoading = false;
+          if (this.loginForm.get("userType")?.value === "employer" && user.role !== UserRole.EMPLOYER || this.loginForm.get("userType")?.value === "job-seeker" && user.role !== UserRole.JOB_SEEKER) {
+            this.snackBar.openFromComponent(ToastNotificationComponent, {
+              data: {
+                message: "Selected user type does not match account type.",
+                type: "error",
+                duration: 5e3
+              }
+            });
+            return;
+          }
           switch (user.role) {
             case "JOB_SEEKER":
               this.router.navigate(["/job-seeker"]);
@@ -5997,30 +6019,30 @@ var LoginComponent = class _LoginComponent {
           }
         },
         error: (error) => {
-          setTimeout(() => {
-            this.isLoading = false;
-            console.error("Login failed:", error);
-            this.snackBar.openFromComponent(ToastNotificationComponent, {
-              data: {
-                message: "Login failed. Please check your credentials and try again.",
-                type: "error",
-                duration: 5e3
-              }
-            });
-          }, 3e3);
-        },
-        complete: () => {
           this.isLoading = false;
+          this.snackBar.openFromComponent(ToastNotificationComponent, {
+            data: {
+              message: error.message || "Login failed. Please check your credentials and try again.",
+              type: "error",
+              duration: 5e3
+            }
+          });
         }
       });
     } else {
-      this.isLoading = false;
+      this.snackBar.openFromComponent(ToastNotificationComponent, {
+        data: {
+          message: "Please fill in all required fields correctly.",
+          type: "error",
+          duration: 5e3
+        }
+      });
     }
   }
   static \u0275fac = function LoginComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _LoginComponent)(\u0275\u0275directiveInject(FormBuilder), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(MatSnackBar));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 50, vars: 12, consts: [[1, "auth-container"], ["class", "loading-overlay", 4, "ngIf"], [1, "auth-background"], [1, "shape", "shape1"], [1, "shape", "shape2"], [1, "shape", "shape3"], [1, "auth-card"], [1, "card-content-wrapper"], [1, "header-content"], [1, "app-title-container", "animate-item"], [1, "logo-icon"], ["width", "32", "height", "32", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z", "stroke", "currentColor", "stroke-width", "2"], ["d", "M12 17L12 11", "stroke", "currentColor", "stroke-width", "2", "stroke-linecap", "round"], ["cx", "12", "cy", "8", "r", "1", "fill", "currentColor"], [1, "app-title"], [1, "animate-item"], [3, "ngSubmit", "keyup.enter", "formGroup"], ["appearance", "outline", 1, "full-width", "animate-item"], ["matInput", "", "formControlName", "email", "type", "email", "required", "", "placeholder", "Enter your email"], ["matPrefix", "", 1, "fas", "fa-envelope", "form-icon"], ["fieldName", "Email", 3, "control"], ["matInput", "", "formControlName", "password", "required", "", "placeholder", "Enter your password", 3, "type"], ["matPrefix", "", 1, "fas", "fa-lock", "form-icon"], ["matSuffix", "", 1, "fas", "fa-eye", "form-icon", "clickable", 3, "click"], ["fieldName", "Password", 3, "control"], [1, "form-links", "animate-item"], ["routerLink", "/auth/forgot-password", 1, "forgot-password"], [1, "form-actions", "animate-item"], [1, "signup-text"], ["routerLink", "../signup", 1, "signup-link"], [1, "login-text", 3, "mouseenter", "mouseleave", "click"], [1, "button-content"], [1, "clickable-text"], [1, "fas", "fa-arrow-right", "login-icon"], [1, "loading-overlay"], [3, "size"]], template: function LoginComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 59, vars: 17, consts: [[1, "auth-container"], ["class", "loading-overlay", 4, "ngIf"], [1, "auth-background"], [1, "shape", "shape1"], [1, "shape", "shape2"], [1, "shape", "shape3"], [1, "auth-card"], [1, "card-content-wrapper"], [1, "header-content"], [1, "app-title-container", "animate-item"], [1, "logo-icon"], ["width", "32", "height", "32", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z", "stroke", "currentColor", "stroke-width", "2"], ["d", "M12 17L12 11", "stroke", "currentColor", "stroke-width", "2", "stroke-linecap", "round"], ["cx", "12", "cy", "8", "r", "1", "fill", "currentColor"], [1, "app-title"], [1, "animate-item"], [3, "ngSubmit", "keyup.enter", "formGroup"], ["appearance", "outline", 1, "full-width", "animate-item"], ["matInput", "", "formControlName", "email", "type", "email", "required", "", "placeholder", "Enter your email"], ["matPrefix", "", 1, "fas", "fa-envelope", "form-icon"], ["fieldName", "Email", 3, "control"], ["matInput", "", "formControlName", "password", "required", "", "placeholder", "Enter your password", 3, "type"], ["matPrefix", "", 1, "fas", "fa-lock", "form-icon"], ["matSuffix", "", 1, "fas", "fa-eye", "form-icon", "clickable", 3, "click"], ["fieldName", "Password", 3, "control"], [1, "form-links", "animate-item"], ["routerLink", "/auth/forgot-password", 1, "forgot-password"], ["formControlName", "userType", "required", ""], ["value", "job-seeker", 3, "ngStyle"], ["value", "employer", 3, "ngStyle"], [4, "ngIf"], [1, "form-actions", "animate-item"], [1, "signup-text"], ["routerLink", "../signup", 1, "signup-link"], [1, "login-text", 3, "mouseenter", "mouseleave", "click"], [1, "button-content"], [1, "clickable-text"], [1, "fas", "fa-arrow-right", "login-icon"], [1, "loading-overlay"], [3, "size"]], template: function LoginComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0);
       \u0275\u0275template(1, LoginComponent_div_1_Template, 2, 1, "div", 1);
@@ -6067,28 +6089,40 @@ var LoginComponent = class _LoginComponent {
       \u0275\u0275elementStart(37, "div", 26)(38, "a", 27);
       \u0275\u0275text(39, "Forgot password?");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(40, "div", 28)(41, "div", 29);
-      \u0275\u0275text(42, " Don't have an account? ");
-      \u0275\u0275elementStart(43, "a", 30);
-      \u0275\u0275text(44, "Sign Up");
+      \u0275\u0275elementStart(40, "mat-form-field", 18)(41, "mat-label");
+      \u0275\u0275text(42, "User Type");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(43, "mat-select", 28)(44, "mat-option", 29);
+      \u0275\u0275text(45, "Job Seeker");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(46, "mat-option", 30);
+      \u0275\u0275text(47, "Employer");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(45, "div", 31);
-      \u0275\u0275listener("mouseenter", function LoginComponent_Template_div_mouseenter_45_listener() {
+      \u0275\u0275template(48, LoginComponent_mat_error_48_Template, 2, 0, "mat-error", 31);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(49, "div", 32)(50, "div", 33);
+      \u0275\u0275text(51, " Don't have an account? ");
+      \u0275\u0275elementStart(52, "a", 34);
+      \u0275\u0275text(53, "Sign Up");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(54, "div", 35);
+      \u0275\u0275listener("mouseenter", function LoginComponent_Template_div_mouseenter_54_listener() {
         ctx.loginState = "hovered";
         return ctx.loginButtonHover = true;
-      })("mouseleave", function LoginComponent_Template_div_mouseleave_45_listener() {
+      })("mouseleave", function LoginComponent_Template_div_mouseleave_54_listener() {
         ctx.loginState = "normal";
         return ctx.loginButtonHover = false;
-      })("click", function LoginComponent_Template_div_click_45_listener() {
+      })("click", function LoginComponent_Template_div_click_54_listener() {
         return ctx.onSubmit();
       });
-      \u0275\u0275elementStart(46, "div", 32)(47, "span", 33);
-      \u0275\u0275text(48, "Login");
+      \u0275\u0275elementStart(55, "div", 36)(56, "span", 37);
+      \u0275\u0275text(57, "Login");
       \u0275\u0275elementEnd();
-      \u0275\u0275element(49, "i", 34);
+      \u0275\u0275element(58, "i", 38);
       \u0275\u0275elementEnd()()()()()()()();
     }
     if (rf & 2) {
+      let tmp_10_0;
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.isLoading);
       \u0275\u0275advance(5);
@@ -6104,7 +6138,13 @@ var LoginComponent = class _LoginComponent {
       \u0275\u0275property("type", ctx.hidePassword ? "password" : "text");
       \u0275\u0275advance(3);
       \u0275\u0275property("control", ctx.loginForm.get("password"));
-      \u0275\u0275advance(9);
+      \u0275\u0275advance(8);
+      \u0275\u0275property("ngStyle", \u0275\u0275pureFunction0(15, _c04));
+      \u0275\u0275advance(2);
+      \u0275\u0275property("ngStyle", \u0275\u0275pureFunction0(16, _c1));
+      \u0275\u0275advance(2);
+      \u0275\u0275property("ngIf", (tmp_10_0 = ctx.loginForm.get("userType")) == null ? null : tmp_10_0.hasError("required"));
+      \u0275\u0275advance(6);
       \u0275\u0275property("@buttonHover", ctx.loginState);
       \u0275\u0275advance(4);
       \u0275\u0275classProp("animate", ctx.loginButtonHover);
@@ -6112,6 +6152,7 @@ var LoginComponent = class _LoginComponent {
   }, dependencies: [
     CommonModule,
     NgIf,
+    NgStyle,
     FormsModule,
     \u0275NgNoValidate,
     DefaultValueAccessor,
@@ -6130,17 +6171,21 @@ var LoginComponent = class _LoginComponent {
     MatFormFieldModule,
     MatFormField,
     MatLabel,
+    MatError,
     MatPrefix,
     MatSuffix,
     MatInputModule,
     MatInput,
     MatButtonModule,
     MatIconModule,
+    MatSelectModule,
+    MatSelect,
+    MatOption,
     RouterModule,
     RouterLink,
     FormValidationComponent,
     LoadingSpinnerComponent
-  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --accent-light: #ff9a9e;\n  --text-primary: #333;\n  --text-secondary: #666;\n  --background-light: #f5f7fa;\n  --card-bg: #ffffff;\n  --success: #00c853;\n  --warning: #ffd600;\n}\n.auth-container[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 50%,\n      #ff6b6b 100%);\n  overflow: hidden;\n}\n.login-container[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 450px;\n  padding: 1rem;\n}\n.auth-background[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 0;\n}\n.shape[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.05);\n  animation: _ngcontent-%COMP%_float 15s infinite;\n  -webkit-backdrop-filter: blur(5px);\n  backdrop-filter: blur(5px);\n}\n.shape1[_ngcontent-%COMP%] {\n  width: 500px;\n  height: 500px;\n  top: -250px;\n  right: -100px;\n  animation-delay: 0s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(255, 255, 255, 0.03),\n      rgba(142, 148, 251, 0.08));\n}\n.shape2[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 400px;\n  bottom: -150px;\n  left: -100px;\n  animation-delay: 3s;\n  animation-duration: 18s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(142, 148, 251, 0.06),\n      rgba(255, 255, 255, 0.04));\n}\n.shape3[_ngcontent-%COMP%] {\n  width: 300px;\n  height: 300px;\n  bottom: 30%;\n  right: 20%;\n  animation-delay: 5s;\n  animation-duration: 20s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(252, 70, 107, 0.04),\n      rgba(255, 255, 255, 0.03));\n}\n@keyframes _ngcontent-%COMP%_float {\n  0% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n  25% {\n    transform: translate(5%, 5%) rotate(5deg);\n  }\n  50% {\n    transform: translate(0%, 8%) rotate(0deg);\n  }\n  75% {\n    transform: translate(-5%, 3%) rotate(-5deg);\n  }\n  100% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n}\n.login-card[_ngcontent-%COMP%] {\n  background: white;\n  border-radius: 16px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);\n  padding: 2rem;\n  width: 100%;\n  max-height: 90vh;\n  transition: all 0.3s ease;\n  position: relative;\n  overflow-y: auto;\n}\n.auth-card.blurred[_ngcontent-%COMP%] {\n  filter: blur(2px);\n  pointer-events: none;\n}\n.card-content-wrapper[_ngcontent-%COMP%] {\n  padding: 1.5rem;\n}\n.auth-card[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--accent));\n  z-index: 5;\n}\n.header-content[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 24px;\n}\n.app-title-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  margin-bottom: 1rem;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: #3498db;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 700;\n  background:\n    linear-gradient(\n      135deg,\n      #4e54c8 0%,\n      #8f94fb 50%,\n      #fc466b 100%);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  margin: 0;\n  letter-spacing: -0.5px;\n  position: relative;\n}\n.app-title[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  bottom: -4px;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background:\n    linear-gradient(\n      90deg,\n      transparent,\n      #4e54c8,\n      transparent);\n}\nmat-card-title[_ngcontent-%COMP%] {\n  font-size: 1.5rem;\n  font-weight: 600;\n  background:\n    linear-gradient(\n      135deg,\n      #4e54c8 0%,\n      #8f94fb 50%,\n      #fc466b 100%);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  margin-bottom: 8px;\n  position: relative;\n}\nmat-card-title[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  bottom: -4px;\n  left: 25%;\n  width: 50%;\n  height: 1px;\n  background:\n    linear-gradient(\n      90deg,\n      transparent,\n      #4e54c8,\n      transparent);\n}\nmat-card-subtitle[_ngcontent-%COMP%] {\n  color: #4e54c8;\n  font-size: 1rem;\n  margin-top: 8px;\n}\n.form-field[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 0.5rem;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-wrapper {\n  padding-bottom: 0;\n  margin-bottom: 0.25rem;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-flex {\n  padding: 0.5em 0 0 0;\n  min-height: 48px;\n  align-items: center;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-infix {\n  padding: 0.5em 0;\n  border-top: 0.84375em solid transparent;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-label {\n  margin-left: 0.75em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-prefix {\n  margin-right: 0.5em;\n  top: 0.25em;\n  padding-left: 1em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-suffix {\n  margin-left: 0.5em;\n  top: 0.25em;\n  padding-right: 1em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-input-element {\n  padding: 0 0.5em;\n}\n.form-field[_ngcontent-%COMP%]     .form-icon {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n  line-height: 1;\n}\n.full-width[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 16px;\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-outline {\n  top: 0;\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-outline-start, \n.full-width[_ngcontent-%COMP%]     .mat-form-field-outline-end {\n  border-radius: 4px;\n}\n.full-width[_ngcontent-%COMP%]     .form-icon {\n  color: rgba(0, 0, 0, 0.54);\n  font-size: 1.2em;\n  margin-top: 0.2em;\n  transition: color 0.3s ease;\n}\n.full-width[_ngcontent-%COMP%]     .form-icon.clickable {\n  cursor: pointer;\n}\n.full-width[_ngcontent-%COMP%]     .form-icon.clickable:hover {\n  color: #3498db;\n}\n.form-links[_ngcontent-%COMP%] {\n  text-align: right;\n  margin-top: 1rem;\n}\n.forgot-password[_ngcontent-%COMP%] {\n  color: #3498db;\n  text-decoration: none;\n  font-size: 0.9rem;\n  transition: color 0.3s ease;\n}\n.forgot-password[_ngcontent-%COMP%]:hover {\n  color: #2980b9;\n  text-decoration: underline;\n}\n.form-actions[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n  margin-top: 1.5rem;\n}\n.signup-text[_ngcontent-%COMP%] {\n  color: #7f8c8d;\n  font-size: 0.9rem;\n  text-align: center;\n}\n.signup-link[_ngcontent-%COMP%] {\n  color: #3498db;\n  text-decoration: none;\n  font-weight: 500;\n  transition: color 0.3s ease;\n}\n.signup-link[_ngcontent-%COMP%]:hover {\n  color: #2980b9;\n  text-decoration: underline;\n}\n.login-text[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 300px;\n  height: 48px;\n  background: #3498db;\n  color: white;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.login-text[_ngcontent-%COMP%]:hover {\n  background: #2980b9;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);\n}\n.button-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.clickable-text[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  font-weight: 500;\n}\n.login-icon[_ngcontent-%COMP%] {\n  transition: transform 0.3s ease;\n}\n.login-icon.animate[_ngcontent-%COMP%] {\n  transform: translateX(4px);\n}\n:is()   .mat-form-field-outline[_ngcontent-%COMP%] {\n  color: #e0e0e0 !important;\n}\n:is()   .mat-form-field-outline-thick[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--text-secondary) !important;\n  opacity: 1 !important;\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-suffix[_ngcontent-%COMP%] {\n  top: 0 !important;\n}\n:is()   .mat-form-field-prefix[_ngcontent-%COMP%] {\n  top: 0.25em !important;\n  margin-right: 8px !important;\n}\n:is()   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .mat-form-field-outline[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .form-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n@media (max-width: 600px) {\n  .login-container[_ngcontent-%COMP%] {\n    padding: 0.5rem;\n    max-width: 400px;\n  }\n  .login-card[_ngcontent-%COMP%] {\n    padding: 1.5rem;\n    max-height: 95vh;\n  }\n  .card-content-wrapper[_ngcontent-%COMP%] {\n    padding: 1rem;\n  }\n  .form-field[_ngcontent-%COMP%]     .mat-form-field-flex {\n    min-height: 42px;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.75rem;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */'], data: { animation: [
+  ], styles: ['\n\n[_nghost-%COMP%] {\n  --primary: #4e54c8;\n  --primary-light: #8f94fb;\n  --primary-dark: #363795;\n  --accent: #fc466b;\n  --accent-light: #ff9a9e;\n  --text-primary: #333;\n  --text-secondary: #666;\n  --background-light: #f5f7fa;\n  --card-bg: #ffffff;\n  --success: #00c853;\n  --warning: #ffd600;\n}\n.auth-container[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 50%,\n      #ff6b6b 100%);\n  overflow: hidden;\n}\n.login-container[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 450px;\n  padding: 1rem;\n}\n.auth-background[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 0;\n}\n.shape[_ngcontent-%COMP%] {\n  position: absolute;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.05);\n  animation: _ngcontent-%COMP%_float 15s infinite;\n  -webkit-backdrop-filter: blur(5px);\n  backdrop-filter: blur(5px);\n}\n.shape1[_ngcontent-%COMP%] {\n  width: 500px;\n  height: 500px;\n  top: -250px;\n  right: -100px;\n  animation-delay: 0s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(255, 255, 255, 0.03),\n      rgba(142, 148, 251, 0.08));\n}\n.shape2[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 400px;\n  bottom: -150px;\n  left: -100px;\n  animation-delay: 3s;\n  animation-duration: 18s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(142, 148, 251, 0.06),\n      rgba(255, 255, 255, 0.04));\n}\n.shape3[_ngcontent-%COMP%] {\n  width: 300px;\n  height: 300px;\n  bottom: 30%;\n  right: 20%;\n  animation-delay: 5s;\n  animation-duration: 20s;\n  background:\n    linear-gradient(\n      45deg,\n      rgba(252, 70, 107, 0.04),\n      rgba(255, 255, 255, 0.03));\n}\n@keyframes _ngcontent-%COMP%_float {\n  0% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n  25% {\n    transform: translate(5%, 5%) rotate(5deg);\n  }\n  50% {\n    transform: translate(0%, 8%) rotate(0deg);\n  }\n  75% {\n    transform: translate(-5%, 3%) rotate(-5deg);\n  }\n  100% {\n    transform: translate(0%, 0%) rotate(0deg);\n  }\n}\n.login-card[_ngcontent-%COMP%] {\n  background: white;\n  border-radius: 16px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);\n  padding: 2rem;\n  width: 100%;\n  max-height: 90vh;\n  transition: all 0.3s ease;\n  position: relative;\n  overflow-y: auto;\n}\n.auth-card.blurred[_ngcontent-%COMP%] {\n  filter: blur(2px);\n  pointer-events: none;\n}\n.card-content-wrapper[_ngcontent-%COMP%] {\n  padding: 1.5rem;\n}\n.auth-card[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 5px;\n  background:\n    linear-gradient(\n      90deg,\n      var(--primary-light),\n      var(--accent));\n  z-index: 5;\n}\n.header-content[_ngcontent-%COMP%] {\n  text-align: center;\n  margin-bottom: 24px;\n}\n.app-title-container[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  margin-bottom: 1rem;\n}\n.logo-icon[_ngcontent-%COMP%] {\n  color: #3498db;\n}\n.app-title[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 700;\n  background:\n    linear-gradient(\n      135deg,\n      #4e54c8 0%,\n      #8f94fb 50%,\n      #fc466b 100%);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  margin: 0;\n  letter-spacing: -0.5px;\n  position: relative;\n}\n.app-title[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  bottom: -4px;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background:\n    linear-gradient(\n      90deg,\n      transparent,\n      #4e54c8,\n      transparent);\n}\nmat-card-title[_ngcontent-%COMP%] {\n  font-size: 1.5rem;\n  font-weight: 600;\n  background:\n    linear-gradient(\n      135deg,\n      #4e54c8 0%,\n      #8f94fb 50%,\n      #fc466b 100%);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  margin-bottom: 8px;\n  position: relative;\n}\nmat-card-title[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  bottom: -4px;\n  left: 25%;\n  width: 50%;\n  height: 1px;\n  background:\n    linear-gradient(\n      90deg,\n      transparent,\n      #4e54c8,\n      transparent);\n}\nmat-card-subtitle[_ngcontent-%COMP%] {\n  color: #4e54c8;\n  font-size: 1rem;\n  margin-top: 8px;\n}\n.form-field[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 0.5rem;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-wrapper {\n  padding-bottom: 0;\n  margin-bottom: 0.25rem;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-flex {\n  padding: 0.5em 0 0 0;\n  min-height: 48px;\n  align-items: center;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-infix {\n  padding: 0.5em 0;\n  border-top: 0.84375em solid transparent;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-label {\n  margin-left: 0.75em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-prefix {\n  margin-right: 0.5em;\n  top: 0.25em;\n  padding-left: 1em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-form-field-suffix {\n  margin-left: 0.5em;\n  top: 0.25em;\n  padding-right: 1em;\n}\n.form-field[_ngcontent-%COMP%]     .mat-input-element {\n  padding: 0 0.5em;\n}\n.form-field[_ngcontent-%COMP%]     .form-icon {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n  line-height: 1;\n}\n.full-width[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 16px;\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-outline {\n  top: 0;\n}\n.full-width[_ngcontent-%COMP%]     .mat-select-value {\n  color: rgba(0, 0, 0, 0.87);\n}\n.full-width[_ngcontent-%COMP%]     .mat-select-arrow {\n  color: rgba(0, 0, 0, 0.54);\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-label {\n  color: rgba(0, 0, 0, 0.6);\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-required-marker {\n  color: rgba(0, 0, 0, 0.6);\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-invalid .mat-form-field-label {\n  color: #f44336;\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-invalid .mat-form-field-required-marker {\n  color: #f44336;\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-invalid .mat-form-field-outline {\n  color: #f44336;\n}\n.full-width[_ngcontent-%COMP%]     .mat-form-field-outline-start, \n.full-width[_ngcontent-%COMP%]     .mat-form-field-outline-end {\n  border-radius: 4px;\n}\n.full-width[_ngcontent-%COMP%]     .form-icon {\n  color: rgba(0, 0, 0, 0.54);\n  font-size: 1.2em;\n  margin-top: 0.2em;\n  transition: color 0.3s ease;\n}\n.full-width[_ngcontent-%COMP%]     .form-icon.clickable {\n  cursor: pointer;\n}\n.full-width[_ngcontent-%COMP%]     .form-icon.clickable:hover {\n  color: #3498db;\n}\n.form-links[_ngcontent-%COMP%] {\n  text-align: right;\n  margin-top: 1rem;\n}\n.forgot-password[_ngcontent-%COMP%] {\n  color: #3498db;\n  text-decoration: none;\n  font-size: 0.9rem;\n  transition: color 0.3s ease;\n}\n.forgot-password[_ngcontent-%COMP%]:hover {\n  color: #2980b9;\n  text-decoration: underline;\n}\n.form-actions[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n  margin-top: 1.5rem;\n}\n.signup-text[_ngcontent-%COMP%] {\n  color: #7f8c8d;\n  font-size: 0.9rem;\n  text-align: center;\n}\n.signup-link[_ngcontent-%COMP%] {\n  color: #3498db;\n  text-decoration: none;\n  font-weight: 500;\n  transition: color 0.3s ease;\n}\n.signup-link[_ngcontent-%COMP%]:hover {\n  color: #2980b9;\n  text-decoration: underline;\n}\n.login-text[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 300px;\n  height: 48px;\n  background: #3498db;\n  color: white;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.login-text[_ngcontent-%COMP%]:hover {\n  background: #2980b9;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);\n}\n.button-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n}\n.clickable-text[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  font-weight: 500;\n}\n.login-icon[_ngcontent-%COMP%] {\n  transition: transform 0.3s ease;\n}\n.login-icon.animate[_ngcontent-%COMP%] {\n  transform: translateX(4px);\n}\n:is()   .mat-form-field-outline[_ngcontent-%COMP%] {\n  color: #e0e0e0 !important;\n}\n:is()   .mat-form-field-outline-thick[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--text-secondary) !important;\n  opacity: 1 !important;\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .mat-form-field-label[_ngcontent-%COMP%] {\n  color: var(--primary) !important;\n}\n:is()   .mat-form-field-suffix[_ngcontent-%COMP%] {\n  top: 0 !important;\n}\n:is()   .mat-form-field-prefix[_ngcontent-%COMP%] {\n  top: 0.25em !important;\n  margin-right: 8px !important;\n}\n:is()   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 20px;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: all 0.3s ease;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .mat-form-field-outline[_ngcontent-%COMP%] {\n  opacity: 1;\n}\n:is()   .mat-form-field[_ngcontent-%COMP%]:hover   .form-icon[_ngcontent-%COMP%] {\n  color: rgba(0, 0, 0, 0.6);\n}\n:is()   .mat-form-field.mat-focused[_ngcontent-%COMP%]   .form-icon[_ngcontent-%COMP%] {\n  color: var(--primary);\n}\n@media (max-width: 600px) {\n  .login-container[_ngcontent-%COMP%] {\n    padding: 0.5rem;\n    max-width: 400px;\n  }\n  .login-card[_ngcontent-%COMP%] {\n    padding: 1.5rem;\n    max-height: 95vh;\n  }\n  .card-content-wrapper[_ngcontent-%COMP%] {\n    padding: 1rem;\n  }\n  .form-field[_ngcontent-%COMP%]     .mat-form-field-flex {\n    min-height: 42px;\n  }\n  .app-title[_ngcontent-%COMP%] {\n    font-size: 1.75rem;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */'], data: { animation: [
     trigger("cardAnimation", [
       transition(":enter", [
         style({ transform: "translateY(50px)", opacity: 0 }),
@@ -6177,7 +6222,7 @@ var LoginComponent = class _LoginComponent {
   ] } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent", filePath: "src/app/auth/components/login/login.component.ts", lineNumber: 78 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent", filePath: "src/app/auth/components/login/login.component.ts", lineNumber: 81 });
 })();
 
 // src/app/auth/components/signup/signup.component.ts
@@ -6310,6 +6355,13 @@ var SignupComponent = class _SignupComponent {
         this.isLoading = false;
         this.showError = true;
         this.errorMessage = "Invalid credentials. Please check your details and try again.";
+        this.snackBar.openFromComponent(ToastNotificationComponent, {
+          data: {
+            message: this.errorMessage,
+            type: "error",
+            duration: 5e3
+          }
+        });
         setTimeout(() => {
           this.showError = false;
         }, 5e3);
@@ -6491,8 +6543,8 @@ var SignupComponent = class _SignupComponent {
 })();
 
 // node_modules/@angular/material/fesm2022/sidenav.mjs
-var _c04 = ["*"];
-var _c1 = ["content"];
+var _c05 = ["*"];
+var _c12 = ["content"];
 var _c2 = [[["mat-drawer"]], [["mat-drawer-content"]], "*"];
 var _c3 = ["mat-drawer", "mat-drawer-content", "*"];
 function MatDrawerContainer_Conditional_0_Template(rf, ctx) {
@@ -6599,7 +6651,7 @@ var MatDrawerContent = class _MatDrawerContent extends CdkScrollable {
       provide: CdkScrollable,
       useExisting: _MatDrawerContent
     }]), \u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c04,
+    ngContentSelectors: _c05,
     decls: 1,
     vars: 0,
     template: function MatDrawerContent_Template(rf, ctx) {
@@ -7021,7 +7073,7 @@ var MatDrawer = class _MatDrawer {
     selectors: [["mat-drawer"]],
     viewQuery: function MatDrawer_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c1, 5);
+        \u0275\u0275viewQuery(_c12, 5);
       }
       if (rf & 2) {
         let _t;
@@ -7053,7 +7105,7 @@ var MatDrawer = class _MatDrawer {
       onPositionChanged: "positionChanged"
     },
     exportAs: ["matDrawer"],
-    ngContentSelectors: _c04,
+    ngContentSelectors: _c05,
     decls: 3,
     vars: 0,
     consts: [["content", ""], ["cdkScrollable", "", 1, "mat-drawer-inner-container"]],
@@ -7544,7 +7596,7 @@ var MatSidenavContent = class _MatSidenavContent extends MatDrawerContent {
       provide: CdkScrollable,
       useExisting: _MatSidenavContent
     }]), \u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c04,
+    ngContentSelectors: _c05,
     decls: 1,
     vars: 0,
     template: function MatSidenavContent_Template(rf, ctx) {
@@ -7634,7 +7686,7 @@ var MatSidenav = class _MatSidenav extends MatDrawer {
       provide: MatDrawer,
       useExisting: _MatSidenav
     }]), \u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c04,
+    ngContentSelectors: _c05,
     decls: 3,
     vars: 0,
     consts: [["content", ""], ["cdkScrollable", "", 1, "mat-drawer-inner-container"]],
@@ -7814,7 +7866,7 @@ var MatSidenavModule = class _MatSidenavModule {
 })();
 
 // src/app/job-seeker/components/job-seeker-dashboard/job-seeker-dashboard.component.ts
-var _c05 = ["sidenav"];
+var _c06 = ["sidenav"];
 var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
   authService;
   breakpointObserver;
@@ -7868,7 +7920,7 @@ var JobSeekerDashboardComponent = class _JobSeekerDashboardComponent {
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _JobSeekerDashboardComponent, selectors: [["app-job-seeker-dashboard"]], viewQuery: function JobSeekerDashboardComponent_Query(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275viewQuery(_c05, 5);
+      \u0275\u0275viewQuery(_c06, 5);
     }
     if (rf & 2) {
       let _t;
@@ -8319,7 +8371,7 @@ var EmployerDashboardComponent = class _EmployerDashboardComponent {
 })();
 
 // src/app/admin/components/admin-dashboard/admin-dashboard.component.ts
-var _c06 = ["sidenav"];
+var _c07 = ["sidenav"];
 var AdminDashboardComponent = class _AdminDashboardComponent {
   authService;
   sidenav;
@@ -8345,7 +8397,7 @@ var AdminDashboardComponent = class _AdminDashboardComponent {
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AdminDashboardComponent, selectors: [["app-admin-dashboard"]], viewQuery: function AdminDashboardComponent_Query(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275viewQuery(_c06, 5);
+      \u0275\u0275viewQuery(_c07, 5);
     }
     if (rf & 2) {
       let _t;
@@ -8540,8 +8592,8 @@ var AdminDashboardComponent = class _AdminDashboardComponent {
 })();
 
 // src/app/shared/components/header/header.component.ts
-var _c07 = (a0) => ({ "pulse": a0 });
-var _c12 = (a0) => ({ "open": a0 });
+var _c08 = (a0) => ({ "pulse": a0 });
+var _c13 = (a0) => ({ "open": a0 });
 function HeaderComponent_div_17_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "div", 22);
@@ -8628,7 +8680,7 @@ function HeaderComponent_div_40_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(2, _c12, ctx_r1.mobileMenuOpen))("@fadeInDown", void 0);
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(2, _c13, ctx_r1.mobileMenuOpen))("@fadeInDown", void 0);
   }
 }
 var HeaderComponent = class _HeaderComponent {
@@ -8745,7 +8797,7 @@ var HeaderComponent = class _HeaderComponent {
     if (rf & 2) {
       \u0275\u0275property("@fadeInDown", void 0);
       \u0275\u0275advance(2);
-      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c07, ctx.logoPulsing));
+      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c08, ctx.logoPulsing));
       \u0275\u0275advance(15);
       \u0275\u0275property("ngIf", ctx.activeLink === "features");
       \u0275\u0275advance(4);
@@ -8759,7 +8811,7 @@ var HeaderComponent = class _HeaderComponent {
       \u0275\u0275advance(2);
       \u0275\u0275property("@buttonHover", ctx.signupState);
       \u0275\u0275advance(3);
-      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c12, ctx.mobileMenuOpen));
+      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c13, ctx.mobileMenuOpen));
       \u0275\u0275advance(4);
       \u0275\u0275property("ngIf", ctx.mobileMenuOpen);
     }
@@ -8904,7 +8956,7 @@ var FooterComponent = class _FooterComponent {
 })();
 
 // src/app/landing/landing.component.ts
-var _c08 = (a0) => ({ "blink": a0 });
+var _c09 = (a0) => ({ "blink": a0 });
 function LandingComponent_mat_card_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -9042,7 +9094,7 @@ var LandingComponent = class _LandingComponent {
       \u0275\u0275advance(5);
       \u0275\u0275property("innerHTML", ctx.typewriterText, \u0275\u0275sanitizeHtml);
       \u0275\u0275advance();
-      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c08, ctx.cursorBlinking));
+      \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c09, ctx.cursorBlinking));
       \u0275\u0275advance(2);
       \u0275\u0275property("@fadeIn", void 0);
       \u0275\u0275advance();

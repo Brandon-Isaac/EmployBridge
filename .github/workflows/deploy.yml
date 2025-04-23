@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 'frontend/**'        # only trigger on frontend file changes
+      - 'Frontend/**'        # only trigger on frontend file changes
       - '.github/workflows/**' # allow updates to workflow file
   pull_request:
     types:
@@ -84,8 +84,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
-          bucket: skillsprofessionalai.com
-          dist-folder: ./dist/employbridgeai/browser
+          bucket: employbridgeai-frontend
+          dist-folder: ./dist/skillsmatchai/browser
           bucket-region: us-east-2
 
            # ✅ Step 5: Show the deployed URL
