@@ -85,7 +85,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
           bucket: skillsprofessionalai.com
-          dist-folder: ./dist/jobplex/browser
+          dist-folder: ./dist/employbridgeai/browser
           bucket-region: us-east-2
 
            # ✅ Step 5: Show the deployed URL
