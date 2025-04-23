@@ -76,7 +76,7 @@ jobs:
           echo "Dist directory:"
           ls -la ./dist
 
-      # ✅ Step 4: Deploy to S3 (only when frontend changes)
+      # ✅ Step 4: Deploy to S3 (only when frontend changesss)
       - name: Deploy
         id: deploy
         uses: ./.github/actions
