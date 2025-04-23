@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;e04bd7713459247a38add900f0384d8def1e0ece5776dc1d0e3aa6876b532853;C:/Users/Datch/Desktop/employbridgeai/Frontend/src/app/job-seeker/components/portfolio/portfolio.component.ts"],
-  "sourcesContent": ["\n      .portfolio-container {\n        padding: 20px;\n      }\n      .project-form {\n        margin-bottom: 20px;\n      }\n      .full-width {\n        width: 100%;\n        margin-bottom: 16px;\n      }\n      .projects-list {\n        margin-top: 20px;\n      }\n      .project-details {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        margin-top: 16px;\n      }\n    "],
-  "mappings": ";AACM,CAAC;AACC,WAAS;AACX;AACA,CAAC;AACC,iBAAe;AACjB;AACA,CAAC;AACC,SAAO;AACP,iBAAe;AACjB;AACA,CAAC;AACC,cAAY;AACd;AACA,CAAC;AACC,WAAS;AACT,mBAAiB;AACjB,eAAa;AACb,cAAY;AACd;",
-  "names": []
-}

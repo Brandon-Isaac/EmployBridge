@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;a692b8ddb8639856250f413e3d7fdb9f8dcd87d18c07e854700dfdfdb5316081;C:/Users/Datch/Desktop/employbridgeai/Frontend/src/app/shared/components/form-validation/form-validation.component.ts"],
-  "sourcesContent": ["\n      .validation-messages {\n        margin-top: 4px;\n      }\n\n      .error-message {\n        display: flex;\n        align-items: center;\n        color: #f44336;\n        font-size: 12px;\n        margin-top: 4px;\n      }\n\n      .error-message mat-icon {\n        font-size: 16px;\n        width: 16px;\n        height: 16px;\n        margin-right: 4px;\n      }\n    "],
-  "mappings": ";AACM,CAAC;AACC,cAAY;AACd;AAEA,CAAC;AACC,WAAS;AACT,eAAa;AACb,SAAO;AACP,aAAW;AACX,cAAY;AACd;AAEA,CARC,cAQc;AACb,aAAW;AACX,SAAO;AACP,UAAQ;AACR,gBAAc;AAChB;",
-  "names": []
-}
