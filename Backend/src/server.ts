@@ -18,8 +18,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: '*',
-  credentials: true
+  origin: 'http://employbridgeai-frontend.s3-website.us-east-2.amazonaws.com',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 app.use(express.json());
 app.use(cookieParser());

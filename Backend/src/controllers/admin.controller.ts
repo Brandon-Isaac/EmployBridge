@@ -35,9 +35,11 @@ export class AdminController {
   private setAuthCookie(res: Response, token: string) {
     res.cookie('auth_token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 24 * 60 * 60 * 1000 // 24 hours
+      secure: false, // Set to false since frontend is on HTTP
+      sameSite: 'lax',
+      maxAge: 24 * 60 * 60 * 1000, // 24 hours
+      path: '/',
+      domain: 'employbridgeai-frontend.s3-website.us-east-2.amazonaws.com'
     });
   }
 
@@ -131,7 +133,11 @@ export class AdminController {
   });
 
   logout = asyncHandler(async (_req: AuthRequest, res: Response) => {
-    res.clearCookie('auth_token');
+    res.clearCookie('auth_token', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict'
+    });
     return res.json({ message: 'Logged out successfully' });
   });
 

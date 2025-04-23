@@ -18,7 +18,7 @@ exec.exec(`aws s3 sync ${distFolder} ${s3URI} --region ${bucketRegion}`)
 
 
 //Get URl
-const websiteUrl= `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`
+const websiteUrl= `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com/`
 //http://employbridgeai-frontend.s3-website.us-east-2.amazonaws.com/
 core.setOutput('website-url',websiteUrl)
 
