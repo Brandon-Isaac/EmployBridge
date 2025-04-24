@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, Up
 import { JobApplication } from './job-application.entity';
 import { Employer } from './employer.entity';
 import { Skill } from './skill.entity';
+import { Company } from './company.entity';
 
 export enum JobType {
   FULL_TIME = 'full-time',
@@ -24,35 +25,51 @@ export class Job {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => Employer, employer => employer.jobs)
-  employer: Employer;
+  @ManyToOne(() => Company, company => company.jobs)
+  company: Company;
 
-  @Column()
+  @Column({ type: 'varchar', length: 200 })
   title: string;
 
   @Column({ type: 'text' })
   description: string;
 
-  @Column({
-    type: 'enum',
-    enum: JobType
-  })
-  type: JobType;
-
-  @Column({
-    type: 'enum',
-    enum: ExperienceLevel
-  })
-  experienceLevel: ExperienceLevel;
-
-  @Column()
+  @Column({ type: 'varchar', length: 100 })
   location: string;
 
-  @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
-  salaryMin: number;
+  @Column({ type: 'varchar', length: 50 })
+  type: 'full-time' | 'part-time' | 'contract' | 'internship';
 
-  @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
-  salaryMax: number;
+  @Column({ type: 'varchar', length: 50 })
+  experience: 'entry' | 'mid' | 'senior' | 'lead';
+
+  @Column({ type: 'jsonb', nullable: true })
+  salary: {
+    min: number;
+    max: number;
+    currency: string;
+  };
+
+  @Column({ type: 'jsonb', nullable: true })
+  requirements: string[];
+
+  @Column({ type: 'jsonb', nullable: true })
+  benefits: string[];
+
+  @Column({ type: 'boolean', default: true })
+  isActive: boolean;
+
+  @OneToMany(() => JobApplication, application => application.job)
+  applications: JobApplication[];
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @Column({ type: 'timestamp', nullable: true })
+  expiresAt: Date;
 
   @ManyToMany(() => Skill, skill => skill.requiredInJobs)
   @JoinTable({
@@ -71,30 +88,9 @@ export class Job {
   preferredSkills: Skill[];
 
   @Column({ type: 'jsonb', nullable: true })
-  benefits: {
-    name: string;
-    description: string;
-  }[];
-
-  @Column({ type: 'jsonb', nullable: true })
   questions: {
     id: string;
     question: string;
     required: boolean;
   }[];
-
-  @Column({ default: true })
-  isActive: boolean;
-
-  @OneToMany(() => JobApplication, application => application.job)
-  applications: JobApplication[];
-
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
-
-  @Column({ type: 'timestamp', nullable: true })
-  expiresAt: Date;
 } 

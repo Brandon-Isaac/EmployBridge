@@ -16,6 +16,10 @@ export const JOB_SEEKER_ROUTES: Routes = [
     component: JobSeekerDashboardComponent,
     children: [
       {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+      {
         path: 'skills',
         component: SkillManagementComponent,
       },
@@ -35,10 +39,6 @@ export const JOB_SEEKER_ROUTES: Routes = [
         path: '',
         redirectTo: 'skills',
         pathMatch: 'full',
-      },
-      {
-        path: 'profile',
-        component: ProfileComponent,
       },
       {
         path: 'matches',

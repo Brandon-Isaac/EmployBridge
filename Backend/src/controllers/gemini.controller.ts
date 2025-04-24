@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { asyncHandler } from '../middleware/asyncHandler';
+import { asyncHandler } from '../middleware/async-handler';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -26,7 +26,8 @@ export class GeminiController {
 
       const formattedPrompt = `Generate a detailed career path for: ${prompt}. 
       Include current level, next level, required skills, and milestones. 
-      Format the response as a JSON object matching this structure:
+      IMPORTANT: Return ONLY a valid JSON object with no markdown formatting, no backticks, and no additional text.
+      The JSON must match this exact structure:
       {
         "title": "string",
         "description": "string",
@@ -50,16 +51,30 @@ export class GeminiController {
       const text = response.text();
 
       try {
-        // Remove markdown code block formatting if present
-        const cleanJson = text.replace(/```json\n|\n```/g, '').trim();
+        // Simple trim of whitespace
+        const cleanJson = text.trim();
+        
+        // Log the raw response for debugging
+        console.log('Raw Gemini response:', text);
+        console.log('Cleaned JSON:', cleanJson);
+        
         const careerPath = JSON.parse(cleanJson);
+        
+        // Validate the parsed JSON structure
+        if (!careerPath.title || !careerPath.description || !careerPath.currentLevel || 
+            !careerPath.nextLevel || !careerPath.requiredSkills || !careerPath.milestones) {
+          throw new Error('Response missing required fields');
+        }
+        
         return res.json(careerPath);
       } catch (error) {
         console.error('Error parsing Gemini response:', error);
+        console.error('Raw response:', text);
         return res.status(500).json({ 
           error: 'Error parsing AI response',
           details: error.message,
-          rawResponse: text 
+          rawResponse: text,
+          stack: error.stack
         });
       }
     } catch (error) {

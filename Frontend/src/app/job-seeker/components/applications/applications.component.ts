@@ -5,14 +5,24 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
+import { ApplicationDialogComponent } from './application-dialog/application-dialog.component';
+import { WithdrawDialogComponent } from './withdraw-dialog/withdraw-dialog.component';
 
 interface Application {
   id: string;
-  jobTitle: string;
-  company: string;
+  job: {
+    title: string;
+    company: {
+      name: string;
+    };
+  };
   appliedDate: Date;
-  status: 'Pending' | 'Reviewed' | 'Interview' | 'Rejected' | 'Accepted';
+  status: 'pending' | 'reviewed' | 'shortlisted' | 'rejected' | 'hired';
   lastUpdated: Date;
 }
 
@@ -67,8 +77,8 @@ interface Application {
               <td mat-cell *matCellDef="let application" [@rowHover]="rowState"
                   (mouseenter)="rowState = 'hovered'"
                   (mouseleave)="rowState = 'normal'">
-                <strong class="job-title">{{ application.jobTitle }}</strong>
-                <div class="company-mobile">{{ application.company }}</div>
+                <strong class="job-title">{{ application.job.title }}</strong>
+                <div class="company-mobile">{{ application.job.company.name }}</div>
               </td>
             </ng-container>
 
@@ -76,7 +86,7 @@ interface Application {
             <ng-container matColumnDef="company">
               <th mat-header-cell *matHeaderCellDef>Company</th>
               <td mat-cell *matCellDef="let application">
-                <span class="company-desktop">{{ application.company }}</span>
+                <span class="company-desktop">{{ application.job.company.name }}</span>
               </td>
             </ng-container>
 
@@ -100,7 +110,7 @@ interface Application {
                   selected
                   class="status-chip"
                 >
-                  {{ application.status }}
+                  {{ application.status | titlecase }}
                 </mat-chip>
               </td>
             </ng-container>
@@ -124,6 +134,7 @@ interface Application {
                     class="withdraw-button"
                     matTooltip="Withdraw"
                     (click)="withdrawApplication(application)"
+                    [disabled]="application.status !== 'pending'"
                   >
                     <i class="fas fa-trash-alt"></i>
                   </button>
@@ -277,7 +288,7 @@ interface Application {
         color: var(--text-brown);
       }
 
-      .interview-chip {
+      .shortlisted-chip {
         background-color: var(--interview);
         color: white;
       }
@@ -287,7 +298,7 @@ interface Application {
         color: white;
       }
 
-      .accepted-chip {
+      .hired-chip {
         background-color: var(--accepted);
         color: white;
       }
@@ -368,83 +379,84 @@ export class ApplicationsComponent implements OnInit {
     'status',
     'actions',
   ];
-  applications: Application[] = [
-    {
-      id: '1',
-      jobTitle: 'Senior Frontend Developer',
-      company: 'TechCorp',
-      appliedDate: new Date('2024-03-15'),
-      status: 'Interview',
-      lastUpdated: new Date('2024-03-20'),
-    },
-    {
-      id: '2',
-      jobTitle: 'Full Stack Developer',
-      company: 'InnovateSoft',
-      appliedDate: new Date('2024-03-10'),
-      status: 'Pending',
-      lastUpdated: new Date('2024-03-10'),
-    },
-    {
-      id: '3',
-      jobTitle: 'UX Designer',
-      company: 'DesignHub',
-      appliedDate: new Date('2024-03-05'),
-      status: 'Reviewed',
-      lastUpdated: new Date('2024-03-08'),
-    },
-    {
-      id: '4',
-      jobTitle: 'Product Manager',
-      company: 'ProductLabs',
-      appliedDate: new Date('2024-02-28'),
-      status: 'Rejected',
-      lastUpdated: new Date('2024-03-15'),
-    },
-    {
-      id: '5',
-      jobTitle: 'DevOps Engineer',
-      company: 'CloudSystems',
-      appliedDate: new Date('2024-03-01'),
-      status: 'Accepted',
-      lastUpdated: new Date('2024-03-18'),
-    },
-  ];
-
+  applications: Application[] = [];
   typewriterState = 'start';
   rowState = 'normal';
 
-  constructor() {}
+  constructor(
+    private http: HttpClient,
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
+    this.loadApplications();
     setTimeout(() => {
       this.typewriterState = 'end';
     }, 100);
   }
 
+  loadApplications(): void {
+    this.http.get<Application[]>(`${environment.apiUrl}/job-applications`).subscribe({
+      next: (applications) => {
+        this.applications = applications;
+      },
+      error: (error) => {
+        this.snackBar.open('Failed to load applications', 'Close', {
+          duration: 3000,
+          panelClass: ['error-snackbar']
+        });
+      }
+    });
+  }
+
   getStatusClass(status: string): string {
     switch (status) {
-      case 'Accepted':
-        return 'accepted-chip';
-      case 'Interview':
-        return 'interview-chip';
-      case 'Rejected':
+      case 'hired':
+        return 'hired-chip';
+      case 'shortlisted':
+        return 'shortlisted-chip';
+      case 'rejected':
         return 'rejected-chip';
-      case 'Reviewed':
+      case 'reviewed':
         return 'reviewed-chip';
-      case 'Pending':
+      case 'pending':
       default:
         return 'pending-chip';
     }
   }
 
   viewDetails(application: Application): void {
-    console.log('View details for application:', application);
-    // Navigate to application details
+    const dialogRef = this.dialog.open(ApplicationDialogComponent, {
+      width: '600px',
+      data: application
+    });
   }
 
   withdrawApplication(application: Application): void {
-    console.log('Withdraw application:', application);
-    // Implement withdrawal logic
+    const dialogRef = this.dialog.open(WithdrawDialogComponent, {
+      width: '400px',
+      data: application
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.http.delete(`${environment.apiUrl}/job-applications/${application.id}`).subscribe({
+          next: () => {
+            this.loadApplications();
+            this.snackBar.open('Application withdrawn successfully', 'Close', {
+              duration: 3000,
+              panelClass: ['success-snackbar']
+            });
+          },
+          error: (error) => {
+            this.snackBar.open('Failed to withdraw application', 'Close', {
+              duration: 3000,
+              panelClass: ['error-snackbar']
+            });
+          }
+        });
+      }
+    });
   }
 }

@@ -1,4 +1,4 @@
-import { Response } from 'express';
+import {  Response } from 'express';
 import { getRepository } from 'typeorm';
 import { JobApplication } from '../entities/job-application.entity';
 import { Job } from '../entities/job.entity';
@@ -9,7 +9,7 @@ import { asyncHandler } from '../middleware/async-handler';
 import { AuthRequest } from '../types/auth-request.interface';
 
 export class JobApplicationController {
-  private get applicationRepository() {
+  private get jobApplicationRepository() {
     return getRepository(JobApplication);
   }
 
@@ -17,51 +17,39 @@ export class JobApplicationController {
     return getRepository(Job);
   }
 
+  private get jobSeekerRepository() {
+    return getRepository(JobSeeker);
+  }
+
   createApplication = asyncHandler(async (req: AuthRequest, res: Response) => {
-    if (!req.user || !(req.user instanceof JobSeeker)) {
-      return res.status(401).json({ message: 'Unauthorized - Only job seekers can apply for jobs' });
+    const { jobId, coverLetter, answers } = req.body;
+
+    if (!req.user) {
+      return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    const { jobId, coverLetter } = req.body;
-
-    // Check if job exists and is active
-    const job = await this.jobRepository.findOne({
-      where: { id: jobId, isActive: true }
-    });
-
+    const job = await this.jobRepository.findOne({ where: { id: jobId } });
     if (!job) {
-      return res.status(404).json({ message: 'Job not found or not active' });
+      return res.status(404).json({ message: 'Job not found' });
     }
 
-    // Check if user has already applied
-    const existingApplication = await this.applicationRepository.findOne({
-      where: {
-        job: { id: jobId },
-        jobSeeker: { id: req.user.id }
-      }
-    });
-
-    if (existingApplication) {
-      return res.status(400).json({ message: 'You have already applied for this job' });
+    const jobSeeker = await this.jobSeekerRepository.findOne({ where: { id: req.user.id } });
+    if (!jobSeeker) {
+      return res.status(404).json({ message: 'Job seeker not found' });
     }
-
-    const application = this.applicationRepository.create({
+    const application = this.jobApplicationRepository.create({
       job,
-      jobSeeker: req.user,
+      jobSeeker,
       coverLetter,
-      status: 'pending'
+      status: 'pending',
+      answers
     });
 
-    const errors = await validate(application);
-    if (errors.length > 0) {
-      return res.status(400).json({ errors });
-    }
-
-    const savedApplication = await this.applicationRepository.save(application);
+    await this.jobApplicationRepository.save(application);
 
     return res.status(201).json({
       message: 'Application submitted successfully',
-      application: savedApplication
+      application
     });
   });
 
@@ -70,55 +58,56 @@ export class JobApplicationController {
       return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    let applications;
-    if (req.user instanceof JobSeeker) {
-      applications = await this.applicationRepository.find({
-        where: { jobSeeker: { id: req.user.id } },
-        relations: ['job', 'job.employer'],
-        order: {
-          createdAt: 'DESC'
-        }
-      });
-    } else if (req.user instanceof Employer) {
-      applications = await this.applicationRepository.find({
-        where: { job: { employer: { id: req.user.id } } },
-        relations: ['job', 'jobSeeker'],
-        order: {
-          createdAt: 'DESC'
-        }
-      });
-    } else {
-      return res.status(401).json({ message: 'Unauthorized - Invalid user type' });
-    }
+    const applications = await this.jobApplicationRepository.find({
+      where: { jobSeeker: { id: req.user.id } },
+      relations: ['job', 'job.company'],
+      order: { createdAt: 'DESC' }
+    });
 
-    return res.json({ applications });
+    return res.json(applications);
   });
 
   getApplication = asyncHandler(async (req: AuthRequest, res: Response) => {
+    const { id } = req.params;
+
     if (!req.user) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    const { id } = req.params;
-    const application = await this.applicationRepository.findOne({
-      where: { id },
-      relations: ['job', 'jobSeeker', 'job.employer']
+    const application = await this.jobApplicationRepository.findOne({
+      where: { id, jobSeeker: { id: req.user.id } },
+      relations: ['job', 'job.company', 'interviews']
     });
 
     if (!application) {
       return res.status(404).json({ message: 'Application not found' });
     }
 
-    // Check if user has permission to view this application
-    if (req.user instanceof JobSeeker && application.jobSeeker.id !== req.user.id) {
-      return res.status(403).json({ message: 'Forbidden - You can only view your own applications' });
+    return res.json(application);
+  });
+
+  withdrawApplication = asyncHandler(async (req: AuthRequest, res: Response) => {
+    const { id } = req.params;
+
+    if (!req.user) {
+      return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    if (req.user instanceof Employer && application.job.employer.id !== req.user.id) {
-      return res.status(403).json({ message: 'Forbidden - You can only view applications for your jobs' });
+    const application = await this.jobApplicationRepository.findOne({
+      where: { id, jobSeeker: { id: req.user.id } }
+    });
+
+    if (!application) {
+      return res.status(404).json({ message: 'Application not found' });
     }
 
-    return res.json({ application });
+    if (application.status !== 'pending') {
+      return res.status(400).json({ message: 'Cannot withdraw application that is not pending' });
+    }
+
+    await this.jobApplicationRepository.remove(application);
+
+    return res.json({ message: 'Application withdrawn successfully' });
   });
 
   updateApplicationStatus = asyncHandler(async (req: AuthRequest, res: Response) => {
@@ -129,7 +118,7 @@ export class JobApplicationController {
     const { id } = req.params;
     const { status } = req.body;
 
-    const application = await this.applicationRepository.findOne({
+    const application = await this.jobApplicationRepository.findOne({
       where: { id },
       relations: ['job', 'job.employer']
     });
@@ -138,7 +127,7 @@ export class JobApplicationController {
       return res.status(404).json({ message: 'Application not found' });
     }
 
-    if (application.job.employer.id !== req.user.id) {
+    if (application.job.company.id !== req.user.id) {
       return res.status(403).json({ message: 'Forbidden - You can only update applications for your jobs' });
     }
 
@@ -148,7 +137,7 @@ export class JobApplicationController {
       return res.status(400).json({ errors });
     }
 
-    const updatedApplication = await this.applicationRepository.save(application);
+    const updatedApplication = await this.jobApplicationRepository.save(application);
 
     return res.json({
       message: 'Application status updated successfully',

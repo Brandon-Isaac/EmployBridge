@@ -36,6 +36,27 @@ interface JobSeekerProfile {
     status: string;
     appliedAt: string;
   }>;
+  experiences: Array<{
+    id: string;
+    company: string;
+    position: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    isCurrent: boolean;
+    description: string;
+  }>;
+  educations: Array<{
+    id: string;
+    institution: string;
+    degree: string;
+    field: string;
+    startDate: string;
+    endDate: string;
+    isCurrent: boolean;
+    description: string;
+    gpa: number;
+  }>;
 }
 
 interface ProfileResponse {
@@ -105,5 +126,75 @@ export class ProfileService {
 
   getAdminProfile(userId: string): Observable<any> {
     return this.http.get(`${environment.apiUrl}/admin/${userId}/profile`);
+  }
+
+  // Experience methods
+  getExperiences(): Observable<{ experiences: JobSeekerProfile['experiences'] }> {
+    return this.http.get<{ experiences: JobSeekerProfile['experiences'] }>(
+      `${environment.apiUrl}/job-seekers/experience`
+    ).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  addExperience(experience: Partial<JobSeekerProfile['experiences'][0]>): Observable<{ message: string; experience: JobSeekerProfile['experiences'][0] }> {
+    return this.http.post<{ message: string; experience: JobSeekerProfile['experiences'][0] }>(
+      `${environment.apiUrl}/job-seekers/experience`,
+      experience
+    ).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  updateExperience(id: string, experience: Partial<JobSeekerProfile['experiences'][0]>): Observable<{ message: string; experience: JobSeekerProfile['experiences'][0] }> {
+    return this.http.put<{ message: string; experience: JobSeekerProfile['experiences'][0] }>(
+      `${environment.apiUrl}/job-seekers/experience/${id}`,
+      experience
+    ).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  deleteExperience(id: string): Observable<{ message: string }> {
+    return this.http.delete<{ message: string }>(
+      `${environment.apiUrl}/job-seekers/experience/${id}`
+    ).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  // Education methods
+  getEducations(): Observable<{ educations: JobSeekerProfile['educations'] }> {
+    return this.http.get<{ educations: JobSeekerProfile['educations'] }>(
+      `${environment.apiUrl}/job-seekers/education`
+    ).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  addEducation(education: Partial<JobSeekerProfile['educations'][0]>): Observable<{ message: string; education: JobSeekerProfile['educations'][0] }> {
+    return this.http.post<{ message: string; education: JobSeekerProfile['educations'][0] }>(
+      `${environment.apiUrl}/job-seekers/education`,
+      education
+    ).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  updateEducation(id: string, education: Partial<JobSeekerProfile['educations'][0]>): Observable<{ message: string; education: JobSeekerProfile['educations'][0] }> {
+    return this.http.put<{ message: string; education: JobSeekerProfile['educations'][0] }>(
+      `${environment.apiUrl}/job-seekers/education/${id}`,
+      education
+    ).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  deleteEducation(id: string): Observable<{ message: string }> {
+    return this.http.delete<{ message: string }>(
+      `${environment.apiUrl}/job-seekers/education/${id}`
+    ).pipe(
+      catchError(this.handleError)
+    );
   }
 } 

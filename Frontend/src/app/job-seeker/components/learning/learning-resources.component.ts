@@ -1,16 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-
-interface LearningResource {
-  title: string;
-  description: string;
-  type: 'course' | 'article' | 'video';
-  duration: string;
-  level: 'beginner' | 'intermediate' | 'advanced';
-}
+import { HttpClientModule } from '@angular/common/http';
+import { LearningResourcesService, LearningResource } from '../../services/learning-resources.service';
 
 @Component({
   selector: 'app-learning-resources',
@@ -19,7 +13,8 @@ interface LearningResource {
     CommonModule,
     MatCardModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   template: `
     <div class="learning-container">
@@ -51,7 +46,7 @@ interface LearningResource {
                     {{ resource.level }}
                   </div>
                 </div>
-                <button mat-icon-button color="primary">
+                <button mat-icon-button color="primary" (click)="openResource(resource)">
                   <i class="fas fa-play-circle"></i>
                 </button>
               </div>
@@ -133,28 +128,28 @@ interface LearningResource {
     }
   `]
 })
-export class LearningResourcesComponent {
-  resources: LearningResource[] = [
-    {
-      title: 'Angular Fundamentals',
-      description: 'Learn the basics of Angular framework',
-      type: 'course',
-      duration: '4 hours',
-      level: 'beginner'
-    },
-    {
-      title: 'Advanced TypeScript',
-      description: 'Deep dive into TypeScript features',
-      type: 'course',
-      duration: '6 hours',
-      level: 'advanced'
-    },
-    {
-      title: 'Best Practices in Web Development',
-      description: 'Industry standards and best practices',
-      type: 'article',
-      duration: '30 min',
-      level: 'intermediate'
-    }
-  ];
+export class LearningResourcesComponent implements OnInit {
+  resources: LearningResource[] = [];
+
+  constructor(private learningResourcesService: LearningResourcesService) {}
+
+  ngOnInit() {
+    this.loadResources();
+  }
+
+  loadResources() {
+    this.learningResourcesService.getResources().subscribe({
+      next: (resources) => {
+        this.resources = resources;
+      },
+      error: (error) => {
+        console.error('Error loading resources:', error);
+        // You might want to show an error message to the user here
+      }
+    });
+  }
+
+  openResource(resource: LearningResource) {
+    window.open(resource.url, '_blank');
+  }
 } 

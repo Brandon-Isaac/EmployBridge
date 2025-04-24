@@ -2,6 +2,10 @@ import { Router } from 'express';
 import { JobSeekerController } from '../controllers/job-seeker.controller';
 import { authMiddleware } from '../middleware/auth.middleware';
 import jobSeekerSkillsRoutes from './job-seeker-skills.routes';
+import jobSeekerExperienceRoutes from './job-seeker-experience.routes';
+import jobSeekerEducationRoutes from './job-seeker-education.routes';
+import learningResourcesRoutes from './learning-resources.routes';
+import jobApplicationRoutes from './job-application.routes';
 
 const router = Router();
 const jobSeekerController = new JobSeekerController();
@@ -17,5 +21,17 @@ router.put('/change-password', authMiddleware, jobSeekerController.changePasswor
 
 // Job seeker skills routes
 router.use('/skills', authMiddleware, jobSeekerSkillsRoutes);
+
+// Job seeker experience routes
+router.use('/experience', authMiddleware, jobSeekerExperienceRoutes);
+
+// Job seeker education routes
+router.use('/education', authMiddleware, jobSeekerEducationRoutes);
+
+// Learning resources routes
+router.use('/learning', authMiddleware, learningResourcesRoutes);
+
+// Job application routes
+router.use('/applications', authMiddleware, jobApplicationRoutes);
 
 export default router; 

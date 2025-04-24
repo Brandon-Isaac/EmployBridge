@@ -7,6 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { ChatbotService } from '../../services/chatbot.service';
+import { HttpClientModule } from '@angular/common/http';
 
 interface Message {
   type: 'user' | 'bot';
@@ -27,6 +29,7 @@ interface Message {
     FormsModule,
     MatChipsModule,
     MatProgressBarModule,
+    HttpClientModule
   ],
   template: `
     <div class="chatbot-container">
@@ -187,7 +190,7 @@ export class ChatbotComponent {
     'Compare my skills with job requirements',
   ];
 
-  constructor() {
+  constructor(private chatbotService: ChatbotService) {
     // Add welcome message
     this.messages.push({
       type: 'bot',
@@ -219,18 +222,29 @@ export class ChatbotComponent {
     };
     this.messages.push(loadingMessage);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await this.chatbotService.sendMessage(message).toPromise();
+      
+      // Remove loading message
+      this.messages = this.messages.filter((m) => m !== loadingMessage);
 
-    // Remove loading message
-    this.messages = this.messages.filter((m) => m !== loadingMessage);
+      // Add bot response
+      this.messages.push({
+        type: 'bot',
+        content: response?.message || 'Sorry, I could not process your request.',
+        timestamp: new Date(),
+      });
+    } catch (error) {
+      // Remove loading message
+      this.messages = this.messages.filter((m) => m !== loadingMessage);
 
-    // Add bot response
-    this.messages.push({
-      type: 'bot',
-      content: this.generateResponse(message),
-      timestamp: new Date(),
-    });
+      // Add error message
+      this.messages.push({
+        type: 'bot',
+        content: 'Sorry, there was an error processing your request.',
+        timestamp: new Date(),
+      });
+    }
   }
 
   private generateResponse(query: string): string {

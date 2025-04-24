@@ -6,9 +6,12 @@ import { environment } from '../../../environments/environment';
 export interface Skill {
   id: string;
   name: string;
-  category: SkillCategory;
-  description?: string;
-  level?: string;
+  category: string;
+  description?: string | null;
+  level: string;
+  isActive: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface JobSeekerSkill {
@@ -39,6 +42,10 @@ export enum SkillCategoryEnum {
   OTHER = 'other'
 }
 
+interface SkillsResponse {
+  skills: Skill[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -47,8 +54,8 @@ export class SkillService {
 
   constructor(private http: HttpClient) {}
 
-  getJobSeekerSkills(): Observable<JobSeekerSkill[]> {
-    return this.http.get<JobSeekerSkill[]>(this.apiUrl);
+  getJobSeekerSkills(): Observable<SkillsResponse> {
+    return this.http.get<SkillsResponse>(this.apiUrl);
   }
 
   addSkill(skillId: string): Observable<{ message: string; skill: Skill }> {
@@ -59,8 +66,8 @@ export class SkillService {
     return this.http.delete<{ message: string }>(`${this.apiUrl}/${skillId}`);
   }
 
-  updateSkills(skills: Partial<JobSeekerSkill>[]): Observable<{ message: string; skills: JobSeekerSkill[] }> {
-    return this.http.put<{ message: string; skills: JobSeekerSkill[] }>(this.apiUrl, { skills });
+  updateSkills(skills: Partial<Skill>[]): Observable<{ message: string; skills: Skill[] }> {
+    return this.http.put<{ message: string; skills: Skill[] }>(this.apiUrl, { skills });
   }
 
   searchSkills(name?: string, category?: SkillCategoryEnum): Observable<{ skills: Skill[] }> {

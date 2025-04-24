@@ -60,7 +60,14 @@ export class AuthService {
     }
     return this.http.post(`${environment.apiUrl}/${endpoint}`, { email, password }).pipe(
       tap((response: any) => {
-        this.setAuthData(response.token, response.user);
+        // Handle different response structures based on user type
+        const userData = userType.toLowerCase() === 'employer' ? response.employer : response.user;
+        if (!userData) {
+          throw new Error('Invalid response format');
+        }
+        // Add role to user data
+        userData.role = userType.toUpperCase();
+        this.setAuthData(response.token, userData);
         this.loadingService.hide();
       }),
       catchError(error => {

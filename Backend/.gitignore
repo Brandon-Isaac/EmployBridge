@@ -10,6 +10,3 @@ coverage
 *.tar.gz
 *.tar
 *.gz
-.env
-.env.*
-!.env.example

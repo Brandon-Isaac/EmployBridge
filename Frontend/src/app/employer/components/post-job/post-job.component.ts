@@ -15,7 +15,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { JobListingService } from '../../services/job-listing.service';
 
 @Component({
   selector: 'app-post-job',
@@ -41,22 +44,42 @@ import { animate, style, transition, trigger } from '@angular/animations';
       ])
     ])
   ],
-  templateUrl: `./post-job.component.html`,
-  styleUrl: 
-    `post-job.component.css`,
+  templateUrl: './post-job.component.html',
+  styleUrls: ['./post-job.component.css']
 })
 export class PostJobComponent implements OnInit {
   jobForm: FormGroup;
   requiredSkills: string[] = [];
+  isLoading = false;
 
-  constructor(private fb: FormBuilder) {
+  jobTypes = [
+    { value: 'full-time', viewValue: 'Full Time' },
+    { value: 'part-time', viewValue: 'Part Time' },
+    { value: 'contract', viewValue: 'Contract' },
+    { value: 'internship', viewValue: 'Internship' }
+  ];
+
+  experienceLevels = [
+    { value: 'entry', viewValue: 'Entry Level' },
+    { value: 'mid', viewValue: 'Mid Level' },
+    { value: 'senior', viewValue: 'Senior Level' },
+    { value: 'lead', viewValue: 'Lead' }
+  ];
+
+  constructor(
+    private fb: FormBuilder,
+    private jobListingService: JobListingService,
+    private snackBar: MatSnackBar,
+    private router: Router
+  ) {
     this.jobForm = this.fb.group({
-      title: ['', Validators.required],
-      description: ['', Validators.required],
+      title: ['', [Validators.required, Validators.minLength(5)]],
+      description: ['', [Validators.required, Validators.minLength(20)]],
       location: ['', Validators.required],
       jobType: ['', Validators.required],
       experienceLevel: ['', Validators.required],
       salaryRange: ['', Validators.required],
+      department: ['', Validators.required],
     });
   }
 
@@ -64,12 +87,35 @@ export class PostJobComponent implements OnInit {
 
   onSubmit(): void {
     if (this.jobForm.valid) {
+      this.isLoading = true;
       const jobData = {
         ...this.jobForm.value,
         requiredSkills: this.requiredSkills,
+        status: 'active',
+        applicants: 0,
+        posted: new Date().toISOString()
       };
-      console.log('Job data:', jobData);
-      // Save job data to backend
+
+      this.jobListingService.createListing(jobData).subscribe({
+        next: (response) => {
+          this.isLoading = false;
+          this.snackBar.open('Job posted successfully!', 'Close', {
+            duration: 3000,
+            horizontalPosition: 'right',
+            verticalPosition: 'top'
+          });
+          this.router.navigate(['/employer/listings']);
+        },
+        error: (error) => {
+          this.isLoading = false;
+          this.snackBar.open('Error posting job. Please try again.', 'Close', {
+            duration: 5000,
+            horizontalPosition: 'right',
+            verticalPosition: 'top'
+          });
+          console.error('Error posting job:', error);
+        }
+      });
     }
   }
 
@@ -87,4 +133,12 @@ export class PostJobComponent implements OnInit {
       this.requiredSkills.splice(index, 1);
     }
   }
+
+  get title() { return this.jobForm.get('title'); }
+  get description() { return this.jobForm.get('description'); }
+  get location() { return this.jobForm.get('location'); }
+  get jobType() { return this.jobForm.get('jobType'); }
+  get experienceLevel() { return this.jobForm.get('experienceLevel'); }
+  get salaryRange() { return this.jobForm.get('salaryRange'); }
+  get department() { return this.jobForm.get('department'); }
 }

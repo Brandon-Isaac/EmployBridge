@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -11,8 +11,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
-import { CareerPathService } from '../../../services/career-path.service';
 
 interface CareerPath {
   id: number;
@@ -50,7 +48,6 @@ interface Milestone {
     MatProgressBarModule,
     MatInputModule,
     MatDialogModule,
-    MatSnackBarModule,
   ],
   template: `
     <div class="career-paths-container">
@@ -62,32 +59,14 @@ interface Milestone {
           >
         </mat-card-header>
         <mat-card-content>
-          <div class="search-container">
-            <mat-form-field appearance="fill" class="search-bar">
-              <mat-label>Search Career Paths</mat-label>
-              <input
-                matInput
-                [(ngModel)]="searchTerm"
-                placeholder="e.g. Full Stack"
-              />
-            </mat-form-field>
-            <mat-form-field appearance="fill" class="generate-bar">
-              <mat-label>Generate New Career Path</mat-label>
-              <input
-                matInput
-                [(ngModel)]="newPathPrompt"
-                placeholder="e.g. AI Engineer career path"
-              />
-            </mat-form-field>
-            <button
-              mat-raised-button
-              color="primary"
-              (click)="generateCareerPath()"
-              [disabled]="isGenerating"
-            >
-              {{ isGenerating ? 'Generating...' : 'Generate' }}
-            </button>
-          </div>
+          <mat-form-field appearance="fill" class="search-bar">
+            <mat-label>Search Career Paths</mat-label>
+            <input
+              matInput
+              [(ngModel)]="searchTerm"
+              placeholder="e.g. Full Stack"
+            />
+          </mat-form-field>
         </mat-card-content>
       </mat-card>
 
@@ -196,15 +175,9 @@ interface Milestone {
         margin-bottom: 20px;
       }
 
-      .search-container {
-        display: flex;
-        gap: 16px;
-        align-items: center;
+      .search-bar {
+        width: 100%;
         margin-top: 10px;
-      }
-
-      .search-bar, .generate-bar {
-        flex: 1;
       }
 
       .paths-grid {
@@ -353,11 +326,6 @@ interface Milestone {
         gap: 8px;
       }
 
-      button[disabled] {
-        opacity: 0.7;
-        cursor: not-allowed;
-      }
-
       @media (max-width: 768px) {
         .paths-grid {
           grid-template-columns: 1fr;
@@ -371,137 +339,85 @@ interface Milestone {
     `,
   ],
 })
-export class CareerPathsComponent implements OnInit {
+export class CareerPathsComponent {
   searchTerm = '';
-  newPathPrompt = '';
-  isGenerating = false;
-  careerPaths: CareerPath[] = [];
 
-  constructor(
-    private careerPathService: CareerPathService,
-    private snackBar: MatSnackBar
-  ) {}
-
-  ngOnInit() {
-    this.loadInitialCareerPaths();
-  }
-
-  private loadInitialCareerPaths() {
-    // You can keep your initial career paths here or load them from a service
-    this.careerPaths = [
-      {
-        id: 1,
-        title: 'Frontend Development',
-        description: 'Specializing in modern web development technologies',
-        currentLevel: 'Mid-Level Developer',
-        nextLevel: 'Senior Developer',
-        progress: 65,
-        requiredSkills: [
-          'Advanced JavaScript',
-          'Angular',
-          'System Design',
-          'Team Leadership',
-        ],
-        milestones: [
-          {
-            title: 'Technical Leadership',
-            description: 'Lead a team of 3-5 developers on a major project',
-            status: 'in-progress',
-            skills: ['Team Leadership', 'Project Management'],
-            timeframe: '6-12 months',
-          },
-          {
-            title: 'Architecture Design',
-            description: 'Design and implement complex frontend architectures',
-            status: 'upcoming',
-            skills: ['System Design', 'Performance Optimization'],
-            timeframe: '3-6 months',
-          },
-          {
-            title: 'Mentorship Program',
-            description: 'Mentor junior developers and conduct code reviews',
-            status: 'completed',
-            skills: ['Mentoring', 'Code Review'],
-            timeframe: 'Completed',
-          },
-        ],
-      },
-      {
-        id: 2,
-        title: 'Full Stack Development',
-        description: 'Expanding expertise across the entire tech stack',
-        currentLevel: 'Frontend Specialist',
-        nextLevel: 'Full Stack Developer',
-        progress: 40,
-        requiredSkills: [
-          'Node.js',
-          'Database Design',
-          'API Development',
-          'DevOps',
-        ],
-        milestones: [
-          {
-            title: 'Backend Development',
-            description: 'Build RESTful APIs and microservices',
-            status: 'in-progress',
-            skills: ['Node.js', 'API Design'],
-            timeframe: '6 months',
-          },
-          {
-            title: 'Database Management',
-            description: 'Design and optimize database schemas',
-            status: 'upcoming',
-            skills: ['SQL', 'NoSQL', 'Data Modeling'],
-            timeframe: '3 months',
-          },
-          {
-            title: 'Cloud Services',
-            description: 'Deploy and manage applications in the cloud',
-            status: 'upcoming',
-            skills: ['AWS', 'Docker', 'Kubernetes'],
-            timeframe: '6 months',
-          },
-        ],
-      },
-    ];
-  }
-
-  generateCareerPath() {
-    if (!this.newPathPrompt.trim()) {
-      this.snackBar.open('Please enter a career path description', 'Close', {
-        duration: 3000
-      });
-      return;
-    }
-
-    this.isGenerating = true;
-    this.careerPathService.generateCareerPath(this.newPathPrompt).subscribe({
-      next: (response) => {
-        try {
-          this.careerPaths.push({
-            ...response,
-            id: this.careerPaths.length + 1
-          });
-          this.newPathPrompt = '';
-          this.snackBar.open('Career path generated successfully!', 'Close', {
-            duration: 3000
-          });
-        } catch (error) {
-          this.snackBar.open('Error parsing generated career path', 'Close', {
-            duration: 3000
-          });
-        }
-      },
-      error: (error) => {
-        this.snackBar.open('Error generating career path', 'Close', {
-          duration: 3000
-        });
-      },
-      complete: () => {
-        this.isGenerating = false;
-      }
-    });
-  }
+  careerPaths: CareerPath[] = [
+    {
+      id: 1,
+      title: 'Frontend Development',
+      description: 'Specializing in modern web development technologies',
+      currentLevel: 'Mid-Level Developer',
+      nextLevel: 'Senior Developer',
+      progress: 65,
+      requiredSkills: [
+        'Advanced JavaScript',
+        'Angular',
+        'System Design',
+        'Team Leadership',
+      ],
+      milestones: [
+        {
+          title: 'Technical Leadership',
+          description: 'Lead a team of 3-5 developers on a major project',
+          status: 'in-progress',
+          skills: ['Team Leadership', 'Project Management'],
+          timeframe: '6-12 months',
+        },
+        {
+          title: 'Architecture Design',
+          description: 'Design and implement complex frontend architectures',
+          status: 'upcoming',
+          skills: ['System Design', 'Performance Optimization'],
+          timeframe: '3-6 months',
+        },
+        {
+          title: 'Mentorship Program',
+          description: 'Mentor junior developers and conduct code reviews',
+          status: 'completed',
+          skills: ['Mentoring', 'Code Review'],
+          timeframe: 'Completed',
+        },
+      ],
+    },
+    {
+      id: 2,
+      title: 'Full Stack Development',
+      description: 'Expanding expertise across the entire tech stack',
+      currentLevel: 'Frontend Specialist',
+      nextLevel: 'Full Stack Developer',
+      progress: 40,
+      requiredSkills: [
+        'Node.js',
+        'Database Design',
+        'API Development',
+        'DevOps',
+      ],
+      milestones: [
+        {
+          title: 'Backend Development',
+          description: 'Build RESTful APIs and microservices',
+          status: 'in-progress',
+          skills: ['Node.js', 'API Design'],
+          timeframe: '6 months',
+        },
+        {
+          title: 'Database Management',
+          description: 'Design and optimize database schemas',
+          status: 'upcoming',
+          skills: ['SQL', 'NoSQL', 'Data Modeling'],
+          timeframe: '3 months',
+        },
+        {
+          title: 'Cloud Services',
+          description: 'Deploy and manage applications in the cloud',
+          status: 'upcoming',
+          skills: ['AWS', 'Docker', 'Kubernetes'],
+          timeframe: '6 months',
+        },
+      ],
+    },
+  ];
 
   getStatusColor(status: string): string {
     switch (status) {

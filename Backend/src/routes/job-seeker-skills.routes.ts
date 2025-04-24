@@ -17,7 +17,4 @@ router.delete('/:skillId', authMiddleware, jobSeekerSkillsController.removeSkill
 // Update job seeker's skills (bulk update)
 router.put('/', authMiddleware, jobSeekerSkillsController.updateJobSeekerSkills);
 
-// Generate career path based on current skills
-router.get('/career-path', authMiddleware, jobSeekerSkillsController.generateCareerPath);
-
 export default router; 

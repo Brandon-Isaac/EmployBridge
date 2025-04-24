@@ -29,6 +29,7 @@ export const routes: Routes = [
     path: 'blog',
     component: BlogComponent
   },
+
   {
     path: 'auth',
     children: [
@@ -55,7 +56,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'skills',
+        redirectTo: 'profile',
         pathMatch: 'full',
       },
       {
@@ -64,6 +65,13 @@ export const routes: Routes = [
           import(
             './job-seeker/components/skill-management/skill-management.component'
           ).then((m) => m.SkillManagementComponent),
+      },
+      {
+        path: 'job-search',
+        loadComponent: () =>
+          import(
+            './job-seeker/components/job-search/job-search.component'
+          ).then((m) => m.JobSearchComponent),
       },
       {
         path: 'interviews',
@@ -78,6 +86,13 @@ export const routes: Routes = [
           import(
             './job-seeker/components/career-paths/career-paths.component'
           ).then((m) => m.CareerPathsComponent),
+      },
+      {
+        path: 'learning',
+        loadComponent: () =>
+          import(
+            './job-seeker/components/learning/learning-resources.component'
+          ).then((m) => m.LearningResourcesComponent),
       },
       {
         path: 'profile',
@@ -101,10 +116,10 @@ export const routes: Routes = [
           ).then((m) => m.ApplicationsComponent),
       },
       {
-        path: 'portfolio',
+        path: 'experience',
         loadComponent: () =>
-          import('./job-seeker/components/portfolio/portfolio.component').then(
-            (m) => m.PortfolioComponent
+          import('./job-seeker/components/profile/experience-education.component').then(
+            (m) => m.ExperienceEducationComponent
           ),
       },
       {
@@ -112,7 +127,7 @@ export const routes: Routes = [
         loadComponent: () =>
           import(
             './job-seeker/components/cv-manager/cv-manager.component'
-          ).then((m) => m.ProfileManagerComponent),
+          ).then((m) => m.CvManagerComponent),
       },
       {
         path: 'chatbot',
@@ -183,6 +198,13 @@ export const routes: Routes = [
             './employer/components/analytics/hiring-analytics/hiring-analytics.component'
           ).then((m) => m.HiringAnalyticsComponent),
       },
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('./employer/components/company-profile/company-profile.component').then(
+            (m) => m.CompanyProfileComponent
+          ),
+      },
     ],
   },
   {
@@ -232,9 +254,5 @@ export const routes: Routes = [
           ).then((m) => m.AccuracyMetricsComponent),
       },
     ],
-  },
-  {
-    path: '**',
-    redirectTo: ''
   }
 ];

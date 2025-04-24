@@ -10,9 +10,8 @@ import {
   NativeDateAdapter,
   NativeDateModule,
   VERSION,
-  _MatInternalFormField,
   provideNativeDateAdapter
-} from "./chunk-RS4QV3LX.js";
+} from "./chunk-36CSAXNY.js";
 import {
   MAT_OPTGROUP,
   MAT_OPTION_PARENT_COMPONENT,
@@ -23,6 +22,9 @@ import {
   _countGroupLabelsBeforeOption,
   _getOptionScrollPosition
 } from "./chunk-HSB2B75R.js";
+import {
+  _MatInternalFormField
+} from "./chunk-LLXQ6I4S.js";
 import {
   MatLine,
   MatLineModule,
@@ -53,14 +55,14 @@ import {
   RippleState,
   defaultRippleAnimationConfig
 } from "./chunk-WMORSEY2.js";
-import "./chunk-Q7P257OE.js";
-import "./chunk-F5YF3NDX.js";
-import "./chunk-2AA2HD2T.js";
 import {
   _StructuralStylesLoader
 } from "./chunk-OVWAZMGZ.js";
+import "./chunk-Q7P257OE.js";
 import "./chunk-TRES2BGH.js";
 import "./chunk-SZS4RJEH.js";
+import "./chunk-F5YF3NDX.js";
+import "./chunk-2AA2HD2T.js";
 import {
   MATERIAL_SANITY_CHECKS,
   MatCommonModule
@@ -75,8 +77,8 @@ import "./chunk-FFWAZHNC.js";
 import "./chunk-P52WORV2.js";
 import "./chunk-ABKFZ3BG.js";
 import "./chunk-HJS2BXAE.js";
-import "./chunk-6Q4RANH6.js";
 import "./chunk-FFZIAYYX.js";
+import "./chunk-6Q4RANH6.js";
 import "./chunk-CXCX2JKZ.js";
 export {
   AnimationCurves,

@@ -78,18 +78,19 @@
               Don't have an account? 
               <a routerLink="../signup" class="signup-link">Sign Up</a>
             </div>
-            <div
-              class="login-text"
+            <button 
+              mat-raised-button 
+              color="primary" 
+              type="submit"
+              [disabled]="isLoading"
               [@buttonHover]="loginState"
-              (mouseenter)="loginState = 'hovered'; loginButtonHover = true"
-              (mouseleave)="loginState = 'normal'; loginButtonHover = false"
-              (click)="onSubmit()"
+              (mouseenter)="loginState = 'hovered'"
+              (mouseleave)="loginState = 'normal'"
+              class="login-button"
             >
-              <div class="button-content">
-                <span class="clickable-text">Login</span>
-                <i class="fas fa-arrow-right login-icon" [class.animate]="loginButtonHover"></i>
-              </div>
-            </div>
+              <span>Login</span>
+              <i class="fas fa-arrow-right login-icon" [class.animate]="loginState === 'hovered'"></i>
+            </button>
           </div>
         </form>
       </mat-card-content>

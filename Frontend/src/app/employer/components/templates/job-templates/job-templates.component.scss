@@ -1,0 +1,148 @@
+.job-templates-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    text-align: center;
+
+    p {
+      margin-top: 16px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .no-templates {
+    text-align: center;
+    padding: 48px;
+    background: #f5f5f5;
+    border-radius: 4px;
+
+    p {
+      margin-bottom: 16px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .templates-grid {
+    .template-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      mat-card-header {
+        margin-bottom: 16px;
+      }
+
+      mat-card-content {
+        flex: 1;
+        overflow: hidden;
+
+        .description {
+          margin-bottom: 16px;
+          color: rgba(0, 0, 0, 0.6);
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .skills {
+          margin-top: 16px;
+
+          mat-chip {
+            margin: 4px;
+          }
+        }
+      }
+
+      mat-card-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        margin: 0;
+
+        .last-used {
+          color: rgba(0, 0, 0, 0.6);
+          font-size: 12px;
+
+          i {
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.department {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 8px;
+
+  &.engineering {
+    background: #e3f2fd;
+    color: #1976d2;
+  }
+
+  &.design {
+    background: #f3e5f5;
+    color: #7b1fa2;
+  }
+
+  &.marketing {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  &.sales {
+    background: #fff3e0;
+    color: #e65100;
+  }
+}
+
+.job-type {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+
+  &.full-time {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  &.part-time {
+    background: #fff3e0;
+    color: #e65100;
+  }
+
+  &.contract {
+    background: #e3f2fd;
+    color: #1976d2;
+  }
+
+  &.internship {
+    background: #f3e5f5;
+    color: #7b1fa2;
+  }
+} 

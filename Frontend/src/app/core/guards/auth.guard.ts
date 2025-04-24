@@ -14,14 +14,17 @@ export const AuthGuard: CanActivateFn = (route, state) => {
         // If user is authenticated and trying to access login/signup, redirect to dashboard
         const userRole = authService.getUserRole();
         if (userRole) {
-          router.navigate([`/${userRole.toLowerCase()}`]);
+          const rolePath = userRole.toLowerCase().replace('_', '-');
+          router.navigate([`/${rolePath}`]);
         } else {
-          router.navigate(['/']);
+          // If no role is set, redirect to login to force re-authentication
+          authService.logout();
+          router.navigate(['/auth/login']);
         }
         return false;
       } else if (!isAuthenticated && !(state.url === '/auth/login' || state.url === '/auth/signup')) {
         // If user is not authenticated and trying to access protected routes, redirect to login
-        router.navigate(['/auth/login']);
+        router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url } });
         return false;
       }
       return true;

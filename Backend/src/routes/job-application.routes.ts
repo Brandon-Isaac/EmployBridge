@@ -5,16 +5,16 @@ import { authMiddleware } from '../middleware/auth.middleware';
 const router = Router();
 const jobApplicationController = new JobApplicationController();
 
-// Apply for a job
+// Create a new job application
 router.post('/', authMiddleware, jobApplicationController.createApplication);
 
-// Get all applications (for job seekers and employers)
+// Get all job applications for the current user
 router.get('/', authMiddleware, jobApplicationController.getApplications);
 
-// Get a specific application
+// Get a specific job application
 router.get('/:id', authMiddleware, jobApplicationController.getApplication);
 
-// Update application status (for employers only)
-router.patch('/:id/status', authMiddleware, jobApplicationController.updateApplicationStatus);
+// Withdraw a job application
+router.delete('/:id', authMiddleware, jobApplicationController.withdrawApplication);
 
 export default router; 

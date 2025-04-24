@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -7,6 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { JobSearchService, Job } from '../../services/job-search.service';
 
 @Component({
   selector: 'app-job-search',
@@ -19,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatSelectModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   template: `
     <div class="job-search-container">
@@ -33,23 +36,24 @@ import { FormsModule } from '@angular/forms';
           <div class="search-filters">
             <mat-form-field appearance="outline" class="search-field">
               <mat-label>Search Jobs</mat-label>
-              <input matInput placeholder="Job title, keywords, or company">
-              <button mat-icon-button matSuffix>
+              <input matInput placeholder="Job title, keywords, or company" [(ngModel)]="searchTerm" (keyup.enter)="searchJobs()">
+              <button mat-icon-button matSuffix (click)="searchJobs()">
                 <i class="fas fa-search"></i>
               </button>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="location-field">
               <mat-label>Location</mat-label>
-              <input matInput placeholder="City, state, or remote">
-              <button mat-icon-button matSuffix>
+              <input matInput placeholder="City, state, or remote" [(ngModel)]="location" (keyup.enter)="searchJobs()">
+              <button mat-icon-button matSuffix (click)="searchJobs()">
                 <i class="fas fa-map-marker-alt"></i>
               </button>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="job-type-field">
               <mat-label>Job Type</mat-label>
-              <mat-select>
+              <mat-select [(ngModel)]="jobType" (selectionChange)="searchJobs()">
+                <mat-option value="">All Types</mat-option>
                 <mat-option value="full-time">Full Time</mat-option>
                 <mat-option value="part-time">Part Time</mat-option>
                 <mat-option value="contract">Contract</mat-option>
@@ -60,7 +64,7 @@ import { FormsModule } from '@angular/forms';
           </div>
 
           <div class="search-results">
-            <mat-card class="job-card" *ngFor="let job of sampleJobs">
+            <mat-card class="job-card" *ngFor="let job of jobs">
               <div class="job-header">
                 <div class="job-title">{{ job.title }}</div>
                 <div class="job-company">{{ job.company }}</div>
@@ -81,11 +85,11 @@ import { FormsModule } from '@angular/forms';
               </div>
               <div class="job-description">{{ job.description }}</div>
               <div class="job-actions">
-                <button mat-button color="primary">
+                <button mat-button color="primary" (click)="viewJobDetails(job)">
                   <i class="fas fa-eye"></i>
                   View Details
                 </button>
-                <button mat-button color="accent">
+                <button mat-button color="accent" (click)="applyForJob(job)">
                   <i class="fas fa-paper-plane"></i>
                   Apply Now
                 </button>
@@ -186,31 +190,41 @@ import { FormsModule } from '@angular/forms';
     }
   `]
 })
-export class JobSearchComponent {
-  sampleJobs = [
-    {
-      title: 'Senior Frontend Developer',
-      company: 'TechCorp Inc.',
-      location: 'Remote',
-      type: 'Full Time',
-      salary: '$120,000 - $150,000',
-      description: 'We are looking for an experienced Frontend Developer to join our team...'
-    },
-    {
-      title: 'Backend Engineer',
-      company: 'DataSystems Ltd.',
-      location: 'New York, NY',
-      type: 'Full Time',
-      salary: '$130,000 - $160,000',
-      description: 'Join our backend team to build scalable and efficient systems...'
-    },
-    {
-      title: 'UI/UX Designer',
-      company: 'CreativeMinds',
-      location: 'San Francisco, CA',
-      type: 'Contract',
-      salary: '$90,000 - $110,000',
-      description: 'Looking for a creative UI/UX designer to enhance our product experience...'
-    }
-  ];
+export class JobSearchComponent implements OnInit {
+  searchTerm = '';
+  location = '';
+  jobType = '';
+  jobs: Job[] = [];
+
+  constructor(private jobSearchService: JobSearchService) {}
+
+  ngOnInit() {
+    this.searchJobs();
+  }
+
+  searchJobs() {
+    this.jobSearchService.searchJobs({
+      search: this.searchTerm,
+      location: this.location,
+      type: this.jobType
+    }).subscribe({
+      next: (jobs) => {
+        this.jobs = jobs;
+      },
+      error: (error) => {
+        console.error('Error fetching jobs:', error);
+        // You might want to show an error message to the user here
+      }
+    });
+  }
+
+  viewJobDetails(job: Job) {
+    // Implement job details view
+    console.log('Viewing job details:', job);
+  }
+
+  applyForJob(job: Job) {
+    // Implement job application
+    console.log('Applying for job:', job);
+  }
 } 

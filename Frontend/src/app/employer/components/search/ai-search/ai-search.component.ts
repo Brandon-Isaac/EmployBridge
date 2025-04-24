@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -11,16 +11,20 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { AIService, SearchResult } from '../../../services/ai.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { RouterModule } from '@angular/router';
 
-interface SearchResult {
-  id: number;
+interface Candidate {
+  id: string;
   name: string;
-  title: string;
-  skills: string[];
-  experience: string;
-  location: string;
   matchScore: number;
-  summary: string;
+  skills: string[];
+  status: string;
+  applicationId: string;
 }
 
 @Component({
@@ -39,27 +43,50 @@ interface SearchResult {
     MatProgressBarModule,
     MatDividerModule,
     MatTooltipModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    RouterModule
   ],
-  templateUrl: `ai-search.component.html`,
-  styleUrl: 
-    `ai-search.component.css`,
-  
+  templateUrl: './ai-search.component.html',
+  styleUrls: ['./ai-search.component.scss']
 })
-export class AiSearchComponent {
+export class AiSearchComponent implements OnInit {
   searchQuery: string = '';
   requiredSkills: string[] = [];
   location: string = '';
   minExperience: number = 0;
+  jobId: string = '';
+  isLoading = false;
 
   searchResults: SearchResult[] = [];
+  candidates: Candidate[] = [];
+
+  constructor(
+    private aiService: AIService,
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar
+  ) {}
+
+  ngOnInit(): void {
+    this.jobId = this.route.snapshot.paramMap.get('jobId') || '';
+    if (!this.jobId) {
+      this.snackBar.open('No job ID provided', 'Close', {
+        duration: 3000,
+        horizontalPosition: 'right',
+        verticalPosition: 'top'
+      });
+    }
+  }
 
   formatLabel(value: number): string {
     return `${value}+ years`;
   }
 
-  addSkill(skill: string): void {
-    if (skill.trim() && !this.requiredSkills.includes(skill)) {
-      this.requiredSkills.push(skill.trim());
+  addSkill(event: any): void {
+    const value = (event.value || '').trim();
+    if (value && !this.requiredSkills.includes(value)) {
+      this.requiredSkills.push(value);
+      event.chipInput!.clear();
     }
   }
 
@@ -71,41 +98,83 @@ export class AiSearchComponent {
   }
 
   search(): void {
-    // Simulated search results
-    this.searchResults = [
-      {
-        id: 1,
-        name: 'John Smith',
-        title: 'Senior Software Engineer',
-        skills: ['JavaScript', 'TypeScript', 'Angular', 'Node.js'],
-        experience: '8 years',
-        location: 'San Francisco, CA',
-        matchScore: 92,
-        summary:
-          'Experienced software engineer with a strong background in full-stack development and team leadership.',
+    if (!this.jobId) {
+      this.snackBar.open('No job ID provided', 'Close', {
+        duration: 3000,
+        horizontalPosition: 'right',
+        verticalPosition: 'top'
+      });
+      return;
+    }
+
+    this.isLoading = true;
+    this.aiService.searchCandidates(
+      this.jobId,
+      this.searchQuery,
+      this.requiredSkills,
+      this.location,
+      this.minExperience
+    ).subscribe({
+      next: (results) => {
+        this.searchResults = results;
+        this.isLoading = false;
       },
-      {
-        id: 2,
-        name: 'Sarah Johnson',
-        title: 'Full Stack Developer',
-        skills: ['React', 'Node.js', 'Python', 'AWS'],
-        experience: '5 years',
-        location: 'Remote',
-        matchScore: 85,
-        summary:
-          'Full stack developer with expertise in modern web technologies and cloud platforms.',
-      },
-      {
-        id: 3,
-        name: 'Michael Chen',
-        title: 'Frontend Developer',
-        skills: ['JavaScript', 'Vue.js', 'CSS', 'UI/UX'],
-        experience: '3 years',
-        location: 'New York, NY',
-        matchScore: 78,
-        summary:
-          'Frontend specialist focused on creating responsive and accessible web applications.',
-      },
-    ];
+      error: (error) => {
+        console.error('Error searching candidates:', error);
+        this.snackBar.open('Error searching candidates. Please try again.', 'Close', {
+          duration: 5000,
+          horizontalPosition: 'right',
+          verticalPosition: 'top'
+        });
+        this.isLoading = false;
+      }
+    });
+  }
+
+  onSearch(): void {
+    if (!this.searchQuery.trim()) {
+      this.snackBar.open('Please enter a search query', 'Close', {
+        duration: 3000,
+        horizontalPosition: 'right',
+        verticalPosition: 'top'
+      });
+      return;
+    }
+
+    this.isLoading = true;
+    // TODO: Implement actual search logic
+    setTimeout(() => {
+      this.isLoading = false;
+      // Mock data for testing
+      this.candidates = [
+        {
+          id: '1',
+          name: 'John Doe',
+          matchScore: 85,
+          skills: ['Angular', 'TypeScript', 'Node.js'],
+          status: 'active',
+          applicationId: 'app1'
+        }
+      ];
+    }, 1000);
+  }
+
+  getScoreColor(score: number): string {
+    if (score >= 80) return '#4caf50';
+    if (score >= 60) return '#ff9800';
+    return '#f44336';
+  }
+
+  getStatusColor(status: string): string {
+    switch (status.toLowerCase()) {
+      case 'active':
+        return 'primary';
+      case 'reviewed':
+        return 'accent';
+      case 'rejected':
+        return 'warn';
+      default:
+        return '';
+    }
   }
 }

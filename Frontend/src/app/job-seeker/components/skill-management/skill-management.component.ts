@@ -13,7 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { SkillService, JobSeekerSkill, SkillCategory } from '../../../core/services/skill.service';
+import { SkillService, JobSeekerSkill, SkillCategory, Skill } from '../../../core/services/skill.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -331,11 +331,11 @@ export class SkillManagementComponent implements OnInit {
     this.errorMessage = '';
 
     this.skillService.getJobSeekerSkills().subscribe({
-      next: (skills) => {
-        const categoriesMap = new Map<string, JobSeekerSkill[]>();
+      next: (response) => {
+        const categoriesMap = new Map<string, Skill[]>();
         
-        skills.forEach(skill => {
-          const category = skill.skill.category.toString();
+        response.skills.forEach(skill => {
+          const category = skill.category;
           if (!categoriesMap.has(category)) {
             categoriesMap.set(category, []);
           }
@@ -344,7 +344,24 @@ export class SkillManagementComponent implements OnInit {
 
         this.skillCategories = Array.from(categoriesMap.entries()).map(([name, skills]) => ({
           name,
-          skills
+          skills: skills.map(skill => ({
+            id: skill.id,
+            skill: {
+              id: skill.id,
+              name: skill.name,
+              category: skill.category,
+              description: skill.description || undefined,
+              level: skill.level,
+              isActive: skill.isActive,
+              createdAt: skill.createdAt,
+              updatedAt: skill.updatedAt
+            },
+            proficiencyLevel: this.getProficiencyLevelFromString(skill.level),
+            yearsOfExperience: 0, // Default value since it's not provided by the backend
+            lastUsedDate: new Date(), // Default value since it's not provided by the backend
+            isVerified: false, // Default value since it's not provided by the backend
+            endorsements: [] // Default value since it's not provided by the backend
+          }))
         }));
 
         this.isLoading = false;
@@ -359,6 +376,25 @@ export class SkillManagementComponent implements OnInit {
         });
       }
     });
+  }
+
+  private getProficiencyLevelFromString(level: string): number {
+    switch (level.toLowerCase()) {
+      case 'beginner':
+        return 1;
+      case 'intermediate':
+        return 2;
+      case 'advanced':
+        return 3;
+      case 'expert':
+        return 4;
+      case 'master':
+      case 'professional':
+      case 'fluent':
+        return 5;
+      default:
+        return 1;
+    }
   }
 
   getTotalSkills(): number {

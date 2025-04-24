@@ -3,6 +3,11 @@ import { JobApplication } from './job-application.entity';
 import { Skill } from './skill.entity';
 import { PortfolioItem } from './portfolio.entity';
 import { CV } from './cv.entity';
+import { Experience } from './experience.entity';
+import { Education } from './education.entity';
+import { JobSeekerSkill } from './job-seeker-skill.entity';
+import { JobSeekerExperience } from './job-seeker-experience.entity';
+import { JobSeekerEducation } from './job-seeker-education.entity';
 
 @Entity('job_seekers')
 export class JobSeeker {
@@ -15,23 +20,26 @@ export class JobSeeker {
   @Column({ type: 'varchar', length: 100 })
   lastName: string;
 
-  @Column({ type: 'varchar', length: 255, unique: true })
+  @Column({ type: 'varchar', length: 100, unique: true })
   email: string;
 
-  @Column({ type: 'varchar', length: 255 })
+  @Column({ type: 'varchar', length: 100 })
   password: string;
 
   @Column({ type: 'varchar', length: 20, nullable: true })
   phone: string;
 
-  @Column({ type: 'varchar', length: 255, nullable: true })
+  @Column({ type: 'varchar', length: 200, nullable: true })
   location: string;
 
   @Column({ type: 'text', nullable: true })
   bio: string;
 
-  @Column({ type: 'varchar', length: 255, nullable: true })
+  @Column({ type: 'varchar', length: 200, nullable: true })
   profilePicture: string;
+
+  @Column({ type: 'varchar', length: 200, nullable: true })
+  resume: string;
 
   @Column({ type: 'boolean', default: false })
   isVerified: boolean;
@@ -52,11 +60,6 @@ export class JobSeeker {
   applications: JobApplication[];
 
   @ManyToMany(() => Skill, skill => skill.jobSeekers)
-  @JoinTable({
-    name: 'job_seeker_skills',
-    joinColumn: { name: 'jobSeekerId', referencedColumnName: 'id' },
-    inverseJoinColumn: { name: 'skillId', referencedColumnName: 'id' }
-  })
   skills: Skill[];
 
   @OneToMany(() => PortfolioItem, portfolio => portfolio.jobSeeker)
@@ -64,6 +67,21 @@ export class JobSeeker {
 
   @OneToMany(() => CV, cv => cv.jobSeeker)
   cvs: CV[];
+
+  @OneToMany(() => Experience, experience => experience.jobSeeker)
+  experiences: Experience[];
+
+  @OneToMany(() => Education, education => education.jobSeeker)
+  education: Education[];
+
+  @OneToMany(() => JobSeekerSkill, skill => skill.jobSeeker)
+  jobSeekerSkills: JobSeekerSkill[];
+
+  @OneToMany(() => JobSeekerExperience, experience => experience.jobSeeker)
+  jobSeekerExperiences: JobSeekerExperience[];
+
+  @OneToMany(() => JobSeekerEducation, education => education.jobSeeker)
+  jobSeekerEducations: JobSeekerEducation[];
 
   @CreateDateColumn()
   createdAt: Date;
