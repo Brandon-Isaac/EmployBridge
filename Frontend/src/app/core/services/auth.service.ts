@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap, catchError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { UserRole } from '../models/user-role.enum';
+import { LoadingService, LOADING_SERVICE } from './loading.service';
 
 interface User {
   id: string;
@@ -20,15 +21,29 @@ export class AuthService {
   public currentUser$ = this.currentUserSubject.asObservable();
   private readonly TOKEN_KEY = 'auth_token';
   private readonly USER_KEY = 'current_user';
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  private userRoleSubject = new BehaviorSubject<string | null>(null);
 
-  constructor(private http: HttpClient) {
+  isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
+  userRole$ = this.userRoleSubject.asObservable();
+
+  constructor(
+    private http: HttpClient,
+    @Inject(LOADING_SERVICE) private loadingService: LoadingService
+  ) {
     const storedUser = sessionStorage.getItem(this.USER_KEY);
     if (storedUser) {
       this.currentUserSubject.next(JSON.parse(storedUser));
     }
+    // Initialize auth state from localStorage
+    const token = localStorage.getItem(this.TOKEN_KEY);
+    const role = localStorage.getItem(this.USER_KEY);
+    this.isAuthenticatedSubject.next(!!token);
+    this.userRoleSubject.next(role);
   }
 
   login(email: string, password: string, userType: string): Observable<any> {
+    this.loadingService.show();
     let endpoint = '';
     switch (userType.toLowerCase()) {
       case 'jobseeker':
@@ -46,11 +61,17 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/${endpoint}`, { email, password }).pipe(
       tap((response: any) => {
         this.setAuthData(response.token, response.user);
+        this.loadingService.hide();
+      }),
+      catchError(error => {
+        this.loadingService.hide();
+        throw error;
       })
     );
   }
 
   register(userData: any, userType: string): Observable<any> {
+    this.loadingService.show();
     let endpoint = '';
     switch (userType.toLowerCase()) {
       case 'jobseeker':
@@ -65,24 +86,33 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/${endpoint}`, userData).pipe(
       tap((response: any) => {
         this.setAuthData(response.token, response.user);
+        this.loadingService.hide();
+      }),
+      catchError(error => {
+        this.loadingService.hide();
+        throw error;
       })
     );
   }
 
   private setAuthData(token: string, user: User): void {
-    sessionStorage.setItem(this.TOKEN_KEY, token);
-    sessionStorage.setItem(this.USER_KEY, JSON.stringify(user));
+    localStorage.setItem(this.TOKEN_KEY, token);
+    localStorage.setItem(this.USER_KEY, user.role);
     this.currentUserSubject.next(user);
+    this.isAuthenticatedSubject.next(true);
+    this.userRoleSubject.next(user.role);
   }
 
   logout(): void {
-    sessionStorage.removeItem(this.TOKEN_KEY);
-    sessionStorage.removeItem(this.USER_KEY);
+    localStorage.removeItem(this.TOKEN_KEY);
+    localStorage.removeItem(this.USER_KEY);
     this.currentUserSubject.next(null);
+    this.isAuthenticatedSubject.next(false);
+    this.userRoleSubject.next(null);
   }
 
   isAuthenticated(): boolean {
-    return !!this.getToken();
+    return this.isAuthenticatedSubject.value;
   }
 
   getCurrentUser(): User | null {
@@ -90,7 +120,11 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return sessionStorage.getItem(this.TOKEN_KEY);
+    return localStorage.getItem(this.TOKEN_KEY);
+  }
+
+  getUserRole(): string | null {
+    return localStorage.getItem(this.USER_KEY);
   }
 
   hasRole(role: UserRole): boolean {

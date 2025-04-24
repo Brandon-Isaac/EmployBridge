@@ -4,21 +4,29 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
-import { NgFor, NgIf,NgClass } from '@angular/common';
+import { NgFor, NgIf, NgClass } from '@angular/common';
 import { trigger, state, style, animate, transition, stagger, query } from '@angular/animations';
+import { AboutComponent } from './components/about/about.component';
+import { FeaturesComponent } from './components/features/features.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
   imports: [
-    RouterModule, 
-    MatButtonModule, 
-    MatCardModule, 
-    HeaderComponent, 
+    RouterModule,
+    MatButtonModule,
+    MatCardModule,
+    HeaderComponent,
     FooterComponent,
     NgFor,
-    NgClass
+    NgClass,
+    AboutComponent,
+    FeaturesComponent,
+    BlogComponent
   ],
+  templateUrl: './landing.component.html',
+  styleUrl: './landing.component.css',
   animations: [
     trigger('slideIn', [
       transition('void => *', [
@@ -61,9 +69,7 @@ import { trigger, state, style, animate, transition, stagger, query } from '@ang
       })),
       transition('normal <=> hovered', animate('0.2s ease-in-out'))
     ])
-  ],
-  templateUrl: `./landing.component.html`,
- styleUrl:'./landing.component.css'
+  ]
 })
 export class LandingComponent implements OnInit {
   typewriterText: string = '';
@@ -92,7 +98,6 @@ export class LandingComponent implements OnInit {
   loginState: string = 'normal';
 
   ngOnInit() {
-    // Start the typewriter effect
     this.startTypewriter();
   }
 
@@ -104,21 +109,18 @@ export class LandingComponent implements OnInit {
       if (i < this.fullText.length) {
         this.typewriterText += this.fullText.charAt(i);
         i++;
-        setTimeout(typeNextCharacter, 50); // Adjust speed as needed
+        setTimeout(typeNextCharacter, 50);
       } else {
-        // When typing is complete, wait and then restart or stop
         setTimeout(() => {
-          // If we've done it less than twice, restart
           if (this.typewriterCount < 1) {
             this.typewriterText = '';
             i = 0;
             this.typewriterCount++;
             typeNextCharacter();
           } else {
-            // After the second time, just stop and keep the text displayed
             this.cursorBlinking = false;
             setTimeout(() => {
-              this.cursorBlinking = true; // Resume blinking
+              this.cursorBlinking = true;
             }, 500);
           }
         }, 2000);

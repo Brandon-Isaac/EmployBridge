@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { NgClass,NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -56,10 +56,6 @@ import { NgClass,NgIf } from '@angular/common';
           <span>Features</span>
           <div class="underline" *ngIf="activeLink === 'features'" @underline></div>
         </a>
-        <a routerLink="/pricing" class="nav-link" (mouseenter)="activeLink = 'pricing'" (mouseleave)="activeLink = ''">
-          <span>Pricing</span>
-          <div class="underline" *ngIf="activeLink === 'pricing'" @underline></div>
-        </a>
         <a routerLink="/about" class="nav-link" (mouseenter)="activeLink = 'about'" (mouseleave)="activeLink = ''">
           <span>About Us</span>
           <div class="underline" *ngIf="activeLink === 'about'" @underline></div>
@@ -102,7 +98,6 @@ import { NgClass,NgIf } from '@angular/common';
       <div class="mobile-menu" [ngClass]="{'open': mobileMenuOpen}" @fadeInDown *ngIf="mobileMenuOpen">
         <div class="mobile-menu-content">
           <a routerLink="/features" class="mobile-nav-link" (click)="toggleMobileMenu()">Features</a>
-          <a routerLink="/pricing" class="mobile-nav-link" (click)="toggleMobileMenu()">Pricing</a>
           <a routerLink="/about" class="mobile-nav-link" (click)="toggleMobileMenu()">About Us</a>
           <a routerLink="/blog" class="mobile-nav-link" (click)="toggleMobileMenu()">Blog</a>
           <div class="mobile-menu-buttons">

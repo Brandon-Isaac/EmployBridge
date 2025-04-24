@@ -1,0 +1,24 @@
+.env
+node_modules
+
+# Angular
+dist
+
+# Angular CLI
+.angular
+
+# Environment variables
+.env
+
+# Node.js
+node_modules
+
+# Angular CLI
+.angular
+
+# Environment variables
+.env    
+
+
+
+
