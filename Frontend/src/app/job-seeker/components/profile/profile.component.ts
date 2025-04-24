@@ -10,6 +10,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatBadgeModule } from '@angular/material/badge';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { AuthService } from '../../../core/services/auth.service';
+import { ProfileService } from '../../../core/services/profile.service';
+import { UserRole } from '../../../core/models/user.model';
+import { LoadingSpinnerComponent } from '../../../shared/components/loading-spinner/loading-spinner.component';
 
 interface ProfileData {
   firstName: string;
@@ -27,42 +31,35 @@ interface ProfileData {
   githubUrl: string;
   portfolioUrl: string;
   availabilityStatus: string;
-  skills: Skill[];
-  education: Education[];
-  experience: Experience[];
   matchScore: number;
-  recentActivity: Activity[];
-}
-
-interface Skill {
-  name: string;
-  level: string;
-  category: string;
-}
-
-interface Education {
-  institution: string;
-  degree: string;
-  field: string;
-  startDate: string;
-  endDate: string;
-  description?: string;
-}
-
-interface Experience {
-  company: string;
-  position: string;
-  startDate: string;
-  endDate: string | null;
-  description: string;
-  location: string;
-}
-
-interface Activity {
-  type: string;
-  description: string;
-  date: string;
-  icon: string;
+  skills: Array<{
+    name: string;
+    level: string;
+    category: string;
+  }>;
+  education: Array<{
+    institution: string;
+    degree: string;
+    field: string;
+    startDate: string;
+    endDate: string;
+    description: string;
+  }>;
+  experience: Array<{
+    company: string;
+    position: string;
+    startDate: string;
+    endDate: string;
+    description: string;
+    location: string;
+  }>;
+  recentActivity: Array<{
+    type: string;
+    title: string;
+    date: string;
+    icon: string;
+    description: string;
+  }>;
 }
 
 @Component({
@@ -78,7 +75,8 @@ interface Activity {
     MatDividerModule,
     MatTooltipModule,
     MatTabsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    LoadingSpinnerComponent
   ],
   animations: [
     trigger('fadeIn', [
@@ -310,6 +308,12 @@ interface Activity {
           </div>
         </div>
       </div>
+    </div>
+    <div class="loading-overlay" *ngIf="isLoading">
+      <app-loading-spinner [size]="48"></app-loading-spinner>
+    </div>
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
     </div>
   `,
   styles: [
@@ -781,119 +785,103 @@ interface Activity {
 export class ProfileComponent implements OnInit {
   profile!: ProfileData;
   skillCategories: string[] = [];
+  isLoading = true;
+  errorMessage = '';
 
-  constructor() {}
+  constructor(
+    private authService: AuthService,
+    private profileService: ProfileService
+  ) {}
 
   ngOnInit(): void {
-    // Sample data to display (would normally come from a service)
-    this.profile = {
-      firstName: 'John',
-      lastName: 'Doe',
-      headline: 'Senior Software Engineer | Full Stack Developer | AI Specialist',
-      summary: 'Passionate and dedicated software engineer with over 8 years of experience designing and implementing scalable applications. Specialized in AI and machine learning solutions across multiple industries. Strong advocate for clean code and test-driven development. Looking for challenging opportunities where I can leverage my expertise in creating impactful solutions.',
-      email: 'john.doe@example.com',
-      phone: '+1 (555) 123-4567',
-      location: 'San Francisco, CA',
-      currentJobTitle: 'Senior Software Engineer',
-      yearsOfExperience: 8,
-      preferredJobType: 'full-time',
-      preferredLocation: 'San Francisco or Remote',
-      linkedinUrl: 'https://linkedin.com/in/johndoe',
-      githubUrl: 'https://github.com/johndoe',
-      portfolioUrl: 'https://johndoe.dev',
-      availabilityStatus: 'open_to_opportunities',
-      matchScore: 85,
-      skills: [
-        { name: 'JavaScript', level: 'Expert', category: 'Programming Languages' },
-        { name: 'TypeScript', level: 'Expert', category: 'Programming Languages' },
-        { name: 'Python', level: 'Intermediate', category: 'Programming Languages' },
-        { name: 'Angular', level: 'Expert', category: 'Frameworks' },
-        { name: 'React', level: 'Intermediate', category: 'Frameworks' },
-        { name: 'Node.js', level: 'Expert', category: 'Frameworks' },
-        { name: 'MongoDB', level: 'Intermediate', category: 'Databases' },
-        { name: 'PostgreSQL', level: 'Expert', category: 'Databases' },
-        { name: 'TensorFlow', level: 'Intermediate', category: 'AI/ML' },
-        { name: 'PyTorch', level: 'Beginner', category: 'AI/ML' },
-        { name: 'Docker', level: 'Intermediate', category: 'DevOps' },
-        { name: 'AWS', level: 'Intermediate', category: 'DevOps' },
-      ],
-      education: [
-        {
-          institution: 'Stanford University',
-          degree: 'Master of Science',
-          field: 'Computer Science',
-          startDate: 'Aug 2014',
-          endDate: 'May 2016',
-          description: 'Specialized in Artificial Intelligence and Machine Learning. Thesis on Neural Network Optimization.'
-        },
-        {
-          institution: 'University of California, Berkeley',
-          degree: 'Bachelor of Science',
-          field: 'Computer Engineering',
-          startDate: 'Aug 2010',
-          endDate: 'May 2014',
-          description: 'Minor in Mathematics. Dean\'s List all semesters.'
-        }
-      ],
-      experience: [
-        {
-          company: 'TechCorp Inc.',
-          position: 'Senior Software Engineer',
-          startDate: 'Jan 2020',
-          endDate: null,
-          location: 'San Francisco, CA',
-          description: 'Leading a team of 5 engineers developing cloud-based AI solutions. Architected and implemented a scalable microservices infrastructure using Angular, Node.js, and AWS.'
-        },
-        {
-          company: 'DataDrive Systems',
-          position: 'Software Engineer',
-          startDate: 'Jun 2016',
-          endDate: 'Dec 2019',
-          location: 'San Jose, CA',
-          description: 'Developed data visualization tools and analytics dashboards using React and D3.js. Improved system performance by 40% through optimization techniques.'
-        },
-        {
-          company: 'Innovate Labs',
-          position: 'Software Development Intern',
-          startDate: 'May 2015',
-          endDate: 'Aug 2015',
-          location: 'Mountain View, CA',
-          description: 'Assisted in developing RESTful APIs and implemented front-end components using Angular.js.'
-        }
-      ],
-      recentActivity: [
-        {
-          type: 'application',
-          description: 'Applied for Senior Full Stack Developer at CloudTech Solutions',
-          date: '2 days ago',
-          icon: 'fas fa-paper-plane'
-        },
-        {
-          type: 'skill',
-          description: 'Added new skill: GraphQL',
-          date: '1 week ago',
-          icon: 'fas fa-plus-circle'
-        },
-        {
-          type: 'interview',
-          description: 'Completed technical interview with Nexus Software',
-          date: '2 weeks ago',
-          icon: 'fas fa-comments'
-        },
-        {
-          type: 'profile',
-          description: 'Updated professional summary',
-          date: '3 weeks ago',
-          icon: 'fas fa-user-edit'
-        }
-      ]
-    };
+    // Clear any mock data from localStorage
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
 
-    // Extract unique skill categories
-    this.skillCategories = [...new Set(this.profile.skills.map(skill => skill.category))];
+    const currentUser = this.authService.getCurrentUser();
+    if (!currentUser) {
+      this.errorMessage = 'No user logged in. Please log in to view your profile.';
+      this.isLoading = false;
+      return;
+    }
+
+    // Only handle job seeker profiles for now
+    if (currentUser.role !== UserRole.JOB_SEEKER) {
+      this.errorMessage = 'Profile view is only available for job seekers';
+      this.isLoading = false;
+      return;
+    }
+
+    // Log the current user and token for debugging
+    console.log('Current User:', currentUser);
+    console.log('Auth Token:', this.authService.getToken());
+
+    this.profileService.getJobSeekerProfile().subscribe({
+      next: (response) => {
+        console.log('Profile Response:', response);
+        if (response.jobSeeker) {
+          this.profile = this.transformProfileData(response.jobSeeker);
+          this.skillCategories = [...new Set(this.profile.skills.map(skill => skill.category))];
+        } else {
+          this.errorMessage = 'Profile data not found in response';
+        }
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Profile loading error:', error);
+        this.errorMessage = error.message || 'Failed to load profile. Please try again later.';
+        if (error.status === 401) {
+          this.errorMessage = 'Your session has expired. Please log in again.';
+        } else if (error.status === 403) {
+          this.errorMessage = 'You do not have permission to view this profile.';
+        } else if (error.status === 404) {
+          this.errorMessage = 'Profile not found.';
+        }
+        this.isLoading = false;
+      }
+    });
   }
 
-  getSkillsByCategory(category: string): Skill[] {
+  private transformProfileData(data: any): ProfileData {
+    return {
+      firstName: data.firstName || '',
+      lastName: data.lastName || '',
+      headline: data.bio || `${data.currentJobTitle || 'Professional'} | ${data.yearsOfExperience || 'Experienced'} years experience`,
+      summary: data.bio || '',
+      email: data.email || '',
+      phone: data.phone || '',
+      location: data.location || '',
+      currentJobTitle: data.currentJobTitle || '',
+      yearsOfExperience: data.yearsOfExperience || 0,
+      preferredJobType: data.preferredJobType || 'full-time',
+      preferredLocation: data.location || '',
+      linkedinUrl: data.linkedinUrl || '',
+      githubUrl: data.githubUrl || '',
+      portfolioUrl: data.portfolios?.[0]?.url || '',
+      availabilityStatus: data.availabilityStatus || 'open_to_opportunities',
+      matchScore: data.matchScore || 0,
+      skills: data.skills?.map((skill: any) => ({
+        name: skill.name,
+        level: skill.level || 'Intermediate',
+        category: skill.category || 'Other'
+      })) || [],
+      education: data.education || [],
+      experience: data.experience || [],
+      recentActivity: data.applications?.map((app: any) => ({
+        type: 'application',
+        title: `Applied to job ${app.jobId}`,
+        date: app.appliedAt,
+        icon: 'fas fa-file-alt',
+        description: `Application status: ${app.status}`
+      })) || []
+    };
+  }
+
+  getSkillsByCategory(category: string): Array<{
+    name: string;
+    level: string;
+    category: string;
+  }> {
     return this.profile.skills.filter(skill => skill.category === category);
   }
 

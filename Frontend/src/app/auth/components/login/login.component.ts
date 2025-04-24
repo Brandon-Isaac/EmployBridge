@@ -85,6 +85,8 @@ export class LoginComponent {
   loginState: string = 'normal';
   signupState: string = 'normal';
   loginButtonHover: boolean = false;
+  showError = false;
+  errorMessage = '';
 
   constructor(
     private fb: FormBuilder,
@@ -106,16 +108,26 @@ export class LoginComponent {
     });
 
     if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
       this.isLoading = true;
+      this.showError = false;
       
-      this.authService.login(email, password).subscribe({
-        next: (user) => {
+      const { email, password, userType } = this.loginForm.value;
+      
+      // Convert userType to match what the service expects
+      let formattedUserType = userType.toLowerCase();
+      if (formattedUserType === 'job-seeker') {
+        formattedUserType = 'jobseeker';
+      }
+      
+      this.authService.login(email, password, formattedUserType).subscribe({
+        next: (response) => {
           this.isLoading = false;
+          const user = response.user;
           
           // Validate user type matches role
-          if ((this.loginForm.get('userType')?.value === 'employer' && user.role !== UserRole.EMPLOYER) ||
-              (this.loginForm.get('userType')?.value === 'job-seeker' && user.role !== UserRole.JOB_SEEKER)) {
+          if ((formattedUserType === 'employer' && user.role !== UserRole.EMPLOYER) ||
+              (formattedUserType === 'jobseeker' && user.role !== UserRole.JOB_SEEKER) ||
+              (formattedUserType === 'admin' && user.role !== UserRole.ADMIN)) {
             this.snackBar.openFromComponent(ToastNotificationComponent, {
               data: {
                 message: 'Selected user type does not match account type.',
@@ -127,22 +139,24 @@ export class LoginComponent {
           }
 
           switch (user.role) {
-            case 'JOB_SEEKER':
+            case UserRole.JOB_SEEKER:
               this.router.navigate(['/job-seeker']);
               break;
-            case 'EMPLOYER':
+            case UserRole.EMPLOYER:
               this.router.navigate(['/employer']);
               break;
-            case 'ADMIN':
+            case UserRole.ADMIN:
               this.router.navigate(['/admin']);
               break;
           }
         },
         error: (error) => {
           this.isLoading = false;
+          this.showError = true;
+          this.errorMessage = error.error?.message || 'Login failed. Please check your credentials and try again.';
           this.snackBar.openFromComponent(ToastNotificationComponent, {
             data: {
-              message: error.message || 'Login failed. Please check your credentials and try again.',
+              message: this.errorMessage,
               type: 'error',
               duration: 5000,
             },
@@ -150,9 +164,11 @@ export class LoginComponent {
         }
       });
     } else {
+      this.showError = true;
+      this.errorMessage = 'Please fill in all required fields correctly.';
       this.snackBar.openFromComponent(ToastNotificationComponent, {
         data: {
-          message: 'Please fill in all required fields correctly.',
+          message: this.errorMessage,
           type: 'error',
           duration: 5000,
         },

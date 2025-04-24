@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, of } from 'rxjs';
-import { delay, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { environment } from '../../../environments/environment';
 import { UserRole } from '../models/user-role.enum';
 
 interface User {
   id: string;
   email: string;
   role: UserRole;
-  token: string;
+  firstName?: string;
+  lastName?: string;
 }
 
 @Injectable({
@@ -17,58 +18,71 @@ interface User {
 export class AuthService {
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
-
-  // Mock users for testing
-  private mockUsers: User[] = [
-    {
-      id: '1',
-      email: 'jobseeker@example.com',
-      role: UserRole.JOB_SEEKER,
-      token: 'mock-token-1',
-    },
-    {
-      id: '2',
-      email: 'employer@example.com',
-      role: UserRole.EMPLOYER,
-      token: 'mock-token-2',
-    },
-    {
-      id: '3',
-      email: 'admin@example.com',
-      role: UserRole.ADMIN,
-      token: 'mock-token-3',
-    },
-  ];
+  private readonly TOKEN_KEY = 'auth_token';
+  private readonly USER_KEY = 'current_user';
 
   constructor(private http: HttpClient) {
-    const storedUser = localStorage.getItem('currentUser');
+    const storedUser = sessionStorage.getItem(this.USER_KEY);
     if (storedUser) {
       this.currentUserSubject.next(JSON.parse(storedUser));
     }
   }
 
-  login(email: string, password: string): Observable<User> {
-    // For demo purposes, accept any password
-    const user = this.mockUsers.find((u) => u.email === email);
-    if (user) {
-      return of(user).pipe(
-        delay(1000), // Simulate network delay
-        tap((user) => {
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user);
-        })
-      );
+  login(email: string, password: string, userType: string): Observable<any> {
+    let endpoint = '';
+    switch (userType.toLowerCase()) {
+      case 'jobseeker':
+        endpoint = 'job-seekers/login';
+        break;
+      case 'employer':
+        endpoint = 'employers/login';
+        break;
+      case 'admin':
+        endpoint = 'admin/login';
+        break;
+      default:
+        throw new Error('Invalid user type');
     }
-    throw new Error('Invalid email or password');
+    return this.http.post(`${environment.apiUrl}/${endpoint}`, { email, password }).pipe(
+      tap((response: any) => {
+        this.setAuthData(response.token, response.user);
+      })
+    );
+  }
+
+  register(userData: any, userType: string): Observable<any> {
+    let endpoint = '';
+    switch (userType.toLowerCase()) {
+      case 'jobseeker':
+        endpoint = 'job-seekers/register';
+        break;
+      case 'employer':
+        endpoint = 'employers/register';
+        break;
+      default:
+        throw new Error('Invalid user type for registration');
+    }
+    return this.http.post(`${environment.apiUrl}/${endpoint}`, userData).pipe(
+      tap((response: any) => {
+        this.setAuthData(response.token, response.user);
+      })
+    );
+  }
+
+  private setAuthData(token: string, user: User): void {
+    sessionStorage.setItem(this.TOKEN_KEY, token);
+    sessionStorage.setItem(this.USER_KEY, JSON.stringify(user));
+    this.currentUserSubject.next(user);
   }
 
   logout(): void {
-    localStorage.removeItem('currentUser');
+    sessionStorage.removeItem(this.TOKEN_KEY);
+    sessionStorage.removeItem(this.USER_KEY);
     this.currentUserSubject.next(null);
   }
 
   isAuthenticated(): boolean {
-    return !!this.currentUserSubject.value;
+    return !!this.getToken();
   }
 
   getCurrentUser(): User | null {
@@ -76,6 +90,10 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return this.currentUserSubject.value?.token || null;
+    return sessionStorage.getItem(this.TOKEN_KEY);
+  }
+
+  hasRole(role: UserRole): boolean {
+    return this.currentUserSubject.value?.role === role;
   }
 }

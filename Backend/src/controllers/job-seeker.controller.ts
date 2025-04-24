@@ -1,4 +1,4 @@
-import {  Response } from 'express';
+import { Response } from 'express';
 import { getRepository } from 'typeorm';
 import { JobSeeker } from '../entities/job-seeker.entity';
 import * as bcrypt from 'bcrypt';
@@ -10,17 +10,6 @@ import { AuthRequest } from '../types/auth-request.interface';
 export class JobSeekerController {
   private get jobSeekerRepository() {
     return getRepository(JobSeeker);
-  }
-
-  private setAuthCookie(res: Response, token: string) {
-    res.cookie('auth_token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: 24 * 60 * 60 * 1000, // 24 hours
-      path: '/',
-      domain: process.env.COOKIE_DOMAIN || undefined
-    });
   }
 
   register = asyncHandler(async (req: AuthRequest, res: Response) => {
@@ -54,22 +43,21 @@ export class JobSeekerController {
 
     // Generate JWT token
     const token = jwt.sign(
-      { id: jobSeeker.id, email: jobSeeker.email },
+      { id: jobSeeker.id, email: jobSeeker.email, role: 'JOB_SEEKER' },
       process.env.JWT_SECRET || 'your-secret-key',
       { expiresIn: '24h' }
     );
 
-    // Set auth cookie
-    this.setAuthCookie(res, token);
-
     return res.status(201).json({
       message: 'Job seeker registered successfully',
-      jobSeeker: {
+      token,
+      user: {
         id: jobSeeker.id,
         firstName: jobSeeker.firstName,
         lastName: jobSeeker.lastName,
         email: jobSeeker.email,
-      },
+        role: 'JOB_SEEKER'
+      }
     });
   });
 
@@ -79,7 +67,7 @@ export class JobSeekerController {
     // Find user
     const jobSeeker = await this.jobSeekerRepository.findOne({ where: { email } });
     if (!jobSeeker) {
-     return res.status(404).json({ message: 'Job seeker not found' });
+      return res.status(404).json({ message: 'Job seeker not found' });
     }
 
     // Check password
@@ -90,27 +78,25 @@ export class JobSeekerController {
 
     // Generate JWT token
     const token = jwt.sign(
-      { id: jobSeeker.id, email: jobSeeker.email },
+      { id: jobSeeker.id, email: jobSeeker.email, role: 'JOB_SEEKER' },
       process.env.JWT_SECRET || 'your-secret-key',
       { expiresIn: '24h' }
     );
 
-    // Set auth cookie
-    this.setAuthCookie(res, token);
-
     return res.json({
       message: 'Login successful',
-      jobSeeker: {
+      token,
+      user: {
         id: jobSeeker.id,
         firstName: jobSeeker.firstName,
         lastName: jobSeeker.lastName,
         email: jobSeeker.email,
-      },
+        role: 'JOB_SEEKER'
+      }
     });
   });
 
   logout = asyncHandler(async (_req: AuthRequest, res: Response) => {
-    res.clearCookie('auth_token');
     return res.json({ message: 'Logged out successfully' });
   });
 
@@ -173,7 +159,7 @@ export class JobSeekerController {
 
     await this.jobSeekerRepository.save(jobSeeker);
 
-   return res.json({
+    return res.json({
       message: 'Profile updated successfully',
       jobSeeker: {
         id: jobSeeker.id,

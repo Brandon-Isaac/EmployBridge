@@ -18,7 +18,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://employbridgeai-frontend.s3-website.us-east-2.amazonaws.com',
+  origin: ['http://employbridgeai-frontend.s3-website.us-east-2.amazonaws.com', 'http://localhost:4200'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']

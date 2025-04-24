@@ -1,7 +1,7 @@
 import { Response } from 'express';
-import { getRepository, In } from 'typeorm';
+import { getRepository  } from 'typeorm';
 import { JobSeeker } from '../entities/job-seeker.entity';
-import { Skill } from '../entities/skill.entity';
+import { Skill, SkillCategory } from '../entities/skill.entity';
 import { asyncHandler } from '../middleware/async-handler';
 import { AuthRequest } from '../types/auth-request.interface';
 
@@ -112,10 +112,10 @@ export class JobSeekerSkillsController {
       return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    const { skillIds } = req.body;
+    const { skills } = req.body;
 
-    if (!Array.isArray(skillIds)) {
-      return res.status(400).json({ message: 'skillIds must be an array' });
+    if (!Array.isArray(skills)) {
+      return res.status(400).json({ message: 'skills must be an array' });
     }
 
     const jobSeeker = await this.jobSeekerRepository.findOne({
@@ -127,23 +127,37 @@ export class JobSeekerSkillsController {
       return res.status(404).json({ message: 'Job seeker not found' });
     }
 
-    // Get all skills from the provided IDs that are active
-    const skills = await this.skillRepository.find({
-      where: { id: In(skillIds), isActive: true }
-    });
+    // Create or update skills
+    const updatedSkills = await Promise.all(skills.map(async (skillData) => {
+      let skill = await this.skillRepository.findOne({
+        where: { name: skillData.name }
+      });
 
-    if (skills.length !== skillIds.length) {
-      return res.status(400).json({ message: 'One or more skills not found' });
-    }
+      if (!skill) {
+        skill = this.skillRepository.create({
+          name: skillData.name,
+          level: skillData.level,
+          category: SkillCategory.TECHNICAL // Using the enum
+        });
+      } else {
+        skill.level = skillData.level;
+      }
+
+      return await this.skillRepository.save(skill);
+    }));
 
     // Update job seeker's skills
-    jobSeeker.skills = skills;
-
+    jobSeeker.skills = updatedSkills;
     await this.jobSeekerRepository.save(jobSeeker);
 
     return res.json({
       message: 'Skills updated successfully',
-      skills
+      skills: updatedSkills.map(skill => ({
+        id: skill.id,
+        name: skill.name,
+        level: skill.level,
+        category: skill.category
+      }))
     });
   });
 } 

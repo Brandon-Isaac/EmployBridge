@@ -3,6 +3,7 @@ import { JobApplication } from './job-application.entity';
 import { Skill } from './skill.entity';
 import { PortfolioItem } from './portfolio.entity';
 import { CV } from './cv.entity';
+import { Experience } from './experience.entity';
 
 @Entity('job_seekers')
 export class JobSeeker {
@@ -64,6 +65,9 @@ export class JobSeeker {
 
   @OneToMany(() => CV, cv => cv.jobSeeker)
   cvs: CV[];
+
+  @OneToMany(() => Experience, experience => experience.jobSeeker)
+  experiences: Experience[];
 
   @CreateDateColumn()
   createdAt: Date;

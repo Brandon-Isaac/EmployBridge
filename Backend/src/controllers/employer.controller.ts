@@ -12,15 +12,6 @@ export class EmployerController {
     return getRepository(Employer);
   }
 
-  private setAuthCookie(res: Response, token: string) {
-    res.cookie('auth_token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 24 * 60 * 60 * 1000 // 24 hours
-    });
-  }
-
   register = asyncHandler(async (req: AuthRequest, res: Response) => {
     const { firstName, lastName, email, password, position, department } = req.body;
 
@@ -59,11 +50,9 @@ export class EmployerController {
       { expiresIn: '24h' }
     );
 
-    // Set auth cookie
-    this.setAuthCookie(res, token);
-
     return res.status(201).json({
       message: 'Employer registered successfully',
+      token,
       employer: {
         id: employer.id,
         firstName: employer.firstName,
@@ -97,11 +86,9 @@ export class EmployerController {
       { expiresIn: '24h' }
     );
 
-    // Set auth cookie
-    this.setAuthCookie(res, token);
-
     return res.json({
       message: 'Login successful',
+      token,
       employer: {
         id: employer.id,
         firstName: employer.firstName,
@@ -213,7 +200,6 @@ export class EmployerController {
   });
 
   logout = asyncHandler(async (_req: AuthRequest, res: Response) => {
-    res.clearCookie('auth_token');
     return res.json({ message: 'Logged out successfully' });
   });
 } 

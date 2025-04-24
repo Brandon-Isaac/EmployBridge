@@ -32,17 +32,6 @@ export class AdminController {
     return getRepository(Company);
   }
 
-  private setAuthCookie(res: Response, token: string) {
-    res.cookie('auth_token', token, {
-      httpOnly: true,
-      secure: false, // Set to false since frontend is on HTTP
-      sameSite: 'lax',
-      maxAge: 24 * 60 * 60 * 1000, // 24 hours
-      path: '/',
-      domain: 'employbridgeai-frontend.s3-website.us-east-2.amazonaws.com'
-    });
-  }
-
   register = asyncHandler(async (req: AuthRequest, res: Response) => {
     const { firstName, lastName, email, password } = req.body;
 
@@ -80,12 +69,10 @@ export class AdminController {
       { expiresIn: '24h' }
     );
 
-    // Set auth cookie
-    this.setAuthCookie(res, token);
-
     return res.status(201).json({
       message: 'Admin registered successfully',
-      admin: {
+      token,
+      user: {
         id: admin.id,
         firstName: admin.firstName,
         lastName: admin.lastName,
@@ -117,12 +104,10 @@ export class AdminController {
       { expiresIn: '24h' }
     );
 
-    // Set auth cookie
-    this.setAuthCookie(res, token);
-
     return res.json({
       message: 'Login successful',
-      admin: {
+      token,
+      user: {
         id: admin.id,
         firstName: admin.firstName,
         lastName: admin.lastName,
@@ -149,11 +134,40 @@ export class AdminController {
     return res.json({ jobSeekers });
   });
 
-  getEmployers = asyncHandler(async (_req: AuthRequest, res: Response) => {
-    const employers = await this.employerRepository.find({
-      relations: ['companies', 'jobPostings']
-    });
-    return res.json({ employers });
+  getEmployers = asyncHandler(async (req: AuthRequest, res: Response) => {
+    try {
+      console.log('Admin user:', req.user); // Log the admin user
+      
+      const employers = await this.employerRepository.find({
+        relations: ['companies', 'jobPostings'],
+        where: { isActive: true }
+      });
+
+      console.log('Found employers:', employers.length); // Log the number of employers found
+
+      return res.json({ 
+        success: true,
+        employers: employers.map(employer => ({
+          id: employer.id,
+          firstName: employer.firstName,
+          lastName: employer.lastName,
+          email: employer.email,
+          phone: employer.phone,
+          company: employer.companies?.[0]?.name,
+          jobPostings: employer.jobPostings?.length || 0,
+          isActive: employer.isActive,
+          createdAt: employer.createdAt,
+          updatedAt: employer.updatedAt
+        }))
+      });
+    } catch (error) {
+      console.error('Error in getEmployers:', error);
+      return res.status(500).json({ 
+        success: false,
+        message: 'Failed to fetch employers',
+        error: error.message 
+      });
+    }
   });
 
   deactivateUser = asyncHandler(async (req: AuthRequest, res: Response) => {

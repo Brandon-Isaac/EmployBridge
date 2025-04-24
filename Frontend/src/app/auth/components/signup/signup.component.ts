@@ -16,10 +16,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-
-// Shared Components
+import { AuthService } from '../../../core/services/auth.service';
 import { LoadingSpinnerComponent } from '../../../shared/components/loading-spinner/loading-spinner.component';
 import { ToastNotificationComponent } from '../../../shared/components/toast-notification/toast-notification.component';
+import { UserRole } from '../../../core/models/user-role.enum';
 
 @Component({
   selector: 'app-signup',
@@ -37,7 +37,7 @@ import { ToastNotificationComponent } from '../../../shared/components/toast-not
     RouterModule,
     LoadingSpinnerComponent,
   ],
-  templateUrl: `./signup.component.html`,
+  templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
   animations: [
     trigger('cardAnimation', [
@@ -76,6 +76,7 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private authService: AuthService,
     private router: Router,
     private snackBar: MatSnackBar
   ) {
@@ -103,42 +104,65 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    // Mark all fields as touched to show validation errors
-    Object.keys(this.signupForm.controls).forEach(key => {
-      this.signupForm.get(key)?.markAsTouched();
-    });
-
     if (this.signupForm.valid) {
       this.isLoading = true;
       this.showError = false;
       
-      // Simulate API call
-      setTimeout(() => {
-        this.isLoading = false;
-        this.showError = true;
-        this.errorMessage = 'Invalid credentials. Please check your details and try again.';
-        this.snackBar.openFromComponent(ToastNotificationComponent, {
-          data: {
-            message: this.errorMessage,
-            type: 'error',
-            duration: 5000,
-          },
-        });
-        
-        // Hide error after 5 seconds
-        setTimeout(() => {
-          this.showError = false;
-        }, 5000);
-      }, 2000);
+      const formData = this.signupForm.value;
+      const userData = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        password: formData.password,
+        role: formData.accountType,
+      };
+
+      // Convert accountType to lowercase and map to the correct user type
+      let userType = formData.accountType.toLowerCase();
+      if (userType === 'job_seeker') {
+        userType = 'jobseeker';
+      }
+
+      this.authService.register(userData, userType).subscribe({
+        next: (response) => {
+          this.isLoading = false;
+          const user = response.user;
+          
+          switch (user.role) {
+            case UserRole.JOB_SEEKER:
+              this.router.navigate(['/job-seeker']);
+              break;
+            case UserRole.EMPLOYER:
+              this.router.navigate(['/employer']);
+              break;
+            case UserRole.ADMIN:
+              this.router.navigate(['/admin']);
+              break;
+          }
+        },
+        error: (error) => {
+          this.isLoading = false;
+          this.showError = true;
+          this.errorMessage = error.error?.message || 'Registration failed. Please try again.';
+          this.snackBar.openFromComponent(ToastNotificationComponent, {
+            data: {
+              message: this.errorMessage,
+              type: 'error',
+              duration: 5000,
+            },
+          });
+        }
+      });
     } else {
-      this.isLoading = false;
       this.showError = true;
       this.errorMessage = 'Please fill in all required fields correctly.';
-      
-      // Hide error after 5 seconds
-      setTimeout(() => {
-        this.showError = false;
-      }, 5000);
+      this.snackBar.openFromComponent(ToastNotificationComponent, {
+        data: {
+          message: this.errorMessage,
+          type: 'error',
+          duration: 5000,
+        },
+      });
     }
   }
 }

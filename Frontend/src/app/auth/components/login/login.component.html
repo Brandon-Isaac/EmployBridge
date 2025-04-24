@@ -64,8 +64,9 @@
           <mat-form-field appearance="outline" class="full-width animate-item">
             <mat-label>User Type</mat-label>
             <mat-select formControlName="userType" required>
-              <mat-option value="job-seeker" [ngStyle]="{'color': 'brown'}">Job Seeker</mat-option>
+              <mat-option value="jobseeker" [ngStyle]="{'color': 'brown'}">Job Seeker</mat-option>
               <mat-option value="employer" [ngStyle]="{'color': 'green'}">Employer</mat-option>
+              <mat-option value="admin" class="admin-option">Admin</mat-option>
             </mat-select>
             <mat-error *ngIf="loginForm.get('userType')?.hasError('required')">
               Please select a user type

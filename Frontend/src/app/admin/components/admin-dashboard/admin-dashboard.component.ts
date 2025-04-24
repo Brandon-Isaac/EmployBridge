@@ -1,81 +1,104 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatDividerModule } from '@angular/material/divider';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../../core/services/admin.service';
 import { AuthService } from '../../../core/services/auth.service';
+
+interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  company?: string;
+  jobPostings?: number;
+  location?: string;
+  isActive: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
 
 @Component({
   selector: 'app-admin-dashboard',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    MatIconModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatBadgeModule,
-    MatDividerModule,
-  ],
-  animations: [
-    trigger('slideInOut', [
-      state('in', style({
-        transform: 'translateX(0)',
-        opacity: 1
-      })),
-      state('out', style({
-        transform: 'translateX(-100%)',
-        opacity: 0
-      })),
-      transition('in => out', animate('300ms ease-out')),
-      transition('out => in', animate('300ms ease-in'))
-    ]),
-    trigger('fadeIn', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('400ms ease-in', style({ opacity: 1 }))
-      ])
-    ]),
-    trigger('slideInFromRight', [
-      transition(':enter', [
-        style({ transform: 'translateX(50px)', opacity: 0 }),
-        animate('400ms ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
-      ])
-    ])
-  ],
-  templateUrl: `./admin-dashboard.component.html`,
-  styleUrl:`./admin-dashboard.component.css`,
+  templateUrl: './admin-dashboard.component.html',
+  styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  @ViewChild('sidenav') sidenav: any;
-  sidenavOpened = true;
-  sidenavState = 'in';
+  employers: User[] = [];
+  jobSeekers: User[] = [];
+  stats: any = {};
+  isLoading = true;
+  errorMessage = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private adminService: AdminService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    // Add delay for initial animations
-    setTimeout(() => {
-      this.sidenavState = 'in';
-    }, 100);
+    this.loadData();
   }
 
-  toggleSidenav(): void {
-    this.sidenavOpened = !this.sidenavOpened;
-    this.sidenavState = this.sidenavOpened ? 'in' : 'out';
+  loadData(): void {
+    this.isLoading = true;
+    this.errorMessage = '';
+
+    // Load employers
+    this.adminService.getEmployers().subscribe({
+      next: (response) => {
+        if (response.success) {
+          this.employers = response.employers;
+        }
+      },
+      error: (error) => {
+        console.error('Error loading employers:', error);
+        this.errorMessage = error.message || 'Failed to load employers';
+      }
+    });
+
+    // Load job seekers
+    this.adminService.getJobSeekers().subscribe({
+      next: (response) => {
+        if (response.success) {
+          this.jobSeekers = response.jobSeekers;
+        }
+      },
+      error: (error) => {
+        console.error('Error loading job seekers:', error);
+        this.errorMessage = error.message || 'Failed to load job seekers';
+      }
+    });
+
+    // Load system stats
+    this.adminService.getSystemStats().subscribe({
+      next: (response) => {
+        if (response.success) {
+          this.stats = response.stats;
+        }
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error loading stats:', error);
+        this.errorMessage = error.message || 'Failed to load system statistics';
+        this.isLoading = false;
+      }
+    });
   }
 
-  logout(): void {
-    this.authService.logout();
+  toggleUserStatus(user: User, type: 'job-seeker' | 'employer'): void {
+    const action = user.isActive ? 'deactivate' : 'activate';
+    const serviceCall = user.isActive 
+      ? this.adminService.deactivateUser(type, user.id)
+      : this.adminService.activateUser(type, user.id);
+
+    serviceCall.subscribe({
+      next: (response) => {
+        if (response.success) {
+          user.isActive = !user.isActive;
+        }
+      },
+      error: (error) => {
+        console.error(`Error ${action}ing user:`, error);
+        this.errorMessage = error.message || `Failed to ${action} user`;
+      }
+    });
   }
 }
