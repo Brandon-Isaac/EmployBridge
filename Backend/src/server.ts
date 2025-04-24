@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import cookieParser from 'cookie-parser';
 import jobSeekerRoutes from './routes/job-seeker.routes';
 import employerRoutes from './routes/employer.routes';
 import companyRoutes from './routes/company.routes';
@@ -10,6 +9,7 @@ import skillRoutes from './routes/skill.routes';
 import adminRoutes from './routes/admin.routes';
 import jobApplicationRoutes from './routes/job-application.routes';
 import interviewRoutes from './routes/interview.routes';
+import geminiRoutes from './routes/gemini.routes';
 import { initializeDatabase } from './config/database';
 
 // Load environment variables first
@@ -20,12 +20,10 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: ['http://employbridgeai-frontend.s3-website.us-east-2.amazonaws.com', 'http://localhost:4200'],
-  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 app.use(express.json());
-app.use(cookieParser());
 
 // Initialize database connection
 initializeDatabase()
@@ -41,6 +39,7 @@ initializeDatabase()
     app.use('/api/admin', adminRoutes);
     app.use('/api/applications', jobApplicationRoutes);
     app.use('/api/interviews', interviewRoutes);
+    app.use('/api/gemini', geminiRoutes);
     
     // Simple root route
     app.get('/', (_req, res) => {

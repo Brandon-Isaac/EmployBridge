@@ -160,4 +160,55 @@ export class JobSeekerSkillsController {
       }))
     });
   });
+
+  generateCareerPath = asyncHandler(async (req: AuthRequest, res: Response) => {
+    if (!req.user) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    const jobSeeker = await this.jobSeekerRepository.findOne({
+      where: { id: req.user.id },
+      relations: ['skills']
+    });
+
+    if (!jobSeeker) {
+      return res.status(404).json({ message: 'Job seeker not found' });
+    }
+
+    // Get all active skills from the database
+    const allSkills = await this.skillRepository.find({
+      where: { isActive: true }
+    });
+
+    // Group skills by category
+    const skillsByCategory = allSkills.reduce((acc, skill) => {
+      if (!acc[skill.category]) {
+        acc[skill.category] = [];
+      }
+      acc[skill.category].push(skill);
+      return acc;
+    }, {} as Record<SkillCategory, Skill[]>);
+
+    // Get current skills of the job seeker
+    const currentSkills = jobSeeker.skills.map(skill => skill.id);
+
+    // Generate career path suggestions
+    const careerPath = Object.entries(skillsByCategory).map(([category, skills]) => {
+      const relevantSkills = skills.filter(skill => !currentSkills.includes(skill.id));
+      return {
+        category: category as SkillCategory,
+        suggestedSkills: relevantSkills.map(skill => ({
+          id: skill.id,
+          name: skill.name,
+          description: skill.description,
+          level: skill.level
+        }))
+      };
+    });
+
+    return res.json({
+      message: 'Career path generated successfully',
+      careerPath
+    });
+  });
 } 
