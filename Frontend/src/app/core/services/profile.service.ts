@@ -73,8 +73,8 @@ export class ProfileService {
   }
 
   getJobSeekerProfile(): Observable<ProfileResponse> {
-    console.log('Fetching profile from:', `${environment.apiUrl}/api/job-seekers/profile`);
-    return this.http.get<ProfileResponse>(`${environment.apiUrl}/api/job-seekers/profile`, {
+    console.log('Fetching profile from:', `${environment.apiUrl}/job-seekers/profile`);
+    return this.http.get<ProfileResponse>(`${environment.apiUrl}/job-seekers/profile`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token') || sessionStorage.getItem('token')}`
       }
@@ -84,14 +84,14 @@ export class ProfileService {
   }
 
   updateJobSeekerProfile(profileData: Partial<JobSeekerProfile>): Observable<ProfileResponse> {
-    return this.http.put<ProfileResponse>(`${environment.apiUrl}/api/job-seekers/profile`, profileData)
+    return this.http.put<ProfileResponse>(`${environment.apiUrl}/job-seekers/profile`, profileData)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   changePassword(currentPassword: string, newPassword: string): Observable<{ message: string }> {
-    return this.http.put<{ message: string }>(`${environment.apiUrl}/api/job-seekers/change-password`, {
+    return this.http.put<{ message: string }>(`${environment.apiUrl}/job-seekers/change-password`, {
       currentPassword,
       newPassword
     }).pipe(
@@ -100,10 +100,10 @@ export class ProfileService {
   }
 
   getEmployerProfile(userId: string): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/api/employers/${userId}/profile`);
+    return this.http.get(`${environment.apiUrl}/employers/${userId}/profile`);
   }
 
   getAdminProfile(userId: string): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/api/admin/${userId}/profile`);
+    return this.http.get(`${environment.apiUrl}/admin/${userId}/profile`);
   }
 } 

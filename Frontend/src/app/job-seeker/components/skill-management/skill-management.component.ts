@@ -13,37 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-
-interface Skill {
-  id: number;
-  name: string;
-  category: string;
-  description?: string;
-}
-
-interface JobSeekerSkill {
-  id: number;
-  skillId: number;
-  proficiencyLevel: number;
-  isVerified: boolean;
-  yearsOfExperience: number;
-  lastUsedDate: Date;
-  skill: Skill;
-  endorsements: SkillEndorsement[];
-}
-
-interface SkillEndorsement {
-  id: number;
-  endorserId: number;
-  endorserName: string;
-  endorsementDate: Date;
-  note?: string;
-}
-
-interface SkillCategory {
-  name: string;
-  skills: JobSeekerSkill[];
-}
+import { SkillService, JobSeekerSkill, SkillCategory } from '../../../core/services/skill.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-skill-management',
@@ -63,7 +34,7 @@ interface SkillCategory {
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule,
+    MatSelectModule
   ],
   template: `
     <div class="skills-container">
@@ -342,48 +313,52 @@ interface SkillCategory {
 })
 export class SkillManagementComponent implements OnInit {
   skillCategories: SkillCategory[] = [];
+  isLoading = true;
+  errorMessage = '';
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private skillService: SkillService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.loadSkills();
   }
 
   loadSkills(): void {
-    // TODO: Replace with actual API call
-    this.skillCategories = [
-      {
-        name: 'Programming Languages',
-        skills: [
-          {
-            id: 1,
-            skillId: 1,
-            proficiencyLevel: 5,
-            isVerified: true,
-            yearsOfExperience: 5,
-            lastUsedDate: new Date(),
-            skill: {
-              id: 1,
-              name: 'TypeScript',
-              category: 'Programming Languages',
-              description:
-                'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
-            },
-            endorsements: [
-              {
-                id: 1,
-                endorserId: 2,
-                endorserName: 'John Doe',
-                endorsementDate: new Date(),
-                note: 'Excellent TypeScript skills demonstrated in recent project',
-              },
-            ],
-          },
-          // Add more skills...
-        ],
+    this.isLoading = true;
+    this.errorMessage = '';
+
+    this.skillService.getJobSeekerSkills().subscribe({
+      next: (skills) => {
+        const categoriesMap = new Map<string, JobSeekerSkill[]>();
+        
+        skills.forEach(skill => {
+          const category = skill.skill.category.toString();
+          if (!categoriesMap.has(category)) {
+            categoriesMap.set(category, []);
+          }
+          categoriesMap.get(category)?.push(skill);
+        });
+
+        this.skillCategories = Array.from(categoriesMap.entries()).map(([name, skills]) => ({
+          name,
+          skills
+        }));
+
+        this.isLoading = false;
       },
-      // Add more categories...
-    ];
+      error: (error) => {
+        console.error('Error loading skills:', error);
+        this.errorMessage = error.message || 'Failed to load skills';
+        this.isLoading = false;
+        this.snackBar.open(this.errorMessage, 'Close', {
+          duration: 5000,
+          panelClass: ['error-snackbar']
+        });
+      }
+    });
   }
 
   getTotalSkills(): number {
@@ -451,19 +426,53 @@ export class SkillManagementComponent implements OnInit {
       .join('\n');
   }
 
-  openAddSkillDialog(): void {
-    // TODO: Implement add skill dialog
+  async openAddSkillDialog(): Promise<void> {
+    const { AddSkillDialogComponent } = await import('../add-skill-dialog/add-skill-dialog.component');
+    
+    const dialogRef = this.dialog.open(AddSkillDialogComponent, {
+      width: '500px',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.snackBar.open('Skill added successfully', 'Close', {
+          duration: 3000,
+          panelClass: ['success-snackbar']
+        });
+        this.loadSkills();
+      }
+    });
   }
 
   startSkillAssessment(jobSkill: JobSeekerSkill): void {
     // TODO: Implement skill assessment
+    console.log('Starting skill assessment for:', jobSkill);
   }
 
   updateSkill(jobSkill: JobSeekerSkill): void {
     // TODO: Implement skill update
+    console.log('Updating skill:', jobSkill);
   }
 
   removeSkill(jobSkill: JobSeekerSkill): void {
-    // TODO: Implement skill removal
+    if (confirm('Are you sure you want to remove this skill?')) {
+      this.skillService.removeSkill(jobSkill.id).subscribe({
+        next: () => {
+          this.snackBar.open('Skill removed successfully', 'Close', {
+            duration: 3000,
+            panelClass: ['success-snackbar']
+          });
+          this.loadSkills();
+        },
+        error: (error) => {
+          console.error('Error removing skill:', error);
+          this.snackBar.open(error.message || 'Failed to remove skill', 'Close', {
+            duration: 5000,
+            panelClass: ['error-snackbar']
+          });
+        }
+      });
+    }
   }
 }

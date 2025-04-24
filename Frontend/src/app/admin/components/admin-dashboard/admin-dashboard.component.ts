@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../../core/services/admin.service';
 import { AuthService } from '../../../core/services/auth.service';
+import { RouterOutlet } from '@angular/router';
+import { MatDivider, MatNavList } from '@angular/material/list';
+import { MatSidenav } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 interface User {
   id: string;
@@ -17,9 +27,35 @@ interface User {
 }
 
 @Component({
+  imports: [
+    RouterOutlet,
+    MatNavList,
+    MatDivider,
+    MatSidenav,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatBadgeModule,
+    MatMenuModule,
+    MatSidenavModule
+  ],
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  styleUrls: ['./admin-dashboard.component.css'],
+  animations: [
+    trigger('fadeIn', [
+      state('void', style({ opacity: 0 })),
+      transition(':enter', [
+        animate('300ms ease-in', style({ opacity: 1 }))
+      ])
+    ]),
+    trigger('slideInOut', [
+      state('in', style({ transform: 'translateX(0)' })),
+      state('out', style({ transform: 'translateX(-100%)' })),
+      transition('in => out', animate('300ms ease-in-out')),
+      transition('out => in', animate('300ms ease-in-out'))
+    ])
+  ]
 })
 export class AdminDashboardComponent implements OnInit {
   employers: User[] = [];
@@ -27,6 +63,8 @@ export class AdminDashboardComponent implements OnInit {
   stats: any = {};
   isLoading = true;
   errorMessage = '';
+  sidenavOpened = true;
+  sidenavState = 'in';
 
   constructor(
     private adminService: AdminService,
@@ -100,5 +138,14 @@ export class AdminDashboardComponent implements OnInit {
         this.errorMessage = error.message || `Failed to ${action} user`;
       }
     });
+  }
+
+  toggleSidenav(): void {
+    this.sidenavOpened = !this.sidenavOpened;
+    this.sidenavState = this.sidenavState === 'in' ? 'out' : 'in';
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

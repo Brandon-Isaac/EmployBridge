@@ -9,6 +9,7 @@ import jobRoutes from './routes/job.routes';
 import skillRoutes from './routes/skill.routes';
 import adminRoutes from './routes/admin.routes';
 import jobApplicationRoutes from './routes/job-application.routes';
+import interviewRoutes from './routes/interview.routes';
 import { initializeDatabase } from './config/database';
 
 // Load environment variables first
@@ -39,6 +40,7 @@ initializeDatabase()
     app.use('/api/skills', skillRoutes);
     app.use('/api/admin', adminRoutes);
     app.use('/api/applications', jobApplicationRoutes);
+    app.use('/api/interviews', interviewRoutes);
     
     // Simple root route
     app.get('/', (_req, res) => {
