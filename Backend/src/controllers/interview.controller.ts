@@ -38,11 +38,12 @@ export class InterviewController {
 
     const interview = this.interviewRepository.create({
       application,
-      date,
       type,
+      scheduledAt: date,
       location,
-      notes,
-      status: 'scheduled'
+      meetingLink: '',
+      status: 'scheduled',
+      notes
     });
 
     const errors = await validate(interview);
@@ -79,7 +80,7 @@ export class InterviewController {
       return res.status(403).json({ message: 'Not authorized to update this interview' });
     }
 
-    interview.date = date || interview.date;
+    interview.scheduledAt = date || interview.scheduledAt;
     interview.type = type || interview.type;
     interview.location = location || interview.location;
     interview.notes = notes || interview.notes;

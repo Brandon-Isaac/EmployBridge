@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm';
 import { Job } from './job.entity';
+import { Employer } from './employer.entity';
 
 @Entity('companies')
 export class Company {
@@ -29,6 +30,9 @@ export class Company {
 
   @OneToMany(() => Job, job => job.company)
   jobs: Job[];
+
+  @ManyToOne(() => Employer, employer => employer.companies)
+  employer: Employer;
 
   @CreateDateColumn()
   createdAt: Date;

@@ -15,7 +15,7 @@ export class SkillController {
       return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    const { name, category, description } = req.body;
+    const { name, category } = req.body;
 
     // Check if skill already exists
     const existingSkill = await this.skillRepository.findOne({ where: { name } });
@@ -25,8 +25,7 @@ export class SkillController {
 
     const skill = this.skillRepository.create({
       name,
-      category,
-      description
+      category
     });
 
     const errors = await validate(skill);
@@ -45,7 +44,7 @@ export class SkillController {
   getSkills = asyncHandler(async (_req: AuthRequest, res: Response) => {
     const skills = await this.skillRepository.find({
       where: { isActive: true },
-      select: ['id', 'name', 'category', 'description']
+      select: ['id', 'name', 'category']
     });
 
     return res.json({ skills });
@@ -55,7 +54,7 @@ export class SkillController {
     const { id } = req.params;
     const skill = await this.skillRepository.findOne({
       where: { id, isActive: true },
-      select: ['id', 'name', 'category', 'description']
+      select: ['id', 'name', 'category']
     });
 
     if (!skill) {
@@ -71,7 +70,7 @@ export class SkillController {
     }
 
     const { id } = req.params;
-    const { name, category, description } = req.body;
+    const { name, category } = req.body;
 
     const skill = await this.skillRepository.findOne({ where: { id, isActive: true } });
 
@@ -89,7 +88,6 @@ export class SkillController {
 
     skill.name = name || skill.name;
     skill.category = category || skill.category;
-    skill.description = description || skill.description;
 
     const errors = await validate(skill);
     if (errors.length > 0) {
@@ -138,7 +136,7 @@ export class SkillController {
       query.andWhere('skill.category = :category', { category });
     }
 
-    const skills = await query.select(['skill.id', 'skill.name', 'skill.category', 'skill.description'])
+    const skills = await query.select(['skill.id', 'skill.name', 'skill.category'])
       .getMany();
 
     return res.json({ skills });

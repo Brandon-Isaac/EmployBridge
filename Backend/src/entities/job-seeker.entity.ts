@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, ManyToMany } from 'typeorm';
 import { JobApplication } from './job-application.entity';
 import { Skill } from './skill.entity';
 import { PortfolioItem } from './portfolio.entity';
@@ -14,46 +14,46 @@ export class JobSeeker {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column()
   firstName: string;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column()
   lastName: string;
 
-  @Column({ type: 'varchar', length: 100, unique: true })
+  @Column({ unique: true })
   email: string;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column()
   password: string;
 
-  @Column({ type: 'varchar', length: 20, nullable: true })
+  @Column({ nullable: true })
   phone: string;
 
-  @Column({ type: 'varchar', length: 200, nullable: true })
+  @Column({ nullable: true })
   location: string;
 
   @Column({ type: 'text', nullable: true })
   bio: string;
 
-  @Column({ type: 'varchar', length: 200, nullable: true })
+  @Column({ nullable: true })
   profilePicture: string;
 
   @Column({ type: 'varchar', length: 200, nullable: true })
   resume: string;
 
-  @Column({ type: 'boolean', default: false })
+  @Column({ default: false })
   isVerified: boolean;
 
-  @Column({ type: 'varchar', length: 255, nullable: true })
+  @Column({ nullable: true })
   verificationToken: string;
 
-  @Column({ type: 'timestamp', nullable: true })
+  @Column({ nullable: true })
   verificationTokenExpires: Date;
 
-  @Column({ type: 'varchar', length: 255, nullable: true })
+  @Column({ nullable: true })
   resetPasswordToken: string;
 
-  @Column({ type: 'timestamp', nullable: true })
+  @Column({ nullable: true })
   resetPasswordExpires: Date;
 
   @OneToMany(() => JobApplication, application => application.jobSeeker)
@@ -74,13 +74,13 @@ export class JobSeeker {
   @OneToMany(() => Education, education => education.jobSeeker)
   education: Education[];
 
-  @OneToMany(() => JobSeekerSkill, skill => skill.jobSeeker)
+  @OneToMany(() => JobSeekerSkill, (skill: JobSeekerSkill) => skill.jobSeeker)
   jobSeekerSkills: JobSeekerSkill[];
 
-  @OneToMany(() => JobSeekerExperience, experience => experience.jobSeeker)
+  @OneToMany(() => JobSeekerExperience, (experience: JobSeekerExperience) => experience.jobSeeker)
   jobSeekerExperiences: JobSeekerExperience[];
 
-  @OneToMany(() => JobSeekerEducation, education => education.jobSeeker)
+  @OneToMany(() => JobSeekerEducation, (education: JobSeekerEducation) => education.jobSeeker)
   jobSeekerEducations: JobSeekerEducation[];
 
   @CreateDateColumn()

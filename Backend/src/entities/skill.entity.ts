@@ -1,23 +1,56 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, CreateDateColumn, UpdateDateColumn, JoinTable, OneToMany } from 'typeorm';
 import { JobSeeker } from './job-seeker.entity';
 import { Job } from './job.entity';
+import { PortfolioItem } from './portfolio.entity';
+import { CV } from './cv.entity';
+import { JobSeekerSkill } from "./job-seeker-skill.entity";
+
+export enum SkillCategory {
+  TECHNICAL = 'technical',
+  SOFT = 'soft',
+  LANGUAGE = 'language',
+  CERTIFICATION = 'certification',
+  OTHER = 'other'
+}
+
+export enum SkillLevel {
+  BEGINNER = 'beginner',
+  INTERMEDIATE = 'intermediate',
+  ADVANCED = 'advanced',
+  EXPERT = 'expert'
+}
 
 @Entity('skills')
 export class Skill {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column()
   name: string;
 
-  @Column({ type: 'varchar', length: 200, nullable: true })
-  description: string;
+  @Column({
+    type: 'enum',
+    enum: SkillCategory,
+    default: SkillCategory.TECHNICAL
+  })
+  category: SkillCategory;
 
-  @Column({ type: 'varchar', length: 50, nullable: true })
-  category: string;
+  @Column({
+    type: 'enum',
+    enum: SkillLevel,
+    default: SkillLevel.INTERMEDIATE
+  })
+  level: SkillLevel;
+
+  @Column({ default: true })
+  isActive: boolean;
 
   @ManyToMany(() => JobSeeker, jobSeeker => jobSeeker.skills)
+  @JoinTable()
   jobSeekers: JobSeeker[];
+
+  @ManyToMany(() => PortfolioItem, (portfolioItem: PortfolioItem) => portfolioItem.skills)
+  portfolioItems: PortfolioItem[];
 
   @ManyToMany(() => Job, job => job.requiredSkills)
   requiredInJobs: Job[];
@@ -25,9 +58,15 @@ export class Skill {
   @ManyToMany(() => Job, job => job.preferredSkills)
   preferredInJobs: Job[];
 
+  @ManyToMany(() => CV, (cv: CV) => cv.skills)
+  cvs: CV[];
+
   @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToMany(() => JobSeekerSkill, jobSeekerSkill => jobSeekerSkill.skill)
+  jobSeekerSkills: JobSeekerSkill[];
 } 

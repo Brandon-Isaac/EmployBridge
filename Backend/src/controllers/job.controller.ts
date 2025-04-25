@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
-import { Job, JobType, ExperienceLevel } from '../entities/job.entity';
+import { Job } from '../entities/job.entity';
 import { Skill } from '../entities/skill.entity';
 import { Employer } from '../entities/employer.entity';
 import { validate } from 'class-validator';
@@ -21,7 +21,7 @@ export class JobController {
       title,
       description,
       type,
-      experienceLevel,
+      experience,
       location,
       salaryMin,
       salaryMax,
@@ -44,11 +44,14 @@ export class JobController {
     const jobData: Partial<Job> = {
       title,
       description,
-      type: type as JobType,
-      experienceLevel: experienceLevel as ExperienceLevel,
+      type: type as 'full-time' | 'part-time' | 'contract' | 'internship',
+      experience: experience as 'entry' | 'mid' | 'senior' | 'lead',
       location,
-      salaryMin: salaryMin ? Number(salaryMin) : undefined,
-      salaryMax: salaryMax ? Number(salaryMax) : undefined,
+      salary: {
+        min: salaryMin ? Number(salaryMin) : 0,
+        max: salaryMax ? Number(salaryMax) : 0,
+        currency: 'USD'
+      },
       requiredSkills: requiredSkillsEntities,
       preferredSkills: preferredSkillsEntities,
       benefits: benefits ? benefits.map((benefit: string) => ({
@@ -81,10 +84,12 @@ export class JobController {
         title: savedJob.title,
         description: savedJob.description,
         type: savedJob.type,
-        experienceLevel: savedJob.experienceLevel,
+        experience: savedJob.experience,
         location: savedJob.location,
-        salaryMin: savedJob.salaryMin,
-        salaryMax: savedJob.salaryMax,
+        salary: {
+          min: savedJob.salary.min,
+          max: savedJob.salary.max
+        },
         benefits: savedJob.benefits,
         questions: savedJob.questions,
         requiredSkills: savedJob.requiredSkills?.map(skill => ({
@@ -149,7 +154,7 @@ export class JobController {
       title,
       description,
       type,
-      experienceLevel,
+      experience,
       location,
       salaryMin,
       salaryMax,
@@ -172,10 +177,13 @@ export class JobController {
     job.title = title || job.title;
     job.description = description || job.description;
     job.type = type || job.type;
-    job.experienceLevel = experienceLevel || job.experienceLevel;
+    job.experience = experience || job.experience;
     job.location = location || job.location;
-    job.salaryMin = salaryMin || job.salaryMin;
-    job.salaryMax = salaryMax || job.salaryMax;
+    job.salary = {
+      min: salaryMin || job.salary.min,
+      max: salaryMax || job.salary.max,
+      currency: job.salary.currency
+    };
     job.requiredSkills = requiredSkills || job.requiredSkills;
     job.preferredSkills = preferredSkills || job.preferredSkills;
     job.benefits = benefits || job.benefits;
@@ -221,7 +229,7 @@ export class JobController {
       title,
       location,
       type,
-      experienceLevel,
+      experience,
       minSalary,
       maxSalary,
       skills
@@ -242,8 +250,8 @@ export class JobController {
       query.andWhere('job.type = :type', { type });
     }
 
-    if (experienceLevel) {
-      query.andWhere('job.experienceLevel = :experienceLevel', { experienceLevel });
+    if (experience) {
+      query.andWhere('job.experience = :experience', { experience });
     }
 
     if (minSalary) {

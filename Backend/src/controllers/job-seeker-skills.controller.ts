@@ -1,7 +1,7 @@
-import { Response } from 'express';
-import { getRepository  } from 'typeorm';
+import { Request, Response } from 'express';
+import { getRepository } from 'typeorm';
 import { JobSeeker } from '../entities/job-seeker.entity';
-import { Skill, SkillCategory } from '../entities/skill.entity';
+import { Skill, SkillCategory, SkillLevel } from '../entities/skill.entity';
 import { asyncHandler } from '../middleware/async-handler';
 import { AuthRequest } from '../types/auth-request.interface';
 
@@ -32,80 +32,101 @@ export class JobSeekerSkillsController {
     return res.json({ skills: jobSeeker.skills });
   });
 
-  addSkillToJobSeeker = asyncHandler(async (req: AuthRequest, res: Response) => {
-    if (!req.user) {
-      return res.status(401).json({ message: 'Unauthorized' });
-    }
+  async addSkill(req: Request, res: Response) {
+    try {
+      const { jobSeekerId } = req.params;
+      const { name, category, level } = req.body;
 
-    const { skillId } = req.params;
+      const jobSeeker = await this.jobSeekerRepository.findOne({
+        where: { id: jobSeekerId }
+      });
 
-    const jobSeeker = await this.jobSeekerRepository.findOne({
-      where: { id: req.user.id },
-      relations: ['skills']
-    });
-
-    if (!jobSeeker) {
-      return res.status(404).json({ message: 'Job seeker not found' });
-    }
-
-    const skill = await this.skillRepository.findOne({
-      where: { id: skillId, isActive: true }
-    });
-
-    if (!skill) {
-      return res.status(404).json({ message: 'Skill not found' });
-    }
-
-    // Check if skill is already added
-    if (jobSeeker.skills.some(s => s.id === skillId)) {
-      return res.status(400).json({ message: 'Skill already added to profile' });
-    }
-
-    // Add skill to job seeker's skills
-    jobSeeker.skills = [...jobSeeker.skills, skill];
-
-    await this.jobSeekerRepository.save(jobSeeker);
-
-    return res.json({
-      message: 'Skill added successfully',
-      skill: {
-        id: skill.id,
-        name: skill.name,
-        category: skill.category,
-        description: skill.description
+      if (!jobSeeker) {
+        return res.status(404).json({ message: 'Job seeker not found' });
       }
-    });
-  });
 
-  removeSkillFromJobSeeker = asyncHandler(async (req: AuthRequest, res: Response) => {
-    if (!req.user) {
-      return res.status(401).json({ message: 'Unauthorized' });
+      let skill = await this.skillRepository.findOne({
+        where: { name }
+      });
+
+      if (!skill) {
+        skill = this.skillRepository.create({
+          name,
+          category: category || SkillCategory.TECHNICAL,
+          level: level || SkillLevel.INTERMEDIATE
+        });
+        await this.skillRepository.save(skill);
+      }
+
+      jobSeeker.skills = [...(jobSeeker.skills || []), skill];
+      await this.jobSeekerRepository.save(jobSeeker);
+
+      return res.json(skill);
+    } catch (error) {
+      console.error('Error adding skill:', error);
+      return res.status(500).json({ message: 'Error adding skill' });
     }
+  }
 
-    const { skillId } = req.params;
+  async removeSkill(req: Request, res: Response) {
+    try {
+      const { jobSeekerId, skillId } = req.params;
 
-    const jobSeeker = await this.jobSeekerRepository.findOne({
-      where: { id: req.user.id },
-      relations: ['skills']
-    });
+      const jobSeeker = await this.jobSeekerRepository.findOne({
+        where: { id: jobSeekerId },
+        relations: ['skills']
+      });
 
-    if (!jobSeeker) {
-      return res.status(404).json({ message: 'Job seeker not found' });
+      if (!jobSeeker) {
+        return res.status(404).json({ message: 'Job seeker not found' });
+      }
+
+      const skill = await this.skillRepository.findOne({
+        where: { id: skillId }
+      });
+
+      if (!skill) {
+        return res.status(404).json({ message: 'Skill not found' });
+      }
+
+      jobSeeker.skills = jobSeeker.skills.filter(s => s.id !== skillId);
+      await this.jobSeekerRepository.save(jobSeeker);
+
+      return res.json({ message: 'Skill removed successfully' });
+    } catch (error) {
+      console.error('Error removing skill:', error);
+      return res.status(500).json({ message: 'Error removing skill' });
     }
+  }
 
-    // Check if skill exists in job seeker's skills
-    const skillIndex = jobSeeker.skills.findIndex(s => s.id === skillId);
-    if (skillIndex === -1) {
-      return res.status(404).json({ message: 'Skill not found in profile' });
+  async updateSkillLevel(req: Request, res: Response) {
+    try {
+      const { jobSeekerId, skillId } = req.params;
+      const { level } = req.body;
+
+      const jobSeeker = await this.jobSeekerRepository.findOne({
+        where: { id: jobSeekerId },
+        relations: ['skills']
+      });
+
+      if (!jobSeeker) {
+        return res.status(404).json({ message: 'Job seeker not found' });
+      }
+
+      const skill = jobSeeker.skills.find(s => s.id === skillId);
+      if (!skill) {
+        return res.status(404).json({ message: 'Skill not found' });
+      }
+
+      skill.level = level;
+      await this.skillRepository.save(skill);
+
+      return res.json(skill);
+    } catch (error) {
+      console.error('Error updating skill level:', error);
+      return res.status(500).json({ message: 'Error updating skill level' });
     }
-
-    // Remove skill from job seeker's skills
-    jobSeeker.skills.splice(skillIndex, 1);
-
-    await this.jobSeekerRepository.save(jobSeeker);
-
-    return res.json({ message: 'Skill removed successfully' });
-  });
+  }
 
   updateJobSeekerSkills = asyncHandler(async (req: AuthRequest, res: Response) => {
     if (!req.user) {

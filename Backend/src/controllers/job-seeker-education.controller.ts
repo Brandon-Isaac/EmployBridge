@@ -29,9 +29,8 @@ export class JobSeekerEducationController {
       return res.status(404).json({ message: 'Job seeker not found' });
     }
 
-    return res.json({ educations: jobSeeker.educations });
+    return res.json({ educations: jobSeeker.education });
   });
-
   addEducation = asyncHandler(async (req: AuthRequest, res: Response) => {
     if (!req.user) {
       return res.status(401).json({ message: 'Unauthorized' });
@@ -107,7 +106,6 @@ export class JobSeekerEducationController {
     }
 
     await this.educationRepository.remove(education);
-
     return res.json({ message: 'Education deleted successfully' });
   });
 } 

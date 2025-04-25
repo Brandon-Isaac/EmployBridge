@@ -1,8 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
 import { JobApplication } from './job-application.entity';
-import { Employer } from './employer.entity';
 import { Skill } from './skill.entity';
 import { Company } from './company.entity';
+import { Employer } from './employer.entity';
 
 export enum JobType {
   FULL_TIME = 'full-time',
@@ -93,4 +93,7 @@ export class Job {
     question: string;
     required: boolean;
   }[];
+
+  @ManyToOne(() => Employer, employer => employer.jobs)
+  employer: Employer;
 } 

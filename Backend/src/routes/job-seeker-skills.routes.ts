@@ -8,13 +8,16 @@ const jobSeekerSkillsController = new JobSeekerSkillsController();
 // Get job seeker's skills
 router.get('/', authMiddleware, jobSeekerSkillsController.getJobSeekerSkills);
 
-// Add skill to job seeker
-router.post('/:skillId', authMiddleware, jobSeekerSkillsController.addSkillToJobSeeker);
+// Add a skill to job seeker
+router.post('/:jobSeekerId', authMiddleware, jobSeekerSkillsController.addSkill);
 
-// Remove skill from job seeker
-router.delete('/:skillId', authMiddleware, jobSeekerSkillsController.removeSkillFromJobSeeker);
+// Remove a skill from job seeker
+router.delete('/:jobSeekerId/:skillId', authMiddleware, jobSeekerSkillsController.removeSkill);
 
-// Update job seeker's skills (bulk update)
+// Update skill level
+router.patch('/:jobSeekerId/:skillId/level', authMiddleware, jobSeekerSkillsController.updateSkillLevel);
+
+// Update multiple skills
 router.put('/', authMiddleware, jobSeekerSkillsController.updateJobSeekerSkills);
 
 export default router; 
