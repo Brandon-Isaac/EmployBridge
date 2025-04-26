@@ -90,7 +90,7 @@
       <button mat-raised-button color="primary" 
               [disabled]="!jobForm.valid || isLoading"
               (click)="onSubmit()">
-        <mat-spinner diameter="20" *ngIf="isLoading"></mat-spinner>
+        <!-- <mat-spinner diameter="20" *ngIf="isLoading"></mat-spinner> -->
         <span *ngIf="!isLoading">Post Job</span>
       </button>
     </mat-card-actions>

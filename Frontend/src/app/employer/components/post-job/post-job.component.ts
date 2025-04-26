@@ -19,11 +19,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { JobListingService } from '../../services/job-listing.service';
+// import { MatSpinner } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-post-job',
   standalone: true,
   imports: [
+    // MatSpinner,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

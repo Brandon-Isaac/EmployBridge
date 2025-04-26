@@ -69,7 +69,7 @@
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef>Actions</th>
           <td mat-cell *matCellDef="let listing">
-            <button mat-icon-button color="primary" [routerLink]="['/employer/post-job', listing.id]">
+            <button mat-icon-button color="primary" routerLink="['/employer/post-job', listing.id]">
               <mat-icon>edit</mat-icon>
             </button>
             <button mat-icon-button color="warn" (click)="deleteListing(listing.id)">

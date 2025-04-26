@@ -11,7 +11,7 @@ export const initializeDatabase = async () => {
       port: process.env.DB_PORT,
       username: process.env.DB_USERNAME,
       database: process.env.DB_NAME,
-      ssl: true
+      // ssl: false
     });
 
     const connection = await createConnection({
@@ -23,19 +23,19 @@ export const initializeDatabase = async () => {
       database: process.env.DB_NAME,
       entities: [path.join(__dirname, '../entities/*.entity{.ts,.js}')],
       synchronize: process.env.NODE_ENV !== 'production',
-      ssl: {
-        rejectUnauthorized: false
-      },
-      logging: true,
-      extra: {
-        ssl: {
-          rejectUnauthorized: false
-        },
-        connectionTimeoutMillis: 10000,
-        query_timeout: 10000,
-        statement_timeout: 10000,
-        idle_in_transaction_session_timeout: 10000
-      }
+      // ssl: {
+      //   rejectUnauthorized: false
+      // },
+      // logging: true,
+      // extra: {
+      //   ssl: {
+      //     rejectUnauthorized: false
+      //   },
+      //   connectionTimeoutMillis: 10000,
+      //   query_timeout: 10000,
+      //   statement_timeout: 10000,
+      //   idle_in_transaction_session_timeout: 10000
+      // }
     });
 
     console.log('Database connection established');
@@ -48,7 +48,7 @@ export const initializeDatabase = async () => {
       port: process.env.DB_PORT,
       database: process.env.DB_NAME,
       username: process.env.DB_USERNAME,
-      ssl: true
+      // ssl: false
     });
     throw error;
   }

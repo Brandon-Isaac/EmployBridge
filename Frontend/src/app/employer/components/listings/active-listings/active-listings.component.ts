@@ -8,11 +8,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { JobListingService, JobListing } from '../../../services/job-listing.service';
 import { ToastNotificationComponent } from '../../../../shared/components/toast-notification/toast-notification.component';
+import { MatSpinner } from '@angular/material/progress-spinner';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-active-listings',
   standalone: true,
   imports: [
+    MatIcon,
+    MatSpinner,
     CommonModule,
     MatTableModule,
     MatButtonModule,
