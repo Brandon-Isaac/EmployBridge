@@ -3,6 +3,9 @@ import { Job } from './Job';
 import { Application } from './Application';
 import { Portfolio } from './Portfolio';
 import { CV } from './CV';
+import { Experience } from './Experience';
+import { Education } from './Education';
+import { ChatMessage } from './ChatMessage';
 
 export enum UserRole {
   JOB_SEEKER = 'job_seeker',
@@ -53,6 +56,15 @@ export class User {
   @OneToOne(() => CV, (cv) => cv.user)
   @JoinColumn()
   cv?: CV;
+
+  @OneToMany(() => Experience, (experience) => experience.user)
+  experiences: Experience[];
+
+@OneToMany(() => Education, (education) => education.user)
+  educations: Education[];
+
+@OneToMany(() => ChatMessage, (chatMessage) => chatMessage.user)
+  chatMessages: ChatMessage[];
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;

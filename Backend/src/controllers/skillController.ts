@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Skill, User } from '../entities';
+import { Skill, User } from '../src/entities';
 import { AppDataSource } from '../data-source';
 
 const skillRepository = AppDataSource.getRepository(Skill);

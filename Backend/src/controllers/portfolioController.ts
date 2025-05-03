@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Portfolio, User } from '../entities';
+import { Portfolio, User } from '../src/entities';
 import { AppDataSource } from '../data-source';
 
 const portfolioRepository = AppDataSource.getRepository(Portfolio);

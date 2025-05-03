@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Job, User, Skill } from '../entities';
+import { Job, User, Skill } from '../src/entities';
 import { AppDataSource } from '../data-source';
 import { Like, In } from 'typeorm';
 

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Application, Job, User } from '../entities';
+import { Application, Job, User } from '../src/entities';
 import { AppDataSource } from '../data-source';
 import { ApplicationStatus } from '../entities/Application';
 

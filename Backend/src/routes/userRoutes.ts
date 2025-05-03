@@ -7,7 +7,7 @@ import {
   deleteUser,
   getAllUsers,
   getUserById,
-} from '../controllers/userController';
+} from '../entities/userController';
 import { authenticate, authorize } from '../middleware/authMiddleware';
 
 const router = express.Router();
