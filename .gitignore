@@ -9,6 +9,7 @@ dist
 
 # Environment variables
 .env
+.env.production
 
 # Node.js
 node_modules
