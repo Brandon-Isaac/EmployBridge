@@ -1,7 +1,10 @@
 import { Request, Response } from 'express';
-import { Job, User, Skill } from '../src/entities';
+import { Job } from '../entities/Job';
+import { User } from '../entities/User';
+import { Skill } from '../entities/Skill';
 import { AppDataSource } from '../data-source';
 import { Like, In } from 'typeorm';
+import asyncHandler from '../middleware/asyncHandler';
 
 const jobRepository = AppDataSource.getRepository(Job);
 const userRepository = AppDataSource.getRepository(User);
@@ -18,7 +21,7 @@ export const getAllJobs = async (req: Request, res: Response) => {
   }
 };
 
-export const getJobById = async (req: Request, res: Response) => {
+export const getJobById =asyncHandler( async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const job = await jobRepository.findOne({
@@ -34,9 +37,9 @@ export const getJobById = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error fetching job', error });
   }
-};
+});
 
-export const createJob = async (req: Request, res: Response) => {
+export const createJob = asyncHandler(async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     const {
@@ -76,9 +79,9 @@ export const createJob = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error creating job', error });
   }
-};
+});
 
-export const updateJob = async (req: Request, res: Response) => {
+export const updateJob = asyncHandler(async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const userId = (req as any).user.userId;
@@ -116,9 +119,9 @@ export const updateJob = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error updating job', error });
   }
-};
+});
 
-export const deleteJob = async (req: Request, res: Response) => {
+export const deleteJob = asyncHandler(async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const userId = (req as any).user.userId;
@@ -141,9 +144,9 @@ export const deleteJob = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error deleting job', error });
   }
-};
+});
 
-export const getJobsByEmployer = async (req: Request, res: Response) => {
+export const getJobsByEmployer = asyncHandler(async (req: Request, res: Response) => {
   try {
     const { employerId } = req.params;
     const jobs = await jobRepository.find({
@@ -154,9 +157,9 @@ export const getJobsByEmployer = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error fetching employer jobs', error });
   }
-};
+});
 
-export const searchJobs = async (req: Request, res: Response) => {
+export const searchJobs = asyncHandler(async (req: Request, res: Response) => {
   try {
     const { query, location, skills } = req.query;
 
@@ -183,9 +186,9 @@ export const searchJobs = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error searching jobs', error });
   }
-};
+});
 
-export const getRecommendedJobs = async (req: Request, res: Response) => {
+export const getRecommendedJobs =asyncHandler( async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     
@@ -230,4 +233,4 @@ export const getRecommendedJobs = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error getting recommended jobs', error });
   }
-};
+});

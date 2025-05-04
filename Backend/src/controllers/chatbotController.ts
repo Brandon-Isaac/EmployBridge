@@ -1,6 +1,11 @@
 import { Request, Response } from 'express';
 import { OpenAI } from 'openai';
-import { ChatMessage, User, Job, Application, Skill } from '../src/entities';
+import { ChatMessage} from '../entities/Chatmessage';
+import { User } from '../entities/User';
+import { Job } from '../entities/Job';
+import  asyncHandler from '../middleware/asyncHandler';
+import { Application } from '../entities/Application';
+import { Skill } from '../entities/Skill';
 import { AppDataSource } from '../data-source';
 import dotenv from 'dotenv';
 
@@ -9,14 +14,14 @@ dotenv.config();
 const chatMessageRepository = AppDataSource.getRepository(ChatMessage);
 const userRepository = AppDataSource.getRepository(User);
 const jobRepository = AppDataSource.getRepository(Job);
-const applicationRepository = AppDataSource.getRepository(Application);
-const skillRepository = AppDataSource.getRepository(Skill);
+// const applicationRepository = AppDataSource.getRepository(Application);
+// const skillRepository = AppDataSource.getRepository(Skill);
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export const chatWithBot = async (req: Request, res: Response) => {
+export const chatWithBot =asyncHandler( async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     const { message } = req.body;
@@ -69,7 +74,7 @@ export const chatWithBot = async (req: Request, res: Response) => {
       - Company: ${user.company || 'Not specified'}
       - Position: ${user.position || 'Not specified'}
       - Posted Jobs: ${jobs.length}
-      - Total Applications: ${jobs.reduce((acc, job) => acc + job.applications.length, 0)}`;
+      - Total Applications: ${jobs.reduce((acc, job) => acc + (job.applications?.length ?? 0), 0)}`;
     }
 
     // Prepare system prompt based on user role
@@ -118,7 +123,7 @@ export const chatWithBot = async (req: Request, res: Response) => {
 
     // Save bot response to database
     const botMessage = new ChatMessage();
-    botMessage.content = botResponse;
+    botMessage.content = botResponse ?? 'No response available';
     botMessage.isFromUser = false;
     botMessage.user = user;
     await chatMessageRepository.save(botMessage);
@@ -133,7 +138,7 @@ export const chatWithBot = async (req: Request, res: Response) => {
           applicationCount: user.applications?.length,
         } : {
           company: user.company,
-          jobCount: await jobRepository.count({ where: { employer: { id: userId } }),
+          jobCount: await jobRepository.count({ where: { employer: { id: userId } }}),
         }),
       },
     });
@@ -141,9 +146,9 @@ export const chatWithBot = async (req: Request, res: Response) => {
     console.error('Error in chatbot:', error);
     res.status(500).json({ message: 'Error processing chat message', error });
   }
-};
+});
 
-export const getChatHistory = async (req: Request, res: Response) => {
+export const getChatHistory =asyncHandler( async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     const { limit = 20 } = req.query;
@@ -158,10 +163,10 @@ export const getChatHistory = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error fetching chat history', error });
   }
-};
+});
 
 // Specialized query functions for different user types
-export const queryCandidates = async (req: Request, res: Response) => {
+export const queryCandidates = asyncHandler(async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     const { query } = req.body;
@@ -193,6 +198,9 @@ export const queryCandidates = async (req: Request, res: Response) => {
       response_format: { type: 'json_object' },
     });
 
+    if (!completion.choices[0].message.content) {
+      throw new Error('Completion message content is null or undefined');
+    }
     const filters = JSON.parse(completion.choices[0].message.content);
 
     // Build TypeORM query based on filters
@@ -249,9 +257,9 @@ export const queryCandidates = async (req: Request, res: Response) => {
     console.error('Error querying candidates:', error);
     res.status(500).json({ message: 'Error querying candidates', error });
   }
-};
+});
 
-export const queryJobs = async (req: Request, res: Response) => {
+export const queryJobs =asyncHandler( async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     const { query } = req.body;
@@ -284,6 +292,10 @@ export const queryJobs = async (req: Request, res: Response) => {
       response_format: { type: 'json_object' },
     });
 
+    if (!completion.choices[0].message.content) {
+      throw new Error('Completion message content is null or undefined');
+    }
+    // Parse the filters from the AI response
     const filters = JSON.parse(completion.choices[0].message.content);
 
     // Build TypeORM query
@@ -350,4 +362,4 @@ export const queryJobs = async (req: Request, res: Response) => {
     console.error('Error querying jobs:', error);
     res.status(500).json({ message: 'Error querying jobs', error });
   }
-};
+});

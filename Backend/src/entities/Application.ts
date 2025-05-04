@@ -13,20 +13,20 @@ export enum ApplicationStatus {
 @Entity()
 export class Application {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @ManyToOne(() => User, (user) => user.applications)
-  user: User;
+  user!: User;
 
   @ManyToOne(() => Job, (job) => job.applications)
-  job: Job;
+  job!: Job;
 
   @Column({
     type: 'enum',
     enum: ApplicationStatus,
     default: ApplicationStatus.PENDING,
   })
-  status: ApplicationStatus;
+  status?: ApplicationStatus;
 
   @Column({ type: 'float', nullable: true })
   matchScore?: number;
@@ -35,5 +35,5 @@ export class Application {
   interviewDate?: Date;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  appliedAt: Date;
+  appliedAt?: Date;
 }

@@ -1,11 +1,13 @@
 import { Request, Response } from 'express';
-import { Portfolio, User } from '../src/entities';
+import { Portfolio} from '../entities/Portfolio';
+import { User } from '../entities/User';
 import { AppDataSource } from '../data-source';
+import asyncHandler from '../middleware/asyncHandler';
 
 const portfolioRepository = AppDataSource.getRepository(Portfolio);
 const userRepository = AppDataSource.getRepository(User);
 
-export const getPortfolio = async (req: Request, res: Response) => {
+export const getPortfolio = asyncHandler(async (req: Request, res: Response) => {
   try {
     const { userId } = req.params;
     const portfolio = await portfolioRepository.findOne({
@@ -20,9 +22,9 @@ export const getPortfolio = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error fetching portfolio', error });
   }
-};
+});
 
-export const createOrUpdatePortfolio = async (req: Request, res: Response) => {
+export const createOrUpdatePortfolio = asyncHandler(async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     const { projects, experience, education } = req.body;
@@ -50,9 +52,9 @@ export const createOrUpdatePortfolio = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error saving portfolio', error });
   }
-};
+});
 
-export const deletePortfolio = async (req: Request, res: Response) => {
+export const deletePortfolio =asyncHandler( async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     await portfolioRepository.delete({ user: { id: userId } });
@@ -60,4 +62,4 @@ export const deletePortfolio = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error deleting portfolio', error });
   }
-};
+});

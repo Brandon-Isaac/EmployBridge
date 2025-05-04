@@ -4,26 +4,26 @@ import { User } from './User';
 @Entity()
 export class Experience {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column()
-  company: string;
+  company!: string;
 
   @Column()
-  startDate: Date;
+  startDate!: Date;
 
   @Column({ nullable: true })
   endDate?: Date;
 
   @Column({ default: false })
-  current: boolean;
+  current!: boolean;
 
   @Column('text')
-  description: string;
+  description?: string;
 
   @ManyToOne(() => User, (user) => user.experiences)
-  user: User;
+  user?: User;
 }

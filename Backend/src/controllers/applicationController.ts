@@ -1,13 +1,16 @@
 import { Request, Response } from 'express';
-import { Application, Job, User } from '../src/entities';
+import { Application } from '../entities/Application';
+import { Job } from '../entities/Job';
+import { User } from '../entities/User';
 import { AppDataSource } from '../data-source';
 import { ApplicationStatus } from '../entities/Application';
+import asyncHandler from '../middleware/asyncHandler';
 
 const applicationRepository = AppDataSource.getRepository(Application);
 const jobRepository = AppDataSource.getRepository(Job);
 const userRepository = AppDataSource.getRepository(User);
 
-export const createApplication = async (req: Request, res: Response) => {
+export const createApplication =asyncHandler( async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     const { jobId } = req.body;
@@ -54,9 +57,9 @@ export const createApplication = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error creating application', error });
   }
-};
+});
 
-export const getApplicationById = async (req: Request, res: Response) => {
+export const getApplicationById =asyncHandler( async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const application = await applicationRepository.findOne({
@@ -72,9 +75,9 @@ export const getApplicationById = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error fetching application', error });
   }
-};
+});
 
-export const updateApplicationStatus = async (req: Request, res: Response) => {
+export const updateApplicationStatus =asyncHandler( async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
@@ -110,9 +113,9 @@ export const updateApplicationStatus = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error updating application status', error });
   }
-};
+});
 
-export const getUserApplications = async (req: Request, res: Response) => {
+export const getUserApplications =asyncHandler( async (req: Request, res: Response) => {
   try {
     const { userId } = req.params;
     const applications = await applicationRepository.find({
@@ -124,9 +127,9 @@ export const getUserApplications = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error fetching user applications', error });
   }
-};
+});
 
-export const getJobApplications = async (req: Request, res: Response) => {
+export const getJobApplications =asyncHandler( async (req: Request, res: Response) => {
   try {
     const { jobId } = req.params;
     const applications = await applicationRepository.find({
@@ -138,9 +141,9 @@ export const getJobApplications = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error fetching job applications', error });
   }
-};
+});
 
-export const getApplicationMatchScore = async (req: Request, res: Response) => {
+export const getApplicationMatchScore =asyncHandler( async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const application = await applicationRepository.findOne({
@@ -156,4 +159,4 @@ export const getApplicationMatchScore = async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).json({ message: 'Error fetching match score', error });
   }
-};
+});

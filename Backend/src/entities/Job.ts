@@ -6,35 +6,35 @@ import { Skill } from './Skill';
 @Entity()
 export class Job {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column()
-  description: string;
+  description?: string;
 
   @Column()
-  location: string;
+  location!: string;
 
   @Column({ nullable: true })
   salary?: string;
 
   @Column()
-  employmentType: string; // Full-time, Part-time, Contract, etc.
+  employmentType!: string; // Full-time, Part-time, Contract, etc.
 
   @ManyToOne(() => User, (user) => user.jobs)
-  employer: User;
+  employer!: User;
 
   @OneToMany(() => Application, (application) => application.job)
-  applications: Application[];
+  applications?: Application[];
 
   @ManyToMany(() => Skill)
   @JoinTable()
-  requiredSkills: Skill[];
+  requiredSkills!: Skill[];
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  postedAt: Date;
+  postedAt!: Date;
 
   @Column({ type: 'timestamp', nullable: true })
   deadline?: Date;

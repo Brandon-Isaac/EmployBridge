@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import { Skill, User } from '../src/entities';
+import { Skill } from '../entities/Skill';
+import { User } from '../entities/User';
 import { AppDataSource } from '../data-source';
 
 const skillRepository = AppDataSource.getRepository(Skill);
@@ -14,7 +15,7 @@ export const getAllSkills = async (req: Request, res: Response) => {
   }
 };
 
-export const getSkillById = async (req: Request, res: Response) => {
+export const getSkillById = async (req: Request, res: Response):Promise<void>=> {
   try {
     const { id } = req.params;
     const skill = await skillRepository.findOne({
@@ -23,7 +24,8 @@ export const getSkillById = async (req: Request, res: Response) => {
     });
 
     if (!skill) {
-      return res.status(404).json({ message: 'Skill not found' });
+       res.status(404).json({ message: 'Skill not found' });
+       return
     }
 
     res.json(skill);
@@ -32,7 +34,7 @@ export const getSkillById = async (req: Request, res: Response) => {
   }
 };
 
-export const createSkill = async (req: Request, res: Response) => {
+export const createSkill = async (req: Request, res: Response):Promise<void> => {
   try {
     const { name, category, description } = req.body;
     const skill = new Skill();
@@ -47,14 +49,15 @@ export const createSkill = async (req: Request, res: Response) => {
   }
 };
 
-export const updateSkill = async (req: Request, res: Response) => {
+export const updateSkill = async (req: Request, res: Response):Promise<void>=> {
   try {
     const { id } = req.params;
     const { name, category, description } = req.body;
 
     const skill = await skillRepository.findOne({ where: { id } });
     if (!skill) {
-      return res.status(404).json({ message: 'Skill not found' });
+      res.status(404).json({ message: 'Skill not found' });
+      return;
     }
 
     if (name) skill.name = name;
@@ -78,7 +81,7 @@ export const deleteSkill = async (req: Request, res: Response) => {
   }
 };
 
-export const getUserSkills = async (req: Request, res: Response) => {
+export const getUserSkills = async (req: Request, res: Response):Promise<void> => {
   try {
     const { userId } = req.params;
     const user = await userRepository.findOne({
@@ -87,7 +90,8 @@ export const getUserSkills = async (req: Request, res: Response) => {
     });
 
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+       res.status(404).json({ message: 'User not found' });
+       return;
     }
 
     res.json(user.skills);
@@ -96,7 +100,7 @@ export const getUserSkills = async (req: Request, res: Response) => {
   }
 };
 
-export const addUserSkill = async (req: Request, res: Response) => {
+export const addUserSkill = async (req: Request, res: Response):Promise<void> => {
   try {
     const { userId } = req.params;
     const { skillId } = req.body;
@@ -106,12 +110,14 @@ export const addUserSkill = async (req: Request, res: Response) => {
       relations: ['skills'],
     });
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      res.status(404).json({ message: 'User not found' });
+      return
     }
 
     const skill = await skillRepository.findOne({ where: { id: skillId } });
     if (!skill) {
-      return res.status(404).json({ message: 'Skill not found' });
+      res.status(404).json({ message: 'Skill not found' });
+      return
     }
 
     if (!user.skills) user.skills = [];
@@ -126,7 +132,7 @@ export const addUserSkill = async (req: Request, res: Response) => {
   }
 };
 
-export const removeUserSkill = async (req: Request, res: Response) => {
+export const removeUserSkill = async (req: Request, res: Response):Promise<void> => {
   try {
     const { userId, skillId } = req.params;
     const user = await userRepository.findOne({
@@ -135,7 +141,8 @@ export const removeUserSkill = async (req: Request, res: Response) => {
     });
 
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+     res.status(404).json({ message: 'User not found' });
+     return;
     }
 
     user.skills = user.skills?.filter(skill => skill.id !== skillId) || [];

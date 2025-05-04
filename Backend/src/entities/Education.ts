@@ -4,29 +4,29 @@ import { User } from './User';
 @Entity()
 export class Education {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  institution: string;
+  institution!: string;
 
   @Column()
-  degree: string;
+  degree?: string;
 
   @Column()
-  fieldOfStudy: string;
+  fieldOfStudy!: string;
 
   @Column()
-  startDate: Date;
+  startDate!: Date;
 
   @Column({ nullable: true })
   endDate?: Date;
 
   @Column({ default: false })
-  current: boolean;
+  current?: boolean;
 
   @Column('text', { nullable: true })
   description?: string;
 
   @ManyToOne(() => User, (user) => user.educations)
-  user: User;
+  user?: User;
 }

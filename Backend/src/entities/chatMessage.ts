@@ -4,17 +4,17 @@ import { User } from './User';
 @Entity()
 export class ChatMessage {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  content: string;
+  content!: string;
 
   @Column()
-  isFromUser: boolean;
+  isFromUser!: boolean;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  timestamp: Date;
+  timestamp!: Date;
 
   @ManyToOne(() => User, (user) => user.chatMessages)
-  user: User;
+  user!: User;
 }

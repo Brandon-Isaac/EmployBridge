@@ -7,7 +7,10 @@ import {
   deleteUser,
   getAllUsers,
   getUserById,
-} from '../entities/userController';
+  logoutUser,
+  updateUserPassword,
+  updateUserRole
+} from '../controllers/userController';
 import { authenticate, authorize } from '../middleware/authMiddleware';
 
 const router = express.Router();
@@ -17,7 +20,10 @@ router.post('/login', loginUser);
 
 router.get('/profile', authenticate, getUserProfile);
 router.put('/profile', authenticate, updateUserProfile);
+router.put('/profile/password', authenticate, updateUserPassword);
+router.put('/profile/role', authenticate, authorize(['admin']), updateUserRole);
 router.delete('/profile', authenticate, deleteUser);
+router.post('/logout', authenticate, logoutUser);
 
 // Admin routes
 router.get('/', authenticate, authorize(['admin']), getAllUsers);

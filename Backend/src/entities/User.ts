@@ -5,7 +5,8 @@ import { Portfolio } from './Portfolio';
 import { CV } from './CV';
 import { Experience } from './Experience';
 import { Education } from './Education';
-import { ChatMessage } from './ChatMessage';
+import { ChatMessage } from './Chatmessage';
+import { Skill } from './Skill';
 
 export enum UserRole {
   JOB_SEEKER = 'job_seeker',
@@ -16,23 +17,23 @@ export enum UserRole {
 @Entity()
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column({ unique: true })
-  email: string;
+  email!: string;
 
   @Column()
-  password: string;
+  password!: string;
 
   @Column({
     type: 'enum',
     enum: UserRole,
     default: UserRole.JOB_SEEKER,
   })
-  role: UserRole;
+  role!: UserRole;
 
   @Column({ nullable: true })
   company?: string;
@@ -46,6 +47,10 @@ export class User {
   @OneToMany(() => Job, (job) => job.employer)
   jobs?: Job[];
 
+  @OneToMany(() => Skill, (skill) => skill.users)
+  @JoinColumn() // This is a many-to-many relationship, so we need to specify the join column   
+  skills?:Skill[];
+
   @OneToMany(() => Application, (application) => application.user)
   applications?: Application[];
 
@@ -58,14 +63,14 @@ export class User {
   cv?: CV;
 
   @OneToMany(() => Experience, (experience) => experience.user)
-  experiences: Experience[];
+  experiences?: Experience[];
 
 @OneToMany(() => Education, (education) => education.user)
-  educations: Education[];
+  educations?: Education[];
 
 @OneToMany(() => ChatMessage, (chatMessage) => chatMessage.user)
-  chatMessages: ChatMessage[];
+  chatMessages?: ChatMessage[];
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  createdAt: Date;
+  createdAt!: Date;
 }

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { User } from './User';
+import { User } from '../entities/User';
 import { AppDataSource } from '../data-source';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
@@ -10,14 +10,15 @@ dotenv.config();
 const userRepository = AppDataSource.getRepository(User);
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
-export const registerUser = async (req: Request, res: Response) => {
+export const registerUser = async (req: Request, res: Response):Promise<void> => {
   try {
     const { name, email, password, role, company, position, bio } = req.body;
     
     // Check if user already exists
     const existingUser = await userRepository.findOne({ where: { email } });
     if (existingUser) {
-      return res.status(400).json({ message: 'User already exists' });
+      res.status(400).json({ message: 'User already exists' });
+      return;
     }
 
     // Hash password
@@ -46,18 +47,20 @@ export const registerUser = async (req: Request, res: Response) => {
   }
 };
 
-export const loginUser = async (req: Request, res: Response) => {
+export const loginUser = async (req: Request, res: Response):Promise<void> => {
   try {
     const { email, password } = req.body;
     const user = await userRepository.findOne({ where: { email } });
 
     if (!user) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+       res.status(401).json({ message: 'Invalid credentials' });
+       return;
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      res.status(401).json({ message: 'Invalid credentials' });
+      return;
     }
 
     const token = jwt.sign({ userId: user.id, role: user.role }, JWT_SECRET, {
@@ -70,7 +73,7 @@ export const loginUser = async (req: Request, res: Response) => {
   }
 };
 
-export const getUserProfile = async (req: Request, res: Response) => {
+export const getUserProfile = async (req: Request, res: Response):Promise<void> => {
   try {
     const userId = (req as any).user.userId;
     const user = await userRepository.findOne({
@@ -79,7 +82,8 @@ export const getUserProfile = async (req: Request, res: Response) => {
     });
 
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+       res.status(404).json({ message: 'User not found' });
+       return;
     }
 
     res.json(user);
@@ -88,14 +92,15 @@ export const getUserProfile = async (req: Request, res: Response) => {
   }
 };
 
-export const updateUserProfile = async (req: Request, res: Response) => {
+export const updateUserProfile = async (req: Request, res: Response):Promise<void> => {
   try {
     const userId = (req as any).user.userId;
     const { name, bio, company, position } = req.body;
 
     const user = await userRepository.findOne({ where: { id: userId } });
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      res.status(404).json({ message: 'User not found' });
+      return;
     }
 
     if (name) user.name = name;
@@ -111,7 +116,7 @@ export const updateUserProfile = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteUser = async (req: Request, res: Response) => {
+export const deleteUser = async (req: Request, res: Response):Promise<void> => {
   try {
     const userId = (req as any).user.userId;
     await userRepository.delete(userId);
@@ -121,7 +126,7 @@ export const deleteUser = async (req: Request, res: Response) => {
   }
 };
 
-export const getAllUsers = async (req: Request, res: Response) => {
+export const getAllUsers = async (req: Request, res: Response):Promise<void> => {
   try {
     const users = await userRepository.find();
     res.json(users);
@@ -130,7 +135,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
   }
 };
 
-export const getUserById = async (req: Request, res: Response) => {
+export const getUserById = async (req: Request, res: Response):Promise<void> => {
   try {
     const { id } = req.params;
     const user = await userRepository.findOne({
@@ -139,7 +144,8 @@ export const getUserById = async (req: Request, res: Response) => {
     });
 
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+       res.status(404).json({ message: 'User not found' });
+       return;
     }
 
     res.json(user);
@@ -147,3 +153,59 @@ export const getUserById = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error fetching user', error });
   }
 };
+
+export const logoutUser = async (req: Request, res: Response):Promise<void> => {
+  try {
+    // Invalidate the token (if using a token blacklist or similar strategy)
+    res.json({ message: 'User logged out successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error logging out', error });
+  }
+};
+export const updateUserPassword = async (req: Request, res: Response):Promise<void> => {
+  try {
+    const userId = (req as any).user.userId;
+    const { currentPassword, newPassword } = req.body;
+
+    const user = await userRepository.findOne({ where: { id: userId } });
+    if (!user) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    const isPasswordValid = await bcrypt.compare(currentPassword, user.password);
+    if (!isPasswordValid) {
+      res.status(401).json({ message: 'Current password is incorrect' });
+      return;
+    }
+
+    const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedNewPassword;
+
+    await userRepository.save(user);
+
+    res.json({ message: 'Password updated successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error updating password', error });
+  }
+}
+export const updateUserRole = async (req: Request, res: Response):Promise<void> => {
+  try {
+    const userId = (req as any).user.userId;
+    const { role } = req.body;
+
+    const user = await userRepository.findOne({ where: { id: userId } });
+    if (!user) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    user.role = role;
+
+    await userRepository.save(user);
+
+    res.json({ message: 'User role updated successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error updating user role', error });
+  }
+}

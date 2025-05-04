@@ -1,18 +1,20 @@
 import { Request, Response } from 'express';
-import { Education, User } from '../src/entities';
+import { Education } from '../entities/Education';
+import { User } from '../entities/User';
 import { AppDataSource } from '../data-source';
 
 const educationRepository = AppDataSource.getRepository(Education);
 const userRepository = AppDataSource.getRepository(User);
 
-export const createEducation = async (req: Request, res: Response) => {
+export const createEducation = async (req: Request, res: Response):Promise<void> => {
   try {
     const userId = (req as any).user.userId;
     const { institution, degree, fieldOfStudy, startDate, endDate, current, description } = req.body;
 
     const user = await userRepository.findOne({ where: { id: userId } });
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+       res.status(404).json({ message: 'User not found' });
+        return;
     }
 
     const education = new Education();
@@ -32,7 +34,7 @@ export const createEducation = async (req: Request, res: Response) => {
   }
 };
 
-export const getEducations = async (req: Request, res: Response) => {
+export const getEducations = async (req: Request, res: Response):Promise<void> => {
   try {
     const userId = req.params.userId;
     const educations = await educationRepository.find({
@@ -40,12 +42,13 @@ export const getEducations = async (req: Request, res: Response) => {
       order: { startDate: 'DESC' },
     });
     res.json(educations);
+    return
   } catch (error) {
     res.status(500).json({ message: 'Error fetching educations', error });
   }
 };
 
-export const updateEducation = async (req: Request, res: Response) => {
+export const updateEducation = async (req: Request, res: Response):Promise<void> => {
   try {
     const userId = (req as any).user.userId;
     const { id } = req.params;
@@ -56,7 +59,8 @@ export const updateEducation = async (req: Request, res: Response) => {
     });
 
     if (!education) {
-      return res.status(404).json({ message: 'Education not found' });
+      res.status(404).json({ message: 'Education not found' });
+      return
     }
 
     if (updateData.institution) education.institution = updateData.institution;
@@ -74,7 +78,7 @@ export const updateEducation = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteEducation = async (req: Request, res: Response) => {
+export const deleteEducation = async (req: Request, res: Response):Promise<void> => {
   try {
     const userId = (req as any).user.userId;
     const { id } = req.params;
@@ -85,7 +89,8 @@ export const deleteEducation = async (req: Request, res: Response) => {
     });
 
     if (result.affected === 0) {
-      return res.status(404).json({ message: 'Education not found' });
+      res.status(404).json({ message: 'Education not found' });
+      return;
     }
 
     res.json({ message: 'Education deleted successfully' });

@@ -4,11 +4,11 @@ import { User } from './User';
 @Entity()
 export class Portfolio {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @OneToOne(() => User, (user) => user.portfolio)
   @JoinColumn()
-  user: User;
+  user!: User;
 
   @Column({ type: 'jsonb', nullable: true })
   projects?: Array<{
