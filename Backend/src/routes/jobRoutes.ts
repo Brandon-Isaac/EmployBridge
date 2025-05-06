@@ -8,6 +8,7 @@ import {
   getJobsByEmployer,
   searchJobs,
   getRecommendedJobs,
+  generateJobWithAI,
 } from '../controllers/jobController';
 import { authenticate } from '../middleware/authMiddleware';
 
@@ -23,5 +24,7 @@ router.delete('/:id', authenticate, deleteJob);
 
 // Employer routes
 router.get('/employer/:employerId', getJobsByEmployer);
+
+router.post('/generate', authenticate, generateJobWithAI);
 
 export default router;

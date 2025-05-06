@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { OpenAI } from 'openai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { ChatMessage} from '../entities/Chatmessage';
 import { User } from '../entities/User';
 import { Job } from '../entities/Job';
@@ -17,11 +17,11 @@ const jobRepository = AppDataSource.getRepository(Job);
 // const applicationRepository = AppDataSource.getRepository(Application);
 // const skillRepository = AppDataSource.getRepository(Skill);
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Initialize Gemini AI
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
-export const chatWithBot =asyncHandler( async (req: Request, res: Response) => {
+export const chatWithBot = asyncHandler(async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
     const { message } = req.body;
@@ -95,35 +95,27 @@ export const chatWithBot =asyncHandler( async (req: Request, res: Response) => {
          - Hiring analytics
         Use their company and job posting details to provide personalized advice.`;
 
-    // Prepare messages for OpenAI
-    const messages: any[] = [
-      { role: 'system', content: systemPrompt },
-      { role: 'system', content: `Current context: ${context}` },
-    ];
-
-    // Add chat history (reversed to maintain chronological order)
-    chatHistory.reverse().forEach(msg => {
-      messages.push({
-        role: msg.isFromUser ? 'user' : 'assistant',
-        content: msg.content,
-      });
+    // Prepare chat history for Gemini
+    const chat = model.startChat({
+      history: [
+        { role: 'user', parts: [{ text: systemPrompt }] },
+        { role: 'model', parts: [{ text: 'I understand my role and will help accordingly.' }] },
+        { role: 'user', parts: [{ text: `Current context: ${context}` }] },
+        { role: 'model', parts: [{ text: 'I have noted the context and will use it in my responses.' }] },
+        ...chatHistory.reverse().map(msg => ({
+          role: msg.isFromUser ? 'user' : 'model',
+          parts: [{ text: msg.content }]
+        }))
+      ],
     });
 
-    // Add the new user message
-    messages.push({ role: 'user', content: message });
-
-    // Call OpenAI API
-    const completion = await openai.chat.completions.create({
-      messages,
-      model: 'gpt-4',
-      temperature: 0.7,
-    });
-
-    const botResponse = completion.choices[0].message.content;
+    // Get response from Gemini
+    const result = await model.generateContent(message);
+    const botResponse = result.response.text();
 
     // Save bot response to database
     const botMessage = new ChatMessage();
-    botMessage.content = botResponse ?? 'No response available';
+    botMessage.content = botResponse;
     botMessage.isFromUser = false;
     botMessage.user = user;
     await chatMessageRepository.save(botMessage);
@@ -142,9 +134,30 @@ export const chatWithBot =asyncHandler( async (req: Request, res: Response) => {
         }),
       },
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in chatbot:', error);
-    res.status(500).json({ message: 'Error processing chat message', error });
+    
+    // Handle Gemini API errors
+    if (error?.message?.includes('API key')) {
+      return res.status(401).json({
+        message: 'Invalid API configuration. Please contact support.',
+        error: 'Invalid API key'
+      });
+    }
+
+    // Handle rate limit errors
+    if (error?.message?.includes('quota')) {
+      return res.status(429).json({
+        message: 'Too many requests. Please try again later.',
+        error: 'Rate limit exceeded'
+      });
+    }
+
+    // Handle other errors
+    res.status(500).json({ 
+      message: 'Error processing chat message',
+      error: error?.message || 'Unknown error occurred'
+    });
   }
 });
 
@@ -181,7 +194,7 @@ export const queryCandidates = asyncHandler(async (req: Request, res: Response) 
     const prompt = `Convert this natural language query into structured filters for candidate search:
     "${query}"
     
-    Return a JSON object with possible filters like:
+    Return ONLY a JSON object (no markdown, no backticks) with possible filters like:
     {
       "skills": [],
       "minExperience": null,
@@ -189,19 +202,15 @@ export const queryCandidates = asyncHandler(async (req: Request, res: Response) 
       "location": null
     }`;
 
-    const completion = await openai.chat.completions.create({
-      messages: [
-        { role: 'system', content: 'You are a query parser for a recruitment system. Extract filters from natural language.' },
-        { role: 'user', content: prompt }
-      ],
-      model: 'gpt-4',
-      response_format: { type: 'json_object' },
-    });
+    const completion = await model.generateContent(prompt);
 
-    if (!completion.choices[0].message.content) {
+    if (!completion.response.text()) {
       throw new Error('Completion message content is null or undefined');
     }
-    const filters = JSON.parse(completion.choices[0].message.content);
+
+    // Clean the response text to ensure it's valid JSON
+    const responseText = completion.response.text().replace(/```json\n?|\n?```/g, '').trim();
+    const filters = JSON.parse(responseText);
 
     // Build TypeORM query based on filters
     const queryBuilder = userRepository.createQueryBuilder('user')
@@ -234,16 +243,10 @@ export const queryCandidates = asyncHandler(async (req: Request, res: Response) 
     const responsePrompt = `Summarize these ${candidates.length} candidates found with filters: ${JSON.stringify(filters)}.
     Highlight key statistics and notable candidates.`;
 
-    const responseCompletion = await openai.chat.completions.create({
-      messages: [
-        { role: 'system', content: 'You are a recruitment assistant summarizing candidate search results.' },
-        { role: 'user', content: responsePrompt }
-      ],
-      model: 'gpt-4',
-    });
+    const responseCompletion = await model.generateContent(responsePrompt);
 
     res.json({
-      summary: responseCompletion.choices[0].message.content,
+      summary: responseCompletion.response.text(),
       candidates: candidates.map(candidate => ({
         id: candidate.id,
         name: candidate.name,
@@ -274,7 +277,7 @@ export const queryJobs =asyncHandler( async (req: Request, res: Response) => {
     const prompt = `Convert this job search query into structured filters:
     "${query}"
     
-    Return JSON with possible filters like:
+    Return ONLY a JSON object (no markdown, no backticks) with possible filters like:
     {
       "skills": [],
       "jobTitle": null,
@@ -283,20 +286,15 @@ export const queryJobs =asyncHandler( async (req: Request, res: Response) => {
       "experienceLevel": null
     }`;
 
-    const completion = await openai.chat.completions.create({
-      messages: [
-        { role: 'system', content: 'You are a job search query parser. Extract filters from natural language.' },
-        { role: 'user', content: prompt }
-      ],
-      model: 'gpt-4',
-      response_format: { type: 'json_object' },
-    });
+    const completion = await model.generateContent(prompt);
 
-    if (!completion.choices[0].message.content) {
+    if (!completion.response.text()) {
       throw new Error('Completion message content is null or undefined');
     }
-    // Parse the filters from the AI response
-    const filters = JSON.parse(completion.choices[0].message.content);
+
+    // Clean the response text to ensure it's valid JSON
+    const responseText = completion.response.text().replace(/```json\n?|\n?```/g, '').trim();
+    const filters = JSON.parse(responseText);
 
     // Build TypeORM query
     const queryBuilder = jobRepository.createQueryBuilder('job')
@@ -345,16 +343,10 @@ export const queryJobs =asyncHandler( async (req: Request, res: Response) => {
     The job seeker has these skills: ${userSkills.join(', ')}.
     Highlight best matches and interesting opportunities.`;
 
-    const responseCompletion = await openai.chat.completions.create({
-      messages: [
-        { role: 'system', content: 'You are a career assistant summarizing job search results.' },
-        { role: 'user', content: responsePrompt }
-      ],
-      model: 'gpt-4',
-    });
+    const responseCompletion = await model.generateContent(responsePrompt);
 
     res.json({
-      summary: responseCompletion.choices[0].message.content,
+      summary: responseCompletion.response.text(),
       jobs: jobsWithScores,
       filters,
     });

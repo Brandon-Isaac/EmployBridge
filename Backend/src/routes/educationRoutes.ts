@@ -15,3 +15,4 @@ router.put('/:id', authenticate, updateEducation);
 router.delete('/:id', authenticate, deleteEducation);
 
 export default router;
+

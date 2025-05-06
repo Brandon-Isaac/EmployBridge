@@ -1,0 +1,149 @@
+<div class="signup-container" [ngClass]="{'job-seeker': isJobSeeker, 'employer': !isJobSeeker}">
+  <div class="signup-card">
+    <div class="toggle-container">
+      <button 
+        class="toggle-btn" 
+        [class.active]="isJobSeeker"
+        (click)="toggleForm()">
+        Job Seeker
+      </button>
+      <button 
+        class="toggle-btn" 
+        [class.active]="!isJobSeeker"
+        (click)="toggleForm()">
+        Employer
+      </button>
+    </div>
+
+    <h2>{{ isJobSeeker ? 'Job Seeker Signup' : 'Employer Signup' }}</h2>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+      <!-- Common Fields -->
+      <div class="form-group">
+        <input 
+          type="text" 
+          formControlName="name" 
+          id="name"
+          [class.invalid]="isFieldInvalid('name')"
+          required>
+        <label for="name">Full Name</label>
+        <div class="error-message" *ngIf="isFieldInvalid('name')">
+          {{ getErrorMessage('name') }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input 
+          type="email" 
+          formControlName="email" 
+          id="email"
+          [class.invalid]="isFieldInvalid('email')"
+          required>
+        <label for="email">Email Address</label>
+        <div class="error-message" *ngIf="isFieldInvalid('email')">
+          {{ getErrorMessage('email') }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input 
+          type="password" 
+          formControlName="password" 
+          id="password"
+          [class.invalid]="isFieldInvalid('password')"
+          required>
+        <label for="password">Password</label>
+        <div class="error-message" *ngIf="isFieldInvalid('password')">
+          {{ getErrorMessage('password') }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input 
+          type="password" 
+          formControlName="confirmPassword" 
+          id="confirmPassword"
+          [class.invalid]="isFieldInvalid('confirmPassword')"
+          required>
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="error-message" *ngIf="isFieldInvalid('confirmPassword')">
+          {{ getErrorMessage('confirmPassword') }}
+        </div>
+      </div>
+
+      <!-- Job Seeker Specific Fields -->
+      <ng-container *ngIf="isJobSeeker">
+        <div class="form-group">
+          <input 
+            type="text" 
+            formControlName="skills" 
+            id="skills">
+          <label for="skills">Skills (comma separated)</label>
+        </div>
+
+        <div class="form-group">
+          <input 
+            type="text" 
+            formControlName="experience" 
+            id="experience">
+          <label for="experience">Years of Experience</label>
+        </div>
+
+        <div class="form-group">
+          <input 
+            type="text" 
+            formControlName="education" 
+            id="education">
+          <label for="education">Highest Education</label>
+        </div>
+      </ng-container>
+
+      <!-- Employer Specific Fields -->
+      <ng-container *ngIf="!isJobSeeker">
+        <div class="form-group">
+          <input 
+            type="text" 
+            formControlName="company" 
+            id="company"
+            required>
+          <label for="company">Company Name</label>
+        </div>
+
+        <div class="form-group">
+          <input 
+            type="text" 
+            formControlName="position" 
+            id="position"
+            required>
+          <label for="position">Your Position</label>
+        </div>
+
+        <div class="form-group">
+          <input 
+            type="text" 
+            formControlName="industry" 
+            id="industry"
+            required>
+          <label for="industry">Industry</label>
+        </div>
+      </ng-container>
+
+      <div class="error-message" *ngIf="error">
+        {{ error }}
+      </div>
+
+      <button 
+        type="submit" 
+        class="submit-btn" 
+        [disabled]="signupForm.invalid || loading">
+        <span *ngIf="!loading">Sign Up</span>
+        <i class="fa-solid fa-spinner fa-spin" *ngIf="loading"></i>
+      </button>
+
+      <p class="login-link">
+        Already have an account? 
+        <a routerLink="/login">Login here</a>
+      </p>
+    </form>
+  </div>
+</div> 

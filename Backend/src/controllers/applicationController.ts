@@ -45,7 +45,11 @@ export const createApplication =asyncHandler( async (req: Request, res: Response
     const matchingSkills = userSkillIds.filter(skillId => 
       requiredSkillIds.includes(skillId)
     );
-    const matchScore = (matchingSkills.length / requiredSkillIds.length) * 100;
+    
+    // Calculate match score as fraction of user's skills that match required skills
+    const matchScore = userSkillIds.length > 0 
+      ? (matchingSkills.length / userSkillIds.length) * 100 
+      : 0;
 
     const application = new Application();
     application.user = user;
@@ -83,6 +87,9 @@ export const updateApplicationStatus =asyncHandler( async (req: Request, res: Re
     const { status } = req.body;
     const userId = (req as any).user.userId;
 
+    console.log('Received status:', status);
+    console.log('Valid statuses:', Object.values(ApplicationStatus));
+
     const application = await applicationRepository.findOne({
       where: { id },
       relations: ['job', 'job.employer'],
@@ -97,20 +104,39 @@ export const updateApplicationStatus =asyncHandler( async (req: Request, res: Re
       return res.status(403).json({ message: 'Not authorized to update this application' });
     }
 
-    if (!Object.values(ApplicationStatus).includes(status)) {
-      return res.status(400).json({ message: 'Invalid status' });
+    // Convert status to uppercase for case-insensitive comparison
+    const normalizedStatus = status?.toUpperCase();
+    
+    // Map 'reviewed' to 'reviewing' for backward compatibility
+    const statusMap: { [key: string]: ApplicationStatus } = {
+      'REVIEWED': ApplicationStatus.REVIEWED,
+      'PENDING': ApplicationStatus.PENDING,
+      'REVIEWING': ApplicationStatus.REVIEWED,
+      'INTERVIEW': ApplicationStatus.INTERVIEW,
+      'ACCEPTED': ApplicationStatus.ACCEPTED,
+      'REJECTED': ApplicationStatus.REJECTED
+    };
+
+    const mappedStatus = statusMap[normalizedStatus];
+    if (!mappedStatus) {
+      return res.status(400).json({ 
+        message: 'Invalid status',
+        validStatuses: Object.values(ApplicationStatus),
+        receivedStatus: status
+      });
     }
 
-    application.status = status as ApplicationStatus;
+    application.status = mappedStatus;
 
     // If status is 'interview', set interview date
-    if (status === ApplicationStatus.INTERVIEW && req.body.interviewDate) {
+    if (mappedStatus === ApplicationStatus.INTERVIEW && req.body.interviewDate) {
       application.interviewDate = new Date(req.body.interviewDate);
     }
 
     await applicationRepository.save(application);
     res.json(application);
   } catch (error) {
+    console.error('Error updating application status:', error);
     res.status(500).json({ message: 'Error updating application status', error });
   }
 });

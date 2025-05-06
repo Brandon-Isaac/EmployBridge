@@ -97,7 +97,10 @@ export const updateUserProfile = async (req: Request, res: Response):Promise<voi
     const userId = (req as any).user.userId;
     const { name, bio, company, position } = req.body;
 
-    const user = await userRepository.findOne({ where: { id: userId } });
+    const user = await userRepository.findOne({ 
+      where: { id: userId },
+      relations: ['portfolio', 'cv']
+    });
     if (!user) {
       res.status(404).json({ message: 'User not found' });
       return;

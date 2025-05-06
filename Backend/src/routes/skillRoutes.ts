@@ -8,6 +8,7 @@ import {
   getUserSkills,
   addUserSkill,
   removeUserSkill,
+  generateSkills
 } from '../controllers/skillController';
 import { authenticate } from '../middleware/authMiddleware';
 
@@ -23,5 +24,7 @@ router.delete('/:id', authenticate, deleteSkill);
 router.get('/user/:userId', getUserSkills);
 router.post('/user/:userId', authenticate, addUserSkill);
 router.delete('/user/:userId/:skillId', authenticate, removeUserSkill);
+
+router.post('/generate', authenticate, generateSkills);
 
 export default router;

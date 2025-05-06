@@ -1,0 +1,106 @@
+<!-- Header Section -->
+<header class="header">
+  <div class="logo" (click)="scrollToSection('home')">
+    <i class="fa-solid fa-bridge"></i>
+    <span>EmployBridge</span>
+  </div>
+  <nav class="nav-links">
+    <a (click)="scrollToSection('home')">Home</a>
+    <a (click)="scrollToSection('about')">About</a>
+    <a (click)="scrollToSection('testimonials')">Testimonials</a>
+    <a (click)="scrollToSection('contact')">Contact</a>
+  </nav>
+  <div class="auth-buttons">
+    <button class="login-btn" (click)="navigateToLogin()">Login</button>
+    <button class="signup-btn" (click)="navigateToSignup()">Sign Up</button>
+  </div>
+</header>
+
+<!-- Home Section -->
+<section id="home" class="home-section">
+  <div class="hero-content">
+    <h1>Find Your Dream Job with AI</h1>
+    <p>Experience the future of job hunting with our AI-powered platform</p>
+    <button class="cta-button" (click)="navigateToSignup()">Get Started</button>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <h2>Why Choose EmployBridge?</h2>
+  <div class="features-grid">
+    <div class="feature-card" *ngFor="let feature of features">
+      <i [class]="feature.icon"></i>
+      <h3>{{feature.title}}</h3>
+      <p>{{feature.description}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section">
+  <h2>What Our Users Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+      <div class="testimonial-header">
+        <img [src]="testimonial.image" [alt]="testimonial.name">
+        <div class="testimonial-info">
+          <h3>{{testimonial.name}}</h3>
+          <p>{{testimonial.role}}</p>
+        </div>
+      </div>
+      <div class="rating">
+        <i class="fa-solid fa-star" *ngFor="let star of [].constructor(testimonial.rating)"></i>
+      </div>
+      <p class="testimonial-comment">{{testimonial.comment}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <h2>Get in Touch</h2>
+  <div class="contact-container">
+    <form class="contact-form">
+      <div class="form-group">
+        <input type="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="send-button">
+        <i class="fa-solid fa-paper-plane"></i>
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>EmployBridge</h3>
+      <p>Revolutionizing the job search experience with AI</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a (click)="scrollToSection('home')">Home</a>
+      <a (click)="scrollToSection('about')">About</a>
+      <a (click)="scrollToSection('testimonials')">Testimonials</a>
+      <a (click)="scrollToSection('contact')">Contact</a>
+    </div>
+    <div class="footer-section">
+      <h4>Connect With Us</h4>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 EmployBridge. All rights reserved.</p>
+  </div>
+</footer> 

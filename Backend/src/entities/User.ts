@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, JoinColumn, ManyToMany } from 'typeorm';
 import { Job } from './Job';
 import { Application } from './Application';
 import { Portfolio } from './Portfolio';
@@ -47,9 +47,8 @@ export class User {
   @OneToMany(() => Job, (job) => job.employer)
   jobs?: Job[];
 
-  @OneToMany(() => Skill, (skill) => skill.users)
-  @JoinColumn() // This is a many-to-many relationship, so we need to specify the join column   
-  skills?:Skill[];
+  @ManyToMany(() => Skill, (skill) => skill.users)
+  skills?: Skill[];
 
   @OneToMany(() => Application, (application) => application.user)
   applications?: Application[];

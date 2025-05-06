@@ -5,10 +5,15 @@ import { Skill } from '../entities/Skill';
 import { AppDataSource } from '../data-source';
 import { Like, In } from 'typeorm';
 import asyncHandler from '../middleware/asyncHandler';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const jobRepository = AppDataSource.getRepository(Job);
 const userRepository = AppDataSource.getRepository(User);
 const skillRepository = AppDataSource.getRepository(Skill);
+
+// Initialize Gemini AI
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
 export const getAllJobs = async (req: Request, res: Response) => {
   try {
@@ -86,7 +91,6 @@ export const updateJob = asyncHandler(async (req: Request, res: Response) => {
     const { id } = req.params;
     const userId = (req as any).user.userId;
     const updateData = req.body;
-
     const job = await jobRepository.findOne({
       where: { id },
       relations: ['employer', 'requiredSkills'],
@@ -130,15 +134,12 @@ export const deleteJob = asyncHandler(async (req: Request, res: Response) => {
       where: { id },
       relations: ['employer'],
     });
-
     if (!job) {
       return res.status(404).json({ message: 'Job not found' });
     }
-
     if (job.employer.id !== userId) {
       return res.status(403).json({ message: 'Not authorized to delete this job' });
     }
-
     await jobRepository.delete(id);
     res.json({ message: 'Job deleted successfully' });
   } catch (error) {
@@ -170,7 +171,6 @@ export const searchJobs = asyncHandler(async (req: Request, res: Response) => {
     if (location) {
       where.location = Like(`%${location}%`);
     }
-
     const options: any = {
       where,
       relations: ['employer', 'requiredSkills'],
@@ -232,5 +232,88 @@ export const getRecommendedJobs =asyncHandler( async (req: Request, res: Respons
     res.json(jobsWithScores);
   } catch (error) {
     res.status(500).json({ message: 'Error getting recommended jobs', error });
+  }
+});
+
+export const generateJobWithAI = asyncHandler(async (req: Request, res: Response) => {
+  try {
+    const userId = (req as any).user.userId;
+    const { title, location, employmentType, salary } = req.body;
+
+    // Verify user is an employer
+    const employer = await userRepository.findOne({ where: { id: userId } });
+    if (!employer || employer.role !== 'employer') {
+      return res.status(403).json({ message: 'Only employers can generate jobs' });
+    }
+
+    // Generate job description and skills using Gemini
+    const prompt = `Generate a detailed job description and required skills for a ${title} position.
+    Location: ${location}
+    Employment Type: ${employmentType}
+    Salary Range: ${salary}
+
+    Return ONLY a JSON object (no markdown, no backticks) with this structure:
+    {
+      "description": "detailed job description",
+      "skills": [
+        {
+          "name": "skill name",
+          "description": "brief description of why this skill is needed",
+          "category": "one of: Technical, Soft Skills, Domain Knowledge, Tools, Languages"
+        }
+      ]
+    }`;
+
+    const completion = await model.generateContent(prompt);
+    if (!completion.response.text()) {
+      throw new Error('Failed to generate job details');
+    }
+
+    // Clean and parse the response
+    const responseText = completion.response.text().replace(/```json\n?|\n?```/g, '').trim();
+    const generatedData = JSON.parse(responseText);
+
+    // Create or update skills in the database
+    const skills = await Promise.all(
+      generatedData.skills.map(async (skillData: { name: string; description: string; category: string }) => {
+        let skill = await skillRepository.findOne({
+          where: { name: skillData.name }
+        });
+
+        if (!skill) {
+          skill = new Skill();
+          skill.name = skillData.name;
+          skill.description = skillData.description;
+          skill.category = skillData.category;
+          await skillRepository.save(skill);
+        }
+
+        return skill;
+      })
+    );
+
+    // Create the job
+    const job = new Job();
+    job.title = title;
+    job.description = generatedData.description;
+    job.location = location;
+    job.salary = salary;
+    job.employmentType = employmentType;
+    job.employer = employer;
+    job.requiredSkills = skills;
+
+    await jobRepository.save(job);
+
+    res.status(201).json({
+      job,
+      generatedSkills: skills,
+      message: 'Job generated successfully with AI'
+    });
+  } catch (error) {
+    console.error('Error generating job:', error);
+    res.status(500).json({ 
+      message: 'Error generating job with AI', 
+      error: error instanceof Error ? error.message : 'Unknown error'
+    });
   }
 });
