@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject, tap } from 'rxjs';
+import { Observable, BehaviorSubject, tap, catchError, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 
 export interface User {
@@ -8,6 +8,7 @@ export interface User {
   email: string;
   name: string;
   role: 'job_seeker' | 'employer' | 'admin';
+  position?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -51,14 +52,22 @@ export class AuthService {
   // Register new user
   register(data: RegisterData): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/register`, data).pipe(
-      tap(response => this.handleAuthResponse(response))
+      tap(response => this.handleAuthResponse(response)),
+      catchError(error => {
+        console.error('Registration error:', error);
+        return throwError(() => error);
+      })
     );
   }
 
   // Login user
   login(credentials: LoginCredentials): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, credentials).pipe(
-      tap(response => this.handleAuthResponse(response))
+      tap(response => this.handleAuthResponse(response)),
+      catchError(error => {
+        console.error('Login error:', error);
+        return throwError(() => error);
+      })
     );
   }
 
@@ -68,6 +77,12 @@ export class AuthService {
       tap(() => {
         this.clearAuthData();
         this.router.navigate(['/login']);
+      }),
+      catchError(error => {
+        console.error('Logout error:', error);
+        this.clearAuthData();
+        this.router.navigate(['/login']);
+        return throwError(() => error);
       })
     );
   }
@@ -79,7 +94,7 @@ export class AuthService {
 
   // Check if user is authenticated
   isAuthenticated(): boolean {
-    return !!this.currentUserSubject.value;
+    return !!this.currentUserSubject.value && !!this.getToken();
   }
 
   // Check if user has specific role
@@ -91,6 +106,12 @@ export class AuthService {
   // Get auth token
   getToken(): string | null {
     return localStorage.getItem('token');
+  }
+
+  // Handle unauthorized response
+  handleUnauthorized(): void {
+    this.clearAuthData();
+    this.router.navigate(['/login']);
   }
 
   private handleAuthResponse(response: AuthResponse): void {
