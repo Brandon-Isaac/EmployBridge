@@ -30,6 +30,9 @@ export interface JobSearchParams {
   query?: string;
   location?: string;
   skills?: string[];
+  employmentType?: string;
+  sortBy?: string;
+  minSalary?: number;
 }
 
 export interface JobGenerationParams {
@@ -83,9 +86,13 @@ export class JobService {
     if (params.query) queryParams.set('query', params.query);
     if (params.location) queryParams.set('location', params.location);
     if (params.skills?.length) queryParams.set('skills', params.skills.join(','));
+    if (params.employmentType) queryParams.set('employmentType', params.employmentType);
+    if (params.sortBy) queryParams.set('sortBy', params.sortBy);
+    if (params.minSalary) queryParams.set('minSalary', params.minSalary.toString());
 
     return this.http.get<Job[]>(`${this.apiUrl}/search?${queryParams.toString()}`);
   }
+
 
   // Get recommended jobs for the current user
   getRecommendedJobs(): Observable<JobWithMatchScore[]> {

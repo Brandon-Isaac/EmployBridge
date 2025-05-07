@@ -3,7 +3,7 @@ import { Job } from '../entities/Job';
 import { User } from '../entities/User';
 import { Skill } from '../entities/Skill';
 import { AppDataSource } from '../data-source';
-import { Like, In } from 'typeorm';
+import { Like, In, MoreThanOrEqual } from 'typeorm';
 import asyncHandler from '../middleware/asyncHandler';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
@@ -162,7 +162,7 @@ export const getJobsByEmployer = asyncHandler(async (req: Request, res: Response
 
 export const searchJobs = asyncHandler(async (req: Request, res: Response) => {
   try {
-    const { query, location, skills } = req.query;
+    const { query, location, skills, employmentType, minSalary, sortBy } = req.query;
 
     const where: any = {};
     if (query) {
@@ -171,6 +171,13 @@ export const searchJobs = asyncHandler(async (req: Request, res: Response) => {
     if (location) {
       where.location = Like(`%${location}%`);
     }
+    if (employmentType) {
+      where.employmentType = employmentType;
+    }
+    if (minSalary) {
+      where.salary = MoreThanOrEqual(Number(minSalary));
+    }
+
     const options: any = {
       where,
       relations: ['employer', 'requiredSkills'],
@@ -179,6 +186,22 @@ export const searchJobs = asyncHandler(async (req: Request, res: Response) => {
     if (skills) {
       const skillIds = (skills as string).split(',');
       options.where.requiredSkills = { id: In(skillIds) };
+    }
+
+    // Add sorting
+    if (sortBy) {
+      options.order = {};
+      switch (sortBy) {
+        case 'salary':
+          options.order.salary = 'DESC';
+          break;
+        case 'date':
+          options.order.createdAt = 'DESC';
+          break;
+        case 'matchScore':
+          // If you have a matchScore field, add it here
+          break;
+      }
     }
 
     const jobs = await jobRepository.find(options);
