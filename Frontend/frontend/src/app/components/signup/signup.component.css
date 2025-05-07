@@ -12,17 +12,21 @@
 }
 
 .signup-container.employer {
-  background: linear-gradient(135deg, #2c3e50, #34495e);
+  background: linear-gradient(135deg, #00ff9d, #00cc7e);
 }
 
 .signup-card {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  width: 100%;
-  max-width: 500px;
-  transition: transform 0.3s ease;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2px;
+    width: 100%;
+    max-width: 40vw;
+    transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .signup-card:hover {
@@ -67,6 +71,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 80%;
 }
 
 .form-group {
