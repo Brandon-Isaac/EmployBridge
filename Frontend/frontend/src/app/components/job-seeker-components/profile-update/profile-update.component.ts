@@ -14,7 +14,7 @@ import { faUser, faBriefcase, faPlus, faTimes } from '@fortawesome/free-solid-sv
 import { ProfileService, UpdateProfileData } from '../../../services/profile.service';
 import { SkillService, Skill } from '../../../services/skill.service';
 import { AuthService, User } from '../../../services/auth.service';
-import { Observable, map, startWith } from 'rxjs';
+import { Observable, map, startWith, firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-profile-update',
@@ -333,40 +333,39 @@ export class ProfileUpdateComponent implements OnInit {
 
       // Update profile
       this.profileService.updateProfile(updateData).subscribe({
-        next: () => {
-          // Update skills
-          const currentSkillIds = this.selectedSkills.map(s => s.id);
-          const existingSkillIds = this.selectedSkills
-            .filter(s => this.availableSkills.some(as => as.id === s.id))
-            .map(s => s.id);
+        next: async () => {
+          try {
+            // Get current user skills
+            const currentUserSkills = await firstValueFrom(this.skillService.getUserSkills(user.id));
+            const currentSkillIds = this.selectedSkills.map(s => s.id);
+            const existingSkillIds = currentUserSkills.map(s => s.id);
 
-          // Remove skills that are no longer selected
-          const skillsToRemove = this.availableSkills
-            .filter(s => existingSkillIds.includes(s.id) && !currentSkillIds.includes(s.id));
+            // Find skills to remove (skills that exist in currentUserSkills but not in selectedSkills)
+            const skillsToRemove = currentUserSkills.filter(s => !currentSkillIds.includes(s.id));
 
-          // Add new skills
-          const skillsToAdd = this.selectedSkills
-            .filter(s => !existingSkillIds.includes(s.id));
+            // Find skills to add (skills in selectedSkills that don't exist in currentUserSkills)
+            const skillsToAdd = this.selectedSkills.filter(s => !existingSkillIds.includes(s.id));
 
-          // Process removals and additions
-          const removals = skillsToRemove.map(skill => 
-            this.skillService.removeUserSkill(user.id, skill.id).toPromise()
-          );
+            console.log('Skills to remove:', skillsToRemove);
+            console.log('Skills to add:', skillsToAdd);
 
-          const additions = skillsToAdd.map(skill =>
-            this.skillService.addUserSkill(user.id, skill.id).toPromise()
-          );
+            // Process removals
+            for (const skill of skillsToRemove) {
+              await firstValueFrom(this.skillService.removeUserSkill(user.id, skill.id));
+            }
 
-          Promise.all([...removals, ...additions])
-            .then(() => {
-              this.isSubmitting = false;
-              this.goBack();
-            })
-            .catch(error => {
-              console.error('Error updating skills:', error);
-              this.error = 'Failed to update skills. Please try again.';
-              this.isSubmitting = false;
-            });
+            // Process additions
+            for (const skill of skillsToAdd) {
+              await firstValueFrom(this.skillService.addUserSkill(user.id, skill.id));
+            }
+
+            this.isSubmitting = false;
+            this.goBack();
+          } catch (error) {
+            console.error('Error updating skills:', error);
+            this.error = 'Failed to update skills. Please try again.';
+            this.isSubmitting = false;
+          }
         },
         error: (error) => {
           console.error('Error updating profile:', error);
