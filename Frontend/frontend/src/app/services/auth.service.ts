@@ -7,7 +7,7 @@ export interface User {
   id: string;
   email: string;
   name: string;
-  role: 'user' | 'employer' | 'admin';
+  role: 'job_seeker' | 'employer' | 'admin';
   createdAt: Date;
   updatedAt: Date;
 }
@@ -26,7 +26,7 @@ export interface RegisterData {
   email: string;
   password: string;
   name: string;
-  role?: 'user' | 'employer';
+  role?: 'job_seeker' | 'employer';
 }
 
 @Injectable({

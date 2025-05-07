@@ -45,17 +45,13 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value).subscribe({
         next: (response) => {
           this.loading = false;
-          // Navigate to appropriate dashboard based on user type
-          switch (this.userType) {
-            case 'job_seeker':
-              this.router.navigate(['/job-seeker/dashboard']);
-              break;
-            case 'employer':
-              this.router.navigate(['/employer/dashboard']);
-              break;
-            case 'admin':
-              this.router.navigate(['/admin/dashboard']);
-              break;
+          // Navigate based on user role
+          if (response.user.role === 'job_seeker') {
+            this.router.navigate(['/job-seeker']);
+          } else if (response.user.role === 'employer') {
+            this.router.navigate(['/employer/dashboard']);
+          } else if (response.user.role === 'admin') {
+            this.router.navigate(['/admin/dashboard']);
           }
         },
         error: (error) => {

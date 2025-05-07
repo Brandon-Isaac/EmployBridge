@@ -62,6 +62,7 @@ export class SignupComponent {
 
       const formData = {
         ...this.signupForm.value,
+        role: this.isJobSeeker ? 'job_seeker' : 'employer',
         // Remove confirmPassword before sending to server
         confirmPassword: undefined
       };
@@ -69,10 +70,10 @@ export class SignupComponent {
       this.authService.register(formData).subscribe({
         next: (response) => {
           this.loading = false;
-          // Navigate to appropriate dashboard based on role
-          if (this.isJobSeeker) {
-            this.router.navigate(['/job-seeker/dashboard']);
-          } else {
+          // Navigate based on user role
+          if (response.user.role === 'job_seeker') {
+            this.router.navigate(['/job-seeker']);
+          } else if (response.user.role === 'employer') {
             this.router.navigate(['/employer/dashboard']);
           }
         },
