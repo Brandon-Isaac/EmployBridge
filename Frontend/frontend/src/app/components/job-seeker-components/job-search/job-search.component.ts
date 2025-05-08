@@ -62,7 +62,7 @@ interface Job {
               <mat-form-field appearance="outline" class="search-input">
                 <mat-label>Search Jobs</mat-label>
                 <input matInput formControlName="query" placeholder="Job title, skills, or keywords">
-                <mat-icon matSuffix>search</mat-icon>
+                <fa-icon [icon]="faSearch" matSuffix></fa-icon>
               </mat-form-field>
             </div>
 
@@ -92,8 +92,8 @@ interface Job {
                   <mat-label>Employment Type</mat-label>
                   <mat-select formControlName="employmentType">
                     <mat-option value="">All Types</mat-option>
-                    <mat-option value="FULL_TIME">Full Time</mat-option>
-                    <mat-option value="PART_TIME">Part Time</mat-option>
+                    <mat-option value="FULL-TIME">Full-time</mat-option>
+                    <mat-option value="PART-TIME">Part-time</mat-option>
                     <mat-option value="CONTRACT">Contract</mat-option>
                     <mat-option value="INTERNSHIP">Internship</mat-option>
                   </mat-select>
@@ -165,11 +165,11 @@ interface Job {
             <p class="job-description">{{job.description | slice:0:200}}...</p>
 
             <div class="skills-container">
-              <mat-chip-list>
+              <mat-chip-set>
                 <mat-chip *ngFor="let skill of job.requiredSkills" color="primary" selected>
                   {{skill.name}}
                 </mat-chip>
-              </mat-chip-list>
+              </mat-chip-set>
             </div>
 
             <div *ngIf="job.matchScore" class="match-score">
@@ -190,6 +190,7 @@ interface Job {
       max-width: 1200px;
       margin: 0 auto;
       padding: 24px;
+      font-family: 'Poppins', sans-serif;
     }
 
     .search-filter-card {

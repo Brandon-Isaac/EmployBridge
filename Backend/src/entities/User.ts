@@ -7,6 +7,7 @@ import { Experience } from './Experience';
 import { Education } from './Education';
 import { ChatMessage } from './Chatmessage';
 import { Skill } from './Skill';
+import { CareerPath } from './CareerPath';
 
 export enum UserRole {
   JOB_SEEKER = 'job_seeker',
@@ -72,4 +73,8 @@ export class User {
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt!: Date;
+
+  @OneToMany(() => CareerPath, (careerPath) => careerPath.user)
+  careerPaths?: CareerPath[];
+
 }

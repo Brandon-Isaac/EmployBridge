@@ -3,7 +3,7 @@ import { Job } from '../entities/Job';
 import { User } from '../entities/User';
 import { Skill } from '../entities/Skill';
 import { AppDataSource } from '../data-source';
-import { Like, In, MoreThanOrEqual } from 'typeorm';
+import { Like, In } from 'typeorm';
 import asyncHandler from '../middleware/asyncHandler';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
@@ -162,7 +162,7 @@ export const getJobsByEmployer = asyncHandler(async (req: Request, res: Response
 
 export const searchJobs = asyncHandler(async (req: Request, res: Response) => {
   try {
-    const { query, location, skills, employmentType, minSalary, sortBy } = req.query;
+    const { query, location, skills } = req.query;
 
     const where: any = {};
     if (query) {
@@ -171,13 +171,6 @@ export const searchJobs = asyncHandler(async (req: Request, res: Response) => {
     if (location) {
       where.location = Like(`%${location}%`);
     }
-    if (employmentType) {
-      where.employmentType = employmentType;
-    }
-    if (minSalary) {
-      where.salary = MoreThanOrEqual(Number(minSalary));
-    }
-
     const options: any = {
       where,
       relations: ['employer', 'requiredSkills'],
@@ -186,22 +179,6 @@ export const searchJobs = asyncHandler(async (req: Request, res: Response) => {
     if (skills) {
       const skillIds = (skills as string).split(',');
       options.where.requiredSkills = { id: In(skillIds) };
-    }
-
-    // Add sorting
-    if (sortBy) {
-      options.order = {};
-      switch (sortBy) {
-        case 'salary':
-          options.order.salary = 'DESC';
-          break;
-        case 'date':
-          options.order.createdAt = 'DESC';
-          break;
-        case 'matchScore':
-          // If you have a matchScore field, add it here
-          break;
-      }
     }
 
     const jobs = await jobRepository.find(options);
@@ -340,3 +317,23 @@ export const generateJobWithAI = asyncHandler(async (req: Request, res: Response
     });
   }
 });
+
+// export const generateCareerPath = asyncHandler(async (req: Request, res: Response) => {
+//   try {
+//     const userId = (req as any).user.userId;
+//   }
+//   const skills = await skillRepository.find({
+//     where: {
+//       id: In(userSkillIds)
+//     }
+//   }); 
+
+//   const prompt = `Generate a career path for a user with the following skills: ${skills.join(', ')}`;
+//   const completion = await model.generateContent(prompt);
+//   const careerPath = completion.response.text();
+//   res.json({ careerPath });
+// } catch (error) {
+//   res.status(500).json({ message: 'Error generating career path', error });
+// }
+// });
+
