@@ -5,6 +5,8 @@ import { ProfileUpdateComponent } from './profile-update/profile-update.componen
 import { JobMatchingComponent } from './job-matching/job-matching.component';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { CareerPathComponent } from './career-path/career-path.component';
+import { CVGeneratorComponent } from './cv-generator/cv-generator.component';
+import { MyApplicationsComponent } from './my-applications/my-applications.component';
 
 export const JOB_SEEKER_ROUTES: Routes = [
   {
@@ -17,11 +19,9 @@ export const JOB_SEEKER_ROUTES: Routes = [
       { path: 'job-matching', component: JobMatchingComponent },
       { path: 'job-search', component: JobSearchComponent },
       { path: 'career-path', component: CareerPathComponent },
-      // Add other routes as components are created
-      // { path: 'ai-recommendations', component: AIRecommendationsComponent },
-      // { path: 'applications', component: ApplicationsComponent },
+      { path: 'cv-generator', component: CVGeneratorComponent },
+      { path: 'applications', component: MyApplicationsComponent },
       // { path: 'interviews', component: InterviewsComponent },
-      // { path: 'cv-generator', component: CVGeneratorComponent },
       // { path: 'chatbot', component: ChatbotComponent }
     ]
   }

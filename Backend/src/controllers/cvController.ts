@@ -159,7 +159,7 @@ export const extractSkillsFromCV =asyncHandler( async (req: Request, res: Respon
   }
 });
 
-export const generateAICV =asyncHandler( async (req: Request, res: Response) => {
+export const generateAICV = asyncHandler(async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user.userId;
 
@@ -171,6 +171,14 @@ export const generateAICV =asyncHandler( async (req: Request, res: Response) => 
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Delete existing CV if it exists
+    if (user.cv) {
+      if (user.cv.filePath && fs.existsSync(user.cv.filePath)) {
+        fs.unlinkSync(user.cv.filePath);
+      }
+      await cvRepository.delete(user.cv.id);
     }
 
     let cvContent: string;
@@ -250,38 +258,41 @@ ${edu.description || ''}
       return res.status(500).json({ message: 'Failed to generate CV content' });
     }
 
-    // Save generated CV to database
-    let cv = await cvRepository.findOne({ where: { user: { id: userId } } });
-    if (!cv) {
-      cv = new CV();
-      cv.user = user;
-    }
-
+    // Create new CV
+    const cv = new CV();
+    cv.user = user;
     cv.fileName = `${user.name.replace(/\s+/g, '_')}_CV_${new Date().toISOString().split('T')[0]}.md`;
-    cv.filePath = `generated/${cv.fileName}`;
+    cv.filePath = path.join('generated', cv.fileName);
     cv.extractedSkills = user.skills?.map(skill => skill.name) || [];
 
     // Ensure directory exists
-    if (!fs.existsSync('generated')) {
-      fs.mkdirSync('generated');
+    const generatedDir = path.join(process.cwd(), 'generated');
+    if (!fs.existsSync(generatedDir)) {
+      fs.mkdirSync(generatedDir, { recursive: true });
     }
 
     // Save markdown file
-    fs.writeFileSync(cv.filePath, cvContent);
+    fs.writeFileSync(path.join(process.cwd(), cv.filePath), cvContent);
 
-    await cvRepository.save(cv);
+    // Save CV to database
+    const savedCV = await cvRepository.save(cv);
 
     // Update user's CV reference
-    user.cv = cv;
+    user.cv = savedCV;
     await userRepository.save(user);
 
     res.json({
       message: 'CV generated successfully',
       cv: {
-        id: cv.id,
-        fileName: cv.fileName,
-        downloadUrl: `/api/cvs/download/${cv.id}`,
+        id: savedCV.id,
+        fileName: savedCV.fileName,
+        filePath: savedCV.filePath,
+        extractedSkills: savedCV.extractedSkills,
+        userId: user.id,
         content: cvContent,
+        downloadUrl: `/api/cvs/download/${savedCV.id}`,
+        createdAt: savedCV.createdAt,
+        updatedAt: savedCV.updatedAt
       },
     });
   } catch (error) {

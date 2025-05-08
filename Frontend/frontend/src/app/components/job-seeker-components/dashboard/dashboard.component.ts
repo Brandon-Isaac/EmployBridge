@@ -17,7 +17,8 @@ import {
   faFileAlt, 
   faCalendarAlt, 
   faFileContract, 
-  faComments 
+  faComments,
+  faRoute
 } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../../services/auth.service';
 
@@ -77,10 +78,6 @@ import { AuthService } from '../../../services/auth.service';
                 <fa-icon [icon]="faHandshake" class="nav-icon"></fa-icon>
                 <span>Job Matching</span>
               </a>
-              <a mat-list-item routerLink="ai-recommendations" routerLinkActive="active">
-                <fa-icon [icon]="faRobot" class="nav-icon"></fa-icon>
-                <span>AI Recommendations</span>
-              </a>
             </div>
 
             <!-- Applications Section -->
@@ -99,6 +96,10 @@ import { AuthService } from '../../../services/auth.service';
             <!-- Tools Section -->
             <div class="nav-section">
               <h3 class="nav-section-title">Tools</h3>
+              <a mat-list-item routerLink="career-path" routerLinkActive="active">
+                <fa-icon [icon]="faRoute" class="nav-icon"></fa-icon>
+                <span>Career Path</span>
+              </a>
               <a mat-list-item routerLink="cv-generator" routerLinkActive="active">
                 <fa-icon [icon]="faFileContract" class="nav-icon"></fa-icon>
                 <span>CV Generator</span>
@@ -157,6 +158,7 @@ import { AuthService } from '../../../services/auth.service';
 
     .user-role {
       font-size: 0.9rem;
+      
       opacity: 0.8;
       font-weight: 400;
     }
@@ -231,6 +233,7 @@ export class DashboardComponent implements OnInit {
   faCalendarAlt = faCalendarAlt;
   faFileContract = faFileContract;
   faComments = faComments;
+  faRoute = faRoute;
 
   userName: string = '';
 

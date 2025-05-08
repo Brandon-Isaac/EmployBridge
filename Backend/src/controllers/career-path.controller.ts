@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { AppDataSource } from '../data-source';
-import { CareerPath } from '../entities/career-path.entity';
+import { CareerPath } from '../entities/Careerpath';
 import { User } from '../entities/User';
 import { Skill } from '../entities/Skill';
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -62,6 +62,10 @@ const generateAICareerPath = async (
     currentSkills: Skill[]
 ): Promise<CareerPathResponse> => {
     try {
+      if (!process.env.GEMINI_API_KEY) {
+        throw new Error('GEMINI_API_KEY is not configured');
+      }
+
       const prompt = `
         Generate a detailed career path for transitioning from ${currentRole} to ${targetRole}.
         Current experience: ${yearsOfExperience} years
@@ -111,14 +115,40 @@ const generateAICareerPath = async (
             }
           ]
         }
+
+        Ensure the response is valid JSON and follows the exact structure above.
       `;
 
-    const result = await model.generateContent(prompt);
-    const response = result.response.text();
-    return JSON.parse(response) as CareerPathResponse;
+      const result = await model.generateContent(prompt);
+      const response = result.response.text();
+      
+      if (!response) {
+        throw new Error('Empty response from AI model');
+      }
+
+      try {
+        // Clean the response string to ensure it's valid JSON
+        const cleanedResponse = response.replace(/```json\n?|\n?```/g, '').trim();
+        const parsedResponse = JSON.parse(cleanedResponse) as CareerPathResponse;
+        
+        // Validate the response structure
+        if (!parsedResponse.timeline || !parsedResponse.education || 
+            !parsedResponse.requiredSkills || !parsedResponse.alternativePaths) {
+          throw new Error('Invalid response structure from AI model');
+        }
+
+        return parsedResponse;
+      } catch (parseError) {
+        console.error('Error parsing AI response:', parseError);
+        console.error('Raw response:', response);
+        throw new Error('Failed to parse AI response as valid JSON');
+      }
     } catch (error) {
       console.error('Error generating AI career path:', error);
-      throw new Error('Failed to generate career path');
+      if (error instanceof Error) {
+        throw new Error(`Failed to generate career path: ${error.message}`);
+      }
+      throw new Error('Failed to generate career path: Unknown error');
     }
 };
 
@@ -145,13 +175,64 @@ export const generateCareerPath = asyncHandler(async (req: AuthenticatedRequest,
     user.skills || []
   );
 
+  // Convert string arrays to Skill objects
+  const convertToSkills = async (skillNames: string[]) => {
+    const skills = await Promise.all(
+      skillNames.map(async (name) => {
+        try {
+          // First try to find existing skill
+          let skill = await skillRepository.findOne({ where: { name } });
+          
+          if (!skill) {
+            // If skill doesn't exist, create it
+            skill = skillRepository.create({ 
+              name,
+              category: 'Technical', // Default category for AI-generated skills
+              description: `Skill required for ${targetRole} role`
+            });
+            await skillRepository.save(skill);
+          }
+          return skill;
+        } catch (error: any) {
+          // If we get a unique constraint error, try to find the skill again
+          if (error.code === '23505') { // PostgreSQL unique violation error code
+            const existingSkill = await skillRepository.findOne({ where: { name } });
+            if (existingSkill) {
+              return existingSkill;
+            }
+          }
+          throw error; // Re-throw if it's a different error
+        }
+      })
+    );
+    return skills;
+  };
+
   // Save the generated career path
   const newCareerPath = careerPathRepository.create({
     user,
     targetRole,
     currentRole,
     yearsOfExperience,
-    ...careerPath
+    timeline: careerPath.timeline,
+    education: careerPath.education,
+    requiredSkills: {
+      current: await convertToSkills(careerPath.requiredSkills.current),
+      missing: await convertToSkills(careerPath.requiredSkills.missing),
+      development: await Promise.all(
+        careerPath.requiredSkills.development.map(async (dev) => ({
+          skill: (await convertToSkills([dev.skill]))[0],
+          resources: dev.resources,
+          timeline: dev.timeline
+        }))
+      )
+    },
+    alternativePaths: await Promise.all(
+      careerPath.alternativePaths.map(async (path) => ({
+        ...path,
+        requiredSkills: await convertToSkills(path.requiredSkills)
+      }))
+    )
   });
 
   await careerPathRepository.save(newCareerPath);

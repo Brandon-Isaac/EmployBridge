@@ -5,12 +5,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faUser, faBriefcase, faFileAlt, faDownload, faCheck, faTimes, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faBriefcase, faFileAlt, faDownload, faCheck, faTimes, faClock, faRoute } from '@fortawesome/free-solid-svg-icons';
 import { ProfileService } from '../../../services/profile.service';
 import { SkillService } from '../../../services/skill.service';
 import { ApplicationService } from '../../../services/application.service';
 import { AuthService, User } from '../../../services/auth.service';
 import { CVService } from '../../../services/cv.service';
+import { CareerPathService, CareerPath } from '../../../services/career-path.service';
 
 @Component({
   selector: 'app-profile',
@@ -64,6 +65,81 @@ import { CVService } from '../../../services/cv.service';
 
         <!-- Profile Content -->
         <div class="profile-content">
+          <!-- Career Path Section -->
+          <mat-card class="profile-section" *ngIf="careerPath">
+            <mat-card-header>
+              <mat-card-title>
+                <fa-icon [icon]="faRoute" class="icon"></fa-icon>
+                Career Path
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="career-path-info">
+                <div class="career-path-header">
+                  <div class="path-progress">
+                    <div class="progress-bar">
+                      <div class="progress" [style.width.%]="careerPath.progress"></div>
+                    </div>
+                    <span class="progress-text">{{careerPath.progress}}% Complete</span>
+                  </div>
+                  <div class="path-details">
+                    <p><strong>Current Role:</strong> {{careerPath.currentRole}}</p>
+                    <p><strong>Target Role:</strong> {{careerPath.targetRole}}</p>
+                    <p><strong>Experience:</strong> {{careerPath.yearsOfExperience}} years</p>
+                  </div>
+                </div>
+
+                <div class="timeline-section" *ngIf="careerPath.timeline.length > 0">
+                  <h3>Timeline</h3>
+                  <div class="timeline">
+                    <div class="timeline-item" *ngFor="let phase of careerPath.timeline">
+                      <div class="phase-header">
+                        <h4>{{phase.phase}}</h4>
+                        <span class="duration">{{phase.duration}}</span>
+                      </div>
+                      <div class="phase-content">
+                        <div class="activities" *ngIf="phase.activities.length > 0">
+                          <h5>Activities:</h5>
+                          <ul>
+                            <li *ngFor="let activity of phase.activities">{{activity}}</li>
+                          </ul>
+                        </div>
+                        <div class="milestones" *ngIf="phase.milestones.length > 0">
+                          <h5>Milestones:</h5>
+                          <ul>
+                            <li *ngFor="let milestone of phase.milestones">{{milestone}}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skills-section" *ngIf="careerPath.requiredSkills">
+                  <h3>Required Skills</h3>
+                  <div class="skills-grid">
+                    <div class="skill-category">
+                      <h4>Current Skills</h4>
+                      <div class="skill-tags">
+                        <span class="skill-tag" *ngFor="let skill of careerPath.requiredSkills.current">
+                          {{skill.name}}
+                        </span>
+                      </div>
+                    </div>
+                    <div class="skill-category">
+                      <h4>Skills to Develop</h4>
+                      <div class="skill-tags">
+                        <span class="skill-tag missing" *ngFor="let skill of careerPath.requiredSkills.missing">
+                          {{skill.name}}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
           <!-- Skills Section -->
           <mat-card class="profile-section">
             <mat-card-header>
@@ -330,6 +406,145 @@ import { CVService } from '../../../services/cv.service';
       align-items: center;
       gap: 8px;
     }
+
+    .career-path-info {
+      padding: 16px 0;
+    }
+
+    .career-path-header {
+      margin-bottom: 24px;
+    }
+
+    .path-progress {
+      margin-bottom: 16px;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #f0f0f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .progress {
+      height: 100%;
+      background: #3498db;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .path-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .path-details p {
+      margin: 0;
+      color: #666;
+    }
+
+    .timeline-section {
+      margin-top: 24px;
+    }
+
+    .timeline {
+      margin-top: 16px;
+    }
+
+    .timeline-item {
+      padding: 16px;
+      border-left: 2px solid #3498db;
+      margin-left: 16px;
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 20px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #3498db;
+    }
+
+    .phase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .phase-header h4 {
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    .duration {
+      font-size: 0.9rem;
+      color: #666;
+      background: #f8f9fa;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .phase-content {
+      color: #666;
+    }
+
+    .phase-content h5 {
+      margin: 12px 0 8px;
+      color: #2c3e50;
+    }
+
+    .phase-content ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .phase-content li {
+      margin-bottom: 4px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 16px;
+    }
+
+    .skill-category h4 {
+      margin: 0 0 12px;
+      color: #2c3e50;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: rgba(52, 152, 219, 0.1);
+      color: #3498db;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 0.9rem;
+    }
+
+    .skill-tag.missing {
+      background: rgba(220, 53, 69, 0.1);
+      color: #dc3545;
+    }
   `]
 })
 export class ProfileComponent implements OnInit {
@@ -341,11 +556,13 @@ export class ProfileComponent implements OnInit {
   faCheck = faCheck;
   faTimes = faTimes;
   faClock = faClock;
+  faRoute = faRoute;
 
   user: User | null = null;
   skills: any[] = [];
   applications: any[] = [];
   cv: any = null;
+  careerPath: CareerPath | null = null;
   profileCompletion = 0;
   isLoading = true;
   error: string | null = null;
@@ -355,7 +572,8 @@ export class ProfileComponent implements OnInit {
     private skillService: SkillService,
     private applicationService: ApplicationService,
     private authService: AuthService,
-    private cvService: CVService
+    private cvService: CVService,
+    private careerPathService: CareerPathService
   ) {}
 
   ngOnInit(): void {
@@ -387,6 +605,7 @@ export class ProfileComponent implements OnInit {
         this.loadUserSkills();
         this.loadUserApplications();
         this.loadUserCV();
+        this.loadCareerPath();
       },
       error: (error) => {
         console.error('Error loading profile:', error);
@@ -447,6 +666,24 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  private loadCareerPath(): void {
+    this.careerPathService.getUserCareerPaths().subscribe({
+      next: (careerPaths) => {
+        if (careerPaths.length > 0) {
+          // Get the most recent career path
+          this.careerPath = careerPaths[0];
+          this.calculateProfileCompletion();
+        }
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error loading career path:', error);
+        // Don't set error state here, just log it
+        this.isLoading = false;
+      }
+    });
+  }
+
   getStatusIcon(status: string) {
     switch (status.toLowerCase()) {
       case 'accepted':
@@ -460,12 +697,13 @@ export class ProfileComponent implements OnInit {
 
   private calculateProfileCompletion(): void {
     let completion = 0;
-    const totalFields = 4; // name, skills, cv, position
+    const totalFields = 5; // name, skills, cv, position, career path
 
     if (this.user?.name) completion++;
     if (this.skills.length > 0) completion++;
     if (this.cv) completion++;
     if (this.user?.position) completion++;
+    if (this.careerPath) completion++;
 
     this.profileCompletion = Math.round((completion / totalFields) * 100);
   }

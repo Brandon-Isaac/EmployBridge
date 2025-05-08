@@ -7,7 +7,7 @@ import { Experience } from './Experience';
 import { Education } from './Education';
 import { ChatMessage } from './Chatmessage';
 import { Skill } from './Skill';
-import { CareerPath } from './CareerPath';
+import { CareerPath } from './Careerpath';
 
 export enum UserRole {
   JOB_SEEKER = 'job_seeker',

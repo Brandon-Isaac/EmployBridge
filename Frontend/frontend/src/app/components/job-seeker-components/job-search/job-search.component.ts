@@ -11,9 +11,11 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialog } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSearch, faMapMarkerAlt, faBuilding, faMoneyBillWave, faBriefcase, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { JobService } from '../../../services/job.service';
+import { ApplicationFormComponent } from '../application-form/application-form.component';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 interface Job {
@@ -314,7 +316,8 @@ export class JobSearchComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private jobService: JobService
+    private jobService: JobService,
+    private dialog: MatDialog
   ) {
     this.searchForm = this.fb.group({
       query: [''],
@@ -376,7 +379,23 @@ export class JobSearchComponent implements OnInit {
   }
 
   applyForJob(jobId: string): void {
-    // Handle job application
-    console.log('Apply for job:', jobId);
+    this.jobService.getJob(jobId).subscribe({
+      next: (job) => {
+        const dialogRef = this.dialog.open(ApplicationFormComponent, {
+          width: '600px',
+          data: { job }
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+          if (result) {
+            // Optionally refresh the jobs list or show a success message
+            this.loadJobs();
+          }
+        });
+      },
+      error: (error) => {
+        console.error('Error loading job details:', error);
+      }
+    });
   }
 } 

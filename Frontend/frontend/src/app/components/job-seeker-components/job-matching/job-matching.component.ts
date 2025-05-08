@@ -6,11 +6,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBriefcase, faBuilding, faMapMarkerAlt, faMoneyBillWave, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { SkillService, Skill } from '../../../services/skill.service';
 import { JobService, Job } from '../../../services/job.service';
 import { AuthService } from '../../../services/auth.service';
+import { ApplicationFormComponent } from '../application-form/application-form.component';
 
 interface JobMatch {
   job: Job;
@@ -286,7 +288,8 @@ export class JobMatchingComponent implements OnInit {
     private jobService: JobService,
     private skillService: SkillService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -358,7 +361,17 @@ export class JobMatchingComponent implements OnInit {
   }
 
   applyForJob(job: Job): void {
-    this.router.navigate(['/job-seeker/application', job.id]);
+    const dialogRef = this.dialog.open(ApplicationFormComponent, {
+      width: '600px',
+      data: { job }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Optionally refresh the job matches or show a success message
+        this.loadJobMatches();
+      }
+    });
   }
 
   goToProfileUpdate(): void {

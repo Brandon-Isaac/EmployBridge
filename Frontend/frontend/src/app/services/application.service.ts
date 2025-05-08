@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export enum ApplicationStatus {
   PENDING = 'PENDING',
@@ -12,29 +13,17 @@ export enum ApplicationStatus {
 
 export interface Application {
   id: string;
-  user: {
-    id: string;
-    name: string;
-    skills: { id: string; name: string; }[];
-  };
-  job: {
-    id: string;
-    title: string;
-    employer: {
-      id: string;
-      name: string;
-      company: string;
-    };
-    requiredSkills: { id: string; name: string; }[];
-  };
-  status: ApplicationStatus;
-  matchScore: number;
+  jobId: string;
+  userId: string;
+  coverLetter: string;
+  status: string;
   appliedAt: Date;
-  interviewDate?: Date;
+  updatedAt: Date;
 }
 
 export interface CreateApplicationData {
   jobId: string;
+  coverLetter: string;
 }
 
 export interface UpdateApplicationStatusData {
@@ -46,28 +35,24 @@ export interface UpdateApplicationStatusData {
   providedIn: 'root'
 })
 export class ApplicationService {
-  private apiUrl = 'http://localhost:3000/api/applications';
+  private apiUrl = `${environment.apiUrl}/applications`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  // Create a new application
   createApplication(data: CreateApplicationData): Observable<Application> {
     return this.http.post<Application>(this.apiUrl, data);
   }
 
-  // Get application by ID
-  getApplicationById(id: string): Observable<Application> {
+  getUserApplications(userId: string): Observable<Application[]> {
+    return this.http.get<Application[]>(`${this.apiUrl}/user/${userId}`);
+  }
+
+  getApplication(id: string): Observable<Application> {
     return this.http.get<Application>(`${this.apiUrl}/${id}`);
   }
 
-  // Update application status
-  updateApplicationStatus(id: string, data: UpdateApplicationStatusData): Observable<Application> {
-    return this.http.put<Application>(`${this.apiUrl}/${id}/status`, data);
-  }
-
-  // Get all applications for a user
-  getUserApplications(userId: string): Observable<Application[]> {
-    return this.http.get<Application[]>(`${this.apiUrl}/user/${userId}`);
+  updateApplicationStatus(id: string, status: string): Observable<Application> {
+    return this.http.patch<Application>(`${this.apiUrl}/${id}/status`, { status });
   }
 
   // Get all applications for a job

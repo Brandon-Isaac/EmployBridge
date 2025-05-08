@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable, map, catchError, of } from 'rxjs';
 
 export interface CV {
   id: string;
@@ -58,8 +58,16 @@ export class CVService {
   }
 
   // Get CV by user ID
-  getCV(userId: string): Observable<CV> {
-    return this.http.get<CV>(`${this.apiUrl}/${userId}`);
+  getCV(userId: string): Observable<CV | null> {
+    return this.http.get<CV>(`${this.apiUrl}/${userId}`).pipe(
+      catchError(error => {
+        if (error.status === 404) {
+          // Return null when CV is not found
+          return of(null);
+        }
+        throw error;
+      })
+    );
   }
 
   // Delete CV

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Skill } from './skill.service';
+import { environment } from '../../environments/environment';
 
 export interface Job {
   id: string;
@@ -46,7 +47,7 @@ export interface JobGenerationParams {
   providedIn: 'root'
 })
 export class JobService {
-  private apiUrl = 'http://localhost:3000/api/jobs'; // Adjust port if different
+  private apiUrl = `${environment.apiUrl}/jobs`;
 
   constructor(private http: HttpClient) { }
 
@@ -93,7 +94,6 @@ export class JobService {
     return this.http.get<Job[]>(`${this.apiUrl}/search?${queryParams.toString()}`);
   }
 
-
   // Get recommended jobs for the current user
   getRecommendedJobs(): Observable<JobWithMatchScore[]> {
     return this.http.get<JobWithMatchScore[]>(`${this.apiUrl}/recommended`);
@@ -110,5 +110,13 @@ export class JobService {
       generatedSkills: Skill[];
       message: string;
     }>(`${this.apiUrl}/generate`, params);
+  }
+
+  getJobs(): Observable<Job[]> {
+    return this.http.get<Job[]>(this.apiUrl);
+  }
+
+  getJob(id: string): Observable<Job> {
+    return this.http.get<Job>(`${this.apiUrl}/${id}`);
   }
 } 
