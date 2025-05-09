@@ -190,14 +190,18 @@ export class ApplicationFormComponent implements OnInit {
   }
 
   isProfileComplete(profile: any): boolean {
-    return !!(
-      profile.name &&
-      profile.position &&
-      profile.skills?.length > 0 &&
-      profile.cv
-    );
-  }
+    const totalFields = 5; // name, skills, cv, position, career path
+    let completion = 0;
 
+    if (profile.name) completion++;
+    if (profile.skills?.length > 0) completion++;
+    if (profile.cv) completion++;
+    if (profile.position) completion++;
+    if (profile.careerPath) completion++;
+
+    return completion === totalFields; // Only return true if all 5 fields are complete
+  }
+  
   onSubmit(): void {
     if (this.applicationForm.invalid) {
       return;

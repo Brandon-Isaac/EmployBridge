@@ -328,7 +328,8 @@ export class ProfileUpdateComponent implements OnInit {
       }
 
       const updateData: UpdateProfileData = {
-        name: this.profileForm.get('name')?.value
+        name: this.profileForm.get('name')?.value,
+        position: this.profileForm.get('position')?.value
       };
 
       // Update profile

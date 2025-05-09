@@ -6,6 +6,7 @@ import { User } from './auth.service';
 export interface UpdateProfileData {
   name?: string;
   email?: string;
+  position?: string;
 }
 
 export interface UpdatePasswordData {
