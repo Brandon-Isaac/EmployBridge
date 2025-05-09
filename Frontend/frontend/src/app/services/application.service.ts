@@ -31,6 +31,17 @@ export interface UpdateApplicationStatusData {
   interviewDate?: Date;
 }
 
+export interface Interview {
+  id: string;
+  applicationId: string;
+  jobTitle: string;
+  companyName: string;
+  scheduledTime: Date;
+  status: 'pending' | 'accepted' | 'rejected';
+  location?: string;
+  notes?: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -104,5 +115,13 @@ export class ApplicationService {
       default:
         return 'secondary';
     }
+  }
+
+  getUserInterviews(userId: string): Observable<Interview[]> {
+    return this.http.get<Interview[]>(`${this.apiUrl}/interviews/${userId}`);
+  }
+
+  respondToInterview(interviewId: string, response: 'accepted' | 'rejected'): Observable<void> {
+    return this.http.post<void>(`${this.apiUrl}/interviews/${interviewId}/respond`, { response });
   }
 } 

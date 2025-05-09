@@ -8,9 +8,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faTimes, faCheck, faClock } from '@fortawesome/free-solid-svg-icons';
 import { ApplicationService } from '../../../services/application.service';
 import { ProfileService } from '../../../services/profile.service';
+import { CareerPathService } from '../../../services/career-path.service';
+import { CVService } from '../../../services/cv.service';
+import { AuthService } from '../../../services/auth.service';
+import { SkillService } from '../../../services/skill.service';
 
 interface Job {
   id: string;
@@ -143,10 +147,18 @@ export class ApplicationFormComponent implements OnInit {
   applicationForm: FormGroup;
   isLoading = false;
   error: string | null = null;
+  profileCompletion: number = 0;
+  user: any;
+  skills: any[] = [];
+  cv: any;
+  careerPath: any;
+  applications: any[] = [];
 
   // Font Awesome icons
   faPaperPlane = faPaperPlane;
   faTimes = faTimes;
+  faCheck = faCheck;
+  faClock = faClock;
 
   constructor(
     private fb: FormBuilder,
@@ -154,7 +166,11 @@ export class ApplicationFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: { job: Job },
     private applicationService: ApplicationService,
     private profileService: ProfileService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private careerPathService: CareerPathService,
+    private skillService: SkillService,
+    private authService: AuthService,
+    private cvService: CVService,
   ) {
     this.applicationForm = this.fb.group({
       coverLetter: ['', [Validators.required, Validators.minLength(100)]]
@@ -171,14 +187,20 @@ export class ApplicationFormComponent implements OnInit {
 
     this.profileService.getProfile().subscribe({
       next: (profile) => {
-        const isProfileComplete = this.isProfileComplete(profile);
-        if (!isProfileComplete) {
-          this.error = 'Please complete your profile before applying for jobs.';
-          this.snackBar.open('Please complete your profile before applying for jobs.', 'Close', {
-            duration: 5000,
-            panelClass: ['error-snackbar']
-          });
-        }
+        this.user = profile;
+        this.calculateProfileCompletion();
+        this.loadUserSkills();
+        this.loadUserApplications();
+        this.loadUserCV();
+        this.loadCareerPath();
+
+        // if (this.profileCompletion < 100) {
+        //   this.error = 'Please complete your profile before applying for jobs.';
+        //   this.snackBar.open('Please complete your profile before applying for jobs.', 'Close', {
+        //     duration: 5000,
+        //     panelClass: ['error-snackbar']
+        //   });
+        // }
         this.isLoading = false;
       },
       error: (error) => {
@@ -189,49 +211,129 @@ export class ApplicationFormComponent implements OnInit {
     });
   }
 
-  isProfileComplete(profile: any): boolean {
-    const totalFields = 5; // name, skills, cv, position, career path
-    let completion = 0;
-
-    if (profile.name) completion++;
-    if (profile.skills?.length > 0) completion++;
-    if (profile.cv) completion++;
-    if (profile.position) completion++;
-    if (profile.careerPath) completion++;
-
-    return completion === totalFields; // Only return true if all 5 fields are complete
-  }
-  
-  onSubmit(): void {
-    if (this.applicationForm.invalid) {
-      return;
+  private loadUserSkills(): void {
+    const user = this.authService.getCurrentUser();
+    if (user) {
+      this.skillService.getUserSkills(user.id).subscribe({
+        next: (skills) => {
+          this.skills = skills;
+          this.calculateProfileCompletion();
+        },
+        error: (error) => {
+          console.error('Error loading skills:', error);
+          // Don't set error state here, just log it
+        }
+      });
     }
+  }
 
-    this.isLoading = true;
-    this.error = null;
+  private loadUserApplications(): void {
+    const user = this.authService.getCurrentUser();
+    if (user) {
+      this.applicationService.getUserApplications(user.id).subscribe({
+        next: (applications) => {
+          this.applications = applications;
+        },
+        error: (error) => {
+          console.error('Error loading applications:', error);
+          // Don't set error state here, just log it
+        }
+      });
+    }
+  }
 
-    const applicationData = {
-      jobId: this.data.job.id,
-      coverLetter: this.applicationForm.get('coverLetter')?.value
-    };
+  private loadUserCV(): void {
+    const user = this.authService.getCurrentUser();
+    if (user) {
+      this.cvService.getCV(user.id).subscribe({
+        next: (cv) => {
+          this.cv = cv;
+          this.calculateProfileCompletion();
+          this.isLoading = false;
+        },
+        error: (error) => {
+          console.error('Error loading CV:', error);
+          // Don't set error state here, just log it
+          this.isLoading = false;
+        }
+      });
+    } else {
+      this.isLoading = false;
+    }
+  }
 
-    this.applicationService.createApplication(applicationData).subscribe({
-      next: () => {
-        this.snackBar.open('Application submitted successfully!', 'Close', {
-          duration: 5000,
-          panelClass: ['success-snackbar']
-        });
-        this.dialogRef.close(true);
+  private loadCareerPath(): void {
+    this.careerPathService.getUserCareerPaths().subscribe({
+      next: (careerPaths) => {
+        if (careerPaths.length > 0) {
+          // Get the most recent career path
+          this.careerPath = careerPaths[0];
+          this.calculateProfileCompletion();
+        }
+        this.isLoading = false;
       },
       error: (error) => {
-        console.error('Error submitting application:', error);
-        this.error = 'Failed to submit application. Please try again.';
+        console.error('Error loading career path:', error);
+        // Don't set error state here, just log it
         this.isLoading = false;
       }
     });
   }
 
+  getStatusIcon(status: string) {
+    switch (status.toLowerCase()) {
+      case 'accepted':
+        return this.faCheck;
+      case 'rejected':
+        return this.faTimes;
+      default:
+        return this.faClock;
+    }
+  }
+
+  private calculateProfileCompletion(): void {
+    let completion = 0;
+    const totalFields = 5; // name, skills, cv, position, career path
+
+    if (this.user?.name) completion++;
+    if (this.skills.length > 0) completion++;
+    if (this.cv) completion++;
+    if (this.user?.position) completion++;
+    if (this.careerPath) completion++;
+
+    this.profileCompletion = Math.round((completion / totalFields) * 100);
+  }
+
   onCancel(): void {
     this.dialogRef.close();
   }
+  onSubmit(): void {
+    if (this.applicationForm.valid) {
+      this.isLoading = true;
+      this.error = null;
+
+      const applicationData = {
+        jobId: this.data.job.id,
+        coverLetter: this.applicationForm.value.coverLetter,
+        status: 'pending',
+        createdAt: new Date()
+      };
+
+      this.applicationService.createApplication(applicationData).subscribe({
+        next: () => {
+          this.isLoading = false;
+          this.snackBar.open('Application submitted successfully!', 'Close', {
+            duration: 5000,
+            panelClass: ['success-snackbar']
+          });
+          this.dialogRef.close();
+        },
+        error: (error) => {
+          console.error('Error submitting application:', error);
+          this.isLoading = false;
+          this.error = 'Failed to submit application. Please try again.';
+        }
+      });
+    }
+  }  
 } 

@@ -7,6 +7,7 @@ import { JobSearchComponent } from './job-search/job-search.component';
 import { CareerPathComponent } from './career-path/career-path.component';
 import { CVGeneratorComponent } from './cv-generator/cv-generator.component';
 import { MyApplicationsComponent } from './my-applications/my-applications.component';
+import { InterviewsComponent } from './interviews/interviews.component';
 
 export const JOB_SEEKER_ROUTES: Routes = [
   {
@@ -21,7 +22,7 @@ export const JOB_SEEKER_ROUTES: Routes = [
       { path: 'career-path', component: CareerPathComponent },
       { path: 'cv-generator', component: CVGeneratorComponent },
       { path: 'applications', component: MyApplicationsComponent },
-      // { path: 'interviews', component: InterviewsComponent },
+      { path: 'interviews', component: InterviewsComponent },
       // { path: 'chatbot', component: ChatbotComponent }
     ]
   }
