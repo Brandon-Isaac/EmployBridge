@@ -1,0 +1,59 @@
+<div class="ai-assistant-container">
+  <mat-card class="chat-card">
+    <mat-card-header>
+      <mat-card-title>AI Career Assistant</mat-card-title>
+      <mat-card-subtitle>Your personal career guidance companion</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <!-- Chat Messages Container -->
+      <div #chatContainer class="chat-messages">
+        <div *ngFor="let message of messages" 
+             [ngClass]="{'message': true, 'user-message': message.isFromUser, 'bot-message': !message.isFromUser}">
+          <div class="message-content">
+            <div class="message-text">{{ message.content }}</div>
+            <div class="message-timestamp">{{ formatTimestamp(message.timestamp) }}</div>
+          </div>
+        </div>
+        
+        <!-- Loading Indicator -->
+        <div *ngIf="isLoading" class="loading-indicator">
+          <mat-spinner diameter="30"></mat-spinner>
+        </div>
+      </div>
+
+      <!-- Suggested Queries -->
+      <div class="suggested-queries" *ngIf="messages.length === 0">
+        <h3>How can I help you today?</h3>
+        <div class="query-chips">
+          <button mat-button 
+                  *ngFor="let query of suggestedQueries"
+                  (click)="useSuggestedQuery(query)"
+                  class="query-chip">
+            {{ query }}
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <!-- Message Input -->
+    <mat-card-footer>
+      <div class="message-input-container">
+        <mat-form-field appearance="outline" class="message-input">
+          <input matInput
+                 [(ngModel)]="newMessage"
+                 placeholder="Type your message..."
+                 (keyup.enter)="sendMessage()"
+                 [disabled]="isLoading">
+        </mat-form-field>
+        <button mat-fab
+                color="primary"
+                (click)="sendMessage()"
+                [disabled]="!newMessage.trim() || isLoading"
+                class="send-button">
+          <fa-icon [icon]="faPaperPlane"></fa-icon>
+        </button>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</div> 

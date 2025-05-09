@@ -5,7 +5,7 @@ import { Portfolio } from './Portfolio';
 import { CV } from './CV';
 import { Experience } from './Experience';
 import { Education } from './Education';
-import { ChatMessage } from './Chatmessage';
+import { ChatMessage } from './chatMessage';
 import { Skill } from './Skill';
 import { CareerPath } from './Careerpath';
 

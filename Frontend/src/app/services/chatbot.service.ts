@@ -108,4 +108,9 @@ export class ChatbotService {
   formatMatchScore(score: number): string {
     return `${score}%`;
   }
+
+  // Clear chat history
+  clearHistory(): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/history`);
+  }
 } 

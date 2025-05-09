@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faGraduationCap, faBriefcase, faLightbulb, faChartLine, faCheckCircle, faTimesCircle, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap, faBriefcase, faLightbulb, faChartLine, faCheckCircle, faTimesCircle, faArrowRight, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { CareerPathService, CareerPath } from '../../../services/career-path.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -48,6 +48,12 @@ import { Router, ActivatedRoute } from '@angular/router';
           </mat-card-header>
 
           <mat-card-content>
+            <!-- Error Message -->
+            <div *ngIf="error" class="error-message">
+              <fa-icon [icon]="faExclamationTriangle" class="icon"></fa-icon>
+              <span>{{ error }}</span>
+            </div>
+
             <form [formGroup]="careerForm" (ngSubmit)="generateCareerPath()">
               <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Your Dream Career</mat-label>
@@ -74,9 +80,11 @@ import { Router, ActivatedRoute } from '@angular/router';
               </mat-form-field>
 
               <div class="form-actions">
-                <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">
-                  <mat-spinner diameter="20" *ngIf="isLoading"></mat-spinner>
-                  <span *ngIf="!isLoading">Generate Career Path</span>
+                <button mat-raised-button color="primary" type="submit" [disabled]="isLoading || !careerForm.valid">
+                  <div class="button-content">
+                    <mat-spinner diameter="20" *ngIf="isLoading"></mat-spinner>
+                    <span *ngIf="!isLoading">Generate Career Path</span>
+                  </div>
                 </button>
               </div>
             </form>
@@ -378,6 +386,34 @@ import { Router, ActivatedRoute } from '@angular/router';
       gap: 16px;
       margin-top: 24px;
     }
+
+    .error-message {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+      background-color: #fdecea;
+      border: 1px solid #f5c6cb;
+      border-radius: 4px;
+      color: #721c24;
+
+      .icon {
+        color: #dc3545;
+      }
+    }
+
+    .button-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 150px;
+      justify-content: center;
+    }
+
+    mat-spinner {
+      margin-right: 8px;
+    }
   `]
 })
 export class CareerPathComponent implements OnInit {
@@ -389,6 +425,7 @@ export class CareerPathComponent implements OnInit {
   faCheckCircle = faCheckCircle;
   faTimesCircle = faTimesCircle;
   faArrowRight = faArrowRight;
+  faExclamationTriangle = faExclamationTriangle;
 
   careerForm: FormGroup;
   careerPath: CareerPath | null = null;
@@ -430,7 +467,13 @@ export class CareerPathComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error generating career path:', error);
-          this.error = 'Failed to generate career path. Please try again.';
+          if (error.status === 401) {
+            this.error = 'Please log in to generate a career path.';
+          } else if (error.status === 500) {
+            this.error = 'Unable to generate career path. Please try again later.';
+          } else {
+            this.error = error.error?.message || 'Failed to generate career path. Please try again.';
+          }
           this.isLoading = false;
         }
       });

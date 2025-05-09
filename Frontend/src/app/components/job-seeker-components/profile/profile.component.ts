@@ -5,13 +5,26 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faUser, faBriefcase, faFileAlt, faDownload, faCheck, faTimes, faClock, faRoute } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faUser, 
+  faBriefcase, 
+  faFileAlt, 
+  faDownload, 
+  faCheck, 
+  faTimes, 
+  faClock, 
+  faRoute,
+  faGraduationCap,
+  faBuilding
+} from '@fortawesome/free-solid-svg-icons';
 import { ProfileService } from '../../../services/profile.service';
 import { SkillService } from '../../../services/skill.service';
 import { ApplicationService } from '../../../services/application.service';
 import { AuthService, User } from '../../../services/auth.service';
 import { CVService } from '../../../services/cv.service';
 import { CareerPathService, CareerPath } from '../../../services/career-path.service';
+import { ExperienceService, Experience } from '../../../services/experience.service';
+import { EducationService, Education } from '../../../services/education.service';
 
 @Component({
   selector: 'app-profile',
@@ -65,6 +78,63 @@ import { CareerPathService, CareerPath } from '../../../services/career-path.ser
 
         <!-- Profile Content -->
         <div class="profile-content">
+          <!-- Experience Section -->
+          <mat-card class="profile-section">
+            <mat-card-header>
+              <mat-card-title>
+                <fa-icon [icon]="faBuilding" class="icon"></fa-icon>
+                Work Experience
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="experience-list">
+                <div class="experience-item" *ngFor="let exp of experiences">
+                  <div class="experience-header">
+                    <h3>{{exp.title}}</h3>
+                    <span class="company">{{exp.company}}</span>
+                  </div>
+                  <div class="experience-dates">
+                    <span>{{exp.startDate | date:'MMM yyyy'}} - {{exp.current ? 'Present' : (exp.endDate | date:'MMM yyyy')}}</span>
+                  </div>
+                  <p class="experience-description">{{exp.description}}</p>
+                </div>
+                <div *ngIf="experiences.length === 0" class="no-data">
+                  No work experience added yet
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <!-- Education Section -->
+          <mat-card class="profile-section">
+            <mat-card-header>
+              <mat-card-title>
+                <fa-icon [icon]="faGraduationCap" class="icon"></fa-icon>
+                Education
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="education-list">
+                <div class="education-item" *ngFor="let edu of educations">
+                  <div class="education-header">
+                    <h3>{{edu.degree}}</h3>
+                    <span class="institution">{{edu.institution}}</span>
+                  </div>
+                  <div class="education-details">
+                    <span class="field-of-study">{{edu.fieldOfStudy}}</span>
+                    <span class="education-dates">
+                      {{edu.startDate | date:'MMM yyyy'}} - {{edu.current ? 'Present' : (edu.endDate | date:'MMM yyyy')}}
+                    </span>
+                  </div>
+                  <p class="education-description" *ngIf="edu.description">{{edu.description}}</p>
+                </div>
+                <div *ngIf="educations.length === 0" class="no-data">
+                  No education history added yet
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
           <!-- Career Path Section -->
           <mat-card class="profile-section" *ngIf="careerPath">
             <mat-card-header>
@@ -332,6 +402,54 @@ import { CareerPathService, CareerPath } from '../../../services/career-path.ser
       height: 100%;
     }
 
+    .experience-list, .education-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .experience-item, .education-item {
+      padding: 16px;
+      border-left: 3px solid #3498db;
+      background: #f8f9fa;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .experience-header, .education-header {
+      margin-bottom: 8px;
+    }
+
+    .experience-header h3, .education-header h3 {
+      margin: 0;
+      color: #2c3e50;
+      font-size: 1.1rem;
+    }
+
+    .company, .institution {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .experience-dates, .education-dates {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .field-of-study {
+      display: block;
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .experience-description, .education-description {
+      color: #666;
+      margin: 8px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
     .skills-container {
       display: flex;
       flex-wrap: wrap;
@@ -557,12 +675,16 @@ export class ProfileComponent implements OnInit {
   faTimes = faTimes;
   faClock = faClock;
   faRoute = faRoute;
+  faGraduationCap = faGraduationCap;
+  faBuilding = faBuilding;
 
   user: User | null = null;
   skills: any[] = [];
   applications: any[] = [];
   cv: any = null;
   careerPath: CareerPath | null = null;
+  experiences: Experience[] = [];
+  educations: Education[] = [];
   profileCompletion = 0;
   isLoading = true;
   error: string | null = null;
@@ -573,7 +695,9 @@ export class ProfileComponent implements OnInit {
     private applicationService: ApplicationService,
     private authService: AuthService,
     private cvService: CVService,
-    private careerPathService: CareerPathService
+    private careerPathService: CareerPathService,
+    private experienceService: ExperienceService,
+    private educationService: EducationService
   ) {}
 
   ngOnInit(): void {
@@ -606,6 +730,8 @@ export class ProfileComponent implements OnInit {
         this.loadUserApplications();
         this.loadUserCV();
         this.loadCareerPath();
+        this.loadUserExperiences();
+        this.loadUserEducations();
       },
       error: (error) => {
         console.error('Error loading profile:', error);
@@ -613,6 +739,36 @@ export class ProfileComponent implements OnInit {
         this.isLoading = false;
       }
     });
+  }
+
+  private loadUserExperiences(): void {
+    const user = this.authService.getCurrentUser();
+    if (user) {
+      this.experienceService.getExperiences(user.id).subscribe({
+        next: (experiences) => {
+          this.experiences = experiences;
+          this.calculateProfileCompletion();
+        },
+        error: (error) => {
+          console.error('Error loading experiences:', error);
+        }
+      });
+    }
+  }
+
+  private loadUserEducations(): void {
+    const user = this.authService.getCurrentUser();
+    if (user) {
+      this.educationService.getEducations(user.id).subscribe({
+        next: (educations) => {
+          this.educations = educations;
+          this.calculateProfileCompletion();
+        },
+        error: (error) => {
+          console.error('Error loading educations:', error);
+        }
+      });
+    }
   }
 
   private loadUserSkills(): void {
@@ -625,7 +781,6 @@ export class ProfileComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error loading skills:', error);
-          // Don't set error state here, just log it
         }
       });
     }
@@ -640,7 +795,6 @@ export class ProfileComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error loading applications:', error);
-          // Don't set error state here, just log it
         }
       });
     }
@@ -657,7 +811,6 @@ export class ProfileComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error loading CV:', error);
-          // Don't set error state here, just log it
           this.isLoading = false;
         }
       });
@@ -670,7 +823,6 @@ export class ProfileComponent implements OnInit {
     this.careerPathService.getUserCareerPaths().subscribe({
       next: (careerPaths) => {
         if (careerPaths.length > 0) {
-          // Get the most recent career path
           this.careerPath = careerPaths[0];
           this.calculateProfileCompletion();
         }
@@ -678,7 +830,6 @@ export class ProfileComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error loading career path:', error);
-        // Don't set error state here, just log it
         this.isLoading = false;
       }
     });
@@ -697,13 +848,15 @@ export class ProfileComponent implements OnInit {
 
   private calculateProfileCompletion(): void {
     let completion = 0;
-    const totalFields = 5; // name, skills, cv, position, career path
+    const totalFields = 7; // name, skills, cv, position, career path, experiences, education
 
     if (this.user?.name) completion++;
     if (this.skills.length > 0) completion++;
     if (this.cv) completion++;
     if (this.user?.position) completion++;
     if (this.careerPath) completion++;
+    if (this.experiences.length > 0) completion++;
+    if (this.educations.length > 0) completion++;
 
     this.profileCompletion = Math.round((completion / totalFields) * 100);
   }

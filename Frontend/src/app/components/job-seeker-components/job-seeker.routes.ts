@@ -8,6 +8,10 @@ import { CareerPathComponent } from './career-path/career-path.component';
 import { CVGeneratorComponent } from './cv-generator/cv-generator.component';
 import { MyApplicationsComponent } from './my-applications/my-applications.component';
 import { InterviewsComponent } from './interviews/interviews.component';
+import { AiAssistantComponent } from './ai-assistant/ai-assistant.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { EducationComponent } from './education/education.component';
 
 export const JOB_SEEKER_ROUTES: Routes = [
   {
@@ -23,7 +27,10 @@ export const JOB_SEEKER_ROUTES: Routes = [
       { path: 'cv-generator', component: CVGeneratorComponent },
       { path: 'applications', component: MyApplicationsComponent },
       { path: 'interviews', component: InterviewsComponent },
-      // { path: 'chatbot', component: ChatbotComponent }
+      // { path: 'chatbot', component: AiAssistantComponent }
+      { path: 'chatbot', component: ChatbotComponent },
+      { path: 'experience', component: ExperienceComponent },
+      { path: 'education', component: EducationComponent }
     ]
   }
 ]; 

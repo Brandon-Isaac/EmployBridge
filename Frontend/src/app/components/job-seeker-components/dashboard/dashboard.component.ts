@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { 
   faBars, 
@@ -18,7 +19,10 @@ import {
   faCalendarAlt, 
   faFileContract, 
   faComments,
-  faRoute
+  faRoute,
+  faBriefcase,
+  faGraduationCap,
+  faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../../services/auth.service';
 
@@ -33,6 +37,7 @@ import { AuthService } from '../../../services/auth.service';
     MatButtonModule,
     MatListModule,
     MatMenuModule,
+    MatIconModule,
     FontAwesomeModule
   ],
   template: `
@@ -48,6 +53,9 @@ import { AuthService } from '../../../services/auth.service';
           <span class="user-name">{{userName}}</span>
           <span class="user-role">Job Seeker</span>
         </div>
+        <button mat-icon-button class="logout-button" (click)="logout()" matTooltip="Logout" title="Logout">
+          <fa-icon [icon]="faSignOutAlt"></fa-icon>
+        </button>
       </mat-toolbar>
 
       <!-- Side Navigation -->
@@ -64,6 +72,14 @@ import { AuthService } from '../../../services/auth.service';
               <a mat-list-item routerLink="profile-update" routerLinkActive="active">
                 <fa-icon [icon]="faEdit" class="nav-icon"></fa-icon>
                 <span>Update Profile</span>
+              </a>
+              <a mat-list-item routerLink="experience" routerLinkActive="active">
+                <fa-icon [icon]="faBriefcase" class="nav-icon"></fa-icon>
+                <span>Experience</span>
+              </a>
+              <a mat-list-item routerLink="education" routerLinkActive="active">
+                <fa-icon [icon]="faGraduationCap" class="nav-icon"></fa-icon>
+                <span>Education</span>
               </a>
             </div>
 
@@ -98,7 +114,7 @@ import { AuthService } from '../../../services/auth.service';
               <h3 class="nav-section-title">Tools</h3>
               <a mat-list-item routerLink="career-path" routerLinkActive="active">
                 <fa-icon [icon]="faRoute" class="nav-icon"></fa-icon>
-                <span>Career Path</span>
+                <span>Career Path Generator</span>
               </a>
               <a mat-list-item routerLink="cv-generator" routerLinkActive="active">
                 <fa-icon [icon]="faFileContract" class="nav-icon"></fa-icon>
@@ -149,6 +165,7 @@ import { AuthService } from '../../../services/auth.service';
       display: flex;
       align-items: center;
       gap: 8px;
+      margin-right: 16px;
     }
 
     .user-name {
@@ -158,9 +175,17 @@ import { AuthService } from '../../../services/auth.service';
 
     .user-role {
       font-size: 0.9rem;
-      
       opacity: 0.8;
       font-weight: 400;
+    }
+
+    .logout-button {
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     .sidenav-container {
@@ -234,6 +259,9 @@ export class DashboardComponent implements OnInit {
   faFileContract = faFileContract;
   faComments = faComments;
   faRoute = faRoute;
+  faBriefcase = faBriefcase;
+  faGraduationCap = faGraduationCap;
+  faSignOutAlt = faSignOutAlt;
 
   userName: string = '';
 
@@ -248,5 +276,18 @@ export class DashboardComponent implements OnInit {
 
   toggleSidenav(): void {
     // Implement sidenav toggle logic
+  }
+
+  logout(): void {
+    this.authService.logout().subscribe({
+      next: () => {
+        // The AuthService will handle navigation to login page
+      },
+      error: (error) => {
+        console.error('Error during logout:', error);
+        // Even if there's an error, we should still clear the session
+        this.authService.handleUnauthorized();
+      }
+    });
   }
 } 

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { ChatMessage} from '../entities/Chatmessage';
+import { ChatMessage} from '../entities/chatMessage';
 import { User } from '../entities/User';
 import { Job } from '../entities/Job';
 import  asyncHandler from '../middleware/asyncHandler';
@@ -14,8 +14,8 @@ dotenv.config();
 const chatMessageRepository = AppDataSource.getRepository(ChatMessage);
 const userRepository = AppDataSource.getRepository(User);
 const jobRepository = AppDataSource.getRepository(Job);
-// const applicationRepository = AppDataSource.getRepository(Application);
-// const skillRepository = AppDataSource.getRepository(Skill);
+const applicationRepository = AppDataSource.getRepository(Application);
+const skillRepository = AppDataSource.getRepository(Skill);
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
@@ -86,14 +86,18 @@ export const chatWithBot = asyncHandler(async (req: Request, res: Response) => {
          - Skill development
          - Interview preparation
          - Explaining their application statuses
-        Use their profile details to provide personalized advice.`
+        Use their profile details to provide personalized advice.
+        Format your responses in paragraph format and plain text without markdown formatting.
+        Keep your responses concise and to the point, maximum 30 words.`
       : `You are a hiring assistant for the SkillMatch AI platform. Help the employer with:
          - Candidate search
          - Job posting optimization
          - Application review
          - Interview scheduling
          - Hiring analytics
-        Use their company and job posting details to provide personalized advice.`;
+        Use their company and job posting details to provide personalized advice.
+        Format your responses in paragraph format and plain text without markdown formatting.
+        Keep your responses concise and to the point, maximum 30 words.`;
 
     // Prepare chat history for Gemini
     const chat = model.startChat({
@@ -111,7 +115,23 @@ export const chatWithBot = asyncHandler(async (req: Request, res: Response) => {
 
     // Get response from Gemini
     const result = await model.generateContent(message);
-    const botResponse = result.response.text();
+    let botResponse = result.response.text();
+
+    // Clean up any markdown formatting from the response
+    botResponse = botResponse
+      .replace(/```[\s\S]*?```/g, '') // Remove code blocks
+      .replace(/`([^`]+)`/g, '$1')    // Remove inline code
+      .replace(/\*\*([^*]+)\*\*/g, '$1') // Remove bold
+      .replace(/\*([^*]+)\*/g, '$1')     // Remove italic
+      .replace(/#{1,6}\s/g, '')          // Remove headers
+      .replace(/\n{3,}/g, '\n\n')        // Normalize multiple newlines
+      .trim();
+
+    // Limit response to 30 words
+    // const words = botResponse.split(/\s+/);
+    // if (words.length > 30) {
+    //   botResponse = words.slice(0, 30).join(' ') + '...';
+    // }
 
     // Save bot response to database
     const botMessage = new ChatMessage();
@@ -177,6 +197,15 @@ export const getChatHistory =asyncHandler( async (req: Request, res: Response) =
     res.status(500).json({ message: 'Error fetching chat history', error });
   }
 });
+ export const clearHistory = asyncHandler(async (req: Request, res: Response) => {
+  try {
+    const userId = (req as any).user.userId;
+    await chatMessageRepository.delete({ user: { id: userId } });
+    res.json({ message: 'Chat history cleared' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error clearing chat history', error });
+  }
+ });
 
 // Specialized query functions for different user types
 export const queryCandidates = asyncHandler(async (req: Request, res: Response) => {

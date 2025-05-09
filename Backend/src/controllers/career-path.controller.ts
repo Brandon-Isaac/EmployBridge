@@ -18,9 +18,21 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
 // Extend Express Request type to include user
+declare global {
+  namespace Express {
+    interface Request {
+      user?: {
+        userId: string;
+        role: string;
+      };
+    }
+  }
+}
+
 interface AuthenticatedRequest extends Request {
-  userId: {
-    id: string;
+  user: {
+    userId: string;
+    role: string;
   };
 }
 
@@ -155,7 +167,7 @@ const generateAICareerPath = async (
 // Generate a new career path
 export const generateCareerPath = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
   const { targetRole, currentRole, yearsOfExperience } = req.body;
-  const userId = req.userId.id;
+  const userId = req.user.userId;
 
   // Get user and their skills
   const user = await userRepository.findOne({
@@ -242,7 +254,7 @@ export const generateCareerPath = asyncHandler(async (req: AuthenticatedRequest,
 
 // Get all career paths for a user
 export const getUserCareerPaths = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const userId = req.userId.id;
+  const userId = req.user.userId;
 
   const careerPaths = await careerPathRepository.find({
     where: { user: { id: userId } },
@@ -255,7 +267,7 @@ export const getUserCareerPaths = asyncHandler(async (req: AuthenticatedRequest,
 // Get a specific career path
 export const getCareerPath = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
   const { id } = req.params;
-  const userId = req.userId.id;
+  const userId = req.user.userId;
 
   const careerPath = await careerPathRepository.findOne({
     where: { id, user: { id: userId } }
@@ -272,7 +284,7 @@ export const getCareerPath = asyncHandler(async (req: AuthenticatedRequest, res:
 export const updateProgress = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
   const { id } = req.params;
   const { progress, isCompleted } = req.body;
-  const userId = req.userId.id;
+  const userId = req.user.userId;
 
   const careerPath = await careerPathRepository.findOne({
     where: { id, user: { id: userId } }
@@ -293,7 +305,7 @@ export const updateProgress = asyncHandler(async (req: AuthenticatedRequest, res
 // Delete a career path
 export const deleteCareerPath = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
   const { id } = req.params;
-  const userId = req.userId.id;
+  const userId = req.user.userId;
 
   const careerPath = await careerPathRepository.findOne({
     where: { id, user: { id: userId } }

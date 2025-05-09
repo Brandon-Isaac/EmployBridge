@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -60,23 +60,29 @@ export class CareerPathService {
 
   constructor(private http: HttpClient) {}
 
+  private getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('token');
+    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  }
+
   generateCareerPath(data: GenerateCareerPathData): Observable<CareerPath> {
-    return this.http.post<CareerPath>(this.apiUrl, data);
+    return this.http.post<CareerPath>(this.apiUrl, data, { headers: this.getHeaders() });
   }
 
   getUserCareerPaths(): Observable<CareerPath[]> {
-    return this.http.get<CareerPath[]>(this.apiUrl);
+    return this.http.get<CareerPath[]>(this.apiUrl, { headers: this.getHeaders() });
   }
 
   getCareerPath(id: string): Observable<CareerPath> {
-    return this.http.get<CareerPath>(`${this.apiUrl}/${id}`);
+    return this.http.get<CareerPath>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
   }
 
+
   updateProgress(id: string, data: UpdateProgressData): Observable<CareerPath> {
-    return this.http.patch<CareerPath>(`${this.apiUrl}/${id}/progress`, data);
+    return this.http.patch<CareerPath>(`${this.apiUrl}/${id}/progress`, data, { headers: this.getHeaders() });
   }
 
   deleteCareerPath(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
   }
 } 
