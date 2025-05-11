@@ -15,10 +15,19 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { JobService, Job } from '../../../services/job.service';
 import { AuthService } from '../../../services/auth.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faSpinner, 
+  faSave, 
+  faTimes, 
+  faMapMarkerAlt, 
+  faBriefcase, 
+  faDollarSign,
+  faCalendarAlt,
+  faTag
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-employer-job-posting',
+  selector: 'app-edit-job',
   standalone: true,
   imports: [
     CommonModule,
@@ -35,13 +44,17 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
     FontAwesomeModule
   ],
   template: `
-    <div class="job-posting-container">
-      <mat-card class="job-posting-card">
+    <div class="edit-job-container">
+      <mat-card class="edit-job-card">
         <mat-card-header>
-          <mat-card-title>{{ isEditMode ? 'Edit Job' : 'Post a New Job' }}</mat-card-title>
+          <mat-card-title>{{ isEditMode ? 'Edit Job' : 'Create New Job' }}</mat-card-title>
+          <mat-card-subtitle>
+            {{ isEditMode ? 'Update the job details below' : 'Fill in the job details below' }}
+          </mat-card-subtitle>
         </mat-card-header>
+
         <mat-card-content>
-          <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="job-posting-form">
+          <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="edit-job-form">
             <!-- Title -->
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Job Title</mat-label>
@@ -65,6 +78,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Location</mat-label>
               <input matInput formControlName="location" placeholder="e.g., New York, NY">
+              <fa-icon [icon]="faMapMarkerAlt" class="field-icon"></fa-icon>
               <mat-error *ngIf="jobForm.get('location')?.hasError('required')">
                 Location is required
               </mat-error>
@@ -80,6 +94,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
                 <mat-option value="Temporary">Temporary</mat-option>
                 <mat-option value="Internship">Internship</mat-option>
               </mat-select>
+              <fa-icon [icon]="faBriefcase" class="field-icon"></fa-icon>
               <mat-error *ngIf="jobForm.get('employmentType')?.hasError('required')">
                 Employment type is required
               </mat-error>
@@ -89,7 +104,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>Salary (Annual)</mat-label>
               <input matInput type="number" formControlName="salary" placeholder="e.g., 75000">
-              <span matPrefix>$&nbsp;</span>
+              <fa-icon [icon]="faDollarSign" class="field-icon"></fa-icon>
               <mat-error *ngIf="jobForm.get('salary')?.hasError('min')">
                 Salary must be greater than 0
               </mat-error>
@@ -101,6 +116,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
               <input matInput [matDatepicker]="picker" formControlName="deadline">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
+              <fa-icon [icon]="faCalendarAlt" class="field-icon"></fa-icon>
               <mat-error *ngIf="jobForm.get('deadline')?.hasError('required')">
                 Deadline is required
               </mat-error>
@@ -113,22 +129,27 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
                 <mat-chip-row *ngFor="let skill of requiredSkills" (removed)="removeSkill(skill)">
                   {{skill}}
                   <button matChipRemove>
-                    <mat-icon>cancel</mat-icon>
+                    <fa-icon [icon]="faTimes"></fa-icon>
                   </button>
                 </mat-chip-row>
               </mat-chip-grid>
               <input placeholder="Add skills..."
                      [matChipInputFor]="chipGrid"
                      (matChipInputTokenEnd)="addSkill($event)">
+              <fa-icon [icon]="faTag" class="field-icon"></fa-icon>
             </mat-form-field>
 
             <!-- Form Actions -->
             <div class="form-actions">
-              <button mat-button type="button" (click)="goBack()">Cancel</button>
+              <button mat-button type="button" (click)="goBack()">
+                <fa-icon [icon]="faTimes"></fa-icon>
+                Cancel
+              </button>
               <button mat-raised-button color="primary" type="submit" 
                       [disabled]="jobForm.invalid || isSubmitting">
                 <fa-icon [icon]="faSpinner" *ngIf="isSubmitting" animation="spin"></fa-icon>
-                {{ isSubmitting ? 'Saving...' : (isEditMode ? 'Update Job' : 'Post Job') }}
+                <fa-icon [icon]="faSave" *ngIf="!isSubmitting"></fa-icon>
+                {{ isSubmitting ? 'Saving...' : (isEditMode ? 'Update Job' : 'Create Job') }}
               </button>
             </div>
           </form>
@@ -137,14 +158,14 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
     </div>
   `,
   styles: [`
-    .job-posting-container {
+    .edit-job-container {
       padding: 20px;
     }
-    .job-posting-card {
+    .edit-job-card {
       max-width: 800px;
       margin: 0 auto;
     }
-    .job-posting-form {
+    .edit-job-form {
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -159,21 +180,40 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
       gap: 16px;
       margin-top: 24px;
     }
+    .field-icon {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+    }
     mat-form-field {
       margin-bottom: 8px;
     }
     .mat-mdc-chip-input {
       width: 100%;
     }
+    button fa-icon {
+      margin-right: 8px;
+    }
   `]
 })
-export class JobPostingComponent implements OnInit {
+export class EditJobComponent implements OnInit {
   jobForm: FormGroup;
   isSubmitting = false;
   isEditMode = false;
   jobId: string | null = null;
   requiredSkills: string[] = [];
+
+  // Font Awesome icons
   faSpinner = faSpinner;
+  faSave = faSave;
+  faTimes = faTimes;
+  faMapMarkerAlt = faMapMarkerAlt;
+  faBriefcase = faBriefcase;
+  faDollarSign = faDollarSign;
+  faCalendarAlt = faCalendarAlt;
+  faTag = faTag;
 
   constructor(
     private fb: FormBuilder,
@@ -276,7 +316,7 @@ export class JobPostingComponent implements OnInit {
     request.subscribe({
       next: () => {
         this.snackBar.open(
-          `Job ${this.isEditMode ? 'updated' : 'posted'} successfully`,
+          `Job ${this.isEditMode ? 'updated' : 'created'} successfully`,
           'Close',
           {
             duration: 3000,
@@ -289,7 +329,7 @@ export class JobPostingComponent implements OnInit {
       error: (error) => {
         console.error('Error saving job:', error);
         this.snackBar.open(
-          error.error?.message || `Failed to ${this.isEditMode ? 'update' : 'post'} job`,
+          error.error?.message || `Failed to ${this.isEditMode ? 'update' : 'create'} job`,
           'Close',
           {
             duration: 5000,

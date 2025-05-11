@@ -60,6 +60,7 @@ import { AuthService } from '../../../services/auth.service';
         <mat-sidenav #sidenav mode="side" opened class="sidenav">
           <mat-nav-list>
             <!-- Profile Section -->
+            <!-- Commented out profile section
             <div class="nav-section">
               <h3 class="nav-section-title">Profile</h3>
               <a mat-list-item routerLink="profile" routerLinkActive="active">
@@ -71,13 +72,19 @@ import { AuthService } from '../../../services/auth.service';
                 <span>Update Profile</span>
               </a>
             </div>
+            -->
 
             <!-- Job Management Section -->
             <div class="nav-section">
               <h3 class="nav-section-title">Job Management</h3>
-              <a mat-list-item routerLink="job-posting" routerLinkActive="active">
+              <a mat-list-item routerLink="jobs-posted" routerLinkActive="active">
                 <fa-icon [icon]="faBriefcase" class="nav-icon"></fa-icon>
-                <span>Post Jobs</span>
+                <span>Jobs Posted</span>
+              </a>
+            
+              <a mat-list-item routerLink="job-posting" [queryParams]="{mode: 'edit'}" routerLinkActive="active">
+                <fa-icon [icon]="faEdit" class="nav-icon"></fa-icon>
+                <span>Update Jobs</span>
               </a>
               <a mat-list-item routerLink="job-generation" routerLinkActive="active">
                 <fa-icon [icon]="faFileContract" class="nav-icon"></fa-icon>
@@ -104,6 +111,10 @@ import { AuthService } from '../../../services/auth.service';
               <a mat-list-item routerLink="chatbot" routerLinkActive="active">
                 <fa-icon [icon]="faComments" class="nav-icon"></fa-icon>
                 <span>AI Assistant</span>
+              </a>
+              <a mat-list-item routerLink="ai-recommendations" routerLinkActive="active">
+                <fa-icon [icon]="faRobot" class="nav-icon"></fa-icon>
+                <span>AI Candidate Recommendations</span>
               </a>
             </div>
           </mat-nav-list>

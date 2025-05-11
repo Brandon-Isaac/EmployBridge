@@ -8,8 +8,12 @@ export const EMPLOYER_ROUTES: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'profile',
+        redirectTo: 'jobs-posted',
         pathMatch: 'full'
+      },
+      {
+        path: 'job-posting/:id',
+        loadComponent: () => import('./edit-job/edit-job.component').then(m => m.EditJobComponent)
       },
       {
         path: 'profile',
@@ -18,6 +22,10 @@ export const EMPLOYER_ROUTES: Routes = [
       {
         path: 'profile-update',
         loadComponent: () => import('./profile-update/profile-update.component').then(m => m.ProfileUpdateComponent)
+      },
+      {
+        path: 'jobs-posted',
+        loadComponent: () => import('./jobs-posted/jobs-posted.component').then(m => m.JobsPostedComponent)
       },
       {
         path: 'job-posting',
@@ -38,6 +46,10 @@ export const EMPLOYER_ROUTES: Routes = [
       {
         path: 'chatbot',
         loadComponent: () => import('./chatbot/chatbot.component').then(m => m.ChatbotComponent)
+      },
+      {
+        path: 'ai-recommendations',
+        loadComponent: () => import('./ai-recommendations/ai-recommendations.component').then(m => m.AIRecommendationsComponent)
       }
     ]
   }

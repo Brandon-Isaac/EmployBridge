@@ -80,6 +80,10 @@ export class CompanyService {
         return this.http.get<{ jobCount: number; jobs: any[] }>(`${this.apiUrl}/${id}/jobs`);
     }
 
+    deleteJob(jobId: string): Observable<void> {
+        return this.http.delete<void>(`${this.apiUrl}/jobs/${jobId}`);
+    }
+
     getCompanyProfile(id: string): Observable<CompanyProfile> {
         return this.http.get<CompanyProfile>(`${this.apiUrl}/${id}/profile`);
     }
