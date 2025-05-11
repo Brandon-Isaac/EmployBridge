@@ -74,7 +74,7 @@ export class SignupComponent {
           if (response.user.role === 'job_seeker') {
             this.router.navigate(['/job-seeker']);
           } else if (response.user.role === 'employer') {
-            this.router.navigate(['/employer/dashboard']);
+            this.router.navigate(['/employer']);
           }
         },
         error: (error) => {
