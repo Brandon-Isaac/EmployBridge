@@ -1,6 +1,18 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, ManyToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { User } from './User';
 
+export enum CVType {
+  CV = 'cv',
+  COVER_LETTER = 'cover_letter',
+  RESUME = 'resume'
+}
+
+export enum CVStatus {
+  DRAFT = 'draft',
+  PUBLISHED = 'published',
+  ARCHIVED = 'archived'
+}
+
 @Entity()
 export class CV {
   @PrimaryGeneratedColumn('uuid')
@@ -15,6 +27,20 @@ export class CV {
 
   @Column()
   filePath?: string;
+
+  @Column({
+    type: 'enum',
+    enum: CVType,
+    default: CVType.CV
+  })
+  type!: CVType;
+
+  @Column({
+    type: 'enum',
+    enum: CVStatus,
+    default: CVStatus.DRAFT
+  })
+  status!: CVStatus;
 
   @Column({ type: 'jsonb', nullable: true })
   extractedSkills?: string[];

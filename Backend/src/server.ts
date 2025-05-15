@@ -17,6 +17,7 @@ import educationRoutes from './routes/educationRoutes';
 import chatbotRoutes from './routes/chatbotRoutes';
 import careerPathRoutes from './routes/career-path.routes';
 import interviewRoutes from './routes/interview.routes'; // Import interview routes
+import analyticsRoutes from './routes/analyticsRoutes';
 
 dotenv.config();
 
@@ -49,6 +50,7 @@ app.use('/api/educations', educationRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/career-paths', careerPathRoutes);
 app.use('/api/interviews',interviewRoutes); // Add this line for interview routes
+app.use('/api/analytics', analyticsRoutes);
 
 
 // Health check
