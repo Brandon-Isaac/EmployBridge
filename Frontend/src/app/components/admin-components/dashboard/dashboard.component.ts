@@ -139,7 +139,8 @@ import { AuthService } from '../../../services/auth.service';
     }
 
     .dashboard-header {
-      background: linear-gradient(135deg, #3498db, #2980b9);
+      background: linear-gradient(135deg, #cc2ec4, #ae2727);
+}
       color: white;
       padding: 0 16px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
