@@ -5,6 +5,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { JOB_SEEKER_ROUTES } from './components/job-seeker-components/job-seeker.routes';
 import { authGuard } from './guards/auth.guard';
 import { EMPLOYER_ROUTES } from './components/employer-components/employer.routes';
+// import { ADMIN_ROUTES } from './components/admin-components/admin.routes';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -22,5 +23,11 @@ export const routes: Routes = [
     canActivate: [authGuard],
     data: { role: 'employer' }
   },
+  // {
+  //   path: 'admin',
+  //   children:ADMIN_ROUTES,
+  //   canActivate: [authGuard],
+  //   data: { role: 'admin' }
+  // },
   { path: '**', redirectTo: '' }
 ]; 
