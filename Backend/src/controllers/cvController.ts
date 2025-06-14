@@ -3,7 +3,7 @@ import { CV } from '../entities/CV';
 import { User } from '../entities/User';
 import { Skill } from '../entities/Skill';
 import { AppDataSource } from '../data-source';
-import { OpenAI } from 'openai';
+// import { OpenAI } from 'openai'; // Remove OpenAI import
 import { Experience } from '../entities/Experience';
 import { Education } from '../entities/Education';
 import asyncHandler from '../middleware/asyncHandler';
@@ -11,12 +11,16 @@ import { Job } from '../entities/Job';
 import fs from 'fs';
 import path from 'path';
 
+// Gemini AI import (using @google/generative-ai)
+import { GoogleGenerativeAI } from '@google/generative-ai';
+
 const experienceRepository = AppDataSource.getRepository(Experience);
 const educationRepository = AppDataSource.getRepository(Education);
 const skillRepository = AppDataSource.getRepository(Skill);
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+
+// Initialize Gemini AI
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+
 const cvRepository = AppDataSource.getRepository(CV);
 const userRepository = AppDataSource.getRepository(User);
 
@@ -184,7 +188,7 @@ export const generateAICV = asyncHandler(async (req: Request, res: Response) => 
     let cvContent: string;
 
     try {
-      // Prepare prompt for AI
+      // Prepare prompt for Gemini
       const prompt = `Generate a professional CV in Markdown format for ${user.name} with the following details:
       
       Skills: ${user.skills?.map(skill => skill.name).join(', ') || 'None'}
@@ -210,23 +214,15 @@ export const generateAICV = asyncHandler(async (req: Request, res: Response) => 
       
       Format the CV professionally with proper Markdown headings and bullet points.`;
 
-      // Call OpenAI API
-      const completion = await openai.chat.completions.create({
-        messages: [
-          { 
-            role: 'system', 
-            content: 'You are a professional CV writer. Generate well-structured CVs in Markdown format based on user-provided information.' 
-          },
-          { role: 'user', content: prompt }
-        ],
-        model: 'gpt-3.5-turbo',
-      });
-
-      cvContent = completion.choices[0].message.content || '';
+      // Call Gemini API
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      cvContent = response.text();
     } catch (apiError: any) {
-      // If API call fails (e.g., quota exceeded), generate a basic CV
-      console.warn('OpenAI API error:', apiError);
-      
+      // If API call fails, generate a basic CV
+      console.warn('Gemini API error:', apiError);
+
       // Generate a basic CV format
       cvContent = `# ${user.name}'s Professional CV
 
