@@ -17,8 +17,8 @@ exports.AppDataSource = new typeorm_1.DataSource({
     synchronize: true,
     ssl: { rejectUnauthorized: false },
     logging: false,
-    entities: ['src/entities/*.ts'],
-    migrations: ['src/migrations/*.ts'],
+    entities: ['dist/entities/*.js'],
+    migrations: ['dist/migrations/*.js'],
     subscribers: [],
 });
 exports.default = exports.AppDataSource;
