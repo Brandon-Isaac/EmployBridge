@@ -30,7 +30,7 @@
   "description": "",
   "main": "data-source.js",
   "scripts": {
-    "start": "ts-node src/server.ts",
+    "start": "nodemon dist/server.js",
     "dev": "nodemon src/server.ts",
     "build": "tsc",
     "serve": "node dist/server.js",
