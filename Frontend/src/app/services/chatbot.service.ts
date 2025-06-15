@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface ChatMessage {
   id: string;
@@ -63,7 +64,7 @@ export interface JobQueryResponse {
   providedIn: 'root'
 })
 export class ChatbotService {
-  private apiUrl = 'http://localhost:3000/api/chatbot';
+  private apiUrl = `${environment.apiUrl}/chatbot`;
 
   constructor(private http: HttpClient) { }
 

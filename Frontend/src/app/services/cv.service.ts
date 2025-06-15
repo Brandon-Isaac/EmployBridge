@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
 import { Observable, map, catchError, of } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface CV {
   id: string;
@@ -42,7 +43,7 @@ export interface AICVGenerationResponse {
   providedIn: 'root'
 })
 export class CVService {
-  private apiUrl = 'http://localhost:3000/api/cvs';
+  private apiUrl = `${environment.apiUrl}/cvs`;
 
   constructor(private http: HttpClient) { }
 

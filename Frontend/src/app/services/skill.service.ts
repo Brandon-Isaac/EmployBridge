@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Skill {
   id: string;
@@ -13,7 +14,7 @@ export interface Skill {
   providedIn: 'root'
 })
 export class SkillService {
-  private apiUrl = 'http://localhost:3000/api/skills'; // Adjust port if different
+  private apiUrl = `${environment.apiUrl}/skills`; // Adjust port if different
 
   constructor(private http: HttpClient) { }
 

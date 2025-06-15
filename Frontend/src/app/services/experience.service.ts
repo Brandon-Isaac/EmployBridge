@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Experience {
   id: string;
@@ -37,7 +38,7 @@ export interface UpdateExperienceData {
   providedIn: 'root'
 })
 export class ExperienceService {
-  private apiUrl = 'http://localhost:3000/api/experiences';
+  private apiUrl =`${environment.apiUrl}/experiences`;
 
   constructor(private http: HttpClient) { }
 
