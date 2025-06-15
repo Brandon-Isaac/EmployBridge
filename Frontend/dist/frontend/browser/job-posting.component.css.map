@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;3ab979c0a76f3e115b755ac9af332b7b08fd4a54add6b22117375f7d61fd0489;C:/Users/isaac/Desktop/EmployBridge/Frontend/src/app/components/employer-components/job-posting/job-posting.component.ts"],
-  "sourcesContent": ["\n    .job-posting-container {\n      padding: 20px;\n    }\n    .job-posting-card {\n      max-width: 800px;\n      margin: 0 auto;\n    }\n    .job-posting-form {\n      display: flex;\n      flex-direction: column;\n      gap: 16px;\n      padding: 20px 0;\n    }\n    .full-width {\n      width: 100%;\n    }\n    .form-actions {\n      display: flex;\n      justify-content: flex-end;\n      gap: 16px;\n      margin-top: 24px;\n    }\n    mat-form-field {\n      margin-bottom: 8px;\n    }\n    .mat-mdc-chip-input {\n      width: 100%;\n    }\n  "],
-  "mappings": ";AACI,CAAC;AACC,WAAS;AACX;AACA,CAAC;AACC,aAAW;AACX,UAAQ,EAAE;AACZ;AACA,CAAC;AACC,WAAS;AACT,kBAAgB;AAChB,OAAK;AACL,WAAS,KAAK;AAChB;AACA,CAAC;AACC,SAAO;AACT;AACA,CAAC;AACC,WAAS;AACT,mBAAiB;AACjB,OAAK;AACL,cAAY;AACd;AACA;AACE,iBAAe;AACjB;AACA,CAAC;AACC,SAAO;AACT;",
-  "names": []
-}

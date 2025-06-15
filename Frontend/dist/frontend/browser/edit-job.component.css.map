@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;68ce5ad83ae838a591d4a73c4c2709789ca52b6c7086a1b1786b4d5852b0cad0;C:/Users/isaac/Desktop/EmployBridge/Frontend/src/app/components/employer-components/edit-job/edit-job.component.ts"],
-  "sourcesContent": ["\n    .edit-job-container {\n      padding: 20px;\n    }\n    .edit-job-card {\n      max-width: 800px;\n      margin: 0 auto;\n    }\n    .edit-job-form {\n      display: flex;\n      flex-direction: column;\n      gap: 16px;\n      padding: 20px 0;\n    }\n    .full-width {\n      width: 100%;\n    }\n    .form-actions {\n      display: flex;\n      justify-content: flex-end;\n      gap: 16px;\n      margin-top: 24px;\n    }\n    .field-icon {\n      position: absolute;\n      right: 8px;\n      top: 50%;\n      transform: translateY(-50%);\n      color: #666;\n    }\n    mat-form-field {\n      margin-bottom: 8px;\n    }\n    .mat-mdc-chip-input {\n      width: 100%;\n    }\n    button fa-icon {\n      margin-right: 8px;\n    }\n  "],
-  "mappings": ";AACI,CAAC;AACC,WAAS;AACX;AACA,CAAC;AACC,aAAW;AACX,UAAQ,EAAE;AACZ;AACA,CAAC;AACC,WAAS;AACT,kBAAgB;AAChB,OAAK;AACL,WAAS,KAAK;AAChB;AACA,CAAC;AACC,SAAO;AACT;AACA,CAAC;AACC,WAAS;AACT,mBAAiB;AACjB,OAAK;AACL,cAAY;AACd;AACA,CAAC;AACC,YAAU;AACV,SAAO;AACP,OAAK;AACL,aAAW,WAAW;AACtB,SAAO;AACT;AACA;AACE,iBAAe;AACjB;AACA,CAAC;AACC,SAAO;AACT;AACA,OAAO;AACL,gBAAc;AAChB;",
-  "names": []
-}

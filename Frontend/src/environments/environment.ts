@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: process.env['NEXT_PUBLIC_API_BASE_URL'] || 'http://localhost:3000/api'
+  apiUrl: 'http://ec2-16-171-197-114.eu-north-1.compute.amazonaws.com/api',
+  baseUrl: 'http://ec2-16-171-197-114.eu-north-1.compute.amazonaws.com'
 };

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;0b96072121979251884dc0e04b62bfbb62a229ad58b6a5db10bf42e3d424ac66;C:/Users/isaac/Desktop/EmployBridge/Frontend/src/app/components/job-seeker-components/experience/experience.component.ts"],
-  "sourcesContent": ["\n    .experience-container {\n      max-width: 800px;\n      margin: 0 auto;\n      padding: 20px;\n    }\n\n    .full-width {\n      width: 100%;\n      margin-bottom: 16px;\n    }\n\n    .date-range {\n      display: flex;\n      gap: 16px;\n      margin-bottom: 16px;\n    }\n\n    .date-range mat-form-field {\n      flex: 1;\n    }\n\n    .form-actions {\n      display: flex;\n      justify-content: flex-end;\n      margin-top: 20px;\n    }\n\n    .form-actions button {\n      min-width: 120px;\n    }\n\n    mat-spinner {\n      display: inline-block;\n      margin-right: 8px;\n    }\n  "],
-  "mappings": ";AACI,CAAC;AACC,aAAW;AACX,UAAQ,EAAE;AACV,WAAS;AACX;AAEA,CAAC;AACC,SAAO;AACP,iBAAe;AACjB;AAEA,CAAC;AACC,WAAS;AACT,OAAK;AACL,iBAAe;AACjB;AAEA,CANC,WAMW;AACV,QAAM;AACR;AAEA,CAAC;AACC,WAAS;AACT,mBAAiB;AACjB,cAAY;AACd;AAEA,CANC,aAMa;AACZ,aAAW;AACb;AAEA;AACE,WAAS;AACT,gBAAc;AAChB;",
-  "names": []
-}
