@@ -25,7 +25,15 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
 // Middleware
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: [
+        'http://localhost:3000',
+        'http://localhost:3001',
+        'https://employ-bridge.vercel.app/',
+        'https://your-custom-domain.com'
+    ],
+    credentials: true
+}));
 app.use(express_1.default.json());
 // Database connection
 data_source_1.AppDataSource.initialize()
