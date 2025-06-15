@@ -27,12 +27,13 @@ const PORT = process.env.PORT||3000;
 // Middleware
 app.use(cors({
   origin: [
-    'http://localhost:3000',
-    'http://localhost:3001', 
-    'https://employ-bridge.vercel.app/',
-    'https://your-custom-domain.com'
+    'https://employ-bridge.vercel.app',
+    'http://localhost:3000', // for local development
+    'http://localhost:4200'  // if using Angular locally
   ],
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 app.use(express.json());
 
