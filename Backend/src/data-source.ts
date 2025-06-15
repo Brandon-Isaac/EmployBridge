@@ -13,8 +13,8 @@ export const AppDataSource = new DataSource({
   synchronize: true,
   ssl: { rejectUnauthorized: false},
   logging: false,
-  entities: ['dist/entities/*.js'],
-  migrations: ['dist/migrations/*.js'],
+  entities: ['src/entities/*.ts'],
+  migrations: ['src/migrations/*.ts'],
   subscribers: [],
 });
 
