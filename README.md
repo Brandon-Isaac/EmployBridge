@@ -2,7 +2,7 @@
 
 A comprehensive AI-powered job matching platform that connects job seekers with employers through intelligent skill-based matching and career development tools.
 
-## What is EmployBridge
+## 🚀 Overview
 
 EmployBridge is a full-stack web application that revolutionizes the job search and recruitment process by leveraging artificial intelligence to create meaningful connections between job seekers and employers. The platform focuses on skill-based matching and provides comprehensive career development tools.
 
@@ -93,6 +93,20 @@ EmployBridge is a full-stack web application that revolutionizes the job search 
 - **Frontend**: Deployed on Vercel for optimal performance and global CDN
 - **Backend**: Hosted on Render with automatic scaling
 - **Database**: PostgreSQL for reliable data persistence
+
+## 🎮 Demo Access
+
+Try EmployBridge with our demo accounts:
+
+### Job Seeker Demo
+- **Email**: `jobseeker@example.com`
+- **Password**: `12345678`
+
+### Employer Demo
+- **Email**: `employer@example.com`
+- **Password**: `12345678`
+
+*Note: Demo accounts are pre-configured with sample data to showcase platform features*
 
 ## 🤖 AI Features
 
